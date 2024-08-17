@@ -9,7 +9,7 @@ class_name SlimePlayer
 @export var scalerate = Vector2(0.1, 0.1)
 @onready var rigidcolision = $RigidBody2D/CollisionShape2D
 @onready var pickup = $Pickup
-@onready var object_detect = $ObjectDetect
+@onready var object_detect = $AnimatedSprite2D/ObjectDetect
 @onready var currentobj : PickupComponent
 @onready var picking = false
 @onready var throwing = false
