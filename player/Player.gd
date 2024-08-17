@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name SlimePlayer
 
+@export var THROW_SPEED = 15.0
 @export var SPEED = 400.0
 @export var JUMP_VELOCITY = -400.0
 @onready var colision = $CollisionShape2D
@@ -12,6 +13,7 @@ class_name SlimePlayer
 @onready var currentobj : PickupComponent
 @onready var picking = false
 @onready var throwing = false
+@onready var scanning = false
 @onready var crosshair = $Pickup/Crosshair
 
 
@@ -28,14 +30,16 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
+		sprite.play("Walk")
 		if direction == 1:
 			sprite.flip_h = true
 		else:
 			sprite.flip_h = false
 		velocity.x = direction * SPEED
-		print(direction)
+		#print(direction)
 
 	else:
+		sprite.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 
@@ -48,14 +52,21 @@ func _physics_process(delta):
 		shrink()
 		
 	#Manage grab
-	if Input.is_action_just_pressed("grab") and picking == false:
+	if Input.is_action_just_pressed("grab") and picking == false and scanning == false:
+		object_detect.monitoring = true
+		scanning = true
+	
+	if Input.is_action_just_released("grab") and picking == false and scanning == true:
+		object_detect.monitoring = false
+		object_detect.monitorable = false
+		scanning = false
 		grab(currentobj)
-
 	
 	if Input.is_action_pressed("throw") and picking == true:
 		aim(delta)
 	if Input.is_action_just_released("throw") and throwing == true:
 		throw(currentobj)
+		object_detect.monitorable = true
 	move_and_slide()
 	
 	
@@ -102,12 +113,15 @@ func throw(body):
 		crosshair.visible = false
 		throwing = false
 		picking = false
+		currentobj.linear_velocity = crosshair.VelVec * THROW_SPEED
 		currentobj.reparent(get_tree().get_root())
 		currentobj.freeze = false
 		currentobj.colision.disabled = false
 		currentobj.global_position = pickup.global_position
+		currentobj = null
+		print(currentobj)
 
 func _on_object_detect_body_entered(body):
 	if body is PickupComponent and picking == false:
 		currentobj = body
-		print(body)
+		print(currentobj)
