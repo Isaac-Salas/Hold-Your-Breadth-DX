@@ -7,8 +7,7 @@ class_name SwordOrbComponent
 @export var player : Node2D
 
 func _process(delta):
-	if GlobalVariables.VisibleSword == true:
-		visible = true
+
 		MousePos = get_local_mouse_position()
 		rotation += MousePos.angle()*(delta*factor)
 		#print("Show")
@@ -25,9 +24,6 @@ func _process(delta):
 		#position.x = clamp(position.x, -20, 20)
 		#position.y = clamp(position.y, -20, 20)
 		
-	elif GlobalVariables.VisibleSword == false:
-		#print("Hide")
-		visible = false
 
 
 func _on_play_movement_component_change(animation):

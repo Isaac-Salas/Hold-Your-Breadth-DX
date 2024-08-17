@@ -11,9 +11,9 @@ size = Vector2(1190, 20)
 
 [node name="Player" parent="." instance=ExtResource("2_2tmgp")]
 position = Vector2(130, 128)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.275, 2.275)
+SPEED = 400.0
+JUMP_VELOCITY = -400.0
+scalerate = Vector2(0.1, 0.1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-5, 530)
