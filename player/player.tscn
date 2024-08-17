@@ -124,6 +124,7 @@ player = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("player")]
 sprite_frames = SubResource("SpriteFrames_hvaf5")
+offset = Vector2(0, -3)
 script = ExtResource("4_pd6bc")
 radius = 50
 player = NodePath("..")

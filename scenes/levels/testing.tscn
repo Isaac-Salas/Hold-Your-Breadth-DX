@@ -40,3 +40,5 @@ position = Vector2(682, 258)
 
 [node name="RigidBody2D4" parent="." instance=ExtResource("3_mldlw")]
 position = Vector2(877, 238)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]

@@ -114,6 +114,7 @@ func throw(body):
 		throwing = false
 		picking = false
 		currentobj.linear_velocity = crosshair.VelVec * THROW_SPEED
+		currentobj.angular_velocity = 20.0
 		currentobj.reparent(get_tree().get_root())
 		currentobj.freeze = false
 		currentobj.colision.disabled = false
