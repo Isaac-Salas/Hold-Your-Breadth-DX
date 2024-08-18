@@ -93,10 +93,12 @@ func _physics_process(delta):
 func togglefun():
 	if toggle == false:
 		toggle = true
+		Input.set_custom_mouse_cursor(mousetooltip)
 		dot.visible = false
 		
 	else:
 		toggle = false
+		Input.set_custom_mouse_cursor(defaultmouse)
 		dot.visible = true
 
 func scaling():
@@ -163,17 +165,3 @@ func _on_object_detect_body_entered(body):
 	if body is PickupComponent and picking == false:
 		currentobj = body
 		print(currentobj)
-
-
-func _on_mouse_detc_mouse_entered():
-	if toggle == true:
-		Input.set_custom_mouse_cursor(mousetooltip)
-		onarea = true
-		
-			#Manage shrink and grow
-
-
-func _on_mouse_detc_mouse_exited():
-	if toggle == true:
-		Input.set_custom_mouse_cursor(defaultmouse)
-		onarea = false

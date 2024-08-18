@@ -144,7 +144,7 @@ script = ExtResource("6_7josq")
 shape = SubResource("CircleShape2D_b7hsf")
 debug_color = Color(0.323337, 0.490255, 1, 0.42)
 
-[node name="MouseDetc" type="Area2D" parent="."]
+[node name="MouseDetc" type="Area2D" parent="." groups=["button_actionable"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetc"]
 shape = SubResource("CircleShape2D_wo7d0")
