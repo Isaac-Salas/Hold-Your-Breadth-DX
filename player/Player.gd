@@ -27,6 +27,8 @@ const states = ["Small", "Normal", "Big"]
 signal scare
 
 
+
+
 func _physics_process(delta):
 	
 	#print(current)
