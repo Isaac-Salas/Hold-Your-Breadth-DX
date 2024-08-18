@@ -108,7 +108,7 @@ size = Vector2(20, 30)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywrjj"]
 radius = 150.0
 
-[node name="Ratiña" type="RigidBody2D" groups=["throwable"]]
+[node name="Ratiña" type="RigidBody2D" groups=["edible", "throwable"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_e0kxx")

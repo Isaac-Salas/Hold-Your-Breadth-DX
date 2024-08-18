@@ -13,6 +13,7 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	direction = global_position - target_loc.global_position
 	chillin()
 	player = get_tree().get_first_node_in_group("Player")
@@ -21,7 +22,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if get_parent().is_in_group("barnacle"):
+		var count = 0
+		match count:
+			0:
+				if timer and timer_2 and timer_3:
+					timer.stop()
+					timer_2.stop()
+					timer_3.stop()
+				count += 1
+			1:
+				pass
 	
+		
 	direction = global_position - target_loc.global_position
 	
 	
@@ -64,7 +77,7 @@ func _on_player_detect_body_entered(body):
 			print("Naceobesa")
 			fleeing()
 		player.scare.connect(fleeing)
-		timer.stop()
+		#timer.stop()
 		player = body
 		chasing(player)
 
