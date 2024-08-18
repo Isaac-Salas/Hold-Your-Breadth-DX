@@ -16,10 +16,11 @@ class_name SlimePlayer
 @onready var picking = false
 @onready var throwing = false
 @onready var scanning = false
-@onready var toggle = true
+@onready var toggle = false
 @onready var onarea = false
 @onready var crosshair = $Pickup/Crosshair
 @onready var scaler = $Scaler
+@onready var dot = $AnimatedSprite2D
 
 
 func _physics_process(delta):
@@ -92,8 +93,11 @@ func _physics_process(delta):
 func togglefun():
 	if toggle == false:
 		toggle = true
+		dot.visible = false
+		
 	else:
 		toggle = false
+		dot.visible = true
 
 func scaling():
 		var thing = Vector2(scaler.factor/10,scaler.factor/10)
