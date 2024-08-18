@@ -12,7 +12,7 @@ class_name SlimePlayer
 @onready var rigidcolision = $RigidBody2D/CollisionShape2D
 @onready var pickup = $Pickup
 @onready var object_detect = $AnimatedSprite2D/ObjectDetect
-@onready var currentobj : PickupComponent
+@onready var currentobj
 @onready var picking = false
 @onready var throwing = false
 @onready var scanning = false
@@ -21,9 +21,26 @@ class_name SlimePlayer
 @onready var crosshair = $Pickup/Crosshair
 @onready var scaler = $Scaler
 @onready var dot = $AnimatedSprite2D
+@onready var iscaling = false
+const states = ["Small", "Normal", "Big"]
+@onready var current = states[1]
+signal scare
 
 
 func _physics_process(delta):
+	
+	#print(current)
+	if sprite.scale.x >= 0.1 and sprite.scale.x <= 1.9:
+		if sprite.scale.x < 0.1:
+			sprite.scale.x == 0.1
+		current = states[0]
+	if sprite.scale.x >= 2 and sprite.scale.x <= 3.9:
+		current = states[1]
+	if sprite.scale.x >= 4 and sprite.scale.x <= 6:
+		emit_signal("scare")
+		if sprite.scale.x > 6:
+			sprite.scale.x == 6
+		current = states[2]
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -52,13 +69,13 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Toogle"):
 		togglefun()
 		
+	
 	if Input.is_action_just_pressed("LefMouse") and picking == false and toggle == true:
 		scaler.visible = true
 		scaler.reset()
 	
 	if Input.is_action_pressed("LefMouse") and picking == false and toggle == true:
 		#scaler.reset()
-		
 		scaling()
 	
 	if Input.is_action_just_released("LefMouse") and picking == false and toggle == true:
@@ -102,11 +119,13 @@ func togglefun():
 		dot.visible = true
 
 func scaling():
-		var thing = Vector2(scaler.factor/10,scaler.factor/10)
-		if thing > Vector2(0,0):
-			grow(thing)
-		else:
-			shrink(-thing)
+	print(sprite.scale)
+	iscaling = true
+	var thing = Vector2(scaler.factor/10,scaler.factor/10)
+	if thing > Vector2(0,0):
+		grow(thing)
+	else:
+		shrink(-thing)
 	
 
 func grow(scalerate):
@@ -162,6 +181,6 @@ func throw(body):
 		print(currentobj)
 
 func _on_object_detect_body_entered(body):
-	if body is PickupComponent and picking == false:
+	if body.is_in_group("throwable") and picking == false:
 		currentobj = body
-		print(currentobj)
+		#print(currentobj)
