@@ -1,12 +1,14 @@
 extends CharacterBody2D
 class_name SlimePlayer
 
+@onready var defaultmouse = preload("res://assets/placeholder/Tiles/tile_0170.png")
+@onready var mousetooltip = preload("res://assets/placeholder/Tiles/tile_0171.png")
 @export var THROW_SPEED = 15.0
 @export var SPEED = 400.0
 @export var JUMP_VELOCITY = -400.0
 @onready var colision = $CollisionShape2D
 @onready var sprite = $Animacion
-@export var scalerate = Vector2(0.1, 0.1)
+#@export var scalerate = Vector2(0.1, 0.1)
 @onready var rigidcolision = $RigidBody2D/CollisionShape2D
 @onready var pickup = $Pickup
 @onready var object_detect = $AnimatedSprite2D/ObjectDetect
@@ -14,7 +16,10 @@ class_name SlimePlayer
 @onready var picking = false
 @onready var throwing = false
 @onready var scanning = false
+@onready var toggle = true
+@onready var onarea = false
 @onready var crosshair = $Pickup/Crosshair
+@onready var scaler = $Scaler
 
 
 func _physics_process(delta):
@@ -42,35 +47,63 @@ func _physics_process(delta):
 		sprite.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-
+	
+	if Input.is_action_just_pressed("Toogle"):
+		togglefun()
+		
+	if Input.is_action_just_pressed("LefMouse") and picking == false and toggle == true:
+		scaler.visible = true
+		scaler.reset()
+	
+	if Input.is_action_pressed("LefMouse") and picking == false and toggle == true:
+		#scaler.reset()
+		
+		scaling()
+	
+	if Input.is_action_just_released("LefMouse") and picking == false and toggle == true:
+		scaler.visible = false
+		print("stopping")
 	
 	# Manage grow
-	if Input.is_action_pressed("grow"):
-		grow()
-	# Manage shrink
-	if Input.is_action_pressed("shrink"):
-		shrink()
+	#if Input.is_action_pressed("grow"):
+		#grow()
+	## Manage shrink
+	#if Input.is_action_pressed("shrink"):
+		#shrink()
 		
 	#Manage grab
-	if Input.is_action_just_pressed("grab") and picking == false and scanning == false:
+	if Input.is_action_just_pressed("LefMouse") and picking == false and scanning == false and toggle == false:
 		object_detect.monitoring = true
 		scanning = true
 	
-	if Input.is_action_just_released("grab") and picking == false and scanning == true:
+	if Input.is_action_just_released("LefMouse") and picking == false and scanning == true and toggle == false:
 		object_detect.monitoring = false
 		object_detect.monitorable = false
 		scanning = false
 		grab(currentobj)
 	
-	if Input.is_action_pressed("throw") and picking == true:
+	if Input.is_action_pressed("RightMouse") and picking == true:
 		aim(delta)
-	if Input.is_action_just_released("throw") and throwing == true:
+	if Input.is_action_just_released("RightMouse") and throwing == true:
 		throw(currentobj)
 		object_detect.monitorable = true
 	move_and_slide()
 	
+func togglefun():
+	if toggle == false:
+		toggle = true
+	else:
+		toggle = false
+
+func scaling():
+		var thing = Vector2(scaler.factor/10,scaler.factor/10)
+		if thing > Vector2(0,0):
+			grow(thing)
+		else:
+			shrink(-thing)
 	
-func grow():
+
+func grow(scalerate):
 	if SPEED > 100:
 		SPEED -= 5
 	if colision.scale.x < 3:
@@ -78,7 +111,7 @@ func grow():
 		rigidcolision.scale += scalerate/2
 		sprite.scale += scalerate
 
-func shrink():
+func shrink(scalerate):
 	if SPEED < 500 :
 		SPEED += 5
 	if colision.scale.x > 0.1:
@@ -126,3 +159,17 @@ func _on_object_detect_body_entered(body):
 	if body is PickupComponent and picking == false:
 		currentobj = body
 		print(currentobj)
+
+
+func _on_mouse_detc_mouse_entered():
+	if toggle == true:
+		Input.set_custom_mouse_cursor(mousetooltip)
+		onarea = true
+		
+			#Manage shrink and grow
+
+
+func _on_mouse_detc_mouse_exited():
+	if toggle == true:
+		Input.set_custom_mouse_cursor(defaultmouse)
+		onarea = false

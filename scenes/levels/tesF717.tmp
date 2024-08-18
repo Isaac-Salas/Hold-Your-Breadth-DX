@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dplx7vme5hffd"]
+
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
+[ext_resource type="Texture2D" uid="uid://dhpn70tap7nwx" path="res://assets/placeholder/Tiles/tile_0000.png" id="2_w2bxk"]
+[ext_resource type="PackedScene" uid="uid://cyogdbx6tbeeg" path="res://scenes/objects/simle box.tscn" id="3_mldlw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0iykg"]
+size = Vector2(1190, 20)
+
+[node name="Testing" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_2tmgp")]
+position = Vector2(130, 128)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.275, 2.275)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-5, 530)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(581.5, 0)
+scale = Vector2(65.6111, 1)
+texture = ExtResource("2_w2bxk")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(585, 0)
+shape = SubResource("RectangleShape2D_0iykg")
+metadata/_edit_lock_ = true
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_mldlw")]
+position = Vector2(553, 254)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("3_mldlw")]
+position = Vector2(618, 254)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("3_mldlw")]
+position = Vector2(682, 258)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("3_mldlw")]
+position = Vector2(877, 238)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
