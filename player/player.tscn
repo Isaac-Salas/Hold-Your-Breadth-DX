@@ -94,8 +94,7 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wo7d0"]
 radius = 24.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["button_actionable"]]
-collision_layer = 3
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player", "button_actionable"]]
 script = ExtResource("1_b0onk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -163,7 +162,6 @@ script = ExtResource("10_oyueu")
 sprite = NodePath("..")
 
 [connection signal="scare" from="." to="." method="_on_scare"]
-
 [connection signal="body_entered" from="AnimatedSprite2D/ObjectDetect" to="." method="_on_object_detect_body_entered"]
 [connection signal="mouse_entered" from="MouseDetc" to="." method="_on_mouse_detc_mouse_entered"]
 [connection signal="mouse_exited" from="MouseDetc" to="." method="_on_mouse_detc_mouse_exited"]

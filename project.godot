@@ -22,6 +22,7 @@ mouse_cursor/custom_image="res://assets/placeholder/Tiles/tile_0160.png"
 [global_group]
 
 button_actionable="can press buttons"
+Player=""
 
 [input]
 

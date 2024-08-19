@@ -77,6 +77,7 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	colliders = body
+	print(colliders)
 	if colliders.is_in_group("Player"):
 		area_2d.set_deferred("monitoring", false)
 		lastone.apply_impulse(colliders.velocity)
