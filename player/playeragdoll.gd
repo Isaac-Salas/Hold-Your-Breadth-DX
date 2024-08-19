@@ -3,11 +3,12 @@ extends RigidBody2D
 const PLAYER = preload("res://player/player.tscn")
 @onready var spawner_component = $SpawnerComponent
 @onready var colision= $CollisionShape2D
+@onready var shake_component = $ShakeComponent
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
+	shake_component.tween_shake()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

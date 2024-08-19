@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://chvi67sx7uhx1"]
+[gd_scene load_steps=9 format=3 uid="uid://chvi67sx7uhx1"]
 
 [ext_resource type="Texture2D" uid="uid://csapk8h0cfgj3" path="res://assets/placeholder/Tilemap/tilemap-characters.png" id="1_6ls55"]
 [ext_resource type="Script" path="res://player/playeragdoll.gd" id="1_wam2g"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="3_mo7vv"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="4_0jdc5"]
+[ext_resource type="Script" path="res://components/shake_component.gd" id="5_gy3mm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54pp5"]
 radius = 24.0
@@ -38,3 +39,8 @@ sprite_frames = SubResource("SpriteFrames_i5m2v")
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("3_mo7vv")
 scene = ExtResource("4_0jdc5")
+
+[node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
+script = ExtResource("5_gy3mm")
+node = NodePath("../AnimatedSprite2D")
+shake_amount = 10.0
