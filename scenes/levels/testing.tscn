@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dplx7vme5hffd"]
+[gd_scene load_steps=14 format=3 uid="uid://dplx7vme5hffd"]
 
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
 [ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="2_820ud"]
-[ext_resource type="PackedScene" uid="uid://cyogdbx6tbeeg" path="res://scenes/objects/WoodenBox.tscn" id="3_mldlw"]
 [ext_resource type="PackedScene" path="res://scenes/levels/tilemap.tscn" id="3_qr6x8"]
 [ext_resource type="Texture2D" uid="uid://dalgnkvg42uai" path="res://assets/placeholder/Fondotest.png" id="4_euqr6"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña.tscn" id="5_hcnto"]
 [ext_resource type="Texture2D" uid="uid://dr844qsoxkykp" path="res://assets/lights/Untitled-1.png" id="7_7g34w"]
 [ext_resource type="Texture2D" uid="uid://ciunp5a4cnebs" path="res://assets/objects/meatbox-bio.png" id="8_hejiu"]
+[ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="9_mjug8"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="9_uo0at"]
+[ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="10_75wkl"]
+[ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="11_3hqqo"]
+[ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="12_t6k5h"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_leduj"]
 polygon = PackedVector2Array(-12, -14, -12, 10, 12, 10, 12, -14)
@@ -23,22 +26,11 @@ color = Color(0.0901961, 0.843137, 0, 1)
 shadow_enabled = true
 texture = ExtResource("2_820ud")
 
-[node name="RigidBody2D" parent="." instance=ExtResource("3_mldlw")]
-position = Vector2(553, 254)
-
-[node name="RigidBody2D2" parent="." instance=ExtResource("3_mldlw")]
-position = Vector2(618, 254)
-
-[node name="RigidBody2D3" parent="." instance=ExtResource("3_mldlw")]
-position = Vector2(682, 258)
-
-[node name="RigidBody2D4" parent="." instance=ExtResource("3_mldlw")]
-position = Vector2(877, 238)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.636407, 0.457261, 1, 1)
 
 [node name="Tilemap" parent="." instance=ExtResource("3_qr6x8")]
+modulate = Color(0.473976, 0.473976, 0.473976, 1)
 layer_0/tile_data = PackedInt32Array(786432, 131072, 2, 720896, 0, 1, 720897, 262144, 0, 720898, 262144, 0, 720899, 262144, 0, 720900, 262144, 0, 720901, 262144, 0, 720902, 262144, 0, 655367, 0, 0, 655368, 65536, 0, 655369, 65536, 0, 655370, 65536, 0, 655371, 65536, 0, 655372, 65536, 0, 655373, 65536, 0, 655374, 65536, 0, 655375, 65536, 0, 655376, 65536, 0, 655377, 65536, 0, 655378, 65536, 0, 655379, 65536, 0, 655380, 65536, 0, 655381, 65536, 0, 655382, 65536, 0, 720918, 65536, 2, 720919, 65536, 2, 720920, 196608, 2, 720917, 65536, 2, 720916, 65536, 2, 720915, 65536, 2, 720914, 65536, 2, 720913, 65536, 2, 720912, 65536, 2, 720911, 65536, 2, 720910, 65536, 2, 720909, 65536, 2, 720908, 65536, 2, 720907, 65536, 2, 720906, 65536, 2, 720905, 65536, 2, 720904, 65536, 2, 720903, 65536, 1, 786439, 131072, 2, 655360, 327680, 0, 589824, 262144, 1, 524288, 262144, 1, 458752, 262144, 1, 393216, 327680, 0, 0, 0, 0, 65536, 327680, 0, 131072, 262144, 1, 196608, 327680, 0, 262144, 327680, 0, 327680, 262144, 1, 655383, 131072, 1, 589847, 262144, 1, 524311, 327680, 0, 458775, 262144, 1, 393239, 262144, 1, 327703, 262144, 1, 262167, 262144, 1, 196631, 327680, 0, 131095, 262144, 1, 65559, 262144, 1, 23, 65536, 1, 1, 262144, 0, 2, 262144, 0, 3, 262144, 0, 4, 262144, 0, 5, 262144, 0, 6, 262144, 0, 7, 262144, 0, -65528, 0, 0, -65527, 65536, 0, -65526, 65536, 0, -65525, 65536, 0, -65524, 65536, 0, -65523, 65536, 0, -65522, 65536, 0, -65521, 65536, 0, -65520, 65536, 0, -65519, 65536, 0, -65518, 65536, 0, -65517, 65536, 0, -65516, 65536, 0, -65515, 65536, 0, -65514, 65536, 0, -65513, 65536, 0, -65512, 131072, 0, 24, 131072, 2, 22, 65536, 2, 21, 65536, 2, 20, 65536, 2, 19, 65536, 2, 18, 65536, 2, 17, 65536, 2, 16, 65536, 2, 15, 65536, 2, 14, 65536, 2, 13, 65536, 2, 12, 65536, 2, 11, 65536, 2, 10, 65536, 2, 9, 65536, 2, 8, 65536, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -118,3 +110,32 @@ speed = 10
 [node name="Ratiña8" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(660, 172)
 speed = 10
+
+[node name="Matraces" type="Node2D" parent="."]
+
+[node name="RigidBody2D" parent="Matraces" groups=["throwable"] instance=ExtResource("9_mjug8")]
+position = Vector2(348, 198)
+
+[node name="RigidBody2D2" parent="Matraces" groups=["throwable"] instance=ExtResource("9_mjug8")]
+position = Vector2(409, 174)
+
+[node name="RigidBody2D3" parent="Matraces" groups=["throwable"] instance=ExtResource("9_mjug8")]
+position = Vector2(301, 146)
+
+[node name="RigidBody2D4" parent="Matraces" instance=ExtResource("10_75wkl")]
+position = Vector2(420, 125)
+
+[node name="RigidBody2D5" parent="Matraces" instance=ExtResource("10_75wkl")]
+position = Vector2(354, 132)
+
+[node name="RigidBody2D6" parent="Matraces" instance=ExtResource("11_3hqqo")]
+position = Vector2(471, 215)
+
+[node name="RigidBody2D7" parent="Matraces" instance=ExtResource("11_3hqqo")]
+position = Vector2(413, 213)
+
+[node name="RigidBody2D8" parent="Matraces" instance=ExtResource("11_3hqqo")]
+position = Vector2(291, 195)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("12_t6k5h")]
+position = Vector2(338, 296)

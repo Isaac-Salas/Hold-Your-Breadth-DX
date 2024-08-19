@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/objects/pickup-component.gd" id="1_te0bk"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="2_hodyn"]
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["breakable", "button_actionable", "throwable"]]
+[node name="RigidBody2D" type="RigidBody2D" groups=["breakable", "button_actionable"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_te0bk")
