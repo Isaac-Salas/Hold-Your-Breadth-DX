@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bc8vxc0lju6wb"]
+[gd_scene load_steps=11 format=4 uid="uid://bc8vxc0lju6wb"]
 
 [ext_resource type="Texture2D" uid="uid://dy58c3vewayi8" path="res://assets/tilemap/concrete.png" id="1_qwb4m"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="2_qnpnj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="4_oip6d"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="5_ynvxa"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="7_mf14m"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="8_olvlg"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="8_qq17d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
@@ -127,7 +128,7 @@ rendering_quadrant_size = 48
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(1.5, 1.5)
 
 [node name="Door" parent="." instance=ExtResource("2_qnpnj")]
 position = Vector2(576, 336)
@@ -136,7 +137,7 @@ position = Vector2(576, 336)
 position = Vector2(624, 336)
 
 [node name="Button_red" parent="." instance=ExtResource("4_oip6d")]
-position = Vector2(97, 384)
+position = Vector2(672, 204)
 
 [node name="Button_Red_Signal" parent="." instance=ExtResource("5_ynvxa")]
 position = Vector2(540, 276)
@@ -147,11 +148,20 @@ rotation = 1.5708
 target_scale = Vector2(3, 3)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_6ms7x")]
-position = Vector2(408, 312)
+position = Vector2(588, 108)
 collision_layer = 1
 
 [node name="Shrink-Laser" parent="." instance=ExtResource("8_qq17d")]
 position = Vector2(48, 300)
+
+[node name="Conveyor" parent="." instance=ExtResource("8_olvlg")]
+position = Vector2(553, 216)
+
+[node name="Conveyor2" parent="." instance=ExtResource("8_olvlg")]
+position = Vector2(504, 216)
+
+[node name="Conveyor3" parent="." instance=ExtResource("8_olvlg")]
+position = Vector2(600, 216)
 
 [connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Door2" method="toggle_door"]
