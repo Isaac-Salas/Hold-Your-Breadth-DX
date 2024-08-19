@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://w67wwrsfwoay"]
+
+[ext_resource type="SpriteFrames" uid="uid://e4mn8s24isc5" path="res://scenes/enemies/Hand-Chase.tres" id="1_7ihiy"]
+[ext_resource type="Script" path="res://scenes/enemies/Hand/hand.gd" id="1_32dss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3e08"]
+size = Vector2(123, 55.6675)
+
+[node name="Hand" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_32dss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("1_7ihiy")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11.5, 6.83375)
+shape = SubResource("RectangleShape2D_p3e08")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
