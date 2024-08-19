@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyogdbx6tbeeg"]
+[gd_scene load_steps=6 format=3 uid="uid://cyogdbx6tbeeg"]
 
 [ext_resource type="Script" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
+[ext_resource type="Texture2D" uid="uid://dsgasl17nx1k6" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="3_245jv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfjh"]
@@ -19,6 +20,10 @@ shape = SubResource("RectangleShape2D_wtfjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_2fc7s")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D" groups=["breakable", "throwable"]]
+texture = ExtResource("2_2fc7s")
 
 [node name="Detector" type="Area2D" parent="."]
 
