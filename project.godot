@@ -22,7 +22,7 @@ Manager="*res://Levels.gd"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://assets/placeholder/Tiles/tile_0160.png"
 
 [global_group]
