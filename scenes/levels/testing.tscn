@@ -1,15 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://dplx7vme5hffd"]
+[gd_scene load_steps=11 format=3 uid="uid://dplx7vme5hffd"]
 
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
-[ext_resource type="PackedScene" uid="uid://cyogdbx6tbeeg" path="res://scenes/objects/simle box.tscn" id="3_mldlw"]
+[ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="2_820ud"]
+[ext_resource type="PackedScene" uid="uid://cyogdbx6tbeeg" path="res://scenes/objects/WoodenBox.tscn" id="3_mldlw"]
 [ext_resource type="PackedScene" path="res://scenes/levels/tilemap.tscn" id="3_qr6x8"]
 [ext_resource type="Texture2D" uid="uid://dalgnkvg42uai" path="res://assets/placeholder/Fondotest.png" id="4_euqr6"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña.tscn" id="5_hcnto"]
+[ext_resource type="Texture2D" uid="uid://dr844qsoxkykp" path="res://assets/lights/Untitled-1.png" id="7_7g34w"]
+[ext_resource type="Texture2D" uid="uid://ciunp5a4cnebs" path="res://assets/objects/meatbox-bio.png" id="8_hejiu"]
+[ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="9_uo0at"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_leduj"]
+polygon = PackedVector2Array(-12, -14, -12, 10, 12, 10, 12, -14)
 
 [node name="Testing" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_2tmgp")]
 position = Vector2(130, 128)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+color = Color(0.0901961, 0.843137, 0, 1)
+shadow_enabled = true
+texture = ExtResource("2_820ud")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_mldlw")]
 position = Vector2(553, 254)
@@ -24,6 +36,7 @@ position = Vector2(682, 258)
 position = Vector2(877, 238)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.636407, 0.457261, 1, 1)
 
 [node name="Tilemap" parent="." instance=ExtResource("3_qr6x8")]
 layer_0/tile_data = PackedInt32Array(786432, 131072, 2, 720896, 0, 1, 720897, 262144, 0, 720898, 262144, 0, 720899, 262144, 0, 720900, 262144, 0, 720901, 262144, 0, 720902, 262144, 0, 655367, 0, 0, 655368, 65536, 0, 655369, 65536, 0, 655370, 65536, 0, 655371, 65536, 0, 655372, 65536, 0, 655373, 65536, 0, 655374, 65536, 0, 655375, 65536, 0, 655376, 65536, 0, 655377, 65536, 0, 655378, 65536, 0, 655379, 65536, 0, 655380, 65536, 0, 655381, 65536, 0, 655382, 65536, 0, 720918, 65536, 2, 720919, 65536, 2, 720920, 196608, 2, 720917, 65536, 2, 720916, 65536, 2, 720915, 65536, 2, 720914, 65536, 2, 720913, 65536, 2, 720912, 65536, 2, 720911, 65536, 2, 720910, 65536, 2, 720909, 65536, 2, 720908, 65536, 2, 720907, 65536, 2, 720906, 65536, 2, 720905, 65536, 2, 720904, 65536, 2, 720903, 65536, 1, 786439, 131072, 2, 655360, 327680, 0, 589824, 262144, 1, 524288, 262144, 1, 458752, 262144, 1, 393216, 327680, 0, 0, 0, 0, 65536, 327680, 0, 131072, 262144, 1, 196608, 327680, 0, 262144, 327680, 0, 327680, 262144, 1, 655383, 131072, 1, 589847, 262144, 1, 524311, 327680, 0, 458775, 262144, 1, 393239, 262144, 1, 327703, 262144, 1, 262167, 262144, 1, 196631, 327680, 0, 131095, 262144, 1, 65559, 262144, 1, 23, 65536, 1, 1, 262144, 0, 2, 262144, 0, 3, 262144, 0, 4, 262144, 0, 5, 262144, 0, 6, 262144, 0, 7, 262144, 0, -65528, 0, 0, -65527, 65536, 0, -65526, 65536, 0, -65525, 65536, 0, -65524, 65536, 0, -65523, 65536, 0, -65522, 65536, 0, -65521, 65536, 0, -65520, 65536, 0, -65519, 65536, 0, -65518, 65536, 0, -65517, 65536, 0, -65516, 65536, 0, -65515, 65536, 0, -65514, 65536, 0, -65513, 65536, 0, -65512, 131072, 0, 24, 131072, 2, 22, 65536, 2, 21, 65536, 2, 20, 65536, 2, 19, 65536, 2, 18, 65536, 2, 17, 65536, 2, 16, 65536, 2, 15, 65536, 2, 14, 65536, 2, 13, 65536, 2, 12, 65536, 2, 11, 65536, 2, 10, 65536, 2, 9, 65536, 2, 8, 65536, 2)
@@ -34,34 +47,74 @@ scale = Vector2(1.21042, 1.20741)
 texture = ExtResource("4_euqr6")
 centered = false
 
-[node name="Ratiña" parent="." instance=ExtResource("5_hcnto")]
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(410, 40)
+texture = ExtResource("7_7g34w")
+offset = Vector2(0, 240)
+texture_scale = 3.98
+
+[node name="PointLight2D5" type="PointLight2D" parent="PointLight2D"]
+shadow_enabled = true
+texture = ExtResource("7_7g34w")
+offset = Vector2(0, 240)
+texture_scale = 3.98
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(496, 293)
+texture = ExtResource("7_7g34w")
+texture_scale = 3.98
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(574, 301)
+texture = ExtResource("7_7g34w")
+texture_scale = 3.98
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(659, 303)
+texture = ExtResource("7_7g34w")
+texture_scale = 3.38
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(411, 327)
+texture = ExtResource("8_hejiu")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D2"]
+occluder = SubResource("OccluderPolygon2D_leduj")
+
+[node name="Barnacle" parent="." instance=ExtResource("9_uo0at")]
+position = Vector2(231, 254)
+
+[node name="Ratillas" type="Node2D" parent="."]
+position = Vector2(235, 56)
+
+[node name="Ratiña" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(497, 193)
 speed = 10
 
-[node name="Ratiña2" parent="." instance=ExtResource("5_hcnto")]
+[node name="Ratiña2" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(574, 173)
 speed = 10
 
-[node name="Ratiña3" parent="." instance=ExtResource("5_hcnto")]
+[node name="Ratiña3" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(465, 168)
 speed = 10
 
-[node name="Ratiña4" parent="." instance=ExtResource("5_hcnto")]
+[node name="Ratiña4" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(549, 135)
 speed = 10
 
-[node name="Ratiña5" parent="." instance=ExtResource("5_hcnto")]
+[node name="Ratiña5" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(534, 251)
 speed = 10
 
-[node name="Ratiña6" parent="." instance=ExtResource("5_hcnto")]
+[node name="Ratiña6" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(404, 248)
 speed = 10
 
-[node name="Ratiña7" parent="." instance=ExtResource("5_hcnto")]
+[node name="Ratiña7" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(660, 172)
 speed = 10
 
-[node name="Ratiña8" parent="." instance=ExtResource("5_hcnto")]
+[node name="Ratiña8" parent="Ratillas" instance=ExtResource("5_hcnto")]
 position = Vector2(660, 172)
 speed = 10

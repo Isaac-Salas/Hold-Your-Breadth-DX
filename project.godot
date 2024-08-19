@@ -24,6 +24,11 @@ mouse_cursor/custom_image="res://assets/placeholder/Tiles/tile_0160.png"
 button_actionable="can press buttons"
 Player=""
 throwable=""
+enemies=""
+edible=""
+barnacle=""
+breakable=""
+Playerrag=""
 
 [input]
 

@@ -25,6 +25,7 @@ class_name SlimePlayer
 const states = ["Small", "Normal", "Big"]
 @onready var current = states[1]
 signal scare
+@onready var tieso = false
 
 
 
@@ -107,7 +108,9 @@ func _physics_process(delta):
 	if Input.is_action_just_released("RightMouse") and throwing == true:
 		throw(currentobj)
 		object_detect.monitorable = true
-	move_and_slide()
+		
+	if tieso == false:
+		move_and_slide()
 	
 func togglefun():
 	if toggle == false:
