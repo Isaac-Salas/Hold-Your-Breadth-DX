@@ -184,6 +184,11 @@ func throw(body):
 		currentobj.global_position = pickup.global_position
 		currentobj = null
 		print(currentobj)
+		
+func set_size(target_size):
+	colision.scale = target_size/2
+	rigidcolision.scale = target_size/2
+	sprite.scale = target_size
 
 func _on_object_detect_body_entered(body):
 	if body.is_in_group("throwable") and picking == false:

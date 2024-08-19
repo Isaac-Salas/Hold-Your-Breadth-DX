@@ -12,7 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("button_actionable"):
 		n_inside += 1
 		anim_flag.play("ON")
-		if  not state:
+		if not state:
 			state = true
 			anim.play("pressed")
 			emit_signal("pressed", state, body)
@@ -22,7 +22,8 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("button_actionable"):
 		n_inside -= 1
 		if state and n_inside == 0:
-			anim_flag.play("OFF")
+			anim_flag.play_backwards("OFF")
 			state = false
+			anim.play_backwards("pressed")
 			emit_signal("pressed", state, body)
-			anim.play("depressed")
+			
