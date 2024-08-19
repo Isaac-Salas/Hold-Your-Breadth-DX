@@ -26,6 +26,7 @@ const states = ["Small", "Normal", "Big"]
 @onready var current = states[1]
 signal scare
 @onready var tieso = false
+@onready var scale_component = $ScaleComponent
 
 
 
