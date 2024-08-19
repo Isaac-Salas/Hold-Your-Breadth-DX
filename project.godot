@@ -11,12 +11,31 @@ config_version=5
 [application]
 
 config/name="Gmtk Jam 2024"
+run/main_scene="res://scenes/levels/TitleScreen/Menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://GlobalVars.gd"
+Manager="*res://Levels.gd"
+
 [display]
 
+window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://assets/placeholder/Tiles/tile_0160.png"
+
+[global_group]
+
+button_actionable="can press buttons"
+Player=""
+edible=""
+throwable=""
+barnacle=""
+enemies=""
+piece=""
+breakable=""
+Playerrag=""
 
 [input]
 

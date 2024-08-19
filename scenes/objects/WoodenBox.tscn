@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyogdbx6tbeeg"]
 
 [ext_resource type="Script" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
-[ext_resource type="Texture2D" uid="uid://bujt43gfloxes" path="res://assets/placeholder/Tiles/tile_0010.png" id="1_w5amf"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="3_245jv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfjh"]
 size = Vector2(24, 24)
@@ -9,7 +9,7 @@ size = Vector2(24, 24)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6l1ko"]
 radius = 12.0
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=["breakable", "button_actionable", "throwable"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ux5yh")
@@ -19,16 +19,14 @@ shape = SubResource("RectangleShape2D_wtfjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("1_w5amf")
-
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
-visible = false
-texture = ExtResource("1_w5amf")
 
 [node name="Detector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("CircleShape2D_6l1ko")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("3_245jv")
 
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]

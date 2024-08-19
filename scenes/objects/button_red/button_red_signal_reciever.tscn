@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsxgd88iwhesb"]
+
+[ext_resource type="Script" path="res://scenes/objects/button_red/button_red_signal_reciever.gd" id="1_cas4c"]
+[ext_resource type="Texture2D" uid="uid://b6buklgd8teiy" path="res://assets/objects/button_signal.png" id="1_cr5ow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5mdn"]
+atlas = ExtResource("1_cr5ow")
+region = Rect2(0, 0, 25, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5o0l"]
+atlas = ExtResource("1_cr5ow")
+region = Rect2(25, 0, 25, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xglo"]
+atlas = ExtResource("1_cr5ow")
+region = Rect2(50, 0, 25, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvuos"]
+atlas = ExtResource("1_cr5ow")
+region = Rect2(75, 0, 25, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfu2f"]
+atlas = ExtResource("1_cr5ow")
+region = Rect2(100, 0, 25, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soa60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5mdn")
+}],
+"loop": true,
+"name": &"OFF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5o0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xglo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvuos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfu2f")
+}],
+"loop": true,
+"name": &"ON",
+"speed": 20.0
+}]
+
+[node name="Button_Red_Signal" type="Node2D"]
+script = ExtResource("1_cas4c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_soa60")
+animation = &"OFF"
