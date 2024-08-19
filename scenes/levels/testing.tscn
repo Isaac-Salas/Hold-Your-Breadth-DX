@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dplx7vme5hffd"]
+[gd_scene load_steps=16 format=3 uid="uid://dplx7vme5hffd"]
 
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
+[ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="2_i4s4t"]
 [ext_resource type="PackedScene" path="res://scenes/levels/tilemap.tscn" id="3_qr6x8"]
 [ext_resource type="Texture2D" uid="uid://dalgnkvg42uai" path="res://assets/placeholder/Fondotest.png" id="4_euqr6"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña.tscn" id="5_hcnto"]
@@ -12,16 +13,56 @@
 [ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="11_3hqqo"]
 [ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="12_t6k5h"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eyvp6"]
+shader = ExtResource("2_i4s4t")
+shader_parameter/resolution = Vector2(400, 400)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.05
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.0
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34mam"]
+shader = ExtResource("2_i4s4t")
+shader_parameter/resolution = Vector2(260.765, 180)
+shader_parameter/scan_line_amount = 0.758
+shader_parameter/warp_amount = 2.519
+shader_parameter/noise_amount = 0.3
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.795
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_leduj"]
 polygon = PackedVector2Array(-12, -14, -12, 10, 12, 10, 12, -14)
 
 [node name="Testing" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 3
+material = SubResource("ShaderMaterial_eyvp6")
+offset_right = 1162.0
+offset_bottom = 665.0
+
 [node name="Player" parent="." instance=ExtResource("2_2tmgp")]
 position = Vector2(130, 128)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.636407, 0.457261, 1, 1)
+material = SubResource("ShaderMaterial_34mam")
 
 [node name="Tilemap" parent="." instance=ExtResource("3_qr6x8")]
 modulate = Color(0.473976, 0.473976, 0.473976, 1)
