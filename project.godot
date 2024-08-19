@@ -27,6 +27,8 @@ throwable=""
 enemies=""
 edible=""
 barnacle=""
+breakable=""
+Playerrag=""
 
 [input]
 

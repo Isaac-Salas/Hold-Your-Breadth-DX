@@ -22,6 +22,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	player = get_tree().get_first_node_in_group("Player")
 	if get_parent().is_in_group("barnacle"):
 		var count = 0
 		match count:

@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5qdlyo63gd5t"]
+[gd_scene load_steps=21 format=3 uid="uid://c5qdlyo63gd5t"]
 
 [ext_resource type="Script" path="res://scenes/enemies/barnacle.gd" id="1_1dpm1"]
 [ext_resource type="Texture2D" uid="uid://csjml5ib2jn7a" path="res://assets/placeholder/Tiles/tile_0069.png" id="1_jhya2"]
 [ext_resource type="Texture2D" uid="uid://c7of1bkpaoqx5" path="res://assets/placeholder/Tiles/tile_0070.png" id="2_p48n8"]
-[ext_resource type="Texture2D" uid="uid://dmy8ov8rvbe02" path="res://assets/placeholder/Tiles/tile_0062.png" id="5_eepxp"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="4_o407a"]
+[ext_resource type="PackedScene" uid="uid://chvi67sx7uhx1" path="res://player/playeragdoll.tscn" id="5_odpbf"]
+[ext_resource type="Texture2D" uid="uid://bds2rv70u004v" path="res://assets/placeholder/Tilemap/tilemap-characters_packed.png" id="6_yv5hj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmf5u"]
 
@@ -15,6 +17,70 @@ size = Vector2(20, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvhlt"]
 size = Vector2(100, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsdn1"]
+atlas = ExtResource("6_yv5hj")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33o8o"]
+atlas = ExtResource("6_yv5hj")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibb6r"]
+atlas = ExtResource("6_yv5hj")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gted"]
+atlas = ExtResource("6_yv5hj")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dan0v"]
+atlas = ExtResource("6_yv5hj")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrc65"]
+atlas = ExtResource("6_yv5hj")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv1sw"]
+atlas = ExtResource("6_yv5hj")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfgbp"]
+atlas = ExtResource("6_yv5hj")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ievoy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsdn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33o8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibb6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gted")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dan0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrc65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv1sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfgbp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uifs6"]
 size = Vector2(12, 20)
@@ -78,6 +144,7 @@ position = Vector2(0, 153)
 node_a = NodePath("../rigids/RigidBody2D8")
 
 [node name="rigids" type="Node2D" parent="."]
+visible = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="rigids" groups=["piece"]]
 position = Vector2(0, 18)
@@ -179,18 +246,23 @@ collision_mask = 3
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_ubtu3")
 
+[node name="SpawnerComponent" type="Node2D" parent="rigids/RigidBody2D8"]
+script = ExtResource("4_o407a")
+scene = ExtResource("5_odpbf")
+
 [node name="Killer" type="Area2D" parent="."]
 position = Vector2(0, -30)
 collision_layer = 3
 collision_mask = 3
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killer"]
 shape = SubResource("RectangleShape2D_lvhlt")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -20)
 scale = Vector2(2, 2)
-texture = ExtResource("5_eepxp")
+sprite_frames = SubResource("SpriteFrames_ievoy")
 
 [node name="wallLeft" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -204,5 +276,12 @@ shape = SubResource("RectangleShape2D_uifs6")
 position = Vector2(25, 0)
 shape = SubResource("RectangleShape2D_uifs6")
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RegenTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="rigids/RigidBody2D8/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Killer" to="." method="_on_killer_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
