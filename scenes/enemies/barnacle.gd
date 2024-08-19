@@ -46,7 +46,7 @@ func _process(delta):
 	if lastone.visible == false and colliders.is_in_group("edible"):
 		queue_free()
 	if lastone.visible == false and colliders.is_in_group("breakable"):
-		print("Spit")
+		#print("Spit")
 		done = true
 		if static_body_2d.position.y < 0 and regen == true:
 			if firstone.visible == false:
@@ -83,7 +83,7 @@ func _on_area_2d_body_entered(body):
 		colliders.queue_free()
 		spawner_component.scene = PLAYERAGDOLL
 		spawned = spawner_component.spawn()
-		print(spawned)
+		#print(spawned)
 		spawned.set_deferred("freeze", true)
 		colliders.colision.set_deferred("disabled", true)
 		spawned.global_position = lastone.global_position
@@ -123,7 +123,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_killer_body_entered(body):
-	print(body)
+	#print(body)
 	if body.is_in_group("piece"):
 		body.set_deferred("visible", false)
 	if body.is_in_group("piece") and body.visible == false:
@@ -133,7 +133,7 @@ func _on_killer_body_entered(body):
 
 
 func _on_timer_timeout():
-	print("throw")
+	#print("throw")
 	spawned.set_deferred("freeze", false)
 	spawned.call_deferred("reparent",self.get_parent())
 	area_2d.set_deferred("monitoring", true)

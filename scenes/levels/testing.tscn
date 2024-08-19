@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
 [ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="2_820ud"]
-[ext_resource type="PackedScene" uid="uid://cyogdbx6tbeeg" path="res://scenes/objects/simle box.tscn" id="3_mldlw"]
+[ext_resource type="PackedScene" uid="uid://cyogdbx6tbeeg" path="res://scenes/objects/WoodenBox.tscn" id="3_mldlw"]
 [ext_resource type="PackedScene" path="res://scenes/levels/tilemap.tscn" id="3_qr6x8"]
 [ext_resource type="Texture2D" uid="uid://dalgnkvg42uai" path="res://assets/placeholder/Fondotest.png" id="4_euqr6"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña.tscn" id="5_hcnto"]
