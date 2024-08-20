@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://gyluo2bsm1cg"]
+[gd_scene load_steps=20 format=3 uid="uid://gyluo2bsm1cg"]
 
 [ext_resource type="Script" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
 [ext_resource type="Texture2D" uid="uid://sd7e4r687mw8" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
@@ -102,6 +102,9 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rr82i"]
+polygon = PackedVector2Array(-8, -6, -8, -0.4, -9.39999, 1, -12, 1, -12, 6, -10, 6, -10, 7, 6, 7, 6, 3, 14, 3, 14, 0, 4.3, 0, 0, -2.6, 0, -6)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc5w7"]
 size = Vector2(17, 36)
 
@@ -119,6 +122,9 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v1qso")
 animation = &"new_animation"
 frame_progress = 0.276984
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="AnimatedSprite2D"]
+occluder = SubResource("OccluderPolygon2D_rr82i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708

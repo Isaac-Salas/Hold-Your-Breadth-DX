@@ -27,6 +27,8 @@ const states = ["Small", "Normal", "Big"]
 signal scare
 @onready var tieso = false
 @onready var scale_component = $ScaleComponent
+@onready var eyes = $Animacion/Eyes
+
 
 
 
@@ -58,15 +60,19 @@ func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		sprite.play("Walk")
+		eyes.play("Walked")
 		if direction == 1:
-			sprite.flip_h = true
-		else:
+			eyes.flip_h = false
 			sprite.flip_h = false
+		else:
+			eyes.flip_h = true
+			sprite.flip_h = true
 		velocity.x = direction * SPEED
 		#print(direction)
 
 	else:
 		sprite.play("Idle")
+		eyes.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	
@@ -138,7 +144,7 @@ func grow(scalerate):
 	if SPEED > 100:
 		SPEED -= 5
 	if colision.scale.x < 3:
-		colision.scale += scalerate/2
+		colision.scale = sprite.scale
 		rigidcolision.scale += scalerate/2
 		sprite.scale += scalerate
 
@@ -147,7 +153,7 @@ func shrink(scalerate):
 		SPEED += 5
 	if colision.scale.x > 0.1:
 		rigidcolision.scale -= scalerate/2
-		colision.scale -= scalerate/2
+		colision.scale = sprite.scale
 		sprite.scale -= scalerate
 
 func grab(body):
@@ -174,6 +180,8 @@ func aim(delta):
 
 func throw(body):
 	if currentobj and picking == true:
+		if currentobj.is_in_group("Meatbox"):
+			currentobj.picked = true
 		crosshair.visible = false
 		throwing = false
 		picking = false
