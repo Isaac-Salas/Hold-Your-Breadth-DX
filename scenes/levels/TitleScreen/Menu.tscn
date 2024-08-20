@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://o1wthtbpquqd"]
+
+[ext_resource type="Script" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
+[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_mqycn"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_5s0bf")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Play" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 128.0
+offset_right = 234.0
+offset_bottom = 177.0
+text = "Play"
+
+[node name="LevelSelect" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 212.0
+offset_right = 234.0
+offset_bottom = 261.0
+text = "Levels"
+
+[node name="Credits" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 324.0
+offset_right = 234.0
+offset_bottom = 373.0
+text = "Credits"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 418.0
+offset_right = 234.0
+offset_bottom = 467.0
+text = "Exit
+"
+
+[node name="CRTShader" parent="." instance=ExtResource("2_mqycn")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://bc8vxc0lju6wb"]
+[gd_scene load_steps=12 format=4 uid="uid://bc8vxc0lju6wb"]
 
 [ext_resource type="Texture2D" uid="uid://dy58c3vewayi8" path="res://assets/tilemap/concrete.png" id="1_qwb4m"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_qma4r"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="2_qnpnj"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_6ms7x"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="4_oip6d"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="5_ynvxa"]
-[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="7_mf14m"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="8_olvlg"]
-[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="8_qq17d"]
+[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="9_3ffdw"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_81qn4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("1_qwb4m")
@@ -122,46 +123,61 @@ sources/0 = SubResource("TileSetAtlasSource_1blni")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAMAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAAAAcAAAAFAAAAAAAAAAYAAAAEAAEAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAFAAAAAAAAAAIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAMAAAAFAAAAAAAPAAQAAAACAAEAAAAPAAUAAAACAAIAAAAPAAIAAAAEAAEAAAAPAAAAAAACAAAAAAAPAAEAAAAEAAEAAAAOAAUAAAABAAIAAAANAAUAAAABAAIAAAAMAAUAAAABAAIAAAALAAUAAAABAAIAAAAKAAUAAAAAAAIAAAAKAAQAAAAAAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAMAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAAAAcAAAAFAAAAAAAAAAYAAAAEAAEAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAFAAAAAAAAAAIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAMAAAAFAAAAAAAPAAQAAAACAAEAAAAPAAUAAAACAAIAAAAPAAIAAAAEAAEAAAAPAAAAAAACAAAAAAAPAAEAAAAEAAEAAAAOAAUAAAABAAIAAAANAAUAAAABAAIAAAAMAAUAAAABAAIAAAALAAUAAAABAAIAAAAKAAUAAAABAAIAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAQAAYAAAADAAAAAAAQAAcAAAADAAAAAAAJAAQAAAABAAAAAAAJAAUAAAABAAIAAAAIAAUAAAABAAIAAAAIAAQAAAABAAAAAAAHAAUAAAAAAAIAAAAHAAQAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2(1.5, 1.5)
+[node name="Camera2D" parent="." instance=ExtResource("2_qma4r")]
 
 [node name="Door" parent="." instance=ExtResource("2_qnpnj")]
 position = Vector2(576, 336)
+isOpen = true
 
 [node name="Door2" parent="." instance=ExtResource("2_qnpnj")]
 position = Vector2(624, 336)
+isOpen = true
 
 [node name="Button_red" parent="." instance=ExtResource("4_oip6d")]
-position = Vector2(672, 204)
+position = Vector2(672, 192)
 
 [node name="Button_Red_Signal" parent="." instance=ExtResource("5_ynvxa")]
 position = Vector2(540, 276)
 
-[node name="Grow-Laser" parent="." instance=ExtResource("7_mf14m")]
-position = Vector2(252, 48)
-rotation = 1.5708
-target_scale = Vector2(3, 3)
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_6ms7x")]
-position = Vector2(588, 108)
-collision_layer = 1
-
-[node name="Shrink-Laser" parent="." instance=ExtResource("8_qq17d")]
-position = Vector2(48, 300)
+position = Vector2(132, 293)
 
 [node name="Conveyor" parent="." instance=ExtResource("8_olvlg")]
-position = Vector2(553, 216)
+position = Vector2(552, 216)
+
+[node name="Conveyor4" parent="." instance=ExtResource("8_olvlg")]
+position = Vector2(408, 216)
+
+[node name="Conveyor5" parent="." instance=ExtResource("8_olvlg")]
+position = Vector2(456, 216)
+
+[node name="Conveyor6" parent="." instance=ExtResource("8_olvlg")]
+position = Vector2(504, 216)
 
 [node name="Conveyor2" parent="." instance=ExtResource("8_olvlg")]
-position = Vector2(504, 216)
+position = Vector2(360, 216)
+type = "LEFT"
 
 [node name="Conveyor3" parent="." instance=ExtResource("8_olvlg")]
 position = Vector2(600, 216)
+type = "RIGHT"
+
+[node name="CRTShader" parent="." instance=ExtResource("9_3ffdw")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="RigidBody2D" parent="." instance=ExtResource("10_81qn4")]
+position = Vector2(600, 72)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("10_81qn4")]
+position = Vector2(576, 72)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("10_81qn4")]
+position = Vector2(624, 72)
 
 [connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Door2" method="toggle_door"]

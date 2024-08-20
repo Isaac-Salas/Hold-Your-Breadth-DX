@@ -2,10 +2,13 @@ extends Node2D
 const PLAYERAGDOLL = preload("res://player/playeragdoll.tscn")
 const PLAYER = preload("res://player/player.tscn")
 const BARNACLE = preload("res://scenes/enemies/barnacle.tscn")
+const RIGIDBARNACLE = preload("res://scenes/enemies/Barnacle/rigidbarnacle.tscn")
 @onready var colliders
 @onready var rigid_body_2d = $rigids/RigidBody2D
 @onready var firstone = $rigids/RigidBody2D
 @onready var sprite_2d_2 = $Sprite2D2
+
+@onready var animation_player = $AnimationPlayer
 
 
 @onready var lastone = $rigids/RigidBody2D8
@@ -13,6 +16,7 @@ const BARNACLE = preload("res://scenes/enemies/barnacle.tscn")
 @onready var joint = $PinJoint2D9
 @onready var marker_2d = $rigids/RigidBody2D8/Marker2D
 @onready var rigids = $rigids
+
 @onready var firstjoint = $PinJoint2D
 @onready var static_body_2d = $StaticBody2D
 @onready var killer = $Killer
@@ -35,6 +39,7 @@ func _ready():
 
 func start():
 	rigids.set_deferred("visible", true)
+	animation_player.play("new_animation")
 	for i in rigids.get_children():
 		var deact = i.find_child("CollisionShape2D")
 		deact.set_deferred("disabled", false)
@@ -42,18 +47,25 @@ func start():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
-	if lastone.visible == false and colliders.is_in_group("edible"):
-		queue_free()
-	if lastone.visible == false and colliders.is_in_group("breakable"):
-		#print("Spit")
-		done = true
-		if static_body_2d.position.y < 0 and regen == true:
-			if firstone.visible == false:
-				spawner_component.scene = BARNACLE
-				self.queue_free()
-				var new = spawner_component.spawn()
-				new.global_position = self.global_position
+	if colliders:
+		
+		if lastone.visible == false and colliders.is_in_group("edible"):
+			self.queue_free()
+			spawner_component.scene = RIGIDBARNACLE
+			var new = spawner_component.spawn()
+			new.global_position= self.global_position
+			
+			
+		if lastone.visible == false and colliders.is_in_group("breakable"):
+			sprite_2d_2.stop()
+			#print("Spit")
+			done = true
+			if static_body_2d.position.y < 0 and regen == true:
+				if firstone.visible == false:
+					spawner_component.scene = BARNACLE
+					self.queue_free()
+					var new = spawner_component.spawn()
+					new.global_position = self.global_position
 				
 		
 
@@ -76,9 +88,11 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
+	
 	colliders = body
-	print(colliders)
+	#print(colliders)
 	if colliders.is_in_group("Player"):
+		sprite_2d_2.play("new_animation")
 		area_2d.set_deferred("monitoring", false)
 		lastone.apply_impulse(colliders.velocity)
 		colliders.queue_free()
@@ -98,6 +112,7 @@ func _on_area_2d_body_entered(body):
 		#olliders.set_deferred("visible", false)
 
 	if colliders.is_in_group("edible"):
+		sprite_2d_2.play("new_animation")
 		killer.set_deferred("monitoring", true)
 		area_2d.set_deferred("monitoring", false)
 		colliders.set_deferred("freeze", true)
@@ -110,6 +125,7 @@ func _on_area_2d_body_entered(body):
 		#colliders.remove_from_group("edible")
 		
 	if colliders.is_in_group("breakable"):
+		sprite_2d_2.play("new_animation")
 		regen = true
 		killer.set_deferred("monitoring", true)
 		area_2d.set_deferred("monitoring", false)
@@ -134,6 +150,7 @@ func _on_killer_body_entered(body):
 
 
 func _on_timer_timeout():
+	sprite_2d_2.stop()
 	#print("throw")
 	spawned.set_deferred("freeze", false)
 	spawned.call_deferred("reparent",self.get_parent())

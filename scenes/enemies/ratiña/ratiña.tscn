@@ -1,0 +1,147 @@
+[gd_scene load_steps=19 format=3 uid="uid://gyluo2bsm1cg"]
+
+[ext_resource type="Script" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
+[ext_resource type="Texture2D" uid="uid://sd7e4r687mw8" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mn77"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(0, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwmc8"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(30, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72yls"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(60, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf61f"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(90, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxfrk"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(120, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps5e0"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(150, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cqj4"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(180, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5tba"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(210, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0ts3"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(240, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwsgm"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(270, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb2hc"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(300, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ctfc"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(330, 0, 30, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlko2"]
+atlas = ExtResource("1_ufh0f")
+region = Rect2(360, 0, 30, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v1qso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mn77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwmc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72yls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf61f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxfrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps5e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cqj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5tba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0ts3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwsgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb2hc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ctfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlko2")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc5w7"]
+size = Vector2(17, 36)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ywrjj"]
+radius = 125.0
+
+[node name="Ratiña" type="RigidBody2D" groups=["edible", "throwable"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_e0kxx")
+speed = 15
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_v1qso")
+animation = &"new_animation"
+frame_progress = 0.276984
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_lc5w7")
+
+[node name="TargetLoc" type="Marker2D" parent="."]
+position = Vector2(-31, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+shape = SubResource("CircleShape2D_ywrjj")
+debug_color = Color(0.55591, 0.510535, 0.635269, 0.42)
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Timer3" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]
+[connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_detect_body_exited"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

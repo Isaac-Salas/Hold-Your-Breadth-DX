@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://bhenjdi5p5ejl"]
 
-[ext_resource type="Texture2D" uid="uid://c6fjtedh3iwcq" path="res://assets/objects/button_animated.png" id="1_jj771"]
+[ext_resource type="Texture2D" uid="uid://bxlun71vw5ekr" path="res://assets/objects/button_animated.png" id="1_jj771"]
 [ext_resource type="Script" path="res://scenes/objects/button_red/button_red.gd" id="1_t8urs"]
-[ext_resource type="Texture2D" uid="uid://27cri12i1g46" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
+[ext_resource type="Texture2D" uid="uid://ddsdsb5sec74h" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fijwo"]
 atlas = ExtResource("2_o0geb")
@@ -92,7 +92,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8olo"]
-size = Vector2(96, 20)
+size = Vector2(96, 12)
 
 [node name="Button_red" type="Area2D"]
 script = ExtResource("1_t8urs")
@@ -111,7 +111,7 @@ frame = 3
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_h8olo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

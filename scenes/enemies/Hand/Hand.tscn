@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://w67wwrsfwoay"]
+
+[ext_resource type="SpriteFrames" uid="uid://e4mn8s24isc5" path="res://scenes/enemies/Hand-Chase.tres" id="1_7ihiy"]
+[ext_resource type="Script" path="res://scenes/enemies/Hand/hand.gd" id="1_32dss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3e08"]
+size = Vector2(123, 55.6675)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t5nu4"]
+radius = 99.6
+
+[node name="Hand" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_32dss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("1_7ihiy")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11.5, 6.83375)
+shape = SubResource("RectangleShape2D_p3e08")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t5nu4")
+debug_color = Color(0.998407, 0.329108, 0.234214, 0.419608)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

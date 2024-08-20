@@ -13,8 +13,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	icon.position.y = clamp(get_local_mouse_position().y, -48, 48)
-	factor = -1*((icon.position.y/2)/10)
+	factor = -1*((icon.position.y/2)/10)/50
 	icon.scale = Vector2(factor,factor)
+	if icon.position.y > 0:
+		icon.flip_v = false
+		icon.play("Up")
+	if icon.position.y < 0:
+		icon.flip_v = true
+		icon.play("Down")
+	
+	
+	
 	
 func reset():
 	scaler.global_position = get_global_mouse_position()

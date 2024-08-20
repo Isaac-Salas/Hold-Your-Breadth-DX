@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ciok3inm634ug"]
+[gd_scene load_steps=49 format=3 uid="uid://ciok3inm634ug"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_b0onk"]
 [ext_resource type="Texture2D" uid="uid://bds2rv70u004v" path="res://assets/placeholder/Tilemap/tilemap-characters_packed.png" id="1_hx8d6"]
@@ -8,8 +8,32 @@
 [ext_resource type="Script" path="res://player/object_detect.gd" id="6_7josq"]
 [ext_resource type="Texture2D" uid="uid://qmsqe74gvg32" path="res://assets/placeholder/Tiles/tile_0157.png" id="6_8l551"]
 [ext_resource type="Script" path="res://player/scaler.gd" id="8_x6r5k"]
-[ext_resource type="Texture2D" uid="uid://dqiyycwc3umyr" path="res://assets/placeholder/Tiles/tile_0067.png" id="9_l4jqe"]
+[ext_resource type="Texture2D" uid="uid://bbdxjpqbfui6r" path="res://assets/puntero/puntero_00012.png" id="9_ruxns"]
+[ext_resource type="Texture2D" uid="uid://bnbphrr4mogej" path="res://assets/puntero/puntero_00013.png" id="10_kftwq"]
 [ext_resource type="Script" path="res://components/scale_component.gd" id="10_oyueu"]
+[ext_resource type="Texture2D" uid="uid://blwicb26qneh0" path="res://assets/puntero/puntero_00014.png" id="11_sicxi"]
+[ext_resource type="Texture2D" uid="uid://b6gwt2sdyk535" path="res://assets/puntero/puntero_00015.png" id="12_4fk34"]
+[ext_resource type="Texture2D" uid="uid://c40ad0fvscqwc" path="res://assets/puntero/puntero_00016.png" id="13_lykb1"]
+[ext_resource type="Texture2D" uid="uid://bushyu5cgvi7u" path="res://assets/puntero/puntero_00017.png" id="14_vxurq"]
+[ext_resource type="Texture2D" uid="uid://cqab8k0yecvjv" path="res://assets/puntero/puntero_00018.png" id="15_jrv8i"]
+[ext_resource type="Texture2D" uid="uid://bm3lnekemb2gv" path="res://assets/puntero/puntero_00019.png" id="16_yfgck"]
+[ext_resource type="Texture2D" uid="uid://b06bhrpnemg4r" path="res://assets/puntero/puntero_00020.png" id="17_o3bic"]
+[ext_resource type="Texture2D" uid="uid://cxa0bmqdyxibt" path="res://assets/puntero/puntero_00021.png" id="18_jus6x"]
+[ext_resource type="Texture2D" uid="uid://doxndcmvhtu2x" path="res://assets/puntero/puntero_00022.png" id="19_u3l3i"]
+[ext_resource type="Texture2D" uid="uid://3d802yrsrsyr" path="res://assets/puntero/puntero_00023.png" id="20_tcyfn"]
+[ext_resource type="Texture2D" uid="uid://ci8u8dca0dy1m" path="res://assets/puntero/puntero_00011.png" id="21_di1ok"]
+[ext_resource type="Texture2D" uid="uid://dsrd70jw6oodw" path="res://assets/puntero/puntero_00010.png" id="22_imdv5"]
+[ext_resource type="Texture2D" uid="uid://bt7h4cnxwydii" path="res://assets/puntero/puntero_00009.png" id="23_tvg2h"]
+[ext_resource type="Texture2D" uid="uid://bwo2wwma11pcq" path="res://assets/puntero/puntero_00008.png" id="24_rhht4"]
+[ext_resource type="Texture2D" uid="uid://bi4u08yha0l0a" path="res://assets/puntero/puntero_00007.png" id="25_h6gnl"]
+[ext_resource type="Texture2D" uid="uid://b5jmd06dqk525" path="res://assets/puntero/puntero_00006.png" id="26_iwlu3"]
+[ext_resource type="Texture2D" uid="uid://bk5xkt1p4kgp8" path="res://assets/puntero/puntero_00005.png" id="27_j6u8f"]
+[ext_resource type="Texture2D" uid="uid://dbfbr8gigills" path="res://assets/puntero/puntero_00004.png" id="28_5lx6k"]
+[ext_resource type="Texture2D" uid="uid://84svw8f6vca" path="res://assets/puntero/puntero_00003.png" id="29_tod1o"]
+[ext_resource type="Texture2D" uid="uid://doqjirwvjmb4s" path="res://assets/puntero/puntero_00002.png" id="30_c4fp4"]
+[ext_resource type="Texture2D" uid="uid://d2ht78eb2i5rg" path="res://assets/puntero/puntero_00001.png" id="31_vyve3"]
+[ext_resource type="Texture2D" uid="uid://dh2xkkrxcscmr" path="res://assets/puntero/puntero_00000.png" id="32_apo53"]
+[ext_resource type="Texture2D" uid="uid://dnx1qh8y6yvxo" path="res://assets/nRmVV (2).png" id="34_xrxf5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyec3"]
 radius = 18.0
@@ -94,6 +118,97 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wo7d0"]
 radius = 24.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5c4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ruxns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kftwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sicxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4fk34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lykb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vxurq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jrv8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yfgck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o3bic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jus6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_u3l3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tcyfn")
+}],
+"loop": false,
+"name": &"Down",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ruxns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_di1ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_imdv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tvg2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_rhht4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h6gnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_iwlu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_j6u8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5lx6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tod1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_c4fp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_vyve3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_apo53")
+}],
+"loop": false,
+"name": &"Up",
+"speed": 24.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_53yv8"]
+polygon = PackedVector2Array(-20, -18, -20, 24, 20, 24, 20, -18)
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player", "button_actionable"]]
 script = ExtResource("1_b0onk")
 
@@ -113,6 +228,7 @@ collision_mask = 2
 sleeping = true
 lock_rotation = true
 freeze = true
+linear_velocity = Vector2(0, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CapsuleShape2D_6e8of")
@@ -154,12 +270,37 @@ shape = SubResource("CircleShape2D_wo7d0")
 visible = false
 script = ExtResource("8_x6r5k")
 
-[node name="Sprite2D" type="Sprite2D" parent="Scaler"]
-texture = ExtResource("9_l4jqe")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Scaler"]
+scale = Vector2(0.03, 0.03)
+sprite_frames = SubResource("SpriteFrames_u5c4y")
+animation = &"Down"
+flip_v = true
+
+[node name="Fijo" type="Sprite2D" parent="Scaler"]
+z_index = 2
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("9_ruxns")
 
 [node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("10_oyueu")
 sprite = NodePath("..")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1.05888e-06, 0.390004, 0.070055, 1)
+energy = 0.5
+texture = ExtResource("34_xrxf5")
+texture_scale = 1.5
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+color = Color(1.05888e-06, 0.390004, 0.070055, 1)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("34_xrxf5")
+texture_scale = 1.5
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_53yv8")
 
 [connection signal="scare" from="." to="." method="_on_scare"]
 [connection signal="body_entered" from="AnimatedSprite2D/ObjectDetect" to="." method="_on_object_detect_body_entered"]
