@@ -127,7 +127,7 @@ func togglefun():
 func scaling():
 	print(sprite.scale)
 	iscaling = true
-	var thing = Vector2(scaler.factor/10,scaler.factor/10)
+	var thing = Vector2(scaler.factor/10,scaler.factor/10)*50
 	if thing > Vector2(0,0):
 		grow(thing)
 	else:
