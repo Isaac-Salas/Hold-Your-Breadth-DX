@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @export var target_scene: PackedScene
-		
+
 func transition_to(_next_scene) -> void:
 	# Plays the Fade animation and wait until it finishes
 	ap.play("Closing")
@@ -12,4 +12,5 @@ func transition_to(_next_scene) -> void:
 
 
 func _on_trigger_body_entered(body: Node2D) -> void:
-	transition_to(target_scene)
+	if body.name == "Player":
+		transition_to(target_scene)
