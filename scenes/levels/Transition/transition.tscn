@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0pi4ocu1rpdi"]
+
+[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="1_aifxu"]
+[ext_resource type="Texture2D" uid="uid://dvgadqdwc5gse" path="res://assets/objects/Transition.png" id="2_1pr46"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
+size = Vector2(47, 95)
+
+[sub_resource type="Animation" id="Animation_y1k7v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 108)]
+}
+
+[sub_resource type="Animation" id="Animation_r5kup"]
+resource_name = "Opening"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, 324), Vector2(384, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, 108), Vector2(384, -108)]
+}
+
+[sub_resource type="Animation" id="Animation_1yl6c"]
+resource_name = "Closing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, 540), Vector2(384, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, -108), Vector2(384, 108)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0j2h"]
+_data = {
+"Closing": SubResource("Animation_1yl6c"),
+"Opening": SubResource("Animation_r5kup"),
+"RESET": SubResource("Animation_y1k7v")
+}
+
+[node name="Transition" type="Node2D"]
+script = ExtResource("1_aifxu")
+
+[node name="Trigger" type="Area2D" parent="."]
+
+[node name="TRIGGERSCENE" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(744, 336)
+shape = SubResource("RectangleShape2D_lorgc")
+debug_color = Color(0.453215, 0.595313, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(384, 108)
+texture = ExtResource("2_1pr46")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(384, 324)
+scale = Vector2(1, -1)
+texture = ExtResource("2_1pr46")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k0j2h")
+}
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

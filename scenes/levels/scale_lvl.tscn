@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=4 uid="uid://bhe6366hku86k"]
+[gd_scene load_steps=26 format=4 uid="uid://bhe6366hku86k"]
 
+[ext_resource type="Script" path="res://scenes/levels/scale_lvl.gd" id="1_8b6j6"]
 [ext_resource type="Texture2D" uid="uid://dy58c3vewayi8" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_03rxa"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_vqrqb"]
@@ -12,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_jx2cx"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="11_4yy0m"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="13_47ecm"]
-[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="13_476gb"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="14_ircil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("1_etyb7")
@@ -248,17 +249,18 @@ _data = {
 }
 
 [node name="Scale_test" type="Node2D"]
+script = ExtResource("1_8b6j6")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAABAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAACAAAAAAAPAAEAAAACAAEAAAAPAAIAAAACAAEAAAAPAAMAAAACAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAEAAAAPAAYAAAAFAAAAAAAPAAcAAAAFAAAAAAAPAAgAAAACAAIAAAAOAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAADAAgAAAAEAAAAAAACAAgAAAABAAIAAAABAAgAAAABAAIAAAAAAAgAAAAAAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAFAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAAFAAAAAAAOAAUAAAABAAIAAAANAAUAAAABAAIAAAAMAAUAAAAAAAIAAAAMAAQAAAAAAAEAAAAMAAMAAAAAAAEAAAAMAAIAAAAAAAEAAAAMAAEAAAAAAAEAAAANAAEAAAABAAEAAAAOAAEAAAABAAEAAAAOAAIAAAABAAEAAAAOAAMAAAABAAEAAAAOAAQAAAABAAEAAAANAAQAAAABAAEAAAANAAMAAAABAAEAAAANAAIAAAABAAEAAAACAAcAAAACAAAAAAABAAcAAAABAAAAAAAFAAEAAAAFAAAAAAAFAAIAAAACAAIAAAAIAAEAAAAEAAEAAAAIAAIAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAABAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAACAAAAAAAPAAEAAAACAAEAAAAPAAIAAAACAAEAAAAPAAMAAAACAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAIAAAAPAAgAAAADAAIAAAAOAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAADAAgAAAAEAAAAAAACAAgAAAABAAIAAAABAAgAAAABAAIAAAAAAAgAAAAAAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAFAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAAFAAAAAAAOAAUAAAABAAIAAAANAAUAAAABAAIAAAAMAAUAAAAAAAIAAAAMAAQAAAAAAAEAAAAMAAMAAAAAAAEAAAAMAAIAAAAAAAEAAAAMAAEAAAAAAAEAAAANAAEAAAABAAEAAAAOAAEAAAABAAEAAAAOAAIAAAABAAEAAAAOAAMAAAABAAEAAAAOAAQAAAABAAEAAAANAAQAAAABAAEAAAANAAMAAAABAAEAAAANAAIAAAABAAEAAAACAAcAAAACAAAAAAABAAcAAAABAAAAAAAFAAEAAAAFAAAAAAAFAAIAAAACAAIAAAAIAAEAAAAEAAEAAAAIAAIAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
 [node name="Camera2D" parent="." instance=ExtResource("2_03rxa")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_vqrqb")]
-position = Vector2(264, 312)
+position = Vector2(648, 324)
 
 [node name="Grow-Laser" parent="." instance=ExtResource("4_soxw3")]
 position = Vector2(360, 48)
@@ -313,16 +315,10 @@ activation_weight = 5.0
 position = Vector2(600, 336)
 isOpen = true
 
-[node name="Conveyor" parent="." instance=ExtResource("13_476gb")]
-position = Vector2(72, 396)
-direction = "right"
-type = "RIGHT"
-
-[node name="Conveyor2" parent="." instance=ExtResource("13_476gb")]
-position = Vector2(120, 396)
-direction = "right"
-type = "LEFT"
+[node name="Transition" parent="." instance=ExtResource("14_ircil")]
 
 [connection signal="pressed" from="Button_red" to="Small_door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Small_door2" method="toggle_door"]
 [connection signal="pressed" from="Scale_button_green" to="Door" method="toggle_door"]
+
+[editable path="Transition"]

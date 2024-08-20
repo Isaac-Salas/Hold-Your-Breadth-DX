@@ -3,13 +3,15 @@ extends Node2D
 @onready var level_select = $LevelSelect
 @onready var credits = $Credits
 @onready var exit = $Exit
-const TESTING = preload("res://scenes/levels/testing.tscn")
+@onready var transition: Node2D = $Transition
 
+const TESTING = preload("res://scenes/levels/testing.tscn")
+const scale_lvl = preload("res://scenes/levels/scale_lvl.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Manager.load_data()
-	
+	transition.ap.play("Opening")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,7 +20,7 @@ func _process(delta):
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_packed(TESTING)
+	transition.transition_to(scale_lvl)
 
 
 func _on_level_select_pressed():
@@ -31,3 +33,39 @@ func _on_credits_pressed():
 
 func _on_exit_pressed():
 	pass # Replace with function body.
+
+
+func _on_exit_mouse_entered() -> void:
+	$Exit/ExitSprite.play("hover")
+
+
+func _on_credits_mouse_entered() -> void:
+	$Credits/CreditSprite.play("hover")
+
+
+func _on_level_select_mouse_entered() -> void:
+	$LevelSelect/LevelSprite.play("hover")
+
+
+func _on_play_mouse_entered() -> void:
+	$Play/PlaySprite.play("hover")
+
+
+func _on_play_mouse_exited() -> void:
+	await($Play/PlaySprite.animation_finished)
+	$Play/PlaySprite.play("normal")
+
+
+func _on_level_select_mouse_exited() -> void:
+	await($LevelSelect/LevelSprite.animation_finished)
+	$LevelSelect/LevelSprite.play("normal")
+
+
+func _on_credits_mouse_exited() -> void:
+	await($Credits/CreditSprite.animation_finished)
+	$Credits/CreditSprite.play("normal")
+
+
+func _on_exit_mouse_exited() -> void:
+	await($Exit/ExitSprite.animation_finished)
+	$Exit/ExitSprite.play("normal")
