@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://delaq1iewwwqy"]
+[gd_scene load_steps=3 format=3 uid="uid://twgt5pi201rv"]
 
-[ext_resource type="Texture2D" uid="uid://dhtsdcigcyflu" path="res://assets/objects/luz barra.png" id="1_gfubc"]
-[ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="3_vgi3y"]
+[ext_resource type="Texture2D" uid="uid://c81mmnjaow2ut" path="res://assets/objects/luz barra.png" id="1_gfubc"]
+[ext_resource type="Texture2D" uid="uid://8io3rg861wic" path="res://assets/lights/nRmVV (2).png" id="3_vgi3y"]
 
-[node name="Node2D" type="Sprite2D"]
+[node name="Light" type="Sprite2D"]
 texture = ExtResource("1_gfubc")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(1, 5)
+color = Color(1, 0.866667, 0.6, 1)
 energy = 0.5
 shadow_enabled = true
 texture = ExtResource("3_vgi3y")
@@ -15,4 +16,6 @@ offset = Vector2(0, 56)
 texture_scale = 0.6
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
+color = Color(1, 0.866667, 0.6, 1)
+shadow_enabled = true
 texture = ExtResource("3_vgi3y")
