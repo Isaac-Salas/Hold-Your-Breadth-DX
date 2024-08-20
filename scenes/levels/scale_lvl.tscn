@@ -1,0 +1,328 @@
+[gd_scene load_steps=25 format=4 uid="uid://bhe6366hku86k"]
+
+[ext_resource type="Texture2D" uid="uid://dy58c3vewayi8" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_03rxa"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_vqrqb"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="4_soxw3"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="5_hq2aw"]
+[ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="6_bgdep"]
+[ext_resource type="PackedScene" uid="uid://b71h5dbrt5qt3" path="res://scenes/objects/door/small_door.tscn" id="6_rsd5o"]
+[ext_resource type="Texture2D" uid="uid://bqev6i3pv5rll" path="res://assets/objects/small_door.png" id="7_jwv1l"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="9_l318y"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_jx2cx"]
+[ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="11_4yy0m"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="13_47ecm"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="13_476gb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
+texture = ExtResource("1_etyb7")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/left_side = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:0/0/terrains_peering_bit/bottom_side = 0
+5:0/0/terrains_peering_bit/top_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:1/0/terrains_peering_bit/right_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:2/0/terrains_peering_bit/left_side = 0
+
+[sub_resource type="TileSet" id="TileSet_ymyk6"]
+tile_size = Vector2i(48, 48)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "concrete"
+terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
+sources/0 = SubResource("TileSetAtlasSource_1blni")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyi1q"]
+atlas = ExtResource("7_jwv1l")
+region = Rect2(0, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03e41"]
+atlas = ExtResource("7_jwv1l")
+region = Rect2(48, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsujr"]
+atlas = ExtResource("7_jwv1l")
+region = Rect2(96, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6npx"]
+atlas = ExtResource("7_jwv1l")
+region = Rect2(144, 0, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eoohd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyi1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03e41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsujr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6npx")
+}],
+"loop": false,
+"name": &"open",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xexdh"]
+size = Vector2(48, 96)
+
+[sub_resource type="Animation" id="Animation_8t16k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door1:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door1:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n1mad"]
+resource_name = "shuttingcol"
+length = 0.46
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door1:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(48, 96), Vector2(48, 80), Vector2(48, 64), Vector2(48, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -48), Vector2(0, -56), Vector2(0, -64), Vector2(0, -72)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door1:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dlwus"]
+_data = {
+"RESET": SubResource("Animation_8t16k"),
+"shuttingcol": SubResource("Animation_n1mad")
+}
+
+[node name="Scale_test" type="Node2D"]
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAABAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAACAAAAAAAPAAEAAAACAAEAAAAPAAIAAAACAAEAAAAPAAMAAAACAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAEAAAAPAAYAAAAFAAAAAAAPAAcAAAAFAAAAAAAPAAgAAAACAAIAAAAOAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAADAAgAAAAEAAAAAAACAAgAAAABAAIAAAABAAgAAAABAAIAAAAAAAgAAAAAAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAFAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAAFAAAAAAAOAAUAAAABAAIAAAANAAUAAAABAAIAAAAMAAUAAAAAAAIAAAAMAAQAAAAAAAEAAAAMAAMAAAAAAAEAAAAMAAIAAAAAAAEAAAAMAAEAAAAAAAEAAAANAAEAAAABAAEAAAAOAAEAAAABAAEAAAAOAAIAAAABAAEAAAAOAAMAAAABAAEAAAAOAAQAAAABAAEAAAANAAQAAAABAAEAAAANAAMAAAABAAEAAAANAAIAAAABAAEAAAACAAcAAAACAAAAAAABAAcAAAABAAAAAAAFAAEAAAAFAAAAAAAFAAIAAAACAAIAAAAIAAEAAAAEAAEAAAAIAAIAAAACAAIAAAA=")
+tile_set = SubResource("TileSet_ymyk6")
+rendering_quadrant_size = 48
+
+[node name="Camera2D" parent="." instance=ExtResource("2_03rxa")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_vqrqb")]
+position = Vector2(264, 312)
+
+[node name="Grow-Laser" parent="." instance=ExtResource("4_soxw3")]
+position = Vector2(360, 48)
+rotation = 1.5708
+target_scale = Vector2(2.5, 2.5)
+
+[node name="Shrink-Laser" parent="." instance=ExtResource("5_hq2aw")]
+position = Vector2(312, 48)
+rotation = 1.5708
+target_scale = Vector2(0.8, 0.8)
+
+[node name="Small_door" type="StaticBody2D" parent="."]
+position = Vector2(336, 120)
+rotation = -1.5708
+script = ExtResource("6_bgdep")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Small_door"]
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_eoohd")
+animation = &"open"
+metadata/_edit_lock_ = true
+
+[node name="Door1" type="CollisionShape2D" parent="Small_door"]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_xexdh")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Small_door"]
+libraries = {
+"": SubResource("AnimationLibrary_dlwus")
+}
+
+[node name="Small_door2" parent="." instance=ExtResource("6_rsd5o")]
+position = Vector2(336, 120)
+rotation = 1.5708
+isOpen = true
+
+[node name="Button_red" parent="." instance=ExtResource("9_l318y")]
+position = Vector2(96, 336)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("10_jx2cx")]
+position = Vector2(408, 204)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("10_jx2cx")]
+position = Vector2(204, 204)
+
+[node name="Scale_button_green" parent="." instance=ExtResource("11_4yy0m")]
+position = Vector2(192, 384)
+activation_weight = 5.0
+
+[node name="Door" parent="." instance=ExtResource("13_47ecm")]
+position = Vector2(600, 336)
+isOpen = true
+
+[node name="Conveyor" parent="." instance=ExtResource("13_476gb")]
+position = Vector2(72, 396)
+direction = "right"
+type = "RIGHT"
+
+[node name="Conveyor2" parent="." instance=ExtResource("13_476gb")]
+position = Vector2(120, 396)
+direction = "right"
+type = "LEFT"
+
+[connection signal="pressed" from="Button_red" to="Small_door" method="toggle_door"]
+[connection signal="pressed" from="Button_red" to="Small_door2" method="toggle_door"]
+[connection signal="pressed" from="Scale_button_green" to="Door" method="toggle_door"]

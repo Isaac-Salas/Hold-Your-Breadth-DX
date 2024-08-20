@@ -1,22 +1,30 @@
 extends StaticBody2D
-@export var direction = "left"
-@export var type = "NORMAL"
+@export_enum("left", "right") var direction = "left"
+@export_enum("LEFT", "NORMAL", "RIGHT") var type = "NORMAL"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-var force = Vector2(20,0)
-var body : RigidBody2D 
-# Called when the node enters the scene tree for the first time.
+var force 
+var inside : Array[RigidBody2D] = []
+
 func _ready() -> void:
+	if (direction == "left"):
+		force = Vector2(-20,0)
+	else:
+		force =  Vector2(20,0)
 	animated_sprite_2d.play(type)
 	if direction != "left":
 		scale.x = -1
 
 func _physics_process(delta: float) -> void:
-	if body:
+	for body in inside:
 		body.apply_impulse(force)
+		body.apply_torque(30)
+		print("MoVING")
 
 func _on_area_2d_body_entered(entered: Node2D) -> void:
-	body = entered
+	inside.append(entered)
+	print(inside.size())
+	print(entered.name)
 
 
 func _on_area_2d_body_exited(exited: Node2D) -> void:
-	pass # Replace with function body.
+	inside.remove_at(inside.find(exited))
