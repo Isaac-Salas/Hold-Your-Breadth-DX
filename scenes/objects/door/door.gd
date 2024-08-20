@@ -4,8 +4,11 @@ extends StaticBody2D
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @export var isOpen = false
 
+func _ready() -> void:
+	toggle_door(isOpen, 0)
+
 func toggle_door(state, body):
-	isOpen = state
+	isOpen = !isOpen
 	if isOpen:
 		anim.play("open")
 		ap.play("shuttingcol")

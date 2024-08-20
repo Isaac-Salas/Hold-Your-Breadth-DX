@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://gyluo2bsm1cg"]
 
-[ext_resource type="Script" path="res://scenes/enemies/ratiña.gd" id="1_e0kxx"]
+[ext_resource type="Script" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
 [ext_resource type="Texture2D" uid="uid://sd7e4r687mw8" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mn77"]
@@ -103,10 +103,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc5w7"]
-size = Vector2(20, 30)
+size = Vector2(17, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywrjj"]
-radius = 150.0
+radius = 125.0
 
 [node name="Ratiña" type="RigidBody2D" groups=["edible", "throwable"]]
 collision_layer = 3
@@ -115,6 +115,7 @@ script = ExtResource("1_e0kxx")
 speed = 15
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v1qso")
 animation = &"new_animation"
 frame_progress = 0.276984

@@ -118,7 +118,7 @@ frame_progress = 0.771986
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 modulate = Color(0, 0.823529, 0.74902, 1)
-position = Vector2(42, 0)
+position = Vector2(40, 0)
 target_position = Vector2(750, 0)
 
 [node name="hitsprite" type="AnimatedSprite2D" parent="."]

@@ -19,3 +19,7 @@ func destroy():
 	self.queue_free()
 	var new = spawner_component.spawn()
 	new.global_position = self.global_position
+
+func set_size(target_size):
+	colision.scale = target_size/2
+	sprite.scale = target_size

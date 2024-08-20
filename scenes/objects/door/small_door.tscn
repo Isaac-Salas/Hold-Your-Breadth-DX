@@ -1,0 +1,147 @@
+[gd_scene load_steps=12 format=3 uid="uid://b71h5dbrt5qt3"]
+
+[ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="1_wtyfx"]
+[ext_resource type="Texture2D" uid="uid://bqev6i3pv5rll" path="res://assets/objects/small_door.png" id="2_vmk4x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyi1q"]
+atlas = ExtResource("2_vmk4x")
+region = Rect2(0, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03e41"]
+atlas = ExtResource("2_vmk4x")
+region = Rect2(48, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsujr"]
+atlas = ExtResource("2_vmk4x")
+region = Rect2(96, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6npx"]
+atlas = ExtResource("2_vmk4x")
+region = Rect2(144, 0, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eoohd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyi1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03e41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsujr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6npx")
+}],
+"loop": false,
+"name": &"open",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xexdh"]
+size = Vector2(48, 96)
+
+[sub_resource type="Animation" id="Animation_8t16k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door1:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door1:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n1mad"]
+resource_name = "shuttingcol"
+length = 0.46
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door1:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(48, 96), Vector2(48, 80), Vector2(48, 64), Vector2(48, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -48), Vector2(0, -56), Vector2(0, -64), Vector2(0, -72)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door1:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dlwus"]
+_data = {
+"RESET": SubResource("Animation_8t16k"),
+"shuttingcol": SubResource("Animation_n1mad")
+}
+
+[node name="Small_door" type="StaticBody2D"]
+script = ExtResource("1_wtyfx")
+isOpen = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_eoohd")
+animation = &"open"
+frame_progress = 1.0
+
+[node name="Door1" type="CollisionShape2D" parent="."]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_xexdh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dlwus")
+}
