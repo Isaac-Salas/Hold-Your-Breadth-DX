@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://fsxjau4kfu71"]
+
+[ext_resource type="Script" path="res://scenes/objects/brokenwoodenboxes.gd" id="1_wprqd"]
+[ext_resource type="Texture2D" uid="uid://cxl2ymimu617p" path="res://assets/objects/brokencaja/Piece1.png" id="1_xsf47"]
+[ext_resource type="Texture2D" uid="uid://3y0sr336l0gw" path="res://assets/objects/brokencaja/Piece2.png" id="2_115jd"]
+[ext_resource type="Texture2D" uid="uid://b4aftajbqmqda" path="res://assets/objects/brokencaja/Piece3.png" id="3_hkko0"]
+[ext_resource type="Texture2D" uid="uid://bufqex1t5xbsv" path="res://assets/objects/brokencaja/Piece4.png" id="4_0ma01"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wexhu"]
+size = Vector2(5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qivk"]
+size = Vector2(5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tegho"]
+size = Vector2(5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axx67"]
+size = Vector2(5, 5)
+
+[node name="Brokenwoodenboxes" type="Node2D"]
+position = Vector2(1, 2)
+script = ExtResource("1_wprqd")
+
+[node name="Piece" type="RigidBody2D" parent="."]
+position = Vector2(6, -26)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piece"]
+position = Vector2(-7.5, 0)
+shape = SubResource("RectangleShape2D_wexhu")
+debug_color = Color(0.794939, 0.0659271, 1, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Piece"]
+texture = ExtResource("1_xsf47")
+metadata/_edit_lock_ = true
+
+[node name="Piece2" type="RigidBody2D" parent="."]
+position = Vector2(1, -4)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piece2"]
+position = Vector2(-3.5, 2)
+shape = SubResource("RectangleShape2D_1qivk")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Piece2"]
+texture = ExtResource("2_115jd")
+metadata/_edit_lock_ = true
+
+[node name="Piece3" type="RigidBody2D" parent="."]
+position = Vector2(-1, -7)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piece3"]
+position = Vector2(-1.5, -5)
+shape = SubResource("RectangleShape2D_tegho")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Piece3"]
+texture = ExtResource("3_hkko0")
+metadata/_edit_lock_ = true
+
+[node name="Piece4" type="RigidBody2D" parent="."]
+position = Vector2(-6, 2)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piece4"]
+position = Vector2(5, 8)
+shape = SubResource("RectangleShape2D_axx67")
+
+[node name="Sprite2D" type="Sprite2D" parent="Piece4"]
+texture = ExtResource("4_0ma01")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

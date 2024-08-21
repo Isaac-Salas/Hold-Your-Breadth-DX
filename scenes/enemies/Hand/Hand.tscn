@@ -24,9 +24,9 @@ position = Vector2(-11.5, 6.83375)
 shape = SubResource("RectangleShape2D_p3e08")
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_t5nu4")

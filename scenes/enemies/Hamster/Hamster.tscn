@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp8r6cmiycm4m"]
+
+[ext_resource type="Script" path="res://scenes/enemies/Hamster/hamster.gd" id="1_k7sbg"]
+[ext_resource type="Texture2D" uid="uid://b2albhnogpcgu" path="res://assets/Enemies/hamsersprite.png" id="1_utgwl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tx73"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdlfs"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn70x"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4l1d"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hifbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tx73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdlfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn70x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4l1d")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4qeb"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m6dru"]
+radius = 200.0
+
+[node name="Hamster" type="RigidBody2D"]
+script = ExtResource("1_k7sbg")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hifbx")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.622647
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h4qeb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m6dru")
+debug_color = Color(0.963138, 1.34766e-06, 0.500482, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

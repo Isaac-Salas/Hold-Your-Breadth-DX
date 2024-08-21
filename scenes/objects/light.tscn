@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://twgt5pi201rv"]
+[gd_scene load_steps=3 format=3 uid="uid://delaq1iewwwqy"]
 
-[ext_resource type="Texture2D" uid="uid://c81mmnjaow2ut" path="res://assets/objects/luz barra.png" id="1_gfubc"]
-[ext_resource type="Texture2D" uid="uid://8io3rg861wic" path="res://assets/lights/nRmVV (2).png" id="3_vgi3y"]
+[ext_resource type="Texture2D" uid="uid://dhtsdcigcyflu" path="res://assets/objects/luz barra.png" id="1_gfubc"]
+[ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="3_vgi3y"]
 
 [node name="Light" type="Sprite2D"]
 texture = ExtResource("1_gfubc")

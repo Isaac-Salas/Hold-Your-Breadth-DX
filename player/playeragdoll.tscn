@@ -1,23 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://chvi67sx7uhx1"]
+[gd_scene load_steps=10 format=3 uid="uid://chvi67sx7uhx1"]
 
-[ext_resource type="Texture2D" uid="uid://csapk8h0cfgj3" path="res://assets/placeholder/Tilemap/tilemap-characters.png" id="1_6ls55"]
 [ext_resource type="Script" path="res://player/playeragdoll.gd" id="1_wam2g"]
+[ext_resource type="Texture2D" uid="uid://dl38tb51h0ryb" path="res://player/Slime.png" id="2_xbkfg"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="3_mo7vv"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="4_0jdc5"]
 [ext_resource type="Script" path="res://components/shake_component.gd" id="5_gy3mm"]
+[ext_resource type="Texture2D" uid="uid://dnx1qh8y6yvxo" path="res://assets/nRmVV (2).png" id="6_3av2v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54pp5"]
-radius = 24.0
+radius = 13.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvnwy"]
-atlas = ExtResource("1_6ls55")
-region = Rect2(0, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i1l6"]
+atlas = ExtResource("2_xbkfg")
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i5m2v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yvnwy")
+"texture": SubResource("AtlasTexture_0i1l6")
 }],
 "loop": true,
 "name": &"default",
@@ -33,8 +34,8 @@ shape = SubResource("CircleShape2D_54pp5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.784314)
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_i5m2v")
+offset = Vector2(0, -10)
 
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("3_mo7vv")
@@ -44,3 +45,15 @@ scene = ExtResource("4_0jdc5")
 script = ExtResource("5_gy3mm")
 node = NodePath("../AnimatedSprite2D")
 shake_amount = 10.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1.05888e-06, 0.390004, 0.070055, 1)
+energy = 0.5
+texture = ExtResource("6_3av2v")
+texture_scale = 1.5
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+color = Color(1.05888e-06, 0.390004, 0.070055, 1)
+energy = 0.5
+texture = ExtResource("6_3av2v")
+texture_scale = 1.5

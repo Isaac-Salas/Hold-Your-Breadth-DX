@@ -6,18 +6,19 @@
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="4_lwyf2"]
 [ext_resource type="PackedScene" path="res://scenes/levels/tilemap.tscn" id="5_2xpgq"]
 [ext_resource type="Texture2D" uid="uid://dalgnkvg42uai" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
-[ext_resource type="Texture2D" uid="uid://dr844qsoxkykp" path="res://assets/lights/Untitled-1.png" id="7_rj68a"]
 [ext_resource type="Texture2D" uid="uid://ciunp5a4cnebs" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="9_ewksh"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="10_uj851"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="11_onm1m"]
+[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="12_gbmlf"]
 [ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="12_xhklx"]
 [ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="13_62bdi"]
 [ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="14_a3g21"]
-[ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="15_arjvi"]
-[ext_resource type="PackedScene" uid="uid://cyogdbx6tbeeg" path="res://scenes/objects/WoodenBox.tscn" id="16_fue4c"]
+[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="14_omlea"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="17_ji3ml"]
+[ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/enemies/Meatbox/meat_box.tscn" id="18_kuoxt"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_34mam"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uh315"]
 shader = ExtResource("4_lwyf2")
 shader_parameter/resolution = Vector2(260.765, 180)
 shader_parameter/scan_line_amount = 0.758
@@ -34,19 +35,11 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_leduj"]
-polygon = PackedVector2Array(-12, -14, -12, 10, 12, 10, 12, -14)
-
-[node name="Testing" type="Node2D"]
+[node name="Testing2" type="Node2D"]
 script = ExtResource("1_iike3")
 
-[node name="CRTShader" parent="." instance=ExtResource("2_twmpe")]
-
 [node name="Player" parent="." instance=ExtResource("3_goeaq")]
-position = Vector2(130, 128)
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-material = SubResource("ShaderMaterial_34mam")
+position = Vector2(130, 400)
 
 [node name="Tilemap" parent="." instance=ExtResource("5_2xpgq")]
 modulate = Color(0.473976, 0.473976, 0.473976, 1)
@@ -58,76 +51,57 @@ scale = Vector2(1.21042, 1.20741)
 texture = ExtResource("6_jq3s4")
 centered = false
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(410, 40)
-texture = ExtResource("7_rj68a")
-offset = Vector2(0, 240)
-texture_scale = 3.98
-
-[node name="PointLight2D5" type="PointLight2D" parent="PointLight2D"]
-shadow_enabled = true
-texture = ExtResource("7_rj68a")
-offset = Vector2(0, 240)
-texture_scale = 3.98
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(496, 293)
-texture = ExtResource("7_rj68a")
-texture_scale = 3.98
-
-[node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(574, 301)
-texture = ExtResource("7_rj68a")
-texture_scale = 3.98
-
-[node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(659, 303)
-texture = ExtResource("7_rj68a")
-texture_scale = 3.38
-
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(411, 327)
 texture = ExtResource("8_fnarp")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D2"]
-occluder = SubResource("OccluderPolygon2D_leduj")
-
 [node name="Barnacle" parent="." instance=ExtResource("9_ewksh")]
 position = Vector2(231, 254)
+
+[node name="Barnacle2" parent="." instance=ExtResource("9_ewksh")]
+position = Vector2(987, 224)
 
 [node name="Ratillas" type="Node2D" parent="."]
 position = Vector2(235, 56)
 
-[node name="Ratiña" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(497, 193)
+ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
-[node name="Ratiña2" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña2" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(574, 173)
+ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
-[node name="Ratiña3" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña3" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(465, 168)
+ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
-[node name="Ratiña4" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña4" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(549, 135)
+ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
-[node name="Ratiña5" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña5" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(534, 251)
+ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
-[node name="Ratiña6" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña6" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(404, 248)
+ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
-[node name="Ratiña7" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña7" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(660, 172)
+ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
-[node name="Ratiña8" parent="Ratillas" instance=ExtResource("10_uj851")]
-position = Vector2(660, 172)
+[node name="Ratiña8" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
+position = Vector2(702, 150)
+ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
 [node name="Matraces" type="Node2D" parent="."]
@@ -148,16 +122,82 @@ position = Vector2(420, 125)
 position = Vector2(354, 132)
 
 [node name="RigidBody2D6" parent="Matraces" instance=ExtResource("13_62bdi")]
-position = Vector2(471, 215)
+position = Vector2(393, 401)
 
 [node name="RigidBody2D7" parent="Matraces" instance=ExtResource("13_62bdi")]
-position = Vector2(413, 213)
+position = Vector2(418, 392)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("14_a3g21")]
 position = Vector2(415, 400)
 
-[node name="Hand" parent="." instance=ExtResource("15_arjvi")]
-position = Vector2(454, 342)
+[node name="Ratfleemarker" parent="." instance=ExtResource("12_gbmlf")]
+position = Vector2(862, 447)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("16_fue4c")]
-position = Vector2(625, 155)
+[node name="dont touch" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="dont touch"]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+z_index = -1
+scale = Vector2(11.98, 11.95)
+texture = ExtResource("14_omlea")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="CRTShader" parent="dont touch" instance=ExtResource("2_twmpe")]
+metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="dont touch"]
+material = SubResource("ShaderMaterial_uh315")
+color = Color(0.49464, 0.4914, 0.54, 1)
+
+[node name="Light" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(194, 77)
+metadata/_edit_lock_ = true
+
+[node name="Light2" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(290, 77)
+metadata/_edit_lock_ = true
+
+[node name="Light3" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(402, 67)
+metadata/_edit_lock_ = true
+
+[node name="Light4" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(496, 79)
+metadata/_edit_lock_ = true
+
+[node name="Light5" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(592, 75)
+metadata/_edit_lock_ = true
+
+[node name="Light6" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(716, 64)
+metadata/_edit_lock_ = true
+
+[node name="Light7" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(838, 64)
+metadata/_edit_lock_ = true
+
+[node name="Light8" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(911, 65)
+metadata/_edit_lock_ = true
+
+[node name="Light9" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(992, 73)
+metadata/_edit_lock_ = true
+
+[node name="Light10" parent="." instance=ExtResource("17_ji3ml")]
+position = Vector2(99, 84)
+metadata/_edit_lock_ = true
+
+[node name="MeatBox" parent="." instance=ExtResource("18_kuoxt")]
+position = Vector2(534, 159)
+
+[node name="MeatBox2" parent="." instance=ExtResource("18_kuoxt")]
+position = Vector2(602, 169)
+
+[node name="MeatBox3" parent="." instance=ExtResource("18_kuoxt")]
+position = Vector2(645, 144)
+
+[node name="MeatBox4" parent="." instance=ExtResource("18_kuoxt")]
+position = Vector2(551, 235)

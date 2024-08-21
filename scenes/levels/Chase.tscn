@@ -1,21 +1,23 @@
-[gd_scene load_steps=20 format=4 uid="uid://ds55rb4riqalc"]
+[gd_scene load_steps=22 format=4 uid="uid://mg3m7rcnk5yu"]
 
-[ext_resource type="Script" path="res://scenes/levels/template.gd" id="1_7ttjn"]
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
-[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_iyhmq"]
-[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_l70k0"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_qdubr"]
-[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="5_0obnt"]
-[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="6_l11u7"]
-[ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="8_bv7v5"]
-[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_uu8tb"]
-[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="10_wmmei"]
+[ext_resource type="Script" path="res://scenes/levels/template.gd" id="1_kw76i"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="2_mx4la"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_mhp7p"]
+[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="4_ft443"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_irss8"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="6_frg5h"]
+[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="7_60byp"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="8_o4onr"]
+[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="9_06b4u"]
+[ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="10_j3xlx"]
+[ext_resource type="PackedScene" uid="uid://byvxy73yntnit" path="res://scenes/objects/reset.tscn" id="11_m72cb"]
+[ext_resource type="PackedScene" uid="uid://bp8r6cmiycm4m" path="res://scenes/enemies/Hamster/Hamster.tscn" id="12_lqr24"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
-texture = ExtResource("1_p51wd")
+texture = ExtResource("2_mx4la")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -234,7 +236,7 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3qlgg"]
-shader = ExtResource("8_bv7v5")
+shader = ExtResource("10_j3xlx")
 shader_parameter/resolution = Vector2(260.765, 180)
 shader_parameter/scan_line_amount = 0.758
 shader_parameter/warp_amount = 2.519
@@ -251,7 +253,7 @@ shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
 [node name="Template" type="Node2D"]
-script = ExtResource("1_7ttjn")
+script = ExtResource("1_kw76i")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -259,22 +261,35 @@ tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAA
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="Player" parent="." instance=ExtResource("3_l70k0")]
+[node name="Player" parent="." instance=ExtResource("3_mhp7p")]
 position = Vector2(108, 159)
 
-[node name="Platform" parent="." instance=ExtResource("6_l11u7")]
+[node name="Platform" parent="." instance=ExtResource("4_ft443")]
 position = Vector2(576, 288)
 
-[node name="Platform2" parent="." instance=ExtResource("6_l11u7")]
+[node name="Platform2" parent="." instance=ExtResource("4_ft443")]
 position = Vector2(480, 240)
 
-[node name="Platform3" parent="." instance=ExtResource("6_l11u7")]
+[node name="Platform3" parent="." instance=ExtResource("4_ft443")]
 position = Vector2(576, 187)
 
-[node name="Light" parent="." instance=ExtResource("9_uu8tb")]
+[node name="Light" parent="." instance=ExtResource("5_irss8")]
 position = Vector2(276, 56)
 
-[node name="Transition" parent="." instance=ExtResource("4_qdubr")]
+[node name="Light2" parent="." instance=ExtResource("5_irss8")]
+position = Vector2(409, 104)
+
+[node name="Light3" parent="." instance=ExtResource("5_irss8")]
+position = Vector2(530, 56)
+
+[node name="Light4" parent="." instance=ExtResource("5_irss8")]
+position = Vector2(97, 248)
+
+[node name="Light5" parent="." instance=ExtResource("5_irss8")]
+position = Vector2(210, 247)
+
+[node name="Transition" parent="." instance=ExtResource("6_frg5h")]
+visible = false
 
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 shape = SubResource("RectangleShape2D_lorgc")
@@ -291,17 +306,23 @@ autoplay = ""
 modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
 z_index = -1
 scale = Vector2(11.98, 11.95)
-texture = ExtResource("10_wmmei")
+texture = ExtResource("7_60byp")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Camera2D" parent="dont touch" instance=ExtResource("2_iyhmq")]
+[node name="Camera2D" parent="dont touch" instance=ExtResource("8_o4onr")]
 
-[node name="CRTShader" parent="dont touch" instance=ExtResource("5_0obnt")]
+[node name="CRTShader" parent="dont touch" instance=ExtResource("9_06b4u")]
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="dont touch"]
 material = SubResource("ShaderMaterial_3qlgg")
 color = Color(0.49464, 0.4914, 0.54, 1)
+
+[node name="Reset" parent="." instance=ExtResource("11_m72cb")]
+position = Vector2(744, 21)
+
+[node name="Hamster" parent="." instance=ExtResource("12_lqr24")]
+position = Vector2(168, 153)
 
 [editable path="Transition"]

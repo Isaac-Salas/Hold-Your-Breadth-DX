@@ -33,6 +33,7 @@ signal scare
 
 
 
+
 func _physics_process(delta):
 	
 	#print(current)
@@ -122,12 +123,12 @@ func _physics_process(delta):
 func togglefun():
 	if toggle == false:
 		toggle = true
-		Input.set_custom_mouse_cursor(mousetooltip)
+		
 		dot.visible = false
 		
 	else:
 		toggle = false
-		Input.set_custom_mouse_cursor(defaultmouse)
+		
 		dot.visible = true
 
 func scaling():
@@ -158,6 +159,7 @@ func shrink(scalerate):
 
 func grab(body):
 	if currentobj and picking == false:
+		$AnimatedSprite2D.visible = false
 		picking = true
 		currentobj.reparent(pickup)
 		currentobj.freeze = true
@@ -177,9 +179,11 @@ func aim(delta):
 	throwing = true
 	crosshair.visible = true
 	
+	
 
 func throw(body):
 	if currentobj and picking == true:
+		$AnimatedSprite2D.visible = true
 		if currentobj.is_in_group("Meatbox"):
 			currentobj.picked = true
 		crosshair.visible = false

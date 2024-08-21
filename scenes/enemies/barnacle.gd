@@ -48,7 +48,6 @@ func start():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if colliders:
-		
 		if lastone.visible == false and colliders.is_in_group("edible"):
 			self.queue_free()
 			spawner_component.scene = RIGIDBARNACLE
@@ -57,6 +56,8 @@ func _process(delta):
 			
 			
 		if lastone.visible == false and colliders.is_in_group("breakable"):
+			if colliders.spawner_component.scene:
+				colliders.destroy()
 			sprite_2d_2.stop()
 			#print("Spit")
 			done = true
