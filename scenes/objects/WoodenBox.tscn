@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bx27mjdwpsn4g"]
 
 [ext_resource type="Script" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
-[ext_resource type="Texture2D" uid="uid://cfg27pa0h8eei" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
+[ext_resource type="Texture2D" uid="uid://bdvkqv20maq6u" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="3_245jv"]
 [ext_resource type="PackedScene" uid="uid://fsxjau4kfu71" path="res://scenes/objects/brokenwoodenboxes.tscn" id="4_bikkg"]
 
@@ -23,7 +23,6 @@ script = ExtResource("1_ux5yh")
 shape = SubResource("RectangleShape2D_wtfjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.3, 1.3)
 texture = ExtResource("2_2fc7s")
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
