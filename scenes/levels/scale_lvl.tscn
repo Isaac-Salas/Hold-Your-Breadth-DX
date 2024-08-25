@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bhe6366hku86k"]
+[gd_scene load_steps=34 format=4 uid="uid://bhe6366hku86k"]
 
 [ext_resource type="Script" path="res://scenes/levels/scale_lvl.gd" id="1_8b6j6"]
 [ext_resource type="Texture2D" uid="uid://dy58c3vewayi8" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://xxni0caw8scx" path="res://assets/fondos/Lab.png" id="15_f43ir"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="16_xtf8s"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="17_ywglr"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="20_56ndd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("1_etyb7")
@@ -314,18 +315,15 @@ position = Vector2(480, 360)
 [node name="Grow-Laser" parent="." instance=ExtResource("4_soxw3")]
 position = Vector2(360, 48)
 rotation = 1.5708
-target_scale = Vector2(8, 8)
+target_scale = Vector2(6, 6)
 
 [node name="Shrink-Laser" parent="." instance=ExtResource("5_hq2aw")]
 position = Vector2(312, 48)
 rotation = 1.5708
-target_scale = Vector2(2, 1.5)
+target_scale = Vector2(2, 2)
 
 [node name="Button_red" parent="." instance=ExtResource("9_l318y")]
 position = Vector2(96, 336)
-
-[node name="Button_Red_Signal" parent="Button_red" instance=ExtResource("11_hdapu")]
-position = Vector2(312, -216)
 
 [node name="Small_door" parent="Button_red" instance=ExtResource("6_rsd5o")]
 position = Vector2(240, -216)
@@ -333,7 +331,7 @@ rotation = 4.71238
 
 [node name="Small_door2" type="StaticBody2D" parent="Button_red"]
 position = Vector2(240, -216)
-rotation = 1.57079
+rotation = 7.85397
 script = ExtResource("6_bgdep")
 isOpen = true
 
@@ -355,6 +353,10 @@ libraries = {
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Button_red/Small_door2"]
 occluder = SubResource("OccluderPolygon2D_kh5m2")
 
+[node name="Button_Red_Signal" parent="Button_red" instance=ExtResource("11_hdapu")]
+position = Vector2(312, -216)
+isON = true
+
 [node name="Scale_button_green" parent="." instance=ExtResource("11_4yy0m")]
 position = Vector2(192, 384)
 activation_weight = 8.0
@@ -364,6 +366,9 @@ position = Vector2(408, -48)
 
 [node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("14_2wq0h")]
 position = Vector2(408, -119)
+
+[node name="Door2" parent="Scale_button_green" instance=ExtResource("13_47ecm")]
+position = Vector2(408, -240)
 
 [node name="WoodenBox" parent="." instance=ExtResource("10_jx2cx")]
 position = Vector2(504, 180)
@@ -391,5 +396,16 @@ material = SubResource("ShaderMaterial_0vnp2")
 color = Color(0.49464, 0.4914, 0.54, 1)
 
 [node name="Transition" parent="." instance=ExtResource("14_ircil")]
+visible = false
+
+[node name="Light" parent="." instance=ExtResource("20_56ndd")]
+position = Vector2(94, 60)
+color = Color(0.564962, 0.564962, 0.564962, 1)
+metadata/_edit_lock_ = true
+
+[node name="Light2" parent="." instance=ExtResource("20_56ndd")]
+position = Vector2(180, 60)
+color = Color(0.564962, 0.564962, 0.564962, 1)
+metadata/_edit_lock_ = true
 
 [editable path="Transition"]
