@@ -1,22 +1,23 @@
-[gd_scene load_steps=30 format=4 uid="uid://bhe6366hku86k"]
+[gd_scene load_steps=31 format=4 uid="uid://bhe6366hku86k"]
 
 [ext_resource type="Script" path="res://scenes/levels/scale_lvl.gd" id="1_8b6j6"]
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
+[ext_resource type="Texture2D" uid="uid://cwtv008mh14j6" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_03rxa"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_vqrqb"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="4_soxw3"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="5_hq2aw"]
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="6_bgdep"]
 [ext_resource type="PackedScene" uid="uid://b71h5dbrt5qt3" path="res://scenes/objects/door/small_door.tscn" id="6_rsd5o"]
-[ext_resource type="Texture2D" uid="uid://cq0odwbhrcajv" path="res://assets/objects/small_door.png" id="7_jwv1l"]
+[ext_resource type="Texture2D" uid="uid://kp3ixxa8yxlx" path="res://assets/objects/small_door.png" id="7_jwv1l"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="9_l318y"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_jx2cx"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="11_4yy0m"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="13_47ecm"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="14_ircil"]
-[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="15_f43ir"]
+[ext_resource type="Texture2D" uid="uid://djr6t1im3mmwc" path="res://assets/fondos/Lab.png" id="15_f43ir"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="16_xtf8s"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="17_ywglr"]
+[ext_resource type="PackedScene" uid="uid://bw37nr6xqw6yc" path="res://scenes/levels/ratesting.tscn" id="18_06xdy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("1_etyb7")
@@ -279,8 +280,8 @@ rendering_quadrant_size = 48
 
 [node name="Camera2D" parent="." instance=ExtResource("2_03rxa")]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_vqrqb")]
-position = Vector2(648, 324)
+[node name="Player" parent="." instance=ExtResource("3_vqrqb")]
+position = Vector2(480, 360)
 
 [node name="Grow-Laser" parent="." instance=ExtResource("4_soxw3")]
 position = Vector2(360, 48)
@@ -335,8 +336,6 @@ activation_weight = 5.0
 position = Vector2(600, 336)
 isOpen = true
 
-[node name="Transition" parent="." instance=ExtResource("14_ircil")]
-
 [node name="dont touch" type="Node" parent="."]
 
 [node name="Background" type="Sprite2D" parent="dont touch"]
@@ -355,6 +354,12 @@ metadata/_edit_lock_ = true
 [node name="CanvasModulate" type="CanvasModulate" parent="dont touch"]
 material = SubResource("ShaderMaterial_0vnp2")
 color = Color(0.49464, 0.4914, 0.54, 1)
+
+[node name="Transition" parent="." instance=ExtResource("14_ircil")]
+target_scene = ExtResource("18_06xdy")
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(747.75, 336)
 
 [connection signal="pressed" from="Button_red" to="Small_door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Small_door2" method="toggle_door"]

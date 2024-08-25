@@ -1,21 +1,28 @@
-[gd_scene load_steps=20 format=4 uid="uid://ds55rb4riqalc"]
+[gd_scene load_steps=22 format=4 uid="uid://22v7woarogqs"]
 
-[ext_resource type="Script" path="res://scenes/levels/template.gd" id="1_7ttjn"]
-[ext_resource type="Texture2D" uid="uid://cwtv008mh14j6" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
-[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_iyhmq"]
-[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_l70k0"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_qdubr"]
-[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="5_0obnt"]
-[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="6_l11u7"]
-[ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="8_bv7v5"]
-[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_uu8tb"]
-[ext_resource type="Texture2D" uid="uid://djr6t1im3mmwc" path="res://assets/fondos/Lab.png" id="10_wmmei"]
+[ext_resource type="Script" path="res://scenes/levels/template.gd" id="1_3l663"]
+[ext_resource type="Texture2D" uid="uid://cwtv008mh14j6" path="res://assets/tilemap/concrete.png" id="2_ar6cy"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_2565o"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="4_e6oo0"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_u3ric"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="6_41jjd"]
+[ext_resource type="PackedScene" uid="uid://bhe6366hku86k" path="res://scenes/levels/scale_lvl.tscn" id="7_73n6r"]
+[ext_resource type="Texture2D" uid="uid://djr6t1im3mmwc" path="res://assets/fondos/Lab.png" id="7_tw4od"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="8_1lbab"]
+[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="9_0gswi"]
+[ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="10_itch5"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="12_r5480"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="13_1yxvt"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="14_lracy"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="14_t3ffc"]
+[ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="15_ggeun"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="16_7n6ih"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
-texture = ExtResource("1_p51wd")
+texture = ExtResource("2_ar6cy")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -140,101 +147,8 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
-size = Vector2(47, 95)
-
-[sub_resource type="Animation" id="Animation_1yl6c"]
-resource_name = "Closing"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(5.46416, 5.46416),
-"update": 0,
-"values": [Vector2(384, 540), Vector2(384, 322)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(5.46416, 5.46416),
-"update": 0,
-"values": [Vector2(384, -108), Vector2(384, 110)]
-}
-
-[sub_resource type="Animation" id="Animation_r5kup"]
-resource_name = "Opening"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(384, 324), Vector2(384, 540)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(384, 108), Vector2(384, -108)]
-}
-
-[sub_resource type="Animation" id="Animation_y1k7v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(384, 324)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(384, 108)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0j2h"]
-_data = {
-"Closing": SubResource("Animation_1yl6c"),
-"Opening": SubResource("Animation_r5kup"),
-"RESET": SubResource("Animation_y1k7v")
-}
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3qlgg"]
-shader = ExtResource("8_bv7v5")
+shader = ExtResource("10_itch5")
 shader_parameter/resolution = Vector2(260.765, 180)
 shader_parameter/scan_line_amount = 0.758
 shader_parameter/warp_amount = 2.519
@@ -250,40 +164,36 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
-[node name="Template" type="Node2D"]
-script = ExtResource("1_7ttjn")
+[node name="Template LOCO" type="Node2D"]
+script = ExtResource("1_3l663")
+
+[node name="Transition" parent="." instance=ExtResource("6_41jjd")]
+visible = false
+target_scene = ExtResource("7_73n6r")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAACAAAAAAAPAAEAAAACAAEAAAAPAAIAAAACAAEAAAAPAAMAAAACAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAEAAAABAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAFAAQAAAAEAAAAAAAGAAQAAAAEAAAAAAAHAAQAAAAEAAAAAAAIAAQAAAADAAIAAAAIAAEAAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAACAAAAAAAPAAEAAAAEAAEAAAAPAAIAAAAFAAAAAAAPAAMAAAACAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAEAAAABAAQAAAAEAAAAAAAEAAQAAAABAAAAAAAIAAEAAAAEAAEAAAAFAAQAAAAEAAAAAAAGAAQAAAAEAAAAAAAHAAQAAAADAAIAAAAEAAUAAAAEAAEAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="Player" parent="." instance=ExtResource("3_l70k0")]
-position = Vector2(108, 159)
+[node name="Player" parent="." instance=ExtResource("3_2565o")]
+position = Vector2(88, 160)
 
-[node name="Platform" parent="." instance=ExtResource("6_l11u7")]
+[node name="Platform" parent="." instance=ExtResource("4_e6oo0")]
 position = Vector2(576, 288)
 
-[node name="Platform2" parent="." instance=ExtResource("6_l11u7")]
+[node name="Platform4" parent="." instance=ExtResource("4_e6oo0")]
+position = Vector2(656, 128)
+
+[node name="Platform2" parent="." instance=ExtResource("4_e6oo0")]
 position = Vector2(480, 240)
 
-[node name="Platform3" parent="." instance=ExtResource("6_l11u7")]
+[node name="Platform3" parent="." instance=ExtResource("4_e6oo0")]
 position = Vector2(576, 187)
 
-[node name="Light" parent="." instance=ExtResource("9_uu8tb")]
-position = Vector2(276, 56)
-
-[node name="Transition" parent="." instance=ExtResource("4_qdubr")]
-
-[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
-shape = SubResource("RectangleShape2D_lorgc")
-
-[node name="AnimationPlayer" parent="Transition" index="3"]
-libraries = {
-"": SubResource("AnimationLibrary_k0j2h")
-}
-autoplay = ""
+[node name="Light" parent="." instance=ExtResource("5_u3ric")]
+position = Vector2(488, 56)
 
 [node name="dont touch" type="Node" parent="."]
 
@@ -291,17 +201,47 @@ autoplay = ""
 modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
 z_index = -1
 scale = Vector2(11.98, 11.95)
-texture = ExtResource("10_wmmei")
+texture = ExtResource("7_tw4od")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Camera2D" parent="dont touch" instance=ExtResource("2_iyhmq")]
+[node name="Camera2D" parent="dont touch" instance=ExtResource("8_1lbab")]
 
-[node name="CRTShader" parent="dont touch" instance=ExtResource("5_0obnt")]
+[node name="CRTShader" parent="dont touch" instance=ExtResource("9_0gswi")]
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="dont touch"]
 material = SubResource("ShaderMaterial_3qlgg")
 color = Color(0.49464, 0.4914, 0.54, 1)
 
-[editable path="Transition"]
+[node name="Door" parent="." instance=ExtResource("12_r5480")]
+position = Vector2(744, 336)
+isOpen = true
+
+[node name="Door2" parent="." instance=ExtResource("12_r5480")]
+position = Vector2(216, 328)
+isOpen = true
+
+[node name="RigidBody2D" parent="." instance=ExtResource("14_lracy")]
+position = Vector2(688, 134)
+
+[node name="Grow-Laser" parent="." instance=ExtResource("14_t3ffc")]
+position = Vector2(264, 240)
+rotation = 1.5708
+
+[node name="Scale_button_green" parent="." instance=ExtResource("15_ggeun")]
+position = Vector2(98, 385)
+
+[node name="Button_Red_Signal" parent="Scale_button_green" instance=ExtResource("16_7n6ih")]
+position = Vector2(118, -129)
+
+[node name="Button_red" parent="." instance=ExtResource("13_1yxvt")]
+position = Vector2(432, 384)
+
+[node name="Button_Red_Signal" parent="." instance=ExtResource("16_7n6ih")]
+position = Vector2(744, 263)
+
+[connection signal="pressed" from="Scale_button_green" to="Door" method="toggle_door"]
+[connection signal="pressed" from="Scale_button_green" to="Button_Red_Signal" method="toggle_door"]
+[connection signal="pressed" from="Button_red" to="Door2" method="toggle_door"]
+[connection signal="pressed" from="Button_red" to="Scale_button_green/Button_Red_Signal" method="toggle_door"]
