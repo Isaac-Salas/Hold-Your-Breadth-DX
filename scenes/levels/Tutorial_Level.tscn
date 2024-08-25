@@ -355,7 +355,6 @@ position = Vector2(742, 18)
 
 [node name="Transition" type="Node2D" parent="."]
 script = ExtResource("14_ou04f")
-target_scene = ExtResource("15_6e50k")
 
 [node name="Trigger" type="Area2D" parent="Transition"]
 

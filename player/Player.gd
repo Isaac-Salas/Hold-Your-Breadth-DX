@@ -91,7 +91,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_released("LefMouse") and picking == false and toggle == true:
 		scaler.visible = false
-		print("stopping")
+		#print("stopping")
 	
 	# Manage grow
 	#if Input.is_action_pressed("grow"):
@@ -132,7 +132,7 @@ func togglefun():
 		dot.visible = true
 
 func scaling():
-	print(sprite.scale)
+	#print(sprite.scale)
 	iscaling = true
 	var thing = Vector2(scaler.factor/10,scaler.factor/10)*50
 	if thing > Vector2(0,0):
@@ -196,12 +196,12 @@ func throw(body):
 		currentobj.colision.disabled = false
 		currentobj.global_position = pickup.global_position
 		currentobj = null
-		print(currentobj)
+		#print(currentobj)
 		
 func set_size(target_size):
 	colision.scale = target_size/2
 	rigidcolision.scale = target_size/2
-	sprite.scale = target_size
+	sprite.scale = target_size/2
 
 func _on_object_detect_body_entered(body):
 	if body.is_in_group("throwable") and picking == false:

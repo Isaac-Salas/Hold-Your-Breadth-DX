@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://fsxjau4kfu71"]
 
 [ext_resource type="Script" path="res://scenes/objects/brokenwoodenboxes.gd" id="1_wprqd"]
-[ext_resource type="Texture2D" uid="uid://cxl2ymimu617p" path="res://assets/objects/brokencaja/Piece1.png" id="1_xsf47"]
-[ext_resource type="Texture2D" uid="uid://3y0sr336l0gw" path="res://assets/objects/brokencaja/Piece2.png" id="2_115jd"]
-[ext_resource type="Texture2D" uid="uid://b4aftajbqmqda" path="res://assets/objects/brokencaja/Piece3.png" id="3_hkko0"]
-[ext_resource type="Texture2D" uid="uid://bufqex1t5xbsv" path="res://assets/objects/brokencaja/Piece4.png" id="4_0ma01"]
+[ext_resource type="Texture2D" uid="uid://cjkqa34iovt5f" path="res://assets/objects/brokencaja/Piece1.png" id="1_xsf47"]
+[ext_resource type="Texture2D" uid="uid://dmqb7wyrtxva0" path="res://assets/objects/brokencaja/Piece2.png" id="2_115jd"]
+[ext_resource type="Texture2D" uid="uid://clnwn3l0b38d2" path="res://assets/objects/brokencaja/Piece3.png" id="3_hkko0"]
+[ext_resource type="Texture2D" uid="uid://bn3sspljaulwp" path="res://assets/objects/brokencaja/Piece4.png" id="4_0ma01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wexhu"]
 size = Vector2(5, 5)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx27mjdwpsn4g"]
+[gd_scene load_steps=8 format=3 uid="uid://bx27mjdwpsn4g"]
 
 [ext_resource type="Script" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
-[ext_resource type="Texture2D" uid="uid://dsgasl17nx1k6" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
+[ext_resource type="Texture2D" uid="uid://cfg27pa0h8eei" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="3_245jv"]
 [ext_resource type="PackedScene" uid="uid://fsxjau4kfu71" path="res://scenes/objects/brokenwoodenboxes.tscn" id="4_bikkg"]
 
@@ -11,7 +11,10 @@ size = Vector2(24, 24)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6l1ko"]
 radius = 12.0
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["breakable", "button_actionable", "throwable"]]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r4nbm"]
+polygon = PackedVector2Array(-12, 12, 12, 12, 12, -12, -12, -12)
+
+[node name="WoodenBox" type="RigidBody2D" groups=["breakable", "button_actionable", "throwable"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ux5yh")
@@ -35,6 +38,9 @@ shape = SubResource("CircleShape2D_6l1ko")
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("3_245jv")
 scene = ExtResource("4_bikkg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_r4nbm")
 
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]

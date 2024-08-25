@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=4 uid="uid://ds55rb4riqalc"]
 
 [ext_resource type="Script" path="res://scenes/levels/template.gd" id="1_7ttjn"]
-[ext_resource type="Texture2D" uid="uid://cwtv008mh14j6" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
+[ext_resource type="Texture2D" uid="uid://dy58c3vewayi8" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_iyhmq"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_l70k0"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_qdubr"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="6_l11u7"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="8_bv7v5"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_uu8tb"]
-[ext_resource type="Texture2D" uid="uid://djr6t1im3mmwc" path="res://assets/fondos/Lab.png" id="10_wmmei"]
+[ext_resource type="Texture2D" uid="uid://xxni0caw8scx" path="res://assets/fondos/Lab.png" id="10_wmmei"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -273,6 +273,7 @@ position = Vector2(576, 187)
 
 [node name="Light" parent="." instance=ExtResource("9_uu8tb")]
 position = Vector2(276, 56)
+color = Color(0.498039, 1, 0.458824, 1)
 
 [node name="Transition" parent="." instance=ExtResource("4_qdubr")]
 
@@ -283,7 +284,6 @@ shape = SubResource("RectangleShape2D_lorgc")
 libraries = {
 "": SubResource("AnimationLibrary_k0j2h")
 }
-autoplay = ""
 
 [node name="dont touch" type="Node" parent="."]
 

@@ -6,6 +6,8 @@ extends StaticBody2D
 
 func _ready() -> void:
 	toggle_door(isOpen, 0)
+	if get_parent().has_signal("pressed"):
+		get_parent().connect("pressed", toggle_door)
 
 func toggle_door(state, body):
 	isOpen = !isOpen

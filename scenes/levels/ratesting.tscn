@@ -1,12 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://bw37nr6xqw6yc"]
+[gd_scene load_steps=21 format=3 uid="uid://bw37nr6xqw6yc"]
 
 [ext_resource type="Script" path="res://scenes/levels/testing.gd" id="1_iike3"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_twmpe"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_goeaq"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="4_lwyf2"]
-[ext_resource type="PackedScene" path="res://scenes/levels/tilemap.tscn" id="5_2xpgq"]
-[ext_resource type="Texture2D" uid="uid://dalgnkvg42uai" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
-[ext_resource type="Texture2D" uid="uid://ciunp5a4cnebs" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
+[ext_resource type="PackedScene" uid="uid://djmwe6diqa443" path="res://scenes/levels/tilemap.tscn" id="5_2xpgq"]
+[ext_resource type="Texture2D" uid="uid://g5rjya528ung" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
+[ext_resource type="Texture2D" uid="uid://b0u4aagaprmkj" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="9_ewksh"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="10_uj851"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="11_onm1m"]
@@ -14,9 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="12_xhklx"]
 [ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="13_62bdi"]
 [ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="14_a3g21"]
-[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="14_omlea"]
+[ext_resource type="Texture2D" uid="uid://xxni0caw8scx" path="res://assets/fondos/Lab.png" id="14_omlea"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="17_ji3ml"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_hbbxj"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/enemies/Meatbox/meat_box.tscn" id="18_kuoxt"]
+[ext_resource type="PackedScene" uid="uid://22v7woarogqs" path="res://scenes/levels/dante's first blood.tscn" id="19_vytfc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uh315"]
 shader = ExtResource("4_lwyf2")
@@ -201,3 +203,11 @@ position = Vector2(645, 144)
 
 [node name="MeatBox4" parent="." instance=ExtResource("18_kuoxt")]
 position = Vector2(551, 235)
+
+[node name="Transition" parent="." instance=ExtResource("18_hbbxj")]
+scale = Vector2(1.5, 1.5)
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(720, 265.333)
+
+[editable path="Transition"]

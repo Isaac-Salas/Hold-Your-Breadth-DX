@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b71h5dbrt5qt3"]
+[gd_scene load_steps=13 format=3 uid="uid://b71h5dbrt5qt3"]
 
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="1_wtyfx"]
 [ext_resource type="Texture2D" uid="uid://bqev6i3pv5rll" path="res://assets/objects/small_door.png" id="2_vmk4x"]
@@ -39,7 +39,7 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xexdh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv5jd"]
 size = Vector2(48, 96)
 
 [sub_resource type="Animation" id="Animation_8t16k"]
@@ -80,6 +80,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightOccluder2D:occluder:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96)]
+}
 
 [sub_resource type="Animation" id="Animation_n1mad"]
 resource_name = "shuttingcol"
@@ -93,7 +105,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
+"update": 1,
 "values": [Vector2(48, 96), Vector2(48, 80), Vector2(48, 64), Vector2(48, 48)]
 }
 tracks/1/type = "value"
@@ -105,7 +117,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, -48), Vector2(0, -56), Vector2(0, -64), Vector2(0, -72)]
 }
 tracks/2/type = "value"
@@ -117,8 +129,20 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightOccluder2D:occluder:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96), PackedVector2Array(-24, -16, 24, -16, 24, -96, -24, -96), PackedVector2Array(-24, -32, 24, -32, 24, -96, -24, -96), PackedVector2Array(-24, -48, 24, -48, 24, -96, -24, -96)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlwus"]
@@ -127,9 +151,11 @@ _data = {
 "shuttingcol": SubResource("Animation_n1mad")
 }
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kh5m2"]
+polygon = PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96)
+
 [node name="Small_door" type="StaticBody2D"]
 script = ExtResource("1_wtyfx")
-isOpen = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -48)
@@ -139,9 +165,12 @@ frame_progress = 1.0
 
 [node name="Door1" type="CollisionShape2D" parent="."]
 position = Vector2(0, -48)
-shape = SubResource("RectangleShape2D_xexdh")
+shape = SubResource("RectangleShape2D_vv5jd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_dlwus")
 }
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_kh5m2")

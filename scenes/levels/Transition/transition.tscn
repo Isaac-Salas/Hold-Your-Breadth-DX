@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://b0pi4ocu1rpdi"]
 
 [ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="1_aifxu"]
-[ext_resource type="Texture2D" uid="uid://4ewvnkjfjmjq" path="res://assets/objects/Transition.png" id="2_1pr46"]
+[ext_resource type="Texture2D" uid="uid://dvgadqdwc5gse" path="res://assets/objects/Transition.png" id="2_1pr46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
-size = Vector2(39.5, 95)
+size = Vector2(24, 95)
 
 [sub_resource type="Animation" id="Animation_1yl6c"]
 resource_name = "Closing"
@@ -103,7 +103,7 @@ script = ExtResource("1_aifxu")
 [node name="Trigger" type="Area2D" parent="."]
 
 [node name="TRIGGERSCENE" type="CollisionShape2D" parent="Trigger"]
-position = Vector2(744, 336)
+position = Vector2(756, 336)
 shape = SubResource("RectangleShape2D_lorgc")
 debug_color = Color(0.453215, 0.595313, 0, 0.42)
 

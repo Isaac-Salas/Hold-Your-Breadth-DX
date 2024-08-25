@@ -4,10 +4,8 @@ extends Node2D
 @export var target_scene: PackedScene
 
 func transition_to(_next_scene) -> void:
-	# Plays the Fade animation and wait until it finishes
 	ap.play("Closing")
 	await(ap.animation_finished)
-	# Changes the scene
 	get_tree().change_scene_to_packed(_next_scene)
 
 

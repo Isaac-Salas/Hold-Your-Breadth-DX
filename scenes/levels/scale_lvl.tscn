@@ -1,23 +1,24 @@
-[gd_scene load_steps=31 format=4 uid="uid://bhe6366hku86k"]
+[gd_scene load_steps=33 format=4 uid="uid://bhe6366hku86k"]
 
 [ext_resource type="Script" path="res://scenes/levels/scale_lvl.gd" id="1_8b6j6"]
-[ext_resource type="Texture2D" uid="uid://cwtv008mh14j6" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
+[ext_resource type="Texture2D" uid="uid://dy58c3vewayi8" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_03rxa"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_vqrqb"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="4_soxw3"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="5_hq2aw"]
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="6_bgdep"]
 [ext_resource type="PackedScene" uid="uid://b71h5dbrt5qt3" path="res://scenes/objects/door/small_door.tscn" id="6_rsd5o"]
-[ext_resource type="Texture2D" uid="uid://kp3ixxa8yxlx" path="res://assets/objects/small_door.png" id="7_jwv1l"]
+[ext_resource type="Texture2D" uid="uid://bqev6i3pv5rll" path="res://assets/objects/small_door.png" id="7_jwv1l"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="9_l318y"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_jx2cx"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="11_4yy0m"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="11_hdapu"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="13_47ecm"]
+[ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="14_2wq0h"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="14_ircil"]
-[ext_resource type="Texture2D" uid="uid://djr6t1im3mmwc" path="res://assets/fondos/Lab.png" id="15_f43ir"]
+[ext_resource type="Texture2D" uid="uid://xxni0caw8scx" path="res://assets/fondos/Lab.png" id="15_f43ir"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="16_xtf8s"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="17_ywglr"]
-[ext_resource type="PackedScene" uid="uid://bw37nr6xqw6yc" path="res://scenes/levels/ratesting.tscn" id="18_06xdy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("1_etyb7")
@@ -164,7 +165,7 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xexdh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv5jd"]
 size = Vector2(48, 96)
 
 [sub_resource type="Animation" id="Animation_8t16k"]
@@ -205,6 +206,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightOccluder2D:occluder:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96)]
+}
 
 [sub_resource type="Animation" id="Animation_n1mad"]
 resource_name = "shuttingcol"
@@ -218,7 +231,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
+"update": 1,
 "values": [Vector2(48, 96), Vector2(48, 80), Vector2(48, 64), Vector2(48, 48)]
 }
 tracks/1/type = "value"
@@ -230,7 +243,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, -48), Vector2(0, -56), Vector2(0, -64), Vector2(0, -72)]
 }
 tracks/2/type = "value"
@@ -242,8 +255,20 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightOccluder2D:occluder:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96), PackedVector2Array(-24, -16, 24, -16, 24, -96, -24, -96), PackedVector2Array(-24, -32, 24, -32, 24, -96, -24, -96), PackedVector2Array(-24, -48, 24, -48, 24, -96, -24, -96)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlwus"]
@@ -251,6 +276,9 @@ _data = {
 "RESET": SubResource("Animation_8t16k"),
 "shuttingcol": SubResource("Animation_n1mad")
 }
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kh5m2"]
+polygon = PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0vnp2"]
 shader = ExtResource("17_ywglr")
@@ -286,55 +314,62 @@ position = Vector2(480, 360)
 [node name="Grow-Laser" parent="." instance=ExtResource("4_soxw3")]
 position = Vector2(360, 48)
 rotation = 1.5708
-target_scale = Vector2(2.5, 2.5)
+target_scale = Vector2(8, 8)
 
 [node name="Shrink-Laser" parent="." instance=ExtResource("5_hq2aw")]
 position = Vector2(312, 48)
 rotation = 1.5708
-target_scale = Vector2(0.8, 0.8)
-
-[node name="Small_door" type="StaticBody2D" parent="."]
-position = Vector2(336, 120)
-rotation = -1.5708
-script = ExtResource("6_bgdep")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Small_door"]
-position = Vector2(0, -48)
-sprite_frames = SubResource("SpriteFrames_eoohd")
-animation = &"open"
-metadata/_edit_lock_ = true
-
-[node name="Door1" type="CollisionShape2D" parent="Small_door"]
-position = Vector2(0, -48)
-shape = SubResource("RectangleShape2D_xexdh")
-metadata/_edit_lock_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Small_door"]
-libraries = {
-"": SubResource("AnimationLibrary_dlwus")
-}
-
-[node name="Small_door2" parent="." instance=ExtResource("6_rsd5o")]
-position = Vector2(336, 120)
-rotation = 1.5708
-isOpen = true
+target_scale = Vector2(2, 1.5)
 
 [node name="Button_red" parent="." instance=ExtResource("9_l318y")]
 position = Vector2(96, 336)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("10_jx2cx")]
-position = Vector2(408, 204)
+[node name="Button_Red_Signal" parent="Button_red" instance=ExtResource("11_hdapu")]
+position = Vector2(312, -216)
 
-[node name="RigidBody2D3" parent="." instance=ExtResource("10_jx2cx")]
-position = Vector2(204, 204)
+[node name="Small_door" parent="Button_red" instance=ExtResource("6_rsd5o")]
+position = Vector2(240, -216)
+rotation = 4.71238
+
+[node name="Small_door2" type="StaticBody2D" parent="Button_red"]
+position = Vector2(240, -216)
+rotation = 1.57079
+script = ExtResource("6_bgdep")
+isOpen = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button_red/Small_door2"]
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_eoohd")
+animation = &"open"
+frame_progress = 1.0
+
+[node name="Door1" type="CollisionShape2D" parent="Button_red/Small_door2"]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_vv5jd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button_red/Small_door2"]
+libraries = {
+"": SubResource("AnimationLibrary_dlwus")
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Button_red/Small_door2"]
+occluder = SubResource("OccluderPolygon2D_kh5m2")
 
 [node name="Scale_button_green" parent="." instance=ExtResource("11_4yy0m")]
 position = Vector2(192, 384)
-activation_weight = 5.0
+activation_weight = 8.0
 
-[node name="Door" parent="." instance=ExtResource("13_47ecm")]
-position = Vector2(600, 336)
-isOpen = true
+[node name="Door" parent="Scale_button_green" instance=ExtResource("13_47ecm")]
+position = Vector2(408, -48)
+
+[node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("14_2wq0h")]
+position = Vector2(408, -119)
+
+[node name="WoodenBox" parent="." instance=ExtResource("10_jx2cx")]
+position = Vector2(504, 180)
+
+[node name="WoodenBox2" parent="." instance=ExtResource("10_jx2cx")]
+position = Vector2(470, 192)
 
 [node name="dont touch" type="Node" parent="."]
 
@@ -356,13 +391,5 @@ material = SubResource("ShaderMaterial_0vnp2")
 color = Color(0.49464, 0.4914, 0.54, 1)
 
 [node name="Transition" parent="." instance=ExtResource("14_ircil")]
-target_scene = ExtResource("18_06xdy")
-
-[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
-position = Vector2(747.75, 336)
-
-[connection signal="pressed" from="Button_red" to="Small_door" method="toggle_door"]
-[connection signal="pressed" from="Button_red" to="Small_door2" method="toggle_door"]
-[connection signal="pressed" from="Scale_button_green" to="Door" method="toggle_door"]
 
 [editable path="Transition"]
