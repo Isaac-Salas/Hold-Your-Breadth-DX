@@ -34,20 +34,23 @@ signal scare
 
 
 
+
 func _physics_process(delta):
+	#Hard cap whean shrink
+	if sprite.scale.x < 0.1:
+		rigidcolision.scale = Vector2(0.1,0.1)
+		colision.scale = Vector2(0.1,0.1)
+		sprite.scale = Vector2(0.1,0.1)
+
 	
 	print(sprite.scale)
 	print(current)
 	if sprite.scale.x >= 0.1 and sprite.scale.x <= 0.9:
-		if sprite.scale.x < 0.1:
-			sprite.scale.x == 0.1
 		current = states[0]
 	if sprite.scale.x >= 1 and sprite.scale.x <= 1.9:
 		current = states[1]
 	if sprite.scale.x >= 2 and sprite.scale.x <= 3:
 		emit_signal("scare")
-		if sprite.scale.x > 6:
-			sprite.scale.x == 6
 		current = states[2]
 	# Add the gravity.
 	if not is_on_floor():
@@ -145,18 +148,26 @@ func scaling():
 func grow(scalerate):
 	if SPEED > 100:
 		SPEED -= 5
-	if colision.scale.x < 3:
+	if sprite.scale.x + scalerate.x < 3:
 		colision.scale = sprite.scale
 		rigidcolision.scale += scalerate
 		sprite.scale += scalerate
+	else:
+		rigidcolision.scale = Vector2(3,3)
+		colision.scale = sprite.scale
+		sprite.scale = Vector2(3,3)
 
 func shrink(scalerate):
 	if SPEED < 500 :
 		SPEED += 5
-	if colision.scale.x > 0.1:
+	if sprite.scale.x - scalerate.x > 0.1:
 		rigidcolision.scale -= scalerate
 		colision.scale = sprite.scale
 		sprite.scale -= scalerate
+	else:
+		rigidcolision.scale = Vector2(0.1,0.1)
+		colision.scale = sprite.scale
+		sprite.scale = Vector2(0.1,0.1)
 
 func grab(body):
 	if currentobj and picking == false:

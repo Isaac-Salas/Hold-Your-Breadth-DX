@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bhe6366hku86k"]
+[gd_scene load_steps=35 format=4 uid="uid://bhe6366hku86k"]
 
 [ext_resource type="Script" path="res://scenes/levels/scale_lvl.gd" id="1_8b6j6"]
 [ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="16_xtf8s"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="17_ywglr"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="20_56ndd"]
+[ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="20_n827s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("1_etyb7")
@@ -310,7 +311,7 @@ rendering_quadrant_size = 48
 [node name="Camera2D" parent="." instance=ExtResource("2_03rxa")]
 
 [node name="Player" parent="." instance=ExtResource("3_vqrqb")]
-position = Vector2(480, 360)
+position = Vector2(525, 331)
 
 [node name="Grow-Laser" parent="." instance=ExtResource("4_soxw3")]
 position = Vector2(360, 48)
@@ -331,7 +332,7 @@ rotation = 4.71238
 
 [node name="Small_door2" type="StaticBody2D" parent="Button_red"]
 position = Vector2(240, -216)
-rotation = 7.85397
+rotation = 1.5708
 script = ExtResource("6_bgdep")
 isOpen = true
 
@@ -396,7 +397,7 @@ material = SubResource("ShaderMaterial_0vnp2")
 color = Color(0.49464, 0.4914, 0.54, 1)
 
 [node name="Transition" parent="." instance=ExtResource("14_ircil")]
-visible = false
+target_scene = ExtResource("20_n827s")
 
 [node name="Light" parent="." instance=ExtResource("20_56ndd")]
 position = Vector2(94, 60)

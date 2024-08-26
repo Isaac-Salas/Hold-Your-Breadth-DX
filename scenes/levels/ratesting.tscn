@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bw37nr6xqw6yc"]
+[gd_scene load_steps=21 format=3 uid="uid://bw37nr6xqw6yc"]
 
 [ext_resource type="Script" path="res://scenes/levels/testing.gd" id="1_iike3"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_twmpe"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="17_ji3ml"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_hbbxj"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/enemies/Meatbox/meat_box.tscn" id="18_kuoxt"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="19_b5rdu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uh315"]
 shader = ExtResource("4_lwyf2")
@@ -190,5 +191,8 @@ scale = Vector2(1.5, 1.5)
 visible = false
 position = Vector2(720, 265.333)
 disabled = true
+
+[node name="Platform" parent="Transition/Trigger" index="1" instance=ExtResource("19_b5rdu")]
+position = Vector2(154, 233.333)
 
 [editable path="Transition"]

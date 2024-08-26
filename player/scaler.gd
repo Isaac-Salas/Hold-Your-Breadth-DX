@@ -3,7 +3,8 @@ class_name Scaler
 @onready var icon = $Sprite2D
 @onready var factor
 @onready var scaler = $"."
-
+@onready var down = false
+@onready var up = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,12 +17,26 @@ func _process(delta):
 	factor = -1*((icon.position.y/2)/10)/50
 	icon.scale = Vector2(factor,factor)
 	if icon.position.y > 0:
-		icon.flip_v = false
-		icon.play("Up")
+		match down:
+			false:
+				icon.flip_v = true
+				icon.play("Down")
+				await icon.animation_finished
+				down = true
+			true:
+				icon.flip_v = true
+				icon.play("MasDown")
+		
 	if icon.position.y < 0:
-		icon.flip_v = true
-		icon.play("Down")
-	
+		match up:
+			false:
+				icon.flip_v = false
+				icon.play("Up")
+				await icon.animation_finished
+				up = true
+			true:
+				icon.flip_v = false
+				icon.play("MasUp")
 	
 	
 	
