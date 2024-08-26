@@ -36,14 +36,15 @@ signal scare
 
 func _physics_process(delta):
 	
-	#print(current)
-	if sprite.scale.x >= 0.1 and sprite.scale.x <= 1.9:
+	print(sprite.scale)
+	print(current)
+	if sprite.scale.x >= 0.1 and sprite.scale.x <= 0.9:
 		if sprite.scale.x < 0.1:
 			sprite.scale.x == 0.1
 		current = states[0]
-	if sprite.scale.x >= 2 and sprite.scale.x <= 3.9:
+	if sprite.scale.x >= 1 and sprite.scale.x <= 1.9:
 		current = states[1]
-	if sprite.scale.x >= 4 and sprite.scale.x <= 6:
+	if sprite.scale.x >= 2 and sprite.scale.x <= 3:
 		emit_signal("scare")
 		if sprite.scale.x > 6:
 			sprite.scale.x == 6
@@ -146,14 +147,14 @@ func grow(scalerate):
 		SPEED -= 5
 	if colision.scale.x < 3:
 		colision.scale = sprite.scale
-		rigidcolision.scale += scalerate/2
+		rigidcolision.scale += scalerate
 		sprite.scale += scalerate
 
 func shrink(scalerate):
 	if SPEED < 500 :
 		SPEED += 5
 	if colision.scale.x > 0.1:
-		rigidcolision.scale -= scalerate/2
+		rigidcolision.scale -= scalerate
 		colision.scale = sprite.scale
 		sprite.scale -= scalerate
 
@@ -164,15 +165,21 @@ func grab(body):
 		currentobj.reparent(pickup)
 		currentobj.freeze = true
 		currentobj.colision.disabled = true
+		#currentobj.collision.layer = 8
 		currentobj.global_position = pickup.global_position
 
-func letgo(body):
-	if currentobj and picking == true:
-		picking = false
-		currentobj.reparent(get_tree().get_root())
-		currentobj.freeze = false
-		currentobj.colision.disabled = false
-		currentobj.global_position = pickup.global_position
+#func letgo(body):
+	#if currentobj and picking == true:
+		#picking = false
+		#var repar = get_tree().current_scene
+		#
+		#print(repar)
+		#currentobj.reparent(repar, false)
+		#print_orphan_nodes() 
+		#print_tree()
+		#currentobj.freeze = false
+		#currentobj.colision.disabled = false
+		#currentobj.global_position = pickup.global_position
 		
 
 func aim(delta):
@@ -191,7 +198,7 @@ func throw(body):
 		picking = false
 		currentobj.linear_velocity = crosshair.VelVec * THROW_SPEED
 		currentobj.angular_velocity = 20.0
-		currentobj.reparent(get_tree().get_root())
+		currentobj.reparent(get_tree().current_scene)
 		currentobj.freeze = false
 		currentobj.colision.disabled = false
 		currentobj.global_position = pickup.global_position

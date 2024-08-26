@@ -1,12 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://bw37nr6xqw6yc"]
+[gd_scene load_steps=20 format=3 uid="uid://bw37nr6xqw6yc"]
 
 [ext_resource type="Script" path="res://scenes/levels/testing.gd" id="1_iike3"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_twmpe"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_goeaq"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="4_lwyf2"]
 [ext_resource type="PackedScene" uid="uid://djmwe6diqa443" path="res://scenes/levels/tilemap.tscn" id="5_2xpgq"]
-[ext_resource type="Texture2D" uid="uid://g5rjya528ung" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
-[ext_resource type="Texture2D" uid="uid://b0u4aagaprmkj" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
+[ext_resource type="Texture2D" uid="uid://yljrgcly32g5" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
+[ext_resource type="Texture2D" uid="uid://dhofe6hs8tpcg" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="9_ewksh"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="10_uj851"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="11_onm1m"]
@@ -14,11 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="12_xhklx"]
 [ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="13_62bdi"]
 [ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="14_a3g21"]
-[ext_resource type="Texture2D" uid="uid://xxni0caw8scx" path="res://assets/fondos/Lab.png" id="14_omlea"]
+[ext_resource type="Texture2D" uid="uid://bwtlag06aqeoq" path="res://assets/fondos/Lab.png" id="14_omlea"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="17_ji3ml"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_hbbxj"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/enemies/Meatbox/meat_box.tscn" id="18_kuoxt"]
-[ext_resource type="PackedScene" uid="uid://22v7woarogqs" path="res://scenes/levels/dante's first blood.tscn" id="19_vytfc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uh315"]
 shader = ExtResource("4_lwyf2")
@@ -76,36 +75,6 @@ position = Vector2(574, 173)
 ratfleetarget = NodePath("../../Ratfleemarker")
 speed = 10
 
-[node name="Ratiña3" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
-position = Vector2(465, 168)
-ratfleetarget = NodePath("../../Ratfleemarker")
-speed = 10
-
-[node name="Ratiña4" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
-position = Vector2(549, 135)
-ratfleetarget = NodePath("../../Ratfleemarker")
-speed = 10
-
-[node name="Ratiña5" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
-position = Vector2(534, 251)
-ratfleetarget = NodePath("../../Ratfleemarker")
-speed = 10
-
-[node name="Ratiña6" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
-position = Vector2(404, 248)
-ratfleetarget = NodePath("../../Ratfleemarker")
-speed = 10
-
-[node name="Ratiña7" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
-position = Vector2(660, 172)
-ratfleetarget = NodePath("../../Ratfleemarker")
-speed = 10
-
-[node name="Ratiña8" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
-position = Vector2(702, 150)
-ratfleetarget = NodePath("../../Ratfleemarker")
-speed = 10
-
 [node name="Matraces" type="Node2D" parent="."]
 
 [node name="RigidBody2D" parent="Matraces" instance=ExtResource("11_onm1m")]
@@ -153,42 +122,52 @@ material = SubResource("ShaderMaterial_uh315")
 color = Color(0.49464, 0.4914, 0.54, 1)
 
 [node name="Light" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(194, 77)
 metadata/_edit_lock_ = true
 
 [node name="Light2" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(290, 77)
 metadata/_edit_lock_ = true
 
 [node name="Light3" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(402, 67)
 metadata/_edit_lock_ = true
 
 [node name="Light4" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(496, 79)
 metadata/_edit_lock_ = true
 
 [node name="Light5" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(592, 75)
 metadata/_edit_lock_ = true
 
 [node name="Light6" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(716, 64)
 metadata/_edit_lock_ = true
 
 [node name="Light7" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(838, 64)
 metadata/_edit_lock_ = true
 
 [node name="Light8" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(911, 65)
 metadata/_edit_lock_ = true
 
 [node name="Light9" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(992, 73)
 metadata/_edit_lock_ = true
 
 [node name="Light10" parent="." instance=ExtResource("17_ji3ml")]
+z_index = 1
 position = Vector2(99, 84)
 metadata/_edit_lock_ = true
 
@@ -208,6 +187,8 @@ position = Vector2(551, 235)
 scale = Vector2(1.5, 1.5)
 
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+visible = false
 position = Vector2(720, 265.333)
+disabled = true
 
 [editable path="Transition"]

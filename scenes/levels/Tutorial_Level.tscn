@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://bc8vxc0lju6wb"]
+[gd_scene load_steps=28 format=4 uid="uid://bc8vxc0lju6wb"]
 
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="1_qwb4m"]
+[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="1_qwb4m"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="2_qma4r"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="2_qnpnj"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_6ms7x"]
@@ -8,15 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="5_ynvxa"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="8_olvlg"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="9_3ffdw"]
-[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="9_lgssh"]
+[ext_resource type="Texture2D" uid="uid://bwtlag06aqeoq" path="res://assets/fondos/Lab.png" id="9_lgssh"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_81qn4"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="11_bn5p2"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="12_m17ru"]
 [ext_resource type="PackedScene" uid="uid://byvxy73yntnit" path="res://scenes/objects/reset.tscn" id="13_6farp"]
 [ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="14_ou04f"]
-[ext_resource type="PackedScene" uid="uid://bw37nr6xqw6yc" path="res://scenes/levels/ratesting.tscn" id="15_6e50k"]
-[ext_resource type="Texture2D" uid="uid://058anyivsfg7" path="res://assets/objects/Transition.png" id="16_cjesv"]
+[ext_resource type="Texture2D" uid="uid://b1c1hr2n5qaas" path="res://assets/objects/Transition.png" id="16_cjesv"]
+[ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="16_cn8h6"]
 [ext_resource type="PackedScene" uid="uid://bp8r6cmiycm4m" path="res://scenes/enemies/Hamster/Hamster.tscn" id="17_iaxyl"]
+[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="17_n3hgd"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -269,11 +270,9 @@ rendering_quadrant_size = 48
 
 [node name="Door" parent="." instance=ExtResource("2_qnpnj")]
 position = Vector2(576, 336)
-isOpen = true
 
 [node name="Door2" parent="." instance=ExtResource("2_qnpnj")]
 position = Vector2(624, 336)
-isOpen = true
 
 [node name="Button_red" parent="." instance=ExtResource("4_oip6d")]
 position = Vector2(672, 192)
@@ -377,6 +376,13 @@ libraries = {
 "": SubResource("AnimationLibrary_k0j2h")
 }
 autoplay = "Opening"
+
+[node name="Ratiña" parent="Transition" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("16_cn8h6")]
+position = Vector2(227, 333)
+ratfleetarget = NodePath("../Ratfleemarker")
+
+[node name="Ratfleemarker" parent="Transition" instance=ExtResource("17_n3hgd")]
+position = Vector2(428, 123)
 
 [node name="Node2D" parent="." instance=ExtResource("17_iaxyl")]
 position = Vector2(750, 364)
