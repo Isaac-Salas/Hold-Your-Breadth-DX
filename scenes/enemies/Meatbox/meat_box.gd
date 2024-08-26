@@ -45,7 +45,9 @@ func timer():
 		
 
 func _on_body_entered(body):
-	count = true
+	if picked == true:
+		print(body.name)
+		count = true
 
 
 func _on_timer_timeout():

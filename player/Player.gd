@@ -43,8 +43,8 @@ func _physics_process(delta):
 		sprite.scale = Vector2(0.1,0.1)
 
 	
-	print(sprite.scale)
-	print(current)
+	#print(sprite.scale)
+	#print(current)
 	if sprite.scale.x >= 0.1 and sprite.scale.x <= 0.9:
 		current = states[0]
 	if sprite.scale.x >= 1 and sprite.scale.x <= 1.9:
