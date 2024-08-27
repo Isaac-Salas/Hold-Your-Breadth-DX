@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dplx7vme5hffd"]
+[gd_scene load_steps=15 format=4 uid="uid://dplx7vme5hffd"]
 
 [ext_resource type="Script" path="res://scenes/levels/testing.gd" id="1_bjxlj"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="8_t6iwl"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_25knb"]
 [ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
+[ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/enemies/Meatbox/meat_box.tscn" id="10_po2f4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_34mam"]
 shader = ExtResource("2_i4s4t")
@@ -164,7 +165,7 @@ position = Vector2(130, 128)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("ShaderMaterial_34mam")
-color = Color(0.439216, 0.439216, 0.580392, 1)
+color = Color(0.439049, 0.439049, 0.439049, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
@@ -181,31 +182,27 @@ position = Vector2(235, 56)
 position = Vector2(152, 409)
 ratfleetarget = NodePath("../../Ratfleemarker")
 
-[node name="Ratiña2" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("5_hcnto")]
-position = Vector2(237, 370)
-ratfleetarget = NodePath("../../Ratfleemarker")
-
 [node name="Matraces" type="Node2D" parent="."]
 
 [node name="CRTShader" parent="." instance=ExtResource("2_kan14")]
 metadata/_edit_lock_ = true
 
 [node name="Ratfleemarker" parent="." instance=ExtResource("8_t6iwl")]
-position = Vector2(1109, 458)
+position = Vector2(1028, 457)
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAwAAAACAAIAAAAAAAsAAAAAAAEAAAABAAsAAAAEAAAAAAACAAsAAAAEAAAAAAADAAsAAAAEAAAAAAAEAAsAAAAEAAAAAAAFAAsAAAAEAAAAAAAGAAsAAAAEAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAABAAAAAAAJAAoAAAABAAAAAAAKAAoAAAABAAAAAAALAAoAAAABAAAAAAAMAAoAAAABAAAAAAANAAoAAAABAAAAAAAOAAoAAAABAAAAAAAPAAoAAAABAAAAAAAQAAoAAAABAAAAAAARAAoAAAABAAAAAAASAAoAAAABAAAAAAATAAoAAAABAAAAAAAUAAoAAAABAAAAAAAVAAoAAAABAAAAAAAWAAoAAAABAAAAAAAWAAsAAAABAAIAAAAXAAsAAAABAAIAAAAYAAsAAAADAAIAAAAVAAsAAAABAAIAAAAUAAsAAAABAAIAAAATAAsAAAABAAIAAAASAAsAAAABAAIAAAARAAsAAAABAAIAAAAQAAsAAAABAAIAAAAPAAsAAAABAAIAAAAOAAsAAAABAAIAAAANAAsAAAABAAIAAAAMAAsAAAABAAIAAAALAAsAAAABAAIAAAAKAAsAAAABAAIAAAAJAAsAAAABAAIAAAAIAAsAAAABAAIAAAAHAAsAAAABAAEAAAAHAAwAAAACAAIAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAEAAEAAAAAAAYAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAFAAAAAAAAAAIAAAAEAAEAAAAAAAMAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAUAAAAEAAEAAAAXAAoAAAACAAEAAAAXAAkAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAYAAAAEAAEAAAAXAAUAAAAEAAEAAAAXAAQAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAEAAAAEAAEAAAAXAAAAAAABAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAP//AAAAAAAAAAAJAP//AAABAAAAAAAKAP//AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAANAP//AAABAAAAAAAOAP//AAABAAAAAAAPAP//AAABAAAAAAAQAP//AAABAAAAAAARAP//AAABAAAAAAASAP//AAABAAAAAAATAP//AAABAAAAAAAUAP//AAABAAAAAAAVAP//AAABAAAAAAAWAP//AAABAAAAAAAXAP//AAABAAAAAAAYAP//AAACAAAAAAAYAAAAAAACAAIAAAAWAAAAAAABAAIAAAAVAAAAAAABAAIAAAAUAAAAAAABAAIAAAATAAAAAAABAAIAAAASAAAAAAABAAIAAAARAAAAAAABAAIAAAAQAAAAAAABAAIAAAAPAAAAAAABAAIAAAAOAAAAAAABAAIAAAANAAAAAAABAAIAAAAMAAAAAAABAAIAAAALAAAAAAABAAIAAAAKAAAAAAABAAIAAAAJAAAAAAABAAIAAAAIAAAAAAABAAIAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 
+[node name="MeatBox" parent="." instance=ExtResource("10_po2f4")]
+position = Vector2(630, 375)
+
 [node name="Light" parent="." instance=ExtResource("9_25knb")]
 position = Vector2(408, 62)
-metadata/_edit_lock_ = true
 
 [node name="Light2" parent="." instance=ExtResource("9_25knb")]
 position = Vector2(519, 62)
-metadata/_edit_lock_ = true
 
 [node name="Light3" parent="." instance=ExtResource("9_25knb")]
 position = Vector2(611, 62)
-metadata/_edit_lock_ = true

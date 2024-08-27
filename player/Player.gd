@@ -28,8 +28,6 @@ signal scare
 @onready var tieso = false
 @onready var scale_component = $ScaleComponent
 @onready var eyes = $Animacion/Eyes
-@onready var rigid_body = $RigidBody2D
-@export var pushstrenght : int = 150
 
 
 
@@ -57,9 +55,8 @@ func _physics_process(delta):
 		JUMP_VELOCITY = -400
 		current = states[1]
 	if sprite.scale.x >= 2 and sprite.scale.x <= 3:
-		dot.radius = 70
-		SPEED = 100
-		JUMP_VELOCITY = -400
+		SPEED = 200
+		JUMP_VELOCITY = -200
 		emit_signal("scare")
 		current = states[2]
 	# Add the gravity.
@@ -79,12 +76,9 @@ func _physics_process(delta):
 		if direction == 1:
 			eyes.flip_h = false
 			sprite.flip_h = false
-			rigid_body.linear_velocity.x = pushstrenght 
-			
 		else:
 			eyes.flip_h = true
 			sprite.flip_h = true
-			rigid_body.linear_velocity.x = -pushstrenght 
 		velocity.x = direction * SPEED
 		#print(direction)
 

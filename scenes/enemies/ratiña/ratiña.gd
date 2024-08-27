@@ -1,5 +1,4 @@
 extends RigidBody2D
-class_name  Rat_enemy
 @export var ratfleetarget : Node2D
 @onready var timer = $Timer
 @onready var target_loc = $TargetLoc
@@ -67,7 +66,7 @@ func chasing(player):
 func fleeing():
 	timer.stop()
 	timer_2.stop()
-	#print("Ratflee")
+	print("Ratflee")
 	var fleeingdir = ratfleetarget.global_position - self.global_position
 	apply_central_impulse(Vector2(fleeingdir.x,-10))
 	timer_3.start(0.3)
