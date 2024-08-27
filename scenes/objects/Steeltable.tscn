@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbicnw6vctni8"]
+[gd_scene load_steps=6 format=3 uid="uid://dbicnw6vctni8"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_1r8ky"]
 [ext_resource type="Texture2D" uid="uid://d6b3rhg0wxf2" path="res://assets/objects/mesita - 1.png" id="2_k6f0r"]
@@ -8,6 +8,10 @@ size = Vector2(63, 8.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpt28"]
 size = Vector2(12, 42)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_brckr"]
+closed = false
+polygon = PackedVector2Array(-30, 69, -27, 72, -21, 72, -18, 69, -18, 30, 15, 30, 15, 69, 18, 72, 24, 72, 27, 69)
 
 [node name="RigidBody2D" instance=ExtResource("1_1r8ky")]
 
@@ -28,9 +32,10 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_k6f0r")
 
 [node name="PointLight2D" parent="Sprite2D" index="0"]
-energy = 1.5
 texture = ExtResource("2_k6f0r")
-texture_scale = 3.0
 
 [node name="Detector" parent="." index="4"]
 monitoring = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="6"]
+occluder = SubResource("OccluderPolygon2D_brckr")

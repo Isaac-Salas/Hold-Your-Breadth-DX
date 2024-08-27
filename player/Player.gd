@@ -35,6 +35,7 @@ signal scare
 
 
 
+
 func _physics_process(delta):
 	#Hard cap whean shrink
 	if sprite.scale.x < 0.1:
@@ -46,10 +47,16 @@ func _physics_process(delta):
 	#print(sprite.scale)
 	#print(current)
 	if sprite.scale.x >= 0.1 and sprite.scale.x <= 0.9:
+		SPEED = 600
+		JUMP_VELOCITY = -600
 		current = states[0]
 	if sprite.scale.x >= 1 and sprite.scale.x <= 1.9:
+		SPEED = 400
+		JUMP_VELOCITY = -400
 		current = states[1]
 	if sprite.scale.x >= 2 and sprite.scale.x <= 3:
+		SPEED = 200
+		JUMP_VELOCITY = -200
 		emit_signal("scare")
 		current = states[2]
 	# Add the gravity.
@@ -146,8 +153,7 @@ func scaling():
 	
 
 func grow(scalerate):
-	if SPEED > 100:
-		SPEED -= 5
+
 	if sprite.scale.x + scalerate.x < 3:
 		colision.scale = sprite.scale
 		rigidcolision.scale += scalerate
@@ -158,8 +164,6 @@ func grow(scalerate):
 		sprite.scale = Vector2(3,3)
 
 func shrink(scalerate):
-	if SPEED < 500 :
-		SPEED += 5
 	if sprite.scale.x - scalerate.x > 0.1:
 		rigidcolision.scale -= scalerate
 		colision.scale = sprite.scale

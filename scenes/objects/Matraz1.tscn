@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfvfq8x40yq6c"]
+[gd_scene load_steps=6 format=3 uid="uid://bfvfq8x40yq6c"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_vmb1b"]
 [ext_resource type="Texture2D" uid="uid://c7y8j5fv5y73m" path="res://assets/objects/matraz1.png" id="2_8aptt"]
@@ -9,6 +9,10 @@ size = Vector2(10, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_7qib0"]
 radius = 15.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_56r8l"]
+closed = false
+polygon = PackedVector2Array(-9, 8, -6, 10, 0, 10, 6, 10, 9, 8)
+
 [node name="RigidBody2D" groups=["throwable"] instance=ExtResource("1_vmb1b")]
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -18,8 +22,10 @@ shape = SubResource("RectangleShape2D_u4dov")
 texture = ExtResource("2_8aptt")
 
 [node name="PointLight2D" parent="Sprite2D" index="0"]
-energy = 1.5
 texture = ExtResource("2_8aptt")
 
 [node name="CollisionShape2D" parent="Detector" index="0"]
 shape = SubResource("CircleShape2D_7qib0")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="4"]
+occluder = SubResource("OccluderPolygon2D_56r8l")

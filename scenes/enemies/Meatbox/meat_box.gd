@@ -7,6 +7,7 @@ var count = false
 @onready var colision = $CollisionShape2D
 @onready var animation_player = $AnimationPlayer
 @onready var player : SlimePlayer
+@export var Lastingtime = 6.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
@@ -20,8 +21,9 @@ func _process(delta):
 	if player:
 		if picked == true and count == true:
 			timer()
+			animation_player.speed_scale = (6.0/Lastingtime)
 			animation_player.play("blink")
-			print(timerst.time_left)
+			#print(timerst.time_left))
 			colision.scale = player.colision.scale
 			sprite_2d.scale = colision.scale
 
@@ -40,7 +42,7 @@ func reset():
 
 func timer():
 	if start == true:
-		timerst.start(6.0)
+		timerst.start(Lastingtime)
 		start = false
 		
 

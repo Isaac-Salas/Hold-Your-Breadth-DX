@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://chvi67sx7uhx1"]
+[gd_scene load_steps=11 format=3 uid="uid://chvi67sx7uhx1"]
 
 [ext_resource type="Script" path="res://player/playeragdoll.gd" id="1_wam2g"]
 [ext_resource type="Texture2D" uid="uid://dl38tb51h0ryb" path="res://player/Slime.png" id="2_xbkfg"]
@@ -25,6 +25,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eotnt"]
+blend_mode = 1
+
 [node name="Playeragdoll" type="RigidBody2D" groups=["Playerrag"]]
 can_sleep = false
 script = ExtResource("1_wam2g")
@@ -46,14 +49,8 @@ script = ExtResource("5_gy3mm")
 node = NodePath("../AnimatedSprite2D")
 shake_amount = 10.0
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1.05888e-06, 0.390004, 0.070055, 1)
-energy = 0.5
+[node name="fakelight" type="Sprite2D" parent="."]
+modulate = Color(0, 0.392157, 0.00784314, 0.196078)
+material = SubResource("CanvasItemMaterial_eotnt")
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_3av2v")
-texture_scale = 1.5
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-color = Color(1.05888e-06, 0.390004, 0.070055, 1)
-energy = 0.5
-texture = ExtResource("6_3av2v")
-texture_scale = 1.5
