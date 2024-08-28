@@ -7,18 +7,19 @@ var inside : Array[RigidBody2D] = []
 
 func _ready() -> void:
 	if (direction == "left"):
-		force = Vector2(-20,0)
+		force = Vector2(-20,-15)
 	else:
-		force =  Vector2(20,0)
+		force =  Vector2(20,-15)
 	animated_sprite_2d.play(type)
 	if direction != "left":
 		scale.x = -1
 
 func _physics_process(delta: float) -> void:
 	for body in inside:
-		body.apply_impulse(force)
-		body.apply_torque(30)
-		print("MoVING")
+		if abs(body.linear_velocity.x) < abs(force.x) * 15:
+			print(body.linear_velocity)
+			body.apply_impulse(force)
+			body.apply_torque(30)
 
 func _on_area_2d_body_entered(entered: Node2D) -> void:
 	inside.append(entered)

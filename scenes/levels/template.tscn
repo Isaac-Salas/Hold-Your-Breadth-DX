@@ -267,5 +267,6 @@ libraries = {
 }
 
 [node name="dont touch" parent="." instance=ExtResource("7_uvvwj")]
+visible = false
 
 [editable path="Transition"]

@@ -5,6 +5,7 @@ class_name ObjectClass
 @onready var indicator = $Sprite2D/PointLight2D
 @onready var spawner_component = $SpawnerComponent
 @export var destroyplace : Node2D
+@onready var light_occluder_2d: LightOccluder2D = $LightOccluder2D
 
 
 func _on_detector_area_entered(area):
@@ -27,3 +28,4 @@ func destroy():
 func set_size(target_size):
 	colision.scale = target_size/2.5
 	sprite.scale = target_size/2
+	light_occluder_2d.scale = target_size/2

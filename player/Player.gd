@@ -164,6 +164,7 @@ func grow(scalerate):
 		colision.scale = sprite.scale
 		rigidcolision.scale += scalerate
 		sprite.scale += scalerate
+		position.y -= scalerate.y * 30
 	else:
 		rigidcolision.scale = Vector2(3,3)
 		colision.scale = sprite.scale

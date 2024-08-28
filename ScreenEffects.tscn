@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://xcup5opmlyy7"]
 
-[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="1_mfgxh"]
+[ext_resource type="Texture2D" uid="uid://3h0mvmifj28q" path="res://assets/fondos/Lab.png" id="1_mfgxh"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_8iicy"]
 [ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="3_sprh0"]
 
@@ -21,7 +21,8 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
-[node name="dont touch" type="Node"]
+[node name="dont touch" type="Node2D"]
+metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)

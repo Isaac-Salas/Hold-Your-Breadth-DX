@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://dgyws68xvfvpu"]
 
-[ext_resource type="Texture2D" uid="uid://cl45wy87trss4" path="res://assets/objects/conveyor_sheet.png" id="1_2qbqk"]
+[ext_resource type="Texture2D" uid="uid://d2yfoqoqfcusk" path="res://assets/objects/conveyor_sheet.png" id="1_2qbqk"]
 [ext_resource type="Script" path="res://scenes/objects/Conveyor/conveyor.gd" id="1_880bm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tdof"]

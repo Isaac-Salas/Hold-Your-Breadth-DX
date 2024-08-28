@@ -5,7 +5,7 @@ extends Node2D
 @export var target_scene: PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	show()
+	#show()
 	ap.play("Opening")
 
 func transition_to(_next_scene) -> void:

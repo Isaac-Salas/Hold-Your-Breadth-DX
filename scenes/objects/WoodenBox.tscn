@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx27mjdwpsn4g"]
+[gd_scene load_steps=10 format=3 uid="uid://bx27mjdwpsn4g"]
 
 [ext_resource type="Script" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
-[ext_resource type="Texture2D" uid="uid://dsgasl17nx1k6" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
+[ext_resource type="Texture2D" uid="uid://bdfuk18ki0q46" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="3_245jv"]
 [ext_resource type="PackedScene" uid="uid://fsxjau4kfu71" path="res://scenes/objects/brokenwoodenboxes.tscn" id="4_bikkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfjh"]
 size = Vector2(18, 18)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7oth0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_684r4"]
 blend_mode = 1
@@ -14,9 +16,8 @@ blend_mode = 1
 [sub_resource type="CircleShape2D" id="CircleShape2D_6l1ko"]
 radius = 0.01
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r4nbm"]
-closed = false
-polygon = PackedVector2Array(-9, 9, 9, 9)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lfti4"]
+polygon = PackedVector2Array(-9, 8, -9, 9, -8, 9, -5, 6, -3, 6, -3, 5, -2, 5, -2, 4, -1, 4, -1, 3, 0, 3, 0, 2, 1, 2, 1, 1, 2, 1, 2, 0, 3, 0, 3, -1, 4, -1, 4, -2, 5, -2, 5, -3, 6, -3, 6, -5, 9, -8, 9, -9, 8, -9, 5, -6, 3, -6, 3, -5, 2, -5, 2, -4, 1, -4, 1, -3, 0, -3, 0, -2, -1, -2, -1, -1, -2, -1, -2, 0, -4, 0, -4, 2, -5, 2, -5, 3, -6, 3, -6, 5)
 
 [node name="WoodenBox" type="RigidBody2D" groups=["breakable", "button_actionable", "throwable"]]
 collision_layer = 3
@@ -27,7 +28,11 @@ script = ExtResource("1_ux5yh")
 shape = SubResource("RectangleShape2D_wtfjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_7oth0")
 texture = ExtResource("2_2fc7s")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="Sprite2D" parent="Sprite2D"]
 visible = false
@@ -45,7 +50,9 @@ script = ExtResource("3_245jv")
 scene = ExtResource("4_bikkg")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_r4nbm")
+auto_translate_mode = 2
+modulate = Color(1, 1, 1, 0.356863)
+occluder = SubResource("OccluderPolygon2D_lfti4")
 
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]
