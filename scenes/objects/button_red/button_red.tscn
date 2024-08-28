@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhenjdi5p5ejl"]
+[gd_scene load_steps=16 format=3 uid="uid://bhenjdi5p5ejl"]
 
-[ext_resource type="Texture2D" uid="uid://bxlun71vw5ekr" path="res://assets/objects/button_animated.png" id="1_jj771"]
+[ext_resource type="Texture2D" uid="uid://c6fjtedh3iwcq" path="res://assets/objects/button_animated.png" id="1_jj771"]
 [ext_resource type="Script" path="res://scenes/objects/button_red/button_red.gd" id="1_t8urs"]
-[ext_resource type="Texture2D" uid="uid://ddsdsb5sec74h" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
-[ext_resource type="Texture2D" uid="uid://8io3rg861wic" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
+[ext_resource type="Texture2D" uid="uid://27cri12i1g46" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
+[ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fijwo"]
 atlas = ExtResource("2_o0geb")
@@ -95,6 +95,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8olo"]
 size = Vector2(96, 12)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hwkgt"]
+blend_mode = 1
+
 [node name="Button_red" type="Area2D"]
 script = ExtResource("1_t8urs")
 
@@ -113,14 +116,13 @@ animation = &"pressed"
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_h8olo")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(1, 0.24, 0.24, 0.498039)
+material = SubResource("CanvasItemMaterial_hwkgt")
 position = Vector2(-36, -85)
-scale = Vector2(0.666667, 0.666667)
-color = Color(1, 0.235294, 0.235294, 1)
-energy = 0.5
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_hew85")
-texture_scale = 0.4
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

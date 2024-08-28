@@ -169,6 +169,7 @@ animations = [{
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o6k1a"]
 blend_mode = 1
+light_mode = 1
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_20sjx"]
 radius = 13.0

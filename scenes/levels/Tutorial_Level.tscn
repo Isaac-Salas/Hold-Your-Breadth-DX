@@ -347,7 +347,7 @@ position = Vector2(375, 54)
 position = Vector2(473, 54)
 
 [node name="Light6" parent="." instance=ExtResource("12_m17ru")]
-position = Vector2(713, 290)
+position = Vector2(713, 292)
 
 [node name="Reset" parent="." instance=ExtResource("13_6farp")]
 position = Vector2(742, 18)

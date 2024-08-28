@@ -208,5 +208,4 @@ position = Vector2(519, 62)
 metadata/_edit_lock_ = true
 
 [node name="Light3" parent="." instance=ExtResource("9_25knb")]
-position = Vector2(611, 62)
-metadata/_edit_lock_ = true
+position = Vector2(675, 82)

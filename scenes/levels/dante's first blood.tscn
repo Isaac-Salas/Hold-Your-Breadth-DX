@@ -1,22 +1,20 @@
-[gd_scene load_steps=22 format=4 uid="uid://22v7woarogqs"]
+[gd_scene load_steps=19 format=4 uid="uid://22v7woarogqs"]
 
 [ext_resource type="Script" path="res://scenes/levels/template.gd" id="1_3l663"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="2_ar6cy"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="2_ar6cy"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_2565o"]
 [ext_resource type="PackedScene" uid="uid://cejwgovgj50es" path="res://scenes/levels/dante's first blood2.tscn" id="3_elikg"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="4_e6oo0"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_u3ric"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="6_41jjd"]
-[ext_resource type="Texture2D" uid="uid://bwtlag06aqeoq" path="res://assets/fondos/Lab.png" id="7_tw4od"]
-[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="8_1lbab"]
-[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="9_0gswi"]
-[ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="10_itch5"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="12_r5480"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="13_1yxvt"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="14_lracy"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://ScreenEffects.tscn" id="15_2wvt5"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="15_ggeun"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="16_7n6ih"]
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="18_wtde4"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="18_xl2iu"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -147,23 +145,6 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qlgg"]
-shader = ExtResource("10_itch5")
-shader_parameter/resolution = Vector2(260.765, 180)
-shader_parameter/scan_line_amount = 0.758
-shader_parameter/warp_amount = 2.519
-shader_parameter/noise_amount = 0.3
-shader_parameter/interference_amount = 0.2
-shader_parameter/grille_amount = 0.1
-shader_parameter/grille_size = 1.795
-shader_parameter/vignette_amount = 0.6
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/aberation_amount = 0.5
-shader_parameter/roll_line_amount = 0.3
-shader_parameter/roll_speed = 1.0
-shader_parameter/scan_line_strength = -8.0
-shader_parameter/pixel_strength = -2.0
-
 [node name="Template LOCO" type="Node2D"]
 script = ExtResource("1_3l663")
 
@@ -176,6 +157,7 @@ position = Vector2(688, 437.333)
 rotation = 1.57079
 
 [node name="Layer0" type="TileMapLayer" parent="."]
+modulate = Color(0.7, 0.7, 0.7, 1)
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAcAAAAFAAAAAAAAAAYAAAAAAAEAAAAAAAUAAAAEAAEAAAAAAAQAAAAFAAAAAAAAAAMAAAAAAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAADAAIAAAAFAAAAAAADAAEAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAAAAgAAAAFAAAAAAAAAAkAAAAAAAEAAAAAAAoAAAAFAAAAAAAAAAsAAAAEAAEAAAAAAAwAAAAFAAAAAAAAAA0AAAAAAAIAAAABAA0AAAAEAAAAAAACAA0AAAAEAAAAAAADAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAARAA0AAAAEAAAAAAASAA0AAAAEAAAAAAATAA0AAAADAAIAAAAXAA0AAAADAAAAAAAXAAgAAAAFAAAAAAAXAAcAAAAFAAAAAAAXAAYAAAACAAEAAAAXAAUAAAAEAAEAAAAXAAQAAAAFAAAAAAAXAAMAAAACAAEAAAAXAAIAAAAEAAEAAAAXAAEAAAAFAAAAAAAXAAAAAAACAAAAAAAWAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAATAAAAAAAEAAAAAAASAAAAAAAEAAAAAAARAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAXAAkAAAACAAEAAAAXAAoAAAAFAAAAAAAXAAsAAAAEAAEAAAAXAAwAAAAEAAEAAAABAAMAAAAEAAAAAAACAAMAAAAEAAAAAAADAAMAAAAEAAAAAAAEAAMAAAAEAAAAAAAFAAMAAAAEAAAAAAABAAYAAAAEAAAAAAACAAYAAAAEAAAAAAADAAYAAAAEAAAAAAAEAAYAAAAEAAAAAAAFAAYAAAAEAAAAAAABAAkAAAAEAAAAAAACAAkAAAAEAAAAAAADAAkAAAAEAAAAAAAEAAkAAAAEAAAAAAAFAAkAAAAEAAAAAAAWAAMAAAAEAAAAAAAVAAMAAAAEAAAAAAAUAAMAAAAEAAAAAAATAAMAAAAEAAAAAAASAAMAAAAEAAAAAAASAAYAAAAEAAAAAAATAAYAAAAEAAAAAAAUAAYAAAAEAAAAAAAVAAYAAAAEAAAAAAAWAAYAAAAEAAAAAAASAAkAAAAEAAAAAAATAAkAAAAEAAAAAAAUAAkAAAAEAAAAAAAVAAkAAAAEAAAAAAAWAAkAAAAEAAAAAAAGAAkAAAADAAIAAAAGAAYAAAADAAIAAAAGAAMAAAADAAIAAAARAAYAAAADAAEAAAARAAMAAAADAAEAAAARAAkAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
@@ -185,10 +167,19 @@ rendering_quadrant_size = 48
 position = Vector2(194, -30)
 
 [node name="Light" parent="." instance=ExtResource("5_u3ric")]
-position = Vector2(480, 56)
+position = Vector2(401, 56)
 
 [node name="Light2" parent="." instance=ExtResource("5_u3ric")]
-position = Vector2(208, -30)
+position = Vector2(193, 9)
+
+[node name="Light5" parent="." instance=ExtResource("5_u3ric")]
+position = Vector2(1007, 488)
+
+[node name="Light3" parent="." instance=ExtResource("5_u3ric")]
+position = Vector2(576, 56)
+
+[node name="Light4" parent="." instance=ExtResource("5_u3ric")]
+position = Vector2(750, 56)
 
 [node name="Button_red2" parent="." instance=ExtResource("13_1yxvt")]
 position = Vector2(96, 432)
@@ -198,26 +189,6 @@ position = Vector2(744, -192)
 
 [node name="Button_Red_Signal" parent="Button_red2" instance=ExtResource("16_7n6ih")]
 position = Vector2(744, -264)
-
-[node name="dont touch" type="Node" parent="."]
-
-[node name="Background" type="Sprite2D" parent="dont touch"]
-modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
-z_index = -1
-scale = Vector2(11.98, 11.95)
-texture = ExtResource("7_tw4od")
-centered = false
-metadata/_edit_lock_ = true
-
-[node name="Camera2D" parent="dont touch" instance=ExtResource("8_1lbab")]
-zoom = Vector2(1, 1)
-
-[node name="CRTShader" parent="dont touch" instance=ExtResource("9_0gswi")]
-metadata/_edit_lock_ = true
-
-[node name="CanvasModulate" type="CanvasModulate" parent="dont touch"]
-material = SubResource("ShaderMaterial_3qlgg")
-color = Color(0.49464, 0.4914, 0.54, 1)
 
 [node name="Platform" parent="." instance=ExtResource("4_e6oo0")]
 position = Vector2(496, 560)
@@ -272,4 +243,31 @@ rotation = -1.57079
 [node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("18_wtde4")]
 position = Vector2(1032, -72)
 
+[node name="Lamp" parent="." instance=ExtResource("18_xl2iu")]
+position = Vector2(254, 425)
+
+[node name="Lamp6" parent="." instance=ExtResource("18_xl2iu")]
+position = Vector2(230, 281)
+
+[node name="Lamp3" parent="." instance=ExtResource("18_xl2iu")]
+position = Vector2(251, 619)
+
+[node name="Lamp2" parent="." instance=ExtResource("18_xl2iu")]
+position = Vector2(862, 425)
+scale = Vector2(1, 1)
+
+[node name="Lamp4" parent="." instance=ExtResource("18_xl2iu")]
+position = Vector2(907, 281)
+scale = Vector2(1, 1)
+
+[node name="Lamp5" parent="." instance=ExtResource("18_xl2iu")]
+position = Vector2(928, 137)
+scale = Vector2(1, 1)
+
+[node name="dont touch" parent="." instance=ExtResource("15_2wvt5")]
+
+[node name="CanvasModulate" parent="dont touch" index="2"]
+color = Color(0.414583, 0.375, 0.5, 1)
+
 [editable path="Transition"]
+[editable path="dont touch"]

@@ -14,12 +14,13 @@ script = ExtResource("2_y64hc")
 color = Color(1, 0.81834, 0.645192, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(1, 5)
+scale = Vector2(1.5, 1.5)
+color = Color(1, 0.81834, 0.645192, 1)
 shadow_enabled = true
 texture = ExtResource("3_1x2vj")
-offset = Vector2(0, 210)
+offset = Vector2(0, 205)
 
 [node name="Fakelight" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.196078)
+modulate = Color(1, 0.819167, 0.65, 0.196078)
 material = SubResource("CanvasItemMaterial_qdrbt")
 texture = ExtResource("3_vgi3y")

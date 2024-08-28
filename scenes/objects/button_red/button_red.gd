@@ -1,6 +1,6 @@
 extends Area2D
 @onready var anim_flag: AnimatedSprite2D = $anim_flag
-@onready var light: PointLight2D = $PointLight2D
+@onready var light: Sprite2D = $PointLight2D
 @onready var anim: AnimatedSprite2D = $anim
 signal pressed(state, body)
 var state = false

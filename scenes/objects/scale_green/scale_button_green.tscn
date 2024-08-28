@@ -1,9 +1,9 @@
 [gd_scene load_steps=26 format=3 uid="uid://dsmy2h1upfevb"]
 
 [ext_resource type="Script" path="res://scenes/objects/scale_green/scale_logic.gd" id="1_rceiw"]
-[ext_resource type="Texture2D" uid="uid://s7w2nyhjh8qa" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
-[ext_resource type="Texture2D" uid="uid://y6gdiuaknqi8" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
-[ext_resource type="Texture2D" uid="uid://b1lk3nmw12wfb" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
+[ext_resource type="Texture2D" uid="uid://cmi38qa3m0iqg" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
+[ext_resource type="Texture2D" uid="uid://cg0ak44k2jaor" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
+[ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5l5o"]
 atlas = ExtResource("3_2mu4u")
