@@ -3,7 +3,7 @@ const PLAYERAGDOLL = preload("res://player/playeragdoll.tscn")
 const PLAYER = preload("res://player/player.tscn")
 const BARNACLE = preload("res://scenes/enemies/barnacle.tscn")
 const RIGIDBARNACLE = preload("res://scenes/enemies/Barnacle/rigidbarnacle.tscn")
-@onready var colliders
+@onready var colliders : Node2D
 @onready var rigid_body_2d = $rigids/RigidBody2D
 @onready var firstone = $rigids/RigidBody2D
 @onready var sprite_2d_2 = $Sprite2D2
@@ -118,7 +118,8 @@ func _on_area_2d_body_entered(body):
 		area_2d.set_deferred("monitoring", false)
 		colliders.set_deferred("freeze", true)
 		lastone.apply_impulse(colliders.linear_velocity)
-		colliders.colision.set_deferred("disabled", true)
+		colliders.set_collision_layer_value(2,false)
+		colliders.set_collision_mask_value(2,false)
 		#colliders.reparent(lastone)
 		colliders.call_deferred("reparent",lastone)
 		colliders.global_position = lastone.global_position
@@ -132,7 +133,8 @@ func _on_area_2d_body_entered(body):
 		area_2d.set_deferred("monitoring", false)
 		colliders.set_deferred("freeze", true)
 		lastone.apply_impulse(colliders.linear_velocity)
-		colliders.colision.set_deferred("disabled", true)
+		colliders.set_collision_layer_value(2,false)
+		colliders.set_collision_mask_value(2,false)
 		#colliders.reparent(lastone)
 		colliders.call_deferred("reparent",lastone)
 		colliders.global_position = lastone.global_position
