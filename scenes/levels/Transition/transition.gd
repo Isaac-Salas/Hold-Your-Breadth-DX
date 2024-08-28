@@ -1,7 +1,12 @@
+@tool
 extends Node2D
 
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @export var target_scene: PackedScene
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	show()
+	ap.play("Opening")
 
 func transition_to(_next_scene) -> void:
 	ap.play("Closing")
