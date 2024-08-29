@@ -25,7 +25,7 @@ shader_parameter/pixel_strength = -2.0
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+modulate = Color(0.05, 0.05, 0.05, 1)
 z_index = -1
 scale = Vector2(11.98, 11.95)
 texture = ExtResource("1_mfgxh")

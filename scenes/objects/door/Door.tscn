@@ -213,7 +213,7 @@ scale = Vector2(-1, -1)
 occluder = SubResource("OccluderPolygon2D_x84v6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.156863)
+modulate = Color(1, 1, 1, 0.235294)
 material = SubResource("CanvasItemMaterial_d2nqj")
 anchors_preset = 8
 anchor_left = 0.5

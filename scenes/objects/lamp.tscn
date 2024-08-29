@@ -28,6 +28,7 @@ max_contacts_reported = 1
 texture = ExtResource("1_rmgst")
 
 [node name="PointLight2D" type="PointLight2D" parent="RigidBody2D/Sprite2D"]
+color = Color(1, 0.819608, 0.647059, 1)
 shadow_enabled = true
 texture = ExtResource("3_s03d4")
 offset = Vector2(105, 0)
