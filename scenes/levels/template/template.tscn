@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=4 uid="uid://ds55rb4riqalc"]
 
-[ext_resource type="Script" path="res://scenes/levels/template.gd" id="1_7ttjn"]
-[ext_resource type="Texture2D" uid="uid://cfvyrn08amfjd" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
+[ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_7ttjn"]
+[ext_resource type="Texture2D" uid="uid://cppa7a581uhmi" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_l70k0"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_qdubr"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="6_l11u7"]
-[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://ScreenEffects.tscn" id="7_uvvwj"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="7_uvvwj"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_uu8tb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfwc55jo1qtuj"]
+[gd_scene load_steps=17 format=3 uid="uid://dfwc55jo1qtuj"]
 
-[ext_resource type="Texture2D" uid="uid://c0yawadp15lmo" path="res://assets/objects/biodoor.png" id="1_06g4i"]
+[ext_resource type="Texture2D" uid="uid://6ke3wc44osqh" path="res://assets/objects/biodoor.png" id="1_06g4i"]
+[ext_resource type="Script" path="res://scenes/objects/biodoor.gd" id="1_7rnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bld4a"]
 atlas = ExtResource("1_06g4i")
@@ -72,14 +73,93 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7to5d"]
-size = Vector2(60, 96)
+size = Vector2(48, 96)
+
+[sub_resource type="Animation" id="Animation_id3dp"]
+resource_name = "OPEN"
+length = 0.51
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.51),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(48, 96), Vector2(0, 96), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-24, 0), Vector2(-48, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6yfqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7lc5"]
+_data = {
+"OPEN": SubResource("Animation_id3dp"),
+"RESET": SubResource("Animation_6yfqi")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo6x1"]
+size = Vector2(52, 96)
 
 [node name="Biodoor" type="StaticBody2D"]
+script = ExtResource("1_7rnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_37mks")
-animation = &"eaten"
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-18, 0)
+position = Vector2(-24, 0)
 shape = SubResource("RectangleShape2D_7to5d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r7lc5")
+}
+autoplay = "RESET"
+
+[node name="Keyhole" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keyhole"]
+position = Vector2(26, 0)
+shape = SubResource("RectangleShape2D_oo6x1")
+
+[connection signal="body_entered" from="Keyhole" to="." method="_on_keyhole_body_entered"]

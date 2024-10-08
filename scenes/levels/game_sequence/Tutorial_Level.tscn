@@ -1,26 +1,27 @@
-[gd_scene load_steps=24 format=4 uid="uid://bc8vxc0lju6wb"]
+[gd_scene load_steps=25 format=4 uid="uid://bc8vxc0lju6wb"]
 
-[ext_resource type="Script" path="res://scenes/levels/template.gd" id="1_4g48v"]
-[ext_resource type="Texture2D" uid="uid://cfvyrn08amfjd" path="res://assets/tilemap/concrete.png" id="1_qwb4m"]
-[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_3t5cs"]
-[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="2_qnpnj"]
-[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_6ms7x"]
-[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="4_oip6d"]
-[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="5_ynvxa"]
-[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="8_olvlg"]
-[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_81qn4"]
-[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="12_m17ru"]
-[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="14_i24kh"]
-[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="14_ou04f"]
-[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://ScreenEffects.tscn" id="14_wvy85"]
-[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="15_svmdk"]
-[ext_resource type="Texture2D" uid="uid://ddoslkg244uty" path="res://assets/objects/Transition.png" id="16_cjesv"]
+[ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_bmccx"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_8rqaq"]
+[ext_resource type="Texture2D" uid="uid://cppa7a581uhmi" path="res://assets/tilemap/concrete.png" id="3_i37a8"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_ftebo"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_88vov"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_is60u"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_ktulo"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="8_47s4q"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="9_o7fgx"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="10_njffk"]
+[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="11_b5lhi"]
+[ext_resource type="Texture2D" uid="uid://baaa02fwtq8vx" path="res://assets/objects/Transition.png" id="12_3nux3"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="13_vyc0h"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="14_lc26t"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="15_wgg7r"]
+[ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="16_bgcwk"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
-texture = ExtResource("1_qwb4m")
+texture = ExtResource("3_i37a8")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -239,14 +240,14 @@ _data = {
 }
 
 [node name="TutorialLevel" type="Node2D"]
-script = ExtResource("1_4g48v")
+script = ExtResource("1_bmccx")
 
-[node name="Lamp" parent="." instance=ExtResource("2_3t5cs")]
+[node name="Lamp" parent="." instance=ExtResource("2_8rqaq")]
 position = Vector2(388, 592)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
-[node name="Lamp2" parent="." instance=ExtResource("2_3t5cs")]
+[node name="Lamp2" parent="." instance=ExtResource("2_8rqaq")]
 position = Vector2(866, 384)
 rotation = 3.14159
 scale = Vector2(-1, -1)
@@ -258,232 +259,232 @@ tile_map_data = PackedByteArray("AAABAAgAAAAAAAIAAAACAAgAAAAEAAAAAAADAAgAAAAEAAA
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="Door" parent="." instance=ExtResource("2_qnpnj")]
+[node name="Door" parent="." instance=ExtResource("4_ftebo")]
 position = Vector2(696, 552)
 
-[node name="Button_red" parent="." instance=ExtResource("4_oip6d")]
+[node name="Button_red" parent="." instance=ExtResource("5_88vov")]
 position = Vector2(769, 408)
 
-[node name="Button_Red_Signal" parent="." instance=ExtResource("5_ynvxa")]
+[node name="Button_Red_Signal" parent="." instance=ExtResource("6_is60u")]
 position = Vector2(708, 492)
 
-[node name="Player" parent="." instance=ExtResource("3_6ms7x")]
+[node name="Player" parent="." instance=ExtResource("7_ktulo")]
 position = Vector2(226, 464)
 
-[node name="Conveyor" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(648, 432)
 
-[node name="Conveyor10" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor10" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(456, -1)
 direction = "right"
 
-[node name="Conveyor11" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor11" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(408, -1)
 direction = "right"
 
-[node name="Conveyor12" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor12" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(360, -1)
 direction = "right"
 
-[node name="Conveyor13" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor13" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(312, -1)
 direction = "right"
 
-[node name="Conveyor14" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor14" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(264, -1)
 direction = "right"
 
-[node name="Conveyor15" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor15" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(216, -1)
 direction = "right"
 
-[node name="Conveyor16" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor16" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(168, -1)
 direction = "right"
 
-[node name="Conveyor17" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor17" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(120, -1)
 direction = "right"
 
-[node name="RigidBody2D7" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D7" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(420, -84)
 
-[node name="RigidBody2D6" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D6" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(249, -84)
 
-[node name="RigidBody2D4" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D4" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(144, -84)
 
-[node name="Conveyor25" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor25" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(120, -1)
 direction = "right"
 
-[node name="Conveyor26" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor26" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(984, 192)
 direction = "right"
 
-[node name="Conveyor27" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor27" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(936, 192)
 direction = "right"
 
-[node name="Conveyor28" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor28" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(888, 192)
 direction = "right"
 
-[node name="Conveyor29" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor29" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(984, 192)
 direction = "right"
 type = "LEFT"
 
-[node name="Conveyor30" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor30" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(936, 192)
 direction = "right"
 
-[node name="Conveyor31" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor31" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(888, 192)
 direction = "right"
 
-[node name="Conveyor32" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor32" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(840, 192)
 direction = "right"
 
-[node name="Conveyor33" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor33" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(792, 192)
 direction = "right"
 
-[node name="Conveyor34" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor34" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(744, 192)
 direction = "right"
 
-[node name="Conveyor35" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor35" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(696, 192)
 direction = "right"
 
-[node name="Conveyor36" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor36" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(648, 192)
 direction = "right"
 type = "RIGHT"
 
-[node name="Conveyor37" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor37" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(1032, -1)
 
-[node name="Conveyor38" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor38" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(984, -1)
 
-[node name="Conveyor39" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor39" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(936, -1)
 
-[node name="Conveyor40" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor40" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(888, -1)
 
-[node name="Conveyor41" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor41" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(840, -1)
 
-[node name="Conveyor42" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor42" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(792, -1)
 
-[node name="Conveyor43" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor43" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(744, -1)
 
-[node name="Conveyor44" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor44" parent="." instance=ExtResource("8_47s4q")]
 visible = false
 position = Vector2(696, -1)
 
-[node name="Conveyor45" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor45" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(504, 192)
 type = "RIGHT"
 
-[node name="Conveyor46" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor46" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(456, 192)
 
-[node name="Conveyor47" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor47" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(408, 192)
 
-[node name="Conveyor48" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor48" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(360, 192)
 
-[node name="Conveyor49" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor49" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(312, 192)
 
-[node name="Conveyor50" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor50" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(264, 192)
 
-[node name="Conveyor51" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor51" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(216, 192)
 
-[node name="Conveyor52" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor52" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(168, 192)
 type = "LEFT"
 
-[node name="Conveyor4" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor4" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(504, 432)
 type = "LEFT"
 
-[node name="Conveyor5" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor5" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(552, 432)
 
-[node name="Conveyor6" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor6" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(600, 432)
 
-[node name="Conveyor3" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor3" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(696, 432)
 type = "RIGHT"
 
-[node name="RigidBody2D" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(671, 360)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D2" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(647, 360)
 
-[node name="RigidBody2D8" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D8" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(925, -84)
 
-[node name="RigidBody2D9" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D9" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(744, -84)
 
-[node name="RigidBody2D10" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D10" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(1020, -84)
 
-[node name="RigidBody2D5" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D5" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(647, 144)
 
-[node name="RigidBody2D3" parent="." instance=ExtResource("10_81qn4")]
+[node name="RigidBody2D3" parent="." instance=ExtResource("9_o7fgx")]
 position = Vector2(695, 360)
 
-[node name="Light6" parent="." instance=ExtResource("12_m17ru")]
+[node name="Light6" parent="." instance=ExtResource("10_njffk")]
 position = Vector2(842, 505)
 
-[node name="Light8" parent="." instance=ExtResource("12_m17ru")]
+[node name="Light8" parent="." instance=ExtResource("10_njffk")]
 position = Vector2(719, 266)
 
-[node name="Light9" parent="." instance=ExtResource("12_m17ru")]
+[node name="Light9" parent="." instance=ExtResource("10_njffk")]
 position = Vector2(432, 272)
 
-[node name="Light10" parent="." instance=ExtResource("12_m17ru")]
-position = Vector2(96, 31)
+[node name="Light10" parent="." instance=ExtResource("10_njffk")]
+position = Vector2(96, 32)
 
-[node name="Light11" parent="." instance=ExtResource("12_m17ru")]
+[node name="Light11" parent="." instance=ExtResource("10_njffk")]
 position = Vector2(1056, 31)
 
 [node name="Transition" type="Node2D" parent="."]
 scale = Vector2(1.5, 1.5)
-script = ExtResource("14_ou04f")
+script = ExtResource("11_b5lhi")
 
 [node name="Trigger" type="Area2D" parent="Transition"]
 
@@ -494,12 +495,12 @@ debug_color = Color(0.453215, 0.595313, 0, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Transition"]
 position = Vector2(384, 108)
-texture = ExtResource("16_cjesv")
+texture = ExtResource("12_3nux3")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Transition"]
 position = Vector2(384, 324)
 scale = Vector2(1, -1)
-texture = ExtResource("16_cjesv")
+texture = ExtResource("12_3nux3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
 libraries = {
@@ -507,42 +508,48 @@ libraries = {
 }
 autoplay = "Opening"
 
-[node name="dont touch" parent="." instance=ExtResource("14_wvy85")]
+[node name="dont touch" parent="." instance=ExtResource("13_vyc0h")]
+visible = true
 
-[node name="Grow-Laser" parent="." instance=ExtResource("14_i24kh")]
+[node name="Grow-Laser2" parent="." instance=ExtResource("14_lc26t")]
+position = Vector2(732, 24.0016)
+rotation = 1.5708
+target_scale = Vector2(5, 5)
+
+[node name="Shrink-Laser2" parent="." instance=ExtResource("15_wgg7r")]
+position = Vector2(936, 24.0023)
+rotation = 1.5708
+target_scale = Vector2(1, 1)
+
+[node name="Grow-Laser" parent="." instance=ExtResource("14_lc26t")]
 position = Vector2(297, 24)
 rotation = 1.5708
 target_scale = Vector2(5, 5)
 
-[node name="Grow-Laser" parent="Grow-Laser" instance=ExtResource("14_i24kh")]
-position = Vector2(-1.81198e-05, -435)
-target_scale = Vector2(5, 5)
-
-[node name="Shrink-Laser" parent="Grow-Laser" instance=ExtResource("15_svmdk")]
-position = Vector2(-3.05176e-05, -639)
-target_scale = Vector2(1, 1)
-
-[node name="Shrink-Laser" parent="." instance=ExtResource("15_svmdk")]
+[node name="Shrink-Laser" parent="." instance=ExtResource("15_wgg7r")]
 position = Vector2(451, 24)
 rotation = 1.5708
 target_scale = Vector2(1, 1)
 
-[node name="Conveyor2" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor2" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(1080, 336)
 
-[node name="Conveyor7" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor7" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(888, 432)
 direction = "right"
 type = "RIGHT"
 
-[node name="Conveyor8" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor8" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(936, 432)
 direction = "right"
 
-[node name="Conveyor9" parent="." instance=ExtResource("8_olvlg")]
+[node name="Conveyor9" parent="." instance=ExtResource("8_47s4q")]
 position = Vector2(984, 432)
 direction = "right"
 type = "LEFT"
+
+[node name="Area2D" parent="." instance=ExtResource("16_bgcwk")]
+position = Vector2(1031.67, 629.172)
 
 [connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Button_Red_Signal" method="toggle_door"]

@@ -1,15 +1,17 @@
-[gd_scene load_steps=15 format=4 uid="uid://ussh2v7e5g06"]
+[gd_scene load_steps=17 format=4 uid="uid://ussh2v7e5g06"]
 
 [ext_resource type="Script" path="res://scenes/levels/biodoor/biodoor.gd" id="1_6qqbe"]
-[ext_resource type="Texture2D" uid="uid://dy58c3vewayi8" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
+[ext_resource type="Texture2D" uid="uid://cppa7a581uhmi" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_yi7fm"]
-[ext_resource type="PackedScene" uid="uid://twgt5pi201rv" path="res://scenes/objects/light.tscn" id="4_1hbj2"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="4_1hbj2"]
+[ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="5_14d3r"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_hmk13"]
-[ext_resource type="Texture2D" uid="uid://xxni0caw8scx" path="res://assets/fondos/Lab.png" id="6_ue3nx"]
-[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/camera_2d.tscn" id="7_s5l0n"]
+[ext_resource type="Texture2D" uid="uid://epdifq8majnc" path="res://assets/fondos/Lab.png" id="6_ue3nx"]
+[ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="6_x2u38"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="7_s5l0n"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="8_npjyd"]
-[ext_resource type="Shader" path="res://scenes/levels/testing.gdshader" id="9_1nuh5"]
-[ext_resource type="PackedScene" uid="uid://d2sg8yood38wq" path="res://scenes/objects/biodoor.tscn" id="10_wj14c"]
+[ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="9_1nuh5"]
+[ext_resource type="PackedScene" uid="uid://dfwc55jo1qtuj" path="res://scenes/objects/biodoor.tscn" id="10_wj14c"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -169,18 +171,28 @@ rendering_quadrant_size = 48
 [node name="Light" parent="." instance=ExtResource("4_1hbj2")]
 position = Vector2(408, 56)
 
-[node name="Player" parent="." instance=ExtResource("3_yi7fm")]
-position = Vector2(108, 159)
+[node name="Light2" parent="." instance=ExtResource("4_1hbj2")]
+position = Vector2(688, 56)
 
-[node name="Transition" parent="." instance=ExtResource("5_hmk13")]
+[node name="Light3" parent="." instance=ExtResource("4_1hbj2")]
+position = Vector2(120, 56)
 
-[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
-debug_color = Color(0.453215, 0.595313, 0, 0.42)
+[node name="Barnacle" parent="." instance=ExtResource("6_x2u38")]
+position = Vector2(208, 72)
+scale = Vector2(1, 1.00667)
+
+[node name="Ratiña" parent="." instance=ExtResource("5_14d3r")]
+position = Vector2(408, 376)
+rotation = 3.14159
 
 [node name="Biodoor" parent="." instance=ExtResource("10_wj14c")]
 position = Vector2(720, 336)
 rotation = 3.14159
-scale = Vector2(1, -1)
+
+[node name="Player" parent="." instance=ExtResource("3_yi7fm")]
+position = Vector2(112, 360)
+
+[node name="Transition" parent="." instance=ExtResource("5_hmk13")]
 
 [node name="dont touch" type="Node" parent="."]
 

@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=4 uid="uid://dplx7vme5hffd"]
 
-[ext_resource type="Script" path="res://scenes/levels/testing.gd" id="1_bjxlj"]
+[ext_resource type="Script" path="res://scenes/levels/Testing/testing.gd" id="1_bjxlj"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="5_hcnto"]
-[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://ScreenEffects.tscn" id="8_4y62x"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="8_4y62x"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="8_t6iwl"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_25knb"]
-[ext_resource type="Texture2D" uid="uid://cfvyrn08amfjd" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
+[ext_resource type="Texture2D" uid="uid://cppa7a581uhmi" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="10_7c0ax"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_magv0"]

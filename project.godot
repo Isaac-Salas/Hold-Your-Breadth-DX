@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://GlobalVars.gd"
-Manager="*res://Levels.gd"
+Globals="*res://globals/GlobalVars.gd"
+Manager="*res://scenes/levels/Transition/Levels.gd"
 
 [display]
 
@@ -37,6 +37,7 @@ piece=""
 breakable=""
 Playerrag=""
 Meatbox=""
+rigidbarnacle=""
 
 [input]
 
