@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://gyluo2bsm1cg"]
 
 [ext_resource type="Script" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
-[ext_resource type="Texture2D" uid="uid://no5sqfjapc4f" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
+[ext_resource type="Texture2D" uid="uid://sd7e4r687mw8" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mn77"]
 atlas = ExtResource("1_ufh0f")
@@ -106,8 +106,8 @@ animations = [{
 closed = false
 polygon = PackedVector2Array(-7.33333, 6.66667, 4.66667, 6.66667, 4.66667, 6, -7.33333, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc5w7"]
-size = Vector2(17, 36)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y41eh"]
+height = 35.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywrjj"]
 radius = 125.0
@@ -124,12 +124,13 @@ sprite_frames = SubResource("SpriteFrames_v1qso")
 animation = &"new_animation"
 frame_progress = 0.276984
 
-[node name="LightOccluder2D7" type="LightOccluder2D" parent="AnimatedSprite2D"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="AnimatedSprite2D"]
 occluder = SubResource("OccluderPolygon2D_b5rnm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 rotation = -1.5708
-shape = SubResource("RectangleShape2D_lc5w7")
+shape = SubResource("CapsuleShape2D_y41eh")
 
 [node name="TargetLoc" type="Marker2D" parent="."]
 position = Vector2(-31, 0)
@@ -146,6 +147,8 @@ debug_color = Color(0.55591, 0.510535, 0.635269, 0.42)
 [node name="Timer2" type="Timer" parent="."]
 
 [node name="Timer3" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]

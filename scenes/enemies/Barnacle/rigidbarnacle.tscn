@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8svr4m4sebd7"]
+[gd_scene load_steps=6 format=3 uid="uid://b8svr4m4sebd7"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_nvg6b"]
-[ext_resource type="Texture2D" uid="uid://wbqvilbpk4mt" path="res://assets/objects/barnacle-tieso.png" id="2_qivjo"]
+[ext_resource type="Texture2D" uid="uid://b5qc7deqvlbaa" path="res://assets/objects/barnacle-tieso.png" id="2_qivjo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_84c34"]
 radius = 14.0
@@ -9,6 +9,10 @@ height = 30.35
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kah10"]
 radius = 21.3776
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t3fmm"]
+closed = false
+polygon = PackedVector2Array(-14, -14, -9, -18, 9, -18, 14, -14)
 
 [node name="RigidBody2D" groups=["edible", "rigidbarnacle", "throwable"] instance=ExtResource("1_nvg6b")]
 
@@ -24,3 +28,6 @@ texture = ExtResource("2_qivjo")
 
 [node name="CollisionShape2D" parent="Detector" index="0"]
 shape = SubResource("CircleShape2D_kah10")
+
+[node name="LightOccluder2D" parent="." index="4"]
+occluder = SubResource("OccluderPolygon2D_t3fmm")

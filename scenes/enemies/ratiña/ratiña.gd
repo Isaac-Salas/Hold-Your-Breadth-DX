@@ -12,6 +12,8 @@ class_name  Rat_enemy
 @onready var timer_3 = $Timer3
 @onready var fleeonce = false
 @onready var colision = $CollisionShape2D
+@onready var startflee = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +24,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta):
+func _physics_process(delta):
 	
 	player = get_tree().get_first_node_in_group("Player")
 	if get_parent().is_in_group("barnacle"):
@@ -36,6 +38,23 @@ func _physics_process(_delta):
 				count += 1
 			1:
 				pass
+				
+	match startflee:
+		true:
+			#print("Fleeing")
+			var movingto = self.global_position.move_toward(ratfleetarget.global_position, delta*(speed*50))
+			var movector = (movingto-self.global_position)*2
+			print(abs(movector.x))
+			#self.global_position.x = movingto.x
+			set_deferred("lock_rotation", false)
+			apply_central_impulse(Vector2i(movector.x, 0))
+			if self.global_position.x == ratfleetarget.global_position.x or abs(movector.x) < 1:
+				set_deferred("lock_rotation", true)
+				startflee = false
+				
+		false:
+			
+			pass
 	
 	
 	direction = global_position - target_loc.global_position
@@ -65,12 +84,15 @@ func chasing(player):
 	apply_central_impulse(Vector2(playerdir.x*3, playerdir.y))
 
 func fleeing():
+	
 	timer.stop()
 	timer_2.stop()
-	#print("Ratflee")
-	var fleeingdir = ratfleetarget.global_position - self.global_position
-	apply_central_impulse(Vector2(fleeingdir.x,-10))
-	timer_3.start(0.3)
+	##print("Ratflee")
+	#var fleeingdir = ratfleetarget.global_position - self.global_position
+	#apply_central_impulse(Vector2(0,-20))
+	apply_torque_impulse(50)
+	#timer_3.start(0.3)
+	startflee = true
 
 	
 
@@ -86,6 +108,7 @@ func _on_player_detect_body_entered(body):
 		player = body
 		if player.current == "Big":
 			fleeing()
+			#startflee = true
 		else:
 			chasing(player)
 

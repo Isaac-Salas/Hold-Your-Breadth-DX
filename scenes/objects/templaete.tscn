@@ -28,5 +28,7 @@ material = SubResource("CanvasItemMaterial_otu8t")
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("2_hodyn")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="8_4y62x"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="8_t6iwl"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_25knb"]
-[ext_resource type="Texture2D" uid="uid://cppa7a581uhmi" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="10_7c0ax"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_magv0"]
@@ -147,10 +147,6 @@ position = Vector2(130, 128)
 [node name="Ratillas" type="Node2D" parent="."]
 position = Vector2(235, 56)
 
-[node name="Ratiña" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("5_hcnto")]
-position = Vector2(152, 409)
-ratfleetarget = NodePath("../../Ratfleemarker")
-
 [node name="Ratiña2" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("5_hcnto")]
 position = Vector2(237, 370)
 ratfleetarget = NodePath("../../Ratfleemarker")
@@ -158,8 +154,7 @@ ratfleetarget = NodePath("../../Ratfleemarker")
 [node name="Matraces" type="Node2D" parent="."]
 
 [node name="Ratfleemarker" parent="." instance=ExtResource("8_t6iwl")]
-position = Vector2(933, 466)
-script = null
+position = Vector2(992, 474)
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -175,9 +170,11 @@ position = Vector2(519, 62)
 metadata/_edit_lock_ = true
 
 [node name="Light3" parent="." instance=ExtResource("9_25knb")]
-position = Vector2(675, 82)
+position = Vector2(619.64, 62)
+metadata/_edit_lock_ = true
 
 [node name="Barnacle" parent="." instance=ExtResource("10_7c0ax")]
-position = Vector2(935, 298)
+position = Vector2(912, 308)
 
 [node name="dont touch" parent="." instance=ExtResource("8_4y62x")]
+visible = true
