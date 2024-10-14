@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://delaq1iewwwqy"]
 
-[ext_resource type="Texture2D" uid="uid://c6aa83k4qo0dp" path="res://assets/objects/luz barra.png" id="1_gfubc"]
+[ext_resource type="Texture2D" uid="uid://dhtsdcigcyflu" path="res://assets/objects/luz barra.png" id="1_gfubc"]
 [ext_resource type="Script" path="res://scenes/objects/light.gd" id="2_y64hc"]
-[ext_resource type="Texture2D" uid="uid://d1pldl1tr4x8a" path="res://assets/lights/Barramix.png" id="3_1x2vj"]
-[ext_resource type="Texture2D" uid="uid://xtkvsxgao8tj" path="res://assets/lights/nRmVV (2).png" id="3_vgi3y"]
+[ext_resource type="Texture2D" uid="uid://cpe8trr5xvc0g" path="res://assets/lights/Barramix.png" id="3_1x2vj"]
+[ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="3_vgi3y"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qdrbt"]
 blend_mode = 1

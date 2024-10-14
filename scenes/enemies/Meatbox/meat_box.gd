@@ -8,6 +8,8 @@ var count = false
 @onready var animation_player = $AnimationPlayer
 @onready var player : SlimePlayer
 @export var Lastingtime = 6.0
+@onready var spawner_component = $SpawnerComponent
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")

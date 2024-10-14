@@ -1,10 +1,10 @@
 extends Node2D
-const CHASE = preload("res://scenes/levels/Chase.tscn")
-const RATESTING = preload("res://scenes/levels/ratesting.tscn")
-const SCALE_LVL = preload("res://scenes/levels/scale_lvl.tscn")
-const TEMPLATE = preload("res://scenes/levels/template.tscn")
-const TESTING = preload("res://scenes/levels/testing.tscn")
-const TUTORIAL_LEVEL = preload("res://scenes/levels/Tutorial_Level.tscn")
+const CHASE = preload("res://scenes/levels/game_sequence/Chase.tscn")
+const RATESTING = preload("res://scenes/levels/rats/ratesting.tscn")
+const SCALE_LVL = preload("res://scenes/levels/game_sequence/scale_lvl.tscn")
+const TEMPLATE = preload("res://scenes/objects/templaete.tscn")
+const TESTING = preload("res://scenes/levels/Testing/testing.tscn")
+const TUTORIAL_LEVEL = preload("res://scenes/levels/game_sequence/Tutorial_Level.tscn")
 var i = 0
 @onready var spawner_component = $SpawnerComponent
 var new

@@ -37,5 +37,5 @@ texture = ExtResource("2_k6f0r")
 [node name="Detector" parent="." index="4"]
 monitoring = false
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="6"]
+[node name="LightOccluder2D" parent="." index="6"]
 occluder = SubResource("OccluderPolygon2D_brckr")
