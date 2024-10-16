@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://bx1s1y6dvwiqu"]
+
+[ext_resource type="PackedScene" uid="uid://7hk07ugmm17c" path="res://scenes/levels/TitleScreen/3Dintro_cinematic.tscn" id="1_vs2lg"]
+[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_njpbj"]
+[ext_resource type="ArrayMesh" uid="uid://qq3mg1gysfpx" path="res://assets/Models/Player-Slime/Prot-Slime 3d.obj" id="3_ppdqc"]
+
+[sub_resource type="Environment" id="Environment_kl2he"]
+background_mode = 3
+background_canvas_max_layer = -100
+
+[sub_resource type="GDScript" id="GDScript_vmap0"]
+script/source = "extends RigidBody3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_timer_timeout():
+	angular_velocity = Vector3(randi_range(1,25), randi_range(1,25), randf_range(1,25))
+	linear_velocity = Vector3(randi_range(-25,25), randi_range(-25,25), 0)
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_htbjo"]
+radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nn56l"]
+size = Vector3(20, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ww7yj"]
+size = Vector3(20, 1, 5)
+
+[node name="Intro3d" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kl2he")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="IntroCinematic" parent="CanvasLayer" instance=ExtResource("1_vs2lg")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="CRTShader" parent="." instance=ExtResource("2_njpbj")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+axis_lock_linear_z = true
+gravity_scale = 0.5
+script = SubResource("GDScript_vmap0")
+
+[node name="Prot-slime3d" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = ExtResource("3_ppdqc")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_htbjo")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.32224)
+
+[node name="Timer" type="Timer" parent="RigidBody3D"]
+autostart = true
+
+[node name="Paredes" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
+constant_linear_velocity = Vector3(0, 25, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBody3D"]
+shape = SubResource("BoxShape3D_nn56l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes/StaticBody3D"]
+visible = false
+mesh = SubResource("BoxMesh_ww7yj")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBody3D2"]
+shape = SubResource("BoxShape3D_nn56l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes/StaticBody3D2"]
+visible = false
+mesh = SubResource("BoxMesh_ww7yj")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Paredes"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 10.0492, -0.433179, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBody3D3"]
+shape = SubResource("BoxShape3D_nn56l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes/StaticBody3D3"]
+visible = false
+mesh = SubResource("BoxMesh_ww7yj")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Paredes"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -9.48112, -0.433179, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBody3D4"]
+shape = SubResource("BoxShape3D_nn56l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes/StaticBody3D4"]
+visible = false
+mesh = SubResource("BoxMesh_ww7yj")
+
+[connection signal="timeout" from="RigidBody3D/Timer" to="RigidBody3D" method="_on_timer_timeout"]
