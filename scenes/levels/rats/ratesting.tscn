@@ -1,9 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://bw37nr6xqw6yc"]
+[gd_scene load_steps=21 format=4 uid="uid://bw37nr6xqw6yc"]
 
 [ext_resource type="Script" path="res://scenes/levels/Testing/testing.gd" id="1_iike3"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_goeaq"]
-[ext_resource type="Texture2D" uid="uid://dalgnkvg42uai" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
-[ext_resource type="Texture2D" uid="uid://ciunp5a4cnebs" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
+[ext_resource type="Texture2D" uid="uid://yljrgcly32g5" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
+[ext_resource type="Texture2D" uid="uid://dhofe6hs8tpcg" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="9_ewksh"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="10_uj851"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="11_onm1m"]
@@ -12,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="12_xhklx"]
 [ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="13_62bdi"]
 [ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="14_a3g21"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="17_drere"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="17_ji3ml"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_hbbxj"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/enemies/Meatbox/meat_box.tscn" id="18_kuoxt"]
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="18_p635a"]
+[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="18_p635a"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x32nn"]
 polygon = PackedVector2Array(-24, -24, -24, 24, 24, 24, 24, -24)
@@ -289,5 +290,8 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAwAAAACAAIAAAAAAAsAAAAAAAEAAAABAAsAAAAEAAAAAAACAAsAAAAEAAAAAAADAAsAAAAEAAAAAAAEAAsAAAAEAAAAAAAFAAsAAAAEAAAAAAAGAAsAAAAEAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAABAAAAAAAJAAoAAAABAAAAAAAKAAoAAAABAAAAAAALAAoAAAABAAAAAAAMAAoAAAABAAAAAAANAAoAAAABAAAAAAAOAAoAAAABAAAAAAAPAAoAAAABAAAAAAAQAAoAAAABAAAAAAARAAoAAAABAAAAAAASAAoAAAABAAAAAAATAAoAAAABAAAAAAAUAAoAAAABAAAAAAAVAAoAAAABAAAAAAAWAAoAAAABAAAAAAAWAAsAAAABAAIAAAAXAAsAAAABAAIAAAAYAAsAAAADAAIAAAAVAAsAAAABAAIAAAAUAAsAAAABAAIAAAATAAsAAAABAAIAAAASAAsAAAABAAIAAAARAAsAAAABAAIAAAAQAAsAAAABAAIAAAAPAAsAAAABAAIAAAAOAAsAAAABAAIAAAANAAsAAAABAAIAAAAMAAsAAAABAAIAAAALAAsAAAABAAIAAAAKAAsAAAABAAIAAAAJAAsAAAABAAIAAAAIAAsAAAABAAIAAAAHAAsAAAABAAEAAAAHAAwAAAACAAIAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAEAAEAAAAAAAYAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAFAAAAAAAAAAIAAAAEAAEAAAAAAAMAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAUAAAAEAAEAAAAXAAoAAAACAAEAAAAXAAkAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAYAAAAEAAEAAAAXAAUAAAAEAAEAAAAXAAQAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAEAAAAEAAEAAAAXAAAAAAABAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAP//AAAAAAAAAAAJAP//AAABAAAAAAAKAP//AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAANAP//AAABAAAAAAAOAP//AAABAAAAAAAPAP//AAABAAAAAAAQAP//AAABAAAAAAARAP//AAABAAAAAAASAP//AAABAAAAAAATAP//AAABAAAAAAAUAP//AAABAAAAAAAVAP//AAABAAAAAAAWAP//AAABAAAAAAAXAP//AAABAAAAAAAYAP//AAACAAAAAAAYAAAAAAACAAIAAAAWAAAAAAABAAIAAAAVAAAAAAABAAIAAAAUAAAAAAABAAIAAAATAAAAAAABAAIAAAASAAAAAAABAAIAAAARAAAAAAABAAIAAAAQAAAAAAABAAIAAAAPAAAAAAABAAIAAAAOAAAAAAABAAIAAAANAAAAAAABAAIAAAAMAAAAAAABAAIAAAALAAAAAAABAAIAAAAKAAAAAAABAAIAAAAJAAAAAAABAAIAAAAIAAAAAAABAAIAAAA=")
 tile_set = SubResource("TileSet_5fp2u")
 rendering_quadrant_size = 48
+
+[node name="WoodenBox" parent="." instance=ExtResource("17_drere")]
+position = Vector2(214, 460)
 
 [editable path="Transition"]

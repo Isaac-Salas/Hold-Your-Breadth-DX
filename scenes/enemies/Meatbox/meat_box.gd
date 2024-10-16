@@ -33,8 +33,8 @@ func _process(delta):
 
 
 func reset():
-		colision.scale = Vector2(1,1)
-		sprite_2d.scale = Vector2(1,1)
+		#colision.scale = Vector2(1,1)
+		#sprite_2d.scale = Vector2(1,1)
 		count = false
 		picked = false
 		#set_disable_scale(true)

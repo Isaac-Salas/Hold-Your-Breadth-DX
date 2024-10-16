@@ -28,7 +28,6 @@ func _on_timer_timeout():
 "
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_htbjo"]
-radius = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nn56l"]
 size = Vector3(20, 1, 5)
@@ -57,15 +56,12 @@ gravity_scale = 0.5
 script = SubResource("GDScript_vmap0")
 
 [node name="Prot-slime3d" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.5, 0)
 mesh = ExtResource("3_ppdqc")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_htbjo")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.32224)
 
 [node name="Timer" type="Timer" parent="RigidBody3D"]
 autostart = true
@@ -112,5 +108,9 @@ shape = SubResource("BoxShape3D_nn56l")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes/StaticBody3D4"]
 visible = false
 mesh = SubResource("BoxMesh_ww7yj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.66994)
+omni_range = 29.347
 
 [connection signal="timeout" from="RigidBody3D/Timer" to="RigidBody3D" method="_on_timer_timeout"]
