@@ -6,7 +6,7 @@ extends Node2D
 @onready var transition: Node2D = $Transition
 
 const TESTING = preload("res://scenes/levels/Testing/testing.tscn")
-const scale_lvl = preload("res://scenes/levels/game_sequence/Tutorial_Level.tscn")
+const scale_lvl = preload("res://scenes/levels/game_sequence/0_Tutorial_throw.tscn")
 const SCENE_SWITCHER = preload("res://scenes/levels/Transition/scene_switcher.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():

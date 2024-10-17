@@ -40,9 +40,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atwk0"]
+resource_local_to_scene = true
 size = Vector2(48, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u60lh"]
+resource_local_to_scene = true
 size = Vector2(48, 96)
 
 [sub_resource type="Animation" id="Animation_8t16k"]
@@ -173,12 +175,14 @@ tracks/4/keys = {
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlwus"]
+resource_local_to_scene = true
 _data = {
 "RESET": SubResource("Animation_8t16k"),
 "shuttingcol": SubResource("Animation_n1mad")
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x84v6"]
+resource_local_to_scene = true
 polygon = PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d2nqj"]
@@ -213,6 +217,7 @@ scale = Vector2(-1, -1)
 occluder = SubResource("OccluderPolygon2D_x84v6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.235294)
 material = SubResource("CanvasItemMaterial_d2nqj")
 anchors_preset = 8
