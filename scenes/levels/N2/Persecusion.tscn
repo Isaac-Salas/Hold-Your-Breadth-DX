@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="1_bmdx5"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="2_n7p7s"]
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="3_lbwaj"]
+[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="3_lbwaj"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="4_wvfxb"]
 [ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="5_liujx"]
 

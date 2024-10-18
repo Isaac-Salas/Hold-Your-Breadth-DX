@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm3twurigvhx1"]
+
+[ext_resource type="Texture2D" uid="uid://oqlpvmswpjm0" path="res://assets/objects/LamparaColgosa.png" id="1_13vq5"]
+[ext_resource type="Script" path="res://scenes/cutscenes/Verlet/string.gd" id="3_58ash"]
+[ext_resource type="Texture2D" uid="uid://csqxyv0xm43fg" path="res://assets/lights/Lamparacolgosa.png" id="3_drnt4"]
+
+[sub_resource type="GDScript" id="GDScript_dox1b"]
+script/source = "extends Node2D
+@onready var line_2d = $String/Line2D
+@onready var string = $String
+@onready var light = $Light
+@export var scaling : Vector2
+@onready var sprite_2d = $Light/Sprite2D
+@onready var collision_shape_2d = $Light/CollisionShape2D
+@onready var point_light_2d = $Light/PointLight2D
+@onready var fakelight = $Light/Fakelight
+@onready var pin_joint_2d = $PinJoint2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	scaling = self.scale
+	string.ropeLength = light.position.y
+	sprite_2d.scale = scaling
+	collision_shape_2d.scale = scaling
+	point_light_2d.scale = scaling
+	fakelight.scale = scaling
+	pin_joint_2d.scale = scaling
+	line_2d.width = scale.x/2
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	#print(string.ropeLength)
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4lh8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mraj3"]
+light_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f2v3x"]
+radius = 12.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3g7t1"]
+blend_mode = 1
+
+[node name="Swing-light" type="Node2D"]
+script = SubResource("GDScript_dox1b")
+
+[node name="Puntocent" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puntocent"]
+shape = SubResource("RectangleShape2D_x4lh8")
+
+[node name="Light" type="RigidBody2D" parent="."]
+position = Vector2(0, 200)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Light"]
+z_index = 1
+material = SubResource("CanvasItemMaterial_mraj3")
+rotation = 1.5708
+texture = ExtResource("1_13vq5")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
+shape = SubResource("CircleShape2D_f2v3x")
+metadata/_edit_lock_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+color = Color(1, 0.819608, 0.647059, 1)
+texture = ExtResource("3_drnt4")
+
+[node name="Fakelight" type="Sprite2D" parent="Light"]
+modulate = Color(1, 0.819167, 0.65, 0.196078)
+material = SubResource("CanvasItemMaterial_3g7t1")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_drnt4")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../Puntocent")
+node_b = NodePath("../Light")
+softness = 16.0
+
+[node name="String" type="Node2D" parent="." node_paths=PackedStringArray("light", "puntocent")]
+script = ExtResource("3_58ash")
+light = NodePath("../Light")
+puntocent = NodePath("../Puntocent")
+ropeLength = 15.0
+
+[node name="Line2D" type="Line2D" parent="String"]
+points = PackedVector2Array(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 27, 0, 28, 0, 29, 0, 30, 0, 31, 0, 32, 0, 33, 0, 34, 0, 35, 0, 36, 0, 37, 0, 38, 0, 39, 0, 40, 0, 41, 0, 42, 0, 43, 0, 44, 0, 45, 0, 46, 0, 47, 0, 48, 0, 49, 0, 50, 0, 51, 0, 52, 0, 53, 0, 54, 0, 55, 0, 56, 0, 57, 0, 58, 0, 59, 0, 60, 0, 61, 0, 62, 0, 63, 0, 64, 0, 65, 0, 66, 0, 67, 0, 68, 0, 69, 0, 70, 0, 71, 0, 72, 0, 73, 0, 74, 0, 75, 0, 76, 0, 77, 0, 78, 0, 79, 0, 80, 0, 81, 0, 82, 0, 83, 0, 84, 0, 85, 0, 86, 0, 87, 0, 88, 0, 89, 0, 90, 0, 91, 0, 92, 0, 93, 0, 94, 0, 95, 0, 96, 0, 97, 0, 98, 0, 99, 0)
+width = 4.0
+default_color = Color(0, 0, 0, 1)

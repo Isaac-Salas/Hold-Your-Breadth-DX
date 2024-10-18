@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct78txhq8pj0e"]
+
+[ext_resource type="ArrayMesh" uid="uid://qq3mg1gysfpx" path="res://assets/Models/Player-Slime/Prot-Slime 3d.obj" id="1_s5xt3"]
+
+[sub_resource type="GDScript" id="GDScript_vmap0"]
+script/source = "extends RigidBody3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_timer_timeout():
+	angular_velocity = Vector3(randi_range(1,25), randi_range(1,25), randf_range(1,25))
+	linear_velocity = Vector3(randi_range(-25,25), randi_range(-25,25), 0)
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_htbjo"]
+
+[node name="Slime" type="RigidBody3D"]
+axis_lock_linear_z = true
+gravity_scale = 0.5
+script = SubResource("GDScript_vmap0")
+
+[node name="Prot-slime3d" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.5, 0)
+mesh = ExtResource("1_s5xt3")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_htbjo")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
