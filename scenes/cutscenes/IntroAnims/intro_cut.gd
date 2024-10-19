@@ -8,6 +8,7 @@ extends Node2D
 @onready var dialog_box = $ColorRect/GridContainer/DialogBox
 @onready var currentanim : String
 @onready var point_light_2d = $"Swing-light/Light/PointLight2D"
+@onready var transition = $Transition
 
 
 # Called when the node enters the scene tree for the first time.
@@ -50,8 +51,12 @@ func _input(event):
 					slime.play("Look")
 					fondo.play("Look")
 				5:
+					pass
 					#dialog_box.InputSTOP = true
-					point_light_2d.energy -= 0.01
+					#
+				6:
+					transition.transition_to()
+					
 
 func _on_slime_animation_finished():
 	if slime.animation == "Inicio":

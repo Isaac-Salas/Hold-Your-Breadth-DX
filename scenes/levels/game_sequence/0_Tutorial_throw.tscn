@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_esqvt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
 [ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="8_w5r8i"]
-[ext_resource type="Texture2D" uid="uid://b1c1hr2n5qaas" path="res://assets/objects/Transition.png" id="9_2ulds"]
+[ext_resource type="Texture2D" uid="uid://058anyivsfg7" path="res://assets/objects/Transition.png" id="9_2ulds"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="10_wivjf"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="11_x0vny"]
 [ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="12_bu4xr"]
@@ -300,6 +300,7 @@ libraries = {
 autoplay = "Opening"
 
 [node name="dont touch" parent="." instance=ExtResource("10_wivjf")]
+visible = true
 
 [node name="Conveyor" type="Node" parent="."]
 
@@ -593,6 +594,7 @@ target_scale = Vector2(1, 1)
 [connection signal="pressed" from="Button_red" to="Button_Red_Signal" method="toggle_door"]
 [connection signal="body_entered" from="Transition/Trigger" to="Transition" method="_on_trigger_body_entered"]
 
+[editable path="dont touch"]
 [editable path="Teleports/Teleport"]
 [editable path="Teleports/Teleport2"]
 [editable path="Lights/Swing-light"]
