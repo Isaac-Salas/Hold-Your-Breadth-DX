@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://22v7woarogqs"]
+[gd_scene load_steps=19 format=4 uid="uid://22v7woarogqs"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_3l663"]
 [ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="2_ar6cy"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="15_2wvt5"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="15_ggeun"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="16_7n6ih"]
-[ext_resource type="PackedScene" uid="uid://dm3twurigvhx1" path="res://scenes/objects/swing-light.tscn" id="16_uy4mk"]
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="18_wtde4"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="18_xl2iu"]
 
@@ -290,12 +289,5 @@ rotation = 1.5708
 [node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("18_wtde4")]
 position = Vector2(1032, -13)
 
-[node name="Swing-light" parent="." instance=ExtResource("16_uy4mk")]
-position = Vector2(397, 195)
-
-[node name="Light" parent="Swing-light" index="1"]
-position = Vector2(0, 120)
-
 [editable path="Transition"]
 [editable path="dont touch"]
-[editable path="Swing-light"]

@@ -344,7 +344,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("55_uappl")
 }],
-"loop": true,
+"loop": false,
 "name": &"Tarjeta-S",
 "speed": 10.0
 }]
@@ -432,7 +432,6 @@ text = "[center][center]"
 fit_content = true
 scroll_active = false
 script = ExtResource("4_ygq3k")
-InputEnable = false
 Typetime = 0.1
 Quickypetime = 0.05
 Dialog = PackedStringArray("", "...", "You wake up in a strange, desolate lab.", "You dont remember being a slime before.", "This place gives you the creeps.", "It might be a good idea to try and find a way OUT.")

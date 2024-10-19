@@ -1,14 +1,77 @@
 extends Node2D
 @onready var fondo = $Fondo
 @onready var slime = $Slime
-
+@onready var light = $"Swing-light/Light"
+@onready var line_2d = $"Swing-light/String/Line2D"
+@onready var animcount : int = 0
+@onready var click : bool = true
+@onready var dialog_box = $ColorRect/GridContainer/DialogBox
+@onready var currentanim : String
+@onready var point_light_2d = $"Swing-light/Light/PointLight2D"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	fondo.play("Inicio")
-	slime.play("Inicio")
+	dialog_box.timer.start()
+	line_2d.width = 2
+	light.position.y -= 100
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _input(event):
+	if click == true:
+		if Input.is_anything_pressed():
+			#print("click")
+			animcount += 1
+			match dialog_box.linecount:
+				1:
+					dialog_box.InputSTOP = true
+					dialog_box.timer.start()
+					fondo.play("Inicio")
+					slime.play("Inicio")
+				2:
+					dialog_box.InputSTOP = true
+					#dialog_box.InputSTOP = true
+					slime.play("Despertar")
+					
+				3:
+					dialog_box.InputSTOP = true
+					if dialog_box.InputEnable == true:
+						slime.play("Tarjeta")
+						fondo.play("Tarjeta")
+
+					#dialog_box.InputSTOP = true
+				4:
+					dialog_box.InputSTOP = true
+					if dialog_box.InputEnable == true:
+						slime.play("Look")
+						fondo.play("Look")
+				5:
+					dialog_box.InputSTOP = true
+					if dialog_box.InputEnable == true:
+						point_light_2d.energy -= 0.01
+
+func _on_slime_animation_finished():
+	if slime.animation == "Inicio":
+		slime.play("Dormido")
+		dialog_box.InputSTOP = false
+		
+	if slime.animation == "Despertar":
+		slime.play("Loop")
+		dialog_box.InputSTOP = false
+
+	if slime.animation == "Tarjeta":
+		fondo.play("Tarjeta-S")
+		slime.play("Tarjeta-S")
+		dialog_box.InputSTOP = false
+
+	if slime.animation == "Look":
+		slime.play("Look-S")
+		dialog_box.InputSTOP = false
+
+
+func _on_fondo_animation_finished():
+	if fondo.animation == "Inicio":
+		fondo.play("Dormido")

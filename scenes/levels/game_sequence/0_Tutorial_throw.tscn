@@ -1,20 +1,21 @@
-[gd_scene load_steps=25 format=4 uid="uid://bc8vxc0lju6wb"]
+[gd_scene load_steps=26 format=4 uid="uid://bc8vxc0lju6wb"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
-[ext_resource type="Texture2D" uid="uid://cfvyrn08amfjd" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
+[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_esqvt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
 [ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="8_w5r8i"]
-[ext_resource type="Texture2D" uid="uid://ddoslkg244uty" path="res://assets/objects/Transition.png" id="9_2ulds"]
+[ext_resource type="Texture2D" uid="uid://b1c1hr2n5qaas" path="res://assets/objects/Transition.png" id="9_2ulds"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="10_wivjf"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="11_x0vny"]
 [ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="12_bu4xr"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="13_ah2pn"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="14_bwfvk"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="15_hc1tl"]
+[ext_resource type="PackedScene" uid="uid://dm3twurigvhx1" path="res://scenes/objects/swing-light.tscn" id="15_mnyod"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="16_5vcge"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
@@ -548,6 +549,7 @@ position = Vector2(719, 266)
 metadata/_edit_lock_ = true
 
 [node name="Light9" parent="Lights" instance=ExtResource("14_bwfvk")]
+visible = false
 position = Vector2(432, 272)
 metadata/_edit_lock_ = true
 
@@ -558,6 +560,12 @@ metadata/_edit_lock_ = true
 [node name="Light11" parent="Lights" instance=ExtResource("14_bwfvk")]
 position = Vector2(1056, 31)
 metadata/_edit_lock_ = true
+
+[node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
+position = Vector2(315, 265)
+
+[node name="Light" parent="Lights/Swing-light" index="1"]
+position = Vector2(0, 140)
 
 [node name="Lasers" type="Node" parent="."]
 
@@ -587,3 +595,4 @@ target_scale = Vector2(1, 1)
 
 [editable path="Teleports/Teleport"]
 [editable path="Teleports/Teleport2"]
+[editable path="Lights/Swing-light"]

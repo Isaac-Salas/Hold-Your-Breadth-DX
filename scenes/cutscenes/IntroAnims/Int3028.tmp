@@ -1,0 +1,210 @@
+[gd_scene load_steps=30 format=3 uid="uid://bmo1f8002r1k7"]
+
+[ext_resource type="Script" path="res://scenes/cutscenes/IntroAnims/intro_cut.gd" id="1_h1l45"]
+[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_jkj6q"]
+[ext_resource type="Texture2D" uid="uid://dmapykkhtvni4" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F1.png" id="2_u3m6f"]
+[ext_resource type="Texture2D" uid="uid://dg00c6k4l8y1p" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F2.png" id="3_00q44"]
+[ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="3_5e2sb"]
+[ext_resource type="Texture2D" uid="uid://ccid6h8fv77xr" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F3.png" id="4_a2r3d"]
+[ext_resource type="Texture2D" uid="uid://2x1585fnn71o" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F4.png" id="5_u4yow"]
+[ext_resource type="Texture2D" uid="uid://cgwjit0frui1j" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F5.png" id="6_jqqce"]
+[ext_resource type="Texture2D" uid="uid://curmicui0hows" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F6.png" id="7_l62ab"]
+[ext_resource type="Texture2D" uid="uid://bbt0kmmrfdsuw" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F7.png" id="8_lorlj"]
+[ext_resource type="Texture2D" uid="uid://dolyoanxpuna" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F8.png" id="9_j6ldh"]
+[ext_resource type="Texture2D" uid="uid://fkk5yixdrm3t" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F9.png" id="10_ohies"]
+[ext_resource type="Texture2D" uid="uid://5q5b7snkj0kr" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F10.png" id="11_x1gvk"]
+[ext_resource type="Texture2D" uid="uid://7ga1xwbpsspv" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U1.png" id="12_mcw0t"]
+[ext_resource type="Texture2D" uid="uid://bgdkaujdtecra" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U2.png" id="13_j6eyo"]
+[ext_resource type="Texture2D" uid="uid://p5dgf4rcgmwl" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U3.png" id="14_fjbtq"]
+[ext_resource type="Texture2D" uid="uid://duq1wglxq64de" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U4.png" id="15_oc5hl"]
+[ext_resource type="Texture2D" uid="uid://cj6ldl23wuktk" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U5.png" id="16_6dc5i"]
+[ext_resource type="Texture2D" uid="uid://b1mptxap8wg0q" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U6.png" id="17_q1frq"]
+[ext_resource type="Texture2D" uid="uid://d0an4lyy0rdfw" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U7.png" id="18_gfypk"]
+[ext_resource type="Texture2D" uid="uid://sr6ng8a8s1fl" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U8.png" id="19_s3dhl"]
+[ext_resource type="Texture2D" uid="uid://cc0bag0awh0c7" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U9.png" id="20_y3h4o"]
+[ext_resource type="Texture2D" uid="uid://ewv72ntl8cdq" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U10.png" id="21_syn4c"]
+[ext_resource type="PackedScene" uid="uid://dm3twurigvhx1" path="res://scenes/objects/swing-light.tscn" id="24_ifudp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fye8k"]
+shader = ExtResource("3_5e2sb")
+shader_parameter/resolution = Vector2(260.765, 180)
+shader_parameter/scan_line_amount = 0.758
+shader_parameter/warp_amount = 2.519
+shader_parameter/noise_amount = 0.3
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.795
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ylxor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u3m6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_00q44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a2r3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u4yow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jqqce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l62ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lorlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j6ldh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ohies")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x1gvk")
+}],
+"loop": true,
+"name": &"Inicio",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aylkk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_mcw0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_j6eyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fjbtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_oc5hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6dc5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q1frq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gfypk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_s3dhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_y3h4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_syn4c")
+}],
+"loop": true,
+"name": &"Inicio",
+"speed": 10.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_3ntkp"]
+script/source = "extends RigidBody2D
+
+@export var light : RigidBody2D
+var dragging = false 
+@onready var collision_shape_2d = $CollisionShape2D
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	self.global_position = get_global_mouse_position()
+	match dragging:
+		true:
+			collision_shape_2d.set_deferred(\"disabled\",true)
+			light.global_position = get_global_mouse_position()
+		false:
+			collision_shape_2d.set_deferred(\"disabled\",false)
+			
+	
+func _input(event):
+	if event is InputEventMouseMotion:
+		if event.get_relative().x > 0:
+			print(\"Moving right\")
+			linear_velocity = Vector2 (300,0)
+		if event.get_relative().x < 0:
+			print(\"Moving left\")
+			linear_velocity = Vector2 (-300,0)
+		if event.get_relative().y > 0:
+			print(\"Moving down\")
+			linear_velocity = Vector2 (0,300)
+		if event.get_relative().y < 0:
+			print(\"Moving Up\")
+			linear_velocity = Vector2 (0,-300)
+	#if Input.is_action_just_pressed(\"LefMouse\"):
+		#dragging = true
+	#if Input.is_action_just_released(\"LefMouse\"):
+		#dragging = false
+	
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lkf33"]
+radius = 1.0
+
+[node name="IntroCut" type="Node2D"]
+script = ExtResource("1_h1l45")
+
+[node name="CRTShader" parent="." instance=ExtResource("2_jkj6q")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -39.0
+offset_top = -29.0
+offset_right = 1218.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+material = SubResource("ShaderMaterial_fye8k")
+color = Color(0.415686, 0.376471, 0.501961, 1)
+metadata/_edit_lock_ = true
+
+[node name="Fondo" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.11, 0.11, 0.11, 1)
+position = Vector2(576, 220)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ylxor")
+animation = &"Inicio"
+
+[node name="Slime" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 220)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_aylkk")
+animation = &"Inicio"
+frame = 8
+frame_progress = 0.278878
+
+[node name="Swing-light" parent="." instance=ExtResource("24_ifudp")]
+position = Vector2(576, -630)
+scale = Vector2(4, 4)
+
+[node name="Mouse" type="RigidBody2D" parent="." node_paths=PackedStringArray("light")]
+collision_layer = 3
+collision_mask = 3
+can_sleep = false
+freeze = true
+script = SubResource("GDScript_3ntkp")
+light = NodePath("../Swing-light/Light")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse"]
+shape = SubResource("CircleShape2D_lkf33")
+
+[editable path="Swing-light"]
