@@ -5,6 +5,7 @@ extends Node2D
 @onready var exit = $Exit
 @onready var transition: Node2D = $Transition
 
+const INTRO_CUT = preload("res://scenes/cutscenes/IntroAnims/IntroCut.tscn")
 const TESTING = preload("res://scenes/levels/Testing/testing.tscn")
 const scale_lvl = preload("res://scenes/levels/game_sequence/0_Tutorial_throw.tscn")
 const SCENE_SWITCHER = preload("res://scenes/levels/Transition/scene_switcher.tscn")
@@ -20,7 +21,7 @@ func _process(delta):
 
 
 func _on_play_pressed():
-	transition.transition_to(scale_lvl)
+	transition.transition_to(INTRO_CUT)
 
 
 func _on_level_select_pressed():

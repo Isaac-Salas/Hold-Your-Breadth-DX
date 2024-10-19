@@ -9,11 +9,12 @@ extends Node2D
 @onready var currentanim : String
 @onready var point_light_2d = $"Swing-light/Light/PointLight2D"
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialog_box.timer.start()
 	line_2d.width = 2
-	light.position.y -= 100
+	light.position.y -= 300
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,54 +25,58 @@ func _input(event):
 	if click == true:
 		if Input.is_anything_pressed():
 			#print("click")
-			animcount += 1
+			print(dialog_box.linecount)
 			match dialog_box.linecount:
+				
 				1:
 					dialog_box.InputSTOP = true
 					dialog_box.timer.start()
 					fondo.play("Inicio")
 					slime.play("Inicio")
 				2:
-					dialog_box.InputSTOP = true
+					#dialog_box.InputSTOP = true
 					#dialog_box.InputSTOP = true
 					slime.play("Despertar")
+					click = false
 					
 				3:
-					dialog_box.InputSTOP = true
-					if dialog_box.InputEnable == true:
-						slime.play("Tarjeta")
-						fondo.play("Tarjeta")
+					#dialog_box.InputSTOP = true
+					slime.play("Tarjeta")
+					fondo.play("Tarjeta")
 
 					#dialog_box.InputSTOP = true
 				4:
-					dialog_box.InputSTOP = true
-					if dialog_box.InputEnable == true:
-						slime.play("Look")
-						fondo.play("Look")
+					#dialog_box.InputSTOP = true
+					slime.play("Look")
+					fondo.play("Look")
 				5:
-					dialog_box.InputSTOP = true
-					if dialog_box.InputEnable == true:
-						point_light_2d.energy -= 0.01
+					#dialog_box.InputSTOP = true
+					point_light_2d.energy -= 0.01
 
 func _on_slime_animation_finished():
 	if slime.animation == "Inicio":
 		slime.play("Dormido")
 		dialog_box.InputSTOP = false
+		click = true
 		
 	if slime.animation == "Despertar":
 		slime.play("Loop")
-		dialog_box.InputSTOP = false
+		click = false
 
 	if slime.animation == "Tarjeta":
 		fondo.play("Tarjeta-S")
 		slime.play("Tarjeta-S")
-		dialog_box.InputSTOP = false
+		click = false
 
 	if slime.animation == "Look":
 		slime.play("Look-S")
-		dialog_box.InputSTOP = false
+		click = false
 
 
 func _on_fondo_animation_finished():
 	if fondo.animation == "Inicio":
 		fondo.play("Dormido")
+
+
+func _on_dialog_box_done():
+	click = true # Replace with function body.
