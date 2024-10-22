@@ -9,13 +9,14 @@ extends Node2D
 @onready var currentanim : String
 @onready var point_light_2d = $"Swing-light/Light/PointLight2D"
 @onready var transition = $Transition
-
+const _0_TUTORIAL_THROW = preload("res://scenes/levels/game_sequence/0_Tutorial_throw.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialog_box.timer.start()
 	line_2d.width = 2
-	light.position.y -= 300
+	#light.position.y -= 300
+	light.linear_velocity.x = 500
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,7 +56,8 @@ func _input(event):
 					#dialog_box.InputSTOP = true
 					#
 				6:
-					transition.transition_to()
+					transition.transition_to(_0_TUTORIAL_THROW )
+					set_process_input(false)
 					
 
 func _on_slime_animation_finished():

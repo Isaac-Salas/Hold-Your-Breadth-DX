@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://73jmphxe2m6i"]
+
+[ext_resource type="Texture2D" uid="uid://w5s0vpknew32" path="res://assets/objects/Arrow.png" id="1_8v7lp"]
+
+[node name="Indicator-Arrow" type="Sprite2D"]
+z_index = -1
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_8v7lp")

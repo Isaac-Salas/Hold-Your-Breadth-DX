@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8svr4m4sebd7"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_nvg6b"]
-[ext_resource type="Texture2D" uid="uid://b5qc7deqvlbaa" path="res://assets/objects/barnacle-tieso.png" id="2_qivjo"]
+[ext_resource type="Texture2D" uid="uid://neajlblketbv" path="res://assets/objects/barnacle-tieso.png" id="2_qivjo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_84c34"]
 radius = 14.0

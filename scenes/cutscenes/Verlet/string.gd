@@ -16,6 +16,8 @@ var pos : PackedVector2Array
 var posPrev : PackedVector2Array
 var pointCount : int
 
+
+
 func _ready()->void:
 	pointCount = get_pointCount(ropeLength)
 	resize_arrays()

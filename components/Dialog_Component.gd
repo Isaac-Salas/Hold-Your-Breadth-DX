@@ -56,7 +56,3 @@ func _on_timer_timeout():
 			InputEnable = true
 			Done.emit()
 		
-		
-	
-
-		

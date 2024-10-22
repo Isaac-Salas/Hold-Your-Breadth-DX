@@ -1,7 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dgyws68xvfvpu"]
+[gd_scene load_steps=28 format=3 uid="uid://dgyws68xvfvpu"]
 
-[ext_resource type="Texture2D" uid="uid://d2yfoqoqfcusk" path="res://assets/objects/conveyor_sheet.png" id="1_2qbqk"]
+[ext_resource type="Texture2D" uid="uid://b5bqj6f5bp77q" path="res://assets/objects/conveyor_sheet.png" id="1_2qbqk"]
 [ext_resource type="Script" path="res://scenes/objects/Conveyor/conveyor.gd" id="1_880bm"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5vuv7"]
+blend_mode = 4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tdof"]
 atlas = ExtResource("1_2qbqk")
@@ -178,6 +181,7 @@ size = Vector2(48, 12)
 script = ExtResource("1_880bm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_5vuv7")
 sprite_frames = SubResource("SpriteFrames_frta5")
 animation = &"NORMAL"
 frame_progress = 0.895789

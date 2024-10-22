@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm3twurigvhx1"]
+[gd_scene load_steps=10 format=3 uid="uid://bjeobrkgw5ahv"]
 
 [ext_resource type="Texture2D" uid="uid://oqlpvmswpjm0" path="res://assets/objects/LamparaColgosa.png" id="1_13vq5"]
 [ext_resource type="Script" path="res://scenes/cutscenes/Verlet/string.gd" id="3_58ash"]
@@ -45,18 +45,23 @@ radius = 12.0
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3g7t1"]
 blend_mode = 1
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8ef7g"]
+
 [node name="Swing-light" type="Node2D"]
 script = SubResource("GDScript_dox1b")
 
 [node name="Puntocent" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puntocent"]
 shape = SubResource("RectangleShape2D_x4lh8")
+metadata/_edit_lock_ = true
 
 [node name="Light" type="RigidBody2D" parent="."]
 position = Vector2(0, 200)
 collision_layer = 3
 collision_mask = 3
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Light"]
 z_index = 1
@@ -75,17 +80,20 @@ color = Color(1, 0.819608, 0.647059, 1)
 shadow_enabled = true
 texture = ExtResource("3_drnt4")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="Fakelight" type="Sprite2D" parent="Light"]
 modulate = Color(1, 0.819167, 0.65, 0.196078)
 material = SubResource("CanvasItemMaterial_3g7t1")
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_drnt4")
+metadata/_edit_lock_ = true
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 node_a = NodePath("../Puntocent")
 node_b = NodePath("../Light")
 softness = 16.0
+metadata/_edit_lock_ = true
 
 [node name="String" type="Node2D" parent="." node_paths=PackedStringArray("light", "puntocent")]
 script = ExtResource("3_58ash")
@@ -93,8 +101,11 @@ light = NodePath("../Light")
 puntocent = NodePath("../Puntocent")
 ropeLength = 15.0
 dampening = 1.0
+metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="String"]
+material = SubResource("CanvasItemMaterial_8ef7g")
 points = PackedVector2Array(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 27, 0, 28, 0, 29, 0, 30, 0, 31, 0, 32, 0, 33, 0, 34, 0, 35, 0, 36, 0, 37, 0, 38, 0, 39, 0, 40, 0, 41, 0, 42, 0, 43, 0, 44, 0, 45, 0, 46, 0, 47, 0, 48, 0, 49, 0, 50, 0, 51, 0, 52, 0, 53, 0, 54, 0, 55, 0, 56, 0, 57, 0, 58, 0, 59, 0, 60, 0, 61, 0, 62, 0, 63, 0, 64, 0, 65, 0, 66, 0, 67, 0, 68, 0, 69, 0, 70, 0, 71, 0, 72, 0, 73, 0, 74, 0, 75, 0, 76, 0, 77, 0, 78, 0, 79, 0, 80, 0, 81, 0, 82, 0, 83, 0, 84, 0, 85, 0, 86, 0, 87, 0, 88, 0, 89, 0, 90, 0, 91, 0, 92, 0, 93, 0, 94, 0, 95, 0, 96, 0, 97, 0, 98, 0, 99, 0)
 width = 3.0
 default_color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true

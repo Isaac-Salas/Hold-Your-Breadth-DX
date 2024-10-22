@@ -11,6 +11,8 @@ func _ready() -> void:
 func transition_to(_next_scene) -> void:
 	ap.play("Closing")
 	await(ap.animation_finished)
+	#var nivel : Node2D = get_tree().get_first_node_in_group("Nivel")
+	#nivel.visible = false
 	get_tree().change_scene_to_packed(_next_scene)
 
 
