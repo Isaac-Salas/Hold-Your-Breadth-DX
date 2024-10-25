@@ -315,7 +315,7 @@ tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_wvfxb")]
-position = Vector2(1145, 407)
+position = Vector2(1603, 407)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -100)
@@ -415,16 +415,7 @@ position = Vector2(607, 483)
 position = Vector2(600, 462)
 
 [node name="Pared-Rompible" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 457)
-
-[node name="Pared-Rompible2" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 313)
-
-[node name="Pared-Rompible3" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 171)
-
-[node name="Pared-Rompible4" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 28)
+position = Vector2(953, 456)
 
 [connection signal="body_entered" from="Scale_button_green" to="Scale_button_green" method="_on_body_entered"]
 [connection signal="body_exited" from="Scale_button_green" to="Scale_button_green" method="_on_body_exited"]

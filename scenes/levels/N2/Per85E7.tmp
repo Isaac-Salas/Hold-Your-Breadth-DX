@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://cwl4pjlnqkxym"]
+[gd_scene load_steps=12 format=4 uid="uid://cwl4pjlnqkxym"]
 
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="1_bmdx5"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="2_n7p7s"]
@@ -8,12 +8,6 @@
 [ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="5_liujx"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="6_eqhjs"]
 [ext_resource type="Texture2D" uid="uid://bwtlag06aqeoq" path="res://assets/fondos/Lab.png" id="8_h4f6i"]
-[ext_resource type="Script" path="res://scenes/objects/scale_green/scale_logic.gd" id="9_jjkhn"]
-[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="10_2apqn"]
-[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_w0wl7"]
-[ext_resource type="Texture2D" uid="uid://cjf3t8jv41cj2" path="res://assets/objects/scale_signal_button.png" id="11_fhaoe"]
-[ext_resource type="Texture2D" uid="uid://cjcckpdwj1heo" path="res://assets/objects/scale_animated.png" id="12_vsimv"]
-[ext_resource type="PackedScene" uid="uid://cmymj8rniorit" path="res://scenes/objects/Wall_Breakable/Wall_Breakable.tscn" id="14_0l4br"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("3_lbwaj")
@@ -141,172 +135,13 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5l5o"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(480, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oi26j"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(576, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uttp5"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(0, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ghkj6"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(96, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3xxt4"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(192, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tm0jf"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(288, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nwa1b"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(384, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tkevh"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(480, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_23dy3"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(672, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g3qbo"]
-atlas = ExtResource("11_fhaoe")
-region = Rect2(768, 0, 96, 96)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pyojx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5l5o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oi26j")
-}],
-"loop": true,
-"name": &"CORRECT",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uttp5")
-}],
-"loop": true,
-"name": &"OFF",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ghkj6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3xxt4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tm0jf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nwa1b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tkevh")
-}],
-"loop": true,
-"name": &"ON",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_23dy3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g3qbo")
-}],
-"loop": true,
-"name": &"OVER",
-"speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8nime"]
-atlas = ExtResource("12_vsimv")
-region = Rect2(288, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kbfek"]
-atlas = ExtResource("12_vsimv")
-region = Rect2(192, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_teg5k"]
-atlas = ExtResource("12_vsimv")
-region = Rect2(96, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t11oe"]
-atlas = ExtResource("12_vsimv")
-region = Rect2(0, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f25jm"]
-atlas = ExtResource("12_vsimv")
-region = Rect2(0, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_10ava"]
-atlas = ExtResource("12_vsimv")
-region = Rect2(96, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2mdba"]
-atlas = ExtResource("12_vsimv")
-region = Rect2(192, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2opxw"]
-atlas = ExtResource("12_vsimv")
-region = Rect2(288, 0, 96, 96)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_q45co"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8nime")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kbfek")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_teg5k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t11oe")
-}],
-"loop": false,
-"name": &"depresssed",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f25jm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_10ava")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2mdba")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2opxw")
-}],
-"loop": false,
-"name": &"pressed",
-"speed": 20.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdtrr"]
-size = Vector2(96, 47)
-
 [node name="Persecusion" type="Node2D"]
+
+[node name="Hand" parent="." instance=ExtResource("2_n7p7s")]
+position = Vector2(341, 230)
+
+[node name="Timer" parent="Hand" index="2"]
+wait_time = 0.1
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -315,7 +150,7 @@ tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_wvfxb")]
-position = Vector2(1145, 407)
+position = Vector2(495, 448)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -100)
@@ -328,9 +163,7 @@ metadata/_edit_lock_ = true
 
 [node name="CRTShader" parent="CharacterBody2D/dont touch" instance=ExtResource("1_bmdx5")]
 z_index = 25
-pivot_offset = Vector2(576, 324)
-size_flags_horizontal = 4
-size_flags_vertical = 4
+metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CharacterBody2D/dont touch"]
 material = SubResource("ShaderMaterial_uh315")
@@ -338,7 +171,7 @@ color = Color(0.415686, 0.376471, 0.501961, 1)
 metadata/_edit_lock_ = true
 
 [node name="Swing-light" parent="." instance=ExtResource("6_eqhjs")]
-position = Vector2(802, 38)
+position = Vector2(404, 91)
 
 [node name="Swing-light2" parent="." instance=ExtResource("6_eqhjs")]
 position = Vector2(612, 104)
@@ -360,72 +193,4 @@ texture = ExtResource("8_h4f6i")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Hand" parent="." instance=ExtResource("2_n7p7s")]
-position = Vector2(320, 201)
-speed = 150.0
-
-[node name="Scale_button_green" type="Area2D" parent="."]
-position = Vector2(615, 528)
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("9_jjkhn")
-
-[node name="PointLight2D" type="PointLight2D" parent="Scale_button_green"]
-position = Vector2(-23.0667, -85)
-scale = Vector2(0.919271, 0.666667)
-color = Color(0.235294, 1, 0.235294, 1)
-energy = 0.5
-texture = ExtResource("10_2apqn")
-texture_scale = 0.4
-
-[node name="anim_flag" type="AnimatedSprite2D" parent="Scale_button_green"]
-position = Vector2(0, -48)
-sprite_frames = SubResource("SpriteFrames_pyojx")
-animation = &"OFF"
-frame_progress = 0.564916
-
-[node name="anim" type="AnimatedSprite2D" parent="Scale_button_green"]
-position = Vector2(0, -31)
-sprite_frames = SubResource("SpriteFrames_q45co")
-animation = &"pressed"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale_button_green"]
-position = Vector2(0, -24.5)
-shape = SubResource("RectangleShape2D_mdtrr")
-
-[node name="WoodenBox" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(582, 505)
-
-[node name="WoodenBox7" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(1076, 505)
-
-[node name="WoodenBox2" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(602, 506)
-
-[node name="WoodenBox3" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(619, 505)
-
-[node name="WoodenBox4" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(586, 483)
-
-[node name="WoodenBox5" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(607, 483)
-
-[node name="WoodenBox6" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(600, 462)
-
-[node name="Pared-Rompible" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 457)
-
-[node name="Pared-Rompible2" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 313)
-
-[node name="Pared-Rompible3" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 171)
-
-[node name="Pared-Rompible4" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 28)
-
-[connection signal="body_entered" from="Scale_button_green" to="Scale_button_green" method="_on_body_entered"]
-[connection signal="body_exited" from="Scale_button_green" to="Scale_button_green" method="_on_body_exited"]
-[connection signal="pressed" from="Scale_button_green" to="Hand" method="_on_scale_button_green_pressed"]
+[editable path="Hand"]

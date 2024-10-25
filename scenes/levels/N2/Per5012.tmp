@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://cwl4pjlnqkxym"]
+[gd_scene load_steps=38 format=4 uid="uid://cwl4pjlnqkxym"]
 
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="1_bmdx5"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="2_n7p7s"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_w0wl7"]
 [ext_resource type="Texture2D" uid="uid://cjf3t8jv41cj2" path="res://assets/objects/scale_signal_button.png" id="11_fhaoe"]
 [ext_resource type="Texture2D" uid="uid://cjcckpdwj1heo" path="res://assets/objects/scale_animated.png" id="12_vsimv"]
-[ext_resource type="PackedScene" uid="uid://cmymj8rniorit" path="res://scenes/objects/Wall_Breakable/Wall_Breakable.tscn" id="14_0l4br"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("3_lbwaj")
@@ -315,7 +314,7 @@ tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_wvfxb")]
-position = Vector2(1145, 407)
+position = Vector2(495, 448)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -100)
@@ -394,37 +393,16 @@ position = Vector2(0, -24.5)
 shape = SubResource("RectangleShape2D_mdtrr")
 
 [node name="WoodenBox" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(582, 505)
-
-[node name="WoodenBox7" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(1076, 505)
+position = Vector2(629, 379)
 
 [node name="WoodenBox2" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(602, 506)
+position = Vector2(724, 357)
 
 [node name="WoodenBox3" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(619, 505)
+position = Vector2(674, 404)
 
 [node name="WoodenBox4" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(586, 483)
-
-[node name="WoodenBox5" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(607, 483)
-
-[node name="WoodenBox6" parent="." instance=ExtResource("10_w0wl7")]
-position = Vector2(600, 462)
-
-[node name="Pared-Rompible" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 457)
-
-[node name="Pared-Rompible2" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 313)
-
-[node name="Pared-Rompible3" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 171)
-
-[node name="Pared-Rompible4" parent="." instance=ExtResource("14_0l4br")]
-position = Vector2(937, 28)
+position = Vector2(691, 321)
 
 [connection signal="body_entered" from="Scale_button_green" to="Scale_button_green" method="_on_body_entered"]
 [connection signal="body_exited" from="Scale_button_green" to="Scale_button_green" method="_on_body_exited"]

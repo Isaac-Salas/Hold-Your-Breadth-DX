@@ -29,14 +29,14 @@ metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.05, 0.05, 0.05, 1)
-z_index = -1
+z_index = -5
 scale = Vector2(11.98, 11.95)
 texture = ExtResource("1_ke05x")
 centered = false
 metadata/_edit_lock_ = true
 
 [node name="CRTShader" parent="." instance=ExtResource("2_4r0s1")]
-z_index = 20
+z_index = 25
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

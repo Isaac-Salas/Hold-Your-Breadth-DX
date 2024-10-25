@@ -2,11 +2,11 @@
 extends Node2D
 @onready var rigid_body_2d : RigidBody2D = $RigidBody2D
 @export var color : Color
-@onready var point_light_2d = $RigidBody2D/Sprite2D/PointLight2D
+@onready var light = $RigidBody2D/Sprite2D/PointLight2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	point_light_2d.color = color
+	light.color = color
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

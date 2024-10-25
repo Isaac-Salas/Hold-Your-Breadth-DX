@@ -8,11 +8,11 @@
 script/source = "extends Node2D
 @onready var line_2d = $String/Line2D
 @onready var string = $String
-@onready var light = $Light
+@onready var lightr = $Light
 @export var scaling : Vector2
 @onready var sprite_2d = $Light/Sprite2D
 @onready var collision_shape_2d = $Light/CollisionShape2D
-@onready var point_light_2d = $Light/PointLight2D
+@onready var light = $Light/PointLight2D
 @onready var fakelight = $Light/Fakelight
 @onready var pin_joint_2d = $PinJoint2D
 
@@ -23,7 +23,7 @@ func _ready():
 	string.ropeLength = light.position.y
 	sprite_2d.scale = scaling
 	collision_shape_2d.scale = scaling
-	point_light_2d.scale = scaling
+	light.scale = scaling
 	fakelight.scale = scaling
 	pin_joint_2d.scale = scaling
 	#line_2d.width = scale.x/2
@@ -47,7 +47,7 @@ blend_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8ef7g"]
 
-[node name="Swing-light" type="Node2D"]
+[node name="Swing-light" type="Node2D" groups=["Light"]]
 script = SubResource("GDScript_dox1b")
 
 [node name="Puntocent" type="StaticBody2D" parent="."]

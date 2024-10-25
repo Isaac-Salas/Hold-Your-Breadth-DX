@@ -8,7 +8,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qdrbt"]
 blend_mode = 1
 
-[node name="Light" type="Sprite2D"]
+[node name="Light" type="Sprite2D" groups=["Light"]]
 texture = ExtResource("1_gfubc")
 script = ExtResource("2_y64hc")
 color = Color(1, 0.81834, 0.645192, 1)

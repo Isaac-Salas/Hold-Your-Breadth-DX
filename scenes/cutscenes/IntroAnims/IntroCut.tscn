@@ -451,6 +451,7 @@ light = NodePath("../Swing-light/Light")
 shape = SubResource("CircleShape2D_lkf33")
 
 [node name="Transition" parent="." instance=ExtResource("68_yxq3e")]
+y_sort_enabled = false
 scale = Vector2(1.5, 1.5)
 target_scene = ExtResource("69_37ke8")
 

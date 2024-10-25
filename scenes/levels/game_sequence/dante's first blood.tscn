@@ -146,6 +146,7 @@ terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
 [node name="Template LOCO" type="Node2D"]
+position = Vector2(6, 0)
 script = ExtResource("1_3l663")
 
 [node name="Layer0" type="TileMapLayer" parent="."]

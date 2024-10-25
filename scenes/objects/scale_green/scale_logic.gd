@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 		state = update()
 		emit_signal("pressed", state, 2)
 		activated = update()
+		print()
 
 func update():
 	if n_inside > 0 and weight_total < activation_weight:
@@ -65,8 +66,9 @@ func update():
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Layer0":
 		return
-	bodies_inside.append(body)
+	
 	if body.is_in_group("button_actionable"):
+		bodies_inside.append(body)
 		n_inside += 1
 		if anim.animation == "depresssed":
 			anim.play("pressed")

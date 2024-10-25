@@ -12,7 +12,7 @@ size = Vector2(10, 9)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ypwrl"]
 blend_mode = 1
 
-[node name="Lamp" type="Node2D"]
+[node name="Lamp" type="Node2D" groups=["Light"]]
 scale = Vector2(-1, 1)
 script = ExtResource("1_wbsqu")
 color = Color(1, 0.819608, 0.647059, 1)

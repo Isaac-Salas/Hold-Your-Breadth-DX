@@ -522,9 +522,6 @@ position = Vector2(1056, 31)
 [node name="PointLight2D" parent="Lights/Light11" index="0"]
 shadow_enabled = false
 
-[node name="Fakelight" parent="Lights/Light11" index="1"]
-modulate = Color(1, 0.81834, 0.645192, 0.0980392)
-
 [node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
 position = Vector2(315, 265)
 

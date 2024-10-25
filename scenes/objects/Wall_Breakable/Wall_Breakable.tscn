@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmymj8rniorit"]
+
+[ext_resource type="Script" path="res://scenes/objects/Wall_Breakable/wall_breakable.gd" id="1_6kbu4"]
+[ext_resource type="Texture2D" uid="uid://bbqy5wqmfq2sf" path="res://assets/objects/Pared-rompible.png" id="1_o208c"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="3_dl0q6"]
+[ext_resource type="PackedScene" uid="uid://dgvqye2ns3ghx" path="res://scenes/objects/Wall_Breakable/Wall_Broken.tscn" id="4_wwrc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4uj4"]
+size = Vector2(40, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixgnt"]
+size = Vector2(45, 145)
+
+[node name="Pared-Rompible" type="Node2D"]
+script = ExtResource("1_6kbu4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_u4uj4")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_ixgnt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("1_o208c")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("3_dl0q6")
+scene = ExtResource("4_wwrc0")
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

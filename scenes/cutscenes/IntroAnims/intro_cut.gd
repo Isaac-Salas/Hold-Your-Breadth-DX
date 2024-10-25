@@ -24,6 +24,7 @@ func _process(delta):
 	pass
 
 func _input(event):
+	
 	if click == true:
 		if Input.is_anything_pressed():
 			#print("click")
