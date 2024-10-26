@@ -7,6 +7,6 @@
 [resource]
 shader = ExtResource("1_k8wgl")
 shader_parameter/progress = 0.0
-shader_parameter/strength = 1.0
+shader_parameter/strength = 2.0
 shader_parameter/noise_tex_normal = ExtResource("3_srk18")
 shader_parameter/noise_tex = ExtResource("2_p7mni")

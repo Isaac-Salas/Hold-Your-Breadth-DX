@@ -1,13 +1,14 @@
 extends RichTextLabel
 class_name DialogComponent
 @export var InputEnable : bool = true
+@export var InputSTOP : bool = false
 @export var Timerstart : bool = false
 @export var linecount : int = 0
 @export var Typetime : float = 0
 @export var Quickypetime : float = 0
 @export var Dialog : PackedStringArray
 @onready var extraevent : bool = true
-@onready var InputSTOP : bool = false
+
 @onready var charcount : int = 0
 @onready var timer = $Timer
 @onready var count : int = 0 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0wswpvmr8hjh"]
+[gd_scene load_steps=3 format=3 uid="uid://127niqtxnogh"]
 
-[ext_resource type="FontFile" uid="uid://cs1qpj4180qrs" path="res://assets/Fonts/DePixelHalbfett.otf" id="1_o3ewq"]
+[ext_resource type="FontFile" uid="uid://chv4jun2cg4xe" path="res://assets/Fonts/DePixelHalbfett.otf" id="1_o3ewq"]
 [ext_resource type="Script" path="res://components/Dialog_Component.gd" id="2_c38jr"]
 
 [node name="DialogBox" type="RichTextLabel"]

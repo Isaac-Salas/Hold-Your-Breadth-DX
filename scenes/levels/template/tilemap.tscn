@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://djmwe6diqa443"]
 
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="1_cfqqx"]
+[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="1_cfqqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("1_cfqqx")
@@ -105,7 +105,8 @@ texture_region_size = Vector2i(48, 48)
 
 [sub_resource type="TileSet" id="TileSet_ymyk6"]
 tile_size = Vector2i(48, 48)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)

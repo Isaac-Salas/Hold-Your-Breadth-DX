@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://fsxjau4kfu71"]
+[gd_scene load_steps=11 format=3 uid="uid://fsxjau4kfu71"]
 
 [ext_resource type="Script" path="res://scenes/objects/brokenwoodenboxes.gd" id="1_wprqd"]
 [ext_resource type="Texture2D" uid="uid://c0k2a1rj3xgee" path="res://assets/objects/brokencaja/Piece1.png" id="1_xsf47"]
 [ext_resource type="Texture2D" uid="uid://duw0kd0tyffo4" path="res://assets/objects/brokencaja/Piece2.png" id="2_115jd"]
+[ext_resource type="Material" uid="uid://b3mtaxow2cxs1" path="res://scenes/objects/Wall_Breakable/Wall_Broken.tres" id="2_pxkpk"]
 [ext_resource type="Texture2D" uid="uid://dxx3toplk6fw8" path="res://assets/objects/brokencaja/Piece3.png" id="3_hkko0"]
 [ext_resource type="Texture2D" uid="uid://b8fwmbylchb1n" path="res://assets/objects/brokencaja/Piece4.png" id="4_0ma01"]
 
@@ -21,11 +22,12 @@ size = Vector2(5, 5)
 [node name="Brokenwoodenboxes" type="Node2D"]
 position = Vector2(1, 2)
 script = ExtResource("1_wprqd")
+explodespeed = 0.005
 
 [node name="Piece" type="RigidBody2D" parent="." groups=["Breaker"]]
 position = Vector2(6, -26)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Piece"]
 position = Vector2(-7.5, 0)
@@ -34,13 +36,14 @@ debug_color = Color(0.794939, 0.0659271, 1, 0.42)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Piece"]
+material = ExtResource("2_pxkpk")
 texture = ExtResource("1_xsf47")
 metadata/_edit_lock_ = true
 
 [node name="Piece2" type="RigidBody2D" parent="." groups=["Breaker"]]
 position = Vector2(1, -4)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Piece2"]
 position = Vector2(-3.5, 2)
@@ -48,13 +51,14 @@ shape = SubResource("RectangleShape2D_1qivk")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Piece2"]
+material = ExtResource("2_pxkpk")
 texture = ExtResource("2_115jd")
 metadata/_edit_lock_ = true
 
 [node name="Piece3" type="RigidBody2D" parent="." groups=["Breaker"]]
 position = Vector2(-1, -7)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Piece3"]
 position = Vector2(-1.5, -5)
@@ -62,23 +66,26 @@ shape = SubResource("RectangleShape2D_tegho")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Piece3"]
+material = ExtResource("2_pxkpk")
 texture = ExtResource("3_hkko0")
 metadata/_edit_lock_ = true
 
 [node name="Piece4" type="RigidBody2D" parent="." groups=["Breaker"]]
 position = Vector2(-6, 2)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Piece4"]
 position = Vector2(5, 8)
 shape = SubResource("RectangleShape2D_axx67")
 
 [node name="Sprite2D" type="Sprite2D" parent="Piece4"]
+material = ExtResource("2_pxkpk")
 texture = ExtResource("4_0ma01")
 metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

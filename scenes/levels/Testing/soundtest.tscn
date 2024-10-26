@@ -1,0 +1,154 @@
+[gd_scene load_steps=8 format=4 uid="uid://cwdquil3l5sst"]
+
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="1_jjcu8"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_tj0bl"]
+[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="3_21u54"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="4_ufp10"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="5_tqgyp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
+texture = ExtResource("3_21u54")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/left_side = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:0/0/terrains_peering_bit/bottom_side = 0
+5:0/0/terrains_peering_bit/top_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:1/0/terrains_peering_bit/right_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:2/0/terrains_peering_bit/left_side = 0
+
+[sub_resource type="TileSet" id="TileSet_ymyk6"]
+tile_size = Vector2i(48, 48)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "concrete"
+terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
+sources/0 = SubResource("TileSetAtlasSource_1blni")
+
+[node name="Soundtest" type="Node2D"]
+
+[node name="dont touch" parent="." instance=ExtResource("1_jjcu8")]
+visible = true
+showoverride = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_tj0bl")]
+position = Vector2(455, 209)
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+position = Vector2(0, 48)
+tile_map_data = PackedByteArray("AAAAAAgAAAABAAAAAAABAAgAAAABAAAAAAACAAgAAAABAAAAAAADAAgAAAABAAAAAAAEAAgAAAABAAAAAAAFAAgAAAABAAAAAAAGAAgAAAABAAAAAAAHAAgAAAABAAAAAAAIAAgAAAABAAAAAAAJAAgAAAABAAAAAAAKAAgAAAABAAAAAAALAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAAOAAgAAAABAAAAAAAPAAgAAAABAAAAAAAQAAgAAAABAAAAAAARAAgAAAABAAAAAAASAAgAAAABAAAAAAATAAgAAAABAAAAAAAUAAgAAAABAAAAAAAVAAgAAAABAAAAAAAWAAgAAAABAAAAAAAXAAgAAAABAAAAAAAXAAkAAAACAAEAAAAAAAkAAAAAAAEAAAABAAkAAAABAAEAAAACAAkAAAABAAEAAAADAAkAAAABAAEAAAAEAAkAAAABAAEAAAAFAAkAAAABAAEAAAAGAAkAAAABAAEAAAAHAAkAAAABAAEAAAAIAAkAAAABAAEAAAAJAAkAAAABAAEAAAAKAAkAAAABAAEAAAALAAoAAAABAAEAAAAMAAoAAAABAAEAAAANAAoAAAABAAEAAAAOAAoAAAABAAEAAAAPAAoAAAABAAEAAAAQAAoAAAABAAEAAAARAAoAAAABAAEAAAASAAoAAAABAAEAAAATAAoAAAABAAEAAAATAAkAAAABAAEAAAAUAAkAAAABAAEAAAAVAAkAAAABAAEAAAAWAAkAAAABAAEAAAASAAkAAAABAAEAAAARAAkAAAABAAEAAAAQAAkAAAABAAEAAAAPAAkAAAABAAEAAAAOAAkAAAABAAEAAAANAAkAAAABAAEAAAAMAAkAAAABAAEAAAALAAkAAAABAAEAAAAKAAoAAAABAAEAAAAJAAoAAAABAAEAAAAIAAoAAAABAAEAAAAHAAoAAAABAAEAAAAGAAoAAAABAAEAAAAFAAoAAAABAAEAAAAEAAoAAAABAAEAAAADAAoAAAABAAEAAAAAAAoAAAAAAAEAAAABAAoAAAABAAEAAAACAAoAAAABAAEAAAAXAA0AAAACAAIAAAAXAAwAAAACAAEAAAAXAAsAAAACAAEAAAAWAA0AAAABAAIAAAAWAAwAAAABAAEAAAAWAAsAAAABAAEAAAAVAA0AAAABAAIAAAAVAAwAAAABAAEAAAAVAAsAAAABAAEAAAAUAA0AAAABAAIAAAAUAAwAAAABAAEAAAAUAAsAAAABAAEAAAATAA0AAAABAAIAAAATAAwAAAABAAEAAAATAAsAAAABAAEAAAASAA0AAAABAAIAAAASAAwAAAABAAEAAAASAAsAAAABAAEAAAARAA0AAAABAAIAAAARAAwAAAABAAEAAAARAAsAAAABAAEAAAAQAA0AAAABAAIAAAAQAAwAAAABAAEAAAAQAAsAAAABAAEAAAAPAA0AAAABAAIAAAAPAAwAAAABAAEAAAAPAAsAAAABAAEAAAAOAA0AAAABAAIAAAAOAAwAAAABAAEAAAAOAAsAAAABAAEAAAANAA0AAAABAAIAAAANAAwAAAABAAEAAAANAAsAAAABAAEAAAAMAA0AAAABAAIAAAAMAAwAAAABAAEAAAAMAAsAAAABAAEAAAALAA0AAAABAAIAAAALAAwAAAABAAEAAAALAAsAAAABAAEAAAAKAA0AAAABAAIAAAAKAAwAAAABAAEAAAAKAAsAAAABAAEAAAAJAA0AAAABAAIAAAAJAAwAAAABAAEAAAAJAAsAAAABAAEAAAAIAA0AAAABAAIAAAAIAAwAAAABAAEAAAAIAAsAAAABAAEAAAAHAA0AAAABAAIAAAAHAAwAAAABAAEAAAAHAAsAAAABAAEAAAAGAA0AAAABAAIAAAAGAAwAAAABAAEAAAAGAAsAAAABAAEAAAAFAA0AAAABAAIAAAAFAAwAAAABAAEAAAAFAAsAAAABAAEAAAAEAA0AAAABAAIAAAAEAAwAAAABAAEAAAAEAAsAAAABAAEAAAADAA0AAAABAAIAAAADAAwAAAABAAEAAAADAAsAAAABAAEAAAACAA0AAAABAAIAAAACAAwAAAABAAEAAAACAAsAAAABAAEAAAABAA0AAAABAAIAAAABAAwAAAABAAEAAAABAAsAAAABAAEAAAAAAA0AAAAAAAIAAAAAAAwAAAAAAAEAAAAAAAsAAAAAAAEAAAAXAAoAAAACAAEAAAAWAAoAAAABAAEAAAAVAAoAAAABAAEAAAAUAAoAAAABAAEAAAD//wgAAAAAAAIAAAD//wcAAAAEAAEAAAD//wYAAAAFAAAAAAD//wUAAAAEAAEAAAD//wQAAAAFAAAAAAD//wMAAAAFAAAAAAD//wIAAAAEAAEAAAD//wEAAAAEAAEAAAD//wAAAAAFAAAAAAD/////AAAFAAEAAAAYAAgAAAACAAIAAAAYAAcAAAAEAAEAAAAYAAYAAAAEAAEAAAAYAAUAAAAFAAAAAAAYAAQAAAAEAAEAAAAYAAMAAAAEAAEAAAAYAAIAAAAFAAAAAAAYAAEAAAAEAAEAAAAYAAAAAAAFAAAAAAAYAP//AAAFAAAAAAAYAP7/AAAFAAEAAAA=")
+tile_set = SubResource("TileSet_ymyk6")
+rendering_quadrant_size = 48
+
+[node name="Swing-light" parent="." instance=ExtResource("4_ufp10")]
+position = Vector2(594, 18)
+
+[node name="Swing-light2" parent="." instance=ExtResource("4_ufp10")]
+position = Vector2(338, 19)
+
+[node name="Swing-light3" parent="." instance=ExtResource("4_ufp10")]
+position = Vector2(829, 21)
+
+[node name="WoodenBox" parent="." instance=ExtResource("5_tqgyp")]
+position = Vector2(413, 107)
+
+[node name="WoodenBox2" parent="." instance=ExtResource("5_tqgyp")]
+position = Vector2(544, 123)
+
+[node name="WoodenBox3" parent="." instance=ExtResource("5_tqgyp")]
+position = Vector2(503, 70)
+
+[node name="WoodenBox4" parent="." instance=ExtResource("5_tqgyp")]
+position = Vector2(474, 137)

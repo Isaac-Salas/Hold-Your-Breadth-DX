@@ -6,6 +6,7 @@ class_name ObjectClass
 @onready var spawner_component = $SpawnerComponent
 @export var destroyplace : Node2D
 @onready var light_occluder_2d: LightOccluder2D = $LightOccluder2D
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 
 
 func _on_detector_area_entered(area):
@@ -29,3 +30,8 @@ func set_size(target_size):
 	colision.scale = target_size/2.5
 	sprite.scale = target_size/2
 	light_occluder_2d.scale = target_size/2
+
+
+func _on_body_entered(body):
+	audio_stream_player_2d.pitch_scale = randf_range(3,6)
+	audio_stream_player_2d.play()

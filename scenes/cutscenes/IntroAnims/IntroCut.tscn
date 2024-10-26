@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmapykkhtvni4" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F1.png" id="2_u3m6f"]
 [ext_resource type="Texture2D" uid="uid://dg00c6k4l8y1p" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F2.png" id="3_00q44"]
 [ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="3_5e2sb"]
-[ext_resource type="PackedScene" path="res://components/dialog_box.tscn" id="3_k5nrr"]
+[ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="3_k5nrr"]
 [ext_resource type="Texture2D" uid="uid://ccid6h8fv77xr" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F3.png" id="4_a2r3d"]
 [ext_resource type="Texture2D" uid="uid://c0goqrcrm8otd" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-F1.png" id="4_wtbme"]
 [ext_resource type="Texture2D" uid="uid://2x1585fnn71o" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F4.png" id="5_u4yow"]

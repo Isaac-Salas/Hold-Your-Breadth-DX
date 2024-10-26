@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bp8r6cmiycm4m"]
 
-[ext_resource type="Script" path="res://scenes/enemies/Hamster/hamster.gd" id="1_k7sbg"]
-[ext_resource type="Texture2D" uid="uid://b2albhnogpcgu" path="res://assets/Enemies/hamsersprite.png" id="1_utgwl"]
+[ext_resource type="Script" path="res://scenes/enemies/Hamster/hamsterfina.gd" id="1_lrusc"]
+[ext_resource type="Texture2D" uid="uid://buasnyg26h7uh" path="res://assets/Enemies/hamsersprite.png" id="1_utgwl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tx73"]
 atlas = ExtResource("1_utgwl")
@@ -40,13 +40,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4qeb"]
-size = Vector2(32, 32)
+size = Vector2(24, 36)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m6dru"]
-radius = 200.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_645ko"]
+radius = 22.0227
 
-[node name="Hamster" type="RigidBody2D"]
-script = ExtResource("1_k7sbg")
+[node name="Hamster" type="CharacterBody2D"]
+script = ExtResource("1_lrusc")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
@@ -58,15 +58,18 @@ frame_progress = 0.622647
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_h4qeb")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_m6dru")
-debug_color = Color(0.963138, 1.34766e-06, 0.500482, 0.42)
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+linear_velocity = Vector2(0, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+light_mask = 3
+visibility_layer = 3
+shape = SubResource("CircleShape2D_645ko")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
