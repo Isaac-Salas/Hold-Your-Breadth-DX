@@ -1,7 +1,7 @@
 extends RigidBody2D
 @onready var revive = false
-const PLAYER = preload("res://player/player.tscn")
-@onready var spawner_component = $SpawnerComponent
+@onready var PLAYER = load("res://player/player.tscn")
+@onready var spawner_component : SpawnerComponent = $SpawnerComponent
 @onready var colision= $CollisionShape2D
 @onready var shake_component = $ShakeComponent
 
@@ -16,7 +16,9 @@ func _process(delta):
 	if revive == true:
 		
 		if Input.is_anything_pressed():
-			spawner_component.spawn()
+			spawner_component.scene = PLAYER
+			var new = spawner_component.spawn()
+			new.global_position = self.global_position
 			self.queue_free()
 			
 

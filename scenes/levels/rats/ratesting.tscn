@@ -175,15 +175,11 @@ position = Vector2(987, 224)
 [node name="Ratillas" type="Node2D" parent="."]
 position = Vector2(235, 56)
 
-[node name="Ratiña" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
+[node name="Ratiña" parent="Ratillas" instance=ExtResource("10_uj851")]
 position = Vector2(497, 193)
-ratfleetarget = NodePath("../../Ratfleemarker")
-speed = 10
 
-[node name="Ratiña2" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
+[node name="Ratiña2" parent="Ratillas" instance=ExtResource("10_uj851")]
 position = Vector2(574, 173)
-ratfleetarget = NodePath("../../Ratfleemarker")
-speed = 10
 
 [node name="Matraces" type="Node2D" parent="."]
 

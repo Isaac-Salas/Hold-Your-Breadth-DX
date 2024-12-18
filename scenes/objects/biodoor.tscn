@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dfwc55jo1qtuj"]
 
-[ext_resource type="Texture2D" uid="uid://cl0evxqxrm5jg" path="res://assets/objects/biodoor.png" id="1_06g4i"]
+[ext_resource type="Texture2D" uid="uid://dl67lab250fdk" path="res://assets/objects/biodoor.png" id="1_06g4i"]
 [ext_resource type="Script" path="res://scenes/objects/biodoor.gd" id="1_7rnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bld4a"]

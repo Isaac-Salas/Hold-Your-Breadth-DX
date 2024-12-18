@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://w67wwrsfwoay"]
+[gd_scene load_steps=10 format=3 uid="uid://w67wwrsfwoay"]
 
 [ext_resource type="Script" path="res://scenes/enemies/Hand/hand2.gd" id="1_3upnr"]
 [ext_resource type="SpriteFrames" uid="uid://e4mn8s24isc5" path="res://scenes/enemies/Hand-Chase.tres" id="1_7ihiy"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ciktk"]
-radius = 133.0
-height = 490.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6b44i"]
+size = Vector2(311, 477)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oh8ue"]
 radius = 124.0
@@ -13,6 +12,9 @@ height = 456.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7pkc"]
 size = Vector2(331, 522)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mobl8"]
+size = Vector2(361, 604)
 
 [sub_resource type="Animation" id="Animation_u8q7j"]
 resource_name = "Attack"
@@ -61,18 +63,20 @@ sleeping = true
 can_sleep = false
 lock_rotation = true
 freeze = true
-linear_velocity = Vector2(300, -300)
+linear_velocity = Vector2(1000, -1000)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(-84, 59)
+position = Vector2(-70.4999, 52.4998)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ciktk")
+shape = SubResource("RectangleShape2D_6b44i")
 debug_color = Color(0.882203, 0, 0.234837, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("1_7ihiy")
-animation = &"Run"
+animation = &"Catch"
+frame = 22
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-84, 59)
@@ -90,6 +94,14 @@ rotation = -1.5708
 shape = SubResource("RectangleShape2D_w7pkc")
 debug_color = Color(0.998407, 0.329108, 0.234214, 0.419608)
 
+[node name="Cerca" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cerca"]
+position = Vector2(-53, 49.4999)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_mobl8")
+debug_color = Color(0.368627, 0.576471, 1, 0.129412)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
 libraries = {
@@ -101,4 +113,6 @@ libraries = {
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Cerca" to="." method="_on_cerca_body_entered"]
+[connection signal="body_exited" from="Cerca" to="." method="_on_cerca_body_exited"]
 [connection signal="timeout" from="Hit_cooldown" to="." method="_on_hit_cooldown_timeout"]

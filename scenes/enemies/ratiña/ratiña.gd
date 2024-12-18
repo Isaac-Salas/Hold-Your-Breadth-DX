@@ -12,7 +12,12 @@ class_name  Rat_enemy
 @onready var timer_3 = $Timer3
 @onready var fleeonce = false
 @onready var colision = $CollisionShape2D
-@onready var startflee = false
+@export var startflee = false
+@onready var alerted = $Alerted
+
+
+
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -42,18 +47,23 @@ func _physics_process(delta):
 	match startflee:
 		true:
 			#print("Fleeing")
+			alerted.visible = true
 			var movingto = self.global_position.move_toward(ratfleetarget.global_position, delta*(speed*50))
 			var movector = (movingto-self.global_position)*2
 			print(abs(movector.x))
+			if movector > Vector2(0,0):
+				sprite.flip_h = true
+			if movector < Vector2(0,0):
+				sprite.flip_h = false
 			#self.global_position.x = movingto.x
-			set_deferred("lock_rotation", false)
+			#set_deferred("lock_rotation", false)
 			apply_central_impulse(Vector2i(movector.x, 0))
 			if self.global_position.x == ratfleetarget.global_position.x or abs(movector.x) < 1:
 				set_deferred("lock_rotation", true)
 				startflee = false
 				
 		false:
-			
+			alerted.visible = false
 			pass
 	
 	
@@ -122,6 +132,7 @@ func _on_player_detect_body_exited(body):
 		player.scare.disconnect(fleeing)
 		timer_2.stop()
 		timer_3.stop()
+		startflee = false
 		fleeonce = false
 		chillin()
 

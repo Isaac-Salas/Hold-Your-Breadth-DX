@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ussh2v7e5g06"]
+[gd_scene load_steps=18 format=4 uid="uid://ussh2v7e5g06"]
 
 [ext_resource type="Script" path="res://scenes/levels/biodoor/biodoor.gd" id="1_6qqbe"]
 [ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="8_npjyd"]
 [ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="9_1nuh5"]
 [ext_resource type="PackedScene" uid="uid://dfwc55jo1qtuj" path="res://scenes/objects/biodoor.tscn" id="10_wj14c"]
+[ext_resource type="PackedScene" uid="uid://kthcc2e8kgeh" path="res://scenes/objects/MetalBox.tscn" id="13_k3cei"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -178,7 +179,7 @@ position = Vector2(688, 56)
 position = Vector2(120, 56)
 
 [node name="Barnacle" parent="." instance=ExtResource("6_x2u38")]
-position = Vector2(208, 72)
+position = Vector2(212, 193)
 scale = Vector2(1, 1.00667)
 
 [node name="Ratiña" parent="." instance=ExtResource("5_14d3r")]
@@ -212,5 +213,8 @@ metadata/_edit_lock_ = true
 [node name="CanvasModulate" type="CanvasModulate" parent="dont touch"]
 material = SubResource("ShaderMaterial_3qlgg")
 color = Color(0.49464, 0.4914, 0.54, 1)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("13_k3cei")]
+position = Vector2(172, 332)
 
 [editable path="Transition"]

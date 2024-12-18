@@ -25,6 +25,7 @@ const RIGIDBARNACLE = preload("res://scenes/enemies/Barnacle/rigidbarnacle.tscn"
 @onready var spawned
 @onready var regen = false
 @onready var done = false
+@onready var unbreakable : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -73,7 +74,7 @@ func _process(delta):
 		
 		
 	#	colliders.set_deferred("freeze", false)
-	if colliders:
+	if colliders != null and unbreakable == false:
 		if joint.node_b:
 			if static_body_2d.position.y > -400 and done == false:
 				static_body_2d.position.y -= randf_range(0.1,2)
@@ -107,6 +108,17 @@ func _on_area_2d_body_entered(body):
 		spawned.call_deferred("reparent",lastone)
 		timer.start(2)
 		
+	if colliders.is_in_group("Inedible"):
+		unbreakable = true
+		area_2d.set_deferred("monitoring", false)
+		colliders.set_deferred("freeze", true)
+		lastone.apply_impulse(colliders.linear_velocity)
+		colliders.colision.set_deferred("disabled", true)
+		colliders.global_position = lastone.global_position
+		#colliders.reparent(lastone)
+		colliders.call_deferred("reparent",lastone)
+		
+		timer.start(2)
 		
 				#joint.node_b = colliders.get_path()
 		
@@ -154,12 +166,24 @@ func _on_killer_body_entered(body):
 
 func _on_timer_timeout():
 	sprite_2d_2.stop()
-	#print("throw")
-	spawned.set_deferred("freeze", false)
-	spawned.call_deferred("reparent",self.get_parent())
-	area_2d.set_deferred("monitoring", true)
-	lastone.linear_velocity += Vector2(-400,0)
-	spawned.linear_velocity += Vector2(-400,0)
-	spawned.angular_velocity += 30
-
-	spawned.revived()
+	if spawned != null:
+		if spawned.is_in_group("Playerrag"):
+			spawned.revived()
+		#print("throw")
+			spawned.set_deferred("freeze", false)
+			spawned.call_deferred("reparent",self.get_parent())
+			area_2d.set_deferred("monitoring", true)
+			lastone.linear_velocity += Vector2(-400,0)
+			spawned.linear_velocity += Vector2(-400,0)
+			spawned.angular_velocity += 30
+	if colliders != null:
+		if colliders.is_in_group("Inedible"):
+			colliders.set_deferred("freeze", false)
+			colliders.call_deferred("reparent",self.get_parent())
+			area_2d.set_deferred("monitoring", true)
+			lastone.linear_velocity += Vector2(-400,0)
+			colliders.linear_velocity += Vector2(-400,0)
+			colliders.angular_velocity += 30
+			colliders = null
+			unbreakable = false
+	

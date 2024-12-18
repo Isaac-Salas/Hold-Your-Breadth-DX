@@ -13,7 +13,7 @@ size = Vector2(12, 42)
 closed = false
 polygon = PackedVector2Array(-30, 69, -27, 72, -21, 72, -18, 69, -18, 30, 15, 30, 15, 69, 18, 72, 24, 72, 27, 69)
 
-[node name="RigidBody2D" instance=ExtResource("1_1r8ky")]
+[node name="RigidBody2D" groups=["breakable"] instance=ExtResource("1_1r8ky")]
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-1.5, 22.25)

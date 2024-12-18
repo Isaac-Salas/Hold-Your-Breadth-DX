@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://kthcc2e8kgeh"]
+
+[ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_wycw7"]
+[ext_resource type="Texture2D" uid="uid://cp5jg7bvr7lv" path="res://assets/objects/metal crate.png" id="2_eer0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5rwa"]
+size = Vector2(36, 36)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ke8ve"]
+polygon = PackedVector2Array(-10, -6, -10, 10, 10, 10, 10, -6)
+
+[node name="RigidBody2D" groups=["Breaker", "Inedible", "throwable"] instance=ExtResource("1_wycw7")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_x5rwa")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_eer0q")
+
+[node name="LightOccluder2D" parent="." index="4"]
+occluder = SubResource("OccluderPolygon2D_ke8ve")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=4 uid="uid://ds55rb4riqalc"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_7ttjn"]
-[ext_resource type="Texture2D" uid="uid://cppa7a581uhmi" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
+[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_l70k0"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_qdubr"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="6_l11u7"]
@@ -267,6 +267,5 @@ libraries = {
 }
 
 [node name="dont touch" parent="." instance=ExtResource("7_uvvwj")]
-visible = false
 
 [editable path="Transition"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbcnrsv1okpj"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_pxh3u"]
-[ext_resource type="Texture2D" uid="uid://gx03wuv1rfl" path="res://assets/objects/matraz3.png" id="2_6qmmj"]
+[ext_resource type="Texture2D" uid="uid://bsw2d1td6nwkw" path="res://assets/objects/matraz3.png" id="2_6qmmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apkoq"]
 size = Vector2(10, 24)
@@ -13,7 +13,7 @@ radius = 20.0
 closed = false
 polygon = PackedVector2Array(-12, 8, -8, 10, 8, 10, 12, 8)
 
-[node name="RigidBody2D" groups=["throwable"] instance=ExtResource("1_pxh3u")]
+[node name="RigidBody2D" groups=["breakable", "throwable"] instance=ExtResource("1_pxh3u")]
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -2)

@@ -1,4 +1,5 @@
 extends Node2D
+class_name BrokenClass
 @export var explodespeed : float
 const WALL_BROKEN = preload("res://scenes/objects/Wall_Breakable/Wall_Broken.tres")
 var counter : float = 0
@@ -24,7 +25,7 @@ func _process(delta):
 		true:
 			counter += explodespeed
 			WALL_BROKEN.set("shader_parameter/progress",counter)
-			print(progress)
+			#print(progress)
 			if progress > 1.0:
 				queue_free()
 			

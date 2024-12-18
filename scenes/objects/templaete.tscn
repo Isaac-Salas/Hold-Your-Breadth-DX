@@ -6,7 +6,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_otu8t"]
 blend_mode = 1
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["breakable", "button_actionable"]]
+[node name="RigidBody2D" type="RigidBody2D" groups=["button_actionable"]]
 collision_layer = 3
 collision_mask = 3
 contact_monitor = true

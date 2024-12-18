@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://gyluo2bsm1cg"]
+[gd_scene load_steps=23 format=3 uid="uid://gyluo2bsm1cg"]
 
 [ext_resource type="Script" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
-[ext_resource type="Texture2D" uid="uid://sd7e4r687mw8" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
+[ext_resource type="Texture2D" uid="uid://iadmyo4lpovb" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
+[ext_resource type="Texture2D" uid="uid://cp5jg7bvr7lv" path="res://assets/objects/metal crate.png" id="3_3mycb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mn77"]
 atlas = ExtResource("1_ufh0f")
@@ -112,6 +113,17 @@ height = 35.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywrjj"]
 radius = 125.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5mh17"]
+light_mode = 1
+
+[sub_resource type="GDScript" id="GDScript_daj5k"]
+script/source = "extends Sprite2D
+@onready var rati_a = $\"..\"
+
+func _physics_process(delta):
+	global_transform = Transform2D(0, global_position)
+"
+
 [node name="Ratiña" type="RigidBody2D" groups=["edible", "throwable"]]
 collision_layer = 3
 collision_mask = 3
@@ -148,7 +160,12 @@ debug_color = Color(0.55591, 0.510535, 0.635269, 0.42)
 
 [node name="Timer3" type="Timer" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Alerted" type="Sprite2D" parent="."]
+process_mode = 1
+material = SubResource("CanvasItemMaterial_5mh17")
+position = Vector2(0, -52)
+texture = ExtResource("3_3mycb")
+script = SubResource("GDScript_daj5k")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]

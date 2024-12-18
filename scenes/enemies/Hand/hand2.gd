@@ -72,7 +72,8 @@ func _on_area_2d_body_entered(body):
 		handstate = 2
 		sprite.play("Catch")
 		animation_player.play("Attack")
-		var children = body.find_child("Camera2D")
+		var children : Camera2D = body.find_child("Camera2D")
+		children.position_smoothing_enabled = false
 		var new = body.get_hit()
 		children.reparent(new)
 		new.apply_central_impulse(Vector2(1500, -200))
@@ -110,3 +111,11 @@ func cooldown():
 
 func _on_hit_cooldown_timeout():
 	area_2d.set_deferred("monitoring", true)
+
+
+
+
+func _on_cerca_body_entered(body):
+	if body.is_in_group("Player"):
+		handstate = 2
+		sprite.play("Catch")
