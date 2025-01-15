@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name SlimePlayer
 
 @onready var ragdoll_spawn = $RagdollSpawn
-const PLAYERAGDOLL = preload("res://player/playeragdoll.tscn")
+@onready var PLAYERAGDOLL = load("res://player/playeragdoll.tscn")
 @onready var defaultmouse = preload("res://assets/placeholder/Tiles/tile_0170.png")
 @onready var mousetooltip = preload("res://assets/placeholder/Tiles/tile_0171.png")
 @export var THROW_SPEED = 15.0

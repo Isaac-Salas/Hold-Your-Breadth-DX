@@ -6,6 +6,7 @@ class_name Scaler
 @onready var down = false
 @onready var up = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,6 +14,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var connected_joypads = Input.get_connected_joypads()
+	
+	
 	icon.position.y = clamp(get_local_mouse_position().y, -48, 48)
 	factor = -1*((icon.position.y/2)/10)/50
 	icon.scale = Vector2(factor,factor)

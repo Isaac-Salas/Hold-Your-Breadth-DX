@@ -12,13 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="11_x0vny"]
 [ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="12_bu4xr"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="13_ah2pn"]
-[ext_resource type="PackedScene" path="res://scenes/objects/exit_sign.tscn" id="14_6c8yc"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="14_6c8yc"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="14_bwfvk"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="15_hc1tl"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="15_mnyod"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="16_5vcge"]
-[ext_resource type="PackedScene" path="res://scenes/objects/indicator_x.tscn" id="17_quffg"]
-[ext_resource type="PackedScene" path="res://scenes/objects/indicator_arrow.tscn" id="19_e7v3k"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="17_quffg"]
+[ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="19_e7v3k"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="20_v0odu"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
@@ -521,6 +521,9 @@ position = Vector2(1056, 31)
 
 [node name="PointLight2D" parent="Lights/Light11" index="0"]
 shadow_enabled = false
+
+[node name="Fakelight" parent="Lights/Light11" index="1"]
+modulate = Color(1, 0.81834, 0.645192, 0.0980392)
 
 [node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
 position = Vector2(315, 265)

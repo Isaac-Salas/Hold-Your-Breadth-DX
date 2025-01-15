@@ -16,6 +16,7 @@ func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = player.global_transform.origin 
 	var distance = player_pos.distance_to(mouse_pos) 
+	#var stick = Input.get_joy_axis(0,)
 	var mouse_dir = (mouse_pos-player_pos).normalized()
 	if distance > radius:
 		mouse_pos = player_pos + (mouse_dir * radius)
