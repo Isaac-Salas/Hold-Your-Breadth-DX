@@ -556,7 +556,6 @@ target_scale = Vector2(5, 5)
 metadata/_edit_lock_ = true
 
 [node name="Shrink-Laser2" parent="Lasers" instance=ExtResource("16_5vcge")]
-visible = false
 position = Vector2(936, 24.0023)
 rotation = 1.5708
 target_scale = Vector2(1, 1)

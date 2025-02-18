@@ -8,7 +8,7 @@ extends Node2D
 const INTRO_CUT = preload("res://scenes/cutscenes/IntroAnims/IntroCut.tscn")
 const TESTING = preload("res://scenes/levels/Testing/testing.tscn")
 const scale_lvl = preload("res://scenes/levels/game_sequence/0_Tutorial_throw.tscn")
-const SCENE_SWITCHER = preload("res://scenes/levels/Transition/scene_switcher.tscn")
+#const SCENE_SWITCHER = preload("res://scenes/levels/Transition/scene_switcher.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Manager.load_data()
@@ -66,7 +66,3 @@ func _on_level_select_mouse_exited() -> void:
 func _on_exit_mouse_exited() -> void:
 	await($Exit/ExitSprite.animation_finished)
 	$Exit/ExitSprite.play("normal")
-
-
-func _on_button_pressed():
-	get_tree().change_scene_to_packed(SCENE_SWITCHER)

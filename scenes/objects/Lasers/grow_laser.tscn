@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cwiks7ucnpxst"]
+[gd_scene load_steps=23 format=3 uid="uid://cwiks7ucnpxst"]
 
 [ext_resource type="Texture2D" uid="uid://yh8sds4xrgpv" path="res://assets/objects/laser-cyan.png" id="1_c4eti"]
 [ext_resource type="Script" path="res://scenes/objects/Lasers/grow_laser.gd" id="1_mu1ou"]
@@ -113,9 +113,6 @@ animations = [{
 blend_mode = 1
 light_mode = 1
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bgv5u"]
-blend_mode = 1
-
 [node name="Grow-Laser" type="StaticBody2D"]
 script = ExtResource("1_mu1ou")
 
@@ -164,19 +161,3 @@ shadow_item_cull_mask = 3
 texture = ExtResource("5_yvf1m")
 offset = Vector2(0, 56)
 texture_scale = 5.0
-
-[node name="PointLight2D4" type="Sprite2D" parent="PointLight2D2"]
-visible = false
-texture_filter = 2
-material = SubResource("CanvasItemMaterial_bgv5u")
-scale = Vector2(11.8269, 1)
-texture = ExtResource("5_yvf1m")
-offset = Vector2(0, 56)
-
-[node name="PointLight2D3" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.505882, 0.85098, 1, 0.588235)
-material = SubResource("CanvasItemMaterial_jxxjx")
-position = Vector2(24, 0)
-scale = Vector2(0.407, 0.372)
-texture = ExtResource("4_88ar0")

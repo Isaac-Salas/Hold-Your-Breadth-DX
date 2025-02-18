@@ -1,13 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpjuob5vv1cqt"]
+[gd_scene load_steps=23 format=3 uid="uid://bpjuob5vv1cqt"]
 
 [ext_resource type="Script" path="res://scenes/objects/Lasers/grow_laser.gd" id="1_y7lcs"]
 [ext_resource type="Texture2D" uid="uid://uata3h0ka62m" path="res://assets/objects/laser-orange.png" id="2_sgd4p"]
 [ext_resource type="Texture2D" uid="uid://dpllg0fb08oyy" path="res://assets/objects/particle_orange.png" id="3_xb5f4"]
 [ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="4_djfdd"]
+[ext_resource type="Texture2D" uid="uid://dk0ke3p2l2ycc" path="res://assets/lights/Ray.png" id="5_hxc5t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6nbb"]
 radius = 12.0
 height = 48.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_68v46"]
+light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdoiq"]
 atlas = ExtResource("2_sgd4p")
@@ -109,6 +113,10 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o724k"]
+blend_mode = 1
+light_mode = 1
+
 [node name="Shrink-Laser" type="StaticBody2D"]
 script = ExtResource("1_y7lcs")
 target_scale = Vector2(0.5, 0.5)
@@ -119,6 +127,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_e6nbb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_68v46")
 position = Vector2(23, 0)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_aahpb")
@@ -130,34 +139,28 @@ position = Vector2(40, 0)
 target_position = Vector2(750, 0)
 
 [node name="hitsprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kged3")
 autoplay = "default"
 
-[node name="PointLight2D2" type="PointLight2D" parent="hitsprite"]
-scale = Vector2(0.666667, 0.666667)
-color = Color(1, 0.458824, 0.137255, 1)
+[node name="PointLight2D2" type="Sprite2D" parent="hitsprite"]
+modulate = Color(1, 0.455333, 0.14, 0.588235)
+material = SubResource("CanvasItemMaterial_o724k")
+scale = Vector2(0.207, 0.189)
 texture = ExtResource("4_djfdd")
-texture_scale = 0.4
 metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="."]
 default_color = Color(1, 0.458824, 0.137255, 1)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(40, 0)
-color = Color(1, 0.458824, 0.137255, 1)
-energy = 0.7
-texture = ExtResource("4_djfdd")
-texture_scale = 0.4
-metadata/_edit_lock_ = true
-
 [node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(40, 0)
 rotation = -1.57079
-scale = Vector2(0.1, 7)
-color = Color(1, 0.458824, 0.137255, 1)
-energy = 0.5
+scale = Vector2(1.3, 10)
+color = Color(1, 0.493333, 0.2, 1)
+energy = 5.0
 shadow_enabled = true
 shadow_item_cull_mask = 3
-texture = ExtResource("4_djfdd")
+texture = ExtResource("5_hxc5t")
 offset = Vector2(0, 56)
+texture_scale = 5.0
