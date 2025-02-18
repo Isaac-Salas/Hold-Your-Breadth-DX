@@ -162,6 +162,8 @@ debug_color = Color(0.55591, 0.510535, 0.635269, 0.42)
 
 [node name="Alerted" type="Sprite2D" parent="."]
 process_mode = 1
+auto_translate_mode = 2
+visible = false
 material = SubResource("CanvasItemMaterial_5mh17")
 position = Vector2(0, -52)
 texture = ExtResource("3_3mycb")

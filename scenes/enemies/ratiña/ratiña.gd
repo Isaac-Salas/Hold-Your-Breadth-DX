@@ -47,7 +47,7 @@ func _physics_process(delta):
 	match startflee:
 		true:
 			#print("Fleeing")
-			alerted.visible = true
+			
 			var movingto = self.global_position.move_toward(ratfleetarget.global_position, delta*(speed*50))
 			var movector = (movingto-self.global_position)*2
 			print(abs(movector.x))
@@ -56,7 +56,7 @@ func _physics_process(delta):
 			if movector < Vector2(0,0):
 				sprite.flip_h = false
 			#self.global_position.x = movingto.x
-			#set_deferred("lock_rotation", false)
+			set_deferred("lock_rotation", false)
 			apply_central_impulse(Vector2i(movector.x, 0))
 			if self.global_position.x == ratfleetarget.global_position.x or abs(movector.x) < 1:
 				set_deferred("lock_rotation", true)
@@ -94,7 +94,7 @@ func chasing(player):
 	apply_central_impulse(Vector2(playerdir.x*3, playerdir.y))
 
 func fleeing():
-	
+	alerted.visible = true
 	timer.stop()
 	timer_2.stop()
 	##print("Ratflee")
@@ -129,7 +129,7 @@ func _on_timer_2_timeout():
 
 func _on_player_detect_body_exited(body):
 	if body.is_in_group("Player"):
-		player.scare.disconnect(fleeing)
+		#player.scare.disconnect(fleeing)
 		timer_2.stop()
 		timer_3.stop()
 		startflee = false
