@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_esqvt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
@@ -428,9 +428,11 @@ position = Vector2(1056, 31)
 [node name="PointLight2D" parent="Lights/Light11" index="0"]
 shadow_enabled = false
 
-[node name="Swing-light" parent="Lights" node_paths=PackedStringArray("marker") instance=ExtResource("15_mnyod")]
+[node name="Fakelight" parent="Lights/Light11" index="1"]
+modulate = Color(1, 0.81834, 0.645192, 0.0980392)
+
+[node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
 position = Vector2(315, 265)
-marker = NodePath("../../Marker2D")
 
 [node name="Light" parent="Lights/Swing-light" index="1"]
 position = Vector2(0, 140)

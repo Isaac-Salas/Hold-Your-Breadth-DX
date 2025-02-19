@@ -17,14 +17,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	for body in inside:
 		if abs(body.linear_velocity.x) < abs(force.x) * 15:
-			print(body.linear_velocity)
+			#print(body.linear_velocity)
 			body.apply_impulse(force)
 			body.apply_torque(30)
 
 func _on_area_2d_body_entered(entered: Node2D) -> void:
 	inside.append(entered)
-	print(inside.size())
-	print(entered.name)
+	#print(inside.size())
+	#print(entered.name)
 
 
 func _on_area_2d_body_exited(exited: Node2D) -> void:

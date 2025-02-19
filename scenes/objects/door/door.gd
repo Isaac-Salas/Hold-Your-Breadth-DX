@@ -8,6 +8,7 @@ func _ready() -> void:
 	toggle_door(isOpen, 0)
 	if get_parent().has_signal("pressed"):
 		get_parent().connect("pressed", toggle_door)
+	ap.speed_scale = 1
 
 func toggle_door(state, body):
 	isOpen = !isOpen

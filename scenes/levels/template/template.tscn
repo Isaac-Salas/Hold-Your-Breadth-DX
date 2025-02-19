@@ -138,8 +138,7 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
-resource_name = "Closing"
-[node name="Template" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_7ttjn")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
