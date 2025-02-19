@@ -1,19 +1,24 @@
-[gd_scene load_steps=12 format=4 uid="uid://ds55rb4riqalc"]
+[gd_scene load_steps=17 format=4 uid="uid://ckg57n263xncs"]
 
-[ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_7ttjn"]
-[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
-[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_l70k0"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_qdubr"]
-[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="6_8v6c2"]
-[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="6_l11u7"]
-[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="7_uvvwj"]
-[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_uu8tb"]
+[ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_21qq4"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_3gyx6"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="4_nhbgi"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="5_cpr1c"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="6_3oxrn"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="7_xa2qc"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="8_dtxr0"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="9_6huti"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="10_jeppq"]
+[ext_resource type="PackedScene" uid="uid://bhe6366hku86k" path="res://scenes/levels/game_sequence/scale_lvl.tscn" id="11_r3i4x"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="12_yuu1k"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="13_hfyvl"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
-texture = ExtResource("1_p51wd")
+texture = ExtResource("2_65ijc")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -138,36 +143,67 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
-resource_name = "Closing"
-[node name="Template" type="Node2D"]
-script = ExtResource("1_7ttjn")
+[node name="Template LOCO" type="Node2D"]
+script = ExtResource("1_21qq4")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAACAAAAAAAPAAEAAAACAAEAAAAPAAIAAAACAAEAAAAPAAMAAAACAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAEAAAABAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAFAAQAAAAEAAAAAAAGAAQAAAAEAAAAAAAHAAQAAAAEAAAAAAAIAAQAAAADAAIAAAAIAAEAAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAABAAIAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAADAAIAAAAFAAAAAAADAAEAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAACAAAAAAAPAAEAAAAEAAEAAAAPAAIAAAAFAAAAAAAPAAMAAAAEAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAEAAAABAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAAOAAQAAAAEAAAAAAADAAcAAAAEAAEAAAADAAYAAAAFAAEAAAALAAQAAAAAAAEAAAAIAAQAAAADAAAAAAAMAAQAAAAEAAAAAAANAAQAAAAEAAAAAAAFAAQAAAADAAIAAAALAAUAAAAFAAAAAAALAAYAAAAEAAEAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="Player" parent="." instance=ExtResource("3_l70k0")]
-position = Vector2(108, 159)
+[node name="Player" parent="." instance=ExtResource("3_3gyx6")]
+position = Vector2(194, -30)
 
-[node name="Platform" parent="." instance=ExtResource("6_l11u7")]
-position = Vector2(576, 288)
+[node name="Light" parent="." instance=ExtResource("4_nhbgi")]
+position = Vector2(480, 56)
 
-[node name="Platform2" parent="." instance=ExtResource("6_l11u7")]
-position = Vector2(480, 240)
+[node name="Light2" parent="." instance=ExtResource("4_nhbgi")]
+position = Vector2(194, -25)
 
-[node name="Platform3" parent="." instance=ExtResource("6_l11u7")]
-position = Vector2(576, 187)
+[node name="RigidBody2D" parent="." instance=ExtResource("5_cpr1c")]
+position = Vector2(688, 176)
 
-[node name="Light" parent="." instance=ExtResource("9_uu8tb")]
-position = Vector2(244, 57)
-color = Color(0.498039, 1, 0.458824, 1)
+[node name="Button_red3" parent="." instance=ExtResource("6_3oxrn")]
+position = Vector2(96, 378)
 
-[node name="Camera2D" parent="." instance=ExtResource("6_8v6c2")]
-position = Vector2(0, 1)
+[node name="Door" parent="." instance=ExtResource("7_xa2qc")]
+position = Vector2(480, 216)
+rotation = -1.57079
 
-[node name="dont touch" parent="." instance=ExtResource("7_uvvwj")]
+[node name="Button_red" parent="." instance=ExtResource("6_3oxrn")]
+position = Vector2(480, 384)
 
-[node name="Transition" parent="." instance=ExtResource("4_qdubr")]
+[node name="Button_red2" parent="." instance=ExtResource("6_3oxrn")]
+position = Vector2(96, 187)
+
+[node name="Door2" parent="." instance=ExtResource("7_xa2qc")]
+position = Vector2(744, 336)
+
+[node name="Platform" parent="." instance=ExtResource("8_dtxr0")]
+position = Vector2(336, 176)
+
+[node name="Platform2" parent="." instance=ExtResource("8_dtxr0")]
+position = Vector2(336, 240)
+
+[node name="Platform3" parent="." instance=ExtResource("8_dtxr0")]
+position = Vector2(336, 302)
+
+[node name="Conveyor" parent="." instance=ExtResource("9_6huti")]
+position = Vector2(552, 408)
+
+[node name="Transition" parent="." instance=ExtResource("10_jeppq")]
 visible = true
+target_scene = ExtResource("11_r3i4x")
+
+[node name="dont touch" parent="." instance=ExtResource("12_yuu1k")]
+
+[node name="Camera2D" parent="." instance=ExtResource("13_hfyvl")]
+position = Vector2(-1, 1)
+
+[connection signal="pressed" from="Button_red3" to="Door" method="toggle_door"]
+[connection signal="pressed" from="Button_red3" to="Door2" method="toggle_door"]
+[connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
+[connection signal="pressed" from="Button_red2" to="Door" method="toggle_door"]
+
+[editable path="Transition"]

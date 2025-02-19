@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://xcup5opmlyy7"]
 
-[ext_resource type="Texture2D" uid="uid://bwtlag06aqeoq" path="res://assets/fondos/Lab.png" id="1_ke05x"]
+[ext_resource type="Texture2D" uid="uid://dnu6505li3ghk" path="res://assets/fondos/Lab.png" id="1_ke05x"]
 [ext_resource type="Script" path="res://scenes/shaders/screen_effects.gd" id="1_qp62f"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_4r0s1"]
 [ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="3_efeye"]
@@ -25,6 +25,7 @@ shader_parameter/pixel_strength = -2.0
 [node name="dont touch" type="Node2D"]
 visible = false
 script = ExtResource("1_qp62f")
+showoverride = true
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -37,7 +38,6 @@ metadata/_edit_lock_ = true
 
 [node name="CRTShader" parent="." instance=ExtResource("2_4r0s1")]
 z_index = 25
-metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("ShaderMaterial_uh315")

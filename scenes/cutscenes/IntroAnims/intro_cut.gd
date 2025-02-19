@@ -9,7 +9,7 @@ extends Node2D
 @onready var currentanim : String
 @onready var point_light_2d = $"Swing-light/Light/PointLight2D"
 @onready var transition = $Transition
-const _0_TUTORIAL_THROW = preload("res://scenes/levels/game_sequence/0_Tutorial_throw.tscn")
+const _0_TUTORIAL_THROW = preload("res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

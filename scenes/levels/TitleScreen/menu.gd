@@ -7,7 +7,7 @@ extends Node2D
 
 const INTRO_CUT = preload("res://scenes/cutscenes/IntroAnims/IntroCut.tscn")
 const TESTING = preload("res://scenes/levels/Testing/testing.tscn")
-const scale_lvl = preload("res://scenes/levels/game_sequence/0_Tutorial_throw.tscn")
+const scale_lvl = preload("res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn")
 #const SCENE_SWITCHER = preload("res://scenes/levels/Transition/scene_switcher.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():

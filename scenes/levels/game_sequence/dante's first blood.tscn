@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=4 uid="uid://22v7woarogqs"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_3l663"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="2_ar6cy"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_ar6cy"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_2565o"]
-[ext_resource type="PackedScene" uid="uid://cejwgovgj50es" path="res://scenes/levels/game_sequence/dante's first blood2.tscn" id="3_elikg"]
+[ext_resource type="PackedScene" uid="uid://ckg57n263xncs" path="res://scenes/levels/game_sequence/1-2 Doors and buttons.tscn" id="3_elikg"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="4_e6oo0"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_u3ric"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="6_41jjd"]
