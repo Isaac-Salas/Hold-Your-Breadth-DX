@@ -109,6 +109,7 @@ _data = {
 }
 
 [node name="Transition" type="Node2D"]
+modulate = Color(0.408333, 0.375, 0.5, 1)
 z_index = 20
 y_sort_enabled = true
 script = ExtResource("1_aifxu")
@@ -128,6 +129,7 @@ position = Vector2(384, 108)
 texture = ExtResource("2_1pr46")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+visible = false
 clip_children = 2
 occluder = SubResource("OccluderPolygon2D_jd3jg")
 
@@ -140,6 +142,7 @@ scale = Vector2(1, -1)
 texture = ExtResource("2_1pr46")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D2"]
+visible = false
 clip_children = 2
 occluder = SubResource("OccluderPolygon2D_2lfug")
 

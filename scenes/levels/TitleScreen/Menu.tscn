@@ -374,6 +374,16 @@ metadata/_edit_lock_ = true
 visible = false
 metadata/_edit_lock_ = true
 
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 142.0
+offset_top = 362.0
+offset_right = 422.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("54_auanj")
+theme_override_font_sizes/font_size = 61
+text = "Scene switcher"
+
 [node name="Transition" parent="." instance=ExtResource("103_6same")]
 scale = Vector2(1.5, 1.5)
 
@@ -384,16 +394,6 @@ shape = SubResource("RectangleShape2D_lorgc")
 libraries = {
 "": SubResource("AnimationLibrary_k0j2h")
 }
-
-[node name="Button" type="Button" parent="."]
-visible = false
-offset_left = 142.0
-offset_top = 362.0
-offset_right = 422.0
-offset_bottom = 514.0
-theme_override_fonts/font = ExtResource("54_auanj")
-theme_override_font_sizes/font_size = 61
-text = "Scene switcher"
 
 [connection signal="mouse_entered" from="Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Play" to="." method="_on_play_mouse_exited"]
