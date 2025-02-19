@@ -175,11 +175,13 @@ position = Vector2(987, 224)
 [node name="Ratillas" type="Node2D" parent="."]
 position = Vector2(235, 56)
 
-[node name="Ratiña" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(497, 193)
+ratfleetarget = NodePath("../../Ratfleemarker")
 
-[node name="Ratiña2" parent="Ratillas" instance=ExtResource("10_uj851")]
+[node name="Ratiña2" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("10_uj851")]
 position = Vector2(574, 173)
+ratfleetarget = NodePath("../../Ratfleemarker2")
 
 [node name="Matraces" type="Node2D" parent="."]
 
@@ -292,5 +294,8 @@ rendering_quadrant_size = 48
 
 [node name="WoodenBox" parent="." instance=ExtResource("17_drere")]
 position = Vector2(214, 460)
+
+[node name="Ratfleemarker2" parent="." instance=ExtResource("12_gbmlf")]
+position = Vector2(1034, 468)
 
 [editable path="Transition"]

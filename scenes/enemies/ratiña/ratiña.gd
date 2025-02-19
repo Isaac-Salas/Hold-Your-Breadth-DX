@@ -1,6 +1,6 @@
 extends RigidBody2D
 class_name  Rat_enemy
-@export var ratfleetarget : Node2D
+@export var ratfleetarget : Marker2D
 @onready var timer = $Timer
 @onready var target_loc = $TargetLoc
 @onready var direction
