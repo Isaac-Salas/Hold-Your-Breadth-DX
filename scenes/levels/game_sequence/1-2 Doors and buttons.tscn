@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ckg57n263xncs"]
+[gd_scene load_steps=19 format=4 uid="uid://ckg57n263xncs"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_21qq4"]
 [ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
@@ -6,13 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="4_nhbgi"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="5_cpr1c"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="6_3oxrn"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="7_om77o"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="7_xa2qc"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="8_dtxr0"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="9_6huti"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="10_jeppq"]
-[ext_resource type="PackedScene" uid="uid://bhe6366hku86k" path="res://scenes/levels/game_sequence/scale_lvl.tscn" id="11_r3i4x"]
+[ext_resource type="PackedScene" uid="uid://bhe6366hku86k" path="res://scenes/levels/game_sequence/3-1 Scale level.tscn" id="11_r3i4x"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="12_yuu1k"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="13_hfyvl"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="15_4tewc"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -143,67 +145,107 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
-[node name="Template LOCO" type="Node2D"]
+[node name="level" type="Node2D"]
 script = ExtResource("1_21qq4")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAABAAIAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAADAAIAAAAFAAAAAAADAAEAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAACAAAAAAAPAAEAAAAEAAEAAAAPAAIAAAAFAAAAAAAPAAMAAAAEAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAEAAAABAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAAOAAQAAAAEAAAAAAADAAcAAAAEAAEAAAADAAYAAAAFAAEAAAALAAQAAAAAAAEAAAAIAAQAAAADAAAAAAAMAAQAAAAEAAAAAAANAAQAAAAEAAAAAAAFAAQAAAADAAIAAAALAAUAAAAFAAAAAAALAAYAAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAABAAIAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAADAAIAAAAFAAAAAAADAAEAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAACAAAAAAAPAAEAAAAEAAEAAAAPAAIAAAAFAAAAAAAPAAMAAAAEAAEAAAAPAAQAAAACAAEAAAAPAAUAAAACAAEAAAABAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAAOAAQAAAAEAAAAAAADAAcAAAAEAAEAAAADAAYAAAAFAAEAAAALAAQAAAAAAAEAAAAIAAQAAAADAAAAAAAMAAQAAAAEAAAAAAANAAQAAAAEAAAAAAAFAAQAAAADAAIAAAALAAUAAAAFAAAAAAALAAYAAAAEAAEAAAAIAAYAAAAEAAEAAAAIAAUAAAAFAAAAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="Player" parent="." instance=ExtResource("3_3gyx6")]
-position = Vector2(194, -30)
+[node name="platforms" type="Node" parent="."]
 
-[node name="Light" parent="." instance=ExtResource("4_nhbgi")]
-position = Vector2(480, 56)
+[node name="Platform" parent="platforms" instance=ExtResource("8_dtxr0")]
+position = Vector2(336, 176)
+metadata/_edit_lock_ = true
 
-[node name="Light2" parent="." instance=ExtResource("4_nhbgi")]
-position = Vector2(194, -25)
+[node name="Platform2" parent="platforms" instance=ExtResource("8_dtxr0")]
+position = Vector2(336, 240)
+metadata/_edit_lock_ = true
 
-[node name="RigidBody2D" parent="." instance=ExtResource("5_cpr1c")]
-position = Vector2(688, 176)
+[node name="Platform3" parent="platforms" instance=ExtResource("8_dtxr0")]
+position = Vector2(336, 302)
+metadata/_edit_lock_ = true
 
-[node name="Button_red3" parent="." instance=ExtResource("6_3oxrn")]
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Button_red3" parent="Buttons" instance=ExtResource("6_3oxrn")]
 position = Vector2(96, 378)
 
-[node name="Door" parent="." instance=ExtResource("7_xa2qc")]
-position = Vector2(480, 216)
-rotation = -1.57079
+[node name="Button_Red_Signal" parent="Buttons/Button_red3" instance=ExtResource("7_om77o")]
+position = Vector2(648, -162)
 
-[node name="Button_red" parent="." instance=ExtResource("6_3oxrn")]
+[node name="Button_red" parent="Buttons" instance=ExtResource("6_3oxrn")]
 position = Vector2(480, 384)
 
-[node name="Button_red2" parent="." instance=ExtResource("6_3oxrn")]
-position = Vector2(96, 187)
+[node name="Button_Red_Signal" parent="Buttons/Button_red" instance=ExtResource("7_om77o")]
+z_index = 3
+position = Vector2(72, -168)
 
-[node name="Door2" parent="." instance=ExtResource("7_xa2qc")]
+[node name="Button_red2" parent="Buttons" instance=ExtResource("6_3oxrn")]
+position = Vector2(95, 192)
+
+[node name="Button_Red_Signal" parent="Buttons/Button_red2" instance=ExtResource("7_om77o")]
+z_index = 2
+position = Vector2(313, 24)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("7_xa2qc")]
+position = Vector2(480, 216)
+rotation = -1.57079
+metadata/_edit_lock_ = true
+
+[node name="Door2" parent="Doors" instance=ExtResource("7_xa2qc")]
 position = Vector2(744, 336)
+metadata/_edit_lock_ = true
 
-[node name="Platform" parent="." instance=ExtResource("8_dtxr0")]
-position = Vector2(336, 176)
+[node name="lights" type="Node" parent="."]
 
-[node name="Platform2" parent="." instance=ExtResource("8_dtxr0")]
-position = Vector2(336, 240)
+[node name="Light2" parent="lights" instance=ExtResource("4_nhbgi")]
+position = Vector2(194, -1)
 
-[node name="Platform3" parent="." instance=ExtResource("8_dtxr0")]
-position = Vector2(336, 302)
+[node name="Swing-light" parent="lights" node_paths=PackedStringArray("marker") instance=ExtResource("15_4tewc")]
+position = Vector2(484, 50)
+marker = NodePath("../Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="lights"]
+position = Vector2(484, 56)
+
+[node name="Player" parent="." instance=ExtResource("3_3gyx6")]
+position = Vector2(192, -26)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("5_cpr1c")]
+position = Vector2(356, 164)
 
 [node name="Conveyor" parent="." instance=ExtResource("9_6huti")]
 position = Vector2(552, 408)
 
-[node name="Transition" parent="." instance=ExtResource("10_jeppq")]
-visible = true
-target_scene = ExtResource("11_r3i4x")
-
-[node name="dont touch" parent="." instance=ExtResource("12_yuu1k")]
+[node name="Conveyor2" parent="." instance=ExtResource("9_6huti")]
+position = Vector2(408, 408)
+direction = "right"
 
 [node name="Camera2D" parent="." instance=ExtResource("13_hfyvl")]
 position = Vector2(-1, 1)
 
-[connection signal="pressed" from="Button_red3" to="Door" method="toggle_door"]
-[connection signal="pressed" from="Button_red3" to="Door2" method="toggle_door"]
-[connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
-[connection signal="pressed" from="Button_red2" to="Door" method="toggle_door"]
+[node name="dont touch" parent="." instance=ExtResource("12_yuu1k")]
 
+[node name="Transition" parent="." instance=ExtResource("10_jeppq")]
+modulate = Color(1, 1, 1, 1)
+target_scene = ExtResource("11_r3i4x")
+
+[node name="LightOccluder2D" parent="Transition/Sprite2D" index="0"]
+visible = true
+
+[node name="LightOccluder2D" parent="Transition/Sprite2D2" index="0"]
+visible = true
+
+[connection signal="pressed" from="Buttons/Button_red3" to="Buttons/Button_red2/Button_Red_Signal" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red3" to="Doors/Door" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red3" to="Doors/Door2" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red" to="Doors/Door" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red2" to="Doors/Door" method="toggle_door"]
+
+[editable path="lights/Swing-light"]
 [editable path="Transition"]
