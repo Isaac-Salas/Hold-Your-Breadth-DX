@@ -19,6 +19,9 @@ script/source = "extends Node2D
 @onready var pin_joint_2d = $PinJoint2D
 @export var marker : Marker2D
 
+@export var wait = 0.4
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	scaling = self.scale
@@ -30,7 +33,9 @@ func _ready():
 	pin_joint_2d.scale = scaling
 	if marker != null:
 		lightphy.set_deferred(\"global_position\", marker.global_position)
-	await(get_tree().create_timer(0.395).timeout)
+	if wait != 0:
+		await(get_tree().create_timer(wait).timeout)
+	
 	lightphy.freeze = false
 	#line_2d.width = scale.x/2
 

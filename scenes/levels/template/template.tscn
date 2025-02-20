@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ds55rb4riqalc"]
+[gd_scene load_steps=13 format=4 uid="uid://ds55rb4riqalc"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_7ttjn"]
 [ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="6_8v6c2"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="6_l11u7"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="7_uvvwj"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="9_je4j2"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_uu8tb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
@@ -153,20 +154,15 @@ position = Vector2(108, 159)
 [node name="Platform" parent="." instance=ExtResource("6_l11u7")]
 position = Vector2(576, 288)
 
-[node name="Platform2" parent="." instance=ExtResource("6_l11u7")]
-position = Vector2(480, 240)
-
-[node name="Platform3" parent="." instance=ExtResource("6_l11u7")]
-position = Vector2(576, 187)
-
-[node name="Light" parent="." instance=ExtResource("9_uu8tb")]
-position = Vector2(244, 57)
-color = Color(0.498039, 1, 0.458824, 1)
-
 [node name="Camera2D" parent="." instance=ExtResource("6_8v6c2")]
 position = Vector2(0, 1)
 
 [node name="dont touch" parent="." instance=ExtResource("7_uvvwj")]
 
 [node name="Transition" parent="." instance=ExtResource("4_qdubr")]
-visible = true
+
+[node name="Light" parent="." instance=ExtResource("9_uu8tb")]
+position = Vector2(603, 57)
+
+[node name="Swing-light" parent="Light" instance=ExtResource("9_je4j2")]
+position = Vector2(-195, 42)

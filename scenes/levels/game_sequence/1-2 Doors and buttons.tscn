@@ -211,7 +211,7 @@ position = Vector2(484, 50)
 marker = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="lights"]
-position = Vector2(484, 56)
+position = Vector2(483, 42)
 
 [node name="Player" parent="." instance=ExtResource("3_3gyx6")]
 position = Vector2(192, -26)
