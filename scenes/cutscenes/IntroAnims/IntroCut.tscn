@@ -1,91 +1,73 @@
-[gd_scene load_steps=75 format=3 uid="uid://56mk8k8ckub7"]
+[gd_scene load_steps=73 format=3 uid="uid://56mk8k8ckub7"]
 
 [ext_resource type="Script" path="res://scenes/cutscenes/IntroAnims/intro_cut.gd" id="1_h1l45"]
-[ext_resource type="Texture2D" uid="uid://b7ddpxge26k7b" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F1.png" id="2_u3m6f"]
-[ext_resource type="Texture2D" uid="uid://c6kk5dbywcvt2" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F2.png" id="3_00q44"]
-[ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="3_5e2sb"]
+[ext_resource type="Texture2D" uid="uid://cjc78owodpr8t" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F1.png" id="2_u3m6f"]
+[ext_resource type="Texture2D" uid="uid://ct3oqmo625xr8" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F2.png" id="3_00q44"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="3_k5nrr"]
-[ext_resource type="Texture2D" uid="uid://6kqgkv7lasuv" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F3.png" id="4_a2r3d"]
-[ext_resource type="Texture2D" uid="uid://gkvi5ot3jwm3" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-F1.png" id="4_wtbme"]
-[ext_resource type="Texture2D" uid="uid://cdiybr03fg0ct" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F4.png" id="5_u4yow"]
-[ext_resource type="Texture2D" uid="uid://b3rodtgb5xo48" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F5.png" id="6_jqqce"]
-[ext_resource type="Texture2D" uid="uid://cd6k1mpcvvdbs" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F6.png" id="7_l62ab"]
-[ext_resource type="Texture2D" uid="uid://c6xwc4kjx1brd" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F7.png" id="8_lorlj"]
-[ext_resource type="Texture2D" uid="uid://b53c75kp5f2sd" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F8.png" id="9_j6ldh"]
-[ext_resource type="Texture2D" uid="uid://srxaeolonm3t" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F9.png" id="10_ohies"]
-[ext_resource type="Texture2D" uid="uid://3m8jccg54jn5" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F10.png" id="11_x1gvk"]
-[ext_resource type="Texture2D" uid="uid://c4lc1167kurgg" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U1.png" id="12_mcw0t"]
-[ext_resource type="Texture2D" uid="uid://cbeeh7w4dwfoc" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U2.png" id="13_j6eyo"]
-[ext_resource type="Texture2D" uid="uid://cserj7yvrke4o" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U3.png" id="14_fjbtq"]
-[ext_resource type="Texture2D" uid="uid://c8plukpm42jmo" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-U1.png" id="15_c2555"]
-[ext_resource type="Texture2D" uid="uid://cghjapjkq6ux6" path="res://scenes/cutscenes/IntroAnims/Despertar/Despertar-U1.png" id="15_i44be"]
-[ext_resource type="Texture2D" uid="uid://dfby5bjay6s74" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U4.png" id="15_oc5hl"]
-[ext_resource type="Texture2D" uid="uid://bxblergqu0850" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-U2.png" id="16_4shoo"]
-[ext_resource type="Texture2D" uid="uid://bkifk5h3patj3" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U5.png" id="16_6dc5i"]
-[ext_resource type="Texture2D" uid="uid://fixft4xgys0q" path="res://scenes/cutscenes/IntroAnims/Despertar/Despertar-U2.png" id="16_8saof"]
-[ext_resource type="Texture2D" uid="uid://cfvejrhprqpgq" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F1.png" id="17_2nfe2"]
-[ext_resource type="Texture2D" uid="uid://cagiq1221u7f5" path="res://scenes/cutscenes/IntroAnims/Look/Look-F1.png" id="17_hyty4"]
-[ext_resource type="Texture2D" uid="uid://cv7r4bqxe3xxx" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-U3.png" id="17_kysaq"]
-[ext_resource type="Texture2D" uid="uid://b5vkxsticydnc" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U6.png" id="17_q1frq"]
-[ext_resource type="Texture2D" uid="uid://beu7ge6grphd2" path="res://scenes/cutscenes/IntroAnims/Look/Look-F2.png" id="18_ehba3"]
-[ext_resource type="Texture2D" uid="uid://v3w2e8yxu8ot" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U7.png" id="18_gfypk"]
-[ext_resource type="Texture2D" uid="uid://p2qo7u6b7oam" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F2.png" id="18_tjqxa"]
-[ext_resource type="Texture2D" uid="uid://csda3pa31u8gj" path="res://scenes/cutscenes/IntroAnims/Look/Look-F3.png" id="19_jytnt"]
-[ext_resource type="Texture2D" uid="uid://bcemmki0lpfdv" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U8.png" id="19_s3dhl"]
-[ext_resource type="Texture2D" uid="uid://cvi1cyw777g07" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F3.png" id="19_vy8b0"]
-[ext_resource type="Texture2D" uid="uid://hd4ulqayjuw5" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F4.png" id="20_4hqem"]
-[ext_resource type="Texture2D" uid="uid://bw1kbpi3uufqo" path="res://scenes/cutscenes/IntroAnims/Look/Look-F4.png" id="20_t8ktg"]
-[ext_resource type="Texture2D" uid="uid://bd4mx5k8mwxcl" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U9.png" id="20_y3h4o"]
-[ext_resource type="Texture2D" uid="uid://brf8u0a61ints" path="res://scenes/cutscenes/IntroAnims/Look/Look-F5.png" id="21_plva8"]
-[ext_resource type="Texture2D" uid="uid://bcjc6wmfgjb6l" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U10.png" id="21_syn4c"]
-[ext_resource type="Texture2D" uid="uid://dyebiniviwnmq" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F5.png" id="21_t2bpt"]
-[ext_resource type="Texture2D" uid="uid://cpmrelkhxs21u" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F6.png" id="22_stud1"]
-[ext_resource type="Texture2D" uid="uid://6w177vxoisvj" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F7.png" id="23_u0qgh"]
+[ext_resource type="Texture2D" uid="uid://c7x3sgqgt0eay" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F3.png" id="4_a2r3d"]
+[ext_resource type="Texture2D" uid="uid://dkxj2rc5hxvnd" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-F1.png" id="4_wtbme"]
+[ext_resource type="Texture2D" uid="uid://cj3ixxb10hxsa" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F4.png" id="5_u4yow"]
+[ext_resource type="Texture2D" uid="uid://bdlkveda64bgb" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F5.png" id="6_jqqce"]
+[ext_resource type="Texture2D" uid="uid://gayd02wd3232" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F6.png" id="7_l62ab"]
+[ext_resource type="Texture2D" uid="uid://b0e0we8pv44cw" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F7.png" id="8_lorlj"]
+[ext_resource type="Texture2D" uid="uid://c07as1gp772pi" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F8.png" id="9_j6ldh"]
+[ext_resource type="Texture2D" uid="uid://caorjji1hrmat" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F9.png" id="10_ohies"]
+[ext_resource type="Texture2D" uid="uid://btxnkh44mewyj" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-F10.png" id="11_x1gvk"]
+[ext_resource type="Texture2D" uid="uid://dxts0q5tsv2ak" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U1.png" id="12_mcw0t"]
+[ext_resource type="Texture2D" uid="uid://ttdpbox10rx7" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U2.png" id="13_j6eyo"]
+[ext_resource type="Texture2D" uid="uid://b6s48ec5sbnma" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U3.png" id="14_fjbtq"]
+[ext_resource type="Texture2D" uid="uid://cey3vo3puda0c" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-U1.png" id="15_c2555"]
+[ext_resource type="Texture2D" uid="uid://c0xyyfurtakyx" path="res://scenes/cutscenes/IntroAnims/Despertar/Despertar-U1.png" id="15_i44be"]
+[ext_resource type="Texture2D" uid="uid://cb1guyco41imx" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U4.png" id="15_oc5hl"]
+[ext_resource type="Texture2D" uid="uid://08npy8m52nyf" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-U2.png" id="16_4shoo"]
+[ext_resource type="Texture2D" uid="uid://dlef228lpfjh0" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U5.png" id="16_6dc5i"]
+[ext_resource type="Texture2D" uid="uid://c52dcrpg3monj" path="res://scenes/cutscenes/IntroAnims/Despertar/Despertar-U2.png" id="16_8saof"]
+[ext_resource type="Texture2D" uid="uid://dofo33ha0c257" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F1.png" id="17_2nfe2"]
+[ext_resource type="Texture2D" uid="uid://boe8fdc7n8dvt" path="res://scenes/cutscenes/IntroAnims/Look/Look-F1.png" id="17_hyty4"]
+[ext_resource type="Texture2D" uid="uid://borcarnw1hmr" path="res://scenes/cutscenes/IntroAnims/Dormido/Dormido-U3.png" id="17_kysaq"]
+[ext_resource type="Texture2D" uid="uid://dp8nnekq0u28i" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U6.png" id="17_q1frq"]
+[ext_resource type="Texture2D" uid="uid://cjrcd0njc1fi8" path="res://scenes/cutscenes/IntroAnims/Look/Look-F2.png" id="18_ehba3"]
+[ext_resource type="Texture2D" uid="uid://dap1oh5a2ni6h" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U7.png" id="18_gfypk"]
+[ext_resource type="Texture2D" uid="uid://c3i13t24l2akx" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F2.png" id="18_tjqxa"]
+[ext_resource type="Texture2D" uid="uid://dcn2putrr01xd" path="res://scenes/cutscenes/IntroAnims/Look/Look-F3.png" id="19_jytnt"]
+[ext_resource type="Texture2D" uid="uid://c4awbrc2tv5rb" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U8.png" id="19_s3dhl"]
+[ext_resource type="Texture2D" uid="uid://quv572fosov4" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F3.png" id="19_vy8b0"]
+[ext_resource type="Texture2D" uid="uid://bhmnyob46u7sn" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F4.png" id="20_4hqem"]
+[ext_resource type="Texture2D" uid="uid://do0535033wxl3" path="res://scenes/cutscenes/IntroAnims/Look/Look-F4.png" id="20_t8ktg"]
+[ext_resource type="Texture2D" uid="uid://cbj5gfbt3juhv" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U9.png" id="20_y3h4o"]
+[ext_resource type="Texture2D" uid="uid://bx5wvsecr36mc" path="res://scenes/cutscenes/IntroAnims/Look/Look-F5.png" id="21_plva8"]
+[ext_resource type="Texture2D" uid="uid://b5qfany1u0kcc" path="res://scenes/cutscenes/IntroAnims/Inicio/Inicio-U10.png" id="21_syn4c"]
+[ext_resource type="Texture2D" uid="uid://drqtsam0x4awp" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F5.png" id="21_t2bpt"]
+[ext_resource type="Texture2D" uid="uid://dyw6lsw6ngd0t" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F6.png" id="22_stud1"]
+[ext_resource type="Texture2D" uid="uid://s3o5csi4koag" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F7.png" id="23_u0qgh"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="24_ifudp"]
-[ext_resource type="Texture2D" uid="uid://8fgrhin8lrxy" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F8.png" id="24_rruvv"]
-[ext_resource type="Texture2D" uid="uid://btcd7ntd6k2mk" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F9.png" id="25_fgbqd"]
-[ext_resource type="Texture2D" uid="uid://cbpx6gm65dx7q" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F10.png" id="26_7dm7q"]
-[ext_resource type="Texture2D" uid="uid://ceivscqwhpb" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F11.png" id="27_r33d2"]
-[ext_resource type="Texture2D" uid="uid://dv2qlgsj7ryis" path="res://scenes/cutscenes/IntroAnims/Idle loop/Idle-U1.png" id="30_nq34b"]
-[ext_resource type="Texture2D" uid="uid://dn7io38vn371g" path="res://scenes/cutscenes/IntroAnims/Idle loop/Idle-U2.png" id="31_q313l"]
-[ext_resource type="Texture2D" uid="uid://isnqph8fsqfl" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U1.png" id="45_xg8pa"]
-[ext_resource type="Texture2D" uid="uid://pr173tpsa18j" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U2.png" id="46_61msq"]
-[ext_resource type="Texture2D" uid="uid://b5b0moh34yvio" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U3.png" id="47_ka6np"]
-[ext_resource type="Texture2D" uid="uid://c1sxgv6ngpojx" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U4.png" id="48_18mmj"]
-[ext_resource type="Texture2D" uid="uid://duv01wtdtrnul" path="res://scenes/cutscenes/IntroAnims/Look/Look-U1.png" id="48_dbqil"]
-[ext_resource type="Texture2D" uid="uid://ddm4i3o0islhu" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U5.png" id="49_fxq3v"]
-[ext_resource type="Texture2D" uid="uid://f0o5e0bxiadp" path="res://scenes/cutscenes/IntroAnims/Look/Look-U2.png" id="49_i8rxd"]
-[ext_resource type="Texture2D" uid="uid://ck0qst5gbgp0" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U6.png" id="50_4qdar"]
-[ext_resource type="Texture2D" uid="uid://cwwy8gufyhi66" path="res://scenes/cutscenes/IntroAnims/Look/Look-U3.png" id="50_e4pmb"]
-[ext_resource type="Texture2D" uid="uid://b26gjs6ro5y5t" path="res://scenes/cutscenes/IntroAnims/Look/Look-U4.png" id="51_fdosi"]
-[ext_resource type="Texture2D" uid="uid://dn5kunujswsis" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U7.png" id="51_t520p"]
-[ext_resource type="Texture2D" uid="uid://bsrmjx6gad4b7" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U8.png" id="52_c08oe"]
-[ext_resource type="Texture2D" uid="uid://vxixs5e7vavw" path="res://scenes/cutscenes/IntroAnims/Look/Look-U5.png" id="52_sovfg"]
-[ext_resource type="Texture2D" uid="uid://b1a0sdbx4u4lk" path="res://scenes/cutscenes/IntroAnims/Look-F/Look-U1.png" id="53_1nkxj"]
-[ext_resource type="Texture2D" uid="uid://h2udtg7coc2f" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U9.png" id="53_k4hx2"]
-[ext_resource type="Texture2D" uid="uid://5p5o0a1tquir" path="res://scenes/cutscenes/IntroAnims/Look-F/Look-U2.png" id="54_43h5h"]
-[ext_resource type="Texture2D" uid="uid://c4xqlw1vhj6lc" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U10.png" id="54_xljsc"]
-[ext_resource type="Texture2D" uid="uid://chexkrmfc8mw2" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U11.png" id="55_uappl"]
+[ext_resource type="Texture2D" uid="uid://b4lxtvabs0cw3" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F8.png" id="24_rruvv"]
+[ext_resource type="Texture2D" uid="uid://cvb6sfath0k5n" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F9.png" id="25_fgbqd"]
+[ext_resource type="Texture2D" uid="uid://1qwyrli4nm0h" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F10.png" id="26_7dm7q"]
+[ext_resource type="Texture2D" uid="uid://qc3jc3gi51da" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-F11.png" id="27_r33d2"]
+[ext_resource type="Texture2D" uid="uid://b4sa3u7bcg1yo" path="res://scenes/cutscenes/IntroAnims/Idle loop/Idle-U1.png" id="30_nq34b"]
+[ext_resource type="Texture2D" uid="uid://b8ssjqpxiryqe" path="res://scenes/cutscenes/IntroAnims/Idle loop/Idle-U2.png" id="31_q313l"]
+[ext_resource type="Texture2D" uid="uid://cmbivcvrmwy67" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U1.png" id="45_xg8pa"]
+[ext_resource type="Texture2D" uid="uid://bglg5pbu64etv" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U2.png" id="46_61msq"]
+[ext_resource type="Texture2D" uid="uid://dyeqxud27avjf" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U3.png" id="47_ka6np"]
+[ext_resource type="Texture2D" uid="uid://owusidxcf8ic" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U4.png" id="48_18mmj"]
+[ext_resource type="Texture2D" uid="uid://chh27tt1kkmop" path="res://scenes/cutscenes/IntroAnims/Look/Look-U1.png" id="48_dbqil"]
+[ext_resource type="Texture2D" uid="uid://np5oj8qwjl7u" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U5.png" id="49_fxq3v"]
+[ext_resource type="Texture2D" uid="uid://b7jkg46ouxa5o" path="res://scenes/cutscenes/IntroAnims/Look/Look-U2.png" id="49_i8rxd"]
+[ext_resource type="Texture2D" uid="uid://ck635j2yg316f" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U6.png" id="50_4qdar"]
+[ext_resource type="Texture2D" uid="uid://j7ntbtadjv5k" path="res://scenes/cutscenes/IntroAnims/Look/Look-U3.png" id="50_e4pmb"]
+[ext_resource type="Texture2D" uid="uid://kmexrsxw66mo" path="res://scenes/cutscenes/IntroAnims/Look/Look-U4.png" id="51_fdosi"]
+[ext_resource type="Texture2D" uid="uid://dhfoy5rtxor5m" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U7.png" id="51_t520p"]
+[ext_resource type="Texture2D" uid="uid://cw2xrs7csigcx" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U8.png" id="52_c08oe"]
+[ext_resource type="Texture2D" uid="uid://botqeafvxvw32" path="res://scenes/cutscenes/IntroAnims/Look/Look-U5.png" id="52_sovfg"]
+[ext_resource type="Texture2D" uid="uid://yl7hxsdq4her" path="res://scenes/cutscenes/IntroAnims/Look-F/Look-U1.png" id="53_1nkxj"]
+[ext_resource type="Texture2D" uid="uid://deswvhas2udmr" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U9.png" id="53_k4hx2"]
+[ext_resource type="Texture2D" uid="uid://de5h1ng6n37gs" path="res://scenes/cutscenes/IntroAnims/Look-F/Look-U2.png" id="54_43h5h"]
+[ext_resource type="Texture2D" uid="uid://77bplsogbqau" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U10.png" id="54_xljsc"]
+[ext_resource type="Texture2D" uid="uid://cruwr8ecv1bq7" path="res://scenes/cutscenes/IntroAnims/Tarjeta/Tarjeta-U11.png" id="55_uappl"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="68_yxq3e"]
 [ext_resource type="PackedScene" uid="uid://v4ylrqt2e871" path="res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn" id="69_37ke8"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="69_eogvq"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fye8k"]
-shader = ExtResource("3_5e2sb")
-shader_parameter/resolution = Vector2(260.765, 180)
-shader_parameter/scan_line_amount = 0.758
-shader_parameter/warp_amount = 2.519
-shader_parameter/noise_amount = 0.3
-shader_parameter/interference_amount = 0.2
-shader_parameter/grille_amount = 0.1
-shader_parameter/grille_size = 1.795
-shader_parameter/vignette_amount = 0.6
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/aberation_amount = 0.5
-shader_parameter/roll_line_amount = 0.3
-shader_parameter/roll_speed = 1.0
-shader_parameter/scan_line_strength = -8.0
-shader_parameter/pixel_strength = -2.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ylxor"]
 animations = [{
@@ -393,6 +375,7 @@ func _input(event):
 radius = 1.0
 
 [node name="IntroCut" type="Node2D" groups=["Nivel"]]
+position = Vector2(1, 0)
 script = ExtResource("1_h1l45")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -416,11 +399,6 @@ offset_right = 226.0
 offset_bottom = 307.0
 InputEnable = false
 Dialog = PackedStringArray("", "...", "You wake up in a strange, desolate lab.", "You dont remember being a slime before.", "This place gives you the creeps.", "It might be a good idea to try and find a way OUT.", "")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-material = SubResource("ShaderMaterial_fye8k")
-color = Color(0.415686, 0.376471, 0.501961, 1)
-metadata/_edit_lock_ = true
 
 [node name="Fondo" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.11, 0.11, 0.11, 1)
@@ -453,13 +431,13 @@ light = NodePath("../Swing-light/Light")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse"]
 shape = SubResource("CircleShape2D_lkf33")
 
+[node name="dont touch" parent="." instance=ExtResource("69_eogvq")]
+visible = true
+
 [node name="Transition" parent="." instance=ExtResource("68_yxq3e")]
 y_sort_enabled = false
 scale = Vector2(1.5, 1.5)
 target_scene = ExtResource("69_37ke8")
-
-[node name="dont touch" parent="." instance=ExtResource("69_eogvq")]
-visible = true
 
 [connection signal="Done" from="ColorRect/GridContainer/DialogBox" to="." method="_on_dialog_box_done"]
 [connection signal="animation_finished" from="Fondo" to="." method="_on_fondo_animation_finished"]
