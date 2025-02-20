@@ -4,7 +4,6 @@ extends CanvasLayer
 @onready var contrast = $Contrast
 @onready var saturation = $Saturation
 @onready var toggle : int = 0
-
 @onready var fullscreen = $Fullscreen
 @onready var crt = $CRT
 @onready var exclusive = $Exclusive
@@ -21,18 +20,19 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("Esc"):
 		if toggle < 1:
+			get_tree().paused = true
 			visible = true
 			toggle += 1
 		else:
+			get_tree().paused = false
 			visible = false
 			toggle = 0
 		print(toggle)
-		
 	
 	Enviroment.environment.adjustment_brightness = brightnes.value
 	Enviroment.environment.adjustment_contrast = contrast.value
 	Enviroment.environment.adjustment_saturation = saturation.value
-	
+
 
 func _on_reset_pressed():
 	brightnes.value = 1
@@ -62,4 +62,3 @@ func _on_exclusive_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		
