@@ -6,7 +6,7 @@ var force
 @onready var area_2d: Area2D = $Area2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var inside : Array[RigidBody2D] = []
+var inside : Array = []
 @export var isOFF = false
 func _ready() -> void:
 	toggle(isOFF, 0)
@@ -20,10 +20,15 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	for body in inside:
-		if abs(body.linear_velocity.x) < abs(force.x) * 15:
+		if body is SlimePlayer:
+			#print(body)
+			body.velocity.x += force.x * 20
+		if body is RigidBody2D and abs(body.linear_velocity.x) < abs(force.x) * 15:
 			#print(body.linear_velocity)
 			body.apply_impulse(force)
 			body.apply_torque(30)
+			
+		
 
 func _on_area_2d_body_entered(entered: Node2D) -> void:
 	inside.append(entered)

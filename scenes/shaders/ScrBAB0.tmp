@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xcup5opmlyy7"]
+[gd_scene load_steps=9 format=3 uid="uid://xcup5opmlyy7"]
 
 [ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="1_ke05x"]
 [ext_resource type="Script" path="res://scenes/shaders/screen_effects.gd" id="1_qp62f"]
@@ -28,6 +28,9 @@ background_mode = 3
 fog_light_energy = 4.55
 adjustment_enabled = true
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5qksy"]
+light_mode = 1
+
 [node name="dont touch" type="Node2D"]
 script = ExtResource("1_qp62f")
 showoverride = true
@@ -41,6 +44,9 @@ texture = ExtResource("1_ke05x")
 centered = false
 metadata/_edit_lock_ = true
 
+[node name="CRTShader" parent="." instance=ExtResource("2_4r0s1")]
+z_index = 25
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("ShaderMaterial_uh315")
 color = Color(0.415686, 0.376471, 0.501961, 1)
@@ -49,10 +55,6 @@ metadata/_edit_lock_ = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7jeub")
 
-[node name="OptionsMenu" parent="." node_paths=PackedStringArray("Enviroment", "CRTShader") instance=ExtResource("5_e0uqf")]
-visible = false
+[node name="OptionsMenu" parent="." node_paths=PackedStringArray("Enviroment") instance=ExtResource("5_e0uqf")]
+material = SubResource("CanvasItemMaterial_5qksy")
 Enviroment = NodePath("../WorldEnvironment")
-CRTShader = NodePath("../CRTShader")
-
-[node name="CRTShader" parent="." instance=ExtResource("2_4r0s1")]
-z_index = 25
