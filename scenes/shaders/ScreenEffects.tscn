@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://xcup5opmlyy7"]
+[gd_scene load_steps=9 format=3 uid="uid://xcup5opmlyy7"]
 
-[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="1_ke05x"]
+[ext_resource type="Texture2D" uid="uid://bwtlag06aqeoq" path="res://assets/fondos/Lab.png" id="1_ke05x"]
 [ext_resource type="Script" path="res://scenes/shaders/screen_effects.gd" id="1_qp62f"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_4r0s1"]
 [ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="3_efeye"]
+[ext_resource type="Texture2D" uid="uid://cty26p5f5km38" path="res://scenes/shaders/ColorGradeP-O.tres" id="4_yvgg5"]
 [ext_resource type="PackedScene" uid="uid://fnvs7y1btss0" path="res://scenes/shaders/Options_Menu.tscn" id="5_e0uqf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uh315"]
@@ -27,6 +28,7 @@ shader_parameter/pixel_strength = -2.0
 background_mode = 3
 fog_light_energy = 4.55
 adjustment_enabled = true
+adjustment_color_correction = ExtResource("4_yvgg5")
 
 [node name="dont touch" type="Node2D"]
 script = ExtResource("1_qp62f")
@@ -43,7 +45,7 @@ metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("ShaderMaterial_uh315")
-color = Color(0.415686, 0.376471, 0.501961, 1)
+color = Color(0.6, 0.6, 0.6, 1)
 metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

@@ -32,9 +32,10 @@ signal scare
 @onready var eyes = $Animacion/Eyes
 @onready var rigid_body = $RigidBody2D
 @export var pushstrenght : int = 150
+
+
+@onready var normallight = $Animacion/Normallight
 @onready var small_light = $SmallLight
-
-
 
 
 
@@ -54,17 +55,20 @@ func _physics_process(delta):
 	if sprite.scale.x >= 0.1 and sprite.scale.x <= 0.9:
 		SPEED = 600
 		JUMP_VELOCITY = -600
+		normallight.visible = false
 		small_light.visible = true
 		current = states[0]
 	if sprite.scale.x >= 1 and sprite.scale.x <= 1.9:
 		SPEED = 400
 		JUMP_VELOCITY = -400
+		normallight.visible = true
 		small_light.visible = false
 		current = states[1]
 	if sprite.scale.x >= 2 and sprite.scale.x <= 3:
 		dot.radius = 70
 		SPEED = 100
 		JUMP_VELOCITY = -400
+		normallight.visible = true
 		small_light.visible = false
 		emit_signal("scare")
 		current = states[2]

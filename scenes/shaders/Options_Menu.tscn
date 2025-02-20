@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://fnvs7y1btss0"]
+[gd_scene load_steps=3 format=3 uid="uid://fnvs7y1btss0"]
 
 [ext_resource type="Script" path="res://scenes/shaders/options_menu.gd" id="1_5qxbs"]
+[ext_resource type="FontFile" uid="uid://chv4jun2cg4xe" path="res://assets/Fonts/DePixelHalbfett.otf" id="2_l06u5"]
 
 [node name="Sprite2D" type="CanvasLayer"]
 process_mode = 3
@@ -26,11 +27,13 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 28.0
-offset_top = -14.0
-offset_right = 123.0
-offset_bottom = 26.0
+offset_top = -13.5
+offset_right = 265.0
+offset_bottom = 26.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_l06u5")
+theme_override_font_sizes/normal_font_size = 25
 text = "Brightness"
 
 [node name="Contrast" type="HSlider" parent="."]
@@ -53,11 +56,13 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 28.0
-offset_top = -14.0
-offset_right = 123.0
-offset_bottom = 26.0
+offset_top = -13.5
+offset_right = 196.0
+offset_bottom = 26.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_l06u5")
+theme_override_font_sizes/normal_font_size = 25
 text = "Contrast
 "
 
@@ -82,17 +87,21 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 28.0
 offset_top = -13.5
-offset_right = 156.0
+offset_right = 256.0
 offset_bottom = 26.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_l06u5")
+theme_override_font_sizes/normal_font_size = 25
 text = "Saturation"
 
 [node name="RESET" type="Button" parent="."]
-offset_left = 790.0
-offset_top = 178.0
-offset_right = 907.0
-offset_bottom = 246.0
+offset_left = 841.0
+offset_top = 179.0
+offset_right = 1082.0
+offset_bottom = 247.0
+theme_override_fonts/font = ExtResource("2_l06u5")
+theme_override_font_sizes/font_size = 25
 text = "RESET VALUES"
 
 [node name="Fullscreen" type="CheckBox" parent="."]
@@ -100,21 +109,27 @@ offset_left = 145.0
 offset_top = 415.0
 offset_right = 252.0
 offset_bottom = 446.0
+theme_override_fonts/font = ExtResource("2_l06u5")
+theme_override_font_sizes/font_size = 25
 text = "Fullscreen"
 
 [node name="Exclusive" type="CheckBox" parent="."]
 visible = false
-offset_left = 284.0
+offset_left = 405.0
 offset_top = 415.0
-offset_right = 391.0
-offset_bottom = 446.0
+offset_right = 799.0
+offset_bottom = 455.0
+theme_override_fonts/font = ExtResource("2_l06u5")
+theme_override_font_sizes/font_size = 25
 text = "Exclusive Fullscreen"
 
 [node name="CRT" type="CheckBox" parent="."]
 offset_left = 145.0
-offset_top = 465.0
+offset_top = 473.0
 offset_right = 252.0
-offset_bottom = 496.0
+offset_bottom = 513.0
+theme_override_fonts/font = ExtResource("2_l06u5")
+theme_override_font_sizes/font_size = 25
 button_pressed = true
 text = "CRT
 "

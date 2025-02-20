@@ -44,9 +44,13 @@ func _on_fullscreen_toggled(toggled_on):
 	if fullscreen.button_pressed == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		exclusive.visible = true
+	elif fullscreen.button_pressed == true and exclusive.button_pressed == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		exclusive.visible = false
+		exclusive.button_pressed = false
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		exclusive.visible = true
+		exclusive.visible = false
 		exclusive.button_pressed = false
 
 
@@ -58,7 +62,9 @@ func _on_crt_toggled(toggled_on):
 
 
 func _on_exclusive_toggled(toggled_on):
-	if exclusive.button_pressed == true:
+	if exclusive.button_pressed == true and exclusive.visible == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
-	else:
+	elif exclusive.button_pressed == false and exclusive.visible == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		pass

@@ -11,7 +11,7 @@ const scale_lvl = preload("res://scenes/levels/game_sequence/1-1_Tutorial_throw.
 #const SCENE_SWITCHER = preload("res://scenes/levels/Transition/scene_switcher.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Manager.load_data()
+	#Manager.load_data()
 	transition.ap.play("Opening")
 
 
