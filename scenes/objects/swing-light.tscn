@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bjeobrkgw5ahv"]
 
-[ext_resource type="Texture2D" uid="uid://by8pvsbkho27" path="res://assets/objects/LamparaColgosa.png" id="1_13vq5"]
+[ext_resource type="Texture2D" uid="uid://dq8uut4ds5unl" path="res://assets/objects/LamparaColgosa.png" id="1_13vq5"]
 [ext_resource type="Script" path="res://scenes/cutscenes/Verlet/string.gd" id="3_58ash"]
-[ext_resource type="Texture2D" uid="uid://extapkh422ik" path="res://assets/lights/Lamparacolgosa.png" id="3_drnt4"]
+[ext_resource type="Texture2D" uid="uid://c5bghkivr45dg" path="res://assets/lights/Lamparacolgosa.png" id="3_drnt4"]
 
 [sub_resource type="GDScript" id="GDScript_dox1b"]
 script/source = "extends Node2D
@@ -19,7 +19,7 @@ script/source = "extends Node2D
 @onready var pin_joint_2d = $PinJoint2D
 @export var marker : Marker2D
 
-@export var wait = 0.4
+@export var wait : float = 0
 
 
 # Called when the node enters the scene tree for the first time.
