@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://fcwbjpmxeonm"]
+
+[ext_resource type="Script" path="res://scenes/levels/Testing/savetest.gd" id="1_vgl8h"]
+
+[node name="Savetest" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vgl8h")
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 109.0
+offset_right = 348.0
+offset_bottom = 208.0
+text = "Save
+"
+
+[node name="Load" type="Button" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 306.0
+offset_right = 350.0
+offset_bottom = 405.0
+text = "Load
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 92.0
+offset_right = 1029.0
+offset_bottom = 450.0
+
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
