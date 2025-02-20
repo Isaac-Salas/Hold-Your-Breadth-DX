@@ -432,7 +432,6 @@ light = NodePath("../Swing-light/Light")
 shape = SubResource("CircleShape2D_lkf33")
 
 [node name="dont touch" parent="." instance=ExtResource("69_eogvq")]
-visible = true
 
 [node name="Transition" parent="." instance=ExtResource("68_yxq3e")]
 y_sort_enabled = false
