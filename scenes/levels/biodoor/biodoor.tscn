@@ -1,16 +1,16 @@
-[gd_scene load_steps=18 format=4 uid="uid://ussh2v7e5g06"]
+[gd_scene load_steps=17 format=4 uid="uid://ussh2v7e5g06"]
 
-[ext_resource type="Script" path="res://scenes/levels/biodoor/biodoor.gd" id="1_6qqbe"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
+[ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_gpxfg"]
+[ext_resource type="Texture2D" uid="uid://c7xoy8o8a2q8i" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="3_j0rks"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="3_n4b57"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_yi7fm"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="4_1hbj2"]
 [ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="5_14d3r"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_hmk13"]
-[ext_resource type="Texture2D" uid="uid://bwtlag06aqeoq" path="res://assets/fondos/Lab.png" id="6_ue3nx"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="6_x2u38"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="7_s5l0n"]
-[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="8_npjyd"]
-[ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="9_1nuh5"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="9_yyeum"]
 [ext_resource type="PackedScene" uid="uid://dfwc55jo1qtuj" path="res://scenes/objects/biodoor.tscn" id="10_wj14c"]
 [ext_resource type="PackedScene" uid="uid://kthcc2e8kgeh" path="res://scenes/objects/MetalBox.tscn" id="13_k3cei"]
 
@@ -143,25 +143,8 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qlgg"]
-shader = ExtResource("9_1nuh5")
-shader_parameter/resolution = Vector2(260.765, 180)
-shader_parameter/scan_line_amount = 0.758
-shader_parameter/warp_amount = 2.519
-shader_parameter/noise_amount = 0.3
-shader_parameter/interference_amount = 0.2
-shader_parameter/grille_amount = 0.1
-shader_parameter/grille_size = 1.795
-shader_parameter/vignette_amount = 0.6
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/aberation_amount = 0.5
-shader_parameter/roll_line_amount = 0.3
-shader_parameter/roll_speed = 1.0
-shader_parameter/scan_line_strength = -8.0
-shader_parameter/pixel_strength = -2.0
-
 [node name="BiodoorLevel" type="Node2D"]
-script = ExtResource("1_6qqbe")
+script = ExtResource("1_gpxfg")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -169,17 +152,34 @@ tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAA
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
+[node name="Conveyor" parent="." instance=ExtResource("3_j0rks")]
+position = Vector2(119, 408)
+
+[node name="Conveyor2" parent="." instance=ExtResource("3_j0rks")]
+position = Vector2(215, 408)
+
+[node name="Conveyor3" parent="." instance=ExtResource("3_j0rks")]
+position = Vector2(167, 408)
+
+[node name="WoodenBox" parent="." instance=ExtResource("3_n4b57")]
+position = Vector2(695.662, 134.041)
+
+[node name="Camera2D" parent="." instance=ExtResource("7_s5l0n")]
+
 [node name="Light" parent="." instance=ExtResource("4_1hbj2")]
 position = Vector2(408, 56)
+metadata/_edit_lock_ = true
 
 [node name="Light2" parent="." instance=ExtResource("4_1hbj2")]
 position = Vector2(688, 56)
+metadata/_edit_lock_ = true
 
 [node name="Light3" parent="." instance=ExtResource("4_1hbj2")]
 position = Vector2(120, 56)
+metadata/_edit_lock_ = true
 
 [node name="Barnacle" parent="." instance=ExtResource("6_x2u38")]
-position = Vector2(212, 193)
+position = Vector2(340, 78)
 scale = Vector2(1, 1.00667)
 
 [node name="Ratiña" parent="." instance=ExtResource("5_14d3r")]
@@ -193,28 +193,9 @@ rotation = 3.14159
 [node name="Player" parent="." instance=ExtResource("3_yi7fm")]
 position = Vector2(112, 360)
 
-[node name="Transition" parent="." instance=ExtResource("5_hmk13")]
-
-[node name="dont touch" type="Node" parent="."]
-
-[node name="Background" type="Sprite2D" parent="dont touch"]
-modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
-z_index = -1
-scale = Vector2(11.98, 11.95)
-texture = ExtResource("6_ue3nx")
-centered = false
-metadata/_edit_lock_ = true
-
-[node name="Camera2D" parent="dont touch" instance=ExtResource("7_s5l0n")]
-
-[node name="CRTShader" parent="dont touch" instance=ExtResource("8_npjyd")]
-metadata/_edit_lock_ = true
-
-[node name="CanvasModulate" type="CanvasModulate" parent="dont touch"]
-material = SubResource("ShaderMaterial_3qlgg")
-color = Color(0.49464, 0.4914, 0.54, 1)
-
 [node name="RigidBody2D" parent="." instance=ExtResource("13_k3cei")]
 position = Vector2(172, 332)
 
-[editable path="Transition"]
+[node name="dont touch" parent="." instance=ExtResource("9_yyeum")]
+
+[node name="Transition" parent="." instance=ExtResource("5_hmk13")]

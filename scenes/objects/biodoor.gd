@@ -9,3 +9,5 @@ func _on_keyhole_body_entered(body: Node2D) -> void:
 		ap.play("OPEN")
 		await(ap.animation_finished)
 		queue_free()
+	elif body.is_in_group("breakable"):
+		body.destroy()
