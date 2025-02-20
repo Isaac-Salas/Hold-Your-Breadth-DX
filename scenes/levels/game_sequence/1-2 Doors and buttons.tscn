@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ckg57n263xncs"]
+[gd_scene load_steps=22 format=4 uid="uid://ckg57n263xncs"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_21qq4"]
 [ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
@@ -8,12 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="6_3oxrn"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="7_om77o"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="7_xa2qc"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="8_cwd08"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="8_dtxr0"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="9_6huti"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="10_jeppq"]
 [ext_resource type="PackedScene" uid="uid://bhe6366hku86k" path="res://scenes/levels/game_sequence/3-1 Scale level.tscn" id="11_r3i4x"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="12_gw1i6"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="12_yuu1k"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="13_hfyvl"]
+[ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="13_skrjh"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="15_4tewc"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
@@ -204,7 +207,10 @@ metadata/_edit_lock_ = true
 [node name="lights" type="Node" parent="."]
 
 [node name="Light2" parent="lights" instance=ExtResource("4_nhbgi")]
-position = Vector2(194, -1)
+position = Vector2(195, 7)
+
+[node name="Lamp" parent="lights/Light2" instance=ExtResource("8_cwd08")]
+position = Vector2(517, 178)
 
 [node name="Swing-light" parent="lights" node_paths=PackedStringArray("marker") instance=ExtResource("15_4tewc")]
 position = Vector2(484, 50)
@@ -216,8 +222,18 @@ position = Vector2(483, 42)
 [node name="Player" parent="." instance=ExtResource("3_3gyx6")]
 position = Vector2(192, -26)
 
+[node name="Indicator-Arrow" parent="." instance=ExtResource("13_skrjh")]
+position = Vector2(480, 100)
+rotation = 1.57079
+
+[node name="Exit-Sign" parent="." instance=ExtResource("12_gw1i6")]
+position = Vector2(659, 265)
+
+[node name="Light" parent="." instance=ExtResource("4_nhbgi")]
+position = Vector2(95, 248)
+
 [node name="RigidBody2D" parent="." instance=ExtResource("5_cpr1c")]
-position = Vector2(356, 164)
+position = Vector2(645, 184)
 
 [node name="Conveyor" parent="." instance=ExtResource("9_6huti")]
 position = Vector2(552, 408)
@@ -232,14 +248,17 @@ position = Vector2(-1, 1)
 [node name="dont touch" parent="." instance=ExtResource("12_yuu1k")]
 
 [node name="Transition" parent="." instance=ExtResource("10_jeppq")]
+visible = false
 modulate = Color(1, 1, 1, 1)
 target_scene = ExtResource("11_r3i4x")
 
 [node name="LightOccluder2D" parent="Transition/Sprite2D" index="0"]
 visible = true
+occluder_light_mask = 0
 
 [node name="LightOccluder2D" parent="Transition/Sprite2D2" index="0"]
 visible = true
+occluder_light_mask = 0
 
 [connection signal="pressed" from="Buttons/Button_red3" to="Buttons/Button_red2/Button_Red_Signal" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Button_red3" to="Doors/Door" method="toggle_door"]
