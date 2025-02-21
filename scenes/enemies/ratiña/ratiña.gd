@@ -15,6 +15,9 @@ class_name  Rat_enemy
 @export var startflee = false
 @onready var alerted = $Alerted
 
+@onready var left_r = $LeftR
+@onready var right_r = $RightR
+
 
 
 
@@ -46,17 +49,30 @@ func _physics_process(delta):
 				
 	match startflee:
 		true:
+			sprite.play("new_animation")
 			#print("Fleeing")
 			
 			var movingto = self.global_position.move_toward(ratfleetarget.global_position, delta*(speed*50))
 			var movector = (movingto-self.global_position)*2
-			print(abs(movector.x))
+			self.rotation_degrees = 0
+			#print(abs(movector.x))
 			if movector > Vector2(0,0):
 				sprite.flip_h = true
 			if movector < Vector2(0,0):
 				sprite.flip_h = false
 			#self.global_position.x = movingto.x
-			set_deferred("lock_rotation", false)
+			#set_deferred("lock_rotation", false)
+			
+			if left_r.is_colliding() or right_r.is_colliding():
+				print(right_r.get_collider())
+				print("tryclimb")
+				sprite.rotation_degrees = -90
+				
+				apply_central_impulse(Vector2i(0, -50))
+			else:
+				sprite.rotation_degrees = 0
+			
+			
 			apply_central_impulse(Vector2i(movector.x, 0))
 			if self.global_position.x == ratfleetarget.global_position.x or abs(movector.x) < 1:
 				set_deferred("lock_rotation", true)
@@ -64,6 +80,7 @@ func _physics_process(delta):
 				
 		false:
 			alerted.visible = false
+			sprite.stop()
 			pass
 	
 	

@@ -199,14 +199,16 @@ func shrink(scalerate):
 		sprite.scale = Vector2(0.1,0.1)
 
 func grab(body):
-	if currentobj and picking == false:
+	if body and picking == false:
+		if body.is_in_group("Matraz"):
+			body.break_after_throw = true
 		$AnimatedSprite2D.visible = false
 		picking = true
-		currentobj.reparent(pickup)
-		currentobj.freeze = true
-		currentobj.colision.disabled = true
+		body.reparent(pickup)
+		body.freeze = true
+		body.colision.disabled = true
 		#currentobj.collision.layer = 8
-		currentobj.global_position = pickup.global_position
+		body.global_position = pickup.global_position
 
 #func letgo(body):
 	#if currentobj and picking == true:

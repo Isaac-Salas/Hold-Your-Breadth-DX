@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://f006j5ihgekl"]
+
+[ext_resource type="Script" path="res://scenes/objects/BreakableGlass/glass.gd" id="1_tfy33"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nkbq4"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+radial_velocity_min = 50.0
+radial_velocity_max = 100.0
+gravity = Vector3(0, 196, 0)
+radial_accel_min = 50.0
+radial_accel_max = 100.0
+scale_max = 5.0
+
+[node name="Glass" type="Node2D"]
+script = ExtResource("1_tfy33")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_nkbq4")
+lifetime = 3.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+fixed_fps = 60

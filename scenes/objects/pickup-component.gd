@@ -7,6 +7,7 @@ class_name ObjectClass
 @export var destroyplace : Node2D
 @onready var light_occluder_2d: LightOccluder2D = $LightOccluder2D
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
+@export var break_after_throw : bool = false
 
 
 func _on_detector_area_entered(area):
@@ -35,3 +36,5 @@ func set_size(target_size):
 func _on_body_entered(body):
 	audio_stream_player_2d.pitch_scale = randf_range(3,6)
 	audio_stream_player_2d.play()
+	if break_after_throw == true:
+		destroy()
