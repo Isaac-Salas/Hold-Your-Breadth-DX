@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://ussh2v7e5g06"]
+[gd_scene load_steps=19 format=4 uid="uid://ussh2v7e5g06"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_gpxfg"]
-[ext_resource type="Texture2D" uid="uid://c7xoy8o8a2q8i" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
+[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="3_j0rks"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="3_n4b57"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_yi7fm"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="9_yyeum"]
 [ext_resource type="PackedScene" uid="uid://dfwc55jo1qtuj" path="res://scenes/objects/biodoor.tscn" id="10_wj14c"]
 [ext_resource type="PackedScene" uid="uid://kthcc2e8kgeh" path="res://scenes/objects/MetalBox.tscn" id="13_k3cei"]
+[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="14_apwdl"]
+[ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="15_ums8h"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -162,7 +164,7 @@ position = Vector2(215, 408)
 position = Vector2(167, 408)
 
 [node name="WoodenBox" parent="." instance=ExtResource("3_n4b57")]
-position = Vector2(695.662, 134.041)
+position = Vector2(530, 160)
 
 [node name="Camera2D" parent="." instance=ExtResource("7_s5l0n")]
 
@@ -182,13 +184,14 @@ metadata/_edit_lock_ = true
 position = Vector2(340, 78)
 scale = Vector2(1, 1.00667)
 
-[node name="Ratiña" parent="." instance=ExtResource("5_14d3r")]
+[node name="Ratiña" parent="." node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("5_14d3r")]
 position = Vector2(408, 376)
 rotation = 3.14159
+ratfleetarget = NodePath("../Ratfleemarker")
 
 [node name="Biodoor" parent="." instance=ExtResource("10_wj14c")]
 position = Vector2(720, 336)
-rotation = 3.14159
+scale = Vector2(-1, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_yi7fm")]
 position = Vector2(112, 360)
@@ -199,3 +202,9 @@ position = Vector2(172, 332)
 [node name="dont touch" parent="." instance=ExtResource("9_yyeum")]
 
 [node name="Transition" parent="." instance=ExtResource("5_hmk13")]
+
+[node name="Ratfleemarker" parent="." instance=ExtResource("14_apwdl")]
+position = Vector2(316, 373)
+
+[node name="Vial_green" parent="." instance=ExtResource("15_ums8h")]
+position = Vector2(420, 252)

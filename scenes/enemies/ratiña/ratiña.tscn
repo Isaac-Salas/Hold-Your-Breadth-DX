@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://gyluo2bsm1cg"]
+[gd_scene load_steps=24 format=3 uid="uid://gyluo2bsm1cg"]
 
 [ext_resource type="Script" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
 [ext_resource type="Texture2D" uid="uid://iadmyo4lpovb" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
@@ -124,6 +124,9 @@ func _physics_process(delta):
 	global_transform = Transform2D(0, global_position)
 "
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_14whu"]
+radius = 25.0
+
 [node name="Ratiña" type="RigidBody2D" groups=["edible", "throwable"]]
 collision_layer = 3
 collision_mask = 3
@@ -175,8 +178,15 @@ target_position = Vector2(-22, 0)
 [node name="RightR" type="RayCast2D" parent="."]
 target_position = Vector2(22, 0)
 
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("CircleShape2D_14whu")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]
 [connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_detect_body_exited"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
+[connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]

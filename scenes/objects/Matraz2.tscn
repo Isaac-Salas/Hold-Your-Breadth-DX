@@ -23,9 +23,11 @@ shape = SubResource("RectangleShape2D_7eoej")
 texture = ExtResource("2_teptt")
 
 [node name="PointLight2D" parent="Sprite2D" index="0"]
+visible = true
 texture = ExtResource("2_teptt")
 
 [node name="CollisionShape2D" parent="Detector" index="0"]
+visible = false
 shape = SubResource("CircleShape2D_8llh2")
 
 [node name="SpawnerComponent" parent="." index="3"]
