@@ -17,8 +17,10 @@ class_name  Rat_enemy
 
 @onready var left_r = $LeftR
 @onready var right_r = $RightR
+@onready var detector = $Detector
 
 
+const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")
 
 
 
@@ -130,7 +132,8 @@ func _on_timer_timeout():
 
 func _on_player_detect_body_entered(body):
 	if body.is_in_group("Player"):
-		player.scare.connect(fleeing)
+		if player.scare.is_connected(fleeing) == false:
+			player.scare.connect(fleeing)
 		#timer.stop()
 		player = body
 		if player.current == "Big":
@@ -157,3 +160,19 @@ func _on_player_detect_body_exited(body):
 func _on_timer_3_timeout():
 	fleeing()
 	
+
+
+func _on_detector_area_entered(area):
+	if area is ObjectDetect:
+		print("Highlight!")
+		var newmat = ShaderMaterial.new()
+		newmat.shader = OUTLINE
+		newmat.set_shader_parameter("width", 2)
+		newmat.set_shader_parameter("outline_color", Color("ffaa00"))
+		#newmat.set_shader_parameter("flickering_speed", 20)
+		sprite.material = newmat
+
+
+func _on_detector_area_exited(area):
+	if area is ObjectDetect:
+		sprite.material = null

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dplx7vme5hffd"]
+[gd_scene load_steps=16 format=4 uid="uid://dplx7vme5hffd"]
 
 [ext_resource type="Script" path="res://scenes/levels/Testing/testing.gd" id="1_bjxlj"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="8_t6iwl"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="9_6neql"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_25knb"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="9_rro87"]
 [ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="10_7c0ax"]
 [ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="10_byuhe"]
@@ -189,3 +190,6 @@ position = Vector2(603, 346)
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("11_t2ujt")]
 position = Vector2(501, 209)
+
+[node name="WoodenBox" parent="." instance=ExtResource("9_rro87")]
+position = Vector2(695, 284)

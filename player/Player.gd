@@ -147,11 +147,15 @@ func _physics_process(delta):
 	if tieso == false:
 		move_and_slide()
 	
-func get_hit():
+func get_hit(canrevive : bool):
 	self.queue_free()
 	ragdoll_spawn.scene = PLAYERAGDOLL
-	var dead = ragdoll_spawn.spawn()
-	dead.revived()
+	var dead : RigidPlayer = ragdoll_spawn.spawn()
+	if canrevive == true:
+		dead.revived()
+	else:
+		pass
+	
 	return dead
 
 

@@ -1,23 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu22b3esuv0aj"]
+[gd_scene load_steps=8 format=3 uid="uid://bu22b3esuv0aj"]
 
-[ext_resource type="Texture2D" uid="uid://6ifk2bjjfxcl" path="res://assets/sprites/Sword/Halberd-sheet.png" id="1_y2a2y"]
-[ext_resource type="Texture2D" uid="uid://d1xer22dcfy4h" path="res://assets/sprites/Sword/Halberd.png" id="2_b1ru7"]
-[ext_resource type="Script" path="res://scenes/Components/sword_orbit.gd" id="3_j3r5a"]
+[ext_resource type="Script" path="res://components/sword_orbit.gd" id="3_j3r5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihy8l"]
-atlas = ExtResource("1_y2a2y")
 region = Rect2(34, 0, 34, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7qlmv"]
-atlas = ExtResource("1_y2a2y")
 region = Rect2(68, 0, 34, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrnh8"]
-atlas = ExtResource("1_y2a2y")
 region = Rect2(0, 0, 34, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jp8xo"]
-atlas = ExtResource("2_b1ru7")
 region = Rect2(0, 0, 28, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_25unu"]

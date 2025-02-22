@@ -74,7 +74,7 @@ func _on_area_2d_body_entered(body):
 		animation_player.play("Attack")
 		var children : Camera2D = body.find_child("Camera2D")
 		children.position_smoothing_enabled = false
-		var new = body.get_hit()
+		var new = body.get_hit(false)
 		children.reparent(new)
 		new.apply_central_impulse(Vector2(1500, -200))
 		player = new
