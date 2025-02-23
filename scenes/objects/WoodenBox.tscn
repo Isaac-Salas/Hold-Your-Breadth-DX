@@ -61,6 +61,7 @@ max_distance = 1000.0
 attenuation = 5.0
 max_polyphony = 2
 panning_strength = 3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
