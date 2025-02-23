@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name  OptionsMenu
 @export var Enviroment : WorldEnvironment
 @onready var brightnes = $Brightnes
 @onready var contrast = $Contrast
@@ -19,20 +20,22 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("Esc"):
-		if toggle < 1:
-			get_tree().paused = true
-			visible = true
-			toggle += 1
-		else:
-			get_tree().paused = false
-			visible = false
-			toggle = 0
-		print(toggle)
+		showtoggle()
 	
 	Enviroment.environment.adjustment_brightness = brightnes.value
 	Enviroment.environment.adjustment_contrast = contrast.value
 	Enviroment.environment.adjustment_saturation = saturation.value
 
+func showtoggle():
+	if toggle < 1:
+		get_tree().paused = true
+		visible = true
+		toggle += 1
+	else:
+		get_tree().paused = false
+		visible = false
+		toggle = 0
+	print(toggle)
 
 func _on_reset_pressed():
 	brightnes.value = 1
@@ -68,3 +71,7 @@ func _on_exclusive_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		pass
+
+
+func _on_back_pressed():
+	showtoggle()
