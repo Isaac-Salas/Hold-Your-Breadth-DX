@@ -18,6 +18,7 @@ class_name  Rat_enemy
 @onready var left_r = $LeftR
 @onready var right_r = $RightR
 @onready var detector = $Detector
+@onready var spawnedfrom : RatSpawn
 
 
 const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")

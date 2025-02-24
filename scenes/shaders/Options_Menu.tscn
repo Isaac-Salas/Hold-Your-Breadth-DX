@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://fnvs7y1btss0"]
 
 [ext_resource type="Script" path="res://scenes/shaders/options_menu.gd" id="1_5qxbs"]
-[ext_resource type="FontFile" uid="uid://chv4jun2cg4xe" path="res://assets/Fonts/DePixelHalbfett.otf" id="2_l06u5"]
+[ext_resource type="FontFile" uid="uid://cs1qpj4180qrs" path="res://assets/Fonts/DePixelHalbfett.otf" id="2_l06u5"]
 
 [node name="Sprite2D" type="CanvasLayer"]
 process_mode = 3

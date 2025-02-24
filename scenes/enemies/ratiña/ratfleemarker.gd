@@ -1,36 +1,26 @@
 extends Marker2D
-
-@onready var player : SlimePlayer
-var cancatch = false
-var catched = false
-var catchedrats : Array = []
+class_name RatFleeMarker
 @onready var timer = $Timer
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	player = get_tree().get_first_node_in_group("Player")
-	player.scare.connect(catch)
+@onready var area_2d = $Area2D
+@onready var hole_anim = $HoleAnim
+@onready var Spawner : RatSpawn
 
-
-
-
-func catch():
-	#print("Changingcatch")
-	cancatch = true
-
+func  _ready():
+	hole_anim.play("Spawned")
+	
 
 func _on_area_2d_body_entered(body):
-	if cancatch == true and body is Rat_enemy:
-		catched = true
-		print("catching")
-		catchedrats.append(body)
-		for rat in catchedrats:
-			rat.set_deferred("freeze", true)
-			rat.global_position = self.global_position
-		timer.start(0.2)
+	if body is Rat_enemy:
+		Spawner = body.spawnedfrom
+		body.queue_free()
+		hole_anim.play("Idle")
+		timer.start(2)
+		
 
 
 func _on_timer_timeout():
-	for rat in catchedrats:
-		rat.set_deferred("freeze", false)
-	catchedrats = []
+	await hole_anim.animation_looped
+	Spawner.reset()
+	hole_anim.play("Spawned")
+	timer.stop()

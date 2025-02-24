@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://scenes/levels/Testing/testing.gd" id="1_bjxlj"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
-[ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="5_hcnto"]
+[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="3_n0q4a"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="5_50bop"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="8_4y62x"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="8_t6iwl"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="9_6neql"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_25knb"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="9_rro87"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
-[ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="10_7c0ax"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
 [ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="10_byuhe"]
 [ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="11_t2ujt"]
 
@@ -151,14 +151,18 @@ position = Vector2(130, 128)
 [node name="Ratillas" type="Node2D" parent="."]
 position = Vector2(235, 56)
 
-[node name="Ratiña2" parent="Ratillas" node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("5_hcnto")]
-position = Vector2(66, 431)
-ratfleetarget = NodePath("../../Ratfleemarker")
+[node name="Ratspawn" parent="Ratillas" node_paths=PackedStringArray("Fleemarker") instance=ExtResource("3_n0q4a")]
+position = Vector2(17, 440)
+Rat_number = 1
+Fleemarker = NodePath("../../Ratfleemarker")
+
+[node name="Swing-light" parent="Ratillas" instance=ExtResource("5_50bop")]
+position = Vector2(15, 85)
 
 [node name="Matraces" type="Node2D" parent="."]
 
 [node name="Ratfleemarker" parent="." instance=ExtResource("8_t6iwl")]
-position = Vector2(992, 474)
+position = Vector2(1006, 448)
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -176,9 +180,6 @@ metadata/_edit_lock_ = true
 [node name="Light3" parent="." instance=ExtResource("9_25knb")]
 position = Vector2(619.64, 62)
 metadata/_edit_lock_ = true
-
-[node name="Barnacle" parent="." instance=ExtResource("10_7c0ax")]
-position = Vector2(912, 308)
 
 [node name="dont touch" parent="." instance=ExtResource("8_4y62x")]
 
