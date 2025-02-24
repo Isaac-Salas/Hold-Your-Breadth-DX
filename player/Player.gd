@@ -126,24 +126,29 @@ func _physics_process(delta):
 	## Manage shrink
 	#if Input.is_action_pressed("shrink"):
 		#shrink()
-		
-	#Manage grab
+	
+	# Manage grab
 	if Input.is_action_just_pressed("LefMouse") and picking == false and scanning == false and toggle == false:
 		object_detect.monitoring = true
 		scanning = true
-	
+
 	if Input.is_action_just_released("LefMouse") and picking == false and scanning == true and toggle == false:
-		object_detect.monitoring = false
-		object_detect.monitorable = false
 		scanning = false
-		grab(currentobj)
-	
+		var success = grab(currentobj)
+		if not success:
+			object_detect.monitoring = true 
+		else:
+			object_detect.monitoring = false
+			object_detect.monitorable = false
+
+	# Manage throwing
 	if Input.is_action_pressed("RightMouse") and picking == true:
 		aim(delta)
+
 	if Input.is_action_just_released("RightMouse") and throwing == true:
 		throw(currentobj)
 		object_detect.monitorable = true
-		
+
 	if tieso == false:
 		move_and_slide()
 	
@@ -203,7 +208,7 @@ func shrink(scalerate):
 		sprite.scale = Vector2(0.1,0.1)
 
 func grab(body):
-	if body and picking == false:
+	if body and picking == false and body.sprite.scale <= sprite.scale :
 		if body.is_in_group("Matraz"):
 			body.break_after_throw = true
 		$AnimatedSprite2D.visible = false
@@ -213,7 +218,8 @@ func grab(body):
 		body.colision.disabled = true
 		#currentobj.collision.layer = 8
 		body.global_position = pickup.global_position
-
+		return true
+	return false
 #func letgo(body):
 	#if currentobj and picking == true:
 		#picking = false
@@ -255,8 +261,9 @@ func set_size(target_size):
 	colision.scale = target_size/2
 	rigidcolision.scale = target_size/2
 	sprite.scale = target_size/2
+	if currentobj and picking == true:
+		currentobj.set_size(target_size)
 
 func _on_object_detect_body_entered(body):
 	if body.is_in_group("throwable") and picking == false:
 		currentobj = body
-		#print(currentobj)
