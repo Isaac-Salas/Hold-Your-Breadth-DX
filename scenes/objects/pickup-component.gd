@@ -1,3 +1,4 @@
+@tool
 extends RigidBody2D
 class_name ObjectClass
 @onready var colision = $CollisionShape2D
@@ -10,16 +11,28 @@ class_name ObjectClass
 @export var break_after_throw : bool = false
 @onready var sprite_2d = $Sprite2D
 @onready var detector = $Detector
+@export var starting_scale = 2.0
 
 const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")
 
-func _on_detector_area_entered(area):
-	if area is ObjectDetect:
+func _ready() -> void:
+	set_size(Vector2(starting_scale,starting_scale))
+	
+func _on_detector_area_entered(area: Area2D):
+	if area is ObjectDetect and area.get_parent().get_parent().sprite.scale >= sprite.scale:
 		print("Highlight!")
 		var newmat = ShaderMaterial.new()
 		newmat.shader = OUTLINE
 		newmat.set_shader_parameter("width", 2)
 		newmat.set_shader_parameter("outline_color", Color("ffaa00"))
+		#newmat.set_shader_parameter("flickering_speed", 20)
+		sprite_2d.material = newmat
+		indicator.visible = true
+	elif area is ObjectDetect:
+		var newmat = ShaderMaterial.new()
+		newmat.shader = OUTLINE
+		newmat.set_shader_parameter("width", 1)
+		newmat.set_shader_parameter("outline_color", Color("ff1111"))
 		#newmat.set_shader_parameter("flickering_speed", 20)
 		sprite_2d.material = newmat
 		indicator.visible = true

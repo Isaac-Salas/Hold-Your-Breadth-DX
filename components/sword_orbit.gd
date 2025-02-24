@@ -8,8 +8,6 @@ class_name SwordOrbComponent
 @export var player : Node2D
 
 func _process(delta):
-		
-
 	MousePos = get_local_mouse_position()
 	rotation += MousePos.angle()*(delta*factor)
 		#print("Show")
