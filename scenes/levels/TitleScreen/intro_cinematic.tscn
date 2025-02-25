@@ -788,11 +788,11 @@ _data = {
 
 [node name="IntroCinematic" type="Node2D" groups=["Nivel"]]
 script = ExtResource("1_jvodv")
+skipoverride = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_5a0kr")
-frame_progress = 1.0
 centered = false
 
 [node name="ColorRect" type="ColorRect" parent="."]

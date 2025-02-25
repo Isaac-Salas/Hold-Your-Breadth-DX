@@ -129,13 +129,14 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_6yya8")
 
 [node name="HoleAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_sayuk")
 animation = &"Idle"
 frame_progress = 0.743485
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(5, 9)
 scale = Vector2(2, 2)
 texture = ExtResource("4_lb1v4")
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=201 format=3 uid="uid://o1wthtbpquqd"]
 
 [ext_resource type="Script" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
-[ext_resource type="Texture2D" uid="uid://gl2hvcpdyrfb" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
-[ext_resource type="Texture2D" uid="uid://fuuil6b7h8ku" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
-[ext_resource type="Texture2D" uid="uid://cpvhfliubmjcf" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
-[ext_resource type="Texture2D" uid="uid://by6ifgy7ch0gf" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
-[ext_resource type="FontFile" uid="uid://bg5if0t3e31xd" path="res://assets/Fonts/HORROR SPRAY DEMO Regular.otf" id="54_auanj"]
+[ext_resource type="Texture2D" uid="uid://ceiajaqp74uku" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
+[ext_resource type="Texture2D" uid="uid://b8ucy3n5kg5qn" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
+[ext_resource type="Texture2D" uid="uid://fp8e5t13pl53" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
+[ext_resource type="Texture2D" uid="uid://dftslqx8uhrha" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
+[ext_resource type="FontFile" uid="uid://bnx8guqpgx5fs" path="res://assets/Fonts/HORROR SPRAY DEMO Regular.otf" id="54_auanj"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="103_6same"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]

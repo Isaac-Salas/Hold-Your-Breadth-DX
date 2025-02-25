@@ -143,8 +143,18 @@ theme_override_fonts/font = ExtResource("2_l06u5")
 theme_override_font_sizes/font_size = 25
 text = "Back"
 
+[node name="QUIT" type="Button" parent="."]
+offset_left = 670.0
+offset_top = 484.0
+offset_right = 807.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("2_l06u5")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
 [connection signal="pressed" from="RESET" to="." method="_on_reset_pressed"]
 [connection signal="toggled" from="Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="Exclusive" to="." method="_on_exclusive_toggled"]
 [connection signal="toggled" from="CRT" to="." method="_on_crt_toggled"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="QUIT" to="." method="_on_quit_pressed"]
