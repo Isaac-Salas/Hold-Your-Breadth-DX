@@ -1,8 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://ckg57n263xncs"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_21qq4"]
-[ext_resource type="Script" path="res://scenes/levels/game_sequence/1_2_doors_and_buttons.gd" id="1_n5vfs"]
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_3gyx6"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="4_nhbgi"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="5_cpr1c"]
@@ -156,7 +155,6 @@ size = Vector2(73.5, 202.542)
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_21qq4")
-script = ExtResource("1_n5vfs")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true

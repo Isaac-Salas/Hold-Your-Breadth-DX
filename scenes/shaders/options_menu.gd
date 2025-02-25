@@ -75,9 +75,3 @@ func _on_exclusive_toggled(toggled_on):
 
 func _on_back_pressed():
 	showtoggle()
-
-
-func _on_quit_pressed():
-	get_tree().paused = false
-	var INTRO_CINEMATIC = load("res://scenes/levels/TitleScreen/intro_cinematic.tscn")
-	get_tree().change_scene_to_packed(INTRO_CINEMATIC)

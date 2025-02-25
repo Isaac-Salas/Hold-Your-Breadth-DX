@@ -18,12 +18,6 @@ var Level6_66 = false
 var save_dict : Dictionary
 
 
-func setter(variabletoset : String, value ):
-	var temp = get(variabletoset)
-	temp = value
-	set(variabletoset, temp)
-	print("Setting ", variabletoset, " to: ", value)
-
 func save():
 	save_dict = {
 		"Firsttime" : Firsttime,
@@ -50,7 +44,6 @@ func save_game():
 	var data = save()
 	var json_string = JSON.stringify(data)
 	save_file.store_line(json_string)
-	print(save_file)
 	
 
 func load_game():
@@ -61,7 +54,6 @@ func load_game():
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
-	print(save_file)
 	while save_file.get_position() < save_file.get_length():
 		var json_string = save_file.get_line()
 
