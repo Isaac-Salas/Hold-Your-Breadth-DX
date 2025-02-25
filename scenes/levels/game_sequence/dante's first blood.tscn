@@ -258,6 +258,12 @@ target_scene = ExtResource("3_elikg")
 position = Vector2(674, 460)
 rotation = 1.57079
 
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 540)
+
 [node name="dont touch" parent="." instance=ExtResource("15_2wvt5")]
 
 [node name="Button_red" parent="." instance=ExtResource("13_1yxvt")]
