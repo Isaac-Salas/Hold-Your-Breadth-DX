@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://bhenjdi5p5ejl"]
 
-[ext_resource type="Texture2D" uid="uid://0iqoonn366pi" path="res://assets/objects/button_animated.png" id="1_jj771"]
+[ext_resource type="Texture2D" uid="uid://dcpeiwf6vh47y" path="res://assets/objects/button_animated.png" id="1_jj771"]
 [ext_resource type="Script" path="res://scenes/objects/button_red/button_red.gd" id="1_t8urs"]
-[ext_resource type="Texture2D" uid="uid://dwkf5y8jl82w8" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
-[ext_resource type="Texture2D" uid="uid://b1xbly7a42bv0" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
+[ext_resource type="Texture2D" uid="uid://dkm15722kwf6j" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
+[ext_resource type="Texture2D" uid="uid://5o0pcgyla3oo" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1h6ja"]
 light_mode = 1
@@ -116,6 +116,7 @@ sprite_frames = SubResource("SpriteFrames_w27mo")
 animation = &"depresssed"
 autoplay = "depresssed"
 frame = 3
+frame_progress = 1.0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

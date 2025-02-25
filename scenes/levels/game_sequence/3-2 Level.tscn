@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://bwaomego0a1rr"]
+[gd_scene load_steps=22 format=4 uid="uid://bwaomego0a1rr"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_a8c63"]
-[ext_resource type="Texture2D" uid="uid://bal26x6n8eo4l" path="res://assets/tilemap/concrete.png" id="2_te5y8"]
+[ext_resource type="Texture2D" uid="uid://c7xoy8o8a2q8i" path="res://assets/tilemap/concrete.png" id="2_te5y8"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_qy1j8"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="4_vms52"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="5_humr0"]
@@ -9,6 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="7_4vbq7"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="8_2pfl4"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="9_3tumw"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="10_bujr5"]
+[ext_resource type="PackedScene" uid="uid://ckg57n263xncs" path="res://scenes/levels/game_sequence/1-2 Doors and buttons.tscn" id="10_ik7fu"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="11_6icqt"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="13_uyuet"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="14_4h65n"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="14_tstqb"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="15_fxdeb"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="16_d0pni"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -139,32 +147,112 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5kqe"]
+size = Vector2(24, 95)
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_a8c63")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAMAAAAFAAAAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAIAAEAAAAEAAEAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAXAAAAAAACAAAAAAAXAAwAAAAEAAEAAAAXAAsAAAAEAAEAAAAXAAoAAAAFAAAAAAAXAAkAAAAEAAEAAAAXAAgAAAAEAAEAAAAXAAcAAAAFAAAAAAAXAAYAAAAEAAEAAAAXAAUAAAAFAAAAAAAXAAQAAAAEAAEAAAAXAAMAAAAEAAEAAAAXAAIAAAAEAAEAAAAXAAEAAAAEAAEAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAAAA0AAAABAAIAAAD//w0AAAADAAEAAAAAAAwAAAAFAAAAAAAAAAsAAAAFAAAAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAFAAAAAAAAAAcAAAAEAAEAAAAAAAYAAAAFAAAAAAAAAAUAAAAEAAEAAAAAAAQAAAAFAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAMAAAAFAAAAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAAEAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAXAAAAAAACAAAAAAAXAAkAAAAEAAEAAAAXAAgAAAAEAAEAAAAXAAcAAAAFAAAAAAAXAAYAAAAEAAEAAAAXAAUAAAAFAAAAAAAXAAQAAAAEAAEAAAAXAAMAAAAEAAEAAAAXAAIAAAAEAAEAAAAXAAEAAAAEAAEAAAAXAA0AAAAEAAAAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAAAA0AAAAEAAAAAAAAAAoAAAABAAIAAAAAAAkAAAAEAAEAAAAAAAgAAAAFAAAAAAAAAAcAAAAEAAEAAAAAAAYAAAAFAAAAAAAAAAUAAAAEAAEAAAAAAAQAAAAFAAAAAAAXAAoAAAABAAIAAAAWAAoAAAAEAAAAAAAVAAoAAAAEAAAAAAAUAAoAAAAEAAAAAAATAAoAAAAEAAAAAAASAAoAAAAEAAAAAAARAAoAAAAEAAAAAAAQAAoAAAAEAAAAAAAPAAoAAAAEAAAAAAAOAAoAAAAEAAAAAAAIAAoAAAAEAAAAAAAHAAoAAAAEAAAAAAAGAAoAAAAEAAAAAAAFAAoAAAAEAAAAAAAEAAoAAAAEAAAAAAADAAoAAAAEAAAAAAACAAoAAAAEAAAAAAABAAoAAAAEAAAAAAAYAAwAAAAFAAAAAAAYAAsAAAAFAAAAAAAYAAoAAAACAAAAAAAYAA0AAAACAAIAAAD+/woAAAAAAAAAAAD//woAAAAEAAAAAAD+/w0AAAABAAIAAAD+/wwAAAAFAAAAAAD+/wsAAAAEAAEAAAD//w0AAAAEAAAAAAAJAAoAAAADAAIAAAANAAoAAAADAAEAAAAJAAQAAAACAAAAAAAJAAUAAAAFAAAAAAAJAAYAAAAEAAEAAAAJAAcAAAAEAAEAAAANAAEAAAACAAEAAAANAAIAAAACAAEAAAANAAMAAAAFAAAAAAANAAQAAAAFAAAAAAANAAUAAAAFAAAAAAANAAYAAAAFAAAAAAANAAcAAAAEAAEAAAALAAQAAAADAAAAAAAGAAQAAAABAAIAAAAGAAMAAAAEAAEAAAAGAAIAAAAAAAEAAAAGAAEAAAAAAAEAAAAIAAQAAAAEAAAAAAAHAAQAAAAEAAAAAAAHAAEAAAABAAEAAAAHAAIAAAABAAIAAAAMAAEAAAABAAEAAAALAAEAAAAAAAEAAAAJAAEAAAACAAEAAAAIAAEAAAABAAEAAAAIAAIAAAABAAIAAAAJAAIAAAACAAIAAAALAAIAAAAAAAIAAAAMAAIAAAABAAIAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
 [node name="Player" parent="." instance=ExtResource("3_qy1j8")]
-position = Vector2(108, 159)
-
-[node name="Platform" parent="." instance=ExtResource("4_vms52")]
-position = Vector2(576, 288)
+position = Vector2(107, 597)
 
 [node name="Camera2D" parent="." instance=ExtResource("5_humr0")]
 position = Vector2(0, 1)
 zoom = Vector2(1.004, 1.004)
 
-[node name="Swing-light" parent="." instance=ExtResource("6_y645p")]
-position = Vector2(408, 99)
+[node name="Exit_door" parent="." instance=ExtResource("10_bujr5")]
+position = Vector2(1128, 576)
 
-[node name="Light" parent="." instance=ExtResource("7_4vbq7")]
-position = Vector2(603, 57)
+[node name="Exit-Sign" parent="." instance=ExtResource("11_6icqt")]
+position = Vector2(1030, 551)
+
+[node name="Button_red" parent="." instance=ExtResource("14_4h65n")]
+position = Vector2(384, 192)
+
+[node name="Shrink-Laser" parent="." instance=ExtResource("15_fxdeb")]
+position = Vector2(990, 48)
+rotation = 1.57079
+
+[node name="Grow-Laser" parent="." instance=ExtResource("16_d0pni")]
+position = Vector2(166, 51)
+rotation = 1.57079
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Swing-light" parent="Lights" instance=ExtResource("6_y645p")]
+position = Vector2(312, 221)
+metadata/_edit_lock_ = true
+
+[node name="Light" parent="Lights" instance=ExtResource("7_4vbq7")]
+position = Vector2(503, 53)
+
+[node name="Lamp" parent="Lights" instance=ExtResource("13_uyuet")]
+position = Vector2(1098, 616)
+rotation = 3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Lamp2" parent="Lights" instance=ExtResource("13_uyuet")]
+position = Vector2(9, 618)
+scale = Vector2(1, 1)
+metadata/_edit_lock_ = true
+
+[node name="WoodenBox" parent="." instance=ExtResource("14_tstqb")]
+position = Vector2(556, 183)
+starting_scale = 2.7
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("4_vms52")]
+position = Vector2(528, 536)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("4_vms52")]
+position = Vector2(528, 464)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("4_vms52")]
+position = Vector2(528, 379)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("4_vms52")]
+position = Vector2(528, 296)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("4_vms52")]
+position = Vector2(528, 231)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("4_vms52")]
+position = Vector2(385, 186)
+rotation = -3.14159
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("4_vms52")]
+position = Vector2(481, 186)
+rotation = -3.14159
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("4_vms52")]
+position = Vector2(576, 186)
+rotation = -3.14159
 
 [node name="dont touch" parent="." instance=ExtResource("8_2pfl4")]
+visible = false
 
 [node name="Transition" parent="." instance=ExtResource("9_3tumw")]
 scale = Vector2(1.501, 1.501)
+target_scene = ExtResource("10_ik7fu")
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(754.164, 381.745)
+shape = SubResource("RectangleShape2D_k5kqe")
+
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 540)
+
+[connection signal="pressed" from="Button_red" to="Exit_door" method="toggle_door"]
+
+[editable path="Transition"]

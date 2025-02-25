@@ -387,6 +387,7 @@ position = Vector2(384, -108)
 position = Vector2(384, 540)
 
 [node name="dont touch" parent="." instance=ExtResource("19_1pgjy")]
+visible = false
 
 [node name="Light" parent="." instance=ExtResource("20_56ndd")]
 position = Vector2(92, 56)

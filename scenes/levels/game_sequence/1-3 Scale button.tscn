@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=4 uid="uid://cj0r44ewv57st"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_ixcgl"]
-[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_ie3v8"]
+[ext_resource type="Texture2D" uid="uid://c7xoy8o8a2q8i" path="res://assets/tilemap/concrete.png" id="2_ie3v8"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_d14u1"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="4_naod3"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_ib21r"]
@@ -290,5 +290,11 @@ target_scene = ExtResource("16_gg6jh")
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(700.667, 427.333)
 shape = SubResource("RectangleShape2D_6l258")
+
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 540)
 
 [editable path="Transition"]
