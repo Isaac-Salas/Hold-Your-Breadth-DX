@@ -15,7 +15,13 @@ class_name  Rat_enemy
 @export var startflee = false
 @onready var alerted = $Alerted
 
+@onready var left_r = $LeftR
+@onready var right_r = $RightR
+@onready var detector = $Detector
+@onready var spawnedfrom : RatSpawn
 
+
+const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")
 
 
 
@@ -46,17 +52,30 @@ func _physics_process(delta):
 				
 	match startflee:
 		true:
+			sprite.play("new_animation")
 			#print("Fleeing")
 			
 			var movingto = self.global_position.move_toward(ratfleetarget.global_position, delta*(speed*50))
 			var movector = (movingto-self.global_position)*2
-			print(abs(movector.x))
+			self.rotation_degrees = 0
+			#print(abs(movector.x))
 			if movector > Vector2(0,0):
 				sprite.flip_h = true
 			if movector < Vector2(0,0):
 				sprite.flip_h = false
 			#self.global_position.x = movingto.x
-			set_deferred("lock_rotation", false)
+			#set_deferred("lock_rotation", false)
+			
+			if left_r.is_colliding() or right_r.is_colliding():
+				print(right_r.get_collider())
+				print("tryclimb")
+				sprite.rotation_degrees = -90
+				
+				apply_central_impulse(Vector2i(0, -50))
+			else:
+				sprite.rotation_degrees = 0
+			
+			
 			apply_central_impulse(Vector2i(movector.x, 0))
 			if self.global_position.x == ratfleetarget.global_position.x or abs(movector.x) < 1:
 				set_deferred("lock_rotation", true)
@@ -64,6 +83,7 @@ func _physics_process(delta):
 				
 		false:
 			alerted.visible = false
+			sprite.stop()
 			pass
 	
 	
@@ -113,7 +133,8 @@ func _on_timer_timeout():
 
 func _on_player_detect_body_entered(body):
 	if body.is_in_group("Player"):
-		player.scare.connect(fleeing)
+		if player.scare.is_connected(fleeing) == false:
+			player.scare.connect(fleeing)
 		#timer.stop()
 		player = body
 		if player.current == "Big":
@@ -140,3 +161,19 @@ func _on_player_detect_body_exited(body):
 func _on_timer_3_timeout():
 	fleeing()
 	
+
+
+func _on_detector_area_entered(area):
+	if area is ObjectDetect:
+		print("Highlight!")
+		var newmat = ShaderMaterial.new()
+		newmat.shader = OUTLINE
+		newmat.set_shader_parameter("width", 2)
+		newmat.set_shader_parameter("outline_color", Color("ffaa00"))
+		#newmat.set_shader_parameter("flickering_speed", 20)
+		sprite.material = newmat
+
+
+func _on_detector_area_exited(area):
+	if area is ObjectDetect:
+		sprite.material = null

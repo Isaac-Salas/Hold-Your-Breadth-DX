@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://xcup5opmlyy7"]
+
+[ext_resource type="Texture2D" uid="uid://dux2ol0ipnae2" path="res://assets/fondos/Lab.png" id="1_ke05x"]
+[ext_resource type="Script" path="res://scenes/shaders/screen_effects.gd" id="1_qp62f"]
+[ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="2_4r0s1"]
+[ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="3_efeye"]
+[ext_resource type="PackedScene" uid="uid://fnvs7y1btss0" path="res://scenes/shaders/Options_Menu.tscn" id="5_e0uqf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uh315"]
+shader = ExtResource("3_efeye")
+shader_parameter/resolution = Vector2(260.765, 180)
+shader_parameter/scan_line_amount = 0.758
+shader_parameter/warp_amount = 2.519
+shader_parameter/noise_amount = 0.3
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.795
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
+[sub_resource type="Environment" id="Environment_7jeub"]
+background_mode = 3
+fog_light_energy = 4.55
+adjustment_enabled = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5qksy"]
+light_mode = 1
+
+[node name="dont touch" type="Node2D"]
+script = ExtResource("1_qp62f")
+showoverride = true
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.05, 0.05, 0.05, 1)
+z_index = -5
+scale = Vector2(11.98, 11.95)
+texture = ExtResource("1_ke05x")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="CRTShader" parent="." instance=ExtResource("2_4r0s1")]
+z_index = 25
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+material = SubResource("ShaderMaterial_uh315")
+color = Color(0.415686, 0.376471, 0.501961, 1)
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7jeub")
+
+[node name="OptionsMenu" parent="." node_paths=PackedStringArray("Enviroment") instance=ExtResource("5_e0uqf")]
+material = SubResource("CanvasItemMaterial_5qksy")
+Enviroment = NodePath("../WorldEnvironment")

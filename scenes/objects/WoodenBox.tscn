@@ -1,22 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx27mjdwpsn4g"]
+[gd_scene load_steps=10 format=3 uid="uid://bx27mjdwpsn4g"]
 
 [ext_resource type="Script" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
-[ext_resource type="Texture2D" uid="uid://dsgasl17nx1k6" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
+[ext_resource type="Texture2D" uid="uid://hxvo8hur5x72" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="3_245jv"]
 [ext_resource type="PackedScene" uid="uid://fsxjau4kfu71" path="res://scenes/objects/brokenwoodenboxes.tscn" id="4_bikkg"]
-[ext_resource type="AudioStream" uid="uid://lpgjytsvnppl" path="res://assets/SFX/Boxcrash.mp3" id="5_d223p"]
+[ext_resource type="AudioStream" uid="uid://bi7l8mxnw1hn4" path="res://assets/SFX/Boxcrash.mp3" id="5_d223p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfjh"]
 size = Vector2(18, 18)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7oth0"]
-light_mode = 1
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_684r4"]
 blend_mode = 1
+light_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6l1ko"]
-radius = 0.01
+radius = 13.31
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lfti4"]
 polygon = PackedVector2Array(-9, 8, -9, 9, -8, 9, -5, 6, -3, 6, -3, 5, -2, 5, -2, 4, -1, 4, -1, 3, 0, 3, 0, 2, 1, 2, 1, 1, 2, 1, 2, 0, 3, 0, 3, -1, 4, -1, 4, -2, 5, -2, 5, -3, 6, -3, 6, -5, 9, -8, 9, -9, 8, -9, 5, -6, 3, -6, 3, -5, 2, -5, 2, -4, 1, -4, 1, -3, 0, -3, 0, -2, -1, -2, -1, -1, -2, -1, -2, 0, -4, 0, -4, 2, -5, 2, -5, 3, -6, 3, -6, 5)
@@ -32,9 +30,6 @@ script = ExtResource("1_ux5yh")
 shape = SubResource("RectangleShape2D_wtfjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 2
-visibility_layer = 2
-material = SubResource("CanvasItemMaterial_7oth0")
 texture = ExtResource("2_2fc7s")
 metadata/_edit_lock_ = true
 
@@ -45,6 +40,8 @@ material = SubResource("CanvasItemMaterial_684r4")
 texture = ExtResource("2_2fc7s")
 
 [node name="Detector" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("CircleShape2D_6l1ko")
@@ -64,6 +61,7 @@ max_distance = 1000.0
 attenuation = 5.0
 max_polyphony = 2
 panning_strength = 3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]

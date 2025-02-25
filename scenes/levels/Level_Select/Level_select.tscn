@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://u8latgnj6og5"]
+
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="1_dduat"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="2_x00pf"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="3_gou6y"]
+[ext_resource type="PackedScene" uid="uid://v4ylrqt2e871" path="res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn" id="4_h634r"]
+
+[sub_resource type="GDScript" id="GDScript_f8i8q"]
+script/source = "extends RigidBody2D
+
+@export var light : RigidBody2D
+var dragging = false 
+@onready var collision_shape_2d = $CollisionShape2D
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	self.global_position = get_global_mouse_position()
+	match dragging:
+		true:
+			collision_shape_2d.set_deferred(\"disabled\",true)
+			light.global_position = get_global_mouse_position()
+		false:
+			collision_shape_2d.set_deferred(\"disabled\",false)
+			
+	
+func _input(event):
+	if event is InputEventMouseMotion:
+		if event.get_relative().x > 0:
+			#print(\"Moving right\")
+			linear_velocity = Vector2 (300,0)
+		if event.get_relative().x < 0:
+			#print(\"Moving left\")
+			linear_velocity = Vector2 (-300,0)
+		if event.get_relative().y > 0:
+			#print(\"Moving down\")
+			linear_velocity = Vector2 (0,300)
+		if event.get_relative().y < 0:
+			#print(\"Moving Up\")
+			linear_velocity = Vector2 (0,-300)
+	#if Input.is_action_just_pressed(\"LefMouse\"):
+		#dragging = true
+	#if Input.is_action_just_released(\"LefMouse\"):
+		#dragging = false
+	
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nm60x"]
+radius = 1.0
+
+[node name="LevelSelect" type="Node2D"]
+
+[node name="Swing-light" parent="." instance=ExtResource("1_dduat")]
+position = Vector2(576, -680)
+scale = Vector2(4, 4)
+
+[node name="Light" parent="Swing-light" index="1"]
+freeze = false
+
+[node name="Mouse" type="RigidBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+can_sleep = false
+freeze = true
+script = SubResource("GDScript_f8i8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse"]
+shape = SubResource("CircleShape2D_nm60x")
+
+[node name="dont touch" parent="." instance=ExtResource("2_x00pf")]
+
+[node name="Transition" parent="." instance=ExtResource("3_gou6y")]
+y_sort_enabled = false
+scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("4_h634r")
+
+[editable path="Swing-light"]

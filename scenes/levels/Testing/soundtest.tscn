@@ -119,8 +119,6 @@ sources/0 = SubResource("TileSetAtlasSource_1blni")
 [node name="Soundtest" type="Node2D"]
 
 [node name="dont touch" parent="." instance=ExtResource("1_jjcu8")]
-visible = true
-showoverride = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_tj0bl")]
 position = Vector2(455, 209)

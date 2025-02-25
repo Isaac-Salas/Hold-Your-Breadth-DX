@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="13_47ecm"]
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="14_2wq0h"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="14_ircil"]
+[ext_resource type="PackedScene" uid="uid://bwaomego0a1rr" path="res://scenes/levels/game_sequence/3-2 Level.tscn" id="17_xq02p"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="19_1pgjy"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="20_56ndd"]
-[ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="20_n827s"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0uvpa"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -370,20 +370,24 @@ position = Vector2(408, -48)
 position = Vector2(408, -119)
 
 [node name="WoodenBox" parent="." instance=ExtResource("10_jx2cx")]
-position = Vector2(432, 376)
+position = Vector2(420, 220)
+starting_scale = 6.0
 
 [node name="WoodenBox2" parent="." instance=ExtResource("10_jx2cx")]
-position = Vector2(408, 376)
+position = Vector2(421, 356)
+starting_scale = 6.0
 
 [node name="Transition" parent="." instance=ExtResource("14_ircil")]
-target_scene = ExtResource("20_n827s")
+target_scene = ExtResource("17_xq02p")
 
 [node name="dont touch" parent="." instance=ExtResource("19_1pgjy")]
 
 [node name="Light" parent="." instance=ExtResource("20_56ndd")]
 position = Vector2(92, 56)
+metadata/_edit_lock_ = true
 
 [node name="Light2" parent="." instance=ExtResource("20_56ndd")]
 position = Vector2(508, 56)
+metadata/_edit_lock_ = true
 
 [editable path="Transition"]
