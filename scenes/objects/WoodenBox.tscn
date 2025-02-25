@@ -27,6 +27,7 @@ max_contacts_reported = 1
 script = ExtResource("1_ux5yh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_wtfjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
