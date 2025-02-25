@@ -11,7 +11,7 @@ extends Node2D
 @export var screenstuff : ScreenStuff 
 @export var fadeout : AnimationPlayer
 @onready var transition: TransitionScene = $Transition
-
+const LEVEL_SELECT = preload("res://scenes/levels/Level_Select/Level_select.tscn")
 const INTRO_CUT = preload("res://scenes/cutscenes/IntroAnims/IntroCut.tscn")
 const TESTING = preload("res://scenes/levels/Testing/testing.tscn")
 const scale_lvl = preload("res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn")
@@ -63,7 +63,7 @@ func _on_levels_mouse_exited():
 
 
 func _on_levels_pressed():
-	transition.transition_to(INTRO_CUT)
+	transition.transition_to(LEVEL_SELECT)
 
 
 func _on_options_mouse_entered():

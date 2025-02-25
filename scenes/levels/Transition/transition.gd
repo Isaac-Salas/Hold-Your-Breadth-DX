@@ -10,7 +10,7 @@ func _ready() -> void:
 	show()
 	ap.play("Opening")
 
-func transition_to(_next_scene) -> void:
+func transition_to(_next_scene : PackedScene) -> void:
 	
 	ap.play("Closing")
 	await(ap.animation_finished)
