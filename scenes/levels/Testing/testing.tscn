@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dplx7vme5hffd"]
+[gd_scene load_steps=17 format=4 uid="uid://dplx7vme5hffd"]
 
 [ext_resource type="Script" path="res://scenes/levels/Testing/testing.gd" id="1_bjxlj"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_2tmgp"]
@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="9_6neql"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_25knb"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="9_rro87"]
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
+[ext_resource type="Texture2D" uid="uid://bal26x6n8eo4l" path="res://assets/tilemap/concrete.png" id="9_rvvt2"]
 [ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="10_byuhe"]
 [ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="11_t2ujt"]
+[ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="13_h2xxs"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_magv0"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -194,3 +195,6 @@ position = Vector2(501, 209)
 
 [node name="WoodenBox" parent="." instance=ExtResource("9_rro87")]
 position = Vector2(695, 284)
+
+[node name="Barnacle" parent="." instance=ExtResource("13_h2xxs")]
+position = Vector2(822, 304)

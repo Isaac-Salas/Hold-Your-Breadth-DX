@@ -1,12 +1,11 @@
 [gd_scene load_steps=19 format=4 uid="uid://ussh2v7e5g06"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_gpxfg"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
+[ext_resource type="Texture2D" uid="uid://bal26x6n8eo4l" path="res://assets/tilemap/concrete.png" id="2_io1lb"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="3_j0rks"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="3_n4b57"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_yi7fm"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="4_1hbj2"]
-[ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="5_14d3r"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_hmk13"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="6_x2u38"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="7_s5l0n"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://kthcc2e8kgeh" path="res://scenes/objects/MetalBox.tscn" id="13_k3cei"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="14_apwdl"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="15_ums8h"]
+[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="15_vijp8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -184,11 +184,6 @@ metadata/_edit_lock_ = true
 position = Vector2(340, 78)
 scale = Vector2(1, 1.00667)
 
-[node name="Ratiña" parent="." node_paths=PackedStringArray("ratfleetarget") instance=ExtResource("5_14d3r")]
-position = Vector2(408, 376)
-rotation = 3.14159
-ratfleetarget = NodePath("../Ratfleemarker")
-
 [node name="Biodoor" parent="." instance=ExtResource("10_wj14c")]
 position = Vector2(720, 336)
 scale = Vector2(-1, 1)
@@ -204,7 +199,12 @@ position = Vector2(172, 332)
 [node name="Transition" parent="." instance=ExtResource("5_hmk13")]
 
 [node name="Ratfleemarker" parent="." instance=ExtResource("14_apwdl")]
-position = Vector2(316, 373)
+position = Vector2(75, 348)
 
 [node name="Vial_green" parent="." instance=ExtResource("15_ums8h")]
 position = Vector2(420, 252)
+
+[node name="Ratspawn" parent="." node_paths=PackedStringArray("Fleemarker") instance=ExtResource("15_vijp8")]
+position = Vector2(304, 348)
+Rat_number = 1
+Fleemarker = NodePath("../Ratfleemarker")

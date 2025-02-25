@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://bwaomego0a1rr"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_a8c63"]
-[ext_resource type="Texture2D" uid="uid://c7xoy8o8a2q8i" path="res://assets/tilemap/concrete.png" id="2_te5y8"]
+[ext_resource type="Texture2D" uid="uid://bal26x6n8eo4l" path="res://assets/tilemap/concrete.png" id="2_te5y8"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_qy1j8"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="4_vms52"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="5_humr0"]
@@ -169,5 +169,4 @@ position = Vector2(603, 57)
 scale = Vector2(0.8, 0.8)
 
 [node name="Transition" parent="." instance=ExtResource("9_3tumw")]
-visible = false
 scale = Vector2(1.501, 1.501)

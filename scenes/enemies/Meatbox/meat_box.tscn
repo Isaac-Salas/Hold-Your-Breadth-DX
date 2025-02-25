@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://pko810djqbqo"]
 
 [ext_resource type="Script" path="res://scenes/enemies/Meatbox/meat_box.gd" id="1_gtwie"]
-[ext_resource type="Texture2D" uid="uid://dhofe6hs8tpcg" path="res://assets/objects/meatbox-bio.png" id="1_iu5mw"]
-[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="3_nystw"]
+[ext_resource type="Texture2D" uid="uid://dw26wfcpep2ex" path="res://assets/objects/meatbox-bio.png" id="1_iu5mw"]
+[ext_resource type="Texture2D" uid="uid://dbql8apppxdla" path="res://assets/lights/nRmVV (2).png" id="3_nystw"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="4_rtqqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmwdt"]
