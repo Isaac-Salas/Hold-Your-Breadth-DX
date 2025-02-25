@@ -251,12 +251,23 @@ offset_bottom = 584.0
 theme_override_fonts/font = ExtResource("6_rpahc")
 text = "BACK"
 
+[node name="ResetProgress" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 523.0
+offset_right = 948.0
+offset_bottom = 584.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rpahc")
+text = "RESET PROGRESS"
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [connection signal="pressed" from="Control/1-1" to="." method="_1_1_on__pressed"]
 [connection signal="pressed" from="Control/1-2" to="." method="_1_2_on__pressed"]
 [connection signal="pressed" from="Control/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/ResetProgress" to="." method="_on_reset_progress_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Swing-light"]

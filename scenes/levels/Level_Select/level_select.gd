@@ -160,3 +160,7 @@ func _1_2_on__pressed():
 func _on_back_pressed():
 	var tutorial = load("res://scenes/levels/TitleScreen/intro_cinematic.tscn")
 	transition.transition_to(tutorial)
+
+
+func _on_reset_progress_pressed():
+	Manager.reset_progress()

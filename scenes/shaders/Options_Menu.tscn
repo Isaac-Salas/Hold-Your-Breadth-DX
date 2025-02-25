@@ -150,7 +150,7 @@ offset_right = 807.0
 offset_bottom = 539.0
 theme_override_fonts/font = ExtResource("2_l06u5")
 theme_override_font_sizes/font_size = 25
-text = "Back"
+text = "QUIT"
 
 [connection signal="pressed" from="RESET" to="." method="_on_reset_pressed"]
 [connection signal="toggled" from="Fullscreen" to="." method="_on_fullscreen_toggled"]
