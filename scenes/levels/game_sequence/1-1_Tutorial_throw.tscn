@@ -24,7 +24,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u1ug"]
 texture = ExtResource("3_npyyg")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
@@ -148,7 +148,7 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
-sources/0 = SubResource("TileSetAtlasSource_1blni")
+sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgpbv"]
 size = Vector2(122.667, 50.8333)
