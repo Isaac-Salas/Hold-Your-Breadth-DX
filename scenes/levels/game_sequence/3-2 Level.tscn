@@ -1,7 +1,7 @@
 [gd_scene load_steps=61 format=4 uid="uid://bwaomego0a1rr"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_a8c63"]
-[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_te5y8"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="2_te5y8"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_qy1j8"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="4_vms52"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="5_humr0"]
@@ -15,10 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="13_uyuet"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="14_4h65n"]
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="14_cqr7o"]
-[ext_resource type="Texture2D" uid="uid://cpa67bjd1shg0" path="res://assets/objects/door.png" id="14_ec7c5"]
+[ext_resource type="Texture2D" uid="uid://bo6qklyipkg2y" path="res://assets/objects/door.png" id="14_ec7c5"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="14_tstqb"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="15_fxdeb"]
-[ext_resource type="Texture2D" uid="uid://bmmgbghpil1" path="res://assets/objects/small_door.png" id="15_reed1"]
+[ext_resource type="Texture2D" uid="uid://cq0odwbhrcajv" path="res://assets/objects/small_door.png" id="15_reed1"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="16_d0pni"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="21_th6is"]
 
@@ -545,6 +545,8 @@ size = Vector2(24, 95)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_a8c63")
+ZoneNumber = 3
+LevelNumber = 2
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -870,7 +872,6 @@ starting_scale = 6.0
 visible = false
 
 [node name="Transition" parent="." instance=ExtResource("9_3tumw")]
-visible = false
 scale = Vector2(1.501, 1.501)
 target_scene = ExtResource("10_ik7fu")
 metadata/_edit_lock_ = true
@@ -878,12 +879,6 @@ metadata/_edit_lock_ = true
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(754.164, 381.745)
 shape = SubResource("RectangleShape2D_k5kqe")
-
-[node name="Sprite2D" parent="Transition" index="1"]
-position = Vector2(384, -108)
-
-[node name="Sprite2D2" parent="Transition" index="2"]
-position = Vector2(384, 540)
 
 [node name="Indicator-Arrow" parent="." instance=ExtResource("21_th6is")]
 position = Vector2(695, 553)

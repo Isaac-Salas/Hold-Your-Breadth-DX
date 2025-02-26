@@ -144,6 +144,8 @@ sources/0 = SubResource("TileSetAtlasSource_1blni")
 
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_1kpuq")
+ZoneNumber = 2
+LevelNumber = 1
 
 [node name="Tilemap" type="TileMapLayer" parent="."]
 use_parent_material = true
