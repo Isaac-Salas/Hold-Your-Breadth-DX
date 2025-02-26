@@ -1,0 +1,136 @@
+[gd_scene load_steps=19 format=3 uid="uid://dqwxircknluj6"]
+
+[ext_resource type="Script" path="res://scenes/enemies/ratiña/ratspawn.gd" id="1_3iqod"]
+[ext_resource type="Texture2D" uid="uid://cojgqw05jselm" path="res://assets/Enemies/RatHoleEyeAnim.png" id="2_jnoad"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="2_v5hd3"]
+[ext_resource type="Texture2D" uid="uid://6xnkri4k60ds" path="res://assets/Enemies/RatHoleOnly.png" id="3_rmojj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fme3u"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a43ff"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wpy0"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwkyo"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mrd4"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woprw"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xd0u"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv51y"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41u75"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1dr1"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8feh"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgxi7"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uajh1"]
+atlas = ExtResource("2_jnoad")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i30w2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a43ff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wpy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwkyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mrd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woprw")
+}],
+"loop": false,
+"name": &"Blink",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xd0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv51y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41u75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1dr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8feh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgxi7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uajh1")
+}],
+"loop": true,
+"name": &"Spawned",
+"speed": 5.0
+}]
+
+[node name="Ratspawn" type="Node2D"]
+z_index = -1
+material = SubResource("CanvasItemMaterial_fme3u")
+script = ExtResource("1_3iqod")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("2_v5hd3")
+
+[node name="SpawnCooldown" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("3_rmojj")
+
+[node name="HoleAnim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_i30w2")
+animation = &"Idle"
+frame = 3
+frame_progress = 0.613588
+
+[connection signal="timeout" from="SpawnCooldown" to="." method="_on_timer_timeout"]

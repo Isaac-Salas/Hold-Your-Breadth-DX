@@ -1,14 +1,12 @@
-[gd_scene load_steps=29 format=4 uid="uid://v4ylrqt2e871"]
+[gd_scene load_steps=25 format=4 uid="uid://v4ylrqt2e871"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_esqvt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
-[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="8_w5r8i"]
-[ext_resource type="Texture2D" uid="uid://b1c1hr2n5qaas" path="res://assets/objects/Transition.png" id="9_2ulds"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="11_x0vny"]
 [ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="12_bu4xr"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="13_ah2pn"]
@@ -18,13 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="15_mnyod"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="16_5vcge"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="17_quffg"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_r7wbq"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="19_e7v3k"]
+[ext_resource type="PackedScene" uid="uid://ckg57n263xncs" path="res://scenes/levels/game_sequence/1-2 Doors and buttons.tscn" id="20_lvrnx"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="20_v0odu"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u1ug"]
 texture = ExtResource("3_npyyg")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
@@ -148,103 +148,15 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
-sources/0 = SubResource("TileSetAtlasSource_1blni")
+sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
-size = Vector2(98.6667, 23.3333)
-
-[sub_resource type="Animation" id="Animation_1yl6c"]
-resource_name = "Closing"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(6.27667, 6.27667),
-"update": 0,
-"values": [Vector2(384, 540), Vector2(384, 323)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(6.27667, 6.27667),
-"update": 0,
-"values": [Vector2(384, -108), Vector2(384, 109)]
-}
-
-[sub_resource type="Animation" id="Animation_r5kup"]
-resource_name = "Opening"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(4.75683, 4.75683),
-"update": 0,
-"values": [Vector2(384, 323), Vector2(384, 540)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(4.75683, 4.75683),
-"update": 0,
-"values": [Vector2(384, 109), Vector2(384, -108)]
-}
-
-[sub_resource type="Animation" id="Animation_y1k7v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(384, 324)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(384, 108)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0j2h"]
-_data = {
-"Closing": SubResource("Animation_1yl6c"),
-"Opening": SubResource("Animation_r5kup"),
-"RESET": SubResource("Animation_y1k7v")
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgpbv"]
+size = Vector2(122.667, 50.8333)
 
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_3ilku")
+ZoneNumber = 1
+LevelNumber = 1
 
 [node name="Tilemap" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -558,7 +470,7 @@ metadata/_edit_lock_ = true
 [node name="Shrink-Laser2" parent="Lasers" instance=ExtResource("16_5vcge")]
 position = Vector2(936, 24.0023)
 rotation = 1.5708
-target_scale = Vector2(1, 1)
+target_scale = Vector2(1.5, 1.5)
 metadata/_edit_lock_ = true
 
 [node name="Grow-Laser" parent="Lasers" instance=ExtResource("15_hc1tl")]
@@ -570,7 +482,7 @@ metadata/_edit_lock_ = true
 [node name="Shrink-Laser" parent="Lasers" instance=ExtResource("16_5vcge")]
 position = Vector2(451, 24)
 rotation = 1.5708
-target_scale = Vector2(1, 1)
+target_scale = Vector2(1.5, 1.5)
 metadata/_edit_lock_ = true
 
 [node name="Indicator-Arrow2" parent="." instance=ExtResource("19_e7v3k")]
@@ -585,55 +497,22 @@ position = Vector2(778, 355)
 z_index = -2
 position = Vector2(301, 499)
 
-[node name="Transition" type="Node2D" parent="."]
-z_index = 5
-z_as_relative = false
-scale = Vector2(1.5, 1.5)
-script = ExtResource("8_w5r8i")
-
-[node name="Trigger" type="Area2D" parent="Transition"]
-position = Vector2(-154, 55.3333)
-
-[node name="TRIGGERSCENE" type="CollisionShape2D" parent="Transition/Trigger"]
-position = Vector2(759.333, 383)
-shape = SubResource("RectangleShape2D_lorgc")
-debug_color = Color(0.453215, 0.595313, 0, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="Transition"]
-z_index = 5
-y_sort_enabled = true
-position = Vector2(384, 108)
-texture = ExtResource("9_2ulds")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Transition"]
-z_index = 5
-y_sort_enabled = true
-position = Vector2(384, 324)
-scale = Vector2(1, -1)
-texture = ExtResource("9_2ulds")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
-libraries = {
-"": SubResource("AnimationLibrary_k0j2h")
-}
-autoplay = "Opening"
-
-[node name="Swing-light" parent="." instance=ExtResource("15_mnyod")]
-visible = false
-position = Vector2(1083, 361)
-
-[node name="Light" parent="Swing-light" index="1"]
-position = Vector2(0, 51.32)
-
-[node name="PointLight2D" parent="Swing-light/Light" index="2"]
-energy = 1.5
-
 [node name="dont touch" parent="." instance=ExtResource("20_v0odu")]
-showoverride = true
+
+[node name="Transition" parent="." instance=ExtResource("18_r7wbq")]
+scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("20_lvrnx")
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(605.333, 442.75)
+shape = SubResource("RectangleShape2D_kgpbv")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(452, 312)
+scale = Vector2(1.5, 1.5)
 
 [connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Button_Red_Signal" method="toggle_door"]
-[connection signal="body_entered" from="Transition/Trigger" to="Transition" method="_on_trigger_body_entered"]
 
 [editable path="Teleports/Teleport"]
 [editable path="Teleports/Teleport2"]
@@ -641,4 +520,5 @@ showoverride = true
 [editable path="Lights/Swing-light"]
 [editable path="Lights/Swing-light2"]
 [editable path="Lights/Lamp2"]
-[editable path="Swing-light"]
+[editable path="dont touch"]
+[editable path="Transition"]

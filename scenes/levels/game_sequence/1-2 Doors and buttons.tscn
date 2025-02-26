@@ -1,0 +1,456 @@
+[gd_scene load_steps=25 format=4 uid="uid://ckg57n263xncs"]
+
+[ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_21qq4"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_3gyx6"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="4_nhbgi"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="5_cpr1c"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="6_3oxrn"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="7_om77o"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="7_xa2qc"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="8_cwd08"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="8_dtxr0"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="9_6huti"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="10_jeppq"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="12_gw1i6"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="12_yuu1k"]
+[ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="13_5cswr"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="13_hfyvl"]
+[ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="13_skrjh"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="15_4tewc"]
+[ext_resource type="PackedScene" uid="uid://cj0r44ewv57st" path="res://scenes/levels/game_sequence/1-3 Scale button.tscn" id="20_wgm7f"]
+[ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="21_aemc0"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
+texture = ExtResource("2_65ijc")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/left_side = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:0/0/terrains_peering_bit/bottom_side = 0
+5:0/0/terrains_peering_bit/top_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:1/0/terrains_peering_bit/right_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:2/0/terrains_peering_bit/left_side = 0
+
+[sub_resource type="TileSet" id="TileSet_ymyk6"]
+tile_size = Vector2i(48, 48)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "concrete"
+terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
+sources/0 = SubResource("TileSetAtlasSource_1blni")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuym5"]
+size = Vector2(73.5, 202.542)
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_21qq4")
+ZoneNumber = 1
+LevelNumber = 2
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAEAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAFAAAAAAAAAAIAAAAEAAEAAAAAAAEAAAAFAAAAAAAAAAAAAAAFAAAAAAAFAAAAAAAAAAIAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAACAAAAAAAPAAQAAAABAAEAAAAPAAUAAAABAAIAAAABAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAADAAIAAAAOAAQAAAABAAIAAAALAAQAAAABAAIAAAAMAAQAAAABAAIAAAANAAQAAAABAAIAAAAGAAUAAAAFAAEAAAAGAAYAAAACAAIAAAAJAAUAAAAFAAEAAAAJAAYAAAACAAIAAAAKAAQAAAAAAAIAAAAJAAMAAAABAAIAAAAJAAIAAAAFAAAAAAAJAAEAAAAEAAEAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAMAAAABAAAAAAATAAYAAAAEAAAAAAASAAYAAAAEAAAAAAARAAYAAAAEAAAAAAAQAAYAAAAAAAIAAAAQAAUAAAACAAEAAAAQAAQAAAACAAEAAAAQAAMAAAACAAAAAAAWAAQAAAAFAAAAAAAWAAUAAAAEAAEAAAAWAAYAAAACAAIAAAAVAAYAAAAEAAAAAAAUAAYAAAAEAAAAAAAUAAIAAAAEAAAAAAAVAAIAAAAEAAAAAAAWAAIAAAACAAAAAAAWAAMAAAAFAAAAAAASAP//AAAFAAEAAAASAAAAAAAFAAAAAAASAAEAAAAEAAEAAAASAAIAAAAAAAIAAAATAAIAAAAEAAAAAAAAAP//AAAFAAAAAAAAAP7/AAAFAAAAAAAAAP3/AAAFAAAAAAAAAPz/AAAFAAAAAAAAAPv/AAABAAAAAAABAPv/AAAEAAAAAAACAPv/AAAEAAAAAAADAPv/AAAEAAAAAAAEAPv/AAAEAAAAAAAFAPv/AAAEAAAAAAAGAPv/AAAEAAAAAAAHAPv/AAADAAIAAAAJAP3/AAACAAIAAAAIAP3/AAAEAAAAAAAHAP3/AAAEAAAAAAAGAP3/AAAEAAAAAAAFAP3/AAABAAAAAAAEAP3/AAABAAAAAAADAP3/AAAAAAAAAAAJAPv/AAAEAAEAAAAJAPz/AAAEAAEAAAAJAPr/AAAFAAAAAAAJAPj/AAAFAAAAAAAJAPf/AAAFAAEAAAAJAPn/AAACAAEAAAAIAPn/AAAEAAAAAAAHAPn/AAAEAAAAAAAGAPn/AAAEAAAAAAAFAPn/AAAEAAAAAAAEAPn/AAAEAAAAAAADAPn/AAAEAAAAAAACAPn/AAAEAAAAAAABAPn/AAADAAEAAAD+//f/AAAFAAEAAAD+//j/AAAFAAAAAAD+//n/AAAFAAAAAAD+//r/AAAEAAEAAAD+//v/AAAAAAIAAAD///v/AAAEAAAAAAAFAP//AAACAAEAAAAFAP7/AAACAAEAAAAEAP//AAAAAAIAAAAEAP7/AAABAAEAAAADAP7/AAAAAAIAAAA=")
+tile_set = SubResource("TileSet_ymyk6")
+rendering_quadrant_size = 48
+metadata/_edit_lock_ = true
+
+[node name="platforms" type="Node" parent="."]
+
+[node name="Platform" parent="platforms" instance=ExtResource("8_dtxr0")]
+position = Vector2(240, 176)
+
+[node name="Platform2" parent="platforms" instance=ExtResource("8_dtxr0")]
+position = Vector2(240, 224)
+
+[node name="Platform3" parent="platforms" instance=ExtResource("8_dtxr0")]
+position = Vector2(240, 287)
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Button_red3" parent="Buttons" instance=ExtResource("6_3oxrn")]
+position = Vector2(96, 378)
+
+[node name="Button_Red_Signal" parent="Buttons/Button_red3" instance=ExtResource("7_om77o")]
+position = Vector2(648, -162)
+
+[node name="Button_red" parent="Buttons" instance=ExtResource("6_3oxrn")]
+position = Vector2(384, 384)
+
+[node name="Button_Red_Signal" parent="Buttons/Button_red" instance=ExtResource("7_om77o")]
+z_index = 3
+position = Vector2(72, -167)
+
+[node name="Button_red2" parent="Buttons" instance=ExtResource("6_3oxrn")]
+position = Vector2(95, 192)
+
+[node name="Button_Red_Signal" parent="Buttons/Button_red2" instance=ExtResource("7_om77o")]
+z_index = 2
+position = Vector2(217, 24)
+
+[node name="Scale_button_green" parent="Buttons" instance=ExtResource("21_aemc0")]
+position = Vector2(528, 144)
+activation_weight = 6.0
+metadata/_edit_lock_ = true
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("7_xa2qc")]
+position = Vector2(384, 216)
+rotation = -1.57079
+
+[node name="Door2" parent="Doors" instance=ExtResource("7_xa2qc")]
+position = Vector2(744, 336)
+metadata/_edit_lock_ = true
+
+[node name="lights" type="Node" parent="."]
+
+[node name="Light2" parent="lights" instance=ExtResource("4_nhbgi")]
+position = Vector2(146, -29)
+metadata/_edit_lock_ = true
+
+[node name="Lamp" parent="lights/Light2" instance=ExtResource("8_cwd08")]
+position = Vector2(628, 178)
+
+[node name="Swing-light" parent="lights" node_paths=PackedStringArray("marker") instance=ExtResource("15_4tewc")]
+position = Vector2(384, 49)
+marker = NodePath("../Marker2D")
+wait = 0.4
+metadata/_edit_lock_ = true
+
+[node name="Marker2D" type="Marker2D" parent="lights"]
+position = Vector2(384, 48)
+metadata/_edit_lock_ = true
+
+[node name="Conveyors" type="Node" parent="."]
+
+[node name="Conveyor3" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(600, 168)
+direction = "right"
+
+[node name="Conveyor" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(456, 408)
+
+[node name="Conveyor2" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(312, 408)
+direction = "right"
+
+[node name="Conveyor4" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(792, 168)
+direction = "right"
+type = "RIGHT"
+
+[node name="Conveyor10" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(792, 168)
+direction = "right"
+type = "RIGHT"
+
+[node name="Conveyor5" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(648, 168)
+direction = "right"
+
+[node name="Conveyor6" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(696, 168)
+direction = "right"
+
+[node name="Conveyor7" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(744, 168)
+direction = "right"
+
+[node name="Conveyor11" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(840, 312)
+direction = "right"
+
+[node name="Conveyor12" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(888, 312)
+direction = "right"
+
+[node name="Conveyor16" parent="Conveyors" instance=ExtResource("9_6huti")]
+visible = false
+position = Vector2(408, 24)
+
+[node name="Conveyor18" parent="Conveyors" instance=ExtResource("9_6huti")]
+visible = false
+position = Vector2(360, 24)
+
+[node name="Conveyor19" parent="Conveyors" instance=ExtResource("9_6huti")]
+visible = false
+position = Vector2(312, 24)
+
+[node name="Conveyor20" parent="Conveyors" instance=ExtResource("9_6huti")]
+visible = false
+position = Vector2(264, 24)
+
+[node name="Conveyor17" parent="Conveyors" instance=ExtResource("9_6huti")]
+visible = false
+position = Vector2(456, 24)
+
+[node name="Conveyor21" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(360, -312)
+
+[node name="Conveyor22" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(312, -312)
+
+[node name="Conveyor23" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(264, -312)
+
+[node name="Conveyor24" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(216, -312)
+
+[node name="Conveyor25" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(408, -312)
+
+[node name="Conveyor26" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(120, -312)
+
+[node name="Conveyor27" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(72, -312)
+
+[node name="Conveyor30" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(168, -312)
+
+[node name="Conveyor28" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(262, -216)
+direction = "right"
+
+[node name="Conveyor29" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(214, -216)
+direction = "right"
+
+[node name="Conveyor31" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(166, -216)
+direction = "right"
+
+[node name="Conveyor32" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(118, -216)
+direction = "right"
+
+[node name="Conveyor33" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(310, -216)
+direction = "right"
+
+[node name="Conveyor37" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(358, -216)
+direction = "right"
+
+[node name="Conveyor34" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(22, -216)
+direction = "right"
+
+[node name="Conveyor35" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(-26, -216)
+direction = "right"
+
+[node name="Conveyor36" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(70, -216)
+direction = "right"
+
+[node name="Conveyor38" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(407, -119)
+
+[node name="Conveyor39" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(359, -119)
+
+[node name="Conveyor40" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(311, -119)
+
+[node name="Conveyor42" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(215, -119)
+
+[node name="Conveyor43" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(167, -119)
+
+[node name="Conveyor44" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(263, -119)
+
+[node name="Conveyor13" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(936, 312)
+direction = "right"
+
+[node name="Conveyor14" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(984, 312)
+direction = "right"
+
+[node name="Conveyor15" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(1032, 312)
+direction = "right"
+
+[node name="Conveyor8" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(504, 168)
+direction = "right"
+isOFF = true
+
+[node name="Conveyor9" parent="Conveyors" instance=ExtResource("9_6huti")]
+position = Vector2(552, 168)
+direction = "right"
+isOFF = true
+
+[node name="WoodenBox" parent="." instance=ExtResource("5_cpr1c")]
+position = Vector2(500, -82)
+
+[node name="Swing-light" parent="." instance=ExtResource("15_4tewc")]
+position = Vector2(617, -139)
+metadata/_edit_lock_ = true
+
+[node name="Teleport" parent="." instance=ExtResource("13_5cswr")]
+position = Vector2(1008, 257)
+
+[node name="Teleport Position" parent="Teleport" index="1"]
+position = Vector2(-492, -582)
+
+[node name="WoodenBox2" parent="." instance=ExtResource("5_cpr1c")]
+position = Vector2(511, -273)
+
+[node name="WoodenBox3" parent="." instance=ExtResource("5_cpr1c")]
+position = Vector2(505, -530)
+
+[node name="Player" parent="." instance=ExtResource("3_3gyx6")]
+position = Vector2(192, -26)
+
+[node name="Indicator-Arrow" parent="." instance=ExtResource("13_skrjh")]
+position = Vector2(383, 129)
+rotation = 1.57079
+
+[node name="Exit-Sign" parent="." instance=ExtResource("12_gw1i6")]
+position = Vector2(659, 265)
+metadata/_edit_lock_ = true
+
+[node name="Light" parent="." instance=ExtResource("4_nhbgi")]
+position = Vector2(95, 248)
+metadata/_edit_lock_ = true
+
+[node name="RigidBody2D" parent="." instance=ExtResource("5_cpr1c")]
+position = Vector2(410, -400)
+
+[node name="Camera2D" parent="." instance=ExtResource("13_hfyvl")]
+
+[node name="dont touch" parent="." instance=ExtResource("12_yuu1k")]
+
+[node name="Transition" parent="." instance=ExtResource("10_jeppq")]
+target_scene = ExtResource("20_wgm7f")
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(779.25, 337.729)
+shape = SubResource("RectangleShape2D_cuym5")
+
+[connection signal="pressed" from="Buttons/Button_red3" to="Buttons/Button_red2/Button_Red_Signal" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red3" to="Doors/Door" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red3" to="Doors/Door2" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red" to="Doors/Door" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red2" to="Doors/Door" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Scale_button_green" to="Conveyors/Conveyor8" method="toggle"]
+[connection signal="pressed" from="Buttons/Scale_button_green" to="Conveyors/Conveyor9" method="toggle"]
+
+[editable path="lights/Swing-light"]
+[editable path="Teleport"]
+[editable path="Transition"]

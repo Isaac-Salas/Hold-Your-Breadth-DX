@@ -1,50 +1,43 @@
-[gd_scene load_steps=61 format=3 uid="uid://ciok3inm634ug"]
+[gd_scene load_steps=60 format=3 uid="uid://ciok3inm634ug"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_b0onk"]
-[ext_resource type="Texture2D" uid="uid://b28lo5r47s8th" path="res://player/Slime.png" id="2_k4fjp"]
-[ext_resource type="Shader" path="res://player/playerwiggle.gdshader" id="2_vadgi"]
-[ext_resource type="Texture2D" uid="uid://d2g6lg5frm5yl" path="res://assets/crosshairer/cross_00000.png" id="3_y2qq3"]
+[ext_resource type="Texture2D" uid="uid://dl38tb51h0ryb" path="res://player/Slime.png" id="2_k4fjp"]
+[ext_resource type="Texture2D" uid="uid://dd8a378wdcfju" path="res://assets/crosshairer/cross_00000.png" id="3_y2qq3"]
 [ext_resource type="Script" path="res://components/sword_orbit.gd" id="4_pd6bc"]
 [ext_resource type="Script" path="res://player/object_detect.gd" id="6_7josq"]
 [ext_resource type="Script" path="res://player/scaler.gd" id="8_x6r5k"]
-[ext_resource type="Texture2D" uid="uid://dqb38xy14j2ay" path="res://assets/puntero/puntero_00012.png" id="9_ruxns"]
-[ext_resource type="Texture2D" uid="uid://fuyg3db1wfhp" path="res://assets/puntero/puntero_00013.png" id="10_kftwq"]
+[ext_resource type="Texture2D" uid="uid://bbdxjpqbfui6r" path="res://assets/puntero/puntero_00012.png" id="9_ruxns"]
+[ext_resource type="Texture2D" uid="uid://bnbphrr4mogej" path="res://assets/puntero/puntero_00013.png" id="10_kftwq"]
 [ext_resource type="Script" path="res://components/scale_component.gd" id="10_oyueu"]
-[ext_resource type="Texture2D" uid="uid://1heoyj23xgtp" path="res://assets/puntero/puntero_00014.png" id="11_sicxi"]
-[ext_resource type="Texture2D" uid="uid://xdfgca1ebjud" path="res://assets/puntero/puntero_00015.png" id="12_4fk34"]
-[ext_resource type="Texture2D" uid="uid://cjdqd5wo0abks" path="res://assets/puntero/puntero_00016.png" id="13_lykb1"]
-[ext_resource type="Texture2D" uid="uid://cwdf4ji3mxhb6" path="res://assets/puntero/puntero_00017.png" id="14_vxurq"]
-[ext_resource type="Texture2D" uid="uid://cjhk3gt0m5850" path="res://assets/puntero/puntero_00018.png" id="15_jrv8i"]
-[ext_resource type="Texture2D" uid="uid://cm5ltpotg7kk1" path="res://assets/puntero/puntero_00019.png" id="16_yfgck"]
-[ext_resource type="Texture2D" uid="uid://mgf4c7dj5474" path="res://assets/puntero/puntero_00020.png" id="17_o3bic"]
-[ext_resource type="Texture2D" uid="uid://dqvr2nyxc8bps" path="res://assets/puntero/puntero_00021.png" id="18_jus6x"]
-[ext_resource type="Texture2D" uid="uid://b3u3vajyv6gil" path="res://assets/puntero/puntero_00022.png" id="19_u3l3i"]
-[ext_resource type="Texture2D" uid="uid://c4pliqi8gi5k6" path="res://assets/puntero/puntero_00023.png" id="20_tcyfn"]
-[ext_resource type="Texture2D" uid="uid://d58cthcay2ma" path="res://assets/puntero/puntero_00011.png" id="21_di1ok"]
-[ext_resource type="Texture2D" uid="uid://b1vu6nni6mj0g" path="res://assets/puntero/puntero_00010.png" id="22_imdv5"]
-[ext_resource type="Texture2D" uid="uid://cvlrit845hth3" path="res://assets/puntero/puntero_00009.png" id="23_tvg2h"]
-[ext_resource type="Texture2D" uid="uid://cjolnb1q126kf" path="res://assets/puntero/puntero_00008.png" id="24_rhht4"]
-[ext_resource type="Texture2D" uid="uid://hbgt3yyutweu" path="res://assets/puntero/puntero_00007.png" id="25_h6gnl"]
-[ext_resource type="Texture2D" uid="uid://cxtktc37380ug" path="res://assets/puntero/puntero_00006.png" id="26_iwlu3"]
-[ext_resource type="Texture2D" uid="uid://di65boaxqdlkq" path="res://assets/crosshairer/cross_00023.png" id="26_v84od"]
-[ext_resource type="Texture2D" uid="uid://b4x2b46cuao1k" path="res://assets/puntero/puntero_00005.png" id="27_j6u8f"]
-[ext_resource type="Texture2D" uid="uid://b2i0u7da0dx0g" path="res://assets/puntero/puntero_00004.png" id="28_5lx6k"]
-[ext_resource type="Texture2D" uid="uid://ofctt361vbj1" path="res://assets/puntero/puntero_00003.png" id="29_tod1o"]
-[ext_resource type="Texture2D" uid="uid://ds523fud2jy0t" path="res://assets/puntero/puntero_00002.png" id="30_c4fp4"]
-[ext_resource type="Texture2D" uid="uid://b7pevbn60k6gc" path="res://assets/puntero/puntero_00001.png" id="31_vyve3"]
-[ext_resource type="Texture2D" uid="uid://ey38pbix2ayk" path="res://assets/puntero/puntero_00000.png" id="32_apo53"]
+[ext_resource type="Texture2D" uid="uid://blwicb26qneh0" path="res://assets/puntero/puntero_00014.png" id="11_sicxi"]
+[ext_resource type="Texture2D" uid="uid://b6gwt2sdyk535" path="res://assets/puntero/puntero_00015.png" id="12_4fk34"]
+[ext_resource type="Texture2D" uid="uid://c40ad0fvscqwc" path="res://assets/puntero/puntero_00016.png" id="13_lykb1"]
+[ext_resource type="Texture2D" uid="uid://bushyu5cgvi7u" path="res://assets/puntero/puntero_00017.png" id="14_vxurq"]
+[ext_resource type="Texture2D" uid="uid://cqab8k0yecvjv" path="res://assets/puntero/puntero_00018.png" id="15_jrv8i"]
+[ext_resource type="Texture2D" uid="uid://bm3lnekemb2gv" path="res://assets/puntero/puntero_00019.png" id="16_yfgck"]
+[ext_resource type="Texture2D" uid="uid://b06bhrpnemg4r" path="res://assets/puntero/puntero_00020.png" id="17_o3bic"]
+[ext_resource type="Texture2D" uid="uid://cxa0bmqdyxibt" path="res://assets/puntero/puntero_00021.png" id="18_jus6x"]
+[ext_resource type="Texture2D" uid="uid://doxndcmvhtu2x" path="res://assets/puntero/puntero_00022.png" id="19_u3l3i"]
+[ext_resource type="Texture2D" uid="uid://3d802yrsrsyr" path="res://assets/puntero/puntero_00023.png" id="20_tcyfn"]
+[ext_resource type="Texture2D" uid="uid://ci8u8dca0dy1m" path="res://assets/puntero/puntero_00011.png" id="21_di1ok"]
+[ext_resource type="Texture2D" uid="uid://dsrd70jw6oodw" path="res://assets/puntero/puntero_00010.png" id="22_imdv5"]
+[ext_resource type="Texture2D" uid="uid://bt7h4cnxwydii" path="res://assets/puntero/puntero_00009.png" id="23_tvg2h"]
+[ext_resource type="Texture2D" uid="uid://bwo2wwma11pcq" path="res://assets/puntero/puntero_00008.png" id="24_rhht4"]
+[ext_resource type="Texture2D" uid="uid://bi4u08yha0l0a" path="res://assets/puntero/puntero_00007.png" id="25_h6gnl"]
+[ext_resource type="Texture2D" uid="uid://b5jmd06dqk525" path="res://assets/puntero/puntero_00006.png" id="26_iwlu3"]
+[ext_resource type="Texture2D" uid="uid://cyqk2jxvvtgas" path="res://assets/crosshairer/cross_00023.png" id="26_v84od"]
+[ext_resource type="Texture2D" uid="uid://bk5xkt1p4kgp8" path="res://assets/puntero/puntero_00005.png" id="27_j6u8f"]
+[ext_resource type="Texture2D" uid="uid://dbfbr8gigills" path="res://assets/puntero/puntero_00004.png" id="28_5lx6k"]
+[ext_resource type="Texture2D" uid="uid://84svw8f6vca" path="res://assets/puntero/puntero_00003.png" id="29_tod1o"]
+[ext_resource type="Texture2D" uid="uid://doqjirwvjmb4s" path="res://assets/puntero/puntero_00002.png" id="30_c4fp4"]
+[ext_resource type="Texture2D" uid="uid://d2ht78eb2i5rg" path="res://assets/puntero/puntero_00001.png" id="31_vyve3"]
+[ext_resource type="Texture2D" uid="uid://dh2xkkrxcscmr" path="res://assets/puntero/puntero_00000.png" id="32_apo53"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="34_jxusd"]
-[ext_resource type="Texture2D" uid="uid://b4mt8olagqrqh" path="res://assets/nRmVV (2).png" id="34_xrxf5"]
+[ext_resource type="Texture2D" uid="uid://dnx1qh8y6yvxo" path="res://assets/nRmVV (2).png" id="34_xrxf5"]
+[ext_resource type="Texture2D" uid="uid://cn22gtmhw048n" path="res://assets/lights/nRmVV (2).png" id="36_xf517"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xechm"]
-radius = 14.0
-height = 28.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypgt3"]
-shader = ExtResource("2_vadgi")
-shader_parameter/speed = 20.0
-shader_parameter/distortion = 500.0
-shader_parameter/stretch = 2.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etpo6"]
+size = Vector2(29, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pa8j4"]
 atlas = ExtResource("2_k4fjp")
@@ -319,11 +312,11 @@ animations = [{
 script = ExtResource("1_b0onk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_xechm")
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_etpo6")
 debug_color = Color(0.759429, 0.181563, 1, 0.42)
 
 [node name="Animacion" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_ypgt3")
 sprite_frames = SubResource("SpriteFrames_bgbxa")
 animation = &"Idle"
 offset = Vector2(0.5, -10)
@@ -336,10 +329,17 @@ animation = &"Idle"
 offset = Vector2(0, -10)
 
 [node name="fakelight" type="Sprite2D" parent="Animacion"]
-modulate = Color(0, 0.392157, 0.00784314, 0.196078)
+visible = false
+modulate = Color(0, 0.39, 0.00649999, 0.392157)
 material = SubResource("CanvasItemMaterial_o6k1a")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("34_xrxf5")
+
+[node name="Normallight" type="PointLight2D" parent="Animacion"]
+color = Color(0.333333, 1, 0, 1)
+energy = 0.5
+texture = ExtResource("36_xf517")
+texture_scale = 0.5
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_layer = 2
@@ -415,6 +415,13 @@ script = ExtResource("34_jxusd")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="SmallLight" type="PointLight2D" parent="."]
+visible = false
+color = Color(0.333333, 1, 0, 1)
+energy = 0.5
+texture = ExtResource("36_xf517")
+texture_scale = 0.5
 
 [connection signal="scare" from="." to="." method="_on_scare"]
 [connection signal="body_entered" from="AnimatedSprite2D/ObjectDetect" to="." method="_on_object_detect_body_entered"]

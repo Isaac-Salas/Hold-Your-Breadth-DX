@@ -1,9 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://dsmy2h1upfevb"]
+[gd_scene load_steps=27 format=3 uid="uid://dsmy2h1upfevb"]
 
 [ext_resource type="Script" path="res://scenes/objects/scale_green/scale_logic.gd" id="1_rceiw"]
-[ext_resource type="Texture2D" uid="uid://t5i8rpkqmp05" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
-[ext_resource type="Texture2D" uid="uid://dch6xuw7w2vtt" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
-[ext_resource type="Texture2D" uid="uid://xtkvsxgao8tj" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
+[ext_resource type="Texture2D" uid="uid://2ggarvi8rsgv" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
+[ext_resource type="Texture2D" uid="uid://d17gho73pcr10" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
+[ext_resource type="Texture2D" uid="uid://b1xbly7a42bv0" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gsyot"]
+light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5l5o"]
 atlas = ExtResource("3_2mu4u")
@@ -181,9 +184,10 @@ scale = Vector2(0.919271, 0.666667)
 color = Color(0.235294, 1, 0.235294, 1)
 energy = 0.5
 texture = ExtResource("4_esb06")
-texture_scale = 0.4
+texture_scale = 0.8
 
 [node name="anim_flag" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_gsyot")
 position = Vector2(0, -48)
 sprite_frames = SubResource("SpriteFrames_pyojx")
 animation = &"OFF"
@@ -192,7 +196,9 @@ frame_progress = 0.564916
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_q45co")
-animation = &"pressed"
+animation = &"depresssed"
+autoplay = "depresssed"
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24.5)

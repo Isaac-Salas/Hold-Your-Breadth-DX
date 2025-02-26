@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/levels/Testing/testing.gd" id="1_iike3"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_goeaq"]
-[ext_resource type="Texture2D" uid="uid://yljrgcly32g5" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
-[ext_resource type="Texture2D" uid="uid://dhofe6hs8tpcg" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
+[ext_resource type="Texture2D" uid="uid://dalgnkvg42uai" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
+[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="6_todws"]
+[ext_resource type="Texture2D" uid="uid://ciunp5a4cnebs" path="res://assets/objects/meatbox-bio.png" id="8_fnarp"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="9_ewksh"]
-[ext_resource type="PackedScene" uid="uid://gyluo2bsm1cg" path="res://scenes/enemies/ratiña/ratiña.tscn" id="10_uj851"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="11_onm1m"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="12_37tgo"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="12_gbmlf"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="17_ji3ml"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_hbbxj"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/enemies/Meatbox/meat_box.tscn" id="18_kuoxt"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="18_p635a"]
+[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="18_p635a"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x32nn"]
 polygon = PackedVector2Array(-24, -24, -24, 24, 24, 24, 24, -24)
@@ -175,11 +175,10 @@ position = Vector2(987, 224)
 [node name="Ratillas" type="Node2D" parent="."]
 position = Vector2(235, 56)
 
-[node name="Ratiña" parent="Ratillas" instance=ExtResource("10_uj851")]
-position = Vector2(497, 193)
-
-[node name="Ratiña2" parent="Ratillas" instance=ExtResource("10_uj851")]
-position = Vector2(574, 173)
+[node name="Ratspawn" parent="Ratillas" node_paths=PackedStringArray("Fleemarker") instance=ExtResource("6_todws")]
+position = Vector2(42, 422)
+Rat_number = 2
+Fleemarker = NodePath("../../Ratfleemarker2")
 
 [node name="Matraces" type="Node2D" parent="."]
 
@@ -205,13 +204,12 @@ position = Vector2(393, 401)
 position = Vector2(418, 392)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("14_a3g21")]
-position = Vector2(415, 400)
+position = Vector2(394, 439)
 
 [node name="Ratfleemarker" parent="." instance=ExtResource("12_gbmlf")]
 position = Vector2(862, 447)
 
 [node name="dont touch" parent="." instance=ExtResource("12_37tgo")]
-visible = true
 
 [node name="Light" parent="." instance=ExtResource("17_ji3ml")]
 z_index = 1
@@ -292,5 +290,8 @@ rendering_quadrant_size = 48
 
 [node name="WoodenBox" parent="." instance=ExtResource("17_drere")]
 position = Vector2(214, 460)
+
+[node name="Ratfleemarker2" parent="." instance=ExtResource("12_gbmlf")]
+position = Vector2(1035, 442)
 
 [editable path="Transition"]

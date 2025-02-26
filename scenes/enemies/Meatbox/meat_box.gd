@@ -3,7 +3,7 @@ var picked = false
 var start = true
 var count = false
 @onready var timerst = $Timer
-@onready var sprite_2d = $Sprite2D
+@onready var sprite= $Sprite2D
 @onready var colision = $CollisionShape2D
 @onready var animation_player = $AnimationPlayer
 @onready var player : SlimePlayer
@@ -27,7 +27,7 @@ func _process(delta):
 			animation_player.play("blink")
 			#print(timerst.time_left))
 			colision.scale = player.colision.scale
-			sprite_2d.scale = colision.scale
+			sprite.scale = colision.scale
 
 
 

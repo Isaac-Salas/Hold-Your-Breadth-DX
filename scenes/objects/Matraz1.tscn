@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfvfq8x40yq6c"]
+[gd_scene load_steps=7 format=3 uid="uid://bfvfq8x40yq6c"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_vmb1b"]
-[ext_resource type="Texture2D" uid="uid://c8mwc1l1eqqxl" path="res://assets/objects/matraz1.png" id="2_8aptt"]
+[ext_resource type="Texture2D" uid="uid://c7y8j5fv5y73m" path="res://assets/objects/matraz1.png" id="2_8aptt"]
+[ext_resource type="PackedScene" uid="uid://f006j5ihgekl" path="res://scenes/objects/BreakableGlass/Glass.tscn" id="3_aydea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4dov"]
 size = Vector2(10, 20)
@@ -13,12 +14,14 @@ radius = 15.0
 closed = false
 polygon = PackedVector2Array(-9, 8, -6, 10, 0, 10, 6, 10, 9, 8)
 
-[node name="Vial_green" groups=["breakable", "throwable"] instance=ExtResource("1_vmb1b")]
+[node name="Vial_green" groups=["Matraz", "breakable", "throwable"] instance=ExtResource("1_vmb1b")]
 
 [node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_u4dov")
 
 [node name="Sprite2D" parent="." index="1"]
+scale = Vector2(1, 1)
 texture = ExtResource("2_8aptt")
 
 [node name="PointLight2D" parent="Sprite2D" index="0"]
@@ -26,6 +29,9 @@ texture = ExtResource("2_8aptt")
 
 [node name="CollisionShape2D" parent="Detector" index="0"]
 shape = SubResource("CircleShape2D_7qib0")
+
+[node name="SpawnerComponent" parent="." index="3"]
+scene = ExtResource("3_aydea")
 
 [node name="LightOccluder2D" parent="." index="4"]
 occluder = SubResource("OccluderPolygon2D_56r8l")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://byn0alcsqts11"]
 
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="1_uk4jh"]
-[ext_resource type="Texture2D" uid="uid://b36tg1q0ktlwb" path="res://assets/objects/door.png" id="2_h6pji"]
+[ext_resource type="Texture2D" uid="uid://bkeyf47bk3da6" path="res://assets/objects/door.png" id="2_h6pji"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_em7m7"]
 light_mode = 1
@@ -212,6 +212,8 @@ shape = SubResource("RectangleShape2D_u60lh")
 libraries = {
 "": SubResource("AnimationLibrary_dlwus")
 }
+autoplay = "RESET"
+speed_scale = 200.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_x84v6")
