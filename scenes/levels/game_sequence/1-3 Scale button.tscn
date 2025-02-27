@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://cj0r44ewv57st"]
+[gd_scene load_steps=20 format=4 uid="uid://cj0r44ewv57st"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_lksdr"]
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="2_ie3v8"]
+[ext_resource type="Texture2D" uid="uid://dp3e1x13pvlok" path="res://assets/tilemap/concrete.png" id="2_ie3v8"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_d14u1"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="4_naod3"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_ib21r"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="13_mqp45"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="14_30d8k"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="15_qky78"]
-[ext_resource type="PackedScene" uid="uid://bhe6366hku86k" path="res://scenes/levels/game_sequence/3-1 Scale level.tscn" id="16_km5y2"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -287,7 +286,6 @@ position = Vector2(1033, -23)
 
 [node name="Transition" parent="." instance=ExtResource("15_qky78")]
 scale = Vector2(1.5, 1.5)
-target_scene = ExtResource("16_km5y2")
 
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(700.667, 427.333)

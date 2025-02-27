@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=4 uid="uid://ckg57n263xncs"]
+[gd_scene load_steps=24 format=4 uid="uid://ckg57n263xncs"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_21qq4"]
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
+[ext_resource type="Texture2D" uid="uid://dp3e1x13pvlok" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_3gyx6"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="4_nhbgi"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="5_cpr1c"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="13_hfyvl"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="13_skrjh"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="15_4tewc"]
-[ext_resource type="PackedScene" uid="uid://cj0r44ewv57st" path="res://scenes/levels/game_sequence/1-3 Scale button.tscn" id="20_wgm7f"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="21_aemc0"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
@@ -437,7 +436,6 @@ position = Vector2(410, -400)
 [node name="dont touch" parent="." instance=ExtResource("12_yuu1k")]
 
 [node name="Transition" parent="." instance=ExtResource("10_jeppq")]
-target_scene = ExtResource("20_wgm7f")
 
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(779.25, 337.729)

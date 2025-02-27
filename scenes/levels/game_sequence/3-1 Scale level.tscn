@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=4 uid="uid://bhe6366hku86k"]
 
-[ext_resource type="Texture2D" uid="uid://c5cudoee6cwlr" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
+[ext_resource type="Texture2D" uid="uid://dp3e1x13pvlok" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_g4vrm"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="2_03rxa"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_vqrqb"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="5_hq2aw"]
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="6_bgdep"]
 [ext_resource type="PackedScene" uid="uid://b71h5dbrt5qt3" path="res://scenes/objects/door/small_door.tscn" id="6_rsd5o"]
-[ext_resource type="Texture2D" uid="uid://cq0odwbhrcajv" path="res://assets/objects/small_door.png" id="7_jwv1l"]
+[ext_resource type="Texture2D" uid="uid://bu1vnmojo517j" path="res://assets/objects/small_door.png" id="7_jwv1l"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="9_l318y"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="10_jx2cx"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="11_4yy0m"]
