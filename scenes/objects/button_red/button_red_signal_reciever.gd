@@ -1,10 +1,13 @@
 extends Node2D
-
+#@onready var string : ButtonCable = $String
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @export var isON = false
 @onready var light: PointLight2D = $PointLight2D
 
 func _ready() -> void:
+	
+	#string.set_start(self.global_position)
+	#string.set_last(get_parent().global_position)
 	if get_parent().has_signal("pressed"):
 		get_parent().connect("pressed", toggle_door)
 		

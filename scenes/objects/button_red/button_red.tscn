@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://bhenjdi5p5ejl"]
 
-[ext_resource type="Texture2D" uid="uid://dcpeiwf6vh47y" path="res://assets/objects/button_animated.png" id="1_jj771"]
+[ext_resource type="Texture2D" uid="uid://b2nanpqls6cs8" path="res://assets/objects/button_animated.png" id="1_jj771"]
 [ext_resource type="Script" path="res://scenes/objects/button_red/button_red.gd" id="1_t8urs"]
-[ext_resource type="Texture2D" uid="uid://dkm15722kwf6j" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
-[ext_resource type="Texture2D" uid="uid://5o0pcgyla3oo" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
+[ext_resource type="Texture2D" uid="uid://cfuytyv1b4bpy" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
+[ext_resource type="Texture2D" uid="uid://badhesibyt65e" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1h6ja"]
 light_mode = 1

@@ -19,3 +19,11 @@ func _on_rigid_body_2d_body_entered(body):
 		rigid_body_2d.set_deferred("freeze", false)
 		rigid_body_2d.add_to_group("throwable")
 		
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered():
+	visible = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	visible = false

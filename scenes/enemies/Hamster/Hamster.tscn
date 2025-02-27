@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp8r6cmiycm4m"]
+[gd_scene load_steps=8 format=3 uid="uid://bp8r6cmiycm4m"]
 
-[ext_resource type="Script" path="res://scenes/enemies/Hamster/hamsterfina.gd" id="1_lrusc"]
-[ext_resource type="Texture2D" uid="uid://buasnyg26h7uh" path="res://assets/Enemies/hamsersprite.png" id="1_utgwl"]
+[ext_resource type="Texture2D" uid="uid://dfdmeqigtd5u7" path="res://assets/Enemies/hamsersprite.png" id="1_utgwl"]
+[ext_resource type="Script" path="res://scenes/enemies/Hamster/hamstersimple.gd" id="2_yg5uf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tx73"]
 atlas = ExtResource("1_utgwl")
@@ -39,37 +39,10 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4qeb"]
-size = Vector2(24, 36)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_645ko"]
-radius = 22.0227
-
-[node name="Hamster" type="CharacterBody2D"]
-script = ExtResource("1_lrusc")
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Hamster" type="AnimatedSprite2D"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_hifbx")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.622647
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_h4qeb")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-linear_velocity = Vector2(0, -200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-light_mask = 3
-visibility_layer = 3
-shape = SubResource("CircleShape2D_645ko")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+script = ExtResource("2_yg5uf")

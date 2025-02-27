@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://ckg57n263xncs"]
+[gd_scene load_steps=25 format=4 uid="uid://ckg57n263xncs"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_21qq4"]
 [ext_resource type="Texture2D" uid="uid://dr1wuroinf42a" path="res://assets/tilemap/concrete.png" id="2_65ijc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="6_3oxrn"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="7_om77o"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="7_xa2qc"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="8_cwd08"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="8_dtxr0"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="9_6huti"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="10_jeppq"]
@@ -17,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="13_hfyvl"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="13_skrjh"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="15_4tewc"]
-[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="20_wph5r"]
+[ext_resource type="PackedScene" uid="uid://chjw8vtocgmwb" path="res://scenes/verlet/VerletPhys.tscn" id="20_3rlwj"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="21_aemc0"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
@@ -184,16 +185,7 @@ position = Vector2(96, 378)
 position = Vector2(648, -162)
 
 [node name="Marker2D" type="Marker2D" parent="Buttons/Button_red3"]
-position = Vector2(-46, -74)
-
-[node name="Marker2D2" type="Marker2D" parent="Buttons/Button_red3"]
-position = Vector2(-36, 37)
-
-[node name="Marker2D3" type="Marker2D" parent="Buttons/Button_red3"]
-position = Vector2(633, 37)
-
-[node name="Marker2D4" type="Marker2D" parent="Buttons/Button_red3"]
-position = Vector2(633, -150)
+position = Vector2(-36, -97)
 
 [node name="Button_red" parent="Buttons" instance=ExtResource("6_3oxrn")]
 position = Vector2(384, 384)
@@ -201,12 +193,6 @@ position = Vector2(384, 384)
 [node name="Button_Red_Signal" parent="Buttons/Button_red" instance=ExtResource("7_om77o")]
 z_index = 3
 position = Vector2(72, -167)
-
-[node name="Marker2D" type="Marker2D" parent="Buttons/Button_red"]
-position = Vector2(-24, -95)
-
-[node name="Marker2D2" type="Marker2D" parent="Buttons/Button_red"]
-position = Vector2(60, -156)
 
 [node name="Button_red2" parent="Buttons" instance=ExtResource("6_3oxrn")]
 position = Vector2(95, 192)
@@ -216,10 +202,10 @@ z_index = 2
 position = Vector2(217, 24)
 
 [node name="Marker2D" type="Marker2D" parent="Buttons/Button_red2"]
-position = Vector2(-24, -73)
+position = Vector2(-24, -71)
 
 [node name="Marker2D2" type="Marker2D" parent="Buttons/Button_red2"]
-position = Vector2(207, 33)
+position = Vector2(207, 11)
 
 [node name="Scale_button_green" parent="Buttons" instance=ExtResource("21_aemc0")]
 position = Vector2(528, 144)
@@ -239,7 +225,11 @@ metadata/_edit_lock_ = true
 [node name="lights" type="Node" parent="."]
 
 [node name="Light2" parent="lights" instance=ExtResource("4_nhbgi")]
-position = Vector2(114, -23)
+position = Vector2(146, -29)
+metadata/_edit_lock_ = true
+
+[node name="Lamp" parent="lights/Light2" instance=ExtResource("8_cwd08")]
+position = Vector2(628, 178)
 
 [node name="Swing-light" parent="lights" node_paths=PackedStringArray("marker") instance=ExtResource("15_4tewc")]
 position = Vector2(384, 49)
@@ -440,16 +430,13 @@ position = Vector2(192, -26)
 position = Vector2(383, 129)
 rotation = 1.57079
 
-[node name="Indicator-Arrow4" parent="." instance=ExtResource("13_skrjh")]
-position = Vector2(389, 306)
-rotation = 1.57079
-
 [node name="Exit-Sign" parent="." instance=ExtResource("12_gw1i6")]
 position = Vector2(659, 265)
 metadata/_edit_lock_ = true
 
 [node name="Light" parent="." instance=ExtResource("4_nhbgi")]
 position = Vector2(95, 248)
+metadata/_edit_lock_ = true
 
 [node name="RigidBody2D" parent="." instance=ExtResource("5_cpr1c")]
 position = Vector2(410, -400)
@@ -464,17 +451,13 @@ position = Vector2(410, -400)
 position = Vector2(779.25, 337.729)
 shape = SubResource("RectangleShape2D_cuym5")
 
-[node name="Indicator-X" parent="." instance=ExtResource("20_wph5r")]
-position = Vector2(98, 146)
-
-[node name="Indicator-X2" parent="." instance=ExtResource("20_wph5r")]
-position = Vector2(99, 334)
-
-[node name="Indicator-Arrow2" parent="." instance=ExtResource("13_skrjh")]
-position = Vector2(215, 363)
-
-[node name="Indicator-Arrow3" parent="." instance=ExtResource("13_skrjh")]
-position = Vector2(659, 322)
+[node name="String" parent="." node_paths=PackedStringArray("startMarker", "endMarker") instance=ExtResource("20_3rlwj")]
+position = Vector2(75, 110)
+startMarker = NodePath("../Buttons/Button_red2/Marker2D")
+endMarker = NodePath("../Buttons/Button_red2/Marker2D2")
+color = Color(0, 0, 0, 1)
+constrain = 1.0
+gravity = Vector2(0, 9.8)
 
 [connection signal="pressed" from="Buttons/Button_red3" to="Buttons/Button_red2/Button_Red_Signal" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Button_red3" to="Doors/Door" method="toggle_door"]

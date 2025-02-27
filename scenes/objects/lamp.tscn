@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://saxp0bi5k5yt"]
 
-[ext_resource type="Texture2D" uid="uid://73rujav3m5qn" path="res://assets/objects/Lamp_head.png" id="1_rmgst"]
+[ext_resource type="Texture2D" uid="uid://btti01rlmfq5i" path="res://assets/objects/Lamp_head.png" id="1_rmgst"]
 [ext_resource type="Script" path="res://scenes/objects/lamp.gd" id="1_wbsqu"]
-[ext_resource type="Texture2D" uid="uid://be1rd7pexjdql" path="res://assets/objects/Lamp_base.png" id="2_abe07"]
-[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="3_ihw8w"]
-[ext_resource type="Texture2D" uid="uid://cc61grghmqyhm" path="res://assets/lights/CONE.png" id="3_s03d4"]
+[ext_resource type="Texture2D" uid="uid://cs0hk5vicydn4" path="res://assets/objects/Lamp_base.png" id="2_abe07"]
+[ext_resource type="Texture2D" uid="uid://badhesibyt65e" path="res://assets/lights/nRmVV (2).png" id="3_ihw8w"]
+[ext_resource type="Texture2D" uid="uid://bn3d4whu5ydo2" path="res://assets/lights/CONE.png" id="3_s03d4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtdn8"]
 size = Vector2(10, 9)
@@ -45,4 +45,8 @@ modulate = Color(1, 0.819167, 0.65, 0.196078)
 material = SubResource("CanvasItemMaterial_ypwrl")
 texture = ExtResource("3_ihw8w")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

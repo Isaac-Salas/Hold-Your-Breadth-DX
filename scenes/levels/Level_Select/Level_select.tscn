@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="2_x00pf"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="3_gou6y"]
 [ext_resource type="PackedScene" uid="uid://v4ylrqt2e871" path="res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn" id="4_h634r"]
-[ext_resource type="FontFile" uid="uid://cs1qpj4180qrs" path="res://assets/Fonts/DePixelHalbfett.otf" id="6_rpahc"]
+[ext_resource type="FontFile" uid="uid://bawlirgdo7sr7" path="res://assets/Fonts/DePixelHalbfett.otf" id="6_rpahc"]
 
 [sub_resource type="GDScript" id="GDScript_f8i8q"]
 script/source = "extends RigidBody2D

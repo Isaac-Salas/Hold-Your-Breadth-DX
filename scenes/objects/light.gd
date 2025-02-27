@@ -10,3 +10,11 @@ func _ready() -> void:
 	fakelight.modulate = color
 	fakelight.modulate.a8 = 25
 #	light2.color = color
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered():
+	visible = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	visible = false

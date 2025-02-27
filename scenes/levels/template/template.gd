@@ -4,6 +4,7 @@ extends Node2D
 @export var ZoneNumber : int
 @export var LevelNumber : int
 
+
 func _ready():
 	var LevelSave : String = "Level" + str(ZoneNumber) + "_" + str(LevelNumber)
 	Manager.setter(LevelSave,true)
