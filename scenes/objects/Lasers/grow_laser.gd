@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 		line.set_point_position(1,Vector2(raycast.get_collision_point().distance_to(line.global_position),0))
 		line.width = 3
 		hitsprite.global_position = raycast.get_collision_point()
-		if collider.is_in_group("button_actionable"):
+		if collider.is_in_group("button_actionable") and !collider.is_in_group("Meatbox"):
 			collider.set_size(target_scale)
 			
 			#collider._on_ray_collided(target_size)

@@ -114,6 +114,8 @@ blend_mode = 1
 light_mode = 1
 
 [node name="Grow-Laser" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_mu1ou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

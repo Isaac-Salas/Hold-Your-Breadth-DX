@@ -8,6 +8,7 @@ func _ready() -> void:
 	if get_parent().has_signal("pressed"):
 		get_parent().connect("pressed", toggle_door)
 		
+		
 func toggle_door(state, body):
 	isON = state
 	if isON:

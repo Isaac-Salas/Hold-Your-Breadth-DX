@@ -9,8 +9,6 @@ func _ready():
 	Manager.setter(LevelSave,true)
 	Manager.save_game()
 
-
-	
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Reset"):
 		get_tree().reload_current_scene()
