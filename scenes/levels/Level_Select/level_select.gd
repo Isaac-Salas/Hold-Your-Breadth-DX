@@ -23,7 +23,7 @@ func _ready():
 	#Manager.Level1_1 = true
 	#Manager.save_game()
 	Manager.load_game()
-	print(Manager.Level1_1)
+	#print(Manager.Level1_1)
 	
 	
 

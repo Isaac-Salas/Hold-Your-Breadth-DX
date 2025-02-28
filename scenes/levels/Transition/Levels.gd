@@ -47,7 +47,10 @@ func save():
 func reset_progress():
 	var savefile = save()
 	for i in savefile:
-		set(i, false)
+		if i == "Firsttime":
+			set(i, true)
+		else:
+			set(i, false)
 	save_game()
 
 func save_game():
