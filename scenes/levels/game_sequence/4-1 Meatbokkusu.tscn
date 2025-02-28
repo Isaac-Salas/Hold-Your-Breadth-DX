@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=4 uid="uid://ccn1j6v25t2oc"]
+[gd_scene load_steps=33 format=4 uid="uid://ccn1j6v25t2oc"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_xvjhh"]
-[ext_resource type="Texture2D" uid="uid://c7xoy8o8a2q8i" path="res://assets/tilemap/concrete.png" id="2_mivww"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_mivww"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_whpsm"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="4_dqu1c"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="5_e25ab"]
@@ -15,10 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="10_bl312"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="12_f256u"]
 [ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="13_i5m85"]
-[ext_resource type="Texture2D" uid="uid://bpx7ko3c3jeg7" path="res://assets/objects/Transition.png" id="14_dfx6o"]
+[ext_resource type="Texture2D" uid="uid://cg14044b6gb5k" path="res://assets/objects/Transition.png" id="14_dfx6o"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="15_k7ods"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="18_w1q8o"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="19_25208"]
+[ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="19_m1q2o"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -465,6 +466,7 @@ z_index = 20
 y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
 script = ExtResource("13_i5m85")
+target_scene = ExtResource("19_m1q2o")
 metadata/_edit_lock_ = true
 
 [node name="Trigger" type="Area2D" parent="Transition"]

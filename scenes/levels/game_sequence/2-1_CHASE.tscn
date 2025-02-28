@@ -1,9 +1,9 @@
 [gd_scene load_steps=28 format=4 uid="uid://b6onmrleg7nri"]
 
-[ext_resource type="Texture2D" uid="uid://dr1wuroinf42a" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
 [ext_resource type="PackedScene" uid="uid://fsxjau4kfu71" path="res://scenes/objects/brokenwoodenboxes.tscn" id="2_qs0ra"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="3_g52sb"]
-[ext_resource type="Texture2D" uid="uid://b8bjah7xc0hti" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
+[ext_resource type="Texture2D" uid="uid://dnu6505li3ghk" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="5_wihit"]
 [ext_resource type="PackedScene" uid="uid://bp8r6cmiycm4m" path="res://scenes/enemies/Hamster/Hamster.tscn" id="6_cinsa"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="7_gyrh6"]

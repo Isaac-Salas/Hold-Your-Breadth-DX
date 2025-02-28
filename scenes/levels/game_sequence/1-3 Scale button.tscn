@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://cj0r44ewv57st"]
+[gd_scene load_steps=24 format=4 uid="uid://cj0r44ewv57st"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_lksdr"]
-[ext_resource type="Texture2D" uid="uid://dr1wuroinf42a" path="res://assets/tilemap/concrete.png" id="2_ie3v8"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_ie3v8"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_d14u1"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="4_naod3"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_ib21r"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="14_30d8k"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="15_qky78"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="16_8upd7"]
+[ext_resource type="PackedScene" uid="uid://bhe6366hku86k" path="res://scenes/levels/game_sequence/3-1 Scale level.tscn" id="16_dmg63"]
+[ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="17_d0u2i"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="18_3fs85"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -207,9 +210,6 @@ metadata/_edit_lock_ = true
 position = Vector2(193, 9)
 metadata/_edit_lock_ = true
 
-[node name="Light5" parent="lamps" instance=ExtResource("5_ib21r")]
-position = Vector2(1027, 488)
-
 [node name="Light4" parent="lamps" instance=ExtResource("5_ib21r")]
 position = Vector2(750, 56)
 metadata/_edit_lock_ = true
@@ -287,6 +287,7 @@ position = Vector2(1033, -23)
 
 [node name="Transition" parent="." instance=ExtResource("15_qky78")]
 scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("16_dmg63")
 
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(700.667, 427.333)
@@ -306,5 +307,20 @@ position = Vector2(93, 228)
 
 [node name="Indicator-X3" parent="." instance=ExtResource("16_8upd7")]
 position = Vector2(1038, 229)
+
+[node name="Indicator-Arrow" parent="." instance=ExtResource("17_d0u2i")]
+position = Vector2(194.317, 522)
+rotation = 3.14159
+
+[node name="Indicator-Arrow2" parent="." instance=ExtResource("17_d0u2i")]
+position = Vector2(194, 553.329)
+rotation = 3.14159
+
+[node name="Indicator-Arrow3" parent="." instance=ExtResource("17_d0u2i")]
+position = Vector2(193, 591.329)
+rotation = 3.14159
+
+[node name="Exit-Sign" parent="." instance=ExtResource("18_3fs85")]
+position = Vector2(1038, 502)
 
 [editable path="Transition"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=61 format=4 uid="uid://bwaomego0a1rr"]
+[gd_scene load_steps=64 format=4 uid="uid://bwaomego0a1rr"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_a8c63"]
-[ext_resource type="Texture2D" uid="uid://dr1wuroinf42a" path="res://assets/tilemap/concrete.png" id="2_te5y8"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_te5y8"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_qy1j8"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="4_vms52"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="5_humr0"]
@@ -9,18 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="7_4vbq7"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="8_2pfl4"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="9_3tumw"]
-[ext_resource type="PackedScene" uid="uid://ckg57n263xncs" path="res://scenes/levels/game_sequence/1-2 Doors and buttons.tscn" id="10_ik7fu"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="10_w6rqd"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="11_6icqt"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="13_uyuet"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="14_4h65n"]
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="14_cqr7o"]
-[ext_resource type="Texture2D" uid="uid://s1jsynwvjstk" path="res://assets/objects/door.png" id="14_ec7c5"]
+[ext_resource type="Texture2D" uid="uid://cpa67bjd1shg0" path="res://assets/objects/door.png" id="14_ec7c5"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="14_ss3x0"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="14_tstqb"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="15_fxdeb"]
-[ext_resource type="Texture2D" uid="uid://btiw2amfeu21x" path="res://assets/objects/small_door.png" id="15_reed1"]
+[ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="15_jg10q"]
+[ext_resource type="Texture2D" uid="uid://bmmgbghpil1" path="res://assets/objects/small_door.png" id="15_reed1"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="16_d0pni"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="21_th6is"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="22_5dfdk"]
+[ext_resource type="PackedScene" uid="uid://ccn1j6v25t2oc" path="res://scenes/levels/game_sequence/4-1 Meatbokkusu.tscn" id="22_5sdno"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -548,6 +551,9 @@ script = ExtResource("1_a8c63")
 ZoneNumber = 3
 LevelNumber = 2
 
+[node name="Platform4" parent="." instance=ExtResource("4_vms52")]
+position = Vector2(781, 487)
+
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAMAAAAFAAAAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAEAAAAAAADAAEAAAAFAAAAAAAEAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAAEAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAACAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAATAAAAAAABAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAACAAAAAAAXAAkAAAAEAAEAAAAXAAgAAAAEAAEAAAAXAAcAAAAFAAAAAAAXAAYAAAAEAAEAAAAXAAUAAAACAAEAAAAXAAQAAAAEAAEAAAAXAAMAAAAEAAEAAAAXAAIAAAAEAAEAAAAXAAEAAAACAAEAAAAXAA0AAAAEAAAAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAABAAIAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAAAA0AAAAEAAAAAAAAAAoAAAABAAIAAAAAAAkAAAAEAAEAAAAAAAgAAAAFAAAAAAAAAAcAAAAEAAEAAAAAAAYAAAAFAAAAAAAAAAUAAAAEAAEAAAAAAAQAAAAFAAAAAAAXAAoAAAABAAIAAAAWAAoAAAAEAAAAAAAVAAoAAAAEAAAAAAAUAAoAAAAEAAAAAAATAAoAAAAEAAAAAAASAAoAAAAEAAAAAAARAAoAAAAEAAAAAAAQAAoAAAADAAEAAAAIAAoAAAAEAAAAAAAHAAoAAAAEAAAAAAAGAAoAAAAEAAAAAAAFAAoAAAAEAAAAAAAEAAoAAAAEAAAAAAADAAoAAAAEAAAAAAACAAoAAAAEAAAAAAABAAoAAAAEAAAAAAAYAAwAAAAFAAAAAAAYAAsAAAAFAAAAAAAYAAoAAAACAAAAAAAYAA0AAAACAAIAAAD+/woAAAAAAAAAAAD//woAAAAEAAAAAAD+/w0AAAABAAIAAAD+/wwAAAAFAAAAAAD+/wsAAAAEAAEAAAD//w0AAAAEAAAAAAAJAAoAAAADAAIAAAAJAAQAAAACAAAAAAAJAAUAAAAFAAAAAAAJAAYAAAAEAAEAAAAJAAcAAAAEAAEAAAANAAEAAAACAAEAAAALAAQAAAADAAAAAAAGAAQAAAABAAIAAAAGAAMAAAAEAAEAAAAGAAIAAAAAAAEAAAAGAAEAAAAAAAEAAAAIAAQAAAAEAAAAAAAHAAQAAAAEAAAAAAAHAAEAAAABAAEAAAAHAAIAAAABAAIAAAAMAAEAAAABAAEAAAALAAEAAAAAAAIAAAAJAAEAAAACAAIAAAAIAAEAAAABAAEAAAAIAAIAAAACAAIAAAAMAAIAAAAAAAIAAAAWAAUAAAAEAAAAAAAVAAUAAAADAAEAAAATAAUAAAADAAIAAAASAAUAAAAEAAAAAAARAAUAAAAEAAAAAAAQAAUAAAAEAAAAAAAPAAUAAAADAAEAAAAPAAEAAAAAAAIAAAAQAAEAAAABAAIAAAARAAEAAAABAAIAAAASAAEAAAABAAIAAAATAAEAAAACAAIAAAAWAAEAAAABAAIAAAAVAAEAAAAAAAIAAAANAAIAAAACAAIAAAAPAAwAAAAFAAEAAAACAAAAAAADAAIAAAA=")
@@ -565,7 +571,9 @@ zoom = Vector2(1.004, 1.004)
 
 [node name="Swing-light" parent="Lights" instance=ExtResource("6_y645p")]
 position = Vector2(312, 221)
-metadata/_edit_lock_ = true
+
+[node name="Light" parent="Lights/Swing-light" index="1"]
+position = Vector2(1, 162)
 
 [node name="Light" parent="Lights" instance=ExtResource("7_4vbq7")]
 position = Vector2(503, 53)
@@ -610,21 +618,6 @@ metadata/_edit_lock_ = true
 position = Vector2(576, 186)
 rotation = -3.14159
 metadata/_edit_lock_ = true
-
-[node name="Buttons" type="Node" parent="."]
-
-[node name="CrampedButton" parent="Buttons" instance=ExtResource("14_4h65n")]
-position = Vector2(384, 192)
-
-[node name="BottomButton" parent="Buttons" instance=ExtResource("14_4h65n")]
-position = Vector2(671, 624)
-
-[node name="Lasershut_toggle" parent="Buttons" instance=ExtResource("14_4h65n")]
-position = Vector2(1056, 240)
-
-[node name="Scale_button_green" parent="Buttons" instance=ExtResource("10_w6rqd")]
-position = Vector2(294, 624)
-activation_weight = 6.0
 
 [node name="Doors" type="Node" parent="."]
 
@@ -846,11 +839,47 @@ libraries = {
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Doors/LasershutOrange"]
 occluder = SubResource("OccluderPolygon2D_rcp2j")
 
+[node name="Buttons" type="Node" parent="."]
+
+[node name="CrampedButton" parent="Buttons" instance=ExtResource("14_4h65n")]
+position = Vector2(384, 192)
+
+[node name="Button_Red_Signal" parent="Buttons/CrampedButton" instance=ExtResource("14_ss3x0")]
+z_index = 1
+position = Vector2(744, 311)
+
+[node name="BottomButton" parent="Buttons" instance=ExtResource("14_4h65n")]
+position = Vector2(671, 624)
+
+[node name="Button_Red_Signal" parent="Buttons/BottomButton" instance=ExtResource("14_ss3x0")]
+z_index = 1
+position = Vector2(-24, -505)
+
+[node name="Lasershut_toggle" parent="Buttons" instance=ExtResource("14_4h65n")]
+position = Vector2(1056, 240)
+
+[node name="Scale_green_reciever" parent="Buttons/Lasershut_toggle" instance=ExtResource("15_jg10q")]
+z_index = 1
+position = Vector2(-313, -170)
+
+[node name="Scale_green_reciever2" parent="Buttons/Lasershut_toggle" instance=ExtResource("15_jg10q")]
+z_index = 1
+position = Vector2(-313, 24)
+
+[node name="Scale_button_green" parent="Buttons" instance=ExtResource("10_w6rqd")]
+position = Vector2(294, 624)
+activation_weight = 6.0
+
+[node name="Scale_green_reciever" parent="Buttons/Scale_button_green" instance=ExtResource("15_jg10q")]
+z_index = 1
+position = Vector2(162, -264)
+
 [node name="Lasers" type="Node" parent="."]
 
 [node name="Shrink-Laser" parent="Lasers" instance=ExtResource("15_fxdeb")]
 position = Vector2(985, 48)
 rotation = 1.57079
+target_scale = Vector2(1, 1)
 metadata/_edit_lock_ = true
 
 [node name="Grow-Laser" parent="Lasers" instance=ExtResource("16_d0pni")]
@@ -878,7 +907,7 @@ visible = false
 
 [node name="Transition" parent="." instance=ExtResource("9_3tumw")]
 scale = Vector2(1.501, 1.501)
-target_scene = ExtResource("10_ik7fu")
+target_scene = ExtResource("22_5sdno")
 metadata/_edit_lock_ = true
 
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
@@ -895,8 +924,34 @@ position = Vector2(384, 540)
 position = Vector2(695, 553)
 rotation = 1.57079
 
+[node name="Indicator-Arrow3" parent="." instance=ExtResource("21_th6is")]
+position = Vector2(695, 206)
+rotation = 1.57079
+
 [node name="Indicator-Arrow2" parent="." instance=ExtResource("21_th6is")]
-position = Vector2(313, 430)
+position = Vector2(113, 375)
+rotation = -0.738008
+
+[node name="Indicator-X" parent="." instance=ExtResource("22_5dfdk")]
+position = Vector2(1062, 187)
+
+[node name="Indicator-X2" parent="." instance=ExtResource("22_5dfdk")]
+position = Vector2(1062, 187)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(394, 580)
+rotation = 1.57079
+
+[node name="Indicator-Arrow3" parent="Node2D" instance=ExtResource("21_th6is")]
+position = Vector2(32.0001, 24.0001)
+rotation = 1.57079
+
+[node name="Indicator-Arrow4" parent="Node2D" instance=ExtResource("21_th6is")]
+position = Vector2(-31.9999, 24.0001)
+rotation = 1.57079
+
+[node name="Indicator-Arrow5" parent="Node2D" instance=ExtResource("21_th6is")]
+position = Vector2(-0.999947, 24.0001)
 rotation = 1.57079
 
 [connection signal="pressed" from="Buttons/CrampedButton" to="Doors/Exit_door" method="toggle_door"]
@@ -906,4 +961,5 @@ rotation = 1.57079
 [connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/Left_door" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/LasershutOrange" method="toggle_door"]
 
+[editable path="Lights/Swing-light"]
 [editable path="Transition"]
