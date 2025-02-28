@@ -382,6 +382,12 @@ starting_scale = 6.0
 [node name="Transition" parent="." instance=ExtResource("14_ircil")]
 target_scene = ExtResource("17_xq02p")
 
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 540)
+
 [node name="dont touch" parent="." instance=ExtResource("19_1pgjy")]
 visible = false
 

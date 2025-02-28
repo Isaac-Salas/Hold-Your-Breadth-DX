@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://cj0r44ewv57st"]
+[gd_scene load_steps=21 format=4 uid="uid://cj0r44ewv57st"]
 
 [ext_resource type="Script" path="res://scenes/levels/template/template.gd" id="1_lksdr"]
-[ext_resource type="Texture2D" uid="uid://c7xoy8o8a2q8i" path="res://assets/tilemap/concrete.png" id="2_ie3v8"]
+[ext_resource type="Texture2D" uid="uid://dr1wuroinf42a" path="res://assets/tilemap/concrete.png" id="2_ie3v8"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_d14u1"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="4_naod3"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_ib21r"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="13_mqp45"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="14_30d8k"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="15_qky78"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="16_8upd7"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -290,5 +291,20 @@ scale = Vector2(1.5, 1.5)
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(700.667, 427.333)
 shape = SubResource("RectangleShape2D_6l258")
+
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 540)
+
+[node name="Indicator-X" parent="." instance=ExtResource("16_8upd7")]
+position = Vector2(1043, 81)
+
+[node name="Indicator-X2" parent="." instance=ExtResource("16_8upd7")]
+position = Vector2(93, 228)
+
+[node name="Indicator-X3" parent="." instance=ExtResource("16_8upd7")]
+position = Vector2(1038, 229)
 
 [editable path="Transition"]
