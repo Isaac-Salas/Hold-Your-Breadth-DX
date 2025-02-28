@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0pi4ocu1rpdi"]
+[gd_scene load_steps=14 format=3 uid="uid://bk3ha3jv72o3k"]
 
-[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="1_aifxu"]
-[ext_resource type="Texture2D" uid="uid://bqsd5mvuwn8or" path="res://assets/objects/Transition.png" id="2_1pr46"]
+[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="1_b012s"]
+[ext_resource type="Script" path="res://scenes/levels/Testing/ss_trans.gd" id="1_vl5kh"]
+[ext_resource type="Texture2D" uid="uid://bqsd5mvuwn8or" path="res://assets/objects/Transition.png" id="2_qj6xq"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="3_ah7ht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
 size = Vector2(24, 95)
@@ -108,49 +110,58 @@ _data = {
 "RESET": SubResource("Animation_y1k7v")
 }
 
-[node name="Transition" type="Node2D"]
+[node name="SsTrans" type="Node2D"]
+script = ExtResource("1_vl5kh")
+
+[node name="dont touch" parent="." instance=ExtResource("3_ah7ht")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(1.5, 1.5)
+
+[node name="Transition" type="Node2D" parent="."]
 modulate = Color(0.408333, 0.375, 0.5, 1)
 z_index = 20
 y_sort_enabled = true
-script = ExtResource("1_aifxu")
+script = ExtResource("1_b012s")
 
-[node name="Trigger" type="Area2D" parent="."]
+[node name="Trigger" type="Area2D" parent="Transition"]
 
-[node name="TRIGGERSCENE" type="CollisionShape2D" parent="Trigger"]
+[node name="TRIGGERSCENE" type="CollisionShape2D" parent="Transition/Trigger"]
 position = Vector2(756, 336)
 shape = SubResource("RectangleShape2D_lorgc")
 debug_color = Color(0.453215, 0.595313, 0, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Transition"]
 z_index = 5
 y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_gw78c")
 position = Vector2(384, -108)
-texture = ExtResource("2_1pr46")
+texture = ExtResource("2_qj6xq")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Transition/Sprite2D"]
 visible = false
 clip_children = 2
 occluder = SubResource("OccluderPolygon2D_jd3jg")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="Transition"]
 z_index = 5
 y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_5ty5i")
 position = Vector2(384, 540)
 scale = Vector2(1, -1)
-texture = ExtResource("2_1pr46")
+texture = ExtResource("2_qj6xq")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D2"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Transition/Sprite2D2"]
 visible = false
 clip_children = 2
 occluder = SubResource("OccluderPolygon2D_2lfug")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
 reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_k0j2h")
 }
 autoplay = "Opening"
 
-[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_entered" from="Transition/Trigger" to="Transition" method="_on_trigger_body_entered"]

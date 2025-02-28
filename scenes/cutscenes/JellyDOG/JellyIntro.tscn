@@ -1,104 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bq67ywql5p50l"]
+[gd_scene load_steps=7 format=3 uid="uid://bq67ywql5p50l"]
 
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="1_gem5w"]
 [ext_resource type="Script" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_p6wik"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="2_6wsk4"]
-[ext_resource type="Texture2D" uid="uid://bmohnloqiap5t" path="res://assets/DOG.png" id="2_ihy1v"]
-[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="5_m3727"]
+[ext_resource type="Texture2D" uid="uid://cupnc0jodp4ng" path="res://assets/DOG.png" id="2_ihy1v"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_7241v"]
 [ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="6_pmtte"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
-size = Vector2(24, 95)
-
-[sub_resource type="Animation" id="Animation_1yl6c"]
-resource_name = "Closing"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(6.27667, 6.27667),
-"update": 0,
-"values": [Vector2(384, 540), Vector2(384, 323)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(6.27667, 6.27667),
-"update": 0,
-"values": [Vector2(384, -108), Vector2(384, 109)]
-}
-
-[sub_resource type="Animation" id="Animation_r5kup"]
-resource_name = "Opening"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(4.75683, 4.75683),
-"update": 0,
-"values": [Vector2(384, 323), Vector2(384, 540)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(4.75683, 4.75683),
-"update": 0,
-"values": [Vector2(384, 109), Vector2(384, -108)]
-}
-
-[sub_resource type="Animation" id="Animation_y1k7v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(384, 324)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(384, 108)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0j2h"]
-_data = {
-"Closing": SubResource("Animation_1yl6c"),
-"Opening": SubResource("Animation_r5kup"),
-"RESET": SubResource("Animation_y1k7v")
-}
 
 [node name="JellyIntro" type="Node2D"]
 script = ExtResource("1_p6wik")
@@ -130,30 +37,11 @@ position = Vector2(1625, -12)
 wait_time = 3.5
 autostart = true
 
-[node name="Transition" type="Node2D" parent="."]
-modulate = Color(0.408333, 0.375, 0.5, 1)
-z_index = 20
-y_sort_enabled = true
+[node name="Transition" parent="." instance=ExtResource("5_7241v")]
 scale = Vector2(1.5, 1.5)
-script = ExtResource("5_m3727")
 target_scene = ExtResource("6_pmtte")
 
-[node name="Trigger" type="Area2D" parent="Transition"]
-
-[node name="TRIGGERSCENE" type="CollisionShape2D" parent="Transition/Trigger"]
-position = Vector2(756, 336)
-shape = SubResource("RectangleShape2D_lorgc")
-debug_color = Color(0.453215, 0.595313, 0, 0.42)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
-reset_on_save = false
-libraries = {
-"": SubResource("AnimationLibrary_k0j2h")
-}
-autoplay = "Opening"
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Transition/Trigger" to="Transition" method="_on_trigger_body_entered"]
 
 [editable path="dont touch"]
 [editable path="Swing-light"]

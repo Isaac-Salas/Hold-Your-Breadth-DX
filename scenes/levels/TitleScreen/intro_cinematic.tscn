@@ -1,4 +1,4 @@
-[gd_scene load_steps=189 format=3 uid="uid://7supi3qqww4n"]
+[gd_scene load_steps=191 format=3 uid="uid://7supi3qqww4n"]
 
 [ext_resource type="Script" path="res://scenes/levels/TitleScreen/intro_cinematic.gd" id="1_jvodv"]
 [ext_resource type="Texture2D" uid="uid://caqqe2lq64jwx" path="res://assets/nume/nume_00000.png" id="1_v3v7e"]
@@ -180,6 +180,8 @@
 [ext_resource type="Texture2D" uid="uid://cty26p5f5km38" path="res://scenes/shaders/ColorGradeP-O.tres" id="179_lgv8f"]
 [ext_resource type="PackedScene" uid="uid://fnvs7y1btss0" path="res://scenes/shaders/Options_Menu.tscn" id="180_3aeis"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="181_l4xxd"]
+[ext_resource type="Texture2D" uid="uid://c4q2xj5nhu0jw" path="res://assets/lights/Lamparacolgosa.png" id="182_hhv34"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="183_lslwy"]
 [ext_resource type="PackedScene" uid="uid://o1wthtbpquqd" path="res://scenes/levels/TitleScreen/Menu.tscn" id="193_qey2u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5a0kr"]
@@ -848,6 +850,7 @@ volume_db = -15.0
 autoplay = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(571, 353)
 energy = 0.3
 texture = ExtResource("106_qu11x")
@@ -870,7 +873,7 @@ metadata/_edit_lock_ = true
 [node name="Background" type="Sprite2D" parent="dont touch"]
 modulate = Color(0.05, 0.05, 0.05, 1)
 z_index = -5
-scale = Vector2(11.98, 11.95)
+scale = Vector2(12.03, 12)
 texture = ExtResource("177_ykpgo")
 centered = false
 metadata/_edit_lock_ = true
@@ -891,4 +894,23 @@ CRTShader = NodePath("../CRTShader")
 [node name="CRTShader" parent="dont touch" instance=ExtResource("181_l4xxd")]
 z_index = 25
 
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(568, 289)
+color = Color(1, 0.819608, 0.647059, 1)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("182_hhv34")
+texture_scale = 4.0
+
+[node name="Transition" parent="." instance=ExtResource("183_lslwy")]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, 109)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 323)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Transition"]
