@@ -3,6 +3,7 @@ extends Area2D
 @onready var light: PointLight2D = $PointLight2D
 @onready var anim: AnimatedSprite2D = $anim
 @export var activation_weight : float = 4.0
+@onready var particles = $CPUParticles2D
 
 var color_almost : Color = Color.DARK_ORANGE
 var color_done : Color = Color.GREEN_YELLOW
@@ -55,6 +56,8 @@ func update():
 		light.show()
 		light.color = color_done
 		anim_flag.play("CORRECT")
+		particles.restart()
+		particles.emitting = true
 		return true
 	elif anim_flag.animation != "CORRECT":
 		light.energy = remap(weight_total, 0, activation_weight, 0, 0.9)

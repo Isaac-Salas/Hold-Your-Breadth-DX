@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dsmy2h1upfevb"]
+[gd_scene load_steps=30 format=3 uid="uid://dsmy2h1upfevb"]
 
 [ext_resource type="Script" path="res://scenes/objects/scale_green/scale_logic.gd" id="1_rceiw"]
-[ext_resource type="Texture2D" uid="uid://2ggarvi8rsgv" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
-[ext_resource type="Texture2D" uid="uid://d17gho73pcr10" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
-[ext_resource type="Texture2D" uid="uid://b1xbly7a42bv0" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
+[ext_resource type="Texture2D" uid="uid://crb5d0df5ycud" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
+[ext_resource type="Texture2D" uid="uid://bi2502gafrhdn" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
+[ext_resource type="Texture2D" uid="uid://cb4mf5pn8mjwh" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
+[ext_resource type="Shader" path="res://scenes/shaders/Particle.gdshader" id="5_k7c00"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gsyot"]
 light_mode = 1
@@ -173,6 +174,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdtrr"]
 size = Vector2(96, 47)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tg2qi"]
+shader = ExtResource("5_k7c00")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_byh63"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.03
+initial_velocity_min = -200.0
+initial_velocity_max = 200.0
+angular_velocity_min = 350.27
+angular_velocity_max = 350.27
+gravity = Vector3(0, 980, 0)
+scale_max = 3.0
+color = Color(2, 2, 1, 1)
+
 [node name="Scale_button_green" type="Area2D"]
 collision_layer = 3
 collision_mask = 3
@@ -203,6 +219,18 @@ frame = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24.5)
 shape = SubResource("RectangleShape2D_mdtrr")
+
+[node name="CPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_tg2qi")
+position = Vector2(-22, -84)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_byh63")
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+draw_order = 0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

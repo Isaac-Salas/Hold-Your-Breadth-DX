@@ -2,7 +2,8 @@ extends Node2D
 #@onready var string : ButtonCable = $String
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @export var isON = false
-@onready var light: PointLight2D = $PointLight2D
+@onready var light = $PointLight2D
+@onready var particles = $CPUParticles2D
 
 func _ready() -> void:
 	
@@ -15,6 +16,8 @@ func _ready() -> void:
 func toggle_door(state, body):
 	isON = state
 	if isON:
+		particles.restart()
+		particles.emitting = true
 		anim.play("ON")
 		light.show()
 	else:

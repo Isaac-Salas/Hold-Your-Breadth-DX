@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhenjdi5p5ejl"]
+[gd_scene load_steps=20 format=3 uid="uid://bhenjdi5p5ejl"]
 
-[ext_resource type="Texture2D" uid="uid://b2nanpqls6cs8" path="res://assets/objects/button_animated.png" id="1_jj771"]
+[ext_resource type="Texture2D" uid="uid://8oprtgbhuu3v" path="res://assets/objects/button_animated.png" id="1_jj771"]
 [ext_resource type="Script" path="res://scenes/objects/button_red/button_red.gd" id="1_t8urs"]
-[ext_resource type="Texture2D" uid="uid://cfuytyv1b4bpy" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
-[ext_resource type="Texture2D" uid="uid://badhesibyt65e" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
+[ext_resource type="Texture2D" uid="uid://dfimot5v5k3u4" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
+[ext_resource type="Texture2D" uid="uid://cb4mf5pn8mjwh" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
+[ext_resource type="Shader" path="res://scenes/shaders/Particle.gdshader" id="5_5mmhb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1h6ja"]
 light_mode = 1
@@ -98,6 +99,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8olo"]
 size = Vector2(96, 12)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fh3h3"]
+blend_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4qag"]
+shader = ExtResource("5_5mmhb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dejd3"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.03
+initial_velocity_min = -200.0
+initial_velocity_max = 200.0
+angular_velocity_min = 350.27
+angular_velocity_max = 350.27
+gravity = Vector3(0, 980, 0)
+scale_max = 3.0
+color = Color(2, 2, 1, 1)
+
 [node name="Button_red" type="Area2D"]
 script = ExtResource("1_t8urs")
 
@@ -124,15 +143,24 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_h8olo")
 metadata/_edit_lock_ = true
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(1, 0.235294, 0.235294, 0.784314)
+material = SubResource("CanvasItemMaterial_fh3h3")
 position = Vector2(-36, -84)
-scale = Vector2(0.666667, 0.666667)
-color = Color(1, 0.235294, 0.235294, 1)
-energy = 0.9
-shadow_enabled = true
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("4_hew85")
-texture_scale = 0.8
+
+[node name="CPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_s4qag")
+position = Vector2(-36, -85)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_dejd3")
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+draw_order = 0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

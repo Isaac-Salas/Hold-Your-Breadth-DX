@@ -5,6 +5,7 @@ extends Area2D
 signal pressed(state, body)
 var state = false
 var n_inside = 0
+@onready var particles = $CPUParticles2D
 
 
 
@@ -12,7 +13,10 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("button_actionable"):
 		n_inside += 1
 		anim_flag.play("ON")
+
 		if not state:
+			particles.restart()
+			particles.emitting = true
 			state = true
 			anim.play("pressed")
 			light.show()
