@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0s1m2m4glnl1"]
+
+[ext_resource type="Script" path="res://scenes/single/button.gd" id="1_1txjb"]
+[ext_resource type="SpriteFrames" uid="uid://cvfggvtxiq6ys" path="res://scenes/single/level.tres" id="1_4e8s7"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(41, 46)
+sprite_frames = ExtResource("1_4e8s7")
+animation = &"finish"
+script = ExtResource("1_1txjb")

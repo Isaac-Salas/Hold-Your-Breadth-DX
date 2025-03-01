@@ -14,7 +14,7 @@ var Level4_3 = false
 var Level5_1 = false
 var Level5_2 = false
 var Level5_3 = false
-var Level6_66 = false
+var Level6_66 = true
 var save_dict : Dictionary
 
 

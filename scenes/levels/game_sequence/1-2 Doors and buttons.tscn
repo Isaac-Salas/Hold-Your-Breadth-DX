@@ -466,12 +466,6 @@ target_scene = ExtResource("19_uk2xt")
 position = Vector2(779.25, 337.729)
 shape = SubResource("RectangleShape2D_cuym5")
 
-[node name="Sprite2D" parent="Transition" index="1"]
-position = Vector2(384, -108)
-
-[node name="Sprite2D2" parent="Transition" index="2"]
-position = Vector2(384, 540)
-
 [node name="Indicator-X" parent="." instance=ExtResource("20_wph5r")]
 position = Vector2(98, 146)
 

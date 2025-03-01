@@ -914,12 +914,6 @@ metadata/_edit_lock_ = true
 position = Vector2(754.164, 381.745)
 shape = SubResource("RectangleShape2D_k5kqe")
 
-[node name="Sprite2D" parent="Transition" index="1"]
-position = Vector2(384, -108)
-
-[node name="Sprite2D2" parent="Transition" index="2"]
-position = Vector2(384, 540)
-
 [node name="Indicator-Arrow" parent="." instance=ExtResource("21_th6is")]
 position = Vector2(695, 553)
 rotation = 1.57079

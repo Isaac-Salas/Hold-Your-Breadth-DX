@@ -1,15 +1,24 @@
-[gd_scene load_steps=201 format=3 uid="uid://o1wthtbpquqd"]
+[gd_scene load_steps=204 format=3 uid="uid://o1wthtbpquqd"]
 
 [ext_resource type="Script" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
-[ext_resource type="Texture2D" uid="uid://c6pllplaybgoy" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
-[ext_resource type="Texture2D" uid="uid://dsfpjjeewbriv" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
-[ext_resource type="Texture2D" uid="uid://dlebi5llq5j1m" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
-[ext_resource type="Texture2D" uid="uid://dw8ks6m6dg8jv" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
-[ext_resource type="FontFile" uid="uid://cas63ig7reksy" path="res://assets/Fonts/HORROR SPRAY DEMO Regular.otf" id="54_auanj"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="103_6same"]
+[ext_resource type="Texture2D" uid="uid://d1txk8ttxc3a2" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
+[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="3_au2hu"]
+[ext_resource type="Texture2D" uid="uid://cg14044b6gb5k" path="res://assets/objects/Transition.png" id="4_3hmnn"]
+[ext_resource type="Texture2D" uid="uid://1c6ur376o5no" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
+[ext_resource type="Texture2D" uid="uid://dh33lsdnjj2lm" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
+[ext_resource type="Texture2D" uid="uid://cb7jmxq68cgg1" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
-size = Vector2(47, 95)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gw78c"]
+light_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jd3jg"]
+polygon = PackedVector2Array(-384, 107, -384, -107, 384, -107, 384, 107)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5ty5i"]
+light_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2lfug"]
+polygon = PackedVector2Array(-384, 107, -384, -107, 384, -107, 384, 107)
 
 [sub_resource type="Animation" id="Animation_1yl6c"]
 resource_name = "Closing"
@@ -1484,26 +1493,44 @@ animations = [{
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_5s0bf")
 
-[node name="Button" type="Button" parent="."]
-visible = false
-offset_left = 142.0
-offset_top = 362.0
-offset_right = 422.0
-offset_bottom = 514.0
-theme_override_fonts/font = ExtResource("54_auanj")
-theme_override_font_sizes/font_size = 61
-text = "Scene switcher"
-
-[node name="Transition" parent="." instance=ExtResource("103_6same")]
+[node name="Transition" type="Node2D" parent="."]
+modulate = Color(0.408333, 0.375, 0.5, 1)
+z_index = 20
+y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
+script = ExtResource("3_au2hu")
 
-[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
-shape = SubResource("RectangleShape2D_lorgc")
+[node name="Sprite2D" type="Sprite2D" parent="Transition"]
+z_index = 5
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_gw78c")
+position = Vector2(384, -108)
+texture = ExtResource("4_3hmnn")
 
-[node name="AnimationPlayer" parent="Transition" index="3"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Transition/Sprite2D"]
+visible = false
+clip_children = 2
+occluder = SubResource("OccluderPolygon2D_jd3jg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Transition"]
+z_index = 5
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_5ty5i")
+position = Vector2(384, 540)
+scale = Vector2(1, -1)
+texture = ExtResource("4_3hmnn")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Transition/Sprite2D2"]
+visible = false
+clip_children = 2
+occluder = SubResource("OccluderPolygon2D_2lfug")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_k0j2h")
 }
+autoplay = "Opening"
 
 [node name="PlaySprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(591, 350)
@@ -1527,7 +1554,7 @@ flat = true
 position = Vector2(591, 420)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_crhji")
-animation = &"normal"
+animation = &"unhover"
 autoplay = "normal"
 metadata/_edit_lock_ = true
 
@@ -1579,7 +1606,6 @@ focus_mode = 0
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="PlaySprite/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="PlaySprite/Play" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="PlaySprite/Play" to="." method="_on_play_pressed"]
@@ -1592,5 +1618,3 @@ metadata/_edit_use_anchors_ = true
 [connection signal="mouse_entered" from="QuitSprite/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="QuitSprite/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="QuitSprite/Quit" to="." method="_on_quit_pressed"]
-
-[editable path="Transition"]
