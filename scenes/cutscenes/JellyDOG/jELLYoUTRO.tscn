@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6bs7y7fkg5ud"]
+
+[ext_resource type="Script" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_nklkn"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="2_0md7p"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="3_2tn5b"]
+[ext_resource type="Texture2D" uid="uid://cutc6unkjubsf" path="res://assets/DOG.png" id="3_f6gsf"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="4_wpbc4"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_4plus"]
+[ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="6_aqvgt"]
+[ext_resource type="FontFile" uid="uid://dnqsqaujsviwo" path="res://assets/Fonts/DePixelHalbfett.otf" id="7_bvxbn"]
+
+[node name="JellyIntro" type="Node2D"]
+script = ExtResource("1_nklkn")
+
+[node name="dont touch" parent="." instance=ExtResource("2_0md7p")]
+
+[node name="CanvasModulate" parent="dont touch" index="1"]
+color = Color(0.0189402, 0.0189402, 0.0189402, 1)
+
+[node name="Light" parent="dont touch" instance=ExtResource("3_2tn5b")]
+position = Vector2(-283, 40)
+rotation = -1.5708
+scale = Vector2(4.62572, 4.62572)
+
+[node name="Light2" parent="dont touch" instance=ExtResource("3_2tn5b")]
+position = Vector2(1712, 339)
+rotation = -4.71239
+scale = Vector2(4.62572, 4.62572)
+
+[node name="Light3" parent="dont touch" instance=ExtResource("3_2tn5b")]
+position = Vector2(-246, 650)
+rotation = -1.5708
+scale = Vector2(4.62572, 4.62572)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 352)
+scale = Vector2(0.497674, 0.497674)
+texture = ExtResource("3_f6gsf")
+
+[node name="Swing-light" parent="." node_paths=PackedStringArray("marker") instance=ExtResource("4_wpbc4")]
+position = Vector2(576, -680)
+scale = Vector2(4, 4)
+marker = NodePath("../Marker2D")
+
+[node name="Light" parent="Swing-light" index="1"]
+freeze = false
+
+[node name="VisibleOnScreenNotifier2D" parent="Swing-light/Light" index="4"]
+rect = Rect2(-60, -60, 200, 200)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1625, -12)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 12.0
+autostart = true
+
+[node name="Transition" parent="." instance=ExtResource("5_4plus")]
+scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("6_aqvgt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 102.0
+offset_right = 985.0
+offset_bottom = 683.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("7_bvxbn")
+theme_override_font_sizes/font_size = 32
+text = "CONGRATULATIONS ON REACHING THE END OF THE DEMO
+
+
+
+
+
+
+
+
+WE HOPE YOU ENJOYED
+BOTTOM TEXT
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="dont touch"]
+[editable path="Swing-light"]
