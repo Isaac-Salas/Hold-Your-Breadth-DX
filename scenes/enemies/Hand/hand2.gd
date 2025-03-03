@@ -43,7 +43,7 @@ func _physics_process(delta):
 		
 		if triggered == true:
 			match handstate:
-				
+
 				0:
 					attackidle(delta)
 					if dialog.linecount == 2:

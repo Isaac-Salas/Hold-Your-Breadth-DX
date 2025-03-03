@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://byn0alcsqts11"]
+[gd_scene load_steps=17 format=3 uid="uid://byn0alcsqts11"]
 
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="1_uk4jh"]
-[ext_resource type="Texture2D" uid="uid://bkeyf47bk3da6" path="res://assets/objects/door.png" id="2_h6pji"]
+[ext_resource type="Texture2D" uid="uid://cpa67bjd1shg0" path="res://assets/objects/door.png" id="2_h6pji"]
+[ext_resource type="AudioStream" uid="uid://cxqq7o4g0h3jg" path="res://assets/audioshit/PUERTA.mp3" id="3_fc61u"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_em7m7"]
 light_mode = 1
@@ -237,3 +238,11 @@ offset_right = 24.0
 offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fc61u")
+volume_db = 15.022
+attenuation = 5.00001
+max_polyphony = 2
+panning_strength = 3.0
+bus = &"SFX"

@@ -4,6 +4,7 @@ extends Area2D
 @onready var anim: AnimatedSprite2D = $anim
 @export var activation_weight : float = 4.0
 @onready var particles = $CPUParticles2D
+@onready var audiofail: AudioStreamPlayer2D = $audiofail
 
 var color_almost : Color = Color.DARK_ORANGE
 var color_done : Color = Color.GREEN_YELLOW

@@ -5572,6 +5572,7 @@ disabled = true
 text = "5-1"
 flat = true
 script = ExtResource("5_3s37s")
+lvl_path = "res://scenes/levels/game_sequence/5-1 Rat Testing.tscn"
 transition = NodePath("../../Transition")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/5-1"]

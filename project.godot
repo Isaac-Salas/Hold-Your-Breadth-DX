@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Gmtk Jam 2024"
+config/name="Hold your breadth DX"
 run/main_scene="res://scenes/cutscenes/JellyDOG/JellyIntro.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="HYB-DX"

@@ -6,8 +6,7 @@ signal pressed(state, body)
 var state = false
 var n_inside = 0
 @onready var particles = $CPUParticles2D
-
-
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("button_actionable"):
@@ -21,6 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 			anim.play("pressed")
 			light.show()
 			await anim.animation_finished
+			audio_stream_player.play()
 			emit_signal("pressed", state, body)
 
 

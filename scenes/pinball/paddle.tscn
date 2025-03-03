@@ -1,0 +1,312 @@
+[gd_scene load_steps=55 format=3 uid="uid://b2cpbn3loj8r3"]
+
+[ext_resource type="Script" path="res://scenes/pinball/paddle.gd" id="1_xwim6"]
+[ext_resource type="Texture2D" uid="uid://t3sq2pan4wcu" path="res://Models/Enemies/HandSprites/Ang-End/10.png" id="2_740xi"]
+[ext_resource type="Texture2D" uid="uid://clj0w8ijl0pki" path="res://Models/Enemies/HandSprites/Ang-End/11.png" id="3_goi0x"]
+[ext_resource type="Texture2D" uid="uid://wjgs35kdm0dj" path="res://Models/Enemies/HandSprites/Ang-End/12.png" id="4_ic5i7"]
+[ext_resource type="Texture2D" uid="uid://w7825t4vl8ri" path="res://Models/Enemies/HandSprites/Ang-End/13.png" id="5_4u5j4"]
+[ext_resource type="Texture2D" uid="uid://bochwrju0igu5" path="res://Models/Enemies/HandSprites/Ang-End/14.png" id="6_hufto"]
+[ext_resource type="Texture2D" uid="uid://c3lbvpf81r8t6" path="res://Models/Enemies/HandSprites/Ang-End/15.png" id="7_h6h4s"]
+[ext_resource type="Texture2D" uid="uid://ufyunrko6wi3" path="res://Models/Enemies/HandSprites/Ang-Loop/10.png" id="8_gabnu"]
+[ext_resource type="Texture2D" uid="uid://c007pesdwjetp" path="res://Models/Enemies/HandSprites/Ang-Loop/11.png" id="9_ky57p"]
+[ext_resource type="Texture2D" uid="uid://mvi10lxhqnx3" path="res://Models/Enemies/HandSprites/Ang-Loop/12.png" id="10_14qux"]
+[ext_resource type="Texture2D" uid="uid://cl4v416pteppt" path="res://Models/Enemies/HandSprites/Ang-Loop/13.png" id="11_teleg"]
+[ext_resource type="Texture2D" uid="uid://b32ufrtftwv5j" path="res://Models/Enemies/HandSprites/Ang-Loop/14.png" id="12_7r8lv"]
+[ext_resource type="Texture2D" uid="uid://bhx71ke6f5ute" path="res://Models/Enemies/HandSprites/Catch/112.png" id="13_apr0q"]
+[ext_resource type="Texture2D" uid="uid://c3qrha8xkkaju" path="res://Models/Enemies/HandSprites/Catch/115.png" id="16_iahl4"]
+[ext_resource type="Texture2D" uid="uid://chjj6y6irvh5b" path="res://Models/Enemies/HandSprites/Catch/116.png" id="17_6aunt"]
+[ext_resource type="Texture2D" uid="uid://bl0gx220gak30" path="res://Models/Enemies/HandSprites/Catch/117.png" id="18_qt2w1"]
+[ext_resource type="Texture2D" uid="uid://bi72ky2s6u11o" path="res://Models/Enemies/HandSprites/Catch/118.png" id="19_0spql"]
+[ext_resource type="Texture2D" uid="uid://btjmkvyv3j4ci" path="res://Models/Enemies/HandSprites/Catch/119.png" id="20_wummv"]
+[ext_resource type="Texture2D" uid="uid://dbhvwuxi4chvm" path="res://Models/Enemies/HandSprites/Catch/120.png" id="21_h2n0p"]
+[ext_resource type="Texture2D" uid="uid://dkktmlxgnkju3" path="res://Models/Enemies/HandSprites/Catch/121.png" id="22_ikmif"]
+[ext_resource type="Texture2D" uid="uid://domp0a6dsc3w" path="res://Models/Enemies/HandSprites/Catch/122.png" id="23_c0fip"]
+[ext_resource type="Texture2D" uid="uid://33bg6pktwsss" path="res://Models/Enemies/HandSprites/Idle/Idle0.png" id="24_hcg0e"]
+[ext_resource type="Texture2D" uid="uid://btvxsfdoswqfm" path="res://Models/Enemies/HandSprites/Idle/Idle1.png" id="25_2k2qy"]
+[ext_resource type="Texture2D" uid="uid://b7atu52vgng3q" path="res://Models/Enemies/HandSprites/Idle/Idle2.png" id="26_cpkqi"]
+[ext_resource type="Texture2D" uid="uid://dhe2grnwvwknv" path="res://Models/Enemies/HandSprites/Idle/Idle3.png" id="27_qb2j4"]
+[ext_resource type="Texture2D" uid="uid://dhwfoc75heat4" path="res://Models/Enemies/HandSprites/Idle/Idle4.png" id="28_v5glr"]
+[ext_resource type="Texture2D" uid="uid://bo1mc7e6jmxqu" path="res://Models/Enemies/HandSprites/Idle/Idle5.png" id="29_644pf"]
+[ext_resource type="Texture2D" uid="uid://c8iebmlb374yb" path="res://Models/Enemies/HandSprites/Idle/Idle6.png" id="30_p088g"]
+[ext_resource type="Texture2D" uid="uid://bey2ga3tno3of" path="res://Models/Enemies/HandSprites/Idle/Idle7.png" id="31_aob47"]
+[ext_resource type="Texture2D" uid="uid://0k6dav3mgk7w" path="res://Models/Enemies/HandSprites/Idle/Idle8.png" id="32_w50bi"]
+[ext_resource type="Texture2D" uid="uid://gptw5nwd7w8j" path="res://Models/Enemies/HandSprites/Run/10.png" id="33_8higp"]
+[ext_resource type="Texture2D" uid="uid://481705tibitf" path="res://Models/Enemies/HandSprites/Run/11.png" id="34_uv4qm"]
+[ext_resource type="Texture2D" uid="uid://c0odwu4o0ycx0" path="res://Models/Enemies/HandSprites/Run/12.png" id="35_mg6dt"]
+[ext_resource type="Texture2D" uid="uid://0q0j0jsn11mn" path="res://Models/Enemies/HandSprites/Run/13.png" id="36_pbju1"]
+[ext_resource type="Texture2D" uid="uid://bsl6iqj5rpjrs" path="res://Models/Enemies/HandSprites/Run/14.png" id="37_a0wvm"]
+[ext_resource type="Texture2D" uid="uid://cp2e65pf2qe0w" path="res://Models/Enemies/HandSprites/Run/15.png" id="38_brh2s"]
+[ext_resource type="Texture2D" uid="uid://docvbaxprk22m" path="res://Models/Enemies/HandSprites/Run/16.png" id="39_0gbg5"]
+[ext_resource type="Texture2D" uid="uid://bacspbvnfmetj" path="res://Models/Enemies/HandSprites/Run/17.png" id="40_g06mn"]
+[ext_resource type="Texture2D" uid="uid://cj5kwiv06tfv6" path="res://Models/Enemies/HandSprites/Turn/10.png" id="41_rql27"]
+[ext_resource type="Texture2D" uid="uid://bde6ayaxeqfgo" path="res://Models/Enemies/HandSprites/Turn/11.png" id="42_nvc6l"]
+[ext_resource type="Texture2D" uid="uid://cxi2wsq042vmj" path="res://Models/Enemies/HandSprites/Turn/12.png" id="43_fc8tn"]
+[ext_resource type="Texture2D" uid="uid://2n66kd41df4l" path="res://Models/Enemies/HandSprites/Turn/13.png" id="44_1u4wd"]
+[ext_resource type="Texture2D" uid="uid://l5putano1wsq" path="res://Models/Enemies/HandSprites/Turned-Idle/10.png" id="45_16h6s"]
+[ext_resource type="Texture2D" uid="uid://drxsywi6hyqsp" path="res://Models/Enemies/HandSprites/Turned-Idle/11.png" id="46_3gwug"]
+[ext_resource type="Texture2D" uid="uid://dpta3txgsa3ly" path="res://Models/Enemies/HandSprites/Turned-Idle/12.png" id="47_x6myu"]
+[ext_resource type="Texture2D" uid="uid://if4jx3ikx4ms" path="res://Models/Enemies/HandSprites/Turned-Idle/13.png" id="48_vl5p3"]
+[ext_resource type="Texture2D" uid="uid://dl31l4w7v4mf4" path="res://Models/Enemies/HandSprites/Turned-Idle/14.png" id="49_vshv5"]
+[ext_resource type="Texture2D" uid="uid://d26nk633jsfol" path="res://Models/Enemies/HandSprites/Turned-Idle/15.png" id="50_2r0gv"]
+[ext_resource type="Texture2D" uid="uid://d074c6gu8rtqp" path="res://Models/Enemies/HandSprites/Turned-Idle/16.png" id="51_5fr63"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u3g2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_740xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_goi0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ic5i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4u5j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hufto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h6h4s")
+}],
+"loop": false,
+"name": &"Ang-End",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_gabnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ky57p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_14qux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_teleg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7r8lv")
+}],
+"loop": true,
+"name": &"Ang-Loop",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_gabnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ky57p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_14qux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_teleg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7r8lv")
+}],
+"loop": false,
+"name": &"Ang-Start",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_apr0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_iahl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6aunt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qt2w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0spql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wummv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_h2n0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ikmif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_c0fip")
+}],
+"loop": false,
+"name": &"Catch",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_hcg0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2k2qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_cpkqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qb2j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_v5glr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_644pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_p088g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_aob47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_w50bi")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_8higp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_uv4qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mg6dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pbju1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_a0wvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_brh2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_0gbg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_g06mn")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_rql27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_nvc6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_fc8tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_1u4wd")
+}],
+"loop": false,
+"name": &"Turn",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_16h6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_3gwug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_x6myu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_vl5p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_vshv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_2r0gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_5fr63")
+}],
+"loop": true,
+"name": &"Turned-Idle",
+"speed": 25.0
+}]
+
+[sub_resource type="Animation" id="Animation_u8q7j"]
+resource_name = "Attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(500, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cvcec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4nq5a"]
+resource_name = "paddle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fp8xg"]
+_data = {
+"Attack": SubResource("Animation_u8q7j"),
+"RESET": SubResource("Animation_cvcec"),
+"paddle": SubResource("Animation_4nq5a")
+}
+
+[node name="Paddle" type="RigidBody2D"]
+script = ExtResource("1_xwim6")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="hand" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_u3g2w")
+animation = &"Catch"
+frame = 8
+frame_progress = 1.0
+
+[node name="ap" type="AnimationPlayer" parent="."]
+root_node = NodePath("../hand")
+libraries = {
+"": SubResource("AnimationLibrary_fp8xg")
+}

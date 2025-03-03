@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b71h5dbrt5qt3"]
+[gd_scene load_steps=14 format=3 uid="uid://b71h5dbrt5qt3"]
 
 [ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="1_wtyfx"]
-[ext_resource type="Texture2D" uid="uid://d1y8alf76lqod" path="res://assets/objects/small_door.png" id="2_vmk4x"]
+[ext_resource type="Texture2D" uid="uid://bmmgbghpil1" path="res://assets/objects/small_door.png" id="2_vmk4x"]
+[ext_resource type="AudioStream" uid="uid://cxqq7o4g0h3jg" path="res://assets/audioshit/PUERTA.mp3" id="3_lpiex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyi1q"]
 atlas = ExtResource("2_vmk4x")
@@ -174,3 +175,7 @@ libraries = {
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_kh5m2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lpiex")
+volume_db = -8.612

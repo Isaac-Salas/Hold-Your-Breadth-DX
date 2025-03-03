@@ -20,5 +20,5 @@ func transition_to(_next_scene : PackedScene) -> void:
 
 
 func _on_trigger_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.is_in_group("Player"):
 		transition_to(target_scene)

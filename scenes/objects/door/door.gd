@@ -3,6 +3,8 @@ extends StaticBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @export var isOpen = false
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var first = true
 
 func _ready() -> void:
 	toggle_door(isOpen, 0)
@@ -15,6 +17,14 @@ func toggle_door(state, body):
 	if isOpen:
 		anim.play("open")
 		ap.play("shuttingcol")
+		if first:
+			first = false
+			return
+		audio_stream_player.play()
 	else:
 		anim.play_backwards("open")
 		ap.play_backwards("shuttingcol")
+		if first:
+			first = false
+			return
+		audio_stream_player.play()
