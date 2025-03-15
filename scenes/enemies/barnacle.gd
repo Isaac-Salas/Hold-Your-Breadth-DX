@@ -48,7 +48,7 @@ func start():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if colliders:
+	if colliders != null:
 		if lastone.visible == false and colliders.is_in_group("edible"):
 			self.queue_free()
 			spawner_component.scene = RIGIDBARNACLE

@@ -175,13 +175,12 @@ position = Vector2(0, 1)
 [node name="Pickups" type="Node" parent="."]
 
 [node name="WoodenBox" parent="Pickups" instance=ExtResource("11_lvcmj")]
-position = Vector2(627, 347)
-starting_scale = 5.0
+position = Vector2(636, 362)
 
 [node name="Lights" type="Node" parent="."]
 
 [node name="Swing-light" parent="Lights" node_paths=PackedStringArray("marker") instance=ExtResource("5_i1e8w")]
-position = Vector2(428, 12)
+position = Vector2(432, 10)
 marker = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Lights/Swing-light"]
@@ -191,10 +190,6 @@ position = Vector2(0, 139)
 position = Vector2(245, 58)
 
 [node name="Doors" type="Node" parent="."]
-
-[node name="Biodoor" parent="Doors" instance=ExtResource("12_u0wef")]
-position = Vector2(528, 336)
-scale = Vector2(-1, 1)
 
 [node name="Buttons" type="Node" parent="."]
 
@@ -206,7 +201,7 @@ z_index = 3
 position = Vector2(29, -267)
 
 [node name="Door" parent="Buttons/Button_red" instance=ExtResource("8_b288d")]
-position = Vector2(29, -194)
+position = Vector2(29, -193)
 
 [node name="Laser" type="Node" parent="."]
 
@@ -251,4 +246,9 @@ target_scene = ExtResource("19_oscsi")
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(780.5, 192)
 
+[node name="Biodoor" parent="." instance=ExtResource("12_u0wef")]
+position = Vector2(548, 336)
+scale = Vector2(-1, 1)
+
 [editable path="Transition"]
+[editable path="Biodoor"]

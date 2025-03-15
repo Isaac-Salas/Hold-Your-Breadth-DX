@@ -261,7 +261,7 @@ func set_size(target_size):
 	colision.scale = target_size/2
 	rigidcolision.scale = target_size/2
 	sprite.scale = target_size/2
-	if currentobj and picking == true and !currentobj.is_in_group("Meatbox"):
+	if currentobj and picking == true and !currentobj.is_in_group("Meatbox") and !currentobj.is_in_group("edible"):
 		currentobj.set_size(target_size)
 
 func _on_object_detect_body_entered(body):
