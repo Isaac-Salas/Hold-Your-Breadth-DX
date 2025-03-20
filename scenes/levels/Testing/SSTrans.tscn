@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://bk3ha3jv72o3k"]
 
-[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="1_b012s"]
-[ext_resource type="Script" path="res://scenes/levels/Testing/ss_trans.gd" id="1_vl5kh"]
-[ext_resource type="Texture2D" uid="uid://bqsd5mvuwn8or" path="res://assets/objects/Transition.png" id="2_qj6xq"]
+[ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="1_b012s"]
+[ext_resource type="Script" uid="uid://rp5bj1r2tcu5" path="res://scenes/levels/Testing/ss_trans.gd" id="1_vl5kh"]
+[ext_resource type="Texture2D" uid="uid://b1c1hr2n5qaas" path="res://assets/objects/Transition.png" id="2_qj6xq"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="3_ah7ht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
@@ -105,9 +105,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k0j2h"]
 _data = {
-"Closing": SubResource("Animation_1yl6c"),
-"Opening": SubResource("Animation_r5kup"),
-"RESET": SubResource("Animation_y1k7v")
+&"Closing": SubResource("Animation_1yl6c"),
+&"Opening": SubResource("Animation_r5kup"),
+&"RESET": SubResource("Animation_y1k7v")
 }
 
 [node name="SsTrans" type="Node2D"]

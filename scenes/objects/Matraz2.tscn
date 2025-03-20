@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1btdber4g5l3"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_lp02e"]
-[ext_resource type="Texture2D" uid="uid://dq6u4fyix5p15" path="res://assets/objects/matraz2.png" id="2_teptt"]
+[ext_resource type="Texture2D" uid="uid://dbxcg5u1i35fj" path="res://assets/objects/matraz2.png" id="2_teptt"]
 [ext_resource type="PackedScene" uid="uid://f006j5ihgekl" path="res://scenes/objects/BreakableGlass/Glass.tscn" id="3_2y5gi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7eoej"]

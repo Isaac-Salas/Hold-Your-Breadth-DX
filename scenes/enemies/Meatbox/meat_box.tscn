@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://pko810djqbqo"]
 
-[ext_resource type="Script" path="res://scenes/enemies/Meatbox/meat_box.gd" id="1_gtwie"]
-[ext_resource type="Texture2D" uid="uid://bqvjvbt5xl2vp" path="res://assets/objects/meatbox-bio.png" id="1_iu5mw"]
-[ext_resource type="Texture2D" uid="uid://5o0pcgyla3oo" path="res://assets/lights/nRmVV (2).png" id="3_nystw"]
-[ext_resource type="Script" path="res://components/spawner_component.gd" id="4_rtqqh"]
+[ext_resource type="Script" uid="uid://cdf8oll3gulyu" path="res://scenes/enemies/Meatbox/meat_box.gd" id="1_gtwie"]
+[ext_resource type="Texture2D" uid="uid://dhofe6hs8tpcg" path="res://assets/objects/meatbox-bio.png" id="1_iu5mw"]
+[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="3_nystw"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="4_rtqqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmwdt"]
 size = Vector2(24, 24)
@@ -42,8 +42,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5l1mm"]
 _data = {
-"RESET": SubResource("Animation_jvpm5"),
-"blink": SubResource("Animation_ixryu")
+&"RESET": SubResource("Animation_jvpm5"),
+&"blink": SubResource("Animation_ixryu")
 }
 
 [node name="MeatBox" type="RigidBody2D" groups=["Meatbox", "breakable", "button_actionable", "throwable"]]

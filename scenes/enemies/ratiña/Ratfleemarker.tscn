@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://giq52w54a0pw"]
 
-[ext_resource type="Script" path="res://scenes/enemies/ratiña/ratfleemarker.gd" id="1_g2x8k"]
-[ext_resource type="Texture2D" uid="uid://6xnkri4k60ds" path="res://assets/Enemies/RatHoleOnly.png" id="2_6yya8"]
-[ext_resource type="Texture2D" uid="uid://cojgqw05jselm" path="res://assets/Enemies/RatHoleEyeAnim.png" id="3_wkhwn"]
-[ext_resource type="Texture2D" uid="uid://dqd4tose35o8l" path="res://assets/Enemies/RatHoleCheese.png" id="4_lb1v4"]
+[ext_resource type="Script" uid="uid://blc5mqcgngirm" path="res://scenes/enemies/ratiña/ratfleemarker.gd" id="1_g2x8k"]
+[ext_resource type="Texture2D" uid="uid://bkiuf7unesmxn" path="res://assets/Enemies/RatHoleOnly.png" id="2_6yya8"]
+[ext_resource type="Texture2D" uid="uid://dwu7hpt6uxham" path="res://assets/Enemies/RatHoleEyeAnim.png" id="3_wkhwn"]
+[ext_resource type="Texture2D" uid="uid://bnjkhe6wyan6" path="res://assets/Enemies/RatHoleCheese.png" id="4_lb1v4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6c5o0"]
 size = Vector2(52, 56)

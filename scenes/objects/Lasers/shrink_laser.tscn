@@ -1,10 +1,10 @@
 [gd_scene load_steps=23 format=3 uid="uid://bpjuob5vv1cqt"]
 
-[ext_resource type="Script" path="res://scenes/objects/Lasers/grow_laser.gd" id="1_y7lcs"]
-[ext_resource type="Texture2D" uid="uid://b601i3n3gfi2t" path="res://assets/objects/laser-orange.png" id="2_sgd4p"]
-[ext_resource type="Texture2D" uid="uid://da0etv2tp2yhg" path="res://assets/objects/particle_orange.png" id="3_xb5f4"]
-[ext_resource type="Texture2D" uid="uid://5o0pcgyla3oo" path="res://assets/lights/nRmVV (2).png" id="4_djfdd"]
-[ext_resource type="Texture2D" uid="uid://bwhk4ilxopr2x" path="res://assets/lights/Ray.png" id="5_hxc5t"]
+[ext_resource type="Script" uid="uid://cyhfjlyl1wjtc" path="res://scenes/objects/Lasers/grow_laser.gd" id="1_y7lcs"]
+[ext_resource type="Texture2D" uid="uid://uata3h0ka62m" path="res://assets/objects/laser-orange.png" id="2_sgd4p"]
+[ext_resource type="Texture2D" uid="uid://dpllg0fb08oyy" path="res://assets/objects/particle_orange.png" id="3_xb5f4"]
+[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="4_djfdd"]
+[ext_resource type="Texture2D" uid="uid://dk0ke3p2l2ycc" path="res://assets/lights/Ray.png" id="5_hxc5t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6nbb"]
 radius = 12.0

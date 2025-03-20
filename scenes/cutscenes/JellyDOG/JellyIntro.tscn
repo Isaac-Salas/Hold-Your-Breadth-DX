@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bq67ywql5p50l"]
 
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="1_gem5w"]
-[ext_resource type="Script" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_p6wik"]
+[ext_resource type="Script" uid="uid://duqjcmce1wpy7" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_p6wik"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="2_6wsk4"]
-[ext_resource type="Texture2D" uid="uid://cutc6unkjubsf" path="res://assets/DOG.png" id="2_ihy1v"]
+[ext_resource type="Texture2D" uid="uid://ds4ykuqc1qde5" path="res://assets/DOG.png" id="2_ihy1v"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_7241v"]
 [ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="6_pmtte"]
 

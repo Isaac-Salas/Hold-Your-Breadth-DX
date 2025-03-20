@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5dq6y1sd5ks1"]
 
-[ext_resource type="Script" path="res://scenes/player/AttackComponent.gd" id="1_2jqqb"]
+[sub_resource type="Resource" id="Resource_hk87o"]
+metadata/__load_path__ = "res://scenes/player/AttackComponent.gd"
 
 [node name="PlayerAttackComponent" type="Node"]
-script = ExtResource("1_2jqqb")
+script = SubResource("Resource_hk87o")

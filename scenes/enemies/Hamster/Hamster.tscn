@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bp8r6cmiycm4m"]
 
-[ext_resource type="Texture2D" uid="uid://dfdmeqigtd5u7" path="res://assets/Enemies/hamsersprite.png" id="1_utgwl"]
-[ext_resource type="Script" path="res://scenes/enemies/Hamster/hamstersimple.gd" id="2_yg5uf"]
+[ext_resource type="Texture2D" uid="uid://buasnyg26h7uh" path="res://assets/Enemies/hamsersprite.png" id="1_utgwl"]
+[ext_resource type="Script" uid="uid://cu0ik86yi2po3" path="res://scenes/enemies/Hamster/hamstersimple.gd" id="2_yg5uf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tx73"]
 atlas = ExtResource("1_utgwl")

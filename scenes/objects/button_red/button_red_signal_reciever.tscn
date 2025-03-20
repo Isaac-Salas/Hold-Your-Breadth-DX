@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://dsxgd88iwhesb"]
 
-[ext_resource type="Script" path="res://scenes/objects/button_red/button_red_signal_reciever.gd" id="1_cas4c"]
-[ext_resource type="Texture2D" uid="uid://8fb2kcmsq6wf" path="res://assets/objects/button_signal.png" id="1_cr5ow"]
-[ext_resource type="Texture2D" uid="uid://cb4mf5pn8mjwh" path="res://assets/lights/nRmVV (2).png" id="3_jap03"]
-[ext_resource type="Shader" path="res://scenes/shaders/Particle.gdshader" id="4_dj4v1"]
+[ext_resource type="Script" uid="uid://bcjc5cffnv2xw" path="res://scenes/objects/button_red/button_red_signal_reciever.gd" id="1_cas4c"]
+[ext_resource type="Texture2D" uid="uid://d10ce5seslxsn" path="res://assets/objects/button_signal.png" id="1_cr5ow"]
+[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="3_jap03"]
+[ext_resource type="Shader" uid="uid://bdrcfdqhcfbi6" path="res://scenes/shaders/Particle.gdshader" id="4_dj4v1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t46le"]
 light_mode = 1

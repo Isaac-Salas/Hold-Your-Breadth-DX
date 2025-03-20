@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b0pi4ocu1rpdi"]
 
-[ext_resource type="Script" path="res://scenes/levels/Transition/transition.gd" id="1_aifxu"]
-[ext_resource type="Texture2D" uid="uid://bqsd5mvuwn8or" path="res://assets/objects/Transition.png" id="2_1pr46"]
+[ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="1_aifxu"]
+[ext_resource type="Texture2D" uid="uid://b1c1hr2n5qaas" path="res://assets/objects/Transition.png" id="2_1pr46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
 size = Vector2(24, 95)
@@ -103,9 +103,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k0j2h"]
 _data = {
-"Closing": SubResource("Animation_1yl6c"),
-"Opening": SubResource("Animation_r5kup"),
-"RESET": SubResource("Animation_y1k7v")
+&"Closing": SubResource("Animation_1yl6c"),
+&"Opening": SubResource("Animation_r5kup"),
+&"RESET": SubResource("Animation_y1k7v")
 }
 
 [node name="Transition" type="Node2D"]

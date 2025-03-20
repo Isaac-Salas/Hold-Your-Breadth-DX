@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://f006j5ihgekl"]
 
-[ext_resource type="Script" path="res://scenes/objects/BreakableGlass/glass.gd" id="1_tfy33"]
+[ext_resource type="Script" uid="uid://uarsg2iqwi0y" path="res://scenes/objects/BreakableGlass/glass.gd" id="1_tfy33"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nkbq4"]
 particle_flag_disable_z = true

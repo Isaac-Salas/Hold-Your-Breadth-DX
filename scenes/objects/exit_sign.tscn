@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhudjbm6jueuq"]
 
-[ext_resource type="Texture2D" uid="uid://py4h6j7kxtu3" path="res://assets/objects/Señal-Exit.png" id="1_b5ybw"]
-[ext_resource type="Texture2D" uid="uid://c4q2xj5nhu0jw" path="res://assets/lights/Lamparacolgosa.png" id="2_gb2qg"]
-[ext_resource type="Texture2D" uid="uid://cb4mf5pn8mjwh" path="res://assets/lights/nRmVV (2).png" id="3_twbtd"]
+[ext_resource type="Texture2D" uid="uid://ct140ium0twk5" path="res://assets/objects/Señal-Exit.png" id="1_b5ybw"]
+[ext_resource type="Texture2D" uid="uid://csqxyv0xm43fg" path="res://assets/lights/Lamparacolgosa.png" id="2_gb2qg"]
+[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="3_twbtd"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vmlh3"]
 light_mode = 1

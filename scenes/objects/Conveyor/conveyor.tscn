@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://dgyws68xvfvpu"]
 
-[ext_resource type="Texture2D" uid="uid://c0rxiitm5gsc0" path="res://assets/objects/conveyor_sheet.png" id="1_2qbqk"]
-[ext_resource type="Script" path="res://scenes/objects/Conveyor/conveyor.gd" id="1_880bm"]
+[ext_resource type="Texture2D" uid="uid://b5bqj6f5bp77q" path="res://assets/objects/conveyor_sheet.png" id="1_2qbqk"]
+[ext_resource type="Script" uid="uid://d2p6vwmpi0vmm" path="res://scenes/objects/Conveyor/conveyor.gd" id="1_880bm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5vuv7"]
 blend_mode = 4

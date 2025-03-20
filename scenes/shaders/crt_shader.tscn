@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://djfwsa2kdhmc8"]
 
-[ext_resource type="Shader" path="res://scenes/shaders/testing.gdshader" id="1_45kxk"]
-[ext_resource type="Texture2D" uid="uid://dsgasl17nx1k6" path="res://assets/objects/cajita-madera.png" id="2_q0k8f"]
+[ext_resource type="Shader" uid="uid://bvfvve4y32r46" path="res://scenes/shaders/testing.gdshader" id="1_45kxk"]
+[ext_resource type="Texture2D" uid="uid://doodjgu144ncg" path="res://assets/objects/cajita-madera.png" id="2_q0k8f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eyvp6"]
 shader = ExtResource("1_45kxk")

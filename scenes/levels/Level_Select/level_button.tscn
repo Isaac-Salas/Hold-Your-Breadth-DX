@@ -1,11 +1,11 @@
 [gd_scene load_steps=144 format=3 uid="uid://bjoayr4dvluax"]
 
 [ext_resource type="Theme" uid="uid://co4jika0ib54n" path="res://button.tres" id="1_e3gjb"]
-[ext_resource type="FontFile" uid="uid://dnqsqaujsviwo" path="res://assets/Fonts/DePixelHalbfett.otf" id="2_dvcjq"]
-[ext_resource type="Script" path="res://scenes/levels/Level_Select/level_button.gd" id="3_3418a"]
-[ext_resource type="Texture2D" uid="uid://bi8h7d3j1dyme" path="res://assets/levels button/lvl select/button_lvl_1-1.png" id="4_45ls3"]
-[ext_resource type="Texture2D" uid="uid://brg67t47t7n1p" path="res://assets/levels button/lvl select/button_lvl_no.png" id="5_l1vm5"]
-[ext_resource type="Texture2D" uid="uid://cpeusy5o72iug" path="res://assets/levels button/lvl select/button_lvl_yes.png" id="6_0r5a0"]
+[ext_resource type="FontFile" uid="uid://chv4jun2cg4xe" path="res://assets/Fonts/DePixelHalbfett.otf" id="2_dvcjq"]
+[ext_resource type="Script" uid="uid://c0m0j3wjp6mvy" path="res://scenes/levels/Level_Select/level_button.gd" id="3_3418a"]
+[ext_resource type="Texture2D" uid="uid://0q7e045rthmp" path="res://assets/levels button/lvl select/button_lvl_1-1.png" id="4_45ls3"]
+[ext_resource type="Texture2D" uid="uid://b33jpbnnnemic" path="res://assets/levels button/lvl select/button_lvl_no.png" id="5_l1vm5"]
+[ext_resource type="Texture2D" uid="uid://c2dod5il3nl7d" path="res://assets/levels button/lvl select/button_lvl_yes.png" id="6_0r5a0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7x76d"]
 atlas = ExtResource("4_45ls3")

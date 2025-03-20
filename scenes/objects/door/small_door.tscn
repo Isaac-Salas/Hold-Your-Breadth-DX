@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://b71h5dbrt5qt3"]
 
-[ext_resource type="Script" path="res://scenes/objects/door/door.gd" id="1_wtyfx"]
-[ext_resource type="Texture2D" uid="uid://bmmgbghpil1" path="res://assets/objects/small_door.png" id="2_vmk4x"]
-[ext_resource type="AudioStream" uid="uid://cxqq7o4g0h3jg" path="res://assets/audioshit/PUERTA.mp3" id="3_lpiex"]
+[ext_resource type="Script" uid="uid://4ak722pryrv0" path="res://scenes/objects/door/door.gd" id="1_wtyfx"]
+[ext_resource type="Texture2D" uid="uid://bwotrryiehfna" path="res://assets/objects/small_door.png" id="2_vmk4x"]
+[ext_resource type="AudioStream" uid="uid://c0vh3876taisi" path="res://assets/audioshit/PUERTA.mp3" id="3_lpiex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyi1q"]
 atlas = ExtResource("2_vmk4x")
@@ -148,8 +148,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlwus"]
 _data = {
-"RESET": SubResource("Animation_8t16k"),
-"shuttingcol": SubResource("Animation_n1mad")
+&"RESET": SubResource("Animation_8t16k"),
+&"shuttingcol": SubResource("Animation_n1mad")
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kh5m2"]

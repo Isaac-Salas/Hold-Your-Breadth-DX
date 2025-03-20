@@ -14,10 +14,10 @@ config/name="Hold your breadth DX"
 run/main_scene="res://scenes/cutscenes/JellyDOG/JellyIntro.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="HYB-DX"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false
-boot_splash/image="res://assets/SPLASH.png"
 boot_splash/use_filter=false
+boot_splash/image="res://assets/SPLASH.png"
 config/icon="res://player/Icon.png"
 
 [autoload]

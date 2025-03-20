@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://gyluo2bsm1cg"]
 
-[ext_resource type="Script" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
-[ext_resource type="Texture2D" uid="uid://bulh3xde8eb7j" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
-[ext_resource type="Texture2D" uid="uid://bnoi8tarh7y45" path="res://assets/Enemies/AlertRat.png" id="3_1qfcf"]
+[ext_resource type="Script" uid="uid://bvktpxmlt3mg1" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
+[ext_resource type="Texture2D" uid="uid://iadmyo4lpovb" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
+[ext_resource type="Texture2D" uid="uid://cybkq3jtx8iyu" path="res://assets/Enemies/AlertRat.png" id="3_1qfcf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mn77"]
 atlas = ExtResource("1_ufh0f")

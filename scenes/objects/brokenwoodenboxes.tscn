@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://fsxjau4kfu71"]
 
-[ext_resource type="Script" path="res://scenes/objects/brokenwoodenboxes.gd" id="1_wprqd"]
+[ext_resource type="Script" uid="uid://d278m1w0qaupk" path="res://scenes/objects/brokenwoodenboxes.gd" id="1_wprqd"]
 [ext_resource type="Texture2D" uid="uid://c0k2a1rj3xgee" path="res://assets/objects/brokencaja/Piece1.png" id="1_xsf47"]
 [ext_resource type="Texture2D" uid="uid://duw0kd0tyffo4" path="res://assets/objects/brokencaja/Piece2.png" id="2_115jd"]
 [ext_resource type="Material" uid="uid://b3mtaxow2cxs1" path="res://scenes/objects/Wall_Breakable/Wall_Broken.tres" id="2_pxkpk"]

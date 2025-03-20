@@ -1,11 +1,11 @@
 [gd_scene load_steps=31 format=3 uid="uid://dsmy2h1upfevb"]
 
-[ext_resource type="Script" path="res://scenes/objects/scale_green/scale_logic.gd" id="1_rceiw"]
-[ext_resource type="Texture2D" uid="uid://2ggarvi8rsgv" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
-[ext_resource type="Texture2D" uid="uid://d17gho73pcr10" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
-[ext_resource type="Texture2D" uid="uid://b1xbly7a42bv0" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
-[ext_resource type="Shader" path="res://scenes/shaders/Particle.gdshader" id="5_k7c00"]
-[ext_resource type="AudioStream" uid="uid://vlhma2nl2qco" path="res://assets/audioshit/buttonpressed_.mp3" id="6_hdhvh"]
+[ext_resource type="Script" uid="uid://00rfcjrux0qt" path="res://scenes/objects/scale_green/scale_logic.gd" id="1_rceiw"]
+[ext_resource type="Texture2D" uid="uid://cjf3t8jv41cj2" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
+[ext_resource type="Texture2D" uid="uid://cjcckpdwj1heo" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
+[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
+[ext_resource type="Shader" uid="uid://bdrcfdqhcfbi6" path="res://scenes/shaders/Particle.gdshader" id="5_k7c00"]
+[ext_resource type="AudioStream" uid="uid://dxinmskwgngo8" path="res://assets/audioshit/buttonpressed_.mp3" id="6_hdhvh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gsyot"]
 light_mode = 1

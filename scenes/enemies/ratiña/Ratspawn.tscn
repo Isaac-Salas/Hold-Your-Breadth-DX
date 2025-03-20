@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://dqwxircknluj6"]
 
-[ext_resource type="Script" path="res://scenes/enemies/ratiña/ratspawn.gd" id="1_3iqod"]
-[ext_resource type="Texture2D" uid="uid://cojgqw05jselm" path="res://assets/Enemies/RatHoleEyeAnim.png" id="2_jnoad"]
-[ext_resource type="Script" path="res://components/spawner_component.gd" id="2_v5hd3"]
-[ext_resource type="Texture2D" uid="uid://6xnkri4k60ds" path="res://assets/Enemies/RatHoleOnly.png" id="3_rmojj"]
+[ext_resource type="Script" uid="uid://vcmetg0m3wwm" path="res://scenes/enemies/ratiña/ratspawn.gd" id="1_3iqod"]
+[ext_resource type="Texture2D" uid="uid://dwu7hpt6uxham" path="res://assets/Enemies/RatHoleEyeAnim.png" id="2_jnoad"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="2_v5hd3"]
+[ext_resource type="Texture2D" uid="uid://bkiuf7unesmxn" path="res://assets/Enemies/RatHoleOnly.png" id="3_rmojj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fme3u"]
 light_mode = 1

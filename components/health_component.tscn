@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6iimwkb07glb"]
 
-[ext_resource type="Script" path="res://scenes/player/HealthComponent.gd" id="1_bf8qh"]
+[sub_resource type="Resource" id="Resource_tk8d1"]
+metadata/__load_path__ = "res://scenes/player/HealthComponent.gd"
 
 [node name="HealthComponent" type="Node2D"]
-script = ExtResource("1_bf8qh")
+script = SubResource("Resource_tk8d1")

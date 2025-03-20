@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmymj8rniorit"]
 
-[ext_resource type="Script" path="res://scenes/objects/Wall_Breakable/wall_breakable.gd" id="1_6kbu4"]
-[ext_resource type="Texture2D" uid="uid://dllnjlv6lpoh8" path="res://assets/objects/Pared-rompible.png" id="1_o208c"]
-[ext_resource type="Script" path="res://components/spawner_component.gd" id="3_dl0q6"]
+[ext_resource type="Script" uid="uid://3g8hpqsqc5o0" path="res://scenes/objects/Wall_Breakable/wall_breakable.gd" id="1_6kbu4"]
+[ext_resource type="Texture2D" uid="uid://bbqy5wqmfq2sf" path="res://assets/objects/Pared-rompible.png" id="1_o208c"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="3_dl0q6"]
 [ext_resource type="PackedScene" uid="uid://dgvqye2ns3ghx" path="res://scenes/objects/Wall_Breakable/Wall_Broken.tscn" id="4_wwrc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4uj4"]

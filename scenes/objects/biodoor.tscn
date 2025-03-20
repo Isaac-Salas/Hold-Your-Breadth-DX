@@ -1,12 +1,12 @@
 [gd_scene load_steps=37 format=3 uid="uid://dfwc55jo1qtuj"]
 
-[ext_resource type="Script" path="res://scenes/objects/biodoor.gd" id="1_7rnsp"]
-[ext_resource type="Texture2D" uid="uid://col0aw08m23fd" path="res://assets/objects/Biodoor/biodoorOpen.png" id="2_2c2xx"]
-[ext_resource type="Texture2D" uid="uid://ffvhlr7h3qt0" path="res://assets/objects/Biodoor/biodoorOpenWide.png" id="2_6tw34"]
-[ext_resource type="Texture2D" uid="uid://nse0hvpcelsj" path="res://assets/objects/Biodoor/biodoorChew.png" id="2_fyy2o"]
-[ext_resource type="Texture2D" uid="uid://didsduf10p0q8" path="res://assets/objects/Biodoor/biodooIdler.png" id="2_k61r2"]
-[ext_resource type="Texture2D" uid="uid://c14o0flfw431l" path="res://assets/objects/Biodoor/Eye.png" id="4_jqcj3"]
-[ext_resource type="Texture2D" uid="uid://byrblvkvegdyq" path="res://assets/objects/Biodoor/biodoorMock.png" id="5_yaqef"]
+[ext_resource type="Script" uid="uid://bc0ao6b0lxkff" path="res://scenes/objects/biodoor.gd" id="1_7rnsp"]
+[ext_resource type="Texture2D" uid="uid://cevswwrosso1q" path="res://assets/objects/Biodoor/biodoorOpen.png" id="2_2c2xx"]
+[ext_resource type="Texture2D" uid="uid://c5hiri0tmokbd" path="res://assets/objects/Biodoor/biodoorOpenWide.png" id="2_6tw34"]
+[ext_resource type="Texture2D" uid="uid://bahrf6y4bnop6" path="res://assets/objects/Biodoor/biodoorChew.png" id="2_fyy2o"]
+[ext_resource type="Texture2D" uid="uid://m7kij8oxdjeh" path="res://assets/objects/Biodoor/biodooIdler.png" id="2_k61r2"]
+[ext_resource type="Texture2D" uid="uid://d8prdd2cqcd6" path="res://assets/objects/Biodoor/Eye.png" id="4_jqcj3"]
+[ext_resource type="Texture2D" uid="uid://drmkfsv321nnd" path="res://assets/objects/Biodoor/biodoorMock.png" id="5_yaqef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4vy4"]
 atlas = ExtResource("2_fyy2o")
@@ -248,8 +248,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r7lc5"]
 _data = {
-"OPEN": SubResource("Animation_id3dp"),
-"RESET": SubResource("Animation_6yfqi")
+&"OPEN": SubResource("Animation_id3dp"),
+&"RESET": SubResource("Animation_6yfqi")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oo6x1"]

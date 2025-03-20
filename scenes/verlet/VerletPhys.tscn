@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://chjw8vtocgmwb"]
 
-[ext_resource type="Script" path="res://scenes/verlet/stringphy.gd" id="1_6th6f"]
+[ext_resource type="Script" uid="uid://bv62vxcju6js1" path="res://scenes/verlet/stringphy.gd" id="1_6th6f"]
 
 [node name="String" type="Node2D"]
 z_index = 1

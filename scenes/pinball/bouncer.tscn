@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ciw1kitfkp4gc"]
 
-[ext_resource type="Script" path="res://scenes/pinball/bouncer.gd" id="1_ogi5b"]
+[ext_resource type="Script" uid="uid://didbw4uyaide8" path="res://scenes/pinball/bouncer.gd" id="1_ogi5b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iou50"]
 

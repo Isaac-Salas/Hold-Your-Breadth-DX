@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://w67wwrsfwoay"]
 
-[ext_resource type="Script" path="res://scenes/enemies/Hand/hand2.gd" id="1_3upnr"]
+[ext_resource type="Script" uid="uid://bm8p7os23u4g6" path="res://scenes/enemies/Hand/hand2.gd" id="1_3upnr"]
 [ext_resource type="SpriteFrames" uid="uid://e4mn8s24isc5" path="res://scenes/enemies/Hand-Chase.tres" id="1_7ihiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b44i"]
@@ -48,8 +48,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fp8xg"]
 _data = {
-"Attack": SubResource("Animation_u8q7j"),
-"RESET": SubResource("Animation_cvcec")
+&"Attack": SubResource("Animation_u8q7j"),
+&"RESET": SubResource("Animation_cvcec")
 }
 
 [node name="Hand" type="CharacterBody2D" groups=["Breaker", "Hand"]]

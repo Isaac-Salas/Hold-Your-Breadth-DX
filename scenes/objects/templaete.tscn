@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://da3vdhisw8edv"]
 
-[ext_resource type="Script" path="res://scenes/objects/pickup-component.gd" id="1_te0bk"]
-[ext_resource type="Script" path="res://components/spawner_component.gd" id="2_hodyn"]
+[ext_resource type="Script" uid="uid://c10avmbki61qv" path="res://scenes/objects/pickup-component.gd" id="1_te0bk"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="2_hodyn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_otu8t"]
 blend_mode = 1
