@@ -38,12 +38,14 @@ func _on_play_pressed():
 
 
 func _on_play_mouse_entered() -> void:
+	print("InsidePlay")
 	play_sprite.play("hover")
 	await play_sprite.animation_finished
 	play_sprite.play("hover_loop")
 
 
 func _on_play_mouse_exited() -> void:
+	print("OutsidePlay")
 	await play_sprite.animation_looped
 	play_sprite.play("unhover")
 	await play_sprite.animation_finished

@@ -41,6 +41,9 @@ autostart = true
 scale = Vector2(1.5, 1.5)
 target_scene = ExtResource("6_pmtte")
 
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="dont touch"]

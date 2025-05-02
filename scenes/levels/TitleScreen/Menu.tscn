@@ -1537,7 +1537,7 @@ autoplay = "Opening"
 position = Vector2(591, 350)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_q5hbr")
-animation = &"hover"
+animation = &"normal"
 autoplay = "normal"
 metadata/_edit_lock_ = true
 
@@ -1556,7 +1556,7 @@ flat = true
 position = Vector2(591, 420)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_crhji")
-animation = &"unhover"
+animation = &"normal"
 autoplay = "normal"
 metadata/_edit_lock_ = true
 
@@ -1597,7 +1597,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(591, 560)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_fk1fd")
-animation = &"unhover"
+animation = &"normal"
 autoplay = "normal"
 metadata/_edit_lock_ = true
 
