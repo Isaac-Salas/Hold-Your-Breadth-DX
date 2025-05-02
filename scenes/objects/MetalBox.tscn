@@ -12,11 +12,9 @@ polygon = PackedVector2Array(-10, -6, -10, 10, 10, 10, 10, -6)
 [node name="RigidBody2D" groups=["Breaker", "Inedible", "throwable"] instance=ExtResource("1_wycw7")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_x5rwa")
 
 [node name="Sprite2D" parent="." index="1"]
-scale = Vector2(1, 1)
 texture = ExtResource("2_eer0q")
 
 [node name="LightOccluder2D" parent="." index="4"]

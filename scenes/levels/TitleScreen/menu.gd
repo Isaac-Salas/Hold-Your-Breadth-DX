@@ -19,6 +19,7 @@ var scale_lvl = load("res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Manager.load_data()
+	play.grab_focus()
 	transition.ap.play("Opening")
 
 

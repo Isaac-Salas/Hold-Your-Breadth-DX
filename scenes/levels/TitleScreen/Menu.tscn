@@ -1,9 +1,10 @@
-[gd_scene load_steps=204 format=3 uid="uid://o1wthtbpquqd"]
+[gd_scene load_steps=205 format=3 uid="uid://o1wthtbpquqd"]
 
 [ext_resource type="Script" uid="uid://dkudo7ovwfxpx" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
 [ext_resource type="Texture2D" uid="uid://gl2hvcpdyrfb" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
 [ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="3_au2hu"]
 [ext_resource type="Texture2D" uid="uid://b1c1hr2n5qaas" path="res://assets/objects/Transition.png" id="4_3hmnn"]
+[ext_resource type="StyleBox" uid="uid://dsaejod1ejkbx" path="res://scenes/levels/TitleScreen/MenuFocusController.tres" id="5_t4htv"]
 [ext_resource type="Texture2D" uid="uid://fuuil6b7h8ku" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
 [ext_resource type="Texture2D" uid="uid://cpvhfliubmjcf" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
 [ext_resource type="Texture2D" uid="uid://by6ifgy7ch0gf" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
@@ -1528,7 +1529,7 @@ occluder = SubResource("OccluderPolygon2D_2lfug")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
 reset_on_save = false
 libraries = {
-"": SubResource("AnimationLibrary_k0j2h")
+&"": SubResource("AnimationLibrary_k0j2h")
 }
 autoplay = "Opening"
 
@@ -1547,7 +1548,8 @@ offset_right = 55.0
 offset_bottom = 13.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-focus_mode = 0
+focus_neighbor_bottom = NodePath("../../LevelsSprite/Levels")
+theme_override_styles/focus = ExtResource("5_t4htv")
 flat = true
 
 [node name="LevelsSprite" type="AnimatedSprite2D" parent="."]
@@ -1565,7 +1567,9 @@ offset_right = 55.0
 offset_bottom = 13.03
 size_flags_horizontal = 3
 size_flags_vertical = 3
-focus_mode = 0
+focus_neighbor_top = NodePath("../../PlaySprite/Play")
+focus_neighbor_bottom = NodePath("../../OptionsSprite/Options")
+theme_override_styles/focus = ExtResource("5_t4htv")
 flat = true
 
 [node name="OptionsSprite" type="AnimatedSprite2D" parent="."]
@@ -1583,7 +1587,9 @@ offset_right = 55.0
 offset_bottom = 13.03
 size_flags_horizontal = 3
 size_flags_vertical = 3
-focus_mode = 0
+focus_neighbor_top = NodePath("../../LevelsSprite/Levels")
+focus_neighbor_bottom = NodePath("../../QuitSprite/Quit")
+theme_override_styles/focus = ExtResource("5_t4htv")
 flat = true
 metadata/_edit_use_anchors_ = true
 
@@ -1602,19 +1608,28 @@ offset_right = 55.0
 offset_bottom = 13.03
 size_flags_horizontal = 3
 size_flags_vertical = 3
-focus_mode = 0
+focus_neighbor_top = NodePath("../../OptionsSprite/Options")
+theme_override_styles/focus = ExtResource("5_t4htv")
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[connection signal="focus_entered" from="PlaySprite/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="focus_exited" from="PlaySprite/Play" to="." method="_on_play_mouse_exited"]
 [connection signal="mouse_entered" from="PlaySprite/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="PlaySprite/Play" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="PlaySprite/Play" to="." method="_on_play_pressed"]
+[connection signal="focus_entered" from="LevelsSprite/Levels" to="." method="_on_levels_mouse_entered"]
+[connection signal="focus_exited" from="LevelsSprite/Levels" to="." method="_on_levels_mouse_exited"]
 [connection signal="mouse_entered" from="LevelsSprite/Levels" to="." method="_on_levels_mouse_entered"]
 [connection signal="mouse_exited" from="LevelsSprite/Levels" to="." method="_on_levels_mouse_exited"]
 [connection signal="pressed" from="LevelsSprite/Levels" to="." method="_on_levels_pressed"]
+[connection signal="focus_entered" from="OptionsSprite/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="focus_exited" from="OptionsSprite/Options" to="." method="_on_options_mouse_exited"]
 [connection signal="mouse_entered" from="OptionsSprite/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="mouse_exited" from="OptionsSprite/Options" to="." method="_on_options_mouse_exited"]
 [connection signal="pressed" from="OptionsSprite/Options" to="." method="_on_options_pressed"]
+[connection signal="focus_entered" from="QuitSprite/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="focus_exited" from="QuitSprite/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="mouse_entered" from="QuitSprite/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="QuitSprite/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="QuitSprite/Quit" to="." method="_on_quit_pressed"]

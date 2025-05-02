@@ -18,11 +18,9 @@ polygon = PackedVector2Array(-12, 8, -8, 10, 8, 10, 12, 8)
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -2)
-scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_apkoq")
 
 [node name="Sprite2D" parent="." index="1"]
-scale = Vector2(1, 1)
 texture = ExtResource("2_6qmmj")
 
 [node name="PointLight2D" parent="Sprite2D" index="0"]

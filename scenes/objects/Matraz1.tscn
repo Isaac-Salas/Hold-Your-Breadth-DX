@@ -17,11 +17,9 @@ polygon = PackedVector2Array(-9, 8, -6, 10, 0, 10, 6, 10, 9, 8)
 [node name="Vial_green" groups=["Matraz", "breakable", "throwable"] instance=ExtResource("1_vmb1b")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_u4dov")
 
 [node name="Sprite2D" parent="." index="1"]
-scale = Vector2(1, 1)
 texture = ExtResource("2_8aptt")
 
 [node name="PointLight2D" parent="Sprite2D" index="0"]

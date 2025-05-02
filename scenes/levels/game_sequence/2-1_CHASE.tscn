@@ -283,6 +283,9 @@ material = SubResource("ShaderMaterial_uh315")
 color = Color(0.415686, 0.376471, 0.501961, 1)
 metadata/_edit_lock_ = true
 
+[node name="Transition" parent="CharacterBody2D2" instance=ExtResource("23_d7m35")]
+position = Vector2(-385, -317)
+
 [node name="RigidBody2D" parent="." groups=["breakable"] instance=ExtResource("12_4142m")]
 position = Vector2(1549, 388)
 
@@ -379,8 +382,6 @@ position = Vector2(6578, 614)
 
 [node name="WoodenBox3" parent="." instance=ExtResource("21_kyd7a")]
 position = Vector2(6590, 633)
-
-[node name="Transition" parent="." instance=ExtResource("23_d7m35")]
 
 [connection signal="body_entered" from="Activadora-Camara" to="Activadora-Camara" method="_on_body_entered"]
 
