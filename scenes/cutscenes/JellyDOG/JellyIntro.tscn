@@ -30,6 +30,9 @@ freeze = false
 [node name="VisibleOnScreenNotifier2D" parent="Swing-light/Light" index="4"]
 rect = Rect2(-60, -60, 200, 200)
 
+[node name="AudioStreamPlayer2D" parent="Swing-light/Light" index="5"]
+volume_db = 5.0
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1625, -12)
 
@@ -42,6 +45,7 @@ scale = Vector2(1.5, 1.5)
 target_scene = ExtResource("6_pmtte")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(576, 320)
 current = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
