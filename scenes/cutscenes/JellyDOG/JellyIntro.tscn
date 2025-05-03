@@ -31,7 +31,7 @@ freeze = false
 rect = Rect2(-60, -60, 200, 200)
 
 [node name="AudioStreamPlayer2D" parent="Swing-light/Light" index="5"]
-volume_db = 5.0
+volume_db = 15.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1625, -12)
