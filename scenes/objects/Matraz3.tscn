@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbcnrsv1okpj"]
+[gd_scene load_steps=8 format=3 uid="uid://cbcnrsv1okpj"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_pxh3u"]
 [ext_resource type="Texture2D" uid="uid://bsw2d1td6nwkw" path="res://assets/objects/matraz3.png" id="2_6qmmj"]
 [ext_resource type="PackedScene" uid="uid://f006j5ihgekl" path="res://scenes/objects/BreakableGlass/Glass.tscn" id="3_76kfr"]
+[ext_resource type="AudioStream" uid="uid://bo1ln5enokxlj" path="res://assets/audioshit/clink_foco.mp3" id="4_4iwg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apkoq"]
 size = Vector2(10, 24)
@@ -34,3 +35,8 @@ scene = ExtResource("3_76kfr")
 
 [node name="LightOccluder2D" parent="." index="4"]
 occluder = SubResource("OccluderPolygon2D_vs8x1")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_4iwg0")
+volume_db = 5.0
+bus = &"SFX"

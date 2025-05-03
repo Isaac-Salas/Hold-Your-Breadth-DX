@@ -190,10 +190,13 @@ texture_region_size = Vector2i(48, 48)
 [sub_resource type="TileSet" id="TileSet_po23h"]
 tile_size = Vector2i(48, 48)
 occlusion_layer_0/light_mask = 1
+occlusion_layer_0/sdf_collision = true
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
 sources/0 = SubResource("TileSetAtlasSource_tdtvp")
 
 [node name="Persecusion" type="Node2D"]
@@ -324,7 +327,7 @@ position = Vector2(6554, 357)
 position = Vector2(6704, -18)
 
 [node name="Light" parent="Swing-light7" index="1"]
-position = Vector2(0, 329)
+position = Vector2(-34, 458)
 
 [node name="Swing-light6" parent="." instance=ExtResource("3_g52sb")]
 position = Vector2(6275, 357)

@@ -170,7 +170,7 @@ shape = SubResource("RectangleShape2D_vv5jd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_dlwus")
+&"": SubResource("AnimationLibrary_dlwus")
 }
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

@@ -211,7 +211,7 @@ shape = SubResource("RectangleShape2D_u60lh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_dlwus")
+&"": SubResource("AnimationLibrary_dlwus")
 }
 autoplay = "RESET"
 speed_scale = 200.0
@@ -242,7 +242,8 @@ grow_vertical = 2
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_fc61u")
 volume_db = 15.022
-attenuation = 5.00001
+max_distance = 3000.0
+attenuation = 3.0
 max_polyphony = 2
 panning_strength = 3.0
 bus = &"SFX"

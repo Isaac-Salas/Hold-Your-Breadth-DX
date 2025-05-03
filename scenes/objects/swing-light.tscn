@@ -120,8 +120,8 @@ rect = Rect2(-10, -10, 100, 100)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Light"]
 stream = ExtResource("3_pjsg8")
 autoplay = true
-max_distance = 500.0
-attenuation = 5.0
+max_distance = 250.0
+attenuation = 2.0
 panning_strength = 2.0
 bus = &"SFX"
 

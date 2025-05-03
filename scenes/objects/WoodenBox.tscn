@@ -59,8 +59,7 @@ occluder = SubResource("OccluderPolygon2D_lfti4")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_d223p")
 max_distance = 1000.0
-attenuation = 5.0
-max_polyphony = 2
+attenuation = 4.0
 panning_strength = 3.0
 bus = &"SFX"
 

@@ -172,9 +172,8 @@ animations = [{
 blend_mode = 1
 light_mode = 1
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_20sjx"]
-radius = 13.0
-height = 36.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_q28gw"]
+radius = 20.3
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qgxpx"]
 animations = [{
@@ -352,10 +351,8 @@ freeze = true
 linear_velocity = Vector2(0, -200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-visible = false
-position = Vector2(0, -3.965)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_20sjx")
+shape = SubResource("CircleShape2D_q28gw")
 debug_color = Color(0.819608, 0, 0, 0.772549)
 
 [node name="Pickup" type="Marker2D" parent="."]

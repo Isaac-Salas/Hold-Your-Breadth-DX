@@ -1,4 +1,5 @@
 extends Node2D
+@onready var audio= $AudioStreamPlayer2D
 
 @onready var particles = $GPUParticles2D
 

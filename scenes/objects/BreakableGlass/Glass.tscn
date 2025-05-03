@@ -6,12 +6,13 @@
 particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 20.0
-radial_velocity_min = 50.0
-radial_velocity_max = 100.0
+initial_velocity_min = -200.0
+initial_velocity_max = 200.0
 gravity = Vector3(0, 196, 0)
-radial_accel_min = 50.0
-radial_accel_max = 100.0
 scale_max = 5.0
+collision_mode = 1
+collision_friction = 0.3
+collision_bounce = 0.3
 
 [node name="Glass" type="Node2D"]
 script = ExtResource("1_tfy33")
@@ -19,9 +20,12 @@ script = ExtResource("1_tfy33")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_nkbq4")
-lifetime = 3.0
+lifetime = 5.0
 one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
 fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_nkbq4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
