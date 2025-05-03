@@ -376,6 +376,7 @@ offset = Vector2(0, -3)
 script = ExtResource("4_pd6bc")
 radius = 50
 player = NodePath("..")
+normalaim = true
 
 [node name="ObjectDetect" type="Area2D" parent="AnimatedSprite2D"]
 collision_layer = 3
