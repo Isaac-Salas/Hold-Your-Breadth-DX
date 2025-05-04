@@ -14,6 +14,7 @@ extends CharacterBody2D
 var motion : Vector2
 var gravity2 : Vector2
 var targetx : float
+@export var linetrigger : int
 @onready var hit_cooldown = $Hit_cooldown
 
 
@@ -38,7 +39,7 @@ func _physics_process(delta):
 		#look_at(player.global_position)
 		
 		match dialog.linecount:
-			2:
+			linetrigger:
 				triggered = true
 		
 		if triggered == true:
@@ -46,7 +47,7 @@ func _physics_process(delta):
 
 				0:
 					attackidle(delta)
-					if dialog.linecount == 2:
+					if dialog.linecount == linetrigger:
 						handstate = 1
 				
 				1:

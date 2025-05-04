@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dv1tyb5i3nsus" path="res://scenes/shaders/options_menu.gd" id="1_5qxbs"]
 [ext_resource type="FontFile" uid="uid://chv4jun2cg4xe" path="res://assets/Fonts/DePixelHalbfett.otf" id="2_l06u5"]
 
-[node name="Sprite2D" type="CanvasLayer"]
+[node name="OptionsMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_5qxbs")
 

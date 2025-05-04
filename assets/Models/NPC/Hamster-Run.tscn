@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://3e40p7hd3no5"]
+[gd_scene load_steps=7 format=3 uid="uid://3e40p7hd3no5"]
 
 [sub_resource type="GDScript" id="GDScript_5gvs4"]
 script/source = "extends RigidBody3D
@@ -19,9 +19,6 @@ func _on_area_3d_body_entered(body):
 	if body.name == \"Player\":
 		$AnimationPlayer.play(\"Run\")
 "
-
-[sub_resource type="Resource" id="Resource_7waj2"]
-metadata/__load_path__ = "res://NPCs/Hamster.tres"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sxvha"]
 
@@ -97,7 +94,6 @@ script = SubResource("GDScript_5gvs4")
 
 [node name="Sprite3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.5299e-08, -0.35, 1.5299e-08, 0, -1.5299e-08, -0.35, 0.35, -1.5299e-08, 6.6874e-16, 0.16, 0, 0)
-mesh = SubResource("Resource_7waj2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_sxvha")
@@ -105,7 +101,7 @@ shape = SubResource("BoxShape3D_sxvha")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
 libraries = {
-"": SubResource("AnimationLibrary_rdoss")
+&"": SubResource("AnimationLibrary_rdoss")
 }
 
 [node name="Area3D" type="Area3D" parent="."]

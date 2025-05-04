@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c57hv8ph7ffis"]
+
+[ext_resource type="Script" uid="uid://cilqkhnmq61og" path="res://scenes/enemies/Hamster/hamster_bug.gd" id="1_1mwdp"]
+[ext_resource type="PackedScene" uid="uid://bp8r6cmiycm4m" path="res://scenes/enemies/Hamster/Hamster.tscn" id="1_14woo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mwdp"]
+
+[node name="Hamster-bug" type="RigidBody2D" groups=["button_actionable"]]
+collision_layer = 3
+collision_mask = 3
+can_sleep = false
+lock_rotation = true
+freeze = true
+script = ExtResource("1_1mwdp")
+
+[node name="Hamster" parent="." instance=ExtResource("1_14woo")]
+position = Vector2(0, 6)
+animation = &"Turned"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_1mwdp")

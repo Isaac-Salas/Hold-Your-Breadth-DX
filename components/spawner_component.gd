@@ -11,7 +11,7 @@ extends Node2D
 # an alternative parent if you so choose.
 func spawn(global_spawn_position: Vector2 = global_position, parent: Node = get_tree().current_scene) -> Node:
 	assert(scene is PackedScene, "Error: The scene export was never set on this spawner component.")
-	# Instance the scene
+	# Instane the scene
 	var instance = scene.instantiate()
 	# Add it as a child of the parent
 	parent.call_deferred("add_child",instance)

@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp8r6cmiycm4m"]
+[gd_scene load_steps=14 format=3 uid="uid://bp8r6cmiycm4m"]
 
 [ext_resource type="Texture2D" uid="uid://buasnyg26h7uh" path="res://assets/Enemies/hamsersprite.png" id="1_utgwl"]
 [ext_resource type="Script" uid="uid://cu0ik86yi2po3" path="res://scenes/enemies/Hamster/hamstersimple.gd" id="2_yg5uf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpwcs"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(48, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tx73"]
 atlas = ExtResource("1_utgwl")
@@ -19,8 +23,36 @@ region = Rect2(96, 0, 48, 48)
 atlas = ExtResource("1_utgwl")
 region = Rect2(144, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilqcj"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w781g"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01p5r"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62uv0"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb5ci"]
+atlas = ExtResource("1_utgwl")
+region = Rect2(0, 48, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_hifbx"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpwcs")
+}],
+"loop": true,
+"name": &"Hidden",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6tx73")
@@ -36,13 +68,37 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 12.0
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilqcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w781g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01p5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62uv0")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb5ci")
+}],
+"loop": true,
+"name": &"Turned",
+"speed": 10.0
 }]
 
 [node name="Hamster" type="AnimatedSprite2D"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_hifbx")
-animation = &"Idle"
+animation = &"Run"
 autoplay = "Idle"
-frame_progress = 0.622647
 script = ExtResource("2_yg5uf")
