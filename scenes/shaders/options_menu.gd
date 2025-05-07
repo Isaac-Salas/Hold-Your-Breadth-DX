@@ -9,6 +9,7 @@ class_name  OptionsMenu
 @onready var crt = $CRT
 @onready var exclusive = $Exclusive
 @export var CRTShader : ColorRect
+@onready var back = $Back
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,6 +29,7 @@ func _process(delta):
 
 func showtoggle():
 	if toggle < 1:
+		back.grab_focus()
 		get_tree().paused = true
 		visible = true
 		toggle += 1

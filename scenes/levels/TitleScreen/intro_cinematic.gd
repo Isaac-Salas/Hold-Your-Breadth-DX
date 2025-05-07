@@ -8,7 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	MusicManager.stopplay()
 	Manager.load_game()
 	print(Manager.Firsttime)
 	if Manager.Firsttime == false:

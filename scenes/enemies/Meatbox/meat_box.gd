@@ -9,6 +9,9 @@ var count = false
 @onready var player : SlimePlayer
 @export var Lastingtime = 6.0
 @onready var spawner_component = $SpawnerComponent
+@onready var indicator = $Sprite2D/Indicator
+
+const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,3 +61,30 @@ func _on_timer_timeout():
 	animation_player.stop()
 	animation_player.play("RESET")
 	reset()
+
+
+func _on_detector_area_entered(area):
+	if area is ObjectDetect and area.get_parent().get_parent().sprite.scale >= sprite.scale:
+		print("Highlight!")
+		var newmat = ShaderMaterial.new()
+		newmat.shader = OUTLINE
+		newmat.set_shader_parameter("width", 2)
+		newmat.set_shader_parameter("outline_color", Color("ffaa00"))
+		#newmat.set_shader_parameter("flickering_speed", 20)
+		sprite.material = newmat
+		indicator.visible = true
+	elif area is ObjectDetect:
+		var newmat = ShaderMaterial.new()
+		newmat.shader = OUTLINE
+		newmat.set_shader_parameter("width", 1)
+		newmat.set_shader_parameter("outline_color", Color("ff1111"))
+		#newmat.set_shader_parameter("flickering_speed", 20)
+		sprite.material = newmat
+		indicator.visible = true
+
+
+func _on_detector_area_exited(area):
+	if area is ObjectDetect:
+		indicator.visible = false
+		sprite.material = null
+		

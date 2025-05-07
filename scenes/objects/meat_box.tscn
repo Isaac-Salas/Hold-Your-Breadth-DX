@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=3 uid="uid://pko810djqbqo"]
+
+[ext_resource type="Script" uid="uid://cdf8oll3gulyu" path="res://scenes/enemies/Meatbox/meat_box.gd" id="1_gtwie"]
+[ext_resource type="Texture2D" uid="uid://dhofe6hs8tpcg" path="res://assets/objects/meatbox-bio.png" id="1_iu5mw"]
+[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="3_nystw"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="4_rtqqh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_px2q8"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmwdt"]
+size = Vector2(24, 24)
+
+[sub_resource type="Animation" id="Animation_jvpm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ixryu"]
+resource_name = "blink"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2, 2.5, 3, 3.5, 3.96667, 4.46667, 4.96667, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.777778, 0.0, 0.777778, 0.0, 0.777778, 0.0, 0.777778, 0.0, 0.777778, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5l1mm"]
+_data = {
+&"RESET": SubResource("Animation_jvpm5"),
+&"blink": SubResource("Animation_ixryu")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_px2q8"]
+radius = 13.31
+
+[node name="MeatBox" type="RigidBody2D" groups=["Meatbox", "breakable", "button_actionable", "throwable"]]
+collision_layer = 3
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_gtwie")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iu5mw")
+offset = Vector2(0, 2)
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+color = Color(1, 0, 0, 1)
+energy = 0.0
+texture = ExtResource("3_nystw")
+texture_scale = 0.5
+
+[node name="Indicator" type="Sprite2D" parent="Sprite2D"]
+visible = false
+modulate = Color(1, 0.582387, 0.403011, 1)
+material = SubResource("CanvasItemMaterial_px2q8")
+texture = ExtResource("1_iu5mw")
+offset = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_hmwdt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5l1mm")
+}
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("4_rtqqh")
+
+[node name="Detector" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("CircleShape2D_px2q8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
+[connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]

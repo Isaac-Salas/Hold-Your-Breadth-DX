@@ -8,7 +8,8 @@ class_name DialogComponent
 @export var Quickypetime : float = 0
 @export var Dialog : PackedStringArray
 @onready var extraevent : bool = true
-
+@onready var animated_sprite_2d = $Control/AnimatedSprite2D
+@export var show_end : bool
 @onready var charcount : int = 0
 @onready var timer = $Timer
 @onready var count : int = 0 
@@ -37,6 +38,7 @@ func _input(event):
 
 
 func clearcenter():
+	animated_sprite_2d.visible = false
 	count = 0
 	linecount += 1
 	charcount = 0
@@ -57,3 +59,9 @@ func _on_timer_timeout():
 			InputEnable = true
 			Done.emit()
 		
+
+
+func _on_done():
+	if show_end == true:
+		animated_sprite_2d.visible = true
+	

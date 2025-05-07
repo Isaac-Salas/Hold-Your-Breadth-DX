@@ -24,6 +24,7 @@ func _on_player_detector_body_entered(body):
 			dialogbox.InputSTOP = false
 			dialogbox.clearcenter()
 			dialogbox.linecount = 1
+			dialogbox.show_end = true
 			play("Hidden")
 			hamster_bug.visible = true
 			hamster_bug.ragdoll_throw()

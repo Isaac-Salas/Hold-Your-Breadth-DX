@@ -492,7 +492,7 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../rigids")
 libraries = {
-"": SubResource("AnimationLibrary_phjm3")
+&"": SubResource("AnimationLibrary_phjm3")
 }
 
 [connection signal="body_entered" from="rigids/RigidBody2D8/Area2D" to="." method="_on_area_2d_body_entered"]

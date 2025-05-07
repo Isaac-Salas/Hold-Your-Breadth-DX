@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7xm20cid1lis"]
+
+[ext_resource type="Script" uid="uid://r2g6xo8nyv3v" path="res://scenes/levels/game_sequence/MusicStart.gd" id="1_uraot"]
+
+[node name="MusicSubmanager" type="Node"]
+script = ExtResource("1_uraot")

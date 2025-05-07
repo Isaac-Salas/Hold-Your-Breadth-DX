@@ -1,7 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://127niqtxnogh"]
+[gd_scene load_steps=14 format=3 uid="uid://127niqtxnogh"]
 
 [ext_resource type="FontFile" uid="uid://chv4jun2cg4xe" path="res://assets/Fonts/DePixelHalbfett.otf" id="1_o3ewq"]
 [ext_resource type="Script" uid="uid://c5p21cuo8rp16" path="res://components/Dialog_Component.gd" id="2_c38jr"]
+[ext_resource type="Texture2D" uid="uid://3istskciedtc" path="res://assets/DialogDOne.png" id="3_rvd6q"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rvd6q"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox73x"]
+atlas = ExtResource("3_rvd6q")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63amb"]
+atlas = ExtResource("3_rvd6q")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jp4a"]
+atlas = ExtResource("3_rvd6q")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfxe2"]
+atlas = ExtResource("3_rvd6q")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25b6v"]
+atlas = ExtResource("3_rvd6q")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jkp1"]
+atlas = ExtResource("3_rvd6q")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74u4l"]
+atlas = ExtResource("3_rvd6q")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmdeu"]
+atlas = ExtResource("3_rvd6q")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vxbhg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ox73x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63amb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jp4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfxe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25b6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jkp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74u4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmdeu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="DialogBox" type="RichTextLabel"]
 anchors_preset = 8
@@ -15,8 +83,8 @@ offset_right = 225.0
 offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme_override_constants/line_separation = 25
 theme_override_fonts/normal_font = ExtResource("1_o3ewq")
 theme_override_font_sizes/normal_font_size = 30
@@ -29,7 +97,30 @@ Timerstart = true
 Typetime = 0.1
 Quickypetime = 0.05
 Dialog = PackedStringArray("", "...", "You wake up in a strange, desolate lab.", "You dont remember being a slime before.", "This place gives you the creeps.", "It might be a good idea to try and find a way OUT.")
+show_end = true
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+visible = false
+material = SubResource("CanvasItemMaterial_rvd6q")
+sprite_frames = SubResource("SpriteFrames_vxbhg")
+autoplay = "default"
+frame_progress = 0.127669
+centered = false
+offset = Vector2(-5, -22)
+
+[connection signal="Done" from="." to="." method="_on_done"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

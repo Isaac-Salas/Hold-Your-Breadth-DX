@@ -7,6 +7,9 @@
 
 [sub_resource type="GDScript" id="GDScript_dox1b"]
 script/source = "extends Node2D
+
+
+
 @onready var line_2d = $String/Line2D
 @onready var string = $String
 @onready var lightr = $Light
@@ -53,6 +56,12 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	light.visible = true
+	
+
+func dropdown():
+	pin_joint_2d.queue_free()
+	string.queue_free()
+	fakelight.visible = false
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4lh8"]

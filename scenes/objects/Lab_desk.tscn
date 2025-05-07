@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkw0wqpl01xaq"]
+
+[ext_resource type="Script" uid="uid://c10avmbki61qv" path="res://scenes/objects/pickup-component.gd" id="1_yd0qf"]
+[ext_resource type="Texture2D" uid="uid://ptoysth1k4o4" path="res://assets/objects/laboratoryf.png" id="2_0hfod"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="2_yydwg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yydwg"]
+size = Vector2(45, 37)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_otu8t"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yydwg"]
+polygon = PackedVector2Array(-17, -14, -17, -7, 18, -7, 18, -15, -17, -15)
+
+[node name="LabDesk" type="RigidBody2D" groups=["button_actionable"]]
+collision_layer = 2
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_yd0qf")
+starting_scale = 6.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_yydwg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0hfod")
+offset = Vector2(1.5, -2.5)
+
+[node name="PointLight2D" type="Sprite2D" parent="Sprite2D"]
+visible = false
+modulate = Color(1, 0.582387, 0.403011, 1)
+material = SubResource("CanvasItemMaterial_otu8t")
+
+[node name="Detector" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+visible = false
+position = Vector2(-12, 14)
+shape = SubResource("RectangleShape2D_yydwg")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("2_yydwg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_yydwg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 3
+panning_strength = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
+[connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]

@@ -28,7 +28,7 @@ func _process(delta):
 	var joypads = Input.get_connected_joypads()
 	if joypads.size() != 0:
 		self.global_transform.origin = player.global_position + aimcontroller*radius
-		print(str(self.name, ":", self.transform.origin ))
+		#print(str(self.name, ":", self.transform.origin ))
 		if normalaim == true:
 			if aimcontroller == Vector2(0.0,0.0):
 				self.visible = false
@@ -41,7 +41,7 @@ func _process(delta):
 		if distance > radius:
 			mouse_pos = player_pos + (mouse_dir * radius)
 		self.global_transform.origin = mouse_pos
-		print(str(self.name, ":", self.transform.origin ))
+		#print(str(self.name, ":", self.transform.origin ))
 	
 	VelVec = Vector2(self.global_position-player_pos)
 		#GlobalMP = get_global_mouse_position()
