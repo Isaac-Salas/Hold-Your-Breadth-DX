@@ -9,7 +9,7 @@ class_name SlimePlayer
 @export var SPEED = 400.0
 @export var JUMP_VELOCITY = -400.0
 @onready var colision = $CollisionShape2D
-@onready var sprite = $Animacion
+@onready var sprite : AnimatedSprite2D = $Animacion
 #@export var scalerate = Vector2(0.1, 0.1)
 @onready var rigidcolision = $RigidBody2D/CollisionShape2D
 @onready var pickup = $Pickup

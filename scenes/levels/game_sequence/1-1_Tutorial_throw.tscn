@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://v4ylrqt2e871"]
+[gd_scene load_steps=39 format=4 uid="uid://v4ylrqt2e871"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
@@ -7,8 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
+[ext_resource type="Script" uid="uid://80efc16j34uh" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
+[ext_resource type="Texture2D" uid="uid://dom12shatkf3b" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
+[ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="9_qole5"]
+[ext_resource type="Texture2D" uid="uid://nsm7c0lrahlp" path="res://assets/Tutorial/Aim.png" id="10_4c6tc"]
+[ext_resource type="Texture2D" uid="uid://jywdilgucdfq" path="res://assets/Tutorial/Jump.png" id="11_cfwh0"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="11_x0vny"]
 [ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="12_bu4xr"]
+[ext_resource type="PackedScene" uid="uid://c7ywo2pqrljd0" path="res://scenes/enemies/Hamster/Hamster-Rigid.tscn" id="12_qole5"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="13_ah2pn"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="14_6c8yc"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="14_bwfvk"]
@@ -18,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="17_quffg"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_r7wbq"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="19_e7v3k"]
-[ext_resource type="Texture2D" uid="uid://buasnyg26h7uh" path="res://assets/Enemies/hamsersprite.png" id="20_nvhxl"]
 [ext_resource type="PackedScene" uid="uid://ckg57n263xncs" path="res://scenes/levels/game_sequence/1-2 Doors and buttons.tscn" id="20_qmhxi"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="20_v0odu"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="22_1lsoo"]
@@ -152,81 +157,80 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgpbv"]
-size = Vector2(122.667, 50.8333)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6tx73"]
-atlas = ExtResource("20_nvhxl")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mdlfs"]
-atlas = ExtResource("20_nvhxl")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nn70x"]
-atlas = ExtResource("20_nvhxl")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p4l1d"]
-atlas = ExtResource("20_nvhxl")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hifbx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6tx73")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdlfs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nn70x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p4l1d")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 12.0
-}]
-
-[sub_resource type="Animation" id="Animation_g27nt"]
-resource_name = "1-1"
-length = 2.0
+[sub_resource type="Animation" id="Animation_qole5"]
+resource_name = "FadeOut"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(286, 582), Vector2(838, 582), Vector2(838, 715)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_whbpi"]
+[sub_resource type="Animation" id="Animation_mq1rh"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(286, 582)]
+"values": [Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3b1ep"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t0hqx"]
 _data = {
-&"1-1": SubResource("Animation_g27nt"),
-&"RESET": SubResource("Animation_whbpi")
+&"FadeOut": SubResource("Animation_qole5"),
+&"RESET": SubResource("Animation_mq1rh")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0hqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4c6tc")
+}],
+"loop": true,
+"name": &"Aim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cfwh0")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mq1rh")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qole5"]
+size = Vector2(21.5, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq1rh"]
+size = Vector2(116.5, 15.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0hqx"]
+size = Vector2(2.5, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgpbv"]
+size = Vector2(122.667, 50.8333)
 
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_3ilku")
@@ -253,7 +257,87 @@ position = Vector2(983, 587)
 [node name="Player" parent="." instance=ExtResource("7_8uf2v")]
 position = Vector2(240, 585)
 
-[node name="Node2D" type="Node2D" parent="Player"]
+[node name="TutorialTest" type="Node2D" parent="Player"]
+script = ExtResource("7_ibu0m")
+Tutorial = true
+
+[node name="Camera2D" type="Camera2D" parent="Player/TutorialTest"]
+offset = Vector2(0, -20)
+enabled = false
+zoom = Vector2(5, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/TutorialTest"]
+libraries = {
+&"": SubResource("AnimationLibrary_t0hqx")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Player/TutorialTest"]
+visible = false
+z_index = 10
+offset_left = -288.0
+offset_top = -639.0
+offset_right = 949.0
+offset_bottom = 114.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(0, 30)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_t0hqx")
+animation = &"Move"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(310, 585)
+scale = Vector2(2, 2)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(32.25, -9.75)
+shape = SubResource("RectangleShape2D_qole5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-34.5, 22.5)
+shape = SubResource("RectangleShape2D_mq1rh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-34.5, -49.125)
+shape = SubResource("RectangleShape2D_mq1rh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-92.5, -9.75)
+shape = SubResource("RectangleShape2D_t0hqx")
+
+[node name="Hamsterzote" parent="StaticBody2D" instance=ExtResource("12_qole5")]
+position = Vector2(0.5, -11)
+collision_layer = 1
+collision_mask = 1
+lock_rotation = true
+
+[node name="DialogBox" parent="StaticBody2D/Hamsterzote" instance=ExtResource("9_qole5")]
+z_index = -1
+offset_left = -121.0
+offset_top = -60.0
+offset_right = 35.0
+offset_bottom = -10.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/line_separation = 5
+theme_override_font_sizes/normal_font_size = 8
+Dialog = PackedStringArray("Christ!", "You are finally awake...", "...", "At least you cant move...", "You CAN move?!?!", "Well at least you cant pick up stuff...", "YOU CAN?!?!?!?!", "But surely you cant pick stuff up...", "PUT ME DOWN!!!", "You really are like al the other monsters here...", "Seeya!!!!")
+
+[node name="Control" parent="StaticBody2D/Hamsterzote/DialogBox" index="2"]
+anchors_preset = 6
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" parent="StaticBody2D/Hamsterzote/DialogBox/Control" index="0"]
+visible = true
+scale = Vector2(0.2, 0.2)
 
 [node name="Conveyor" type="Node" parent="."]
 
@@ -468,12 +552,6 @@ position = Vector2(249, -84)
 [node name="RigidBody2D4" parent="Boxes" instance=ExtResource("13_ah2pn")]
 position = Vector2(144, -84)
 
-[node name="RigidBody2D" parent="Boxes" instance=ExtResource("13_ah2pn")]
-position = Vector2(671, 360)
-
-[node name="RigidBody2D2" parent="Boxes" instance=ExtResource("13_ah2pn")]
-position = Vector2(647, 360)
-
 [node name="RigidBody2D8" parent="Boxes" instance=ExtResource("13_ah2pn")]
 position = Vector2(925, -84)
 
@@ -486,8 +564,22 @@ position = Vector2(120, -94)
 [node name="RigidBody2D5" parent="Boxes" instance=ExtResource("13_ah2pn")]
 position = Vector2(647, 84)
 
-[node name="RigidBody2D3" parent="Boxes" instance=ExtResource("13_ah2pn")]
+[node name="Frozen" type="Node" parent="Boxes"]
+
+[node name="RigidBody2D" parent="Boxes/Frozen" instance=ExtResource("13_ah2pn")]
+position = Vector2(671, 360)
+sleeping = true
+freeze = true
+
+[node name="RigidBody2D2" parent="Boxes/Frozen" instance=ExtResource("13_ah2pn")]
+position = Vector2(647, 360)
+sleeping = true
+freeze = true
+
+[node name="RigidBody2D3" parent="Boxes/Frozen" instance=ExtResource("13_ah2pn")]
 position = Vector2(695, 360)
+sleeping = true
+freeze = true
 
 [node name="Lights" type="Node" parent="."]
 
@@ -507,9 +599,6 @@ position = Vector2(1056, 31)
 
 [node name="PointLight2D" parent="Lights/Light11" index="0"]
 shadow_enabled = false
-
-[node name="Fakelight" parent="Lights/Light11" index="1"]
-modulate = Color(1, 0.81834, 0.645192, 0.0980392)
 
 [node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
 position = Vector2(315, 265)
@@ -586,25 +675,13 @@ shape = SubResource("RectangleShape2D_kgpbv")
 position = Vector2(452, 312)
 scale = Vector2(1.5, 1.5)
 
-[node name="Hamster" type="AnimatedSprite2D" parent="."]
-position = Vector2(286, 582)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_hifbx")
-animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.622647
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Hamster"]
-libraries = {
-&"": SubResource("AnimationLibrary_3b1ep")
-}
-autoplay = "1-1"
-
 [node name="MusicSubmanager" parent="." instance=ExtResource("22_1lsoo")]
 
 [connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Button_Red_Signal" method="toggle_door"]
+[connection signal="Opendone" from="Transition" to="Player/TutorialTest" method="_on_transition_opendone"]
 
+[editable path="StaticBody2D/Hamsterzote/DialogBox"]
 [editable path="Teleports/Teleport"]
 [editable path="Teleports/Teleport2"]
 [editable path="Lights/Light11"]

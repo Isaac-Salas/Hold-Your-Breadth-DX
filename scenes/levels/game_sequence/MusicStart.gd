@@ -1,5 +1,5 @@
 extends Node
-var positionmusic = MusicManager.get_playback_position()
+@onready var positionmusic = MusicManager.get_playback_position()
 @export var level : int = 1
 func _ready():
 	

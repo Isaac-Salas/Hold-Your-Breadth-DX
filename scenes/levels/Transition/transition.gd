@@ -3,7 +3,8 @@ extends Node2D
 class_name TransitionScene
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @export var target_scene: PackedScene
-
+signal Opendone
+signal Closedone
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,3 +23,12 @@ func transition_to(_next_scene : PackedScene) -> void:
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		transition_to(target_scene)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Opening":
+		Opendone.emit()
+		print("Opendone")
+	elif anim_name == "Closing":
+		Closedone.emit()
+		print("Closedone")
