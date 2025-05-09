@@ -1,0 +1,605 @@
+[gd_scene load_steps=45 format=4 uid="uid://ccfef3di5wjk4"]
+
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_1h2ii"]
+[ext_resource type="Texture2D" uid="uid://c7xoy8o8a2q8i" path="res://assets/tilemap/concrete.png" id="2_86q3s"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_pfpt2"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="4_7fmg8"]
+[ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="5_p1rr8"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="6_qccyy"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="7_8he8t"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="8_ghln3"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="9_dmco3"]
+[ext_resource type="Script" uid="uid://4ak722pryrv0" path="res://scenes/objects/door/door.gd" id="10_a4n0s"]
+[ext_resource type="Texture2D" uid="uid://d1y8alf76lqod" path="res://assets/objects/small_door.png" id="11_itmnt"]
+[ext_resource type="AudioStream" uid="uid://ccg78r01m1w6x" path="res://assets/audioshit/PUERTA.mp3" id="12_kxx6j"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="13_h4poa"]
+[ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="14_r4o75"]
+[ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="15_l61mo"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="16_gwkwv"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="17_rcdc4"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="18_43sv5"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="19_fppha"]
+[ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="20_1n5v1"]
+[ext_resource type="Texture2D" uid="uid://bpx7ko3c3jeg7" path="res://assets/objects/Transition.png" id="21_0qhmr"]
+[ext_resource type="PackedScene" uid="uid://bwaomego0a1rr" path="res://scenes/levels/game_sequence/3-3 One step at a time.tscn" id="21_86q3s"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
+texture = ExtResource("2_86q3s")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/left_side = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:0/0/terrains_peering_bit/bottom_side = 0
+5:0/0/terrains_peering_bit/top_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:1/0/terrains_peering_bit/right_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:2/0/terrains_peering_bit/left_side = 0
+
+[sub_resource type="TileSet" id="TileSet_ymyk6"]
+tile_size = Vector2i(48, 48)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "concrete"
+terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
+sources/0 = SubResource("TileSetAtlasSource_1blni")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyi1q"]
+atlas = ExtResource("11_itmnt")
+region = Rect2(0, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03e41"]
+atlas = ExtResource("11_itmnt")
+region = Rect2(48, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsujr"]
+atlas = ExtResource("11_itmnt")
+region = Rect2(96, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6npx"]
+atlas = ExtResource("11_itmnt")
+region = Rect2(144, 0, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eoohd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyi1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03e41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsujr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6npx")
+}],
+"loop": false,
+"name": &"open",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv5jd"]
+size = Vector2(48, 96)
+
+[sub_resource type="Animation" id="Animation_8t16k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door1:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door1:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightOccluder2D:occluder:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96)]
+}
+
+[sub_resource type="Animation" id="Animation_n1mad"]
+resource_name = "shuttingcol"
+length = 0.46
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door1:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(48, 96), Vector2(48, 80), Vector2(48, 64), Vector2(48, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -48), Vector2(0, -56), Vector2(0, -64), Vector2(0, -72)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door1:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightOccluder2D:occluder:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96), PackedVector2Array(-24, -16, 24, -16, 24, -96, -24, -96), PackedVector2Array(-24, -32, 24, -32, 24, -96, -24, -96), PackedVector2Array(-24, -48, 24, -48, 24, -96, -24, -96)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dlwus"]
+_data = {
+&"RESET": SubResource("Animation_8t16k"),
+&"shuttingcol": SubResource("Animation_n1mad")
+}
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kh5m2"]
+polygon = PackedVector2Array(-24, 0, 24, 0, 24, -96, -24, -96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
+size = Vector2(24, 95)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gw78c"]
+light_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jd3jg"]
+polygon = PackedVector2Array(-384, 107, -384, -107, 384, -107, 384, 107)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5ty5i"]
+light_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2lfug"]
+polygon = PackedVector2Array(-384, 107, -384, -107, 384, -107, 384, 107)
+
+[sub_resource type="Animation" id="Animation_1yl6c"]
+resource_name = "Closing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(6.27667, 6.27667),
+"update": 0,
+"values": [Vector2(384, 540), Vector2(384, 323)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(6.27667, 6.27667),
+"update": 0,
+"values": [Vector2(384, -108), Vector2(384, 109)]
+}
+
+[sub_resource type="Animation" id="Animation_r5kup"]
+resource_name = "Opening"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4.75683, 4.75683),
+"update": 0,
+"values": [Vector2(384, 323), Vector2(384, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4.75683, 4.75683),
+"update": 0,
+"values": [Vector2(384, 109), Vector2(384, -108)]
+}
+
+[sub_resource type="Animation" id="Animation_y1k7v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 108)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0j2h"]
+_data = {
+&"Closing": SubResource("Animation_1yl6c"),
+&"Opening": SubResource("Animation_r5kup"),
+&"RESET": SubResource("Animation_y1k7v")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_1h2ii")
+
+[node name="Tilemap" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAgAAAADAAEAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAACAAIAAAAAAAUAAAAFAAAAAAAAAAQAAAAEAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAAAAAAEAAEAAAADAAAAAAAAAAIAAAAGAAAAAAABAAEAAAAHAAAAAAABAAEAAAAPAAAAAAAFAAAAAAAPAAMAAAAFAAAAAAAPAAIAAAAFAAAAAAAPAAEAAAAEAAEAAAADAAQAAAADAAEAAAAEAAQAAAAEAAAAAAAFAAQAAAAEAAAAAAAGAAQAAAAEAAAAAAAGAAEAAAAAAAIAAAAHAAQAAAAEAAAAAAAIAAQAAAADAAIAAAADAP//AAAEAAEAAAADAP7/AAAFAAAAAAADAP3/AAAFAAAAAAADAPz/AAAFAAAAAAAGAP//AAAAAAEAAAAGAP7/AAAAAAEAAAAGAP3/AAAAAAEAAAAGAPz/AAAAAAEAAAADAPv/AAAEAAEAAAAGAPv/AAAAAAEAAAAGAPr/AAAAAAAAAAABAAgAAAAEAAAAAAAPAAQAAAAFAAAAAAAPAAcAAAAFAAEAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAAAP//AAAFAAAAAAAAAP7/AAAEAAEAAAAAAP3/AAAEAAEAAAAAAPz/AAAEAAEAAAAAAPv/AAAFAAEAAAAPAP//AAAFAAAAAAAPAP7/AAAEAAEAAAAPAP3/AAAFAAAAAAAPAPz/AAAEAAEAAAAHAP//AAACAAEAAAAHAP7/AAACAAEAAAAHAP3/AAACAAEAAAAHAPz/AAACAAEAAAAHAPv/AAACAAEAAAADAPr/AAAFAAEAAAAHAPr/AAACAAAAAAAPAPv/AAAFAAEAAAAJAAEAAAACAAIAAAAJAAAAAAACAAAAAAAIAAAAAAABAAAAAAAHAAEAAAABAAIAAAAIAAEAAAABAAIAAAAPAAUAAAACAAIAAAA=")
+tile_set = SubResource("TileSet_ymyk6")
+rendering_quadrant_size = 48
+
+[node name="Player" parent="." instance=ExtResource("3_pfpt2")]
+position = Vector2(66, 11)
+
+[node name="Camera2D" parent="." instance=ExtResource("4_7fmg8")]
+position = Vector2(0, 1)
+
+[node name="Indicators" type="Node" parent="."]
+
+[node name="Pickups" type="Node" parent="."]
+
+[node name="Vial_green" parent="Pickups" instance=ExtResource("5_p1rr8")]
+position = Vector2(135, 172)
+
+[node name="Vial_green3" parent="Pickups" instance=ExtResource("5_p1rr8")]
+position = Vector2(146, 144)
+
+[node name="Vial_green4" parent="Pickups" instance=ExtResource("5_p1rr8")]
+position = Vector2(116, 144)
+
+[node name="WoodenBox2" parent="Pickups" instance=ExtResource("6_qccyy")]
+position = Vector2(665, 50)
+starting_scale = 12.0
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Swing-light" parent="Lights" instance=ExtResource("7_8he8t")]
+position = Vector2(252, -93)
+
+[node name="Light" parent="Lights" instance=ExtResource("8_ghln3")]
+position = Vector2(512, -7)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Start" parent="Doors" instance=ExtResource("9_dmco3")]
+position = Vector2(312, 144)
+
+[node name="Exit" parent="Doors" instance=ExtResource("9_dmco3")]
+position = Vector2(24, 336)
+rotation = 3.14159
+isOpen = false
+
+[node name="Laser" type="StaticBody2D" parent="Doors"]
+position = Vector2(744, 288)
+rotation = 3.14159
+script = ExtResource("10_a4n0s")
+isOpen = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Doors/Laser"]
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_eoohd")
+animation = &"open"
+frame_progress = 1.0
+
+[node name="Door1" type="CollisionShape2D" parent="Doors/Laser"]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_vv5jd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Doors/Laser"]
+libraries = {
+&"": SubResource("AnimationLibrary_dlwus")
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Doors/Laser"]
+occluder = SubResource("OccluderPolygon2D_kh5m2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Doors/Laser"]
+stream = ExtResource("12_kxx6j")
+volume_db = 15.022
+attenuation = 5.00001
+max_polyphony = 2
+panning_strength = 3.0
+bus = &"SFX"
+
+[node name="Laser" type="Node" parent="."]
+
+[node name="Shrink-Laser" parent="Laser" instance=ExtResource("13_h4poa")]
+position = Vector2(816, 301)
+rotation = 3.14159
+target_scale = Vector2(2, 2)
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Scale_button_green" parent="Buttons" instance=ExtResource("14_r4o75")]
+z_index = 1
+position = Vector2(96, 192)
+activation_weight = 0.0
+metadata/_edit_lock_ = true
+
+[node name="Scale_green_reciever" parent="Buttons/Scale_button_green" instance=ExtResource("15_l61mo")]
+position = Vector2(216, -117)
+
+[node name="Scale_green_reciever2" parent="Buttons/Scale_button_green" instance=ExtResource("15_l61mo")]
+position = Vector2(-72, 73)
+
+[node name="Button_red" parent="Buttons" instance=ExtResource("16_gwkwv")]
+position = Vector2(384, 96)
+rotation = 3.14159
+
+[node name="Button_Red_Signal" parent="Buttons/Button_red" instance=ExtResource("17_rcdc4")]
+position = Vector2(-360, -166)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("18_43sv5")]
+position = Vector2(96, 176)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("18_43sv5")]
+position = Vector2(96, 200)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("18_43sv5")]
+z_index = -1
+position = Vector2(48, 9)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("18_43sv5")]
+z_index = -1
+position = Vector2(699, 88)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("18_43sv5")]
+z_index = -1
+position = Vector2(740, 247)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("18_43sv5")]
+z_index = -1
+position = Vector2(740, 320)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("18_43sv5")]
+z_index = -1
+position = Vector2(740, 165)
+
+[node name="dont touch" parent="." instance=ExtResource("19_fppha")]
+visible = false
+position = Vector2(-178, -194)
+
+[node name="Transition" type="Node2D" parent="."]
+modulate = Color(0.408333, 0.375, 0.5, 1)
+z_index = 20
+y_sort_enabled = true
+position = Vector2(1, 0)
+script = ExtResource("20_1n5v1")
+target_scene = ExtResource("21_86q3s")
+metadata/_edit_lock_ = true
+
+[node name="Trigger" type="Area2D" parent="Transition"]
+
+[node name="TRIGGERSCENE" type="CollisionShape2D" parent="Transition/Trigger"]
+position = Vector2(12, 334)
+shape = SubResource("RectangleShape2D_lorgc")
+debug_color = Color(0.453215, 0.595313, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Transition"]
+z_index = 5
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_gw78c")
+position = Vector2(384, -108)
+texture = ExtResource("21_0qhmr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Transition/Sprite2D"]
+visible = false
+clip_children = 2
+occluder = SubResource("OccluderPolygon2D_jd3jg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Transition"]
+z_index = 5
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_5ty5i")
+position = Vector2(384, 540)
+scale = Vector2(1, -1)
+texture = ExtResource("21_0qhmr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Transition/Sprite2D2"]
+visible = false
+clip_children = 2
+occluder = SubResource("OccluderPolygon2D_2lfug")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_k0j2h")
+}
+autoplay = "Opening"
+
+[connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/Start" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/Exit" method="toggle_door"]
+[connection signal="pressed" from="Buttons/Button_red" to="Doors/Laser" method="toggle_door"]
+[connection signal="body_entered" from="Transition/Trigger" to="Transition" method="_on_trigger_body_entered"]
+[connection signal="animation_finished" from="Transition/AnimationPlayer" to="Transition" method="_on_animation_player_animation_finished"]

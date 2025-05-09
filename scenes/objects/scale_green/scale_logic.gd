@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 func update():
 	if n_inside > 0 and weight_total < activation_weight:
 		light.show()
-		light.energy = remap(weight_total, 0, activation_weight, 0, 0.9)
+		light.energy = min(remap(weight_total, 0, activation_weight, 0, 0.9),1)
 		light.color = color_almost
 		var frame = 0
 		if weight_total < activation_weight * 1 / 5:
@@ -46,14 +46,14 @@ func update():
 		state = false
 		return false
 	elif weight_total > activation_weight:
-		light.energy = remap(weight_total, 0, activation_weight, 0, 0.9)
+		light.energy = min(remap(weight_total, 0, activation_weight, 0, 0.9),1)
 		light.show()
 		light.color = color_too_much
 		anim_flag.play("OVER")
 		state = false
 		return false
 	elif weight_total == activation_weight and not state:
-		light.energy = remap(weight_total, 0, activation_weight, 0, 0.9)
+		light.energy = 1
 		light.show()
 		light.color = color_done
 		anim_flag.play("CORRECT")
@@ -61,7 +61,7 @@ func update():
 		particles.emitting = true
 		return true
 	elif anim_flag.animation != "CORRECT":
-		light.energy = remap(weight_total, 0, activation_weight, 0, 0.9)
+		light.energy = min(remap(weight_total, 0, activation_weight, 0, 0.9),1)
 		light.hide()
 		anim_flag.play("OFF")
 		state = false

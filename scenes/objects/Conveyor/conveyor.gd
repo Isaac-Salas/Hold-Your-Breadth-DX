@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	for body in inside:
 		if body is SlimePlayer:
 			#print(body)
-			body.velocity.x += force.x * 20
+			body.velocity.x += force.x 
 		if body is RigidBody2D and abs(body.linear_velocity.x) < abs(force.x) * 15:
 			#print(body.linear_velocity)
 			body.apply_impulse(force)

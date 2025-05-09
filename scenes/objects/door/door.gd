@@ -22,9 +22,9 @@ func toggle_door(state, body):
 			return
 		audio_stream_player.play()
 	else:
-		anim.play_backwards("open")
-		ap.play_backwards("shuttingcol")
 		if first:
 			first = false
 			return
+		anim.play_backwards("open")
+		ap.play_backwards("shuttingcol")
 		audio_stream_player.play()
