@@ -1,0 +1,697 @@
+[gd_scene load_steps=39 format=4 uid="uid://v4ylrqt2e871"]
+
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
+[ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_esqvt"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
+[ext_resource type="Script" uid="uid://80efc16j34uh" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
+[ext_resource type="Texture2D" uid="uid://ynq3lvmaqfc7" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
+[ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="9_qole5"]
+[ext_resource type="Texture2D" uid="uid://b8vtk5adhm7f" path="res://assets/Tutorial/Aim.png" id="10_4c6tc"]
+[ext_resource type="Texture2D" uid="uid://btb7w6aee3u84" path="res://assets/Tutorial/Jump.png" id="11_cfwh0"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="11_x0vny"]
+[ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="12_bu4xr"]
+[ext_resource type="PackedScene" uid="uid://c7ywo2pqrljd0" path="res://scenes/enemies/Hamster/Hamster-Rigid.tscn" id="12_qole5"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="13_ah2pn"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="14_6c8yc"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="14_bwfvk"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="15_hc1tl"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="15_mnyod"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="16_5vcge"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="17_quffg"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_r7wbq"]
+[ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="19_e7v3k"]
+[ext_resource type="PackedScene" uid="uid://ckg57n263xncs" path="res://scenes/levels/game_sequence/1-2 Doors and buttons.tscn" id="20_qmhxi"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="20_v0odu"]
+[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="22_1lsoo"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u1ug"]
+texture = ExtResource("3_npyyg")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/left_side = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:0/0/terrains_peering_bit/bottom_side = 0
+5:0/0/terrains_peering_bit/top_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:1/0/terrains_peering_bit/right_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:2/0/terrains_peering_bit/left_side = 0
+
+[sub_resource type="TileSet" id="TileSet_ymyk6"]
+tile_size = Vector2i(48, 48)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "concrete"
+terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
+sources/0 = SubResource("TileSetAtlasSource_8u1ug")
+
+[sub_resource type="Animation" id="Animation_qole5"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mq1rh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t0hqx"]
+_data = {
+&"FadeOut": SubResource("Animation_qole5"),
+&"RESET": SubResource("Animation_mq1rh")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0hqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4c6tc")
+}],
+"loop": true,
+"name": &"Aim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cfwh0")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mq1rh")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qole5"]
+size = Vector2(21.5, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq1rh"]
+size = Vector2(116.5, 15.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0hqx"]
+size = Vector2(2.5, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgpbv"]
+size = Vector2(122.667, 50.8333)
+
+[node name="TutorialLevel" type="Node2D"]
+script = ExtResource("1_3ilku")
+ZoneNumber = 1
+LevelNumber = 1
+
+[node name="Tilemap" type="TileMapLayer" parent="."]
+use_parent_material = true
+position = Vector2(96, 216)
+tile_map_data = PackedByteArray("AAABAAgAAAAAAAIAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAABAAAAAAAAAAEAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAAHAAAAAAABAAIAAAAJAAAAAAABAAIAAAAIAAAAAAABAAIAAAAKAAAAAAABAAIAAAALAAAAAAABAAIAAAAMAAAAAAABAAIAAAANAAAAAAABAAIAAAAOAAAAAAABAAIAAAAPAAMAAAAEAAEAAAAPAAQAAAABAAEAAAAPAAUAAAABAAIAAAAPAAIAAAAFAAAAAAAPAAAAAAABAAEAAAAOAAUAAAABAAIAAAANAAUAAAABAAIAAAAMAAUAAAABAAIAAAALAAUAAAABAAIAAAAKAAUAAAABAAIAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAIAAAD9/wgAAAABAAIAAAD9/wcAAAABAAEAAAD9/wYAAAABAAEAAAD9/wUAAAABAAEAAAD9/wQAAAABAAEAAAD9/wMAAAABAAEAAAD9/wIAAAABAAEAAAD9/wEAAAABAAEAAAD9/wAAAAABAAEAAAD9////AAABAAEAAAD9//7/AAABAAEAAAD9//3/AAABAAEAAAD9//z/AAABAAEAAAD9//v/AAABAAEAAAD+//v/AAABAAEAAAD///v/AAABAAIAAAAAAPv/AAABAAEAAAABAPv/AAABAAEAAAACAPv/AAABAAEAAAADAPv/AAABAAEAAAAEAPv/AAABAAEAAAAFAPv/AAABAAEAAAAGAPv/AAABAAIAAAAHAPv/AAACAAEAAAAJAPv/AAAAAAEAAAAKAPv/AAACAAEAAAAMAPv/AAAAAAEAAAANAPv/AAABAAEAAAAOAPv/AAABAAEAAAAPAPv/AAABAAEAAAAQAPv/AAABAAEAAAARAPv/AAABAAEAAAASAPv/AAABAAEAAAATAPv/AAABAAEAAAAUAPv/AAABAAIAAAAVAPv/AAABAAEAAAAWAPv/AAABAAEAAAAQAAUAAAABAAIAAAARAAUAAAABAAIAAAASAAUAAAACAAEAAAAQAAAAAAABAAIAAAARAAAAAAABAAIAAAASAAAAAAACAAIAAAASAP//AAACAAAAAAARAP//AAABAAAAAAAQAP//AAABAAAAAAAPAP//AAABAAAAAAAOAP//AAABAAAAAAANAP//AAABAAAAAAAMAP//AAABAAAAAAALAP//AAABAAAAAAAKAP//AAABAAEAAAAJAP//AAABAAEAAAAIAP//AAABAAAAAAAHAP//AAABAAAAAAAGAP//AAABAAAAAAAFAP//AAABAAAAAAAEAP//AAABAAAAAAADAP//AAABAAAAAAACAP//AAABAAAAAAABAP//AAAAAAAAAAAWAAgAAAACAAIAAAAWAAcAAAACAAEAAAAWAAYAAAACAAEAAAAWAAUAAAACAAEAAAAWAAQAAAACAAEAAAAWAAMAAAACAAEAAAAWAAIAAAACAAEAAAAWAAEAAAACAAEAAAAWAAAAAAACAAEAAAAWAP//AAACAAEAAAAWAP7/AAACAAEAAAAWAP3/AAACAAEAAAAWAPz/AAACAAEAAAAPAAgAAAADAAIAAAAOAAgAAAAEAAAAAAANAAgAAAAEAAAAAAD+//z/AAACAAEAAAD+//3/AAACAAEAAAD+//7/AAACAAEAAAD+////AAACAAEAAAD+/wAAAAACAAEAAAD+/wEAAAACAAEAAAD+/wIAAAACAAEAAAD+/wMAAAACAAEAAAD+/wQAAAACAAEAAAD+/wUAAAACAAEAAAD+/wYAAAACAAEAAAD+/wcAAAACAAEAAAD+/wgAAAACAAIAAAABAAcAAAAEAAEAAAABAAYAAAAFAAAAAAABAAUAAAAFAAAAAAABAAQAAAAFAAAAAAABAAMAAAAFAAAAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAASAAgAAAAAAAIAAAASAAcAAAAEAAEAAAASAAYAAAAFAAAAAAAVAAgAAAAAAAIAAAAVAAcAAAAAAAEAAAAVAAYAAAAAAAEAAAAVAAUAAAAAAAEAAAAVAAQAAAAAAAEAAAAVAAMAAAAAAAEAAAAVAAEAAAAAAAEAAAAVAAAAAAAAAAEAAAAVAP//AAAAAAEAAAAVAP7/AAAAAAEAAAAVAP3/AAAAAAEAAAAVAPz/AAAAAAEAAAAJAPz/AAAAAAEAAAAJAP3/AAAAAAEAAAAJAP7/AAAAAAEAAAAKAPz/AAACAAEAAAAKAP3/AAACAAEAAAAKAP7/AAACAAEAAAAJAPf/AAAAAAAAAAAJAPj/AAAAAAEAAAAJAPn/AAAAAAEAAAAJAPr/AAAAAAEAAAAKAPf/AAACAAAAAAAKAPj/AAACAAEAAAAKAPn/AAACAAEAAAAKAPr/AAACAAEAAAAPAAEAAAAFAAAAAAASAAQAAAACAAAAAAARAAQAAAABAAAAAAAQAAQAAAABAAAAAAAUAAIAAAADAAEAAAAVAAIAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_ymyk6")
+rendering_quadrant_size = 48
+
+[node name="Door" parent="." instance=ExtResource("4_esqvt")]
+position = Vector2(912, 624)
+rotation = 1.5708
+
+[node name="Button_red" parent="." instance=ExtResource("5_5v7i4")]
+position = Vector2(769, 408)
+
+[node name="Button_Red_Signal" parent="." instance=ExtResource("6_bgyky")]
+position = Vector2(983, 587)
+
+[node name="Player" parent="." instance=ExtResource("7_8uf2v")]
+position = Vector2(240, 585)
+
+[node name="TutorialTest" type="Node2D" parent="Player"]
+script = ExtResource("7_ibu0m")
+Tutorial = true
+
+[node name="Camera2D" type="Camera2D" parent="Player/TutorialTest"]
+offset = Vector2(0, -20)
+enabled = false
+zoom = Vector2(5, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/TutorialTest"]
+libraries = {
+&"": SubResource("AnimationLibrary_t0hqx")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Player/TutorialTest"]
+visible = false
+z_index = 10
+offset_left = -288.0
+offset_top = -639.0
+offset_right = 949.0
+offset_bottom = 114.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player"]
+visible = false
+position = Vector2(0, 30)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_t0hqx")
+animation = &"Move"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(310, 585)
+scale = Vector2(2, 2)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(32.25, -9.75)
+shape = SubResource("RectangleShape2D_qole5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-34.5, 22.5)
+shape = SubResource("RectangleShape2D_mq1rh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-34.5, -49.125)
+shape = SubResource("RectangleShape2D_mq1rh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-92.5, -9.75)
+shape = SubResource("RectangleShape2D_t0hqx")
+
+[node name="Hamsterzote" parent="StaticBody2D" instance=ExtResource("12_qole5")]
+position = Vector2(0.5, -11)
+collision_layer = 1
+collision_mask = 1
+lock_rotation = true
+
+[node name="DialogBox" parent="StaticBody2D/Hamsterzote" instance=ExtResource("9_qole5")]
+z_index = -1
+offset_left = -121.0
+offset_top = -60.0
+offset_right = 35.0
+offset_bottom = -10.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/line_separation = 5
+theme_override_font_sizes/normal_font_size = 8
+Dialog = PackedStringArray("Christ!", "You are finally awake...", "...", "At least you cant move...", "You CAN move?!?!", "Well at least you cant pick stuff up...", "YOU CAN?!?!?!?!", "But surely you cant pick stuff up...", "PUT ME DOWN!!!", "You really are like al the other monsters here...", "Seeya!!!!")
+
+[node name="Control" parent="StaticBody2D/Hamsterzote/DialogBox" index="2"]
+anchors_preset = 6
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" parent="StaticBody2D/Hamsterzote/DialogBox/Control" index="0"]
+visible = true
+scale = Vector2(0.2, 0.2)
+
+[node name="Conveyor" type="Node" parent="."]
+
+[node name="Conveyor" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(648, 432)
+
+[node name="Conveyor10" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(456, -1)
+direction = "right"
+
+[node name="Conveyor11" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(408, -1)
+direction = "right"
+
+[node name="Conveyor12" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(360, -1)
+direction = "right"
+
+[node name="Conveyor13" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(312, -1)
+direction = "right"
+
+[node name="Conveyor14" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(264, -1)
+direction = "right"
+
+[node name="Conveyor15" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(216, -1)
+direction = "right"
+
+[node name="Conveyor16" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(168, -1)
+direction = "right"
+
+[node name="Conveyor17" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(120, -1)
+direction = "right"
+
+[node name="Conveyor2" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(1080, 336)
+
+[node name="Conveyor7" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(888, 432)
+direction = "right"
+type = "RIGHT"
+
+[node name="Conveyor8" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(936, 432)
+direction = "right"
+
+[node name="Conveyor9" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(984, 432)
+direction = "right"
+type = "LEFT"
+
+[node name="Conveyor25" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(120, -1)
+direction = "right"
+
+[node name="Conveyor26" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(984, 192)
+direction = "right"
+
+[node name="Conveyor27" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(936, 192)
+direction = "right"
+
+[node name="Conveyor28" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(888, 192)
+direction = "right"
+
+[node name="Conveyor29" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(984, 192)
+direction = "right"
+type = "LEFT"
+
+[node name="Conveyor30" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(936, 192)
+direction = "right"
+
+[node name="Conveyor31" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(888, 192)
+direction = "right"
+
+[node name="Conveyor32" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(840, 192)
+direction = "right"
+
+[node name="Conveyor33" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(792, 192)
+direction = "right"
+
+[node name="Conveyor34" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(744, 192)
+direction = "right"
+
+[node name="Conveyor35" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(696, 192)
+direction = "right"
+
+[node name="Conveyor36" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(648, 192)
+direction = "right"
+type = "RIGHT"
+
+[node name="Conveyor37" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(1032, -1)
+
+[node name="Conveyor38" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(984, -1)
+
+[node name="Conveyor39" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(936, -1)
+
+[node name="Conveyor40" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(888, -1)
+
+[node name="Conveyor41" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(840, -1)
+
+[node name="Conveyor42" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(792, -1)
+
+[node name="Conveyor43" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(744, -1)
+
+[node name="Conveyor44" parent="Conveyor" instance=ExtResource("11_x0vny")]
+visible = false
+position = Vector2(696, -1)
+
+[node name="Conveyor45" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(504, 192)
+type = "RIGHT"
+
+[node name="Conveyor46" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(456, 192)
+
+[node name="Conveyor47" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(408, 192)
+
+[node name="Conveyor48" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(360, 192)
+
+[node name="Conveyor49" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(312, 192)
+
+[node name="Conveyor50" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(264, 192)
+
+[node name="Conveyor51" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(216, 192)
+
+[node name="Conveyor52" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(168, 192)
+type = "LEFT"
+
+[node name="Conveyor5" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(552, 432)
+type = "LEFT"
+
+[node name="Conveyor6" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(600, 432)
+
+[node name="Conveyor3" parent="Conveyor" instance=ExtResource("11_x0vny")]
+position = Vector2(696, 432)
+type = "RIGHT"
+
+[node name="Teleports" type="Node" parent="."]
+
+[node name="Teleport" parent="Teleports" instance=ExtResource("12_bu4xr")]
+position = Vector2(1020, 633)
+
+[node name="CollisionShape2D" parent="Teleports/Teleport" index="0"]
+position = Vector2(36, 46)
+
+[node name="Teleport Position" parent="Teleports/Teleport" index="1"]
+position = Vector2(-366, -642)
+
+[node name="Teleport2" parent="Teleports" instance=ExtResource("12_bu4xr")]
+position = Vector2(1020, 616)
+
+[node name="CollisionShape2D" parent="Teleports/Teleport2" index="0"]
+position = Vector2(-924, 63)
+
+[node name="Teleport Position" parent="Teleports/Teleport2" index="1"]
+position = Vector2(-517, -631)
+
+[node name="Boxes" type="Node" parent="."]
+
+[node name="RigidBody2D7" parent="Boxes" instance=ExtResource("13_ah2pn")]
+position = Vector2(420, -84)
+
+[node name="RigidBody2D6" parent="Boxes" instance=ExtResource("13_ah2pn")]
+position = Vector2(249, -84)
+
+[node name="RigidBody2D4" parent="Boxes" instance=ExtResource("13_ah2pn")]
+position = Vector2(144, -84)
+
+[node name="RigidBody2D8" parent="Boxes" instance=ExtResource("13_ah2pn")]
+position = Vector2(925, -84)
+
+[node name="RigidBody2D9" parent="Boxes" instance=ExtResource("13_ah2pn")]
+position = Vector2(744, -84)
+
+[node name="RigidBody2D10" parent="Boxes" instance=ExtResource("13_ah2pn")]
+position = Vector2(120, -94)
+
+[node name="RigidBody2D5" parent="Boxes" instance=ExtResource("13_ah2pn")]
+position = Vector2(647, 84)
+
+[node name="Frozen" type="Node" parent="Boxes"]
+
+[node name="RigidBody2D" parent="Boxes/Frozen" instance=ExtResource("13_ah2pn")]
+position = Vector2(671, 360)
+sleeping = true
+freeze = true
+
+[node name="RigidBody2D2" parent="Boxes/Frozen" instance=ExtResource("13_ah2pn")]
+position = Vector2(647, 360)
+sleeping = true
+freeze = true
+
+[node name="RigidBody2D3" parent="Boxes/Frozen" instance=ExtResource("13_ah2pn")]
+position = Vector2(695, 360)
+sleeping = true
+freeze = true
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Exit-Sign" parent="Lights" instance=ExtResource("14_6c8yc")]
+z_index = -1
+metadata/_edit_lock_ = true
+
+[node name="Light9" parent="Lights" instance=ExtResource("14_bwfvk")]
+position = Vector2(778, 272)
+
+[node name="Light10" parent="Lights" instance=ExtResource("14_bwfvk")]
+position = Vector2(96, 32)
+metadata/_edit_lock_ = true
+
+[node name="Light11" parent="Lights" instance=ExtResource("14_bwfvk")]
+position = Vector2(1056, 31)
+
+[node name="PointLight2D" parent="Lights/Light11" index="0"]
+shadow_enabled = false
+
+[node name="Fakelight" parent="Lights/Light11" index="1"]
+modulate = Color(1, 0.81834, 0.645192, 0.0980392)
+
+[node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
+position = Vector2(315, 265)
+
+[node name="Light" parent="Lights/Swing-light" index="1"]
+position = Vector2(0, 140)
+
+[node name="Swing-light2" parent="Lights" instance=ExtResource("15_mnyod")]
+position = Vector2(608, 265)
+
+[node name="Light" parent="Lights/Swing-light2" index="1"]
+position = Vector2(0, 85)
+
+[node name="Lamp" parent="Lights" instance=ExtResource("2_c0t5q")]
+visible = false
+position = Vector2(388, 592)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Lamp2" parent="Lights" instance=ExtResource("2_c0t5q")]
+position = Vector2(866, 384)
+scale = Vector2(1, 1)
+
+[node name="Lasers" type="Node" parent="."]
+
+[node name="Grow-Laser2" parent="Lasers" instance=ExtResource("15_hc1tl")]
+position = Vector2(732, 24.0016)
+rotation = 1.5708
+target_scale = Vector2(5, 5)
+metadata/_edit_lock_ = true
+
+[node name="Shrink-Laser2" parent="Lasers" instance=ExtResource("16_5vcge")]
+position = Vector2(936, 24.0023)
+rotation = 1.5708
+target_scale = Vector2(1.5, 1.5)
+metadata/_edit_lock_ = true
+
+[node name="Grow-Laser" parent="Lasers" instance=ExtResource("15_hc1tl")]
+position = Vector2(297, 24)
+rotation = 1.5708
+target_scale = Vector2(5, 5)
+metadata/_edit_lock_ = true
+
+[node name="Shrink-Laser" parent="Lasers" instance=ExtResource("16_5vcge")]
+position = Vector2(451, 24)
+rotation = 1.5708
+target_scale = Vector2(1.5, 1.5)
+metadata/_edit_lock_ = true
+
+[node name="Indicator-Arrow2" parent="." instance=ExtResource("19_e7v3k")]
+position = Vector2(845, 560)
+rotation = 1.5708
+
+[node name="Indicator-Arrow3" parent="." instance=ExtResource("19_e7v3k")]
+position = Vector2(344, 451)
+rotation = -0.607243
+
+[node name="Indicator-X" parent="." instance=ExtResource("17_quffg")]
+z_index = -2
+position = Vector2(778, 355)
+
+[node name="dont touch" parent="." instance=ExtResource("20_v0odu")]
+visible = false
+
+[node name="Transition" parent="." instance=ExtResource("18_r7wbq")]
+scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("20_qmhxi")
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(605.333, 442.75)
+shape = SubResource("RectangleShape2D_kgpbv")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(452, 312)
+scale = Vector2(1.5, 1.5)
+
+[node name="MusicSubmanager" parent="." instance=ExtResource("22_1lsoo")]
+
+[connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
+[connection signal="pressed" from="Button_red" to="Button_Red_Signal" method="toggle_door"]
+[connection signal="Opendone" from="Transition" to="Player/TutorialTest" method="_on_transition_opendone"]
+
+[editable path="StaticBody2D/Hamsterzote"]
+[editable path="StaticBody2D/Hamsterzote/DialogBox"]
+[editable path="Teleports/Teleport"]
+[editable path="Teleports/Teleport2"]
+[editable path="Lights/Light11"]
+[editable path="Lights/Swing-light"]
+[editable path="Lights/Swing-light2"]
+[editable path="Lights/Lamp2"]
+[editable path="dont touch"]
+[editable path="Transition"]

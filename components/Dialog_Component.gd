@@ -13,7 +13,8 @@ class_name DialogComponent
 @onready var charcount : int = 0
 @onready var timer = $Timer
 @onready var count : int = 0 
-signal Done
+signal Done()
+@onready var dumbdone : bool
 
 
 # Called when the node enters the scene tree for the first time.
@@ -43,6 +44,7 @@ func clearcenter():
 	linecount += 1
 	charcount = 0
 	InputEnable = false
+	dumbdone = false
 	self.clear()
 	self.append_text("[center][center]")
 
@@ -62,6 +64,7 @@ func _on_timer_timeout():
 
 
 func _on_done():
+	dumbdone = true
 	if show_end == true:
 		animated_sprite_2d.visible = true
 	

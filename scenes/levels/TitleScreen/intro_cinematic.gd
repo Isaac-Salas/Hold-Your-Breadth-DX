@@ -5,6 +5,7 @@ extends Node2D
 @onready var timer = $Timer
 @export var skipoverride : bool 
 @onready var transition = $Transition
+@onready var menu = $Menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +32,7 @@ func _process(delta):
 	pass
 
 func start():
+	menu.play.grab_focus()
 	animation_player.play("new_animation")
 
 func loop():

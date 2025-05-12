@@ -13,15 +13,15 @@ class_name SlimePlayer
 #@export var scalerate = Vector2(0.1, 0.1)
 @onready var rigidcolision = $RigidBody2D/CollisionShape2D
 @onready var pickup = $Pickup
-@onready var object_detect = $AnimatedSprite2D/ObjectDetect
+@onready var object_detect : Area2D = $AnimatedSprite2D/ObjectDetect
 @onready var currentobj
 @onready var picking = false
 @onready var throwing = false
 @onready var scanning = false
 @onready var toggle = false
 @onready var onarea = false
-@onready var crosshair = $Pickup/Crosshair
-@onready var throwcross = $AnimatedSprite2D
+@onready var crosshair : SwordOrbComponent = $Pickup/Crosshair
+@onready var throwcross : SwordOrbComponent = $AnimatedSprite2D
 
 @onready var scaler = $Scaler
 @onready var dot = $AnimatedSprite2D
@@ -31,7 +31,7 @@ const states = ["Small", "Normal", "Big"]
 signal scare
 @onready var tieso = false
 @onready var scale_component = $ScaleComponent
-@onready var eyes = $Animacion/Eyes
+@onready var eyes : AnimatedSprite2D = $Animacion/Eyes
 @onready var rigid_body = $RigidBody2D
 @export var pushstrenght : int = 150
 
@@ -39,8 +39,12 @@ signal scare
 @onready var normallight = $Animacion/Normallight
 @onready var small_light = $SmallLight
 
+@onready var controller : bool
 
-
+signal Movement(value)
+signal Jump(value)
+signal Throw(value)
+signal Grab(value)
 
 
 
@@ -80,12 +84,16 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		Jump.emit(true)
 		velocity.y = JUMP_VELOCITY
+	else:
+		Jump.emit(false)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
+		Movement.emit(true)
 		sprite.play("Walk")
 		eyes.play("Walked")
 		if direction == 1:
@@ -101,6 +109,7 @@ func _physics_process(delta):
 		#print(direction)
 
 	else:
+		Movement.emit(false)
 		sprite.play("Idle")
 		eyes.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -188,7 +197,6 @@ func scaling():
 	
 
 func grow(scalerate):
-
 	if sprite.scale.x + scalerate.x < 3:
 		colision.scale = sprite.scale
 		rigidcolision.scale += scalerate
@@ -211,6 +219,7 @@ func shrink(scalerate):
 
 func grab(body):
 	if body and picking == false and body.sprite.scale <= sprite.scale or body is Rat_enemy :
+		Grab.emit(true)
 		if body.is_in_group("Matraz"):
 			body.break_after_throw = true
 		$AnimatedSprite2D.visible = false
@@ -220,6 +229,7 @@ func grab(body):
 		body.colision.disabled = true
 		#currentobj.collision.layer = 8
 		body.global_position = pickup.global_position
+		
 		return true
 	return false
 #func letgo(body):
@@ -245,6 +255,7 @@ func aim(delta):
 
 func throw(body):
 	if currentobj and picking == true:
+		Throw.emit(true)
 		$AnimatedSprite2D.visible = true
 		if currentobj.is_in_group("Meatbox"):
 			currentobj.picked = true

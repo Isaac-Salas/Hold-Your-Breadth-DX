@@ -3,19 +3,14 @@ extends Node
 @export var level : int = 1
 func _ready():
 	
-	if MusicManager.stream != null:
-		if positionmusic != 0.0:
-			pass
-		else:
-			match level:
-				1:
-					MusicManager.startplay(MusicManager.N_1)
-				2:
-					MusicManager.startplay(MusicManager.N_2)
-					
-	else:
-		match level:
-			1:
+	match level:
+		1:
+			if MusicManager.stream == MusicManager.N_1:
+				pass
+			else:
 				MusicManager.startplay(MusicManager.N_1)
-			2:
+		2:
+			if MusicManager.stream == MusicManager.N_2:
+				pass
+			else:
 				MusicManager.startplay(MusicManager.N_2)

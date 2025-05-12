@@ -13,6 +13,7 @@ class_name  OptionsMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	back.grab_focus()
 	brightnes.value = Enviroment.environment.adjustment_brightness
 	contrast.value = Enviroment.environment.adjustment_contrast
 	saturation.value = Enviroment.environment.adjustment_saturation

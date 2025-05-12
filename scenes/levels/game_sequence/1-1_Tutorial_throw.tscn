@@ -1,19 +1,21 @@
-[gd_scene load_steps=39 format=4 uid="uid://v4ylrqt2e871"]
+[gd_scene load_steps=46 format=4 uid="uid://v4ylrqt2e871"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
-[ext_resource type="Texture2D" uid="uid://bi0knv4gnvguq" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
+[ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_esqvt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
 [ext_resource type="Script" uid="uid://80efc16j34uh" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
-[ext_resource type="Texture2D" uid="uid://dom12shatkf3b" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
+[ext_resource type="Texture2D" uid="uid://ynq3lvmaqfc7" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="9_qole5"]
-[ext_resource type="Texture2D" uid="uid://nsm7c0lrahlp" path="res://assets/Tutorial/Aim.png" id="10_4c6tc"]
-[ext_resource type="Texture2D" uid="uid://jywdilgucdfq" path="res://assets/Tutorial/Jump.png" id="11_cfwh0"]
+[ext_resource type="Texture2D" uid="uid://b8vtk5adhm7f" path="res://assets/Tutorial/Aim.png" id="10_4c6tc"]
+[ext_resource type="Texture2D" uid="uid://7wh2ul5auenk" path="res://assets/Tutorial/Lift.png" id="11_6jiu3"]
+[ext_resource type="Texture2D" uid="uid://btb7w6aee3u84" path="res://assets/Tutorial/Jump.png" id="11_cfwh0"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="11_x0vny"]
 [ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="12_bu4xr"]
+[ext_resource type="Texture2D" uid="uid://cf1c4q32epw13" path="res://assets/Tutorial/Throw.png" id="12_jnqun"]
 [ext_resource type="PackedScene" uid="uid://c7ywo2pqrljd0" path="res://scenes/enemies/Hamster/Hamster-Rigid.tscn" id="12_qole5"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="13_ah2pn"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="14_6c8yc"]
@@ -157,6 +159,34 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
+[sub_resource type="Animation" id="Animation_jnqun"]
+resource_name = "CameraOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(1.1, 1.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -20), Vector2(336, -260)]
+}
+
 [sub_resource type="Animation" id="Animation_qole5"]
 resource_name = "FadeOut"
 tracks/0/type = "value"
@@ -186,9 +216,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -20)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t0hqx"]
 _data = {
+&"CameraOut": SubResource("Animation_jnqun"),
 &"FadeOut": SubResource("Animation_qole5"),
 &"RESET": SubResource("Animation_mq1rh")
 }
@@ -218,7 +273,77 @@ animations = [{
 "loop": true,
 "name": &"Move",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_6jiu3")
+}],
+"loop": true,
+"name": &"Pick-up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jnqun")
+}],
+"loop": true,
+"name": &"Throw",
+"speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_4c6tc"]
+resource_name = "BlinkLoop"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cfwh0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6jiu3"]
+resource_name = "Stoping"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfwh0"]
+_data = {
+&"BlinkLoop": SubResource("Animation_4c6tc"),
+&"RESET": SubResource("Animation_cfwh0"),
+&"Stoping": SubResource("Animation_6jiu3")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qole5"]
 size = Vector2(21.5, 66.5)
@@ -259,7 +384,7 @@ position = Vector2(240, 585)
 
 [node name="TutorialTest" type="Node2D" parent="Player"]
 script = ExtResource("7_ibu0m")
-Tutorial = true
+TutorialOverride = true
 
 [node name="Camera2D" type="Camera2D" parent="Player/TutorialTest"]
 offset = Vector2(0, -20)
@@ -280,11 +405,18 @@ offset_right = 949.0
 offset_bottom = 114.0
 color = Color(0, 0, 0, 1)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player"]
+[node name="Tooltips" type="AnimatedSprite2D" parent="Player"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(0, 30)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_t0hqx")
 animation = &"Move"
+
+[node name="Blink" type="AnimationPlayer" parent="Player/Tooltips"]
+libraries = {
+&"": SubResource("AnimationLibrary_cfwh0")
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(310, 585)
@@ -324,7 +456,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/line_separation = 5
 theme_override_font_sizes/normal_font_size = 8
-Dialog = PackedStringArray("Christ!", "You are finally awake...", "...", "At least you cant move...", "You CAN move?!?!", "Well at least you cant pick up stuff...", "YOU CAN?!?!?!?!", "But surely you cant pick stuff up...", "PUT ME DOWN!!!", "You really are like al the other monsters here...", "Seeya!!!!")
+Dialog = PackedStringArray("Christ!", "You are finally awake...", "...", "At least you can\'t move...", "You CAN move?!?!", "...", "Bet you can\'t jump tho!", "WOW.", "Well at least you cant aim...", "YOU CAN?!?!?!?!", "But surely you cant pick stuff up...", "PUT ME DOWN!!!", ":c", "You are just like all the other monsters here...", "...", "...", "Seeya!!!!")
 
 [node name="Control" parent="StaticBody2D/Hamsterzote/DialogBox" index="2"]
 anchors_preset = 6
@@ -336,8 +468,9 @@ offset_bottom = 3.5
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" parent="StaticBody2D/Hamsterzote/DialogBox/Control" index="0"]
-visible = true
 scale = Vector2(0.2, 0.2)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="StaticBody2D/Hamsterzote"]
 
 [node name="Conveyor" type="Node" parent="."]
 
@@ -600,6 +733,9 @@ position = Vector2(1056, 31)
 [node name="PointLight2D" parent="Lights/Light11" index="0"]
 shadow_enabled = false
 
+[node name="Fakelight" parent="Lights/Light11" index="1"]
+modulate = Color(1, 0.81834, 0.645192, 0.0980392)
+
 [node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
 position = Vector2(315, 265)
 
@@ -679,8 +815,10 @@ scale = Vector2(1.5, 1.5)
 
 [connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Button_Red_Signal" method="toggle_door"]
+[connection signal="screen_exited" from="StaticBody2D/Hamsterzote/VisibleOnScreenNotifier2D" to="Player/TutorialTest" method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="Opendone" from="Transition" to="Player/TutorialTest" method="_on_transition_opendone"]
 
+[editable path="StaticBody2D/Hamsterzote"]
 [editable path="StaticBody2D/Hamsterzote/DialogBox"]
 [editable path="Teleports/Teleport"]
 [editable path="Teleports/Teleport2"]

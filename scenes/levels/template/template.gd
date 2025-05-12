@@ -9,7 +9,7 @@ extends Node2D
 func _ready():
 	var LevelSave : String = "Level" + str(ZoneNumber) + "_" + str(LevelNumber)
 	Manager.setter(LevelSave,true)
-	Manager.save_game()
+	Manager.save_game() 
 	
 	
 

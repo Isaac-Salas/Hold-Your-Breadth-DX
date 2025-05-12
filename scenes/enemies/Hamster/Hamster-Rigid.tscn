@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7ywo2pqrljd0"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_1yduj"]
-[ext_resource type="Texture2D" uid="uid://dd61taecrpege" path="res://assets/Enemies/HamsterSingle.png" id="2_jpskd"]
+[ext_resource type="Texture2D" uid="uid://bnt6uvpwahxpo" path="res://assets/Enemies/HamsterSingle.png" id="2_jpskd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0d0w"]
 size = Vector2(20, 22.5)
@@ -9,7 +9,7 @@ size = Vector2(20, 22.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpskd"]
 size = Vector2(16, 18)
 
-[node name="Hamsterzote" groups=["throwable"] instance=ExtResource("1_1yduj")]
+[node name="Hamsterzote" instance=ExtResource("1_1yduj")]
 can_sleep = false
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -21,6 +21,10 @@ texture = ExtResource("2_jpskd")
 
 [node name="PointLight2D" parent="Sprite2D" index="0"]
 texture = ExtResource("2_jpskd")
+
+[node name="Detector" parent="." index="2"]
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" parent="Detector" index="0"]
 shape = SubResource("RectangleShape2D_jpskd")

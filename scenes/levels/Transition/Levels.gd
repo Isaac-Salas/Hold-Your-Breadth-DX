@@ -2,6 +2,7 @@ extends Node
 
 var Firsttime = true
 var Level1_1 = false
+var Level1_1t = true
 var Level1_2 = false
 var Level1_3 = false
 var Level2_1 = false
@@ -28,6 +29,7 @@ func save():
 	save_dict = {
 		"Firsttime" : Firsttime,
 		"Level1_1" : Level1_1,
+		"Level1_1t" : Level1_1t,
 		"Level1_2" : Level1_2,
 		"Level1_3" : Level1_3,
 		"Level2_1" : Level2_1,
@@ -47,7 +49,7 @@ func save():
 func reset_progress():
 	var savefile = save()
 	for i in savefile:
-		if i == "Firsttime":
+		if i == "Firsttime" or i == "Level1_1t":
 			set(i, true)
 		else:
 			set(i, false)

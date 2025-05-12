@@ -10,9 +10,24 @@ class_name SwordOrbComponent
 @export var normalaim : bool 
 @onready var overridevisible : bool
 
+@export var Player : SlimePlayer
+
+
 func _ready():
+	
+
+	
 	if debug_controller == true:
 		Input.joy_connection_changed.connect(conectedcontroller)
+
+
+func toggleprocess(toggle : bool):
+	match toggle:
+		true:
+			set_process(true)
+		false:
+			set_process(false)
+
 
 func _process(delta):
 	MousePos = get_local_mouse_position()
@@ -27,6 +42,7 @@ func _process(delta):
 	#print(aimcontroller)
 	var joypads = Input.get_connected_joypads()
 	if joypads.size() != 0:
+		Player.controller = true
 		self.global_transform.origin = player.global_position + aimcontroller*radius
 		#print(str(self.name, ":", self.transform.origin ))
 		if normalaim == true:
@@ -38,6 +54,7 @@ func _process(delta):
 			self.visible = false
 		
 	else:
+		Player.controller = false
 		if distance > radius:
 			mouse_pos = player_pos + (mouse_dir * radius)
 		self.global_transform.origin = mouse_pos

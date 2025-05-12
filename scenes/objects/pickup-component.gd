@@ -10,10 +10,11 @@ class_name ObjectClass
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
 @export var break_after_throw : bool = false
 @onready var sprite_2d = $Sprite2D
-@onready var detector = $Detector
+@onready var detector : Area2D = $Detector
 @export var starting_scale = 2.0
-
+@onready var picked : bool = false
 const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")
+
 
 func _ready() -> void:
 	set_size(Vector2(starting_scale,starting_scale))
@@ -60,7 +61,8 @@ func set_size(target_size):
 
 
 func _on_body_entered(body):
-	audio_stream_player_2d.pitch_scale = randf_range(3,6)
-	audio_stream_player_2d.play()
+	if audio_stream_player_2d.stream != null:
+		audio_stream_player_2d.pitch_scale = randf_range(3,6)
+		audio_stream_player_2d.play()
 	if break_after_throw == true:
 		destroy()
