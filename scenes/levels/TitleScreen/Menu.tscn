@@ -1615,23 +1615,24 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="RichTextLabel" parent="."]
-offset_left = 1.0
-offset_top = 594.0
-offset_right = 280.0
-offset_bottom = 706.0
+offset_left = -18.0
+offset_top = 598.0
+offset_right = 261.0
+offset_bottom = 710.0
 theme_override_fonts/normal_font = ExtResource("9_o6peb")
+theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "[center]
 HYB-DX - DEMO V1.5
 [/center]"
 
 [node name="Label2" type="RichTextLabel" parent="."]
-offset_left = 781.0
-offset_top = 539.0
-offset_right = 1151.0
-offset_bottom = 651.0
+offset_left = 838.0
+offset_top = 549.0
+offset_right = 1154.0
+offset_bottom = 661.0
 theme_override_fonts/normal_font = ExtResource("9_o6peb")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 text = "[center]
 Hecho para FICG40
