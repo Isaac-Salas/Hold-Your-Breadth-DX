@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var play_sprite = $PlaySprite
-@onready var play : Button = $PlaySprite/Play
+@onready var play = $PlaySprite/Play
 @onready var levels_sprite = $LevelsSprite
 @onready var levels = $LevelsSprite/Levels
 @onready var options_sprite = $OptionsSprite

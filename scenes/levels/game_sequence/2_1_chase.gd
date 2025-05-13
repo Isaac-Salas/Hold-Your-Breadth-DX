@@ -3,7 +3,8 @@ extends Node2D
 
 
 @onready var transition = $CharacterBody2D2/Transition
-@onready var dialog_box = $Hamster/Hamster/DialogBox
+@onready var dialog = $Hamster/Hamster/DialogBox
+@onready var hand : HandBoss = $Hand
 
 @export var ZoneNumber : int
 @export var LevelNumber : int
@@ -11,10 +12,14 @@ extends Node2D
 @onready var character = $CharacterBody2D2
 @onready var checkpoint_pos = $Checkpoint
 @onready var lights = $Lights
+@onready var tilemap = $Tilemap
+@onready var door = $Button_red/Door
 
 @onready var player = $CharacterBody2D2
 const _2_1_CHASE_CHANGE = preload("res://scenes/levels/game_sequence/2-1_CHASEChange.tscn")
 const _3_1_SCALE_LEVEL = preload("res://scenes/levels/game_sequence/3-1 Scale level.tscn")
+@onready var camera : Camera2D = $CharacterBody2D2/Camera2D
+@onready var animationp : AnimationPlayer = $CharacterBody2D2/AnimationPlayer
 
 
 func _ready():
@@ -37,6 +42,12 @@ func _on_button_red_pressed(state, body):
 		light.dropdown()
 	var obstacles = _2_1_CHASE_CHANGE.instantiate()
 	self.add_child(obstacles)
+	tilemap.queue_free()
+	door.queue_free()
+	#Aqui el mero
+	
+	
+	
 	
 
 
@@ -50,12 +61,20 @@ func _on_player_detector_body_entered(body):
 		player.set_physics_process(false)
 
 
-func _on_dialog_box_done():
-	if dialog_box.linecount == 5:
-		player.set_physics_process(true)
+
 
 
 func _on_area_2d_body_entered(body):
 	if body is SlimePlayer:
-		transition.visible = true
 		transition.transition_to(_3_1_SCALE_LEVEL)
+		
+		
+func _dialog_done():
+	match dialog.linecount:
+		3:
+			animationp.play("CameraPan")
+			hand.scream()
+			camera.position.x -= 10
+		5:
+			animationp.play_backwards("CameraPan")
+			player.set_physics_process(true)

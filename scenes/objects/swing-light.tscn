@@ -64,6 +64,8 @@ func dropdown():
 	pin_joint_2d.queue_free()
 	string.queue_free()
 	fakelight.visible = false
+	light.visible = false
+	light.enabled = false
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4lh8"]

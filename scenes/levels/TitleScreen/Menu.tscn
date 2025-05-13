@@ -1,4 +1,4 @@
-[gd_scene load_steps=205 format=3 uid="uid://o1wthtbpquqd"]
+[gd_scene load_steps=206 format=3 uid="uid://o1wthtbpquqd"]
 
 [ext_resource type="Script" uid="uid://dkudo7ovwfxpx" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
 [ext_resource type="Texture2D" uid="uid://dupsu3pexxe7n" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://nyyugpsx7c08" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
 [ext_resource type="Texture2D" uid="uid://cydk88a5ig7hq" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
 [ext_resource type="Texture2D" uid="uid://drprxxl7vjuga" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
+[ext_resource type="FontFile" uid="uid://1fcjyts1ysra" path="res://assets/Fonts/DePixelHalbfett.otf" id="9_o6peb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gw78c"]
 light_mode = 1
@@ -1537,7 +1538,7 @@ autoplay = "Opening"
 position = Vector2(591, 350)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_q5hbr")
-animation = &"normal"
+animation = &"hover_loop"
 autoplay = "normal"
 metadata/_edit_lock_ = true
 
@@ -1612,6 +1613,30 @@ focus_neighbor_top = NodePath("../../OptionsSprite/Options")
 theme_override_styles/focus = ExtResource("5_t4htv")
 flat = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 1.0
+offset_top = 594.0
+offset_right = 280.0
+offset_bottom = 706.0
+theme_override_fonts/normal_font = ExtResource("9_o6peb")
+bbcode_enabled = true
+text = "[center]
+HYB-DX - DEMO V1.5
+[/center]"
+
+[node name="Label2" type="RichTextLabel" parent="."]
+offset_left = 781.0
+offset_top = 539.0
+offset_right = 1151.0
+offset_bottom = 651.0
+theme_override_fonts/normal_font = ExtResource("9_o6peb")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]
+Hecho para FICG40
+Para mas de nosotros, escanea el QR!!!!
+[/center]"
 
 [connection signal="focus_entered" from="PlaySprite/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="focus_exited" from="PlaySprite/Play" to="." method="_on_play_mouse_exited"]

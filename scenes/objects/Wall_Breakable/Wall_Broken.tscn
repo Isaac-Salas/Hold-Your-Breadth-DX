@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgvqye2ns3ghx"]
 
 [ext_resource type="Script" uid="uid://6qcqm300xyym" path="res://scenes/objects/Wall_Breakable/wall_broken.gd" id="1_a7ge6"]
-[ext_resource type="Texture2D" uid="uid://bfbo6janjfahe" path="res://assets/objects/Broken-pared/1.png" id="1_c48u3"]
+[ext_resource type="Texture2D" uid="uid://bmghw6a8bacek" path="res://assets/objects/Broken-pared/Particles.png" id="2_y68wu"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hcanj"]
 particle_flag_disable_z = true
@@ -16,6 +16,10 @@ radial_accel_max = 83.35
 scale_min = 0.1
 anim_speed_min = 8.0
 anim_speed_max = 8.0
+collision_mode = 1
+collision_friction = 0.2
+collision_bounce = 0.8
+collision_use_scale = true
 
 [node name="Broken-Wall" type="Node2D"]
 script = ExtResource("1_a7ge6")
@@ -27,9 +31,9 @@ autostart = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 25
-texture = ExtResource("1_c48u3")
-lifetime = 2.0
+amount = 30
+texture = ExtResource("2_y68wu")
+lifetime = 6.0
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_hcanj")

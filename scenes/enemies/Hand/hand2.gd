@@ -1,9 +1,10 @@
 extends CharacterBody2D
+class_name HandBoss
 
 @onready var animation_player = $AnimationPlayer
 @onready var area_2d = $Area2D
 
-@onready var sprite = $AnimatedSprite2D
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var player : Node2D
 @onready var timer = $Timer
 @export var speed = 0.01
@@ -16,7 +17,8 @@ var gravity2 : Vector2
 var targetx : float
 @export var linetrigger : int
 @onready var hit_cooldown = $Hit_cooldown
-
+@onready var sfx : AudioStreamPlayer2D = $SFX
+const _BOSSS = preload("res://assets/SFX/_bosss.mp3")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -66,6 +68,12 @@ func attackidle(delta):
 		timer.start()
 		velocity = (initpos - self.global_position)*speed*delta
 
+func scream():
+	sprite.stop()
+	sprite.play("Scream")
+	sfx.volume_db = 24
+	sfx.stream = _BOSSS
+	sfx.play()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
@@ -79,8 +87,8 @@ func _on_area_2d_body_entered(body):
 		children.reparent(new)
 		new.apply_central_impulse(Vector2(1500, -200))
 		player = new
-		
-		
+	
+	
 	if body.is_in_group("Playerrag"):
 		cooldown()
 		handstate = 2

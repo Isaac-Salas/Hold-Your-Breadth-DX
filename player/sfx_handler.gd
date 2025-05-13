@@ -26,21 +26,7 @@ func _on_character_body_2d_grab(value):
 
 
 func _on_character_body_2d_jump(value):
-	match value:
-		true:
-			startcountJ += 1
-			if startcountJ <= 1:
-				print("Jump SFX")
-				pitch_scale = randf_range(0.2, 1.8)
-				stream = JUMP
-				play()
-				stopcountJ = 0
-		false:
-			stopcountJ += 1
-			if stopcountJ <= 1:
-				print("Jump SFX STOP")
-				stop()
-				startcountJ = 0
+	pass
 
 
 func _on_character_body_2d_movement(value):

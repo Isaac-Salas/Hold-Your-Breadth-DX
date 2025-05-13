@@ -17,6 +17,7 @@ func _ready():
 		animation_player.seek(1.0)
 		animated_sprite_2d.animation = "default"
 		animated_sprite_2d.frame = 170
+		menu.play.grab_focus()
 
 	else:
 		animated_sprite_2d.animation_finished.connect(start)

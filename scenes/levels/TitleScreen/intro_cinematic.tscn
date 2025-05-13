@@ -835,13 +835,8 @@ offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.0751667, 0.055, 0.11, 1)
-
-[node name="Menu" parent="." node_paths=PackedStringArray("screenstuff", "fadeout") instance=ExtResource("193_qey2u")]
-visible = false
-modulate = Color(1, 1, 1, 0)
-screenstuff = NodePath("../dont touch")
-fadeout = NodePath("../AnimationPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
@@ -904,6 +899,13 @@ texture_scale = 4.0
 
 [node name="Transition" parent="." instance=ExtResource("183_lslwy")]
 scale = Vector2(1.5, 1.5)
+
+[node name="Menu" parent="." node_paths=PackedStringArray("screenstuff", "fadeout") instance=ExtResource("193_qey2u")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+screenstuff = NodePath("../dont touch")
+fadeout = NodePath("../AnimationPlayer")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
