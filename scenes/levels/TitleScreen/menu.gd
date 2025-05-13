@@ -11,6 +11,9 @@ extends Node2D
 @export var screenstuff : ScreenStuff 
 @export var fadeout : AnimationPlayer
 @onready var transition: TransitionScene = $Transition
+@onready var jelly_stuff = $JellyStuff
+
+
 var LEVEL_SELECT = load("res://scenes/levels/Level_Select/Level_select.tscn")
 var INTRO_CUT = load("res://scenes/cutscenes/IntroAnims/IntroCut.tscn")
 var TESTING = load("res://scenes/levels/Testing/testing.tscn")
@@ -104,3 +107,13 @@ func _on_quit_mouse_exited():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_jelly_dog_pressed():
+	jelly_stuff.visible = true
+	jelly_stuff.checkvisible()
+
+
+func _on_atras_pressed():
+	jelly_stuff.visible = false
+	jelly_stuff.checkvisible()

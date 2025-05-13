@@ -1,4 +1,4 @@
-[gd_scene load_steps=206 format=3 uid="uid://o1wthtbpquqd"]
+[gd_scene load_steps=210 format=3 uid="uid://o1wthtbpquqd"]
 
 [ext_resource type="Script" uid="uid://dkudo7ovwfxpx" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
 [ext_resource type="Texture2D" uid="uid://dupsu3pexxe7n" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cydk88a5ig7hq" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
 [ext_resource type="Texture2D" uid="uid://drprxxl7vjuga" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
 [ext_resource type="FontFile" uid="uid://1fcjyts1ysra" path="res://assets/Fonts/DePixelHalbfett.otf" id="9_o6peb"]
+[ext_resource type="Script" uid="uid://c27t83qbjky7g" path="res://scenes/levels/TitleScreen/JELLY.gd" id="10_8lome"]
+[ext_resource type="Texture2D" uid="uid://dugfgr6k87g4d" path="res://assets/JellyDog-QR-Smol.png" id="10_n5ye1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gw78c"]
 light_mode = 1
@@ -1492,6 +1494,16 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lome"]
+bg_color = Color(0.822333, 1, 0.59, 0.313726)
+shadow_color = Color(0.844, 1, 0.61, 0.313726)
+shadow_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2skel"]
+bg_color = Color(0.822333, 1, 0.59, 0.313726)
+shadow_color = Color(0.844, 1, 0.61, 0.313726)
+shadow_size = 40
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_5s0bf")
 
@@ -1542,7 +1554,7 @@ animation = &"hover_loop"
 autoplay = "normal"
 metadata/_edit_lock_ = true
 
-[node name="Play" type="Button" parent="PlaySprite"]
+[node name="Play" type="Button" parent="PlaySprite" groups=["FocusMain"]]
 offset_left = -55.0
 offset_top = -12.0
 offset_right = 55.0
@@ -1610,6 +1622,8 @@ offset_bottom = 13.03
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../../OptionsSprite/Options")
+focus_neighbor_right = NodePath("../../Label2/JellyDOG")
+focus_neighbor_bottom = NodePath("../../Label2/JellyDOG")
 theme_override_styles/focus = ExtResource("5_t4htv")
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -1636,8 +1650,84 @@ theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 text = "[center]
 Hecho para FICG40
-Para mas de nosotros, escanea el QR!!!!
+Para mas de nosotros, da click aqui!!!!
 [/center]"
+
+[node name="JellyDOG" type="Button" parent="Label2"]
+z_index = 3
+offset_top = 9.0
+offset_right = 306.0
+offset_bottom = 96.0
+focus_neighbor_left = NodePath("../../QuitSprite/Quit")
+focus_neighbor_top = NodePath("../../QuitSprite/Quit")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8lome")
+flat = true
+
+[node name="JellyStuff" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("10_8lome")
+
+[node name="ColorRect" type="ColorRect" parent="JellyStuff"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.901961)
+
+[node name="Sprite2D" type="Sprite2D" parent="JellyStuff"]
+z_index = 50
+position = Vector2(576, 224)
+texture = ExtResource("10_n5ye1")
+
+[node name="Label2" type="RichTextLabel" parent="JellyStuff"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -282.0
+offset_top = -215.0
+offset_right = 282.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("9_o6peb")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]
+Escanea el codigo QR y siguenos en todas nuestras redes!!!!
+Muchas gracias por jugar nuestro juego, esperemos te halla gustado.
+
+Con cariño: JellyDog
+
+[/center]"
+
+[node name="Label3" type="RichTextLabel" parent="JellyStuff"]
+offset_left = 838.0
+offset_top = 549.0
+offset_right = 1154.0
+offset_bottom = 661.0
+theme_override_fonts/normal_font = ExtResource("9_o6peb")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[center]
+
+ATRAS
+[/center]"
+
+[node name="Atras" type="Button" parent="JellyStuff/Label3"]
+offset_top = 9.0
+offset_right = 306.0
+offset_bottom = 96.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_2skel")
+flat = true
 
 [connection signal="focus_entered" from="PlaySprite/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="focus_exited" from="PlaySprite/Play" to="." method="_on_play_mouse_exited"]
@@ -1659,3 +1749,5 @@ Para mas de nosotros, escanea el QR!!!!
 [connection signal="mouse_entered" from="QuitSprite/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="QuitSprite/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="QuitSprite/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Label2/JellyDOG" to="." method="_on_jelly_dog_pressed"]
+[connection signal="pressed" from="JellyStuff/Label3/Atras" to="." method="_on_atras_pressed"]

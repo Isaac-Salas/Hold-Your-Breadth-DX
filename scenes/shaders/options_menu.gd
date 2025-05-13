@@ -10,10 +10,11 @@ class_name  OptionsMenu
 @onready var exclusive = $Exclusive
 @export var CRTShader : ColorRect
 @onready var back = $Back
+@onready var focusback : Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	focusback = get_tree().get_first_node_in_group("FocusMain")
 	back.grab_focus()
 	brightnes.value = Enviroment.environment.adjustment_brightness
 	contrast.value = Enviroment.environment.adjustment_contrast
@@ -39,6 +40,8 @@ func showtoggle():
 		get_tree().paused = false
 		visible = false
 		toggle = 0
+		if focusback != null:
+			focusback.grab_focus()
 	print(toggle)
 
 func _on_reset_pressed():
