@@ -15,6 +15,8 @@ class_name DialogComponent
 @onready var count : int = 0 
 signal Done()
 @onready var dumbdone : bool
+@onready var audio_stream_player = $AudioStreamPlayer
+@onready var bell = $Bell
 
 
 # Called when the node enters the scene tree for the first time.
@@ -53,6 +55,8 @@ func _on_timer_timeout():
 	if charcount < textoide.length():
 		InputEnable = false
 		self.append_text(textoide[charcount])
+		audio_stream_player.pitch_scale = randf_range(1.0, 2.5)
+		audio_stream_player.play()
 		charcount += 1
 	if charcount == textoide.length():
 		if count < 1:
@@ -60,6 +64,8 @@ func _on_timer_timeout():
 			count += 1
 			InputEnable = true
 			Done.emit()
+			bell.pitch_scale = randf_range(1.0, 1.5)
+			bell.play()
 		
 
 

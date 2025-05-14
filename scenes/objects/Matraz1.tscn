@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfvfq8x40yq6c"]
 
 [ext_resource type="PackedScene" uid="uid://da3vdhisw8edv" path="res://scenes/objects/templaete.tscn" id="1_vmb1b"]
-[ext_resource type="Texture2D" uid="uid://c8mwc1l1eqqxl" path="res://assets/objects/matraz1.png" id="2_8aptt"]
+[ext_resource type="Texture2D" uid="uid://dwkjmtthtxq1h" path="res://assets/objects/matraz1.png" id="2_8aptt"]
 [ext_resource type="PackedScene" uid="uid://f006j5ihgekl" path="res://scenes/objects/BreakableGlass/Glass.tscn" id="3_aydea"]
-[ext_resource type="AudioStream" uid="uid://bo1ln5enokxlj" path="res://assets/audioshit/clink_foco.mp3" id="4_ra2ui"]
+[ext_resource type="AudioStream" uid="uid://dsluq0u85f6hn" path="res://assets/audioshit/clink_foco.mp3" id="4_ra2ui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4dov"]
 size = Vector2(10, 20)

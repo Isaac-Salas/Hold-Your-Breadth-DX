@@ -12,6 +12,9 @@ class_name  OptionsMenu
 @onready var back = $Back
 @onready var focusback : Button
 
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	focusback = get_tree().get_first_node_in_group("FocusMain")
@@ -66,9 +69,11 @@ func _on_fullscreen_toggled(toggled_on):
 
 func _on_crt_toggled(toggled_on):
 	if crt.button_pressed == true:
+		#crt_local.visible = true
 		CRTShader.visible = true
 	else:
 		CRTShader.visible = false
+		#crt_local.visible = false
 
 
 func _on_exclusive_toggled(toggled_on):

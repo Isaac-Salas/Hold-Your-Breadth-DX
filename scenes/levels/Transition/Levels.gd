@@ -6,6 +6,7 @@ var Level1_1t = true
 var Level1_2 = false
 var Level1_3 = false
 var Level2_1 = false
+var Level2_1C = false
 var Level3_1 = false
 var Level3_2 = false
 var Level3_3 = false
@@ -33,6 +34,7 @@ func save():
 		"Level1_2" : Level1_2,
 		"Level1_3" : Level1_3,
 		"Level2_1" : Level2_1,
+		"Level2_1C" : Level2_1C,
 		"Level3_1" : Level3_1,
 		"Level3_2" : Level3_2,
 		"Level3_3" : Level3_3,

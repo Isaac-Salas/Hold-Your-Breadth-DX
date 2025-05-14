@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://crhimgwgqho0y"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_hrp3i"]
-[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_du6ji"]
+[ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="2_du6ji"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_p227e"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="4_bvw30"]
 [ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="4_slgn6"]

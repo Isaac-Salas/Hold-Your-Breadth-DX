@@ -384,6 +384,7 @@ position = Vector2(240, 585)
 
 [node name="TutorialTest" type="Node2D" parent="Player"]
 script = ExtResource("7_ibu0m")
+Tutorial = true
 TutorialOverride = true
 
 [node name="Camera2D" type="Camera2D" parent="Player/TutorialTest"]

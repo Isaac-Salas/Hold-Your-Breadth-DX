@@ -1,12 +1,15 @@
-[gd_scene load_steps=17 format=4 uid="uid://calxq10nhtrm1"]
+[gd_scene load_steps=21 format=4 uid="uid://calxq10nhtrm1"]
 
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="3_m2h57"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="4_pn55n"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="11_tnq4i"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="12_3tflp"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="12_jdgd2"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="13_u7gvy"]
+[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="14_1oxas"]
 [ext_resource type="PackedScene" uid="uid://cmymj8rniorit" path="res://scenes/objects/Wall_Breakable/Wall_Breakable.tscn" id="14_kn7lm"]
 [ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="15_05eiu"]
+[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="15_dn4d8"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="17_pph62"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="18_1h4t3"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="19_ogpe8"]
@@ -18,8 +21,23 @@ script/source = "extends Node2D
 @onready var node = $Node
 @onready var Transisao : TransitionScene
 const _3_1_SCALE_LEVEL = preload(\"res://scenes/levels/game_sequence/3-1 Scale level.tscn\")
+
+@onready var music_chamge = $MusicChamge
+
 func _ready():
 	node.queue_free()
+
+
+func _on_music_chamge_body_entered(body):
+	if body is SlimePlayer:
+		MusicManager.volume_db = 0
+		MusicManager.startplay(MusicManager.HTB_SONG_2_1_SLOW)
+	if body is HandBoss:
+		body.cooldown()
+		body.handstate = 2
+		body.sprite.play(\"Ang-Start\")
+		music_chamge.queue_free()
+		
 "
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
@@ -153,6 +171,9 @@ terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 custom_data_layer_0/name = ""
 custom_data_layer_0/type = 0
 sources/0 = SubResource("TileSetAtlasSource_tdtvp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7gvy"]
+size = Vector2(50, 196)
 
 [node name="Persecusion" type="Node2D"]
 script = SubResource("GDScript_g0deb")
@@ -582,31 +603,6 @@ position = Vector2(2450, 35)
 color = Color(1, 0.5, 0.5, 1)
 metadata/_edit_lock_ = true
 
-[node name="Light11" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(3186, 40)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
-[node name="Light13" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(3882, 40)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
-[node name="Light14" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(4746, 32)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
-[node name="Light15" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(4946, 40)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
-[node name="Light16" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(5138, 40)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
 [node name="Light18" parent="." instance=ExtResource("12_3tflp")]
 position = Vector2(8928, 128)
 color = Color(1, 0.5, 0.5, 1)
@@ -687,29 +683,324 @@ position = Vector2(11880, 224)
 color = Color(1, 0.5, 0.5, 1)
 metadata/_edit_lock_ = true
 
-[node name="Light12" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(4426, 32)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
 [node name="Light7" parent="." instance=ExtResource("12_3tflp")]
 position = Vector2(1640, 35)
 color = Color(1, 0.5, 0.5, 1)
 metadata/_edit_lock_ = true
 
+[node name="MusicChamge" type="Area2D" parent="."]
+position = Vector2(10918, 552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChamge"]
+position = Vector2(-141, 2)
+shape = SubResource("RectangleShape2D_u7gvy")
+
 [node name="Door" parent="." instance=ExtResource("19_ogpe8")]
 position = Vector2(10824, 552)
 isOpen = false
 
-[node name="WoodenBox" parent="." instance=ExtResource("17_pph62")]
-position = Vector2(11616, 640)
-
-[node name="WoodenBox2" parent="." instance=ExtResource("17_pph62")]
-position = Vector2(11640, 640)
-
 [node name="MeatBox" parent="." instance=ExtResource("12_jdgd2")]
-position = Vector2(11624, 616)
+position = Vector2(10879, 636)
+
+[node name="MeatBox2" parent="." instance=ExtResource("12_jdgd2")]
+position = Vector2(10880, 612)
+
+[node name="MeatBox3" parent="." instance=ExtResource("12_jdgd2")]
+position = Vector2(10880, 588)
+
+[node name="MeatBox4" parent="." instance=ExtResource("12_jdgd2")]
+position = Vector2(10880, 564)
+
+[node name="MeatBox5" parent="." instance=ExtResource("12_jdgd2")]
+position = Vector2(10880, 540)
+
+[node name="MeatBox6" parent="." instance=ExtResource("12_jdgd2")]
+position = Vector2(10880, 516)
+
+[node name="Swing-light" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(3168, 32)
+
+[node name="Light" parent="Swing-light" index="1"]
+position = Vector2(0, 112)
+
+[node name="PointLight2D" parent="Swing-light/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light2" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(3392, 32)
+
+[node name="Light" parent="Swing-light2" index="1"]
+position = Vector2(0, 312)
+
+[node name="PointLight2D" parent="Swing-light2/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light2/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light3" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(3664, 32)
+
+[node name="Light" parent="Swing-light3" index="1"]
+position = Vector2(0, 312)
+
+[node name="PointLight2D" parent="Swing-light3/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light3/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light4" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(3928, 24)
+
+[node name="Light" parent="Swing-light4" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light4/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light4/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light5" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(4456, 24)
+
+[node name="Light" parent="Swing-light5" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light5/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light5/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light6" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(4616, -128)
+
+[node name="Light" parent="Swing-light6" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light6/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light6/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light7" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(4912, -120)
+
+[node name="Light" parent="Swing-light7" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light7/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light7/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light8" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(5144, -120)
+
+[node name="Light" parent="Swing-light8" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light8/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light8/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light9" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(5408, -112)
+
+[node name="Light" parent="Swing-light9" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light9/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light9/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light10" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(5752, -184)
+
+[node name="Light" parent="Swing-light10" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light10/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light10/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light11" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(5976, -48)
+
+[node name="Light" parent="Swing-light11" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light11/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light11/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light12" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(6264, -168)
+
+[node name="Light" parent="Swing-light12" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light12/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light12/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light13" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(6496, 8)
+
+[node name="Light" parent="Swing-light13" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light13/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light13/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light14" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(6672, 8)
+
+[node name="Light" parent="Swing-light14" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light14/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light14/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light15" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(7040, -72)
+
+[node name="Light" parent="Swing-light15" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light15/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light15/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light16" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(7296, -72)
+
+[node name="Light" parent="Swing-light16" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light16/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light16/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light17" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(7744, -72)
+
+[node name="Light" parent="Swing-light17" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light17/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light17/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light18" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(8160, -72)
+
+[node name="Light" parent="Swing-light18" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light18/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light18/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="Swing-light19" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(8616, -80)
+
+[node name="Light" parent="Swing-light19" index="1"]
+position = Vector2(0, 552)
+
+[node name="PointLight2D" parent="Swing-light19/Light" index="2"]
+color = Color(1, 0.65, 0.65, 1)
+
+[node name="Fakelight" parent="Swing-light19/Light" index="3"]
+modulate = Color(1, 0.65, 0.65, 0.196078)
+
+[node name="WoodenBox3" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 640)
+
+[node name="WoodenBox4" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 624)
+
+[node name="WoodenBox5" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 608)
+
+[node name="WoodenBox6" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 592)
+
+[node name="WoodenBox7" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 576)
+
+[node name="WoodenBox8" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 560)
+
+[node name="WoodenBox9" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 544)
+
+[node name="WoodenBox10" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 528)
+
+[node name="WoodenBox11" parent="." instance=ExtResource("17_pph62")]
+position = Vector2(10856, 528)
+
+[node name="Ratspawn" parent="." node_paths=PackedStringArray("Fleemarker") instance=ExtResource("14_1oxas")]
+position = Vector2(11040, 616)
+Rat_number = 1
+Fleemarker = NodePath("../Ratfleemarker")
+
+[node name="Ratfleemarker" parent="." instance=ExtResource("15_dn4d8")]
+position = Vector2(11616, 616)
+
+[connection signal="body_entered" from="MusicChamge" to="." method="_on_music_chamge_body_entered"]
 
 [editable path="Light17"]
 [editable path="Light33"]
 [editable path="Light34"]
+[editable path="Swing-light"]
+[editable path="Swing-light2"]
+[editable path="Swing-light3"]
+[editable path="Swing-light4"]
+[editable path="Swing-light5"]
+[editable path="Swing-light6"]
+[editable path="Swing-light7"]
+[editable path="Swing-light8"]
+[editable path="Swing-light9"]
+[editable path="Swing-light10"]
+[editable path="Swing-light11"]
+[editable path="Swing-light12"]
+[editable path="Swing-light13"]
+[editable path="Swing-light14"]
+[editable path="Swing-light15"]
+[editable path="Swing-light16"]
+[editable path="Swing-light17"]
+[editable path="Swing-light18"]
+[editable path="Swing-light19"]

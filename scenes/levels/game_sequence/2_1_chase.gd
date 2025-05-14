@@ -22,7 +22,17 @@ const _3_1_SCALE_LEVEL = preload("res://scenes/levels/game_sequence/3-1 Scale le
 @onready var animationp : AnimationPlayer = $CharacterBody2D2/AnimationPlayer
 
 
+@onready var hamster_setpiece = $Clutter/HamsterSetpiece
+@onready var boxes = $Clutter/Boxes
+@onready var bio_box = $Clutter/Bio_Box
+@onready var rats = $Clutter/Rats
+
+
+
+
 func _ready():
+	Manager.load_game()
+	Checkpoint = Manager.Level2_1C
 	if Checkpoint == true:
 		character.global_position = checkpoint_pos.global_position
 	var LevelSave : String = "Level" + str(ZoneNumber) + "_" + str(LevelNumber)
@@ -36,7 +46,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Reset"):
 		get_tree().reload_current_scene()
 func _on_button_red_pressed(state, body):
+	Manager.setter("Level2_1C", true)
 	
+	Manager.save_game()
 	var allLights = lights.get_children()
 	for light in allLights:
 		light.dropdown()
@@ -44,6 +56,16 @@ func _on_button_red_pressed(state, body):
 	self.add_child(obstacles)
 	tilemap.queue_free()
 	door.queue_free()
+	for stuff in hamster_setpiece.get_children():
+		stuff.queue_free()
+	for stuff in boxes.get_children():
+		stuff.queue_free()
+	for stuff in bio_box.get_children():
+		stuff.queue_free()
+	for stuff in rats.get_children():
+		stuff.queue_free()
+	var rattest = get_tree().get_first_node_in_group("edible")
+	rattest.queue_free()
 	#Aqui el mero
 	
 	
@@ -74,7 +96,12 @@ func _dialog_done():
 		3:
 			animationp.play("CameraPan")
 			hand.scream()
+			MusicManager.startplay(MusicManager.N2_S)
 			camera.position.x -= 10
-		5:
+			MusicManager.volume_db = 2
+		4:
+			dialog.show_end = false
+			dialog.clearcenter()
+		5: 
 			animationp.play_backwards("CameraPan")
 			player.set_physics_process(true)

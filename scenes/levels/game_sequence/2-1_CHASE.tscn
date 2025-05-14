@@ -1,9 +1,9 @@
 [gd_scene load_steps=55 format=4 uid="uid://b6onmrleg7nri"]
 
-[ext_resource type="Texture2D" uid="uid://50dk1ilb3wi2" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
+[ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
 [ext_resource type="Script" uid="uid://gee6l5yoqpiv" path="res://scenes/levels/game_sequence/2_1_chase.gd" id="1_njuv6"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="3_g52sb"]
-[ext_resource type="Texture2D" uid="uid://b1t5kwgavnoow" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
+[ext_resource type="Texture2D" uid="uid://byfkw0opapat6" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="5_wihit"]
 [ext_resource type="PackedScene" uid="uid://bp8r6cmiycm4m" path="res://scenes/enemies/Hamster/Hamster.tscn" id="6_cinsa"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="7_gyrh6"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="23_d7m35"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="24_lnmw1"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="24_mvbe6"]
-[ext_resource type="Texture2D" uid="uid://cx6co3sk0ls8h" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
+[ext_resource type="Texture2D" uid="uid://cgj4hlsxm55xa" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
 [ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="28_04mdq"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="29_njuv6"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="31_njuv6"]
@@ -98,7 +98,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-250, 0)]
+"values": [Vector2(0, 0), Vector2(-300, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ynjjb"]
@@ -262,7 +262,10 @@ point_count = 2
 
 [sub_resource type="GDScript" id="GDScript_01tns"]
 script/source = "extends Path2D
+
 @onready var path_follow_2d = $PathFollow2D
+
+
 @export var runtoggle : bool
 
 
@@ -356,7 +359,6 @@ func _on_body_entered(body:Node2D):
 script = ExtResource("1_njuv6")
 ZoneNumber = 2
 LevelNumber = 1
-Checkpoint = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true

@@ -16,12 +16,14 @@ extends Node2D
 const Levels : GDScript = preload("res://scenes/levels/Transition/Levels.gd")
 @onready var boss = $Buttons/BOSS
 @onready var transition = $Transition
-
+const tutorial = preload("res://scenes/levels/TitleScreen/intro_cinematic.tscn")
+@onready var back = $Buttons/Back
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Manager.Level1_1 = true
 	#Manager.save_game()
+	back.grab_focus()
 	Manager.load_game()
 	#print(Manager.Level1_1)
 	
@@ -162,10 +164,11 @@ func _on_timer_timeout():
 
 
 func _on_back_pressed():
-	var tutorial = load("res://scenes/levels/TitleScreen/intro_cinematic.tscn")
+
 	transition.transition_to(tutorial)
 
 
 func _on_reset_progress_pressed():
 	Manager.reset_progress()
+	transition.transition_to(tutorial)
 	
