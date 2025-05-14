@@ -1,16 +1,16 @@
 [gd_scene load_steps=211 format=4 uid="uid://o1wthtbpquqd"]
 
 [ext_resource type="Script" uid="uid://dkudo7ovwfxpx" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
-[ext_resource type="Texture2D" uid="uid://r3mv56edqoou" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
+[ext_resource type="Texture2D" uid="uid://dupsu3pexxe7n" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
 [ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="3_au2hu"]
-[ext_resource type="Texture2D" uid="uid://beoyqxi5jgsjw" path="res://assets/objects/Transition.png" id="4_3hmnn"]
+[ext_resource type="Texture2D" uid="uid://cml88rr6l6k5w" path="res://assets/objects/Transition.png" id="4_3hmnn"]
 [ext_resource type="StyleBox" uid="uid://dsaejod1ejkbx" path="res://scenes/levels/TitleScreen/MenuFocusController.tres" id="5_t4htv"]
-[ext_resource type="Texture2D" uid="uid://mnipbblcbx1w" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
-[ext_resource type="Texture2D" uid="uid://dlbdi3gsapl0k" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
-[ext_resource type="Texture2D" uid="uid://b0l6ylolxkbf6" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
-[ext_resource type="FontFile" uid="uid://4ljgfia8canq" path="res://assets/Fonts/DePixelHalbfett.otf" id="9_o6peb"]
+[ext_resource type="Texture2D" uid="uid://nyyugpsx7c08" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
+[ext_resource type="Texture2D" uid="uid://cydk88a5ig7hq" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
+[ext_resource type="Texture2D" uid="uid://drprxxl7vjuga" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
+[ext_resource type="FontFile" uid="uid://1fcjyts1ysra" path="res://assets/Fonts/DePixelHalbfett.otf" id="9_o6peb"]
 [ext_resource type="Script" uid="uid://c27t83qbjky7g" path="res://scenes/levels/TitleScreen/JELLY.gd" id="10_8lome"]
-[ext_resource type="Texture2D" uid="uid://hg3diq4jaa6s" path="res://assets/JellyDog-QR-Smol.png" id="10_n5ye1"]
+[ext_resource type="Texture2D" uid="uid://dugfgr6k87g4d" path="res://assets/JellyDog-QR-Smol.png" id="10_n5ye1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gw78c"]
 light_mode = 1
@@ -1659,8 +1659,9 @@ theme_override_fonts/normal_font = ExtResource("9_o6peb")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 text = "[center]
-Hecho para FICG40
-Para mas de nosotros, da click aqui!!!!
+Made for FICG40
+For more JellyDog, 
+click here!!!!
 [/center]"
 
 [node name="JellyDOG" type="Button" parent="Label2"]
@@ -1675,7 +1676,6 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_8lome")
 flat = true
 
 [node name="JellyStuff" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -1713,11 +1713,10 @@ theme_override_fonts/normal_font = ExtResource("9_o6peb")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]
-Escanea el codigo QR y siguenos en todas nuestras redes!!!!
-Muchas gracias por jugar nuestro juego, esperemos te halla gustado.
+Scan the QR code and follow us everywhere!!!!
+Thanks a lot for playing our game demo, we hope you had a good time ;)
 
-Con cariño: JellyDog
-
+Sincerely: JellyDog
 [/center]"
 
 [node name="Label3" type="RichTextLabel" parent="JellyStuff"]
@@ -1731,7 +1730,7 @@ theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 text = "[center]
 
-ATRAS
+BACK
 [/center]"
 
 [node name="Atras" type="Button" parent="JellyStuff/Label3"]

@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://duqjcmce1wpy7" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_nklkn"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="2_0md7p"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="3_2tn5b"]
-[ext_resource type="Texture2D" uid="uid://ds4ykuqc1qde5" path="res://assets/DOG.png" id="3_f6gsf"]
+[ext_resource type="Texture2D" uid="uid://dfjgb3nuuclhp" path="res://assets/DOG.png" id="3_f6gsf"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="4_wpbc4"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_4plus"]
 [ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="6_aqvgt"]
-[ext_resource type="FontFile" uid="uid://chv4jun2cg4xe" path="res://assets/Fonts/DePixelHalbfett.otf" id="7_bvxbn"]
+[ext_resource type="FontFile" uid="uid://1fcjyts1ysra" path="res://assets/Fonts/DePixelHalbfett.otf" id="7_bvxbn"]
 
 [node name="JellyIntro" type="Node2D"]
 script = ExtResource("1_nklkn")
@@ -84,8 +84,7 @@ text = "CONGRATULATIONS ON REACHING THE END OF THE DEMO
 
 
 
-WE HOPE YOU ENJOYED
-BOTTOM TEXT
+You can exit pressing Start or ESC and Quitting from there.
 "
 horizontal_alignment = 1
 autowrap_mode = 3
