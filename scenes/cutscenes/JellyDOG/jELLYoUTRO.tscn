@@ -52,7 +52,7 @@ rect = Rect2(-60, -60, 200, 200)
 position = Vector2(1625, -12)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 12.0
+wait_time = 8.0
 autostart = true
 
 [node name="Transition" parent="." instance=ExtResource("5_4plus")]
@@ -67,10 +67,10 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 102.0
-offset_right = 985.0
-offset_bottom = 683.0
+offset_left = 170.0
+offset_top = 89.0
+offset_right = 977.0
+offset_bottom = 670.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("7_bvxbn")
@@ -84,7 +84,8 @@ text = "CONGRATULATIONS ON REACHING THE END OF THE DEMO
 
 
 
-You can exit pressing Start or ESC and Quitting from there.
+WE HOPE YOU LIKED IT
+JELLYDOG THANKS YOU FOR PLAYING
 "
 horizontal_alignment = 1
 autowrap_mode = 3

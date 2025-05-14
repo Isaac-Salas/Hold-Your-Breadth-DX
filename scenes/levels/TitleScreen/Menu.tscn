@@ -1676,6 +1676,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_8lome")
 flat = true
 
 [node name="JellyStuff" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
