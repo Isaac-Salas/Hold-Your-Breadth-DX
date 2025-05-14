@@ -10,7 +10,6 @@ var color_almost : Color = Color.DARK_ORANGE
 var color_done : Color = Color.GREEN_YELLOW
 var color_too_much : Color = Color.ORANGE_RED
 signal pressed(state, body)
-var state = false
 var n_inside = 0
 var weight_total = 0
 var bodies_inside = []
@@ -20,11 +19,14 @@ func _process(delta: float) -> void:
 	weight_total = 0
 	for b in bodies_inside:
 		weight_total += b.sprite.scale.x * 2
-	if activated != update():
-		state = update()
-		emit_signal("pressed", state, 2)
-		activated = update()
-		print()
+	var current = update()
+	if activated != current:
+		emit_signal("pressed", current, 2)
+		activated = current
+		if activated:
+			particles.restart()
+			particles.emitting = true
+		#print(activated)
 
 func update():
 	if n_inside > 0 and weight_total < activation_weight:
@@ -43,28 +45,23 @@ func update():
 		anim_flag.play("ON")
 		anim_flag.frame = frame
 		anim_flag.pause()
-		state = false
 		return false
-	elif weight_total > activation_weight:
+	elif n_inside > 0 and weight_total > activation_weight:
 		light.energy = min(remap(weight_total, 0, activation_weight, 0, 0.9),1)
 		light.show()
 		light.color = color_too_much
 		anim_flag.play("OVER")
-		state = false
 		return false
-	elif weight_total == activation_weight and not state:
+	elif weight_total == activation_weight:
 		light.energy = 1
 		light.show()
 		light.color = color_done
 		anim_flag.play("CORRECT")
-		particles.restart()
-		particles.emitting = true
 		return true
-	elif anim_flag.animation != "CORRECT":
+	elif anim_flag.animation != "CORRECT" :
 		light.energy = min(remap(weight_total, 0, activation_weight, 0, 0.9),1)
 		light.hide()
 		anim_flag.play("OFF")
-		state = false
 		return false
 
 func _on_body_entered(body: Node2D) -> void:
@@ -83,9 +80,7 @@ func _on_body_exited(body: Node2D) -> void:
 		weight_total -= body.sprite.scale.x * 2
 		if n_inside == 0:
 			anim_flag.play("OFF")
-			state = false
 			anim.play("depresssed")
 			#emit_signal("pressed", state, 2)
 	if n_inside == 0:
-		state = false
 		weight_total = 0

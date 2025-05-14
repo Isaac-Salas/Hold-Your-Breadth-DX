@@ -34,7 +34,7 @@ func _on_character_body_2d_movement(value):
 		true:
 			startcountM += 1
 			if startcountM <= 1:
-				print("Walk SFX")
+				#print("Walk SFX")
 				pitch_scale = randf_range(0.2, 1.8)
 				stream = WALK_CYCLE
 				play()
@@ -42,7 +42,7 @@ func _on_character_body_2d_movement(value):
 		false:
 			stopcountM += 1
 			if stopcountM <= 1:
-				print("Walk SFX STOP")
+				#print("Walk SFX STOP")
 				stop()
 				startcountM = 0
 

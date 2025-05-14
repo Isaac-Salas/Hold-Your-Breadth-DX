@@ -5,9 +5,11 @@ class_name TransitionScene
 @export var target_scene: PackedScene
 signal Opendone
 signal Closedone
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	audio.play()
 	show()
 	ap.play("Opening")
 
