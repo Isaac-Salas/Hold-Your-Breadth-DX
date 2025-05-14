@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bx27mjdwpsn4g"]
 
 [ext_resource type="Script" uid="uid://c10avmbki61qv" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
-[ext_resource type="Texture2D" uid="uid://c8j76q844wjjs" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
+[ext_resource type="Texture2D" uid="uid://bi6qybefx6rro" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
 [ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="3_245jv"]
 [ext_resource type="PackedScene" uid="uid://fsxjau4kfu71" path="res://scenes/objects/brokenwoodenboxes.tscn" id="4_bikkg"]
-[ext_resource type="AudioStream" uid="uid://j7p3k8bn1r41" path="res://assets/SFX/Boxcrash.mp3" id="5_d223p"]
+[ext_resource type="AudioStream" uid="uid://6gcx7oegeuty" path="res://assets/SFX/Boxcrash.mp3" id="5_d223p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfjh"]
 size = Vector2(18, 18)

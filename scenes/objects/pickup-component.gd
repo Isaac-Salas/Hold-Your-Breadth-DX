@@ -14,7 +14,7 @@ class_name ObjectClass
 @export var starting_scale = 2.0
 @onready var picked : bool = false
 const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")
-
+var first = true
 
 func _ready() -> void:
 	set_size(Vector2(starting_scale,starting_scale))
@@ -61,6 +61,9 @@ func set_size(target_size):
 
 
 func _on_body_entered(body):
+	if first:
+		first = false
+		return
 	if audio_stream_player_2d.stream != null:
 		audio_stream_player_2d.pitch_scale = randf_range(3,6)
 		audio_stream_player_2d.play()

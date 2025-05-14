@@ -26,7 +26,10 @@ func _on_character_body_2d_grab(value):
 
 
 func _on_character_body_2d_jump(value):
-	pass
+	if value:
+		pitch_scale = randf_range(0.75, 1.25)
+		stream = JUMP
+		play()
 
 
 func _on_character_body_2d_movement(value):
