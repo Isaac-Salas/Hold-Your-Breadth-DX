@@ -161,7 +161,7 @@ func _process(delta):
 					tooltips.play("Throw")
 					blink.play("BlinkLoop")
 			12:
-				
+				hamsterzote.remove_from_group("throwable")
 				dialog.position.y = -50
 				blink.play("Stoping")
 				await blink.animation_finished

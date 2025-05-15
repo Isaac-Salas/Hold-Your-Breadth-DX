@@ -968,10 +968,6 @@ shape = SubResource("RectangleShape2D_k5kqe")
 position = Vector2(695, 553)
 rotation = 1.57079
 
-[node name="Indicator-Arrow3" parent="." instance=ExtResource("24_4lyj3")]
-position = Vector2(695, 206)
-rotation = 1.57079
-
 [node name="Indicator-Arrow2" parent="." instance=ExtResource("24_4lyj3")]
 position = Vector2(113, 375)
 rotation = -0.738008
@@ -1000,6 +996,35 @@ rotation = 1.57079
 
 [node name="MusicSubmanager" parent="." instance=ExtResource("26_iu3pf")]
 
+[node name="Light" parent="." instance=ExtResource("7_otp53")]
+position = Vector2(837, 296)
+
+[node name="Light2" parent="." instance=ExtResource("7_otp53")]
+position = Vector2(839, 536)
+
+[node name="Indicator-Arrow3" parent="." instance=ExtResource("24_4lyj3")]
+position = Vector2(986, 379)
+rotation = 1.5708
+
+[node name="Indicator-Arrow4" parent="." instance=ExtResource("24_4lyj3")]
+position = Vector2(170, 203)
+rotation = 1.5708
+
+[node name="Swing-light" parent="." instance=ExtResource("6_o8soc")]
+position = Vector2(615, 147)
+
+[node name="Light" parent="Swing-light" index="1"]
+position = Vector2(0, 310)
+
+[node name="Light3" parent="." instance=ExtResource("7_otp53")]
+position = Vector2(87, 56)
+
+[node name="Lamp" parent="." instance=ExtResource("8_aadv5")]
+position = Vector2(433, 617)
+
+[node name="Light4" parent="." instance=ExtResource("7_otp53")]
+position = Vector2(1058, 104)
+
 [connection signal="pressed" from="Buttons/CrampedButton" to="Doors/Exit_door" method="toggle_door"]
 [connection signal="pressed" from="Buttons/BottomButton" to="Doors/Top_right" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Lasershut_toggle" to="Doors/Lasershut" method="toggle_door"]
@@ -1009,3 +1034,4 @@ rotation = 1.57079
 
 [editable path="Lights/Swing-light"]
 [editable path="Transition"]
+[editable path="Swing-light"]

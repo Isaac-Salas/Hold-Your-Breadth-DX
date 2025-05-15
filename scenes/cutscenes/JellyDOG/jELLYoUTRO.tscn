@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dfjgb3nuuclhp" path="res://assets/DOG.png" id="3_f6gsf"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="4_wpbc4"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_4plus"]
-[ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="6_aqvgt"]
+[ext_resource type="PackedScene" uid="uid://u8latgnj6og5" path="res://scenes/levels/Level_Select/Level_select.tscn" id="7_18wp7"]
 [ext_resource type="FontFile" uid="uid://1fcjyts1ysra" path="res://assets/Fonts/DePixelHalbfett.otf" id="7_bvxbn"]
 
 [node name="JellyIntro" type="Node2D"]
@@ -52,12 +52,12 @@ rect = Rect2(-60, -60, 200, 200)
 position = Vector2(1625, -12)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 5.0
 autostart = true
 
 [node name="Transition" parent="." instance=ExtResource("5_4plus")]
 scale = Vector2(1.5, 1.5)
-target_scene = ExtResource("6_aqvgt")
+target_scene = ExtResource("7_18wp7")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

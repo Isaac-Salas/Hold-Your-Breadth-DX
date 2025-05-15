@@ -65,7 +65,8 @@ func _on_button_red_pressed(state, body):
 	for stuff in rats.get_children():
 		stuff.queue_free()
 	var rattest = get_tree().get_first_node_in_group("edible")
-	rattest.queue_free()
+	if rattest != null:
+		rattest.queue_free()
 	#Aqui el mero
 	
 	

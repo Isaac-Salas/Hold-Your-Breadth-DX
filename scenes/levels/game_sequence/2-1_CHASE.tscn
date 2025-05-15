@@ -420,7 +420,7 @@ position = Vector2(6730, -303)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
 offset = Vector2(0, -100)
 zoom = Vector2(1.5, 1.5)
-position_smoothing_speed = 20.0
+position_smoothing_speed = 100.0
 
 [node name="dont touch" type="Node2D" parent="CharacterBody2D2/Camera2D"]
 position = Vector2(-576, -424)

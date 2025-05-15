@@ -2,10 +2,11 @@
 extends Node2D
 class_name TransitionScene
 @onready var ap: AnimationPlayer = $AnimationPlayer
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @export var target_scene: PackedScene
 signal Opendone
 signal Closedone
-@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

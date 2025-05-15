@@ -5679,14 +5679,40 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_rpahc")
 text = "RESET PROGRESS"
 
+[node name="Sandbbox" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -238.0
+offset_top = 37.0
+offset_right = -77.0
+offset_bottom = 102.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("6_rpahc")
+text = "SANDBOX????"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_3026r")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 586.0
+offset_top = 346.0
+offset_right = 1063.0
+offset_bottom = 521.0
+theme_override_fonts/normal_font = ExtResource("6_rpahc")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]
+This screen can be controlled ONLY WITH A MOUSE
+If you finished the demo, please reset your progress for the next person playing!!!![/center]"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/ResetProgress" to="." method="_on_reset_progress_pressed"]
+[connection signal="pressed" from="Buttons/Sandbbox" to="." method="_on_sandbbox_pressed"]
 
 [editable path="Swing-light"]

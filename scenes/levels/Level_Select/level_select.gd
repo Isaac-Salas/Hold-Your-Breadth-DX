@@ -172,3 +172,7 @@ func _on_reset_progress_pressed():
 	Manager.reset_progress()
 	transition.transition_to(tutorial)
 	
+
+
+func _on_sandbbox_pressed():
+	pass # Replace with function body.

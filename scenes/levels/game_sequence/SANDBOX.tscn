@@ -1,22 +1,22 @@
-[gd_scene load_steps=15 format=4 uid="uid://nvk3fvghxss0"]
+[gd_scene load_steps=15 format=4 uid="uid://cdu1jlbs1xxt"]
 
-[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_7ttjn"]
-[ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="1_p51wd"]
-[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_l70k0"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_qdubr"]
-[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="6_8v6c2"]
-[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="6_l11u7"]
-[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="7_lidnd"]
-[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="7_uvvwj"]
-[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="8_scqsv"]
-[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="9_je4j2"]
-[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="9_uu8tb"]
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_02oru"]
+[ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="2_5o6bt"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_7uypn"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="4_mqvxx"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="5_ccxne"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="6_ar4nn"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="7_ydfju"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="8_4r6ki"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="9_1o474"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="10_xkyfg"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="11_4xax6"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
-texture = ExtResource("1_p51wd")
+texture = ExtResource("2_5o6bt")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -142,7 +142,7 @@ terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_1blni")
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_7ttjn")
+script = ExtResource("1_02oru")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -150,11 +150,13 @@ tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAABAAgAAAAEAAAAAAACAAgAAAAEAAA
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="Player" parent="." instance=ExtResource("3_l70k0")]
+[node name="Player" parent="." instance=ExtResource("3_7uypn")]
 position = Vector2(108, 159)
 
-[node name="Camera2D" parent="." instance=ExtResource("6_8v6c2")]
-position = Vector2(0, 1)
+[node name="Camera2D" parent="Player" instance=ExtResource("4_mqvxx")]
+anchor_mode = 1
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 
 [node name="Indicators" type="Node" parent="."]
 
@@ -162,30 +164,30 @@ position = Vector2(0, 1)
 
 [node name="Lights" type="Node" parent="."]
 
-[node name="Swing-light" parent="Lights" instance=ExtResource("9_je4j2")]
+[node name="Swing-light" parent="Lights" instance=ExtResource("5_ccxne")]
 position = Vector2(408, 99)
 
-[node name="Light" parent="Lights" instance=ExtResource("9_uu8tb")]
+[node name="Light" parent="Lights" instance=ExtResource("6_ar4nn")]
 position = Vector2(603, 57)
 
 [node name="Doors" type="Node" parent="."]
 
 [node name="Buttons" type="Node" parent="."]
 
-[node name="Button_red" parent="Buttons" instance=ExtResource("7_lidnd")]
+[node name="Button_red" parent="Buttons" instance=ExtResource("7_ydfju")]
 position = Vector2(268, 192)
 
-[node name="Button_Red_Signal" parent="Buttons/Button_red" instance=ExtResource("8_scqsv")]
+[node name="Button_Red_Signal" parent="Buttons/Button_red" instance=ExtResource("8_4r6ki")]
 position = Vector2(402, 17)
 
 [node name="Laser" type="Node" parent="."]
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform" parent="Platforms" instance=ExtResource("6_l11u7")]
+[node name="Platform" parent="Platforms" instance=ExtResource("9_1o474")]
 position = Vector2(576, 288)
 
-[node name="dont touch" parent="." instance=ExtResource("7_uvvwj")]
+[node name="dont touch" parent="." instance=ExtResource("10_xkyfg")]
 
-[node name="Transition" parent="." instance=ExtResource("4_qdubr")]
+[node name="Transition" parent="." instance=ExtResource("11_4xax6")]
 metadata/_edit_lock_ = true
