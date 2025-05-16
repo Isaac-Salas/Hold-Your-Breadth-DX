@@ -658,31 +658,6 @@ position = Vector2(10464, 368)
 color = Color(1, 0.5, 0.5, 1)
 metadata/_edit_lock_ = true
 
-[node name="Light29" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(10912, 224)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
-[node name="Light30" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(11040, 224)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
-[node name="Light31" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(11296, 224)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
-[node name="Light32" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(11624, 224)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
-[node name="Light35" parent="." instance=ExtResource("12_3tflp")]
-position = Vector2(11880, 224)
-color = Color(1, 0.5, 0.5, 1)
-metadata/_edit_lock_ = true
-
 [node name="Light7" parent="." instance=ExtResource("12_3tflp")]
 position = Vector2(1640, 35)
 color = Color(1, 0.5, 0.5, 1)
@@ -980,6 +955,30 @@ Fleemarker = NodePath("../Ratfleemarker")
 [node name="Ratfleemarker" parent="." instance=ExtResource("15_dn4d8")]
 position = Vector2(11616, 616)
 
+[node name="Swing-light20" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(11003, 208)
+
+[node name="Light" parent="Swing-light20" index="1"]
+position = Vector2(0, 308)
+
+[node name="Swing-light21" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(11293, 208)
+
+[node name="Light" parent="Swing-light21" index="1"]
+position = Vector2(0, 308)
+
+[node name="Swing-light22" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(11620, 208)
+
+[node name="Light" parent="Swing-light22" index="1"]
+position = Vector2(0, 308)
+
+[node name="Swing-light23" parent="." instance=ExtResource("13_u7gvy")]
+position = Vector2(11866, 208)
+
+[node name="Light" parent="Swing-light23" index="1"]
+position = Vector2(0, 308)
+
 [connection signal="body_entered" from="MusicChamge" to="." method="_on_music_chamge_body_entered"]
 
 [editable path="Light17"]
@@ -1004,3 +1003,7 @@ position = Vector2(11616, 616)
 [editable path="Swing-light17"]
 [editable path="Swing-light18"]
 [editable path="Swing-light19"]
+[editable path="Swing-light20"]
+[editable path="Swing-light21"]
+[editable path="Swing-light22"]
+[editable path="Swing-light23"]

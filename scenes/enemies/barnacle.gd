@@ -93,13 +93,16 @@ func _on_area_2d_body_entered(body):
 	
 	colliders = body
 	#print(colliders)
-	if colliders.is_in_group("Player"):
+	if colliders is SlimePlayer:
+		var children = colliders.get_children()
 		sprite_2d_2.play("new_animation")
 		area_2d.set_deferred("monitoring", false)
 		lastone.apply_impulse(colliders.velocity)
 		colliders.queue_free()
 		spawner_component.scene = PLAYERAGDOLL
 		spawned = spawner_component.spawn()
+		for i in children:
+			i.reparent(spawned)
 		#print(spawned)
 		spawned.set_deferred("freeze", true)
 		colliders.colision.set_deferred("disabled", true)

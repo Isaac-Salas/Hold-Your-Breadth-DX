@@ -5439,7 +5439,7 @@ text = "3-2
 "
 flat = true
 script = ExtResource("5_3s37s")
-lvl_path = "res://scenes/levels/game_sequence/3-2 Level.tscn"
+lvl_path = "res://scenes/levels/game_sequence/3-2 Around and around.tscn"
 transition = NodePath("../../Transition")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/3-2"]
@@ -5467,6 +5467,7 @@ text = "3-3
 "
 flat = true
 script = ExtResource("5_3s37s")
+lvl_path = "res://scenes/levels/game_sequence/3-3 One step at a time.tscn"
 transition = NodePath("../../Transition")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/3-3"]
@@ -5680,6 +5681,7 @@ theme_override_fonts/font = ExtResource("6_rpahc")
 text = "RESET PROGRESS"
 
 [node name="Sandbbox" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

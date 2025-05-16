@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://ccn1j6v25t2oc"]
+[gd_scene load_steps=60 format=4 uid="uid://ccn1j6v25t2oc"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_xvjhh"]
 [ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="2_mivww"]
@@ -24,10 +24,15 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="19_25208"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="21_gkoxj"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="22_ka1hd"]
-[ext_resource type="PackedScene" uid="uid://c6bs7y7fkg5ud" path="res://scenes/cutscenes/JellyDOG/jELLYoUTRO.tscn" id="22_q16ly"]
+[ext_resource type="Script" uid="uid://de4jovdy2wxwl" path="res://scenes/cutscenes/JellyDOG/j_ell_yo_utro.gd" id="22_yq5ub"]
+[ext_resource type="Texture2D" uid="uid://dfjgb3nuuclhp" path="res://assets/DOG.png" id="23_yy55d"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="24_1kbto"]
+[ext_resource type="PackedScene" uid="uid://u8latgnj6og5" path="res://scenes/levels/Level_Select/Level_select.tscn" id="25_c6ha7"]
 [ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="25_vp7sh"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="26_1adut"]
+[ext_resource type="FontFile" uid="uid://1fcjyts1ysra" path="res://assets/Fonts/DePixelHalbfett.otf" id="26_uvuq8"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="28_buest"]
+[ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="33_yy55d"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -314,6 +319,30 @@ size = Vector2(48, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_honut"]
 size = Vector2(48, 96)
+
+[sub_resource type="PackedScene" id="PackedScene_1t6w5"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(11, 0, 54, 53, 2, 0, 0),
+"editable_instances": [NodePath("dont touch"), NodePath("Swing-light")],
+"names": PackedStringArray("JellyIntro", "script", "Node2D", "dont touch", "Background", "CanvasModulate", "color", "WorldEnvironment", "OptionsMenu", "CRTShader", "Light", "position", "rotation", "scale", "Light2", "Light3", "Sprite2D", "texture", "Swing-light", "marker", "Puntocent", "CollisionShape2D", "freeze", "PointLight2D", "Fakelight", "VisibleOnScreenNotifier2D", "rect", "AudioStreamPlayer2D", "Clinck", "PinJoint2D", "String", "Line2D", "Marker2D", "Timer", "wait_time", "autostart", "Transition", "target_scene", "Control", "layout_mode", "anchors_preset", "offset_right", "offset_bottom", "Label", "offset_left", "offset_top", "theme_override_colors/font_outline_color", "theme_override_constants/outline_size", "theme_override_fonts/font", "theme_override_font_sizes/font_size", "text", "horizontal_alignment", "autowrap_mode", "_on_timer_timeout", "timeout"),
+"node_count": 15,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 2147483647, 3, 1, 0, 0, 1, -1, 2147483647, 524293, -1, 1, 6, 2, 0, 1, 0, 2147483647, 10, 3, 3, 11, 4, 12, 5, 13, 6, 0, 1, 0, 2147483647, 14, 3, 3, 11, 7, 12, 8, 13, 6, 0, 1, 0, 2147483647, 15, 3, 3, 11, 9, 12, 5, 13, 6, 0, 0, 0, 16, 16, -1, 3, 11, 10, 13, 11, 17, 12, 0, 0, 0, 2147483647, 18, 13, 3, 11, 14, 13, 15, 1073741843, 16, 0, 7, -1, 2147483647, 524298, -1, 1, 22, 17, 0, 8, -1, 2147483647, 1310745, -1, 1, 26, 18, 0, 0, 0, 32, 32, -1, 1, 11, 19, 0, 0, 0, 33, 33, -1, 2, 34, 20, 35, 21, 0, 0, 0, 2147483647, 36, 22, 2, 13, 23, 37, 24, 0, 0, 0, 38, 38, -1, 4, 39, 25, 40, 26, 41, 27, 42, 27, 0, 13, 0, 43, 43, -1, 12, 39, 26, 44, 28, 45, 29, 41, 30, 42, 31, 46, 32, 47, 33, 48, 34, 49, 35, 50, 36, 51, 37, 52, 25, 0),
+"variants": [ExtResource("22_yq5ub"), ExtResource("8_4l1jt"), Color(0.0189402, 0.0189402, 0.0189402, 1), ExtResource("6_pvsbl"), Vector2(-283, 40), -1.5708, Vector2(4.62572, 4.62572), Vector2(1712, 339), -4.71239, Vector2(-246, 650), Vector2(576, 352), Vector2(0.497674, 0.497674), ExtResource("23_yy55d"), ExtResource("5_e25ab"), Vector2(576, -680), Vector2(4, 4), NodePath("../Marker2D"), false, Rect2(-60, -60, 200, 200), Vector2(1625, -12), 5.0, true, ExtResource("24_1kbto"), Vector2(1.5, 1.5), ExtResource("25_c6ha7"), 3, 0, 40.0, 170.0, 89.0, 977.0, 670.0, Color(0, 0, 0, 1), 16, ExtResource("26_uvuq8"), 32, "CONGRATULATIONS ON REACHING THE END OF THE DEMO
+
+
+
+
+
+
+
+
+WE HOPE YOU LIKED IT
+JELLYDOG THANKS YOU FOR PLAYING
+", 1],
+"version": 3
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
 size = Vector2(44, 165.333)
@@ -743,7 +772,7 @@ z_index = 20
 y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
 script = ExtResource("13_i5m85")
-target_scene = ExtResource("22_q16ly")
+target_scene = SubResource("PackedScene_1t6w5")
 metadata/_edit_lock_ = true
 
 [node name="Trigger" type="Area2D" parent="Transition"]
@@ -755,7 +784,6 @@ shape = SubResource("RectangleShape2D_lorgc")
 debug_color = Color(0.453215, 0.595313, 0, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Transition"]
-visible = false
 z_index = 5
 y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_gw78c")
@@ -768,7 +796,6 @@ clip_children = 2
 occluder = SubResource("OccluderPolygon2D_jd3jg")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Transition"]
-visible = false
 z_index = 5
 y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_5ty5i")
@@ -819,8 +846,39 @@ scale = Vector2(1.5, 1.5)
 
 [node name="MusicSubmanager" parent="." instance=ExtResource("28_buest")]
 
+[node name="Light" parent="." instance=ExtResource("6_pvsbl")]
+position = Vector2(343, 57)
+
+[node name="Swing-light" parent="." instance=ExtResource("5_e25ab")]
+position = Vector2(791, -243)
+drop = true
+
+[node name="Swing-light2" parent="." instance=ExtResource("5_e25ab")]
+position = Vector2(1016, 21)
+
+[node name="Indicator-X4" parent="." instance=ExtResource("22_ka1hd")]
+position = Vector2(939, 118)
+
+[node name="Indicator-X5" parent="." instance=ExtResource("22_ka1hd")]
+position = Vector2(939, 216)
+
+[node name="Indicator-X6" parent="." instance=ExtResource("22_ka1hd")]
+position = Vector2(939, 307)
+
+[node name="Light2" parent="." instance=ExtResource("6_pvsbl")]
+position = Vector2(483, 489)
+
+[node name="Indicator-Arrow" parent="." instance=ExtResource("33_yy55d")]
+position = Vector2(118, 218)
+rotation = -1.5708
+
+[node name="Indicator-X7" parent="." instance=ExtResource("22_ka1hd")]
+position = Vector2(123, 102)
+
 [connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/Small_door" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Scale_button_green2" to="Doors/Small_door2" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Scale_button_green3" to="Doors/Small_door3" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Button_red" to="Doors/Door" method="toggle_door"]
 [connection signal="body_entered" from="Transition/Trigger" to="Transition" method="_on_trigger_body_entered"]
+
+[editable path="Swing-light"]

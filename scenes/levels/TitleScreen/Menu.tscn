@@ -1639,24 +1639,24 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="RichTextLabel" parent="."]
-offset_left = -18.0
-offset_top = 598.0
-offset_right = 261.0
-offset_bottom = 710.0
+offset_left = 15.0
+offset_top = 583.0
+offset_right = 294.0
+offset_bottom = 695.0
 theme_override_fonts/normal_font = ExtResource("9_o6peb")
-theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]
-HYB-DX - DEMO V1.5
+HYB-DX - DEMO V1.6
 [/center]"
 
 [node name="Label2" type="RichTextLabel" parent="."]
-offset_left = 838.0
-offset_top = 549.0
-offset_right = 1154.0
-offset_bottom = 661.0
+offset_left = 840.0
+offset_top = 530.0
+offset_right = 1156.0
+offset_bottom = 642.0
 theme_override_fonts/normal_font = ExtResource("9_o6peb")
-theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]
 Made for FICG40

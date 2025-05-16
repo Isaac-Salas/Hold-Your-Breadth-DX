@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3umetes5s8vo"]
 
-[ext_resource type="Texture2D" uid="uid://b4ory0dbq5wso" path="res://assets/objects/Marking.png" id="1_klik4"]
+[ext_resource type="Texture2D" uid="uid://si5g2u42dlql" path="res://assets/objects/Marking.png" id="1_klik4"]
 
 [node name="Indicator-X" type="Sprite2D"]
 texture = ExtResource("1_klik4")

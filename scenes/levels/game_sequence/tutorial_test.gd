@@ -14,8 +14,13 @@ extends Node2D
 @onready var tooltips : AnimatedSprite2D = $"../Tooltips"
 @onready var blink : AnimationPlayer = $"../Tooltips/Blink"
 @onready var animp = $AnimationPlayer
+@onready var message1 = $"../../RichTextLabel"
+@onready var message2 = $"../../RichTextLabel2"
+
+
 
 @export var TutorialOverride : bool = false
+@onready var mouse : Timer = $"../Tooltips/MOUSE"
 
 
 func _ready():
@@ -46,6 +51,8 @@ func _ready():
 			static_body_2d.queue_free()
 			camera_2d.queue_free()
 			color_rect.queue_free()
+			message1.queue_free()
+			message2.queue_free()
 			
 			
 			
@@ -121,7 +128,12 @@ func _process(delta):
 							dialog.InputSTOP = false
 					else:
 						player.throwcross.visible = true
-						print("Using mouse aim")
+						if hamsterzote.indicator.visible == true:
+							dialog.clearcenter()
+							dialog.show_end = true
+							dialog.InputSTOP = false
+							print("Using mouse aim")
+						
 						
 			9:
 				#YOU CAN?!?!?!?!

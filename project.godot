@@ -25,6 +25,7 @@ config/icon="res://player/Icon.png"
 Globals="*res://globals/GlobalVars.gd"
 Manager="*res://scenes/levels/Transition/Levels.gd"
 MusicManager="*res://assets/music/music_manager.gd"
+Preloader="*res://globals/Preloader.gd"
 
 [display]
 

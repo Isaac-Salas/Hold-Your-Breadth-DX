@@ -13,8 +13,12 @@ func _ready() -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	visible = true
+	light.visible = true
+	light.enabled = true
+	fakelight.visible = true
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	visible = false
+	light.visible = false
+	light.enabled = false
+	fakelight.visible = false

@@ -18,6 +18,7 @@ const Levels : GDScript = preload("res://scenes/levels/Transition/Levels.gd")
 @onready var transition = $Transition
 const tutorial = preload("res://scenes/levels/TitleScreen/intro_cinematic.tscn")
 @onready var back = $Buttons/Back
+const SANDBOX = preload("res://scenes/levels/game_sequence/SANDBOX.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +26,7 @@ func _ready():
 	#Manager.save_game()
 	back.grab_focus()
 	Manager.load_game()
+	MusicManager.stopplay()
 	#print(Manager.Level1_1)
 	
 	
@@ -175,4 +177,4 @@ func _on_reset_progress_pressed():
 
 
 func _on_sandbbox_pressed():
-	pass # Replace with function body.
+	transition.transition_to(SANDBOX)

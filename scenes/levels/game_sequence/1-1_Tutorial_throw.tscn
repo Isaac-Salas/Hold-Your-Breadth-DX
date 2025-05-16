@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://v4ylrqt2e871"]
+[gd_scene load_steps=47 format=4 uid="uid://v4ylrqt2e871"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
 [ext_resource type="Script" uid="uid://80efc16j34uh" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
+[ext_resource type="FontFile" uid="uid://1fcjyts1ysra" path="res://assets/Fonts/DePixelHalbfett.otf" id="8_jnqun"]
 [ext_resource type="Texture2D" uid="uid://ynq3lvmaqfc7" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="9_qole5"]
 [ext_resource type="Texture2D" uid="uid://b8vtk5adhm7f" path="res://assets/Tutorial/Aim.png" id="10_4c6tc"]
@@ -379,13 +380,38 @@ position = Vector2(769, 408)
 [node name="Button_Red_Signal" parent="." instance=ExtResource("6_bgyky")]
 position = Vector2(983, 587)
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 480.0
+offset_top = 510.0
+offset_right = 886.0
+offset_bottom = 597.0
+theme_override_fonts/normal_font = ExtResource("8_jnqun")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]
+Please, restart the level to hide this messages
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 199.0
+offset_top = 279.0
+offset_right = 595.0
+offset_bottom = 616.0
+theme_override_fonts/normal_font = ExtResource("8_jnqun")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]You can also:
+- Pause the game using ESC or pressing the Start button.
+- Restart level by pressing the R key or the Select button
+"
+
 [node name="Player" parent="." instance=ExtResource("7_8uf2v")]
 position = Vector2(240, 585)
 
 [node name="TutorialTest" type="Node2D" parent="Player"]
 script = ExtResource("7_ibu0m")
 Tutorial = true
-TutorialOverride = true
 
 [node name="Camera2D" type="Camera2D" parent="Player/TutorialTest"]
 offset = Vector2(0, -20)
@@ -418,6 +444,8 @@ animation = &"Move"
 libraries = {
 &"": SubResource("AnimationLibrary_cfwh0")
 }
+
+[node name="MOUSE" type="Timer" parent="Player/Tooltips"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(310, 585)
@@ -733,9 +761,6 @@ position = Vector2(1056, 31)
 
 [node name="PointLight2D" parent="Lights/Light11" index="0"]
 shadow_enabled = false
-
-[node name="Fakelight" parent="Lights/Light11" index="1"]
-modulate = Color(1, 0.81834, 0.645192, 0.0980392)
 
 [node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
 position = Vector2(315, 265)
