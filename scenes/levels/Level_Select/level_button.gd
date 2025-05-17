@@ -1,6 +1,7 @@
 class_name botonciyo 
 extends Button
-@export var lvl_path : String = ""
+@export var Zone : int
+@export var Level : int
 @onready var sprite: AnimatedSprite2D = $levelbtn
 @onready var unlocked: AnimatedSprite2D = $unlocked
 @export var transition : TransitionScene
@@ -45,7 +46,8 @@ func _on_mouse_exited() -> void:
 	
 
 func _on_pressed() -> void:
-	if lvl_path == "":
-		return
-	var lvl = load(lvl_path)
-	transition.transition_to(lvl)
+	var newpath = str("_", Zone, "_", Level)
+	print(newpath)
+	var newscene = Preloader.get(newpath)
+	transition.transition_to(newscene)
+	

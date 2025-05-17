@@ -16,8 +16,7 @@ extends Node2D
 @onready var door = $Button_red/Door
 
 @onready var player = $CharacterBody2D2
-const _2_1_CHASE_CHANGE = preload("res://scenes/levels/game_sequence/2-1_CHASEChange.tscn")
-const _3_1_SCALE_LEVEL = preload("res://scenes/levels/game_sequence/3-1 Scale level.tscn")
+var _2_1_CHASE_CHANGE = load("res://scenes/levels/game_sequence/2-1_CHASEChange.tscn")
 @onready var camera : Camera2D = $CharacterBody2D2/Camera2D
 @onready var animationp : AnimationPlayer = $CharacterBody2D2/AnimationPlayer
 
@@ -76,12 +75,12 @@ func _on_button_red_pressed(state, body):
 
 func _on_player_detector_body_entered(body):
 	if body is SlimePlayer:
+		player.set_physics_process(false)
 		$Clutter/Lasers.queue_free()
 		var biobox = $Clutter/Bio_Box.get_children()
 		for things in biobox:
 			things.global_position.x += 500
 		
-		player.set_physics_process(false)
 
 
 
@@ -89,7 +88,7 @@ func _on_player_detector_body_entered(body):
 
 func _on_area_2d_body_entered(body):
 	if body is SlimePlayer:
-		transition.transition_to(_3_1_SCALE_LEVEL)
+		transition.transition_to(Preloader._3_1)
 		
 		
 func _dialog_done():

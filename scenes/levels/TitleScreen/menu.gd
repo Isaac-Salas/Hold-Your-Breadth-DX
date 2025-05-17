@@ -14,10 +14,7 @@ extends Node2D
 @onready var jelly_stuff = $JellyStuff
 
 
-var LEVEL_SELECT = load("res://scenes/levels/Level_Select/Level_select.tscn")
-var INTRO_CUT = load("res://scenes/cutscenes/IntroAnims/IntroCut.tscn")
-var TESTING = load("res://scenes/levels/Testing/testing.tscn")
-var scale_lvl = load("res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn")
+
 #const SCENE_SWITCHER = load("res://scenes/levels/Transition/scene_switcher.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,7 +31,7 @@ func _process(delta):
 func _on_play_pressed():
 	if fadeout != null:
 		fadeout.play("Fade")
-	transition.transition_to(INTRO_CUT)
+	transition.transition_to(Preloader.INTRO_CUT)
 
 
 
@@ -69,7 +66,8 @@ func _on_levels_mouse_exited():
 
 
 func _on_levels_pressed():
-	transition.transition_to(LEVEL_SELECT)
+
+	transition.transition_path("res://scenes/levels/Level_Select/Level_select.tscn")
 
 
 func _on_options_mouse_entered():
@@ -87,7 +85,7 @@ func _on_options_mouse_exited():
 
 func _on_options_pressed():
 	if screenstuff != null:
-		var options = screenstuff.options_menu
+		var optionsmenu = screenstuff.options_menu
 		options.showtoggle()
 
 

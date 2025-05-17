@@ -22,6 +22,8 @@ func transition_to(_next_scene : PackedScene) -> void:
 	#nivel.visible = false
 	get_tree().change_scene_to_packed(_next_scene)
 
+func transition_path(path : String) -> void:
+	get_tree().change_scene_to_file(path)
 
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

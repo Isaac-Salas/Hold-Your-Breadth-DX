@@ -220,7 +220,7 @@ func shrink(scalerate):
 		sprite.scale = Vector2(0.1,0.1)
 
 func grab(body):
-	if body and picking == false and body.sprite.scale <= sprite.scale or body is Rat_enemy :
+	if body != null and picking == false and body.sprite.scale <= sprite.scale or body != null and picking == false and body is Rat_enemy :
 		Grab.emit(true)
 		if body.is_in_group("Matraz"):
 			body.break_after_throw = true

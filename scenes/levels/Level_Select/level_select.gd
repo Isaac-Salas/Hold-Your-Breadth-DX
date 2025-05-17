@@ -13,12 +13,11 @@ extends Node2D
 @onready var _5_2 = $"Buttons/5-2"
 @onready var _5_3 = $"Buttons/5-3"
 @onready var control = $Buttons
-const Levels : GDScript = preload("res://scenes/levels/Transition/Levels.gd")
 @onready var boss = $Buttons/BOSS
 @onready var transition = $Transition
-const tutorial = preload("res://scenes/levels/TitleScreen/intro_cinematic.tscn")
+
 @onready var back = $Buttons/Back
-const SANDBOX = preload("res://scenes/levels/game_sequence/SANDBOX.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -167,14 +166,14 @@ func _on_timer_timeout():
 
 func _on_back_pressed():
 
-	transition.transition_to(tutorial)
+	transition.transition_to(Preloader.INTRO_CINEMATIC)
 
 
 func _on_reset_progress_pressed():
 	Manager.reset_progress()
-	transition.transition_to(tutorial)
+	transition.transition_to(Preloader.INTRO_CINEMATIC)
 	
 
 
 func _on_sandbbox_pressed():
-	transition.transition_to(SANDBOX)
+	pass

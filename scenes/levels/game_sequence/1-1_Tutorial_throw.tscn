@@ -2,21 +2,21 @@
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
-[ext_resource type="Texture2D" uid="uid://cgepsjd5vcnd" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
+[ext_resource type="Texture2D" uid="uid://t1cl05tmmco7" path="res://assets/tilemap/concrete.png" id="3_npyyg"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_esqvt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
 [ext_resource type="Script" uid="uid://80efc16j34uh" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
-[ext_resource type="FontFile" uid="uid://1fcjyts1ysra" path="res://assets/Fonts/DePixelHalbfett.otf" id="8_jnqun"]
-[ext_resource type="Texture2D" uid="uid://ynq3lvmaqfc7" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
+[ext_resource type="FontFile" uid="uid://0vlru4pjw11h" path="res://assets/Fonts/DePixelHalbfett.otf" id="8_jnqun"]
+[ext_resource type="Texture2D" uid="uid://ckbuyjse8im82" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="9_qole5"]
-[ext_resource type="Texture2D" uid="uid://b8vtk5adhm7f" path="res://assets/Tutorial/Aim.png" id="10_4c6tc"]
-[ext_resource type="Texture2D" uid="uid://7wh2ul5auenk" path="res://assets/Tutorial/Lift.png" id="11_6jiu3"]
-[ext_resource type="Texture2D" uid="uid://btb7w6aee3u84" path="res://assets/Tutorial/Jump.png" id="11_cfwh0"]
+[ext_resource type="Texture2D" uid="uid://c7riucirf5k6t" path="res://assets/Tutorial/Aim.png" id="10_4c6tc"]
+[ext_resource type="Texture2D" uid="uid://cmldhe6syddjd" path="res://assets/Tutorial/Lift.png" id="11_6jiu3"]
+[ext_resource type="Texture2D" uid="uid://uudbxd5aab2p" path="res://assets/Tutorial/Jump.png" id="11_cfwh0"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="11_x0vny"]
 [ext_resource type="PackedScene" uid="uid://c5dp4yu18vn0" path="res://scenes/objects/Teleport/Teleport.tscn" id="12_bu4xr"]
-[ext_resource type="Texture2D" uid="uid://cf1c4q32epw13" path="res://assets/Tutorial/Throw.png" id="12_jnqun"]
+[ext_resource type="Texture2D" uid="uid://rbn1schr87df" path="res://assets/Tutorial/Throw.png" id="12_jnqun"]
 [ext_resource type="PackedScene" uid="uid://c7ywo2pqrljd0" path="res://scenes/enemies/Hamster/Hamster-Rigid.tscn" id="12_qole5"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="13_ah2pn"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="14_6c8yc"]
@@ -761,6 +761,9 @@ position = Vector2(1056, 31)
 
 [node name="PointLight2D" parent="Lights/Light11" index="0"]
 shadow_enabled = false
+
+[node name="Fakelight" parent="Lights/Light11" index="1"]
+modulate = Color(1, 0.81834, 0.645192, 0.0980392)
 
 [node name="Swing-light" parent="Lights" instance=ExtResource("15_mnyod")]
 position = Vector2(315, 265)
