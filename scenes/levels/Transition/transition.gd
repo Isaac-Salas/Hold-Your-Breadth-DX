@@ -23,6 +23,8 @@ func transition_to(_next_scene : PackedScene) -> void:
 	get_tree().change_scene_to_packed(_next_scene)
 
 func transition_path(path : String) -> void:
+	ap.play("Closing")
+	await(ap.animation_finished)
 	get_tree().change_scene_to_file(path)
 
 func _on_trigger_body_entered(body: Node2D) -> void:
