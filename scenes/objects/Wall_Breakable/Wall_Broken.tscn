@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgvqye2ns3ghx"]
 
 [ext_resource type="Script" uid="uid://6qcqm300xyym" path="res://scenes/objects/Wall_Breakable/wall_broken.gd" id="1_a7ge6"]
-[ext_resource type="Texture2D" uid="uid://bmghw6a8bacek" path="res://assets/objects/Broken-pared/Particles.png" id="2_y68wu"]
-[ext_resource type="AudioStream" uid="uid://b2sr8wekptj86" path="res://assets/audioshit/RockBreak.mp3" id="3_78514"]
+[ext_resource type="Texture2D" uid="uid://cjpkkicaviy14" path="res://assets/objects/Broken-pared/Particles.png" id="2_y68wu"]
+[ext_resource type="AudioStream" uid="uid://bvduanb7ps380" path="res://assets/audioshit/RockBreak.mp3" id="3_78514"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hcanj"]
 particle_flag_disable_z = true

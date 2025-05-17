@@ -1,11 +1,12 @@
 [gd_scene load_steps=21 format=3 uid="uid://bhenjdi5p5ejl"]
 
-[ext_resource type="Texture2D" uid="uid://bgo5wykg1ltxc" path="res://assets/objects/button_animated.png" id="1_jj771"]
+[ext_resource type="Texture2D" uid="uid://capesfedehdyo" path="res://assets/objects/button_animated.png" id="1_jj771"]
 [ext_resource type="Script" uid="uid://d4hlfhqqa4kfa" path="res://scenes/objects/button_red/button_red.gd" id="1_t8urs"]
-[ext_resource type="Texture2D" uid="uid://bby238r1padrx" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
-[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
+[ext_resource type="Texture2D" uid="uid://dovoynpj0w7vd" path="res://assets/objects/button_signal_button.png" id="2_o0geb"]
+[ext_resource type="Texture2D" uid="uid://d3yvuumf7otjv" path="res://assets/lights/nRmVV (2).png" id="4_hew85"]
 [ext_resource type="Shader" uid="uid://bdrcfdqhcfbi6" path="res://scenes/shaders/Particle.gdshader" id="5_5mmhb"]
-[ext_resource type="AudioStream" uid="uid://dxinmskwgngo8" path="res://assets/audioshit/buttonpressed_.mp3" id="6_6sjv7"]
+[ext_resource type="AudioStream" uid="uid://cohn4w1yeaejy" path="res://assets/audioshit/buttonpressed_.mp3" id="6_6sjv7"]
+[ext_resource type="Material" uid="uid://0cijfmskp5ko" path="res://scenes/shaders/button_red-part.tres" id="6_vy4x2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1h6ja"]
 light_mode = 1
@@ -106,18 +107,6 @@ blend_mode = 1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s4qag"]
 shader = ExtResource("5_5mmhb")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dejd3"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 20.03
-initial_velocity_min = -200.0
-initial_velocity_max = 200.0
-angular_velocity_min = 350.27
-angular_velocity_max = 350.27
-gravity = Vector3(0, 980, 0)
-scale_max = 3.0
-color = Color(2, 2, 1, 1)
-
 [node name="Button_red" type="Area2D"]
 script = ExtResource("1_t8urs")
 
@@ -157,11 +146,11 @@ material = SubResource("ShaderMaterial_s4qag")
 position = Vector2(-36, -85)
 emitting = false
 amount = 10
-process_material = SubResource("ParticleProcessMaterial_dejd3")
 one_shot = true
 explosiveness = 1.0
 fixed_fps = 0
 draw_order = 0
+process_material = ExtResource("6_vy4x2")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_6sjv7")

@@ -3,7 +3,7 @@ var rand
 var sprite : Sprite2D
 @onready var timer = $Timer
 @export var explodespeed : float
-const WALL_BROKEN = preload("res://scenes/objects/Wall_Breakable/Wall_Broken.tres")
+
 var counter : float = 0
 var children
 var startfree : bool = false
