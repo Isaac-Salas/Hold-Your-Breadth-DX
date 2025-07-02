@@ -41,11 +41,21 @@ signal scare
 
 @onready var controller : bool
 
+
+@onready var coyote_timer: Timer = $CoyoteTimer
+@export var coyote_frames = 6  # How many in-air frames to allow jumping
+var coyote = false  # Track whether we're in coyote time or not
+var last_floor = false  # Last frame's on-floor state
+var jumping = false
+
+
 signal Movement(value)
 signal Jump(value)
 signal Throw(value)
 signal Grab(value)
 
+func _ready() -> void:
+	coyote_timer.wait_time = coyote_frames / 60.0
 
 
 func _physics_process(delta):
@@ -83,11 +93,19 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote):
 		Jump.emit(true)
+		jumping = true
 		velocity.y = JUMP_VELOCITY
 	elif is_on_floor():
 		Jump.emit(false)
+		jumping = false
+	
+	if !is_on_floor() and last_floor and !jumping:
+		coyote = true
+		$CoyoteTimer.start()
+	
+		
 	if Input.is_action_just_released("Jump"):
 		velocity.y = max(velocity.y, JUMP_VELOCITY/3)
 
@@ -163,6 +181,7 @@ func _physics_process(delta):
 		object_detect.monitorable = true
 
 	if tieso == false:
+		last_floor = is_on_floor()
 		move_and_slide()
 	
 func get_hit(canrevive : bool):
@@ -284,3 +303,7 @@ func set_size(target_size):
 func _on_object_detect_body_entered(body):
 	if body.is_in_group("throwable") and picking == false:
 		currentobj = body
+
+
+func _on_coyote_timer_timeout() -> void:
+	coyote = false

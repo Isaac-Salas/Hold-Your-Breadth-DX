@@ -2,6 +2,7 @@
 
 [sub_resource type="Gradient" id="Gradient_xaycy"]
 colors = PackedColorArray(0.0283333, 0, 0.1, 1, 1, 0.94, 0.9, 1)
+metadata/_snap_count = 14
 
 [resource]
 gradient = SubResource("Gradient_xaycy")
