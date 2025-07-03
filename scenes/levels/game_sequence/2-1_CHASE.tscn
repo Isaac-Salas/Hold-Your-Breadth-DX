@@ -1,9 +1,9 @@
 [gd_scene load_steps=66 format=4 uid="uid://b6onmrleg7nri"]
 
-[ext_resource type="Texture2D" uid="uid://t1cl05tmmco7" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
+[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
 [ext_resource type="Script" uid="uid://gee6l5yoqpiv" path="res://scenes/levels/game_sequence/2_1_chase.gd" id="1_njuv6"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="3_g52sb"]
-[ext_resource type="Texture2D" uid="uid://d02h4val1unpr" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
+[ext_resource type="Texture2D" uid="uid://btleh0m7ckkmy" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
 [ext_resource type="Script" uid="uid://c7r8qowkgxsc1" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_01tns"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="5_wihit"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="7_gyrh6"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="23_d7m35"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="24_lnmw1"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="24_mvbe6"]
-[ext_resource type="Texture2D" uid="uid://db3iemtwsqbbr" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
+[ext_resource type="Texture2D" uid="uid://bixow8wew3lrr" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
 [ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="28_04mdq"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="29_njuv6"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="31_njuv6"]
@@ -635,6 +635,12 @@ position = Vector2(0, 416)
 [node name="Swing-light" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(1110, 86)
 
+[node name="Swing-light17" parent="Lights" instance=ExtResource("3_g52sb")]
+position = Vector2(989, 87)
+
+[node name="Light" parent="Lights/Swing-light17" index="1"]
+position = Vector2(0, 508)
+
 [node name="Swing-light2" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(664, 67)
 
@@ -952,5 +958,7 @@ level = 2
 [editable path="Lights/Swing-light14"]
 [editable path="Lights/Swing-light15"]
 [editable path="Lights/Swing-light16"]
+[editable path="Lights/Swing-light"]
+[editable path="Lights/Swing-light17"]
 [editable path="Lights/Swing-light2"]
 [editable path="Lights/Swing-light3"]

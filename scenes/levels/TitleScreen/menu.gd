@@ -86,7 +86,7 @@ func _on_options_mouse_exited():
 func _on_options_pressed():
 	if screenstuff != null:
 		var optionsmenu = screenstuff.options_menu
-		options.showtoggle()
+		optionsmenu.showtoggle()
 
 
 func _on_quit_mouse_entered():

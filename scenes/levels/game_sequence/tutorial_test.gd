@@ -191,6 +191,8 @@ func _process(delta):
 					
 					
 			15:
+				Manager.setter("Level1_1t", false)
+				Manager.save_game()
 				dialog.position.y = -80
 				dialog.size = Vector2(312, 50)
 				dialog.animated_sprite_2d.scale = Vector2(0.6,0.6)
@@ -206,6 +208,7 @@ func _process(delta):
 				await animp.animation_finished
 				if dialog.dumbdone:
 					dialog.clearcenter()
+					
 				
 			16:
 				hamsterzote.collision_layer = 0
@@ -228,6 +231,4 @@ func _on_transition_opendone():
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	if dialog.linecount == 16:
-		Manager.setter("Level1_1t", false)
-		Manager.save_game()
 		hamsterzote.queue_free()
