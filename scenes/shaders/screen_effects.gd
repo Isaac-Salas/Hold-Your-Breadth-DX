@@ -4,7 +4,6 @@ class_name ScreenStuff
 @onready var options_menu = $OptionsMenu
 @export var player : SlimePlayer
 @onready var background: Sprite2D = $Background
-@onready var center: Marker2D = $Center
 
 
 
