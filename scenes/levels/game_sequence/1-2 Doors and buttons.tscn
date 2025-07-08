@@ -447,8 +447,7 @@ position = Vector2(389, 306)
 rotation = 1.57079
 
 [node name="Exit-Sign" parent="." instance=ExtResource("12_gw1i6")]
-position = Vector2(659, 265)
-metadata/_edit_lock_ = true
+position = Vector2(659, 277)
 
 [node name="Light" parent="." instance=ExtResource("4_nhbgi")]
 position = Vector2(95, 248)

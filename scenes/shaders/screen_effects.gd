@@ -3,7 +3,7 @@ class_name ScreenStuff
 @export var showoverride : bool = false
 @onready var options_menu = $OptionsMenu
 @export var player : SlimePlayer
-@onready var background: Sprite2D = $Background
+#@onready var background: Sprite2D = $Background
 
 
 

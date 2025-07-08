@@ -191,7 +191,6 @@ metadata/_edit_lock_ = true
 [node name="Lamp2" parent="lamps" instance=ExtResource("4_naod3")]
 position = Vector2(862, 425)
 scale = Vector2(1, 1)
-metadata/_edit_lock_ = true
 
 [node name="Lamp4" parent="lamps" instance=ExtResource("4_naod3")]
 position = Vector2(907, 281)
@@ -306,8 +305,7 @@ position = Vector2(193, 591.329)
 rotation = 3.14159
 
 [node name="Exit-Sign" parent="." instance=ExtResource("18_3fs85")]
-position = Vector2(1038, 502)
-metadata/_edit_lock_ = true
+position = Vector2(1038, 517)
 
 [node name="dont touch" parent="." instance=ExtResource("14_30d8k")]
 visible = false
@@ -333,4 +331,5 @@ metadata/_edit_lock_ = true
 
 [node name="MusicSubmanager" parent="." instance=ExtResource("20_44rwg")]
 
+[editable path="lamps/Lamp2"]
 [editable path="Transition"]
