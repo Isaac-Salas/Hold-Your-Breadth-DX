@@ -5,12 +5,11 @@ class_name SwordOrbComponent
 @onready var VelVec
 @export var radius = 25
 @export var factor = 1
-@export var player : Node2D
 @export var debug_controller : bool
 @export var normalaim : bool 
 @onready var overridevisible : bool
 
-@export var Player : SlimePlayer
+@export var player : SlimePlayer
 
 
 func _ready():
@@ -30,6 +29,8 @@ func toggleprocess(toggle : bool):
 
 
 func _process(delta):
+	if player == null:
+		return
 	MousePos = get_local_mouse_position()
 	rotation += MousePos.angle()*(delta*factor)
 		#print("Show")
@@ -42,7 +43,7 @@ func _process(delta):
 	#print(aimcontroller)
 	var joypads = Input.get_connected_joypads()
 	if joypads.size() != 0:
-		Player.controller = true
+		player.controller = true
 		self.global_transform.origin = player.global_position + aimcontroller*radius
 		#print(str(self.name, ":", self.transform.origin ))
 		if normalaim == true:
@@ -54,9 +55,8 @@ func _process(delta):
 			self.visible = false
 		
 	else:
-		Player.controller = false
-		if distance > radius:
-			mouse_pos = player_pos + (mouse_dir * radius)
+		player.controller = false
+		mouse_pos = player_pos + (mouse_dir * radius)
 		self.global_transform.origin = mouse_pos
 		#print(str(self.name, ":", self.transform.origin ))
 	

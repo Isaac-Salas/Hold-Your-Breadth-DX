@@ -20,7 +20,7 @@ func _ready() -> void:
 	set_size(Vector2(starting_scale,starting_scale))
 	
 func _on_detector_area_entered(area: Area2D):
-	if area is ObjectDetect and area.get_parent().get_parent().sprite.scale >= sprite.scale:
+	if area is ObjectDetect and area.get_parent().get_parent().get_parent().sprite.scale >= sprite.scale:
 		print("Highlight!")
 		var newmat = ShaderMaterial.new()
 		newmat.shader = OUTLINE

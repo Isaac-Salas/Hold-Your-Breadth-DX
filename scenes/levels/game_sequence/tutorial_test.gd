@@ -36,15 +36,11 @@ func _ready():
 			await player.ready
 			player.object_detect.monitorable = false
 			player.object_detect.monitoring = false
-			player.crosshair.toggleprocess(false)
-			player.throwcross.toggleprocess(false)
-			player.throwcross.visible = false
-			
+			player.selector.set_process(false)
 			
 		false:
 			await player.ready
-			player.crosshair.toggleprocess(true)
-			player.throwcross.toggleprocess(true)
+			player.selector.set_process(true)
 			var boxes = frozen.get_children()
 			for box : ObjectClass in boxes:
 				box.freeze = false
@@ -118,16 +114,13 @@ func _process(delta):
 					tooltips.visible = true
 					tooltips.play("Aim")
 					blink.play("BlinkLoop")
-					player.crosshair.toggleprocess(true)
-					player.throwcross.toggleprocess(true)
+					player.selector.set_process(true)
 					if player.controller == true:
 						print("Using controller aim")
-						if player.throwcross.visible == true:
-							dialog.clearcenter()
-							dialog.show_end = true
-							dialog.InputSTOP = false
+						dialog.clearcenter()
+						dialog.show_end = true
+						dialog.InputSTOP = false
 					else:
-						player.throwcross.visible = true
 						if hamsterzote.indicator.visible == true:
 							dialog.clearcenter()
 							dialog.show_end = true

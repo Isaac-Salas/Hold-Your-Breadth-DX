@@ -13,18 +13,16 @@ class_name SlimePlayer
 #@export var scalerate = Vector2(0.1, 0.1)
 @onready var rigidcolision = $RigidBody2D/CollisionShape2D
 @onready var pickup = $Pickup
-@onready var object_detect : Area2D = $AnimatedSprite2D/ObjectDetect
+@onready var object_detect: ObjectDetect = $Selector/Crosshair/ObjectDetect
 @onready var currentobj
 @onready var picking = false
 @onready var throwing = false
 @onready var scanning = false
 @onready var toggle = false
 @onready var onarea = false
-@onready var crosshair : SwordOrbComponent = $Pickup/Crosshair
-@onready var throwcross : SwordOrbComponent = $AnimatedSprite2D
+@onready var selector: RayCast2D = $Selector
 
 @onready var scaler = $Scaler
-@onready var dot = $AnimatedSprite2D
 @onready var iscaling = false
 const states = ["Small", "Normal", "Big"]
 @onready var current = states[1]
@@ -74,20 +72,23 @@ func _physics_process(delta):
 		normallight.visible = false
 		small_light.visible = true
 		current = states[0]
+		pickup.position.y = -16
 	if sprite.scale.x >= 1 and sprite.scale.x <= 1.9:
 		SPEED = 400
 		JUMP_VELOCITY = -400
 		normallight.visible = true
 		small_light.visible = false
 		current = states[1]
+		pickup.position.y = -28
 	if sprite.scale.x >= 2 and sprite.scale.x <= 3:
-		dot.radius = 70
+		selector.radius = 70
 		SPEED = 100
 		JUMP_VELOCITY = -400
 		normallight.visible = true
 		small_light.visible = false
 		emit_signal("scare")
 		current = states[2]
+		pickup.position.y = -64
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -200,12 +201,12 @@ func togglefun():
 	if toggle == false:
 		toggle = true
 		
-		dot.visible = false
+		selector.visible = false
 		
 	else:
 		toggle = false
 		
-		dot.visible = true
+		selector.visible = true
 
 func scaling():
 	#print(sprite.scale)
@@ -243,7 +244,7 @@ func grab(body):
 		Grab.emit(true)
 		if body.is_in_group("Matraz"):
 			body.break_after_throw = true
-		$AnimatedSprite2D.visible = false
+		selector.status = 'grab'
 		picking = true
 		body.reparent(pickup)
 		body.freeze = true
@@ -269,28 +270,25 @@ func grab(body):
 
 func aim(delta):
 	throwing = true
-	crosshair.visible = true
-	throwcross.overridevisible = true
+	selector.status = 'aim'
 	
 	
 
 func throw(body):
 	if currentobj and picking == true:
 		Throw.emit(true)
-		$AnimatedSprite2D.visible = true
 		if currentobj.is_in_group("Meatbox"):
 			currentobj.picked = true
-		crosshair.visible = false
+		selector.status = 'look'
 		throwing = false
 		picking = false
-		currentobj.linear_velocity = crosshair.VelVec * THROW_SPEED
+		currentobj.linear_velocity = selector.VelVec * THROW_SPEED
 		currentobj.angular_velocity = 20.0
 		currentobj.reparent(get_tree().current_scene)
 		currentobj.freeze = false
 		currentobj.colision.disabled = false
 		currentobj.global_position = pickup.global_position
 		currentobj = null
-		throwcross.overridevisible = false
 		#print(currentobj)
 		
 func set_size(target_size):
