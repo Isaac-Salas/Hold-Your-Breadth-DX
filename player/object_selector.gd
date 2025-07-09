@@ -42,6 +42,7 @@ func _process(delta):
 	match status:
 		'grab':
 			crosshair.hide()
+			crosshair.play("default")
 		'aim':
 			crosshair.show()
 			position.y = pickup.position.y
