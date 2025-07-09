@@ -23,8 +23,9 @@ var _2_1_CHASE_CHANGE = load("res://scenes/levels/game_sequence/2-1_CHASEChange.
 
 @onready var hamster_setpiece = $Clutter/HamsterSetpiece
 @onready var boxes = $Clutter/Boxes
-@onready var bio_box = $Clutter/Bio_Box
-@onready var rats = $Clutter/Rats
+#@onready var bio_box = $Clutter/Bio_Box
+#@onready var rats = $Clutter/Rats
+@onready var music_submanager: Node = $MusicSubmanager
 
 
 
@@ -59,10 +60,10 @@ func _on_button_red_pressed(state, body):
 		stuff.queue_free()
 	for stuff in boxes.get_children():
 		stuff.queue_free()
-	for stuff in bio_box.get_children():
-		stuff.queue_free()
-	for stuff in rats.get_children():
-		stuff.queue_free()
+	#for stuff in bio_box.get_children():
+		#stuff.queue_free()
+#	for stuff in rats.get_children():
+		#stuff.queue_free()
 	var rattest = get_tree().get_first_node_in_group("edible")
 	if rattest != null:
 		rattest.queue_free()
@@ -77,10 +78,7 @@ func _on_player_detector_body_entered(body):
 	if body is SlimePlayer:
 		player.set_physics_process(false)
 		$Clutter/Lasers.queue_free()
-		var biobox = $Clutter/Bio_Box.get_children()
-		for things in biobox:
-			things.global_position.x += 500
-		
+
 
 
 

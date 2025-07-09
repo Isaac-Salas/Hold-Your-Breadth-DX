@@ -712,16 +712,13 @@ position = Vector2(420, -84)
 position = Vector2(249, -84)
 
 [node name="RigidBody2D4" parent="Boxes" instance=ExtResource("13_ah2pn")]
-position = Vector2(144, -84)
+position = Vector2(499, 84)
 
 [node name="RigidBody2D8" parent="Boxes" instance=ExtResource("13_ah2pn")]
 position = Vector2(925, -84)
 
 [node name="RigidBody2D9" parent="Boxes" instance=ExtResource("13_ah2pn")]
 position = Vector2(744, -84)
-
-[node name="RigidBody2D10" parent="Boxes" instance=ExtResource("13_ah2pn")]
-position = Vector2(120, -94)
 
 [node name="RigidBody2D5" parent="Boxes" instance=ExtResource("13_ah2pn")]
 position = Vector2(647, 84)
