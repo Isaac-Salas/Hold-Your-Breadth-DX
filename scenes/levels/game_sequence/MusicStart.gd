@@ -27,6 +27,10 @@ func compare_stream(matched : int):
 		if MusicManager.has_stream_playback():
 			pass
 		else:
+			MusicManager.fade_out(-80.0)
+			await MusicManager.fade_audio.finished
+			MusicManager.fade_in()
 			MusicManager.startplay(MusicManager.get(lookup),playback_speed)
 	else:
+		MusicManager.fade_in()
 		MusicManager.startplay(MusicManager.get(lookup),playback_speed)

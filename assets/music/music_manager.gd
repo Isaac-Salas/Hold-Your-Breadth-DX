@@ -17,13 +17,14 @@ func startplay(song, play_speed : int = 1):
 	play(0.0)
 	
 
-func fade_in(volume_override: float = songvolume , duration : float = 2.0):
+func fade_in(volume_override: float = -80.0, final_v_override: float = songvolume , duration : float = 2.0):
 	reset_tween()
-	fade_audio.tween_property(self,"volume_db", volume_override, duration)
+	volume_db = volume_override 
+	fade_audio.tween_property(self, "volume_db", final_v_override, duration)
 
 func fade_out(volume_override: float = songvolume, duration : float = 2.0):
 	reset_tween()
-	fade_audio.tween_property(self,"volume_db", volume_override, duration)
+	fade_audio.tween_property(self, "volume_db", volume_override, duration)
 
 func reset_tween():
 	if fade_audio:
