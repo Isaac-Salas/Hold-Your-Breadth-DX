@@ -48,7 +48,11 @@ func _process(delta):
 			if crosshair.animation != 'throw':
 				crosshair.play("throw")
 			previous_collider = null
-			collision_point = target_position + global_position
+			if is_colliding():
+				var collider = get_collider()
+				collision_point = get_collision_point()
+			else:
+				collision_point = target_position + global_position
 		'look':
 			if using_controller and aimcontroller == Vector2.ZERO:
 				crosshair.hide()

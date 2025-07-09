@@ -523,6 +523,7 @@ debug_color = Color(0.819608, 0, 0, 0.772549)
 [node name="Selector" type="RayCast2D" parent="." node_paths=PackedStringArray("player")]
 process_mode = 1
 target_position = Vector2(50, 0)
+hit_from_inside = true
 script = ExtResource("5_3dxkp")
 player = NodePath("..")
 

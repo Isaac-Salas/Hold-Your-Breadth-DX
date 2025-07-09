@@ -1,6 +1,5 @@
 extends CharacterBody2D
 class_name SlimePlayer
-
 @onready var ragdoll_spawn = $RagdollSpawn
 @onready var PLAYERAGDOLL = load("res://player/playeragdoll.tscn")
 @onready var defaultmouse = preload("res://assets/placeholder/Tiles/tile_0170.png")
@@ -178,8 +177,12 @@ func _physics_process(delta):
 		aim(delta)
 
 	if Input.is_action_just_released("RightMouse") and throwing == true:
-		throw(currentobj)
-		object_detect.monitorable = true
+		var success = throw(currentobj)
+		if success:
+			object_detect.monitorable = true
+		else:
+			selector.status = 'grab'
+			
 
 	if tieso == false:
 		last_floor = is_on_floor()
@@ -275,7 +278,7 @@ func aim(delta):
 	
 
 func throw(body):
-	if currentobj and picking == true:
+	if currentobj and picking == true and selector.VelVec.length()>6:
 		Throw.emit(true)
 		if currentobj.is_in_group("Meatbox"):
 			currentobj.picked = true
@@ -290,6 +293,9 @@ func throw(body):
 		currentobj.global_position = pickup.global_position
 		currentobj = null
 		#print(currentobj)
+		return  true
+	else:
+		return false
 		
 func set_size(target_size):
 	colision.scale = target_size/2

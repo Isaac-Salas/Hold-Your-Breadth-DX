@@ -467,9 +467,6 @@ target_scene = ExtResource("19_uk2xt")
 position = Vector2(779.25, 337.729)
 shape = SubResource("RectangleShape2D_cuym5")
 
-[node name="AudioStreamPlayer2D" parent="Transition" index="4"]
-stream_paused = false
-
 [node name="Indicator-X" parent="." instance=ExtResource("20_wph5r")]
 position = Vector2(98, 146)
 
