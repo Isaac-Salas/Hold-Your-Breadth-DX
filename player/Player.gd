@@ -66,6 +66,7 @@ func _physics_process(delta):
 	#print(sprite.scale)
 	#print(current)
 	if sprite.scale.x >= 0.1 and sprite.scale.x <= 0.9:
+		selector.radius = 40
 		SPEED = 600
 		JUMP_VELOCITY = -600
 		normallight.visible = false
@@ -73,6 +74,7 @@ func _physics_process(delta):
 		current = states[0]
 		pickup.position.y = -16
 	if sprite.scale.x >= 1 and sprite.scale.x <= 1.9:
+		selector.radius = 70
 		SPEED = 400
 		JUMP_VELOCITY = -400
 		normallight.visible = true
@@ -80,7 +82,7 @@ func _physics_process(delta):
 		current = states[1]
 		pickup.position.y = -28
 	if sprite.scale.x >= 2 and sprite.scale.x <= 3:
-		selector.radius = 70
+		selector.radius = 100
 		SPEED = 100
 		JUMP_VELOCITY = -400
 		normallight.visible = true

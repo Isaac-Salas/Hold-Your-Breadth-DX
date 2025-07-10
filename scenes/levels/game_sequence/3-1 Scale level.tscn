@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bhe6366hku86k"]
+[gd_scene load_steps=37 format=4 uid="uid://bhe6366hku86k"]
 
 [ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="1_etyb7"]
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_g4vrm"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="20_56ndd"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="20_i3ljc"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="22_kvmod"]
+[ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="23_swnxp"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0uvpa"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -420,5 +421,8 @@ position = Vector2(192, 253)
 rotation = 1.57079
 
 [node name="MusicSubmanager" parent="." instance=ExtResource("22_kvmod")]
+
+[node name="MeatBox" parent="." instance=ExtResource("23_swnxp")]
+position = Vector2(459, 248)
 
 [editable path="Transition"]

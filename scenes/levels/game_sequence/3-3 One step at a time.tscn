@@ -594,9 +594,6 @@ metadata/_edit_lock_ = true
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform" parent="Platforms" instance=ExtResource("2_iu3pf")]
-position = Vector2(528, 536)
-
 [node name="Platform2" parent="Platforms" instance=ExtResource("2_iu3pf")]
 position = Vector2(528, 464)
 
@@ -917,7 +914,7 @@ z_index = 1
 position = Vector2(-313, 24)
 
 [node name="Scale_button_green" parent="Buttons" instance=ExtResource("17_1l80g")]
-position = Vector2(294, 619)
+position = Vector2(294, 624)
 activation_weight = 6.0
 
 [node name="Scale_green_reciever" parent="Buttons/Scale_button_green" instance=ExtResource("16_yho6e")]
@@ -947,10 +944,6 @@ target_scale = Vector2(6, 6)
 [node name="WoodenBox" parent="Pickups" instance=ExtResource("20_di8vv")]
 position = Vector2(560, 181)
 starting_scale = 2.7
-
-[node name="WoodenBox2" parent="Pickups" instance=ExtResource("20_di8vv")]
-position = Vector2(76, 453)
-starting_scale = 6.0
 
 [node name="dont touch" parent="." instance=ExtResource("21_1ytax")]
 visible = false
@@ -1021,9 +1014,11 @@ position = Vector2(0, 310)
 
 [node name="Light3" parent="." instance=ExtResource("7_otp53")]
 position = Vector2(87, 56)
+metadata/_edit_lock_ = true
 
 [node name="Lamp" parent="." instance=ExtResource("8_aadv5")]
 position = Vector2(433, 617)
+metadata/_edit_lock_ = true
 
 [node name="Light4" parent="." instance=ExtResource("7_otp53")]
 position = Vector2(1058, 104)

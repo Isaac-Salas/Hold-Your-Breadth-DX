@@ -65,7 +65,7 @@ func _on_timer_timeout():
 
 func _on_detector_area_entered(area):
 	if area is ObjectDetect and area.get_parent().get_parent().get_parent().sprite.scale >= sprite.scale:
-		print("Highlight!")
+		#print("Highlight!")
 		var newmat = ShaderMaterial.new()
 		newmat.shader = OUTLINE
 		newmat.set_shader_parameter("width", 2)
