@@ -1,17 +1,20 @@
-[gd_scene load_steps=10 format=4 uid="uid://d0n6jfdhpgnyk"]
+[gd_scene load_steps=14 format=4 uid="uid://8vsq4yip7jnd"]
 
-[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_p5s7a"]
-[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_xihgk"]
-[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="5_8w70j"]
-[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="6_r6sia"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="28_bmbu7"]
-[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="30_dsoc1"]
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_1uopv"]
+[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_xkupa"]
+[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_y7ul2"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_f57xs"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="5_4aown"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="6_kfd1i"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="7_xkupa"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="8_y7ul2"]
+[ext_resource type="PackedScene" uid="uid://b5vnccxojplyt" path="res://scenes/bosses/Eyeboss/swinging_eye.tscn" id="9_f57xs"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u1ug"]
-texture = ExtResource("2_xihgk")
+texture = ExtResource("2_xkupa")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -136,8 +139,11 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ul2"]
+size = Vector2(40, 80)
+
 [node name="TutorialLevel" type="Node2D"]
-script = ExtResource("1_p5s7a")
+script = ExtResource("1_1uopv")
 ZoneNumber = 1
 LevelNumber = 1
 
@@ -147,12 +153,42 @@ tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAA
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="MusicSubmanager" parent="." instance=ExtResource("30_dsoc1")]
+[node name="MusicSubmanager" parent="." instance=ExtResource("3_y7ul2")]
 
-[node name="Transition" parent="." instance=ExtResource("28_bmbu7")]
+[node name="Transition" parent="." instance=ExtResource("4_f57xs")]
 scale = Vector2(1.5, 1.5)
 
-[node name="dont touch" parent="." instance=ExtResource("5_8w70j")]
+[node name="dont touch" parent="." instance=ExtResource("5_4aown")]
 
-[node name="Slime" parent="." instance=ExtResource("6_r6sia")]
-position = Vector2(177, 100)
+[node name="Slime" parent="." instance=ExtResource("6_kfd1i")]
+position = Vector2(98, 571)
+
+[node name="EYEMAN" type="Node2D" parent="."]
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Swing-light" parent="Lights" instance=ExtResource("7_xkupa")]
+position = Vector2(481, 46)
+
+[node name="Swing-light4" parent="Lights" instance=ExtResource("7_xkupa")]
+position = Vector2(237, 46)
+
+[node name="Swing-light2" parent="Lights" instance=ExtResource("7_xkupa")]
+position = Vector2(736, 46)
+
+[node name="Swing-light3" parent="Lights" instance=ExtResource("7_xkupa")]
+position = Vector2(959, 46)
+
+[node name="WoodenBox" parent="." instance=ExtResource("8_y7ul2")]
+position = Vector2(181, 556)
+
+[node name="Bosss" type="Node2D" parent="."]
+position = Vector2(742, 585)
+
+[node name="Body" type="CharacterBody2D" parent="Bosss"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bosss/Body"]
+shape = SubResource("RectangleShape2D_y7ul2")
+
+[node name="SwingingEye" parent="." instance=ExtResource("9_f57xs")]
+position = Vector2(848, 185)

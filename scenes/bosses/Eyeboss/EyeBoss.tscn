@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds1au7rotbfwu"]
+
+[ext_resource type="Script" uid="uid://bari4086i5bh5" path="res://scenes/bosses/Eyeboss/Eyeboss.gd" id="1_kr0n8"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="2_gi70e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ul2"]
+size = Vector2(40, 80)
+
+[node name="Bosss" type="Node2D"]
+script = ExtResource("1_kr0n8")
+eye_positions = PackedVector2Array(0, 0, 0, 0, 0, 0)
+
+[node name="Body" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_y7ul2")
+
+[node name="Spawner" type="Marker2D" parent="."]
+script = ExtResource("2_gi70e")
