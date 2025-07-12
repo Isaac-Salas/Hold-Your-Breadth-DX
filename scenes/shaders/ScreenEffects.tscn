@@ -5,8 +5,8 @@
 [ext_resource type="Shader" uid="uid://gqwp80ax2fua" path="res://scenes/shaders/testing.gdshader" id="3_efeye"]
 [ext_resource type="Texture2D" uid="uid://cty26p5f5km38" path="res://scenes/shaders/ColorGradeP-O.tres" id="4_yvgg5"]
 [ext_resource type="PackedScene" uid="uid://fnvs7y1btss0" path="res://scenes/shaders/Options_Menu.tscn" id="5_e0uqf"]
-[ext_resource type="Texture2D" uid="uid://ccucdxjicqv4u" path="res://assets/fondos/N1/FONDO-N1.png" id="6_hnkga"]
-[ext_resource type="Texture2D" uid="uid://bmooji6mhiot4" path="res://assets/fondos/N1/OVERLAY-N1.png" id="7_yyeuh"]
+[ext_resource type="Texture2D" uid="uid://dhj11hkl1skvw" path="res://assets/fondos/N1/FONDO-N1.png" id="6_hnkga"]
+[ext_resource type="Texture2D" uid="uid://dokaowo7fbqp5" path="res://assets/fondos/N1/OVERLAY-N1.png" id="7_yyeuh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uh315"]
 shader = ExtResource("3_efeye")

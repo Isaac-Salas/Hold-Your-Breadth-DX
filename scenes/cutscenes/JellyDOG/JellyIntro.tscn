@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="1_gem5w"]
 [ext_resource type="Script" uid="uid://duqjcmce1wpy7" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_p6wik"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="2_6wsk4"]
-[ext_resource type="Texture2D" uid="uid://csaw2r7p3ub2b" path="res://assets/DOG.png" id="2_ihy1v"]
+[ext_resource type="Texture2D" uid="uid://cccrtphi6vqv4" path="res://assets/DOG.png" id="2_ihy1v"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_7241v"]
 [ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="6_pmtte"]
 
@@ -12,7 +12,7 @@ script = ExtResource("1_p6wik")
 
 [node name="dont touch" parent="." instance=ExtResource("1_gem5w")]
 
-[node name="CanvasModulate" parent="dont touch" index="1"]
+[node name="CanvasModulate" parent="dont touch" index="2"]
 color = Color(0.0189402, 0.0189402, 0.0189402, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -33,4 +33,4 @@ func _process(delta: float) -> void:
 			#collider._on_ray_collided(target_size)
 			#GlobalVar.MinCap = target_size
 			#GlobalVar.MaxCap = target_size
-			#GlobalVar.sizefactor = target_size
+			#GlobalVar.sizefactor = target_size dante was here
