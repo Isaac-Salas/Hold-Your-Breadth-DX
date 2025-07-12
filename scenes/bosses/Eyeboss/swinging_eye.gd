@@ -8,7 +8,8 @@ extends Node2D
 @export var scaling : Vector2
 @onready var sprite_2d = $Light/Sprite2D
 @onready var collision_shape_2d = $Light/CollisionShape2D
-@onready var light = $Light/PointLight2D
+@onready var light: PointLight2D = $Light/PointLight2D
+
 
 @onready var lightphy = $Light
 @onready var visible_on_screen_notifier_2d = $Light/VisibleOnScreenNotifier2D
