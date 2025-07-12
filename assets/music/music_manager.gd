@@ -9,20 +9,15 @@ const HTB_SONG_2_1_SLOW = preload("res://assets/music/HtbSong2-1Slow.mp3")
 var fade_audio : Tween
 
 
-func startplay(song, play_speed : int = 1):
+func startplay(song, play_speed : int = 1, vol_override : float = songvolume):
 	pitch_scale = play_speed
 	stream = song
-	volume_db = songvolume
+	volume_db = vol_override
 	bus = "Music"
 	play(0.0)
 	
 
-func fade_in(volume_override: float = -80.0, final_v_override: float = songvolume , duration : float = 2.0):
-	reset_tween()
-	volume_db = volume_override 
-	fade_audio.tween_property(self, "volume_db", final_v_override, duration)
-
-func fade_out(volume_override: float = songvolume, duration : float = 2.0):
+func fade(volume_override : float = songvolume, duration : float = 1.5):
 	reset_tween()
 	fade_audio.tween_property(self, "volume_db", volume_override, duration)
 

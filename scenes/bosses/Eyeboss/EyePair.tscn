@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsprokm8sxjp8"]
+
+[ext_resource type="PackedScene" uid="uid://b5vnccxojplyt" path="res://scenes/bosses/Eyeboss/swinging_eye.tscn" id="1_eb230"]
+
+[node name="EyePair" type="Node2D"]
+
+[node name="SwingingEye" parent="." instance=ExtResource("1_eb230")]
