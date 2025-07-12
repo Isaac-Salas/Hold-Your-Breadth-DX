@@ -1,17 +1,18 @@
-[gd_scene load_steps=16 format=4 uid="uid://cdw3i1mw8y7og"]
+[gd_scene load_steps=20 format=4 uid="uid://cdw3i1mw8y7og"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_hsruv"]
 [ext_resource type="Texture2D" uid="uid://bca33b548wxnw" path="res://assets/tilemap/concrete.png" id="2_4w5xs"]
-[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="2_330u3"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_lvie0"]
-[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="3_jqdbx"]
+[ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="3_0bucx"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_lvie0"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_he7u6"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_lfnpk"]
-[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="4_qhpjq"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="5_jqdbx"]
 [ext_resource type="PackedScene" uid="uid://ccn1j6v25t2oc" path="res://scenes/levels/game_sequence/4-1 Meatbokkusu.tscn" id="6_he7u6"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="10_71dju"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="10_lfnpk"]
+[ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="10_qhpjq"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="13_5u5iw"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -142,35 +143,61 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
+[sub_resource type="Animation" id="Animation_71dju"]
+resource_name = "rot"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_5u5iw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lfiql"]
+_data = {
+&"RESET": SubResource("Animation_5u5iw"),
+&"rot": SubResource("Animation_71dju")
+}
+
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_hsruv")
 ZoneNumber = 4
 LevelNumber = 1
 
-[node name="Ratfleemarker" parent="." instance=ExtResource("2_330u3")]
-position = Vector2(853, 526)
-scale = Vector2(1.5, 1.5)
-
-[node name="Door" parent="." instance=ExtResource("4_lfnpk")]
-position = Vector2(1139, 504)
-scale = Vector2(1.5, 1.5)
-
-[node name="Button_red" parent="Door" instance=ExtResource("4_qhpjq")]
-position = Vector2(-594.667, 45.3333)
-
-[node name="Ratspawn" parent="." node_paths=PackedStringArray("Fleemarker") instance=ExtResource("3_jqdbx")]
-position = Vector2(87, 528)
-scale = Vector2(1.5, 1.5)
-Rat_number = 1
-Fleemarker = NodePath("../Ratfleemarker")
+[node name="MeatBox" parent="." instance=ExtResource("3_0bucx")]
+position = Vector2(864, 130)
+mass = 2.0
+Lastingtime = 1e+09
 
 [node name="Slime" parent="." instance=ExtResource("2_lvie0")]
-position = Vector2(192, 181)
+position = Vector2(96, 25)
 
 [node name="Tilemap" type="TileMapLayer" parent="."]
 use_parent_material = true
 rotation = 8.29355e-05
-tile_map_data = PackedByteArray("AAAQAAwAAAABAAAAAAARAAwAAAABAAAAAAASAAwAAAABAAAAAAATAAwAAAABAAAAAAAUAAwAAAABAAAAAAAVAAwAAAABAAAAAAAWAAwAAAABAAAAAAAXAAwAAAACAAAAAAAAAA0AAAAAAAIAAAABAA0AAAABAAIAAAACAA0AAAABAAIAAAADAA0AAAABAAIAAAAEAA0AAAABAAIAAAAFAA0AAAABAAIAAAAGAA0AAAABAAIAAAAHAA0AAAABAAIAAAAIAA0AAAABAAIAAAAJAA0AAAABAAIAAAAKAA0AAAABAAIAAAALAA0AAAABAAIAAAAMAA0AAAABAAIAAAANAA0AAAABAAIAAAAOAA0AAAABAAIAAAAPAA0AAAABAAIAAAAQAA0AAAABAAIAAAARAA0AAAABAAIAAAASAA0AAAABAAIAAAATAA0AAAABAAIAAAAUAA0AAAABAAIAAAAVAA0AAAABAAIAAAAWAA0AAAABAAIAAAAXAA0AAAACAAIAAAAPAAwAAAABAAAAAAAOAAwAAAABAAAAAAANAAwAAAABAAAAAAAMAAwAAAABAAAAAAALAAwAAAABAAAAAAAKAAwAAAABAAAAAAAJAAwAAAABAAAAAAAIAAwAAAABAAAAAAAHAAwAAAABAAAAAAAGAAwAAAABAAAAAAAFAAwAAAABAAAAAAAEAAwAAAABAAAAAAADAAwAAAABAAAAAAACAAwAAAABAAAAAAABAAwAAAABAAAAAAAAAAwAAAAAAAEAAAADAAAAAAADAAEAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAAAAEAAAACAAEAAAAAAAIAAAACAAEAAAAAAAMAAAACAAEAAAAAAAQAAAACAAEAAAAAAAUAAAACAAEAAAAAAAYAAAACAAEAAAAAAAcAAAACAAEAAAAAAAgAAAACAAEAAAAAAAkAAAACAAEAAAAAAAoAAAACAAEAAAAAAAsAAAACAAEAAAAXAAcAAAAAAAEAAAAXAAYAAAAAAAEAAAAXAAUAAAAAAAEAAAAXAAQAAAAAAAEAAAAXAAMAAAAAAAEAAAAXAAIAAAAAAAEAAAAXAAEAAAAAAAEAAAAXAAgAAAAAAAIAAAAXAAAAAAABAAAAAAAAAAAAAAACAAEAAAA=")
+tile_map_data = PackedByteArray("AAAQAAwAAAABAAAAAAARAAwAAAABAAAAAAASAAwAAAABAAAAAAATAAwAAAABAAAAAAAUAAwAAAABAAAAAAAVAAwAAAABAAAAAAAWAAwAAAABAAAAAAAXAAwAAAACAAAAAAAAAA0AAAAAAAIAAAABAA0AAAABAAIAAAACAA0AAAABAAIAAAADAA0AAAABAAIAAAAEAA0AAAABAAIAAAAFAA0AAAABAAIAAAAGAA0AAAABAAIAAAAHAA0AAAABAAIAAAAIAA0AAAABAAIAAAAJAA0AAAABAAIAAAAKAA0AAAABAAIAAAALAA0AAAABAAIAAAAMAA0AAAABAAIAAAANAA0AAAABAAIAAAAOAA0AAAABAAIAAAAPAA0AAAABAAIAAAAQAA0AAAABAAIAAAARAA0AAAABAAIAAAASAA0AAAABAAIAAAATAA0AAAABAAIAAAAUAA0AAAABAAIAAAAVAA0AAAABAAIAAAAWAA0AAAABAAIAAAAXAA0AAAACAAIAAAAPAAwAAAABAAAAAAAOAAwAAAABAAAAAAANAAwAAAABAAAAAAAMAAwAAAABAAAAAAALAAwAAAABAAAAAAAKAAwAAAABAAAAAAAJAAwAAAABAAAAAAAIAAwAAAABAAAAAAAHAAwAAAABAAAAAAAGAAwAAAABAAAAAAAFAAwAAAABAAAAAAAEAAwAAAABAAAAAAADAAwAAAABAAAAAAACAAwAAAABAAAAAAABAAwAAAABAAAAAAAAAAwAAAAAAAEAAAADAAAAAAADAAEAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAAAAEAAAACAAEAAAAAAAIAAAACAAEAAAAAAAMAAAACAAEAAAAAAAQAAAAEAAEAAAAAAAYAAAACAAEAAAAAAAcAAAACAAEAAAAAAAgAAAACAAEAAAAAAAkAAAACAAEAAAAAAAoAAAACAAEAAAAAAAsAAAACAAEAAAAXAAcAAAAAAAEAAAAXAAYAAAAAAAEAAAAXAAUAAAAAAAEAAAAXAAQAAAAAAAEAAAAXAAMAAAABAAEAAAAXAAIAAAAAAAEAAAAXAAEAAAAAAAEAAAAXAAgAAAAAAAIAAAAXAAAAAAABAAAAAAAAAAAAAAACAAEAAAAWAAMAAAAEAAAAAAAVAAMAAAAEAAAAAAAUAAMAAAABAAIAAAATAAMAAAAEAAAAAAASAAMAAAAEAAAAAAARAAMAAAAEAAAAAAAQAAMAAAAEAAAAAAAPAAMAAAAEAAAAAAAOAAMAAAAEAAAAAAANAAMAAAAEAAAAAAAMAAMAAAAEAAAAAAALAAMAAAAEAAAAAAAKAAMAAAAEAAAAAAAJAAMAAAAEAAAAAAAIAAMAAAAEAAAAAAAHAAMAAAAEAAAAAAAGAAMAAAAEAAAAAAAFAAMAAAADAAEAAAAAAAUAAAAEAAEAAAAEAAYAAAADAAEAAAAFAAYAAAADAAIAAAAIAAUAAAADAAEAAAAJAAUAAAADAAIAAAAHAAkAAAADAAEAAAAIAAkAAAADAAIAAAANAAkAAAADAAEAAAAOAAkAAAADAAIAAAAPAAYAAAADAAIAAAAOAAYAAAADAAEAAAASAAUAAAADAAEAAAATAAUAAAADAAIAAAARAAkAAAADAAEAAAASAAkAAAADAAIAAAAUAAIAAAAFAAEAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
@@ -186,9 +213,59 @@ stream_paused = false
 
 [node name="dont touch" parent="." instance=ExtResource("10_lfnpk")]
 
-[node name="Grow-Laser" parent="." instance=ExtResource("5_jqdbx")]
-position = Vector2(1063, 66)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(549, 383)
+
+[node name="Grow-Laser2" parent="Node2D" instance=ExtResource("5_jqdbx")]
+rotation = -1.5708
+target_scale = Vector2(3, 3)
+
+[node name="Grow-Laser3" parent="Node2D" instance=ExtResource("5_jqdbx")]
+rotation = 3.14159
+target_scale = Vector2(3, 3)
+
+[node name="Grow-Laser4" parent="Node2D" instance=ExtResource("5_jqdbx")]
+target_scale = Vector2(3, 3)
+
+[node name="Grow-Laser" parent="Node2D" instance=ExtResource("5_jqdbx")]
 rotation = 1.57079
-target_scale = Vector2(6, 6)
+target_scale = Vector2(3, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_lfiql")
+}
+autoplay = "rot"
+
+[node name="Shrink-Laser" parent="." instance=ExtResource("10_71dju")]
+position = Vector2(349, 41)
+rotation = 1.57079
+target_scale = Vector2(2, 2)
+
+[node name="Scale_button_green" parent="." instance=ExtResource("10_qhpjq")]
+position = Vector2(1056, 144)
+activation_weight = 2.0
+
+[node name="Door" parent="Scale_button_green" instance=ExtResource("4_lfnpk")]
+position = Vector2(83, 360)
+scale = Vector2(1.5, 1.5)
+
+[node name="Platform" parent="." instance=ExtResource("13_5u5iw")]
+position = Vector2(96, 128)
+
+[node name="Platform2" parent="." instance=ExtResource("13_5u5iw")]
+position = Vector2(96, 208)
+
+[node name="Platform3" parent="." instance=ExtResource("13_5u5iw")]
+position = Vector2(96, 285)
+
+[node name="Platform4" parent="." instance=ExtResource("13_5u5iw")]
+position = Vector2(96, 371)
+
+[node name="Platform5" parent="." instance=ExtResource("13_5u5iw")]
+position = Vector2(96, 458)
+
+[node name="Platform6" parent="." instance=ExtResource("13_5u5iw")]
+position = Vector2(96, 536)
 
 [editable path="Transition"]
