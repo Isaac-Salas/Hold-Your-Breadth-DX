@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5vnccxojplyt"]
+[gd_scene load_steps=15 format=3 uid="uid://b5vnccxojplyt"]
 
 [ext_resource type="Script" uid="uid://1qwloswdmkhn" path="res://scenes/bosses/Eyeboss/swinging_eye.gd" id="1_ktrla"]
 [ext_resource type="Texture2D" uid="uid://bhvbf442h26k1" path="res://assets/bosses/EyeBoss/Eye.png" id="2_l2hy5"]
@@ -7,14 +7,16 @@
 [ext_resource type="AudioStream" uid="uid://dxng2lbah0x0s" path="res://assets/audioshit/bulb_light.mp3" id="5_u0ucu"]
 [ext_resource type="AudioStream" uid="uid://c26afn3bivs4i" path="res://assets/audioshit/clink_foco.mp3" id="6_8q8kp"]
 [ext_resource type="Script" uid="uid://cldlbvefbjpts" path="res://scenes/cutscenes/Verlet/string.gd" id="7_mkrx4"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="8_l2hy5"]
+[ext_resource type="PackedScene" uid="uid://bw7ejgkd2yxnk" path="res://scenes/objects/Eye.tscn" id="9_th7r7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4lh8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mraj3"]
 light_mode = 1
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f2v3x"]
-radius = 12.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_th7r7"]
+radius = 17.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3g7t1"]
 blend_mode = 1
@@ -23,6 +25,7 @@ blend_mode = 1
 
 [node name="SwingingEye" type="Node2D" groups=["Light"]]
 script = ExtResource("1_ktrla")
+hang = true
 
 [node name="Puntocent" type="StaticBody2D" parent="."]
 collision_layer = 0
@@ -33,11 +36,10 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_x4lh8")
 metadata/_edit_lock_ = true
 
-[node name="Light" type="RigidBody2D" parent="." groups=["button_actionable", "throwable"]]
+[node name="Light" type="RigidBody2D" parent="."]
 position = Vector2(0, 200)
-collision_layer = 0
+collision_layer = 2
 collision_mask = 3
-freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 
@@ -45,13 +47,12 @@ max_contacts_reported = 1
 z_index = 1
 material = SubResource("CanvasItemMaterial_mraj3")
 texture = ExtResource("2_l2hy5")
-offset = Vector2(5, 0)
 flip_h = true
 script = ExtResource("3_th7r7")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
-shape = SubResource("CircleShape2D_f2v3x")
+shape = SubResource("CircleShape2D_th7r7")
 metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Light"]
@@ -106,6 +107,11 @@ points = PackedVector2Array(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0
 width = 3.0
 default_color = Color(0.483683, 0.190703, 0.206418, 1)
 metadata/_edit_lock_ = true
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("8_l2hy5")
+scene = ExtResource("9_th7r7")
+metadata/_custom_type_script = "uid://dou5h5mjmu8sy"
 
 [connection signal="body_entered" from="Light" to="." method="_on_light_body_entered"]
 [connection signal="screen_entered" from="Light/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

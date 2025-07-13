@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_f57xs"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="5_4aown"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="6_kfd1i"]
-[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="7_xkupa"]
+[ext_resource type="PackedScene" uid="uid://ds1au7rotbfwu" path="res://scenes/bosses/Eyeboss/EyeBoss.tscn" id="8_f57xs"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="8_y7ul2"]
 [ext_resource type="PackedScene" uid="uid://b5vnccxojplyt" path="res://scenes/bosses/Eyeboss/swinging_eye.tscn" id="9_f57xs"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="10_4aown"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -139,9 +140,6 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ul2"]
-size = Vector2(40, 80)
-
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_1uopv")
 
@@ -163,42 +161,29 @@ position = Vector2(98, 571)
 
 [node name="EYEMAN" type="Node2D" parent="."]
 
-[node name="Lights" type="Node2D" parent="."]
-
-[node name="Swing-light" parent="Lights" instance=ExtResource("7_xkupa")]
-position = Vector2(481, 46)
-
-[node name="Swing-light4" parent="Lights" instance=ExtResource("7_xkupa")]
-position = Vector2(237, 46)
-
-[node name="Swing-light2" parent="Lights" instance=ExtResource("7_xkupa")]
-position = Vector2(736, 46)
-
-[node name="Swing-light3" parent="Lights" instance=ExtResource("7_xkupa")]
-position = Vector2(959, 46)
-
 [node name="WoodenBox" parent="." instance=ExtResource("8_y7ul2")]
 position = Vector2(181, 556)
 
-[node name="Bosss" type="Node2D" parent="."]
-position = Vector2(742, 585)
-
-[node name="Body" type="CharacterBody2D" parent="Bosss"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bosss/Body"]
-shape = SubResource("RectangleShape2D_y7ul2")
+[node name="Bosss" parent="." instance=ExtResource("8_f57xs")]
+position = Vector2(1009, 583)
 
 [node name="SwingingEye" parent="." instance=ExtResource("9_f57xs")]
-position = Vector2(848, 185)
+position = Vector2(491, 255)
 
 [node name="SwingingEye2" parent="." instance=ExtResource("9_f57xs")]
-position = Vector2(585, 267)
+position = Vector2(609, 260)
 
-[node name="SwingingEye3" parent="." instance=ExtResource("9_f57xs")]
-position = Vector2(600, 94)
+[node name="Light" parent="." instance=ExtResource("10_4aown")]
+position = Vector2(132, 56)
 
-[node name="SwingingEye4" parent="." instance=ExtResource("9_f57xs")]
-position = Vector2(312, 208)
+[node name="Light2" parent="." instance=ExtResource("10_4aown")]
+position = Vector2(324, 56)
 
-[node name="SwingingEye5" parent="." instance=ExtResource("9_f57xs")]
-position = Vector2(364, -52)
+[node name="Light3" parent="." instance=ExtResource("10_4aown")]
+position = Vector2(1012, 56)
+
+[node name="Light4" parent="." instance=ExtResource("10_4aown")]
+position = Vector2(556, 56)
+
+[node name="Light5" parent="." instance=ExtResource("10_4aown")]
+position = Vector2(792, 56)

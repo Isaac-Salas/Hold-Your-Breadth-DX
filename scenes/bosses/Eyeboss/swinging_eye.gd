@@ -22,13 +22,21 @@ extends Node2D
 
 @onready var clinck = $Light/Clinck
 @export var drop : bool
+@onready var spawner_component: SpawnerComponent = $SpawnerComponent
+@export var hang : bool 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if drop == true:
 		droplight()
 	
-	
+	if hang == true:
+		lightphy.freeze = false
+	else:
+		lightphy.freeze = true
+		lightphy.position = Vector2(0,0)
+		
 	scaling = self.scale
 	string.ropeLength = light.position.y
 	sprite_2d.scale = scaling
@@ -60,8 +68,10 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 	
 
 func droplight():
-	pin_joint_2d.queue_free()
-	string.queue_free()
+	if pin_joint_2d != null:
+		spawner_component.spawn(light.global_position, self.get_parent())
+		self.queue_free()
+		
 
 func dropdown():
 	pin_joint_2d.queue_free()
@@ -72,6 +82,7 @@ func dropdown():
 
 
 func _on_light_body_entered(body):
-	pass
+	if body.is_in_group("throwable"):
+		droplight()
 	#clinck.pitch_scale = randf_range(1.0, 2.0)
 	#clinck.play()
