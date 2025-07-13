@@ -165,7 +165,7 @@ position = Vector2(98, 571)
 position = Vector2(181, 556)
 
 [node name="Bosss" parent="." instance=ExtResource("8_f57xs")]
-position = Vector2(1009, 583)
+position = Vector2(877, 575)
 
 [node name="SwingingEye" parent="." instance=ExtResource("9_f57xs")]
 position = Vector2(491, 255)

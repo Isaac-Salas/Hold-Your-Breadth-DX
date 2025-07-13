@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds1au7rotbfwu"]
+[gd_scene load_steps=5 format=3 uid="uid://ds1au7rotbfwu"]
 
 [ext_resource type="Script" uid="uid://bari4086i5bh5" path="res://scenes/bosses/Eyeboss/Eyeboss.gd" id="1_kr0n8"]
 [ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="2_gi70e"]
+[ext_resource type="Texture2D" uid="uid://dkwnbe5eo4eq1" path="res://assets/bosses/EyeBoss/Scientits.png" id="2_hmhsc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ul2"]
-size = Vector2(40, 80)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmhsc"]
+size = Vector2(20, 96)
 
 [node name="Bosss" type="Node2D"]
 script = ExtResource("1_kr0n8")
@@ -12,8 +13,76 @@ eye_positions = PackedVector2Array(0, 0, 0, 0, 0, 0)
 
 [node name="Body" type="CharacterBody2D" parent="."]
 
+[node name="Polygons" type="Node2D" parent="Body"]
+position = Vector2(-71, -49)
+
+[node name="Head" type="Polygon2D" parent="Body/Polygons"]
+z_index = 1
+texture = ExtResource("2_hmhsc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(63, 26, 78, 26, 78, 12, 62, 12, 62, 26)
+uv = PackedVector2Array(63, 26, 78, 26, 78, 12, 62, 12, 62, 26)
+bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(0, 0, 0, 0, 0), "Hip/Chest/Head", PackedFloat32Array(1, 0.5, 0.5, 0.5, 1), "Hip/Chest/LeftArmE", PackedFloat32Array(0, 0, 0, 0, 0), "Hip/Chest/LeftArmE/LeftArm", PackedFloat32Array(0, 0, 0, 0, 0)]
+
+[node name="Torso" type="Polygon2D" parent="Body/Polygons"]
+texture = ExtResource("2_hmhsc")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(62, 26, 62, 67, 81, 67, 81, 26)
+uv = PackedVector2Array(62, 26, 62, 67, 81, 67, 81, 26)
+bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest/Head", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest/LeftArmE", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest/LeftArmE/LeftArm", PackedFloat32Array(0, 0, 0, 0)]
+
+[node name="LeftArm" type="Polygon2D" parent="Body/Polygons"]
+texture = ExtResource("2_hmhsc")
+polygon = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40)
+uv = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40)
+
+[node name="RightArm" type="Polygon2D" parent="Body/Polygons"]
+position = Vector2(51, 0)
+texture = ExtResource("2_hmhsc")
+polygon = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40)
+uv = PackedVector2Array(114, 39, 114, 24, 80, 24, 80, 39)
+
+[node name="LeftLeg" type="Polygon2D" parent="Body/Polygons"]
+texture = ExtResource("2_hmhsc")
+polygon = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67)
+uv = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67)
+
+[node name="RightLeg" type="Polygon2D" parent="Body/Polygons"]
+position = Vector2(15, 0)
+texture = ExtResource("2_hmhsc")
+polygon = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67)
+uv = PackedVector2Array(76, 67, 87, 67, 87, 97, 72, 97, 72, 67)
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Body"]
+
+[node name="Hip" type="Bone2D" parent="Body/Skeleton2D"]
+position = Vector2(0, 7)
+rest = Transform2D(1, 0, 0, 1, 0, 7)
+
+[node name="Chest" type="Bone2D" parent="Body/Skeleton2D/Hip"]
+position = Vector2(0, -24)
+rest = Transform2D(1, 0, 0, 1, 0, -24)
+
+[node name="Head" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest"]
+position = Vector2(0, -11)
+rest = Transform2D(1, 0, 0, 1, 0, -11)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -90.0
+
+[node name="LeftArmE" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest"]
+position = Vector2(-18, 0)
+rest = Transform2D(1, 0, 0, 1, -18, 0)
+
+[node name="LeftArm" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/LeftArmE"]
+position = Vector2(-10, 0)
+rest = Transform2D(1, 0, 0, 1, -10, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 180.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
-shape = SubResource("RectangleShape2D_y7ul2")
+shape = SubResource("RectangleShape2D_hmhsc")
 
 [node name="Spawner" type="Marker2D" parent="."]
 script = ExtResource("2_gi70e")
