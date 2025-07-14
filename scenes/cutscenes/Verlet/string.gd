@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name StringComponent
 @export var light : Node2D 
 @export var puntocent : Node2D 
 
@@ -51,8 +51,8 @@ func init_position()->void:
 func _process(delta)->void:
 	update_points(delta)
 	update_constrain()
-	set_start(puntocent.position)
-	set_last(light.position)
+	set_start(to_local(puntocent.global_position))
+	set_last(to_local(light.global_position))
 	#update_constrain()	#Repeat to get tighter rope
 	#update_constrain()
 	

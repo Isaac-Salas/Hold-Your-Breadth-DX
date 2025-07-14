@@ -1,6 +1,5 @@
 extends Node2D 
-class_name  EyeBoss
-@onready var body: RigidBody2D = $Body
+class_name Scientist
 
 @export var eye_positions : PackedVector2Array
 
