@@ -1,6 +1,7 @@
 extends Node2D 
 class_name  EyeBoss
-@onready var body: CharacterBody2D = $Body
+@onready var body: RigidBody2D = $Body
+
 @export var eye_positions : PackedVector2Array
 
 

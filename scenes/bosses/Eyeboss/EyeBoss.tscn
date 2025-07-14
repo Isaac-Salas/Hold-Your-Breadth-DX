@@ -1,17 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds1au7rotbfwu"]
+[gd_scene load_steps=8 format=3 uid="uid://ds1au7rotbfwu"]
 
 [ext_resource type="Script" uid="uid://bari4086i5bh5" path="res://scenes/bosses/Eyeboss/Eyeboss.gd" id="1_kr0n8"]
 [ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="2_gi70e"]
 [ext_resource type="Texture2D" uid="uid://dkwnbe5eo4eq1" path="res://assets/bosses/EyeBoss/Scientits.png" id="2_hmhsc"]
+[ext_resource type="Script" uid="uid://c50wvkcl5qhhv" path="res://scenes/bosses/Eyeboss/rigid_skeleton.gd" id="3_e67la"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmhsc"]
-size = Vector2(20, 96)
+[sub_resource type="SkeletonModification2DPhysicalBones" id="SkeletonModification2DPhysicalBones_e67la"]
+execution_mode = 1
+physical_bone_chain_length = 1
+fetch_bones = null
+joint_0_nodepath = NodePath("")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_f08ep"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification2DPhysicalBones_e67la")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e67la"]
 
 [node name="Bosss" type="Node2D"]
 script = ExtResource("1_kr0n8")
 eye_positions = PackedVector2Array(0, 0, 0, 0, 0, 0)
 
-[node name="Body" type="CharacterBody2D" parent="."]
+[node name="Body" type="RigidBody2D" parent="."]
 
 [node name="Polygons" type="Node2D" parent="Body"]
 position = Vector2(-71, -49)
@@ -74,86 +85,91 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest", Pack
 internal_vertex_count = 4
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Body"]
+modification_stack = SubResource("SkeletonModificationStack2D_f08ep")
 
-[node name="Hip" type="Bone2D" parent="Body/Skeleton2D"]
+[node name="Hip" type="Bone2D" parent="Body/Skeleton2D" groups=["Bones"]]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 editor_settings/show_bone_gizmo = false
 
-[node name="Chest" type="Bone2D" parent="Body/Skeleton2D/Hip"]
+[node name="Chest" type="Bone2D" parent="Body/Skeleton2D/Hip" groups=["Bones"]]
 position = Vector2(0, -16)
 rest = Transform2D(1, 0, 0, 1, 0, -16)
 editor_settings/show_bone_gizmo = false
 
-[node name="Head" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest"]
+[node name="Head" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest" groups=["Bones"]]
 position = Vector2(0, -13)
 rest = Transform2D(1, 0, 0, 1, 0, -13)
 editor_settings/show_bone_gizmo = false
 
-[node name="ArmL" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest"]
+[node name="ArmL" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest" groups=["Bones"]]
 position = Vector2(-10, -1)
 rest = Transform2D(1, 0, 0, 1, -10, -1)
 editor_settings/show_bone_gizmo = false
 
-[node name="ForeArmL" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/ArmL"]
+[node name="ForeArmL" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/ArmL" groups=["Bones"]]
 position = Vector2(-9, 0)
 rest = Transform2D(1, 0, 0, 1, -9, 0)
 editor_settings/show_bone_gizmo = false
 
-[node name="HandL" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/ArmL/ForeArmL"]
+[node name="HandL" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/ArmL/ForeArmL" groups=["Bones"]]
 position = Vector2(-16, 0)
 rotation = -3.14159
 rest = Transform2D(-1, -4.44253e-06, 4.44253e-06, -1, -16, 0)
 editor_settings/show_bone_gizmo = false
 
-[node name="ArmR" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest"]
+[node name="ArmR" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest" groups=["Bones"]]
 position = Vector2(10, -1)
 rest = Transform2D(1, 0, 0, 1, 10, -1)
 editor_settings/show_bone_gizmo = false
 
-[node name="ForeArmR" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/ArmR"]
+[node name="ForeArmR" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/ArmR" groups=["Bones"]]
 position = Vector2(9, 0)
 rest = Transform2D(1, 0, 0, 1, 9, 0)
 editor_settings/show_bone_gizmo = false
 
-[node name="HandR" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/ArmR/ForeArmR"]
+[node name="HandR" type="Bone2D" parent="Body/Skeleton2D/Hip/Chest/ArmR/ForeArmR" groups=["Bones"]]
 position = Vector2(16, 0)
 rest = Transform2D(1, 0, 0, 1, 16, 0)
 editor_settings/show_bone_gizmo = false
 
-[node name="ThighR" type="Bone2D" parent="Body/Skeleton2D/Hip"]
+[node name="ThighR" type="Bone2D" parent="Body/Skeleton2D/Hip" groups=["Bones"]]
 position = Vector2(6, 11)
 rest = Transform2D(1, 0, 0, 1, 6, 11)
 editor_settings/show_bone_gizmo = false
 
-[node name="LegR" type="Bone2D" parent="Body/Skeleton2D/Hip/ThighR"]
+[node name="LegR" type="Bone2D" parent="Body/Skeleton2D/Hip/ThighR" groups=["Bones"]]
 position = Vector2(0, 14)
 rest = Transform2D(1, 0, 0, 1, 0, 14)
 editor_settings/show_bone_gizmo = false
 
-[node name="FootR" type="Bone2D" parent="Body/Skeleton2D/Hip/ThighR/LegR"]
+[node name="FootR" type="Bone2D" parent="Body/Skeleton2D/Hip/ThighR/LegR" groups=["Bones"]]
 position = Vector2(0, 21)
 rest = Transform2D(1, 0, 0, 1, 0, 21)
 editor_settings/show_bone_gizmo = false
 
-[node name="ThighL" type="Bone2D" parent="Body/Skeleton2D/Hip"]
+[node name="ThighL" type="Bone2D" parent="Body/Skeleton2D/Hip" groups=["Bones"]]
 position = Vector2(-6, 11)
 rest = Transform2D(1, 0, 0, 1, -6, 11)
 editor_settings/show_bone_gizmo = false
 
-[node name="LegL" type="Bone2D" parent="Body/Skeleton2D/Hip/ThighL"]
+[node name="LegL" type="Bone2D" parent="Body/Skeleton2D/Hip/ThighL" groups=["Bones"]]
 position = Vector2(0, 14)
 rest = Transform2D(1, 0, 0, 1, 0, 14)
 editor_settings/show_bone_gizmo = false
 
-[node name="FootL" type="Bone2D" parent="Body/Skeleton2D/Hip/ThighL/LegL"]
+[node name="FootL" type="Bone2D" parent="Body/Skeleton2D/Hip/ThighL/LegL" groups=["Bones"]]
 position = Vector2(0, 21)
 rotation = 3.14159
 rest = Transform2D(-1, 4.44253e-06, -4.44253e-06, -1, 0, 21)
 editor_settings/show_bone_gizmo = false
 
+[node name="RigidSkeleton" type="Node2D" parent="Body" node_paths=PackedStringArray("skeleton")]
+script = ExtResource("3_e67la")
+skeleton = NodePath("../Skeleton2D")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
-visible = false
-shape = SubResource("RectangleShape2D_hmhsc")
+position = Vector2(0, 68)
+shape = SubResource("CircleShape2D_e67la")
 
 [node name="Spawner" type="Marker2D" parent="."]
 script = ExtResource("2_gi70e")
