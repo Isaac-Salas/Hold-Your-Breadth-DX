@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://ds1au7rotbfwu"]
 
-[ext_resource type="Script" uid="uid://bari4086i5bh5" path="res://scenes/bosses/Eyeboss/Eyeboss.gd" id="1_kr0n8"]
+[ext_resource type="Script" uid="uid://dbx85al0miyrf" path="res://scenes/bosses/Eyeboss/Eyeboss.gd" id="1_kr0n8"]
 [ext_resource type="Texture2D" uid="uid://dkwnbe5eo4eq1" path="res://assets/bosses/EyeBoss/Scientits.png" id="2_hmhsc"]
-[ext_resource type="Script" uid="uid://c50wvkcl5qhhv" path="res://scenes/bosses/Eyeboss/rigid_skeleton.gd" id="3_e67la"]
+[ext_resource type="Script" uid="uid://cf6yidnkflpu5" path="res://scenes/bosses/Eyeboss/rigid_skeleton.gd" id="3_e67la"]
 
 [sub_resource type="SkeletonModification2DPhysicalBones" id="SkeletonModification2DPhysicalBones_e67la"]
 execution_mode = 1

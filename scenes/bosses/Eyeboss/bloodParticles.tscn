@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfb2bst1ivhea"]
+
+[ext_resource type="Material" uid="uid://ctvudcupfxb8i" path="res://scenes/bosses/Eyeboss/blood_particles.tres" id="1_6lx5p"]
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 20
+lifetime = 8.0
+preprocess = 1.0
+randomness = 0.5
+fixed_fps = 60
+process_material = ExtResource("1_6lx5p")

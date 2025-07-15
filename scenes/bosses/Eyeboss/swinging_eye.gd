@@ -1,6 +1,6 @@
 extends Node2D
 
-
+class_name SwingingEye
 
 @onready var line_2d = $String/Line2D
 @onready var string = $String
@@ -9,6 +9,7 @@ extends Node2D
 @onready var sprite_2d = $Light/Sprite2D
 @onready var collision_shape_2d = $Light/CollisionShape2D
 @onready var light: PointLight2D = $Light/PointLight2D
+@onready var puntocent: StaticBody2D = $Puntocent
 
 
 @onready var lightphy = $Light
@@ -17,7 +18,7 @@ extends Node2D
 @onready var fakelight = $Light/Fakelight
 @onready var pin_joint_2d = $PinJoint2D
 @export var marker : Marker2D
-
+const BLOOD_PARTICLES = preload("res://scenes/bosses/Eyeboss/bloodParticles.tscn")
 @export var wait : float = 0
 
 @onready var clinck = $Light/Clinck
@@ -32,10 +33,10 @@ func _ready():
 		droplight()
 	
 	if hang == true:
-		lightphy.freeze = false
+		lightphy.set_deferred("freeze", false)
 	else:
-		lightphy.freeze = true
-		lightphy.position = Vector2(0,0)
+		lightphy.set_deferred("freeze", true)
+		lightphy.position = Vector2(0,16)
 		
 	scaling = self.scale
 	string.ropeLength = light.position.y
@@ -53,10 +54,11 @@ func _ready():
 	#line_2d.width = scale.x/2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	#print(string.ropeLength)
-	pass
 
+func hang_activate():
+	print("ACTIVATE!")
+	hang = true
+	lightphy.set_deferred("freeze", false)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	light.visible = false
@@ -70,7 +72,19 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 func droplight():
 	if pin_joint_2d != null:
 		spawner_component.spawn(light.global_position, self.get_parent())
-		self.queue_free()
+		var newpos : Marker2D = Marker2D.new()
+		newpos.position = lightphy.position
+		pin_joint_2d.queue_free()
+		lightphy.queue_free()
+		add_child(newpos)
+		var newblood : GPUParticles2D = BLOOD_PARTICLES.instantiate()
+		newblood.amount *= 20
+		newblood.lifetime /= 2
+		newblood.restart()
+		newblood.one_shot = true
+		puntocent.add_child(newblood)
+		string.light = newpos 
+		string.crazy_mode = true
 		
 
 func dropdown():
@@ -82,7 +96,9 @@ func dropdown():
 
 
 func _on_light_body_entered(body):
-	if body.is_in_group("throwable"):
-		droplight()
+	if hang == true:
+		if body.is_in_group("throwable"):
+			droplight()
+
 	#clinck.pitch_scale = randf_range(1.0, 2.0)
 	#clinck.play()

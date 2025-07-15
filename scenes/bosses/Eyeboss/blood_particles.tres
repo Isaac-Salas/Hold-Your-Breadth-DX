@@ -1,0 +1,18 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://ctvudcupfxb8i"]
+
+[resource]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+spread = 100.0
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -20.0
+linear_accel_max = 20.0
+radial_accel_min = -30.0
+radial_accel_max = 30.0
+scale_max = 2.0
+color = Color(1, 0, 0, 1)
+turbulence_noise_strength = 4.37
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.16

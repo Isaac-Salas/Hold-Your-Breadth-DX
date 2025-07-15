@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
-[ext_resource type="Script" uid="uid://80efc16j34uh" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
+[ext_resource type="Script" uid="uid://doujxwuhtv1vy" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
 [ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="8_jnqun"]
 [ext_resource type="Texture2D" uid="uid://c6mlx5p23pljr" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="9_qole5"]

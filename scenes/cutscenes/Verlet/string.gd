@@ -11,6 +11,7 @@ class_name StringComponent
 @export var endPin : bool = true
 
 @onready var line2D: = $Line2D
+@export var crazy_mode : bool
 
 var pos : PackedVector2Array
 var posPrev : PackedVector2Array
@@ -51,8 +52,16 @@ func init_position()->void:
 func _process(delta)->void:
 	update_points(delta)
 	update_constrain()
-	set_start(to_local(puntocent.global_position))
-	set_last(to_local(light.global_position))
+	if puntocent != null:
+		set_start(to_local(puntocent.global_position))
+	if light != null:
+		if crazy_mode == true:
+			if light.position.y > 0 :
+				light.global_position -= Vector2(0,1)
+				
+				set_last(to_local(light.global_position), Vector2(randf_range(20.0,50.0),randf_range(20.0,50.0)))
+		else:
+			set_last(to_local(light.global_position))
 	#update_constrain()	#Repeat to get tighter rope
 	#update_constrain()
 	
@@ -63,9 +72,9 @@ func set_start(p:Vector2)->void:
 	pos[0] = p
 	posPrev[0] = p
 
-func set_last(p:Vector2)->void:
-	pos[pointCount-1] = p
-	posPrev[pointCount-1] = p
+func set_last(p:Vector2, offset : Vector2 = Vector2(0.0,0.0))->void:
+	pos[pointCount-1] = (p + offset)
+	posPrev[pointCount-1] = (p + offset) 
 
 func update_points(delta)->void:
 	for i in range (pointCount):

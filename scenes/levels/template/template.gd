@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name LevelTemplate
 
 @export var ZoneNumber : int
 @export var LevelNumber : int
