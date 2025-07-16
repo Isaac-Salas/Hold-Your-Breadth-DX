@@ -1,179 +1,214 @@
 extends RigidBody2D
-class_name  Rat_enemy
-@export var ratfleetarget : Marker2D
-@onready var timer = $Timer
-@onready var target_loc = $TargetLoc
-@onready var direction
-@export var speed = 0
-@onready var timer_2 = $Timer2
-@onready var player : SlimePlayer
-@onready var playerdir
-@onready var sprite = $AnimatedSprite2D
-@onready var timer_3 = $Timer3
-@onready var fleeonce = false
-@onready var colision = $CollisionShape2D
-@export var startflee = false
-@onready var alerted = $Alerted
+class_name Rat_enemy
 
-@onready var left_r = $LeftR
-@onready var right_r = $RightR
-@onready var detector = $Detector
-@onready var spawnedfrom : RatSpawn
+@export var flee_target: Marker2D
+@export var idle_speed: float = 10.0
+@export var chase_speed: float = 3.0
+@export var flee_speed: float = 5.0
+@export var flee_from_player: bool = false  # Toggle: true = flee from player, false = flee to marker
 
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var colision: CollisionShape2D = $CollisionShape2D
+@onready var alerted: Node = $Alerted
+@onready var left_ray: RayCast2D = $LeftR
+@onready var right_ray: RayCast2D = $RightR
+@onready var detector: Area2D = $Detector
+@onready var target_loc: Marker2D = $TargetLoc
+@onready var idle_timer: Timer = $Timer
+@onready var chase_timer: Timer = $Timer2
+@onready var state_timer: Timer = $Timer3
 
+var player: SlimePlayer
+var spawned_from: RatSpawn
+var direction: Vector2
+var is_moving: bool = false  # Track if the rat is currently moving
+
+# Constants
 const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")
+const CLIMB_IMPULSE = -50
+const OUTLINE_WIDTH = 2
+const OUTLINE_COLOR = Color("ffaa00")
+const FLEE_DISTANCE = 250.0
+const MOVEMENT_THRESHOLD = 5.0
 
+# State management
+enum State { IDLE, CHASING, FLEEING }
+var current_state: State = State.IDLE
+var distance_to_player: float = 10000
 
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	direction = global_position - target_loc.global_position
-	chillin()
 	player = get_tree().get_first_node_in_group("Player")
-	
+	_connect_player_signals()
+	_change_state(State.IDLE)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	
+	if not player:
+		_update_player_reference()
+	_handle_current_state(delta)
+	_handle_climbing()
+
+func _update_player_reference():
 	player = get_tree().get_first_node_in_group("Player")
-	if get_parent().is_in_group("barnacle"):
-		var count = 0
-		match count:
-			0:
-				if timer and timer_2 and timer_3:
-					timer.stop()
-					timer_2.stop()
-					timer_3.stop()
-				count += 1
-			1:
-				pass
-				
-	match startflee:
-		true:
-			sprite.play("new_animation")
-			#print("Fleeing")
-			
-			var movingto = self.global_position.move_toward(ratfleetarget.global_position, delta*(speed*50))
-			var movector = (movingto-self.global_position)*2
-			self.rotation_degrees = 0
-			#print(abs(movector.x))
-			if movector > Vector2(0,0):
-				sprite.flip_h = true
-			if movector < Vector2(0,0):
-				sprite.flip_h = false
-			#self.global_position.x = movingto.x
-			#set_deferred("lock_rotation", false)
-			
-			if left_r.is_colliding() or right_r.is_colliding():
-				print(right_r.get_collider())
-				print("tryclimb")
-				sprite.rotation_degrees = -90
-				
-				apply_central_impulse(Vector2i(0, -50))
-			else:
-				sprite.rotation_degrees = 0
-			
-			
-			apply_central_impulse(Vector2i(movector.x, 0))
-			if self.global_position.x == ratfleetarget.global_position.x or abs(movector.x) < 1:
-				set_deferred("lock_rotation", true)
-				startflee = false
-				
-		false:
-			alerted.visible = false
-			sprite.stop()
-			pass
+	if player and not player.scare.is_connected(_on_player_scare):
+		_connect_player_signals()
+
+func _handle_current_state(delta):
+	match current_state:
+		State.IDLE:
+			_handle_idle_state(delta)
+		State.CHASING:
+			_handle_chase_state(delta)
+		State.FLEEING:
+			_handle_flee_state(delta)
+
+func _handle_idle_state(delta):
+	alerted.visible = false
+	sprite.play("new_animation")
 	
-	
-	direction = global_position - target_loc.global_position
-	
-	
+	if is_moving:
+		# Move toward target_loc
+		direction = (target_loc.global_position - global_position).normalized()
+		apply_central_impulse(direction * idle_speed)
+		if direction.x > 0:
+			sprite.flip_h = true
+		if direction.x < 0:
+			sprite.flip_h = false
+		# Check if close to target
+		if global_position.distance_to(target_loc.global_position) < MOVEMENT_THRESHOLD:
+			is_moving = false
+			sprite.stop()  # Pause animation while waiting
+			idle_timer.start(randf_range(0.5, 2.0))  # Wait before picking new target
 
 func chillin():
-	timer_3.stop()
-	timer_2.stop()
 	rotation = 0
 	set_deferred("lock_rotation", true)
-	timer.start(randf_range(0.1,1))
-	target_loc.position.x = randi_range(-20,20)
-	apply_central_impulse(direction*speed)
-	if direction > Vector2(0,0):
-		sprite.flip_h = true
-	if direction < Vector2(0,0):
-		sprite.flip_h = false
+	target_loc.position.x = randf_range(-20, 20)
+	is_moving = true  # Start moving to new target
 
-func chasing(player):
-	
-	timer.stop()
-	timer_3.stop()
-	set_deferred("lock_rotation", false)
-	timer_2.start(0.25)
-	playerdir = player.global_position - global_position
-	apply_central_impulse(Vector2(playerdir.x*3, playerdir.y))
-
-func fleeing():
+func _handle_chase_state(delta):
+	if not player:
+		_change_state(State.IDLE)
+		return
+	sprite.play("chase")
 	alerted.visible = true
-	timer.stop()
-	timer_2.stop()
-	##print("Ratflee")
-	#var fleeingdir = ratfleetarget.global_position - self.global_position
-	#apply_central_impulse(Vector2(0,-20))
-	apply_torque_impulse(50)
-	#timer_3.start(0.3)
-	startflee = true
+	var direction = (player.global_position - global_position).normalized()
+	apply_central_impulse(direction * chase_speed)
+	_update_sprite_direction(direction)
 
-	
+func _handle_flee_state(delta):
+	if not player:
+		_change_state(State.IDLE)
+		return
+	sprite.play("flee")
+	alerted.visible = true
+	var direction: Vector2
+	var reached_safety = false
+	if flee_from_player and player:
+		direction = (global_position - player.global_position).normalized()
+		distance_to_player = global_position.distance_to(player.global_position)
+		reached_safety = distance_to_player > FLEE_DISTANCE or player.current != "Big"
+	elif flee_target:
+		direction = (flee_target.global_position - global_position).normalized()
+		var distance_to_target = global_position.distance_to(flee_target.global_position)
+		reached_safety = distance_to_target < MOVEMENT_THRESHOLD
+	else:
+		_change_state(State.IDLE)
+		return
+	apply_central_impulse(direction * flee_speed)
+	_update_sprite_direction(direction)
+	if reached_safety:
+		_change_state(State.IDLE)
+
+func _handle_climbing():
+	if left_ray.is_colliding() or right_ray.is_colliding():
+		apply_central_impulse(Vector2(0, CLIMB_IMPULSE))
+		sprite.rotation_degrees = -90
+	else:
+		if current_state != State.IDLE:
+			sprite.rotation_degrees = 0
+
+func _update_sprite_direction(direction: Vector2):
+	sprite.flip_h = direction.x > 0
+
+func _change_state(new_state: State):
+	if current_state == new_state:
+		return
+	_exit_current_state()
+	current_state = new_state
+	_enter_new_state()
+
+func _exit_current_state():
+	idle_timer.stop()
+	chase_timer.stop()
+	state_timer.stop()
+	set_deferred("lock_rotation", false)
+	is_moving = false
+
+func _enter_new_state():
+	match current_state:
+		State.IDLE:
+			_setup_idle_state()
+		State.CHASING:
+			_setup_chase_state()
+		State.FLEEING:
+			_setup_flee_state()
+
+func _setup_idle_state():
+	set_deferred("lock_rotation", true)
+	chillin()
+
+func _setup_chase_state():
+	chase_timer.start(0.1)
+
+func _setup_flee_state():
+	pass
+
+func _connect_player_signals():
+	if player and not player.scare.is_connected(_on_player_scare):
+		player.scare.connect(_on_player_scare)
+
+func _on_player_scare():
+	if distance_to_player < FLEE_DISTANCE:
+		_change_state(State.FLEEING)
 
 func _on_timer_timeout():
 	chillin()
-	
-
-
-func _on_player_detect_body_entered(body):
-	if body.is_in_group("Player"):
-		if player.scare.is_connected(fleeing) == false:
-			player.scare.connect(fleeing)
-		#timer.stop()
-		player = body
-		if player.current == "Big":
-			fleeing()
-			#startflee = true
-		else:
-			chasing(player)
-
 
 func _on_timer_2_timeout():
-	chasing(player)
+	pass
 
+func _on_timer_3_timeout():
+	pass
+
+func _on_player_detect_body_entered(body):
+	if not body.is_in_group("Player"):
+		return
+	player = body
+	_connect_player_signals()
+	if player.current == "Big":
+		_change_state(State.FLEEING)
+	else:
+		_change_state(State.CHASING)
 
 func _on_player_detect_body_exited(body):
 	if body.is_in_group("Player"):
-		#player.scare.disconnect(fleeing)
-		timer_2.stop()
-		timer_3.stop()
-		startflee = false
-		fleeonce = false
-		chillin()
-
-
-func _on_timer_3_timeout():
-	fleeing()
-	
-
+		player = null
+		_change_state(State.IDLE)
 
 func _on_detector_area_entered(area):
 	if area is ObjectDetect:
-		print("Highlight!")
-		var newmat = ShaderMaterial.new()
-		newmat.shader = OUTLINE
-		newmat.set_shader_parameter("width", 2)
-		newmat.set_shader_parameter("outline_color", Color("ffaa00"))
-		#newmat.set_shader_parameter("flickering_speed", 20)
-		sprite.material = newmat
-
+		_apply_highlight()
 
 func _on_detector_area_exited(area):
 	if area is ObjectDetect:
-		sprite.material = null
+		_remove_highlight()
+
+func _apply_highlight():
+	var shader_material = ShaderMaterial.new()
+	shader_material.shader = OUTLINE
+	shader_material.set_shader_parameter("width", OUTLINE_WIDTH)
+	shader_material.set_shader_parameter("outline_color", OUTLINE_COLOR)
+	sprite.material = shader_material
+
+func _remove_highlight():
+	sprite.material = null

@@ -12,7 +12,7 @@ func  _ready():
 
 func _on_area_2d_body_entered(body):
 	if body is Rat_enemy:
-		Spawner = body.spawnedfrom
+		Spawner = body.spawned_from
 		body.queue_free()
 		hole_anim.play("Idle")
 		timer.start(2)

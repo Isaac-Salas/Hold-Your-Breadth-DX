@@ -6,6 +6,7 @@ class_name RatSpawn
 @onready var spawner : SpawnerComponent = $SpawnerComponent
 @export var Rat_number : int
 @export var Fleemarker : RatFleeMarker
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hole_anim.play("Idle")
@@ -22,7 +23,7 @@ func _on_timer_timeout():
 		var RATA = load("res://scenes/enemies/ratiña/ratiña.tscn")
 		spawner.scene = RATA
 		var newrat : Rat_enemy = spawner.spawn()
-		newrat.ratfleetarget = Fleemarker
-		newrat.spawnedfrom = self
+		newrat.flee_target = Fleemarker
+		newrat.spawned_from = self
 		hole_anim.play("Spawned")
 		spawn_cooldown.stop()
