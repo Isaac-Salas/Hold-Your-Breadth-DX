@@ -1,33 +1,42 @@
-[gd_scene load_steps=14 format=4 uid="uid://d0n6jfdhpgnyk"]
+[gd_scene load_steps=23 format=4 uid="uid://crhimgwgqho0y"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_hrp3i"]
-[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_du6ji"]
-[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_5u8l3"]
+[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_du6ji"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_p227e"]
-[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="7_jq6da"]
-[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="8_7ojeb"]
-[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="9_35jm1"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="4_bvw30"]
+[ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="4_slgn6"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="4_toyt4"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="5_i1e8w"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="6_rnkxj"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="7_1h8gk"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="8_6aq8t"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="8_b288d"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="9_ismss"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="10_kcred"]
-[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="10_kn6mp"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="11_jp2v4"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="11_lvcmj"]
+[ext_resource type="PackedScene" uid="uid://dfwc55jo1qtuj" path="res://scenes/objects/biodoor.tscn" id="12_u0wef"]
+[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="14_4xwko"]
+[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="15_nxyg2"]
+[ext_resource type="PackedScene" uid="uid://c6bs7y7fkg5ud" path="res://scenes/cutscenes/JellyDOG/jELLYoUTRO.tscn" id="19_oscsi"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u1ug"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
 texture = ExtResource("2_du6ji")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 0:0/0/terrains_peering_bit/right_side = 0
 0:0/0/terrains_peering_bit/bottom_side = 0
 1:0/0 = 0
 1:0/0/terrain_set = 0
 1:0/0/terrain = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 1:0/0/terrains_peering_bit/right_side = 0
 1:0/0/terrains_peering_bit/bottom_side = 0
@@ -35,14 +44,14 @@ texture_region_size = Vector2i(48, 48)
 2:0/0 = 0
 2:0/0/terrain_set = 0
 2:0/0/terrain = 0
-2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 2:0/0/terrains_peering_bit/bottom_side = 0
 2:0/0/terrains_peering_bit/left_side = 0
 0:1/0 = 0
 0:1/0/terrain_set = 0
 0:1/0/terrain = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 0:1/0/terrains_peering_bit/right_side = 0
 0:1/0/terrains_peering_bit/bottom_side = 0
@@ -50,7 +59,7 @@ texture_region_size = Vector2i(48, 48)
 1:1/0 = 0
 1:1/0/terrain_set = 0
 1:1/0/terrain = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 1:1/0/terrains_peering_bit/right_side = 0
 1:1/0/terrains_peering_bit/bottom_side = 0
@@ -59,7 +68,7 @@ texture_region_size = Vector2i(48, 48)
 2:1/0 = 0
 2:1/0/terrain_set = 0
 2:1/0/terrain = 0
-2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 2:1/0/terrains_peering_bit/bottom_side = 0
 2:1/0/terrains_peering_bit/left_side = 0
@@ -67,14 +76,14 @@ texture_region_size = Vector2i(48, 48)
 0:2/0 = 0
 0:2/0/terrain_set = 0
 0:2/0/terrain = 0
-0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 0:2/0/terrains_peering_bit/right_side = 0
 0:2/0/terrains_peering_bit/top_side = 0
 1:2/0 = 0
 1:2/0/terrain_set = 0
 1:2/0/terrain = 0
-1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 1:2/0/terrains_peering_bit/right_side = 0
 1:2/0/terrains_peering_bit/left_side = 0
@@ -82,52 +91,52 @@ texture_region_size = Vector2i(48, 48)
 2:2/0 = 0
 2:2/0/terrain_set = 0
 2:2/0/terrain = 0
-2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 2:2/0/terrains_peering_bit/left_side = 0
 2:2/0/terrains_peering_bit/top_side = 0
 3:0/0 = 0
 3:0/0/terrain_set = 0
 3:0/0/terrain = 0
-3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 4:0/0 = 0
 4:0/0/terrain_set = 0
 4:0/0/terrain = 0
-4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 4:0/0/terrains_peering_bit/right_side = 0
 4:0/0/terrains_peering_bit/left_side = 0
 5:0/0 = 0
 5:0/0/terrain_set = 0
 5:0/0/terrain = 0
-5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 5:0/0/terrains_peering_bit/bottom_side = 0
 5:0/0/terrains_peering_bit/top_side = 0
 5:1/0 = 0
 5:1/0/terrain_set = 0
 5:1/0/terrain = 0
-5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 5:1/0/terrains_peering_bit/bottom_side = 0
 4:1/0 = 0
 4:1/0/terrain_set = 0
 4:1/0/terrain = 0
-4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 4:1/0/terrains_peering_bit/bottom_side = 0
 4:1/0/terrains_peering_bit/top_side = 0
 3:1/0 = 0
 3:1/0/terrain_set = 0
 3:1/0/terrain = 0
-3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 3:1/0/terrains_peering_bit/right_side = 0
 3:2/0 = 0
 3:2/0/terrain_set = 0
 3:2/0/terrain = 0
-3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 3:2/0/terrains_peering_bit/left_side = 0
 
@@ -138,45 +147,110 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
-sources/0 = SubResource("TileSetAtlasSource_8u1ug")
+sources/0 = SubResource("TileSetAtlasSource_1blni")
 
-[node name="TutorialLevel" type="Node2D"]
+[node name="Level" type="Node2D"]
+position = Vector2(0, 1)
 script = ExtResource("1_hrp3i")
 ZoneNumber = 5
 LevelNumber = 1
 
-[node name="Tilemap" type="TileMapLayer" parent="."]
+[node name="Barnacle" parent="." instance=ExtResource("4_slgn6")]
+position = Vector2(571, 76)
+
+[node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAAAAAAAAAoAAAAAAAEAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAFAAAAAAAXAAYAAAAFAAAAAAAXAAcAAAACAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAACAAEAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAABAAoAAAADAAIAAAAFAAoAAAADAAEAAAAGAAoAAAABAAIAAAAHAAoAAAABAAIAAAAIAAoAAAABAAIAAAAJAAoAAAAEAAAAAAAKAAoAAAADAAIAAAANAAoAAAADAAEAAAAOAAoAAAAEAAAAAAAPAAoAAAABAAIAAAAQAAoAAAABAAIAAAARAAoAAAABAAIAAAASAAoAAAADAAIAAAAUAAoAAAADAAEAAAAVAAoAAAAEAAAAAAAWAAoAAAAEAAAAAAAWAAcAAAAEAAAAAAAUAAcAAAADAAEAAAAVAAcAAAAEAAAAAAAHAAkAAAABAAEAAAAHAAgAAAAFAAEAAAAIAAkAAAACAAAAAAAGAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAABAAEAAAARAAkAAAACAAAAAAAKAAMAAAACAAIAAAAKAAIAAAACAAAAAAASAAYAAAADAAAAAAAOAAYAAAADAAAAAAAQAAgAAAAFAAEAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAAADAAEAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAUAAAAAAAIAAAAAAAQAAAAFAAAAAAAAAAMAAAAFAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAEAAAABAAAAAAAEAAAAAAACAAAAAAABAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAADAAIAAAAPAAAAAAAFAAEAAAAPAAEAAAAEAAEAAAAPAAIAAAACAAIAAAAPAAUAAAACAAAAAAD//wYAAAAFAAEAAAD//wcAAAACAAIAAAAQAAYAAAAFAAEAAAAQAAcAAAACAAIAAAAOAAUAAAAEAAAAAAANAAUAAAAEAAAAAAACAAEAAAAFAAAAAAACAAIAAAAFAAAAAAACAAMAAAAEAAEAAAACAAQAAAAFAAAAAAACAAUAAAACAAIAAAAMAAUAAAAEAAAAAAALAAUAAAADAAEAAAAAAP//AAAFAAEAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="MusicSubmanager" parent="." instance=ExtResource("3_5u8l3")]
+[node name="Player" parent="." instance=ExtResource("3_p227e")]
+position = Vector2(700, 67)
 
-[node name="Transition" parent="." instance=ExtResource("11_jp2v4")]
+[node name="Camera2D" parent="." instance=ExtResource("4_toyt4")]
+position = Vector2(0, 1)
+
+[node name="Indicators" type="Node" parent="."]
+
+[node name="Pickups" type="Node" parent="."]
+
+[node name="WoodenBox" parent="Pickups" instance=ExtResource("11_lvcmj")]
+position = Vector2(636, 362)
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Swing-light" parent="Lights" instance=ExtResource("5_i1e8w")]
+position = Vector2(432, 10)
+
+[node name="Marker2D" type="Marker2D" parent="Lights/Swing-light"]
+position = Vector2(0, 139)
+
+[node name="Light" parent="Lights" instance=ExtResource("6_rnkxj")]
+position = Vector2(245, 58)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Button_red" parent="Buttons" instance=ExtResource("7_1h8gk")]
+position = Vector2(715, 386)
+
+[node name="Button_Red_Signal" parent="Buttons/Button_red" instance=ExtResource("8_6aq8t")]
+z_index = 3
+position = Vector2(29, -267)
+
+[node name="Door" parent="Buttons/Button_red" instance=ExtResource("8_b288d")]
+position = Vector2(29, -193)
+
+[node name="Laser" type="Node" parent="."]
+
+[node name="Grow-Laser" parent="Laser" instance=ExtResource("4_bvw30")]
+position = Vector2(70, 42)
+rotation = 1.57079
+target_scale = Vector2(5, 5)
+metadata/_edit_lock_ = true
+
+[node name="rat" type="Node" parent="."]
+
+[node name="Ratspawn" parent="rat" node_paths=PackedStringArray("Fleemarker") instance=ExtResource("14_4xwko")]
+position = Vector2(132, 336)
 scale = Vector2(1.5, 1.5)
+Rat_number = 1
+Fleemarker = NodePath("../Ratfleemarker")
+
+[node name="Ratfleemarker" parent="rat" instance=ExtResource("15_nxyg2")]
+position = Vector2(679, 193)
+scale = Vector2(1.5, 1.5)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("9_ismss")]
+position = Vector2(385, 288)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("9_ismss")]
+position = Vector2(289, 224)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("9_ismss")]
+position = Vector2(385, 224)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("9_ismss")]
+position = Vector2(480, 224)
 
 [node name="dont touch" parent="." instance=ExtResource("10_kcred")]
 visible = false
-showoverride = false
 
-[node name="Slime" parent="." instance=ExtResource("3_p227e")]
-position = Vector2(67, 403)
+[node name="Transition" parent="." instance=ExtResource("11_jp2v4")]
+target_scene = ExtResource("19_oscsi")
 
-[node name="Grow-Laser" parent="." instance=ExtResource("7_jq6da")]
-position = Vector2(213, 7)
-rotation = 1.57079
-target_scale = Vector2(6, 6)
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(780.5, 192)
 
-[node name="Shrink-Laser" parent="." instance=ExtResource("8_7ojeb")]
-position = Vector2(936, 8)
-rotation = 1.57079
-target_scale = Vector2(1, 1)
+[node name="AudioStreamPlayer2D" parent="Transition" index="4"]
+stream_paused = false
 
-[node name="Ratspawn" parent="." node_paths=PackedStringArray("Fleemarker") instance=ExtResource("9_35jm1")]
-position = Vector2(576, 277)
-Rat_number = 1
-Fleemarker = NodePath("Ratfleemarker")
+[node name="Biodoor" parent="." instance=ExtResource("12_u0wef")]
+position = Vector2(548, 336)
+scale = Vector2(-1, 1)
 
-[node name="Ratfleemarker" parent="Ratspawn" instance=ExtResource("10_kn6mp")]
-position = Vector2(500, 319)
+[editable path="Transition"]
+[editable path="Biodoor"]

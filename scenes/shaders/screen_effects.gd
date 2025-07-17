@@ -4,8 +4,6 @@ class_name ScreenStuff
 @onready var options_menu = $OptionsMenu
 @export var player : SlimePlayer
 #@onready var background: Sprite2D = $Background
-@onready var canvas_modulate: CanvasModulate = $CanvasModulate
-@onready var crt_shader: ColorRect = $CRTShader
 
 
 
@@ -15,5 +13,7 @@ func _ready() -> void:
 		true:
 			show()
 		false:
-			canvas_modulate.hide()
-			crt_shader.hide()
+			pass
+
+func _process(delta):
+	pass
