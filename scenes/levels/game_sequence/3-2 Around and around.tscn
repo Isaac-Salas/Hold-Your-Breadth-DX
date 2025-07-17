@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="7_8he8t"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="8_ghln3"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="9_dmco3"]
-[ext_resource type="Script" uid="uid://4ak722pryrv0" path="res://scenes/objects/door/door.gd" id="10_a4n0s"]
+[ext_resource type="Script" uid="uid://plp75xlwu3vv" path="res://scenes/objects/door/door.gd" id="10_a4n0s"]
 [ext_resource type="Texture2D" uid="uid://r8ffoo4a1acs" path="res://assets/objects/small_door.png" id="11_itmnt"]
 [ext_resource type="AudioStream" uid="uid://bhwv8um6ye01b" path="res://assets/audioshit/PUERTA.mp3" id="12_kxx6j"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="13_h4poa"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="17_rcdc4"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="18_43sv5"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="19_fppha"]
-[ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="20_1n5v1"]
+[ext_resource type="Script" uid="uid://b162hsmyckdvn" path="res://scenes/levels/Transition/transition.gd" id="20_1n5v1"]
 [ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="21_0qhmr"]
 [ext_resource type="PackedScene" uid="uid://bwaomego0a1rr" path="res://scenes/levels/game_sequence/3-3 One step at a time.tscn" id="21_86q3s"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="23_7fmg8"]
@@ -151,6 +151,7 @@ texture_region_size = Vector2i(48, 48)
 [sub_resource type="TileSet" id="TileSet_ymyk6"]
 tile_size = Vector2i(48, 48)
 occlusion_layer_0/light_mask = 1
+occlusion_layer_0/sdf_collision = true
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "concrete"
