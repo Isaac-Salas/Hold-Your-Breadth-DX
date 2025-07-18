@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://gyluo2bsm1cg"]
 
 [ext_resource type="Script" uid="uid://bvktpxmlt3mg1" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
-[ext_resource type="Texture2D" uid="uid://bihehr5v8tayr" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
-[ext_resource type="Texture2D" uid="uid://st8qongr1uca" path="res://assets/Enemies/AlertRat.png" id="3_1qfcf"]
+[ext_resource type="Texture2D" uid="uid://ch3fgxdh4wi6v" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
+[ext_resource type="Texture2D" uid="uid://bkg45f7txxsbm" path="res://assets/Enemies/AlertRat.png" id="3_1qfcf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mn77"]
 atlas = ExtResource("1_ufh0f")
@@ -108,7 +108,8 @@ closed = false
 polygon = PackedVector2Array(-7.33333, 6.66667, 4.66667, 6.66667, 4.66667, 6, -7.33333, 6)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y41eh"]
-height = 35.0
+radius = 5.5
+height = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywrjj"]
 radius = 125.0
@@ -131,7 +132,6 @@ radius = 25.0
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_e0kxx")
-speed = 15
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
@@ -143,7 +143,7 @@ frame_progress = 0.743151
 occluder = SubResource("OccluderPolygon2D_b5rnm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(-4, 5)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_y41eh")
 

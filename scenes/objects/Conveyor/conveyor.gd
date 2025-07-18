@@ -8,8 +8,8 @@ var force
 
 var inside : Array = []
 @export var isOFF = false
+
 func _ready() -> void:
-	toggle(isOFF, 0)
 	if (direction == "left"):
 		force = Vector2(-20,-15)
 	else:
@@ -17,6 +17,7 @@ func _ready() -> void:
 	animated_sprite_2d.play(type)
 	if direction != "left":
 		scale.x = -1
+	toggle(isOFF, 0)
 
 func _physics_process(delta: float) -> void:
 	for body in inside:
@@ -48,5 +49,14 @@ func toggle(state, body):
 	else:
 		if body != 0:
 			await(get_tree().create_timer(1).timeout)
+		sprite.stop()
+		area_2d.monitoring = false
+		
+func toggle_hold(state, body):
+	isOFF = !isOFF
+	if isOFF:
+		sprite.play()
+		area_2d.monitoring = true
+	else:
 		sprite.stop()
 		area_2d.monitoring = false

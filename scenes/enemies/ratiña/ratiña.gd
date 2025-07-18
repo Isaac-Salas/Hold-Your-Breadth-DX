@@ -4,7 +4,7 @@ class_name  Rat_enemy
 @onready var timer = $Timer
 @onready var target_loc = $TargetLoc
 @onready var direction
-@export var speed = 0
+@export var speed = 12
 @onready var timer_2 = $Timer2
 @onready var player : SlimePlayer
 @onready var playerdir
@@ -14,6 +14,7 @@ class_name  Rat_enemy
 @onready var colision = $CollisionShape2D
 @export var startflee = false
 @onready var alerted = $Alerted
+@export var flee_player : bool = true
 
 @onready var left_r = $LeftR
 @onready var right_r = $RightR
@@ -54,8 +55,8 @@ func _physics_process(delta):
 		true:
 			sprite.play("new_animation")
 			#print("Fleeing")
-			
-			var movingto = self.global_position.move_toward(ratfleetarget.global_position, delta*(speed*50))
+			playerdir = player.global_position - global_position
+			var movingto = self.global_position.move_toward(-playerdir * 10, delta*(speed*50))
 			var movector = (movingto-self.global_position)*2
 			self.rotation_degrees = 0
 			#print(abs(movector.x))
@@ -67,11 +68,11 @@ func _physics_process(delta):
 			#set_deferred("lock_rotation", false)
 			
 			if left_r.is_colliding() or right_r.is_colliding():
-				print(right_r.get_collider())
-				print("tryclimb")
+				#print(right_r.get_collider())
+				#print("tryclimb")
 				sprite.rotation_degrees = -90
 				
-				apply_central_impulse(Vector2i(0, -50))
+				apply_central_impulse(Vector2i(0, -30))
 			else:
 				sprite.rotation_degrees = 0
 			
@@ -95,6 +96,7 @@ func chillin():
 	timer_3.stop()
 	timer_2.stop()
 	rotation = 0
+	sprite.rotation_degrees = 0
 	set_deferred("lock_rotation", true)
 	timer.start(randf_range(0.1,1))
 	target_loc.position.x = randi_range(-20,20)
@@ -111,17 +113,17 @@ func chasing(player):
 	set_deferred("lock_rotation", false)
 	timer_2.start(0.25)
 	playerdir = player.global_position - global_position
-	apply_central_impulse(Vector2(playerdir.x*3, playerdir.y))
+	apply_central_impulse(Vector2(playerdir.x*2, playerdir.y))
 
 func fleeing():
 	alerted.visible = true
 	timer.stop()
 	timer_2.stop()
-	##print("Ratflee")
+	#print("Ratflee")
 	#var fleeingdir = ratfleetarget.global_position - self.global_position
 	#apply_central_impulse(Vector2(0,-20))
 	apply_torque_impulse(50)
-	#timer_3.start(0.3)
+	timer_3.start(1.5)
 	startflee = true
 
 	
@@ -150,16 +152,16 @@ func _on_timer_2_timeout():
 
 func _on_player_detect_body_exited(body):
 	if body.is_in_group("Player"):
-		#player.scare.disconnect(fleeing)
-		timer_2.stop()
-		timer_3.stop()
-		startflee = false
-		fleeonce = false
-		chillin()
+		player.scare.disconnect(fleeing)
+
 
 
 func _on_timer_3_timeout():
-	fleeing()
+	timer_2.stop()
+	timer_3.stop()
+	startflee = false
+	fleeonce = false
+	chillin()
 	
 
 

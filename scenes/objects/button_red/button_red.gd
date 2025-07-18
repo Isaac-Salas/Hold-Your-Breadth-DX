@@ -21,7 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 			light.show()
 			await anim.animation_finished
 			audio_stream_player.play()
-			emit_signal("pressed", state, body)
+			emit_signal("pressed", state, 3)
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -34,5 +34,5 @@ func _on_body_exited(body: Node2D) -> void:
 			state = false
 			light.hide()
 			await anim.animation_finished
-			emit_signal("pressed", state, body)
+			emit_signal("pressed", state, 3)
 			

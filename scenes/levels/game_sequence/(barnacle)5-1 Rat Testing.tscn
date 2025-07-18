@@ -1,0 +1,256 @@
+[gd_scene load_steps=23 format=4 uid="uid://crhimgwgqho0y"]
+
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_m571l"]
+[ext_resource type="PackedScene" uid="uid://c5qdlyo63gd5t" path="res://scenes/enemies/barnacle.tscn" id="2_41ywi"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="3_kcurg"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="4_kots1"]
+[ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="5_k165n"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="6_hkynu"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="7_iohfi"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="8_mfnym"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="9_k0ktu"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="10_8elgw"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="11_wa66k"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="12_7y1b1"]
+[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="13_2sac3"]
+[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="14_fmryn"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="15_ktunv"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="16_qsdyo"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="17_8xpma"]
+[ext_resource type="PackedScene" uid="uid://c6bs7y7fkg5ud" path="res://scenes/cutscenes/JellyDOG/jELLYoUTRO.tscn" id="18_0dm85"]
+[ext_resource type="PackedScene" uid="uid://dfwc55jo1qtuj" path="res://scenes/objects/biodoor.tscn" id="19_hv64l"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
+texture = ExtResource("3_kcurg")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/left_side = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:0/0/terrains_peering_bit/bottom_side = 0
+5:0/0/terrains_peering_bit/top_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+5:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:1/0/terrains_peering_bit/right_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+3:2/0/terrains_peering_bit/left_side = 0
+
+[sub_resource type="TileSet" id="TileSet_ymyk6"]
+tile_size = Vector2i(48, 48)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "concrete"
+terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
+sources/0 = SubResource("TileSetAtlasSource_1blni")
+
+[node name="Level" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_m571l")
+ZoneNumber = 5
+LevelNumber = 1
+
+[node name="Barnacle" parent="." instance=ExtResource("2_41ywi")]
+position = Vector2(571, 76)
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAgAAAADAAEAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAADAAIAAAAAAAUAAAAAAAIAAAAAAAQAAAAFAAAAAAAAAAMAAAAFAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAEAAAABAAAAAAAEAAAAAAACAAAAAAABAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAADAAIAAAAPAAAAAAAFAAEAAAAPAAEAAAAEAAEAAAAPAAIAAAACAAIAAAAPAAUAAAACAAAAAAD//wYAAAAFAAEAAAD//wcAAAACAAIAAAAQAAYAAAAFAAEAAAAQAAcAAAACAAIAAAAOAAUAAAAEAAAAAAANAAUAAAAEAAAAAAACAAEAAAAFAAAAAAACAAIAAAAFAAAAAAACAAMAAAAEAAEAAAACAAQAAAAFAAAAAAACAAUAAAACAAIAAAAMAAUAAAAEAAAAAAALAAUAAAADAAEAAAAAAP//AAAFAAEAAAA=")
+tile_set = SubResource("TileSet_ymyk6")
+rendering_quadrant_size = 48
+
+[node name="Player" parent="." instance=ExtResource("4_kots1")]
+position = Vector2(700, 67)
+
+[node name="Camera2D" parent="." instance=ExtResource("5_k165n")]
+position = Vector2(0, 1)
+
+[node name="Indicators" type="Node" parent="."]
+
+[node name="Pickups" type="Node" parent="."]
+
+[node name="WoodenBox" parent="Pickups" instance=ExtResource("6_hkynu")]
+position = Vector2(636, 362)
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Swing-light" parent="Lights" instance=ExtResource("7_iohfi")]
+position = Vector2(432, 10)
+
+[node name="Marker2D" type="Marker2D" parent="Lights/Swing-light"]
+position = Vector2(0, 139)
+
+[node name="Light" parent="Lights" instance=ExtResource("8_mfnym")]
+position = Vector2(245, 58)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Button_red" parent="Buttons" instance=ExtResource("9_k0ktu")]
+position = Vector2(715, 386)
+
+[node name="Button_Red_Signal" parent="Buttons/Button_red" instance=ExtResource("10_8elgw")]
+z_index = 3
+position = Vector2(29, -267)
+
+[node name="Door" parent="Buttons/Button_red" instance=ExtResource("11_wa66k")]
+position = Vector2(29, -193)
+
+[node name="Laser" type="Node" parent="."]
+
+[node name="Grow-Laser" parent="Laser" instance=ExtResource("12_7y1b1")]
+position = Vector2(70, 42)
+rotation = 1.57079
+target_scale = Vector2(5, 5)
+metadata/_edit_lock_ = true
+
+[node name="rat" type="Node" parent="."]
+
+[node name="Ratspawn" parent="rat" node_paths=PackedStringArray("Fleemarker") instance=ExtResource("13_2sac3")]
+position = Vector2(132, 336)
+scale = Vector2(1.5, 1.5)
+Rat_number = 1
+Fleemarker = NodePath("../Ratfleemarker")
+
+[node name="Ratfleemarker" parent="rat" instance=ExtResource("14_fmryn")]
+position = Vector2(679, 193)
+scale = Vector2(1.5, 1.5)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("15_ktunv")]
+position = Vector2(385, 288)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("15_ktunv")]
+position = Vector2(289, 224)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("15_ktunv")]
+position = Vector2(385, 224)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("15_ktunv")]
+position = Vector2(480, 224)
+
+[node name="dont touch" parent="." instance=ExtResource("16_qsdyo")]
+visible = false
+
+[node name="Transition" parent="." instance=ExtResource("17_8xpma")]
+target_scene = ExtResource("18_0dm85")
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(780.5, 192)
+
+[node name="AudioStreamPlayer2D" parent="Transition" index="4"]
+stream_paused = false
+
+[node name="Biodoor" parent="." instance=ExtResource("19_hv64l")]
+position = Vector2(548, 336)
+scale = Vector2(-1, 1)
+
+[editable path="Transition"]
+[editable path="Biodoor"]
