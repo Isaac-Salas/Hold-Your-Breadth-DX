@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://8vsq4yip7jnd"]
+[gd_scene load_steps=22 format=4 uid="uid://8vsq4yip7jnd"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_1uopv"]
 [ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_xkupa"]
@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="10_4aown"]
 [ext_resource type="Script" uid="uid://cldlbvefbjpts" path="res://scenes/cutscenes/Verlet/string.gd" id="10_kfd1i"]
 [ext_resource type="Script" uid="uid://h3j5iok7ddb2" path="res://scenes/levels/game_sequence/timer.gd" id="12_eu5h7"]
-[ext_resource type="Script" uid="uid://b3rh03u0dxpm" path="res://scenes/levels/game_sequence/tentacle_bomb.gd" id="13_m6rye"]
+[ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="13_u134c"]
 [ext_resource type="Texture2D" uid="uid://dyluvcckygms" path="res://assets/bosses/EyeBoss/Tentacle.png" id="14_dvft4"]
 [ext_resource type="Texture2D" uid="uid://dlktmfi71hbnn" path="res://assets/bosses/EyeBoss/Brain.png" id="15_u134c"]
+[ext_resource type="PackedScene" uid="uid://74d43vupckdt" path="res://scenes/bosses/Eyeboss/Eyesprite.tscn" id="16_agpwv"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -169,7 +170,7 @@ scale = Vector2(1.5, 1.5)
 [node name="dont touch" parent="." instance=ExtResource("5_4aown")]
 
 [node name="Slime" parent="." instance=ExtResource("6_kfd1i")]
-position = Vector2(98, 571)
+position = Vector2(230, 597)
 
 [node name="WoodenBox" parent="." instance=ExtResource("8_y7ul2")]
 position = Vector2(181, 556)
@@ -240,38 +241,27 @@ one_shot = true
 autostart = true
 script = ExtResource("12_eu5h7")
 
-[node name="TentacleBomb" type="Node2D" parent="."]
-z_index = -1
-position = Vector2(301, 421)
-script = ExtResource("13_m6rye")
+[node name="Sprite2D" parent="." instance=ExtResource("16_agpwv")]
+position = Vector2(903, 350)
+scale = Vector2(2, 2)
 
-[node name="RayCast2D" type="RayCast2D" parent="TentacleBomb"]
-target_position = Vector2(0, 1000)
-hit_from_inside = true
+[node name="Sprite2D2" parent="." instance=ExtResource("16_agpwv")]
+z_index = 0
+position = Vector2(814, 348)
+scale = Vector2(2, 2)
 
-[node name="TentacleBomb2" type="Node2D" parent="."]
-position = Vector2(491, 155)
-script = ExtResource("13_m6rye")
-
-[node name="RayCast2D" type="RayCast2D" parent="TentacleBomb2"]
-target_position = Vector2(0, 1000)
-hit_from_inside = true
-
-[node name="TentacleBomb3" type="Node2D" parent="."]
-position = Vector2(1015, 456)
-script = ExtResource("13_m6rye")
-
-[node name="RayCast2D" type="RayCast2D" parent="TentacleBomb3"]
-target_position = Vector2(0, 1000)
-hit_from_inside = true
+[node name="Brain" type="Sprite2D" parent="."]
+position = Vector2(859, 340)
+texture = ExtResource("15_u134c")
 
 [node name="Tentacle" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(567, 305)
 texture = ExtResource("14_dvft4")
 
-[node name="Brain" type="Sprite2D" parent="."]
-position = Vector2(936, 460)
-texture = ExtResource("15_u134c")
+[node name="TentacleBomb" parent="." instance=ExtResource("13_u134c")]
+position = Vector2(857, 382)
+tentacle_amount = 30
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
 

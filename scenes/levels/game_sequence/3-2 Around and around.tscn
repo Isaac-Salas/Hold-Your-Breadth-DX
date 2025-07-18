@@ -629,12 +629,7 @@ z_index = -5
 position = Vector2(628, 300)
 
 [node name="Indicator-Arrow" parent="." instance=ExtResource("24_p1rr8")]
-position = Vector2(97, 297)
-rotation = 1.5708
-flip_h = true
-
-[node name="Indicator-Arrow2" parent="." instance=ExtResource("24_p1rr8")]
-position = Vector2(97, 297)
+position = Vector2(97, 340)
 rotation = 1.5708
 flip_h = true
 
@@ -643,7 +638,7 @@ position = Vector2(512, 154)
 rotation = 1.5708
 
 [node name="Indicator-Arrow4" parent="." instance=ExtResource("24_p1rr8")]
-position = Vector2(316, 300)
+position = Vector2(316, 346)
 flip_h = true
 
 [node name="Light" parent="." instance=ExtResource("8_ghln3")]

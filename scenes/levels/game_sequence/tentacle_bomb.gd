@@ -1,8 +1,12 @@
 extends Node2D
+
+class_name TentacleBomb
 @export var tentacle_amount : int = 10
 @export var rotation_amount : int = 10 
 @export var color_variation : bool = false
 @export var animation_speed : float = 0.1
+@export var punto_cent: Marker2D
+@export var random_lenghts : bool = true
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var positions_array : Array[Vector2]
@@ -38,10 +42,14 @@ func generate_tentacle(tentacles_amount : int, pos_array : Array[Vector2]):
 		var selected_pos = to_local(pos_rand)
 		self.add_child(marker_cent)
 		var new_rope : StringComponent = ROPE_MODULAR.instantiate()
-		new_rope.puntocent = self
+		if punto_cent != null:
+			new_rope.puntocent = punto_cent
+		else:
+			new_rope.puntocent = self
 		new_rope.light = marker_cent
+		if random_lenghts == true:
+			new_rope.ropeLength = randf_range(15.0, 60.0)
 		self.add_child(new_rope)
-		
 		animate_tentacle(marker_cent,selected_pos,animation_speed)
 		await tentacle_tween.finished
 		count += 1

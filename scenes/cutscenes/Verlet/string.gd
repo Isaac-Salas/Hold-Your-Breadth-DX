@@ -57,8 +57,7 @@ func _process(delta)->void:
 	if light != null:
 		if crazy_mode == true:
 			if light.position.y > 0 :
-				light.global_position -= Vector2(0,1)
-				
+				#light.global_position -= Vector2(0,1)
 				set_last(to_local(light.global_position), Vector2(randf_range(20.0,50.0),randf_range(20.0,50.0)))
 		else:
 			set_last(to_local(light.global_position))

@@ -1,6 +1,7 @@
 extends Node2D
 
 class_name SwingingEye
+const TENTACLE_BOMB = preload("res://scenes/bosses/Eyeboss/tentacle_bomb.tscn")
 
 @onready var line_2d = $String/Line2D
 @onready var string = $String
@@ -12,7 +13,7 @@ class_name SwingingEye
 @onready var puntocent: StaticBody2D = $Puntocent
 
 
-@onready var lightphy = $Light
+@onready var lightphy : RigidBody2D = $Light
 @onready var visible_on_screen_notifier_2d = $Light/VisibleOnScreenNotifier2D
 
 @onready var fakelight = $Light/Fakelight
@@ -25,6 +26,8 @@ const BLOOD_PARTICLES = preload("res://scenes/bosses/Eyeboss/bloodParticles.tscn
 @export var drop : bool
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent
 @export var hang : bool 
+
+@onready var position_tween : Tween
 
 
 # Called when the node enters the scene tree for the first time.
@@ -65,7 +68,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	
+	pass
 	light.visible = true
 	
 
@@ -83,9 +86,28 @@ func droplight():
 		newblood.restart()
 		newblood.one_shot = true
 		puntocent.add_child(newblood)
-		string.light = newpos 
+		string.light = newpos
+		var new_bomb = TENTACLE_BOMB.instantiate()
+		new_bomb.punto_cent = newpos
+		self.add_child(new_bomb)
+		animate_pos(newpos)
 		string.crazy_mode = true
+		await position_tween.finished
+		string.crazy_mode = false
 		
+
+func animate_pos(target : Node2D):
+	reset_anim()
+	position_tween.tween_property(
+		target, "position", target.position - Vector2(0.0,200.0), 1.0
+	)
+
+
+
+func reset_anim():
+	if position_tween:
+		position_tween.kill()
+	position_tween = create_tween()
 
 func dropdown():
 	pin_joint_2d.queue_free()

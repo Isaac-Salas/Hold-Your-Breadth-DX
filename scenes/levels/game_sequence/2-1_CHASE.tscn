@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="7_gyrh6"]
 [ext_resource type="PackedScene" uid="uid://c57hv8ph7ffis" path="res://scenes/enemies/Hamster/Hamster-Bug.tscn" id="7_r8l5k"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="8_tr66l"]
-[ext_resource type="Script" uid="uid://jqlatfcv8q4x" path="res://scenes/shaders/screen_effects.gd" id="9_0b8fo"]
+[ext_resource type="Script" uid="uid://coo82t4bo7v8c" path="res://scenes/shaders/screen_effects.gd" id="9_0b8fo"]
 [ext_resource type="PackedScene" uid="uid://djfwsa2kdhmc8" path="res://scenes/shaders/crt_shader.tscn" id="10_gikq1"]
 [ext_resource type="PackedScene" uid="uid://fnvs7y1btss0" path="res://scenes/shaders/Options_Menu.tscn" id="11_lnmw1"]
 [ext_resource type="Texture2D" uid="uid://cty26p5f5km38" path="res://scenes/shaders/ColorGradeP-O.tres" id="11_r8l5k"]
@@ -519,6 +519,7 @@ position_smoothing_speed = 100.0
 [node name="dont touch" type="Node2D" parent="CharacterBody2D2/Camera2D"]
 position = Vector2(-576, -424)
 script = ExtResource("9_0b8fo")
+showoverride = true
 metadata/_edit_lock_ = true
 
 [node name="CRTShader" parent="CharacterBody2D2/Camera2D/dont touch" instance=ExtResource("10_gikq1")]

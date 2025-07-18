@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://74d43vupckdt"]
 
 [ext_resource type="Texture2D" uid="uid://bhvbf442h26k1" path="res://assets/bosses/EyeBoss/Eye.png" id="1_fs4bw"]
-[ext_resource type="Script" uid="uid://b4ryajp8bd35" path="res://scenes/bosses/Eyeboss/Eye.gd" id="2_s7giu"]
+[ext_resource type="Script" uid="uid://s7axysg1p188" path="res://scenes/bosses/Eyeboss/Eye.gd" id="2_s7giu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mraj3"]
 light_mode = 1
