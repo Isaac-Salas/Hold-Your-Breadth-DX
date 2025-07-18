@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_vqrqb"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="4_soxw3"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="5_hq2aw"]
-[ext_resource type="Script" uid="uid://4ak722pryrv0" path="res://scenes/objects/door/door.gd" id="6_bgdep"]
+[ext_resource type="Script" uid="uid://plp75xlwu3vv" path="res://scenes/objects/door/door.gd" id="6_bgdep"]
 [ext_resource type="PackedScene" uid="uid://b71h5dbrt5qt3" path="res://scenes/objects/door/small_door.tscn" id="6_rsd5o"]
 [ext_resource type="Texture2D" uid="uid://r8ffoo4a1acs" path="res://assets/objects/small_door.png" id="7_jwv1l"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="9_l318y"]
@@ -147,6 +147,7 @@ texture_region_size = Vector2i(48, 48)
 [sub_resource type="TileSet" id="TileSet_ymyk6"]
 tile_size = Vector2i(48, 48)
 occlusion_layer_0/light_mask = 1
+occlusion_layer_0/sdf_collision = true
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "concrete"

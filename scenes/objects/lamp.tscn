@@ -1,13 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://saxp0bi5k5yt"]
+[gd_scene load_steps=9 format=3 uid="uid://saxp0bi5k5yt"]
 
 [ext_resource type="Texture2D" uid="uid://u7qt14h20upf" path="res://assets/objects/Lamp_head.png" id="1_rmgst"]
-[ext_resource type="Script" uid="uid://daj7sdjhnxw0q" path="res://scenes/objects/lamp.gd" id="1_wbsqu"]
+[ext_resource type="Script" uid="uid://tvaltujx5bmn" path="res://scenes/objects/lamp.gd" id="1_wbsqu"]
 [ext_resource type="Texture2D" uid="uid://dvtkdbmu7pbrn" path="res://assets/objects/Lamp_base.png" id="2_abe07"]
 [ext_resource type="Texture2D" uid="uid://fprabyfukpnf" path="res://assets/lights/nRmVV (2).png" id="3_ihw8w"]
 [ext_resource type="Texture2D" uid="uid://dsmesrig8uh2m" path="res://assets/lights/CONE.png" id="3_s03d4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtdn8"]
 size = Vector2(10, 9)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_flud0"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 50.0
+gravity = Vector3(0, 98, 0)
+color = Color(1, 1, 1, 0.392157)
+turbulence_enabled = true
+turbulence_noise_strength = 8.0
+collision_mode = 2
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ypwrl"]
 blend_mode = 1
@@ -36,6 +46,12 @@ offset = Vector2(105, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(4, -3.5)
 shape = SubResource("RectangleShape2D_xtdn8")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RigidBody2D"]
+position = Vector2(54, 0)
+lifetime = 10.0
+randomness = 0.15
+process_material = SubResource("ParticleProcessMaterial_flud0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_abe07")

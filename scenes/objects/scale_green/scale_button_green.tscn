@@ -1,12 +1,12 @@
 [gd_scene load_steps=31 format=3 uid="uid://dsmy2h1upfevb"]
 
-[ext_resource type="Script" uid="uid://00rfcjrux0qt" path="res://scenes/objects/scale_green/scale_logic.gd" id="1_rceiw"]
-[ext_resource type="Texture2D" uid="uid://2ggarvi8rsgv" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
-[ext_resource type="Texture2D" uid="uid://d17gho73pcr10" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
-[ext_resource type="Texture2D" uid="uid://b1xbly7a42bv0" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
-[ext_resource type="Shader" uid="uid://bdrcfdqhcfbi6" path="res://scenes/shaders/Particle.gdshader" id="5_k7c00"]
+[ext_resource type="Script" uid="uid://ba3x6j0i4i6om" path="res://scenes/objects/scale_green/scale_logic.gd" id="1_rceiw"]
+[ext_resource type="Texture2D" uid="uid://c07805l161nu1" path="res://assets/objects/scale_signal_button.png" id="3_2mu4u"]
+[ext_resource type="Texture2D" uid="uid://cktjot1rx1yp2" path="res://assets/objects/scale_animated.png" id="4_eavbj"]
+[ext_resource type="Texture2D" uid="uid://fprabyfukpnf" path="res://assets/lights/nRmVV (2).png" id="4_esb06"]
+[ext_resource type="Shader" uid="uid://bly3bmj4rgeyy" path="res://scenes/shaders/Particle.gdshader" id="5_k7c00"]
 [ext_resource type="Material" uid="uid://b3un3j8dsgqgw" path="res://scenes/shaders/scale_button_green-part.tres" id="6_4koa1"]
-[ext_resource type="AudioStream" uid="uid://vlhma2nl2qco" path="res://assets/audioshit/buttonpressed_.mp3" id="6_hdhvh"]
+[ext_resource type="AudioStream" uid="uid://0hagt6fghmko" path="res://assets/audioshit/buttonpressed_.mp3" id="6_hdhvh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gsyot"]
 light_mode = 1
@@ -187,6 +187,7 @@ script = ExtResource("1_rceiw")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -84)
 scale = Vector2(0.919271, 0.666667)
+enabled = false
 color = Color(0.235294, 1, 0.235294, 1)
 energy = 0.5
 texture = ExtResource("4_esb06")

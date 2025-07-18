@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://b5vnccxojplyt"]
+[gd_scene load_steps=14 format=3 uid="uid://b5vnccxojplyt"]
 
 [ext_resource type="Script" uid="uid://1qwloswdmkhn" path="res://scenes/bosses/Eyeboss/swinging_eye.gd" id="1_ktrla"]
-[ext_resource type="Texture2D" uid="uid://bhvbf442h26k1" path="res://assets/bosses/EyeBoss/Eye.png" id="2_l2hy5"]
-[ext_resource type="Script" uid="uid://b4ryajp8bd35" path="res://scenes/bosses/Eyeboss/Eye.gd" id="3_th7r7"]
+[ext_resource type="PackedScene" uid="uid://74d43vupckdt" path="res://scenes/bosses/Eyeboss/Eyesprite.tscn" id="2_th7r7"]
 [ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="4_54u73"]
 [ext_resource type="AudioStream" uid="uid://dxng2lbah0x0s" path="res://assets/audioshit/bulb_light.mp3" id="5_u0ucu"]
 [ext_resource type="AudioStream" uid="uid://c26afn3bivs4i" path="res://assets/audioshit/clink_foco.mp3" id="6_8q8kp"]
@@ -13,9 +12,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4lh8"]
 size = Vector2(1, 1)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mraj3"]
-light_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_th7r7"]
 radius = 17.0
@@ -44,13 +40,7 @@ collision_mask = 3
 contact_monitor = true
 max_contacts_reported = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Light"]
-z_index = 3
-material = SubResource("CanvasItemMaterial_mraj3")
-texture = ExtResource("2_l2hy5")
-flip_h = true
-script = ExtResource("3_th7r7")
-metadata/_edit_lock_ = true
+[node name="Sprite2D" parent="Light" instance=ExtResource("2_th7r7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
 shape = SubResource("CircleShape2D_th7r7")

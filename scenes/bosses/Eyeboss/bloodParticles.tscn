@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://ctvudcupfxb8i" path="res://scenes/bosses/Eyeboss/blood_particles.tres" id="1_6lx5p"]
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
-amount = 20
+amount = 10
 lifetime = 8.0
 preprocess = 1.0
 randomness = 0.5

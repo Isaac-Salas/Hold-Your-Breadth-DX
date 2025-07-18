@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://delaq1iewwwqy"]
+[gd_scene load_steps=7 format=3 uid="uid://delaq1iewwwqy"]
 
-[ext_resource type="Texture2D" uid="uid://eyj3mbl4bqb" path="res://assets/objects/luz barra.png" id="1_gfubc"]
-[ext_resource type="Script" uid="uid://dy51hvh78jxed" path="res://scenes/objects/light.gd" id="2_y64hc"]
-[ext_resource type="Texture2D" uid="uid://5nmcee5s6y8p" path="res://assets/lights/Barramix.png" id="3_1x2vj"]
-[ext_resource type="Texture2D" uid="uid://d3yvuumf7otjv" path="res://assets/lights/nRmVV (2).png" id="3_vgi3y"]
+[ext_resource type="Texture2D" uid="uid://bj1q4ssexhroq" path="res://assets/objects/luz barra.png" id="1_gfubc"]
+[ext_resource type="Script" uid="uid://hw061fquxmqv" path="res://scenes/objects/light.gd" id="2_y64hc"]
+[ext_resource type="Texture2D" uid="uid://du541fen1xdwr" path="res://assets/lights/Barramix.png" id="3_1x2vj"]
+[ext_resource type="Texture2D" uid="uid://fprabyfukpnf" path="res://assets/lights/nRmVV (2).png" id="3_vgi3y"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qdrbt"]
 blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dypoi"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector3(0, 98, 0)
+color = Color(1, 1, 1, 0.392157)
+turbulence_enabled = true
+turbulence_noise_strength = 7.71
+collision_mode = 2
 
 [node name="Light" type="Sprite2D" groups=["Light"]]
 texture = ExtResource("1_gfubc")
@@ -31,6 +41,12 @@ texture = ExtResource("3_vgi3y")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-40, -40)
 rect = Rect2(-10, -10, 100, 100)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 29)
+lifetime = 10.0
+randomness = 0.15
+process_material = SubResource("ParticleProcessMaterial_dypoi")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
