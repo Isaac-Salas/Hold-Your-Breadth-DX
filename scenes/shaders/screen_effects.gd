@@ -5,7 +5,7 @@ class_name ScreenStuff
 @export var player : SlimePlayer
 #@onready var background: Sprite2D = $Background
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
-@onready var crt_shader: ColorRect = $CRTShader
+@onready var crt_shader: CRTShader = $CRTShader
 
 
 

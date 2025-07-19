@@ -5,6 +5,7 @@
 [node name="TentacleBomb" type="Node2D"]
 z_index = -1
 script = ExtResource("1_bfhix")
+color_variation = true
 
 [node name="PuntoCent" type="Marker2D" parent="."]
 
