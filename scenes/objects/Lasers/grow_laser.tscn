@@ -150,6 +150,7 @@ scale = Vector2(0.092, 0.084)
 texture = ExtResource("4_88ar0")
 
 [node name="Line2D" type="Line2D" parent="."]
+position = Vector2(40, 0)
 default_color = Color(0.505882, 0.85098, 1, 1)
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]

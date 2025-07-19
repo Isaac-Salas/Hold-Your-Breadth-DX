@@ -126,12 +126,12 @@ func _physics_process(delta):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14whu"]
-radius = 25.0
+radius = 13.6015
 
 [node name="Ratiña" type="RigidBody2D" groups=["edible", "throwable"]]
-collision_layer = 3
-collision_mask = 3
+mass = 1.5
 script = ExtResource("1_e0kxx")
+max_velocity = 600
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
@@ -150,8 +150,10 @@ shape = SubResource("CapsuleShape2D_y41eh")
 [node name="TargetLoc" type="Marker2D" parent="."]
 position = Vector2(-31, 0)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+[node name="IdleTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
 
 [node name="PlayerDetect" type="Area2D" parent="."]
 
@@ -159,9 +161,9 @@ wait_time = 0.1
 shape = SubResource("CircleShape2D_ywrjj")
 debug_color = Color(0.55591, 0.510535, 0.635269, 0.42)
 
-[node name="Timer2" type="Timer" parent="."]
-
-[node name="Timer3" type="Timer" parent="."]
+[node name="BehaviorTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="Alerted" type="Sprite2D" parent="."]
 process_mode = 1
@@ -173,9 +175,11 @@ texture = ExtResource("3_1qfcf")
 script = SubResource("GDScript_daj5k")
 
 [node name="LeftR" type="RayCast2D" parent="."]
+position = Vector2(-9, 8)
 target_position = Vector2(-22, 0)
 
 [node name="RightR" type="RayCast2D" parent="."]
+position = Vector2(4, 8)
 target_position = Vector2(22, 0)
 
 [node name="Detector" type="Area2D" parent="."]
@@ -183,10 +187,10 @@ target_position = Vector2(22, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("CircleShape2D_14whu")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]
 [connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_detect_body_exited"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
-[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="BehaviorTimer" to="." method="_on_behavior_timer_timeout"]
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]

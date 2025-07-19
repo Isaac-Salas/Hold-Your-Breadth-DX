@@ -155,6 +155,7 @@ texture = ExtResource("4_djfdd")
 metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="."]
+position = Vector2(40, 0)
 default_color = Color(1, 0.458824, 0.137255, 1)
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
