@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://8vsq4yip7jnd"]
+[gd_scene load_steps=24 format=4 uid="uid://8vsq4yip7jnd"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_1uopv"]
 [ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_xkupa"]
@@ -13,8 +13,10 @@
 [ext_resource type="Script" uid="uid://cldlbvefbjpts" path="res://scenes/cutscenes/Verlet/string.gd" id="10_kfd1i"]
 [ext_resource type="Script" uid="uid://h3j5iok7ddb2" path="res://scenes/levels/game_sequence/timer.gd" id="12_eu5h7"]
 [ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="13_u134c"]
+[ext_resource type="Script" uid="uid://enpujndhgawc" path="res://scenes/bosses/Eyeboss/hit.gd" id="15_i3b6s"]
 [ext_resource type="Texture2D" uid="uid://dlktmfi71hbnn" path="res://assets/bosses/EyeBoss/Brain.png" id="15_u134c"]
 [ext_resource type="PackedScene" uid="uid://74d43vupckdt" path="res://scenes/bosses/Eyeboss/Eyesprite.tscn" id="16_agpwv"]
+[ext_resource type="Script" uid="uid://du03pjfdoy62v" path="res://components/knockback_component.gd" id="16_wcfl8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -151,6 +153,9 @@ sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfd1i"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujihi"]
+size = Vector2(157, 75.145)
+
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_1uopv")
 
@@ -241,23 +246,39 @@ one_shot = true
 autostart = true
 script = ExtResource("12_eu5h7")
 
-[node name="Sprite2D" parent="." instance=ExtResource("16_agpwv")]
+[node name="BossMan" type="Node2D" parent="."]
+
+[node name="Sprite2D" parent="BossMan" instance=ExtResource("16_agpwv")]
 position = Vector2(903, 350)
 scale = Vector2(2, 2)
 
-[node name="Sprite2D2" parent="." instance=ExtResource("16_agpwv")]
+[node name="Sprite2D2" parent="BossMan" instance=ExtResource("16_agpwv")]
 z_index = 0
 position = Vector2(814, 348)
 scale = Vector2(2, 2)
 
-[node name="Brain" type="Sprite2D" parent="."]
+[node name="Brain" type="Sprite2D" parent="BossMan"]
 position = Vector2(859, 340)
 texture = ExtResource("15_u134c")
+
+[node name="Hit" type="Area2D" parent="BossMan" node_paths=PackedStringArray("knock")]
+script = ExtResource("15_i3b6s")
+knock = NodePath("../KnockbackComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossMan/Hit"]
+position = Vector2(858.5, 345.427)
+shape = SubResource("RectangleShape2D_ujihi")
+
+[node name="KnockbackComponent" type="Node2D" parent="BossMan" node_paths=PackedStringArray("target")]
+script = ExtResource("16_wcfl8")
+target = NodePath("../Brain")
+metadata/_custom_type_script = "uid://du03pjfdoy62v"
 
 [node name="TentacleBomb" parent="." instance=ExtResource("13_u134c")]
 position = Vector2(857, 382)
 tentacle_amount = 30
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="body_entered" from="BossMan/Hit" to="BossMan/Hit" method="_on_body_entered"]
 
 [editable path="Node2D/Scientist"]
