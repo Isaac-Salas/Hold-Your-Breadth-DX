@@ -1,0 +1,289 @@
+[gd_scene load_steps=7 format=3 uid="uid://bofk71lum1qxt"]
+
+[ext_resource type="Script" uid="uid://ckfgjd674j5ao" path="res://scenes/bosses/Eyeboss/tentacle.gd" id="1_5luwj"]
+[ext_resource type="Texture2D" uid="uid://dyluvcckygms" path="res://assets/bosses/EyeBoss/Tentacle.png" id="1_5tb40"]
+[ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="3_40mvg"]
+
+[sub_resource type="Animation" id="Animation_5tb40"]
+resource_name = "Wiggle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2/Tip:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-127, -7), Vector2(-127, -70), Vector2(-127, -7), Vector2(-127, -70)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-123, -43), Vector2(-123, -151.805)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-109, 18), Vector2(-109, -18)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-154, 13), Vector2(-154, 130)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-107, -25), Vector2(-107, -100)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Anchor:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 75, -0.533333, -97, 0.335, 93, 103.5, -0.365, 76, 0.568333, -62, 164, -0.333333, -27, 1.03333, -42, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.13333, 2.5, 3.73333, 5)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Anchor:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -12.5, -0.633333, -113.5, 0.466667, 74.5, 201, -1.03333, -24, 0.433333, -39.5, -4.5, -0.5, 74, 0.9, -74, 0, -0.7, 140, 0.966667, 19.5),
+"times": PackedFloat32Array(0, 1, 2.5, 3.6, 5)
+}
+
+[sub_resource type="Animation" id="Animation_5luwj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2/Tip:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-127, -7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-123, -43)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-109, 18)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-154, 13)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Anchor/Skeleton2D/Central/Segment1-1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-107, -25)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Anchor:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Anchor:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_40mvg"]
+_data = {
+&"RESET": SubResource("Animation_5luwj"),
+&"Wiggle": SubResource("Animation_5tb40")
+}
+
+[node name="Tentacle" type="Node2D"]
+script = ExtResource("1_5luwj")
+
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="Polygons" type="Node2D" parent="Anchor"]
+
+[node name="Segment1" type="Polygon2D" parent="Anchor/Polygons"]
+texture = ExtResource("1_5tb40")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(744, 276, 1152, 276, 1152, 456, 744, 456, 828, 276, 828, 456, 960, 276, 960, 456, 1068, 276, 1068, 456)
+uv = PackedVector2Array(744, 276, 1152, 276, 1152, 456, 744, 456, 828, 276, 828, 456, 960, 276, 960, 456, 1068, 276, 1068, 456)
+polygons = [PackedInt32Array(1, 9, 2), PackedInt32Array(1, 8, 9), PackedInt32Array(8, 7, 9), PackedInt32Array(8, 6, 7), PackedInt32Array(6, 5, 7), PackedInt32Array(6, 4, 5), PackedInt32Array(4, 3, 5), PackedInt32Array(4, 0, 3)]
+bones = ["Central", PackedFloat32Array(0, 0.5, 0.5, 0, 0, 0, 0, 0, 0.5, 0.5), "Central/Segment1-1", PackedFloat32Array(0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5), "Central/Segment1-1/Segment1-2", PackedFloat32Array(0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1", PackedFloat32Array(0.5, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2/Tip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 6
+
+[node name="Segment2" type="Polygon2D" parent="Anchor/Polygons"]
+texture = ExtResource("1_5tb40")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(744, 396, 744, 252, 480, 252, 480, 396, 552, 252, 552, 396, 636, 252, 636, 396)
+uv = PackedVector2Array(744, 396, 744, 252, 480, 252, 480, 396, 552, 252, 552, 396, 636, 252, 636, 396)
+polygons = [PackedInt32Array(1, 7, 0), PackedInt32Array(1, 6, 7), PackedInt32Array(6, 5, 7), PackedInt32Array(6, 4, 5), PackedInt32Array(4, 2, 3), PackedInt32Array(4, 5, 3)]
+bones = ["Central", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2", PackedFloat32Array(0.5, 0.5, 0, 0, 0, 0, 0, 0.5), "Central/Segment1-1/Segment1-2/Segment2-1", PackedFloat32Array(0.5, 0.5, 0, 0, 0, 0, 0.5, 0.5), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2", PackedFloat32Array(0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1", PackedFloat32Array(0, 0, 0.5, 0.5, 0.5, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2/Tip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 4
+
+[node name="Segment3" type="Polygon2D" parent="Anchor/Polygons"]
+texture = ExtResource("1_5tb40")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(480, 276, 264, 276, 264, 396, 480, 396, 336, 276, 336, 396, 408, 276, 408, 396)
+uv = PackedVector2Array(480, 276, 264, 276, 264, 396, 480, 396, 336, 276, 336, 396, 408, 276, 408, 396)
+polygons = [PackedInt32Array(0, 7, 3), PackedInt32Array(6, 7, 0), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 7, 5), PackedInt32Array(4, 2, 5), PackedInt32Array(4, 1, 2)]
+bones = ["Central", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2", PackedFloat32Array(0.5, 0, 0, 0.5, 0, 0, 0, 0.5), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1", PackedFloat32Array(0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2", PackedFloat32Array(0, 0.5, 0.5, 0, 0.5, 0.5, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1", PackedFloat32Array(0, 0.5, 0.5, 0, 0.5, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2/Tip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 4
+
+[node name="Segment4" type="Polygon2D" parent="Anchor/Polygons"]
+texture = ExtResource("1_5tb40")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(0, 252, 264, 252, 264, 372, 0, 372, 108, 252, 108, 372, 204, 252, 204, 372)
+uv = PackedVector2Array(0, 252, 264, 252, 264, 372, 0, 372, 108, 252, 108, 372, 204, 252, 204, 372)
+polygons = [PackedInt32Array(1, 7, 2), PackedInt32Array(1, 6, 7), PackedInt32Array(6, 5, 7), PackedInt32Array(6, 4, 5), PackedInt32Array(4, 3, 5), PackedInt32Array(4, 0, 3)]
+bones = ["Central", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2", PackedFloat32Array(0, 0.5, 0.5, 0, 0, 0, 0, 0.5), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1", PackedFloat32Array(0, 0.5, 0.5, 0, 0, 0, 0.5, 0.5), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2", PackedFloat32Array(0, 0, 0, 0, 0.5, 0.5, 0, 0), "Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2/Tip", PackedFloat32Array(0.5, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5)]
+internal_vertex_count = 4
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Anchor"]
+
+[node name="Central" type="Bone2D" parent="Anchor/Skeleton2D"]
+position = Vector2(1146, 404)
+rest = Transform2D(1, 0, 0, 1, 1146, 404)
+
+[node name="Segment1-1" type="Bone2D" parent="Anchor/Skeleton2D/Central"]
+position = Vector2(-107, -25)
+rest = Transform2D(1, 0, 0, 1, -107, -25)
+
+[node name="Segment1-2" type="Bone2D" parent="Anchor/Skeleton2D/Central/Segment1-1"]
+position = Vector2(-149, -35)
+rest = Transform2D(1, 0, 0, 1, -149, -35)
+
+[node name="Segment2-1" type="Bone2D" parent="Anchor/Skeleton2D/Central/Segment1-1/Segment1-2"]
+position = Vector2(-154, 13)
+rest = Transform2D(1, 0, 0, 1, -154, 13)
+
+[node name="Segment2-2" type="Bone2D" parent="Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1"]
+position = Vector2(-149, -35)
+rest = Transform2D(1, 0, 0, 1, -149, -35)
+
+[node name="Segment3-1" type="Bone2D" parent="Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2"]
+position = Vector2(-109, 18)
+rest = Transform2D(1, 0, 0, 1, -109, 18)
+
+[node name="Segment3-2" type="Bone2D" parent="Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1"]
+position = Vector2(-99, 14)
+rest = Transform2D(1, 0, 0, 1, -99, 14)
+
+[node name="Segment4-1" type="Bone2D" parent="Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2"]
+position = Vector2(-123, -43)
+rest = Transform2D(1, 0, 0, 1, -123, -43)
+
+[node name="Segment4-2" type="Bone2D" parent="Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1"]
+position = Vector2(-121, 2)
+rest = Transform2D(1, 0, 0, 1, -121, 2)
+
+[node name="Tip" type="Bone2D" parent="Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2"]
+position = Vector2(-127, -7)
+rest = Transform2D(1, 0, 0, 1, -127, -7)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_40mvg")
+}
+autoplay = "Wiggle"
+
+[node name="TentacleBomb3" parent="." node_paths=PackedStringArray("punto_cent") instance=ExtResource("3_40mvg")]
+position = Vector2(393, 230)
+punto_cent = NodePath("../Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2")
+base_color = Color(0.478431, 0.188235, 0.2, 0.196078)
+
+[node name="TentacleBomb4" parent="." node_paths=PackedStringArray("punto_cent") instance=ExtResource("3_40mvg")]
+position = Vector2(190, 214)
+punto_cent = NodePath("../Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1")
+base_color = Color(0.478431, 0.188235, 0.2, 0.196078)
+
+[node name="TentacleBomb5" parent="." node_paths=PackedStringArray("punto_cent") instance=ExtResource("3_40mvg")]
+position = Vector2(27, 235)
+punto_cent = NodePath("../Anchor/Skeleton2D/Central/Segment1-1/Segment1-2/Segment2-1/Segment2-2/Segment3-1/Segment3-2/Segment4-1/Segment4-2/Tip")
+base_color = Color(0.478431, 0.188235, 0.2, 0.196078)

@@ -4,6 +4,7 @@ class_name MusicSubmanager
 @export var level : int = 1
 @export var playback_speed : int = 1
 @export var loop : bool = true
+#@export var fades : bool = false
 
 func _ready():
 	MusicManager.finished.connect(looper)
@@ -27,18 +28,18 @@ func compare_stream(matched : int):
 		if MusicManager.has_stream_playback():
 			pass
 		else:
-			MusicManager.fade(-80.0)
-			await MusicManager.fade_audio.finished
-			MusicManager.startplay(MusicManager.get(lookup),playback_speed, -80.0)
-			MusicManager.fade()
+			#MusicManager.fade(-80.0)
+			#await MusicManager.fade_audio.finished
+			MusicManager.startplay(MusicManager.get(lookup),playback_speed)
+			#MusicManager.fade()
 			
 	else:
 		if MusicManager.has_stream_playback():
-			MusicManager.fade(-80.0, 3.0)
-			await MusicManager.fade_audio.finished
-			MusicManager.startplay(MusicManager.get(lookup),playback_speed, -80.0)
-			MusicManager.fade()
+			#MusicManager.fade(-80.0, 3.0)
+			#await MusicManager.fade_audio.finished
+			MusicManager.startplay(MusicManager.get(lookup),playback_speed)
+			#MusicManager.fade()
 		else:
-			MusicManager.startplay(MusicManager.get(lookup),playback_speed, -80.0)
-			MusicManager.fade()
+			MusicManager.startplay(MusicManager.get(lookup),playback_speed)
+			#MusicManager.fade()
 		

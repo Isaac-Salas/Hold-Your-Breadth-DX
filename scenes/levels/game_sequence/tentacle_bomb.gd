@@ -3,13 +3,16 @@ extends Node2D
 class_name TentacleBomb
 @export var tentacle_amount : int = 10
 @export var rotation_amount : int = 10 
-@export var color_variation : bool = false
-@export var animation_speed : float = 0.1
-@export var punto_cent: Marker2D
-@export var random_lenghts : bool = true
 
+@export var animation_speed : float = 0.1
+@export var punto_cent: Node2D
+@export var random_lenghts : bool = true
+@export var color_variation : bool = false
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var positions_array : Array[Vector2]
+
+@export var base_color : Color = Color(.48,.19,.20,0.8)
+
 const ROPE_MODULAR = preload("res://scenes/objects/rope_modular.tscn")
 var tentacle_tween : Tween
 
@@ -49,6 +52,12 @@ func generate_tentacle(tentacles_amount : int, pos_array : Array[Vector2]):
 		new_rope.light = marker_cent
 		if random_lenghts == true:
 			new_rope.ropeLength = randf_range(15.0, 60.0)
+		if color_variation == true:
+			var new_color : Color = base_color
+			new_color.r -= randf_range(0.0,0.5)
+			new_rope.color_override = new_color
+		else:
+			new_rope.color_override = base_color
 		self.add_child(new_rope)
 		animate_tentacle(marker_cent,selected_pos,animation_speed)
 		await tentacle_tween.finished

@@ -13,6 +13,8 @@ class_name StringComponent
 @onready var line2D: = $Line2D
 @export var crazy_mode : bool
 
+@export var color_override : Color
+
 var pos : PackedVector2Array
 var posPrev : PackedVector2Array
 var pointCount : int
@@ -20,6 +22,7 @@ var pointCount : int
 
 
 func _ready()->void:
+	line2D.default_color = color_override
 	pointCount = get_pointCount(ropeLength)
 	resize_arrays()
 	init_position()

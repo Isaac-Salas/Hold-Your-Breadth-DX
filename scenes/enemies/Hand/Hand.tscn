@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://w67wwrsfwoay"]
 
-[ext_resource type="Script" uid="uid://bm8p7os23u4g6" path="res://scenes/enemies/Hand/hand2.gd" id="1_3upnr"]
+[ext_resource type="Script" uid="uid://btc6vgthxb6xl" path="res://scenes/enemies/Hand/hand2.gd" id="1_3upnr"]
 [ext_resource type="SpriteFrames" uid="uid://e4mn8s24isc5" path="res://scenes/enemies/Hand-Chase.tres" id="1_7ihiy"]
-[ext_resource type="AudioStream" uid="uid://bva6nawsxojit" path="res://assets/SFX/_bosss.mp3" id="3_ayl1y"]
+[ext_resource type="AudioStream" uid="uid://c1obk5tuu15ds" path="res://assets/SFX/_bosss.mp3" id="3_ayl1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b44i"]
 size = Vector2(311, 477)

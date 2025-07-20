@@ -93,6 +93,7 @@ light = NodePath("../Light")
 puntocent = NodePath("../Puntocent")
 ropeLength = 15.0
 dampening = 1.0
+color_override = Color(0.48, 0.19, 0.2, 0.8)
 metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="String"]

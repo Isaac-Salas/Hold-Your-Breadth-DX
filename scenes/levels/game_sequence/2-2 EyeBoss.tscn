@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://8vsq4yip7jnd"]
+[gd_scene load_steps=24 format=4 uid="uid://8vsq4yip7jnd"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_1uopv"]
 [ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_xkupa"]
@@ -13,9 +13,10 @@
 [ext_resource type="Script" uid="uid://cldlbvefbjpts" path="res://scenes/cutscenes/Verlet/string.gd" id="10_kfd1i"]
 [ext_resource type="Script" uid="uid://h3j5iok7ddb2" path="res://scenes/levels/game_sequence/timer.gd" id="12_eu5h7"]
 [ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="13_u134c"]
-[ext_resource type="Texture2D" uid="uid://dyluvcckygms" path="res://assets/bosses/EyeBoss/Tentacle.png" id="14_dvft4"]
+[ext_resource type="Script" uid="uid://enpujndhgawc" path="res://scenes/bosses/Eyeboss/hit.gd" id="15_i3b6s"]
 [ext_resource type="Texture2D" uid="uid://dlktmfi71hbnn" path="res://assets/bosses/EyeBoss/Brain.png" id="15_u134c"]
 [ext_resource type="PackedScene" uid="uid://74d43vupckdt" path="res://scenes/bosses/Eyeboss/Eyesprite.tscn" id="16_agpwv"]
+[ext_resource type="Script" uid="uid://du03pjfdoy62v" path="res://components/knockback_component.gd" id="16_wcfl8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -152,6 +153,9 @@ sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfd1i"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujihi"]
+size = Vector2(157, 75.145)
+
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_1uopv")
 
@@ -216,12 +220,13 @@ script = ExtResource("10_kfd1i")
 light = NodePath("../Scientist/Skeleton2D/RigidSkeleton/Head")
 puntocent = NodePath(".")
 ropeLength = 5.0
+color_override = Color(0.721569, 0.235294, 0.243137, 1)
 
 [node name="Line2D" type="Line2D" parent="Node2D/StringComponent"]
 material = SubResource("CanvasItemMaterial_eu5h7")
 points = PackedVector2Array(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 27, 0, 28, 0, 29, 0, 30, 0, 31, 0, 32, 0, 33, 0, 34, 0, 35, 0, 36, 0, 37, 0, 38, 0, 39, 0, 40, 0, 41, 0, 42, 0, 43, 0, 44, 0, 45, 0, 46, 0, 47, 0, 48, 0, 49, 0, 50, 0, 51, 0, 52, 0, 53, 0, 54, 0, 55, 0, 56, 0, 57, 0, 58, 0, 59, 0, 60, 0, 61, 0, 62, 0, 63, 0, 64, 0, 65, 0, 66, 0, 67, 0, 68, 0, 69, 0, 70, 0, 71, 0, 72, 0, 73, 0, 74, 0, 75, 0, 76, 0, 77, 0, 78, 0, 79, 0, 80, 0, 81, 0, 82, 0, 83, 0, 84, 0, 85, 0, 86, 0, 87, 0, 88, 0, 89, 0, 90, 0, 91, 0, 92, 0, 93, 0, 94, 0, 95, 0, 96, 0, 97, 0, 98, 0, 99, 0)
 width = 3.0
-default_color = Color(0.483683, 0.190703, 0.206418, 1)
+default_color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Scientist" parent="Node2D" instance=ExtResource("8_f57xs")]
@@ -241,28 +246,39 @@ one_shot = true
 autostart = true
 script = ExtResource("12_eu5h7")
 
-[node name="Sprite2D" parent="." instance=ExtResource("16_agpwv")]
+[node name="BossMan" type="Node2D" parent="."]
+
+[node name="Sprite2D" parent="BossMan" instance=ExtResource("16_agpwv")]
 position = Vector2(903, 350)
 scale = Vector2(2, 2)
 
-[node name="Sprite2D2" parent="." instance=ExtResource("16_agpwv")]
+[node name="Sprite2D2" parent="BossMan" instance=ExtResource("16_agpwv")]
 z_index = 0
 position = Vector2(814, 348)
 scale = Vector2(2, 2)
 
-[node name="Brain" type="Sprite2D" parent="."]
+[node name="Brain" type="Sprite2D" parent="BossMan"]
 position = Vector2(859, 340)
 texture = ExtResource("15_u134c")
 
-[node name="Tentacle" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(567, 305)
-texture = ExtResource("14_dvft4")
+[node name="Hit" type="Area2D" parent="BossMan" node_paths=PackedStringArray("knock")]
+script = ExtResource("15_i3b6s")
+knock = NodePath("../KnockbackComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossMan/Hit"]
+position = Vector2(858.5, 345.427)
+shape = SubResource("RectangleShape2D_ujihi")
+
+[node name="KnockbackComponent" type="Node2D" parent="BossMan" node_paths=PackedStringArray("target")]
+script = ExtResource("16_wcfl8")
+target = NodePath("../Brain")
+metadata/_custom_type_script = "uid://du03pjfdoy62v"
 
 [node name="TentacleBomb" parent="." instance=ExtResource("13_u134c")]
 position = Vector2(857, 382)
 tentacle_amount = 30
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="body_entered" from="BossMan/Hit" to="BossMan/Hit" method="_on_body_entered"]
 
 [editable path="Node2D/Scientist"]
