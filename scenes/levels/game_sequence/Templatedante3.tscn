@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://cdw3i1mw8y7og"]
+[gd_scene load_steps=36 format=4 uid="uid://cdw3i1mw8y7og"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_hsruv"]
-[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_4w5xs"]
+[ext_resource type="Texture2D" uid="uid://bca33b548wxnw" path="res://assets/tilemap/concrete.png" id="2_4w5xs"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_lvie0"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="3_0bucx"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_lvie0"]
@@ -9,10 +9,250 @@
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_lfnpk"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="5_jqdbx"]
 [ext_resource type="PackedScene" uid="uid://ccn1j6v25t2oc" path="res://scenes/levels/game_sequence/4-1 Meatbokkusu.tscn" id="6_he7u6"]
-[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="10_71dju"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="10_lfnpk"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="10_qhpjq"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="13_5u5iw"]
+
+[sub_resource type="Animation" id="Animation_ar2hq"]
+resource_name = "plat move 2"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-4.83, -0.25, 0, 0.25, 0, 1152.36, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(890.027, -0.25, 0, 0.25, 0, 890.027, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
+}
+
+[sub_resource type="Animation" id="Animation_iafkx"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4.83, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(899.992, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fu4id"]
+_data = {
+&"RESET": SubResource("Animation_iafkx"),
+&"plat move 2": SubResource("Animation_ar2hq")
+}
+
+[sub_resource type="Animation" id="Animation_s5lnu"]
+resource_name = "plat move"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(484.062, -0.25, 0, 0.25, 0, 484.062, -0.25, 0, 0.25, 0, 484.062, -0.25, 0, 0.25, 0, 484.062, -0.25, 0, 0.25, 0, 484.062, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 3, 4, 6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(720.725, -0.25, 0, 0.25, 0, 720.725, -0.25, 0, 0.25, 0, 861.98, -0.25, 0, 0.25, 0, 861.98, -0.25, 0, 0.25, 0, 720.725, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 3, 4, 6)
+}
+
+[sub_resource type="Animation" id="Animation_xwq1u"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(484.062, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(720.725, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ar2hq"]
+_data = {
+&"RESET": SubResource("Animation_xwq1u"),
+&"plat move": SubResource("Animation_s5lnu")
+}
+
+[sub_resource type="Animation" id="Animation_fu4id"]
+resource_name = "plat 3"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(137.98, -0.25, 0, 0.25, 0, 137.98, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-256.011, -0.25, 0, 0.25, 0, 59.494, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+
+[sub_resource type="Animation" id="Animation_n1mfg"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(137.98, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-256.011, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxal0"]
+_data = {
+&"RESET": SubResource("Animation_n1mfg"),
+&"plat 3": SubResource("Animation_fu4id")
+}
+
+[sub_resource type="Animation" id="Animation_qxal0"]
+resource_name = "plat 4"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(388.68, -0.25, 0, 0.25, 0, 388.68, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(58.975, -0.25, 0, 0.25, 0, -254.024, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+
+[sub_resource type="Animation" id="Animation_qb182"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(312.005, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(58.9755, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3byn"]
+_data = {
+&"RESET": SubResource("Animation_qb182"),
+&"plat 4": SubResource("Animation_qxal0")
+}
+
+[sub_resource type="Animation" id="Animation_qhpjq"]
+resource_name = "move plat"
+length = 6.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_71dju"]
+_data = {
+&"move plat": SubResource("Animation_qhpjq")
+}
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -181,25 +421,75 @@ _data = {
 &"rot": SubResource("Animation_71dju")
 }
 
+[sub_resource type="Animation" id="Animation_lfiql"]
+resource_name = "lvl up"
+length = 35.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 35)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -744.82, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 35)
+}
+
+[sub_resource type="Animation" id="Animation_efw6q"]
+length = 35.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 35)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -744.04, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 35)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s5lnu"]
+_data = {
+&"RESET": SubResource("Animation_efw6q"),
+&"lvl up": SubResource("Animation_lfiql")
+}
+
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_hsruv")
 ZoneNumber = 4
 LevelNumber = 1
 
 [node name="MeatBox" parent="." instance=ExtResource("3_0bucx")]
-position = Vector2(864, 130)
+position = Vector2(706, 270)
 mass = 2.0
 Lastingtime = 1e+09
 
 [node name="Slime" parent="." instance=ExtResource("2_lvie0")]
 position = Vector2(96, 25)
-
-[node name="Tilemap" type="TileMapLayer" parent="."]
-use_parent_material = true
-rotation = 8.29355e-05
-tile_map_data = PackedByteArray("AAAQAAwAAAABAAAAAAARAAwAAAABAAAAAAASAAwAAAABAAAAAAATAAwAAAABAAAAAAAUAAwAAAABAAAAAAAVAAwAAAABAAAAAAAWAAwAAAABAAAAAAAXAAwAAAACAAAAAAAAAA0AAAAAAAIAAAABAA0AAAABAAIAAAACAA0AAAABAAIAAAADAA0AAAABAAIAAAAEAA0AAAABAAIAAAAFAA0AAAABAAIAAAAGAA0AAAABAAIAAAAHAA0AAAABAAIAAAAIAA0AAAABAAIAAAAJAA0AAAABAAIAAAAKAA0AAAABAAIAAAALAA0AAAABAAIAAAAMAA0AAAABAAIAAAANAA0AAAABAAIAAAAOAA0AAAABAAIAAAAPAA0AAAABAAIAAAAQAA0AAAABAAIAAAARAA0AAAABAAIAAAASAA0AAAABAAIAAAATAA0AAAABAAIAAAAUAA0AAAABAAIAAAAVAA0AAAABAAIAAAAWAA0AAAABAAIAAAAXAA0AAAACAAIAAAAPAAwAAAABAAAAAAAOAAwAAAABAAAAAAANAAwAAAABAAAAAAAMAAwAAAABAAAAAAALAAwAAAABAAAAAAAKAAwAAAABAAAAAAAJAAwAAAABAAAAAAAIAAwAAAABAAAAAAAHAAwAAAABAAAAAAAGAAwAAAABAAAAAAAFAAwAAAABAAAAAAAEAAwAAAABAAAAAAADAAwAAAABAAAAAAACAAwAAAABAAAAAAABAAwAAAABAAAAAAAAAAwAAAAAAAEAAAADAAAAAAADAAEAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAAAAEAAAACAAEAAAAAAAIAAAACAAEAAAAAAAMAAAACAAEAAAAAAAQAAAAEAAEAAAAAAAYAAAACAAEAAAAAAAcAAAACAAEAAAAAAAgAAAACAAEAAAAAAAkAAAACAAEAAAAAAAoAAAACAAEAAAAAAAsAAAACAAEAAAAXAAcAAAAAAAEAAAAXAAYAAAAAAAEAAAAXAAUAAAAAAAEAAAAXAAQAAAAAAAEAAAAXAAMAAAABAAEAAAAXAAIAAAAAAAEAAAAXAAEAAAAAAAEAAAAXAAgAAAAAAAIAAAAXAAAAAAABAAAAAAAAAAAAAAACAAEAAAAWAAMAAAAEAAAAAAAVAAMAAAAEAAAAAAAUAAMAAAABAAIAAAATAAMAAAAEAAAAAAASAAMAAAAEAAAAAAARAAMAAAAEAAAAAAAQAAMAAAAEAAAAAAAPAAMAAAAEAAAAAAAOAAMAAAAEAAAAAAANAAMAAAAEAAAAAAAMAAMAAAAEAAAAAAALAAMAAAAEAAAAAAAKAAMAAAAEAAAAAAAJAAMAAAAEAAAAAAAIAAMAAAAEAAAAAAAHAAMAAAAEAAAAAAAGAAMAAAAEAAAAAAAFAAMAAAADAAEAAAAAAAUAAAAEAAEAAAAEAAYAAAADAAEAAAAFAAYAAAADAAIAAAAIAAUAAAADAAEAAAAJAAUAAAADAAIAAAAHAAkAAAADAAEAAAAIAAkAAAADAAIAAAANAAkAAAADAAEAAAAOAAkAAAADAAIAAAAPAAYAAAADAAIAAAAOAAYAAAADAAEAAAASAAUAAAADAAEAAAATAAUAAAADAAIAAAARAAkAAAADAAEAAAASAAkAAAADAAIAAAAUAAIAAAAFAAEAAAA=")
-tile_set = SubResource("TileSet_ymyk6")
-rendering_quadrant_size = 48
 
 [node name="MusicSubmanager" parent="." instance=ExtResource("3_lvie0")]
 level = 4
@@ -208,64 +498,211 @@ level = 4
 scale = Vector2(1.5, 1.5)
 target_scene = ExtResource("6_he7u6")
 
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(101.333, 905.333)
+rotation = 1.57079
+
 [node name="AudioStreamPlayer2D" parent="Transition" index="4"]
 stream_paused = false
 
 [node name="dont touch" parent="." instance=ExtResource("10_lfnpk")]
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(549, 383)
+[node name="todo" type="Node2D" parent="."]
+rotation = 8.29355e-05
 
-[node name="Grow-Laser2" parent="Node2D" instance=ExtResource("5_jqdbx")]
+[node name="Platform2" parent="todo" instance=ExtResource("13_5u5iw")]
+position = Vector2(-4.83, 899.992)
+rotation = 3.14151
+collision_layer = 255
+
+[node name="Platform3" parent="todo/Platform2" instance=ExtResource("13_5u5iw")]
+position = Vector2(-0.000289917, 63)
+rotation = -3.14151
+collision_layer = 255
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="todo/Platform2"]
+libraries = {
+&"": SubResource("AnimationLibrary_fu4id")
+}
+autoplay = "plat move 2"
+
+[node name="Platform" parent="todo" instance=ExtResource("13_5u5iw")]
+position = Vector2(484.062, 720.725)
+rotation = 1.57071
+collision_layer = 255
+
+[node name="Platform2" parent="todo/Platform" instance=ExtResource("13_5u5iw")]
+position = Vector2(-0.000183105, 78)
+rotation = -3.14159
+collision_layer = 255
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="todo/Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_ar2hq")
+}
+autoplay = "plat move"
+
+[node name="Grow-Laser" parent="todo" instance=ExtResource("5_jqdbx")]
+position = Vector2(363.056, 674.97)
+rotation = 2.04853
+scale = Vector2(1, 1)
+target_scale = Vector2(6, 6)
+
+[node name="Grow-Laser5" parent="todo" instance=ExtResource("5_jqdbx")]
+position = Vector2(1103.11, 1278.91)
+rotation = 3.14159
+scale = Vector2(1, 1)
+target_scale = Vector2(6, 6)
+
+[node name="Grow-Laser6" parent="todo" instance=ExtResource("5_jqdbx")]
+position = Vector2(866.085, 1026.93)
+rotation = 3.14159
+scale = Vector2(1, 1)
+target_scale = Vector2(6, 6)
+
+[node name="Platform" parent="todo/Grow-Laser6" instance=ExtResource("13_5u5iw")]
+position = Vector2(-192.012, -155.985)
+rotation = 3.14159
+
+[node name="Platform3" parent="todo/Grow-Laser6" instance=ExtResource("13_5u5iw")]
+position = Vector2(137.98, -256.011)
+rotation = 3.14159
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="todo/Grow-Laser6/Platform3"]
+libraries = {
+&"": SubResource("AnimationLibrary_qxal0")
+}
+autoplay = "plat 3"
+
+[node name="Platform4" parent="todo/Grow-Laser6" instance=ExtResource("13_5u5iw")]
+position = Vector2(312.005, 58.9755)
+rotation = 3.14159
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="todo/Grow-Laser6/Platform4"]
+libraries = {
+&"": SubResource("AnimationLibrary_qxal0")
+}
+autoplay = "plat 3"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="todo/Grow-Laser6/Platform4"]
+libraries = {
+&"": SubResource("AnimationLibrary_v3byn")
+}
+autoplay = "plat 4"
+
+[node name="Platform2" parent="todo/Grow-Laser6" instance=ExtResource("13_5u5iw")]
+position = Vector2(-96.0122, -155.992)
+rotation = 3.14159
+
+[node name="Grow-Laser2" parent="todo" instance=ExtResource("5_jqdbx")]
+position = Vector2(1101.07, 841.909)
+rotation = -2.99802
+scale = Vector2(1, 1)
+target_scale = Vector2(6, 6)
+
+[node name="Grow-Laser3" parent="todo" instance=ExtResource("5_jqdbx")]
+position = Vector2(528.078, 938.956)
+rotation = -1.34085
+target_scale = Vector2(6, 6)
+
+[node name="Grow-Laser4" parent="todo" instance=ExtResource("5_jqdbx")]
+position = Vector2(716.055, 667.941)
+rotation = 1.08969
+target_scale = Vector2(6, 6)
+
+[node name="Node2D3" type="Node2D" parent="todo"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="todo/Node2D3"]
+libraries = {
+&"": SubResource("AnimationLibrary_71dju")
+}
+
+[node name="Tilemap" type="TileMapLayer" parent="todo"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAQAAwAAAABAAAAAAARAAwAAAABAAAAAAASAAwAAAABAAAAAAATAAwAAAABAAAAAAAUAAwAAAABAAAAAAAVAAwAAAABAAAAAAAWAAwAAAABAAAAAAAGAA0AAAAAAAIAAAAHAA0AAAABAAIAAAAIAA0AAAABAAIAAAAJAA0AAAABAAIAAAAKAA0AAAABAAIAAAALAA0AAAABAAIAAAAMAA0AAAABAAIAAAANAA0AAAABAAIAAAAOAA0AAAABAAIAAAAPAA0AAAABAAIAAAAQAA0AAAABAAIAAAARAA0AAAABAAIAAAASAA0AAAABAAIAAAATAA0AAAABAAIAAAAUAA0AAAABAAIAAAAVAA0AAAABAAIAAAAWAA0AAAABAAIAAAAPAAwAAAABAAAAAAAOAAwAAAABAAAAAAANAAwAAAABAAAAAAAMAAwAAAABAAAAAAALAAwAAAABAAAAAAAKAAwAAAABAAAAAAAJAAwAAAABAAAAAAAIAAwAAAABAAAAAAAHAAwAAAABAAAAAAAGAAwAAAABAAEAAAAFAAwAAAADAAEAAAAAAAwAAAAEAAEAAAADAAAAAAADAAEAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAAAAYAAAABAAEAAAAAAAcAAAACAAEAAAAAAAgAAAACAAEAAAAAAAkAAAACAAEAAAAAAAoAAAACAAEAAAAAAAsAAAACAAEAAAAXAAMAAAABAAEAAAAXAAIAAAAAAAEAAAAXAAEAAAAAAAEAAAAXAAAAAAABAAAAAAABAAYAAAAEAAAAAAACAAYAAAAEAAAAAAADAAYAAAAEAAAAAAAEAAYAAAAEAAAAAAAHAAYAAAAEAAAAAAAFAAYAAAAEAAAAAAAGAAYAAAAEAAAAAAAIAAYAAAAEAAAAAAAJAAYAAAAEAAAAAAAKAAYAAAAEAAAAAAALAAYAAAAEAAAAAAAMAAYAAAAEAAAAAAANAAYAAAAEAAAAAAAOAAYAAAAEAAAAAAAPAAYAAAAEAAAAAAAQAAYAAAAEAAAAAAARAAYAAAAEAAAAAAASAAYAAAAEAAAAAAATAAYAAAAEAAAAAAAUAAYAAAADAAIAAAAUAAMAAAADAAEAAAAVAAMAAAAEAAAAAAAWAAMAAAAEAAAAAAAGAAsAAAAFAAEAAAABABMAAAABAAAAAAACABMAAAABAAAAAAADABMAAAABAAAAAAAEABMAAAABAAAAAAAFABMAAAABAAAAAAAGABMAAAABAAAAAAAHABMAAAABAAAAAAAIABMAAAABAAAAAAAJABMAAAABAAAAAAAKABMAAAABAAAAAAALABMAAAABAAAAAAAMABMAAAABAAAAAAANABMAAAABAAAAAAAOABMAAAABAAAAAAAPABMAAAABAAAAAAAQABMAAAABAAAAAAARABMAAAABAAAAAAASABMAAAACAAAAAAABABQAAAABAAIAAAACABQAAAABAAIAAAADABQAAAABAAIAAAAEABQAAAABAAIAAAAFABQAAAABAAIAAAAGABQAAAABAAIAAAAHABQAAAABAAIAAAAIABQAAAABAAIAAAAJABQAAAABAAIAAAAKABQAAAABAAIAAAALABQAAAABAAIAAAAMABQAAAABAAIAAAANABQAAAABAAIAAAAOABQAAAABAAIAAAAPABQAAAABAAIAAAAQABQAAAABAAIAAAARABQAAAABAAIAAAASABQAAAACAAEAAAAXABMAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAEAAAACAAEAAAAAAAIAAAACAAEAAAAAAAMAAAACAAEAAAAAAAQAAAACAAEAAAAAAAUAAAACAAEAAAAAABIAAAACAAEAAAAAABEAAAACAAEAAAAAABAAAAACAAEAAAAAAA8AAAACAAEAAAAAAA4AAAACAAEAAAAAAA0AAAACAAEAAAAXABIAAAAAAAEAAAAXABEAAAAAAAEAAAAXABAAAAAAAAEAAAAXAA8AAAAAAAEAAAAXAA4AAAAAAAEAAAAXAA0AAAABAAEAAAAXAAwAAAABAAEAAAAXAAQAAAAAAAEAAAAXAAUAAAAAAAEAAAAXAAYAAAAAAAEAAAAXAAcAAAAAAAEAAAAXAAgAAAAAAAEAAAAXAAkAAAAAAAEAAAAXAAoAAAAAAAEAAAAXAAsAAAAAAAEAAAAAABMAAAABAAEAAAAXABQAAAAAAAEAAAAXABUAAAAAAAEAAAAAABUAAAACAAEAAAAAABYAAAACAAEAAAAAABcAAAACAAEAAAAAABgAAAACAAEAAAAAABkAAAACAAEAAAAAABoAAAACAAEAAAAXABoAAAAAAAEAAAAFABsAAAAAAAEAAAAGABsAAAABAAAAAAAHABsAAAABAAAAAAAIABsAAAABAAAAAAAJABsAAAABAAAAAAAKABsAAAABAAAAAAALABsAAAABAAAAAAAMABsAAAABAAAAAAANABsAAAABAAAAAAAOABsAAAABAAAAAAAPABsAAAABAAAAAAAQABsAAAABAAAAAAARABsAAAABAAAAAAASABsAAAABAAAAAAATABsAAAABAAAAAAAUABsAAAABAAAAAAAVABsAAAABAAAAAAAWABsAAAABAAAAAAAXABsAAAABAAEAAAAXABwAAAABAAEAAAAAABsAAAACAAEAAAAAABwAAAACAAEAAAAFABwAAAAAAAIAAAAGABwAAAABAAIAAAAHABwAAAABAAIAAAAIABwAAAABAAIAAAAJABwAAAABAAIAAAAKABwAAAABAAIAAAALABwAAAABAAIAAAAMABwAAAABAAIAAAANABwAAAABAAIAAAAOABwAAAABAAIAAAAPABwAAAABAAIAAAAQABwAAAABAAIAAAARABwAAAABAAIAAAASABwAAAABAAIAAAATABwAAAABAAIAAAAUABwAAAABAAIAAAAVABwAAAABAAIAAAAWABwAAAABAAIAAAAFABoAAAAFAAEAAAAXABYAAAAAAAEAAAAXABcAAAAAAAEAAAAXABkAAAAAAAEAAAAXABgAAAAAAAEAAAAAABQAAAABAAEAAAASABUAAAAEAAEAAAA=")
+tile_set = SubResource("TileSet_ymyk6")
+rendering_quadrant_size = 48
+
+[node name="Scale_button_green" parent="todo/Tilemap" instance=ExtResource("10_qhpjq")]
+position = Vector2(1056.01, 143.912)
+rotation = -8.29355e-05
+activation_weight = 2.0
+
+[node name="Door" parent="todo/Tilemap/Scale_button_green" instance=ExtResource("4_lfnpk")]
+position = Vector2(-912, 468)
+rotation = 1.57079
+scale = Vector2(1.5, 1.5)
+
+[node name="Door2" parent="todo/Tilemap/Scale_button_green" instance=ExtResource("4_lfnpk")]
+position = Vector2(-23, 804)
+rotation = 1.57079
+scale = Vector2(1.5, 1.5)
+
+[node name="Door3" parent="todo/Tilemap/Scale_button_green" instance=ExtResource("4_lfnpk")]
+position = Vector2(-912, 1118)
+rotation = 1.57079
+scale = Vector2(1.5, 1.5)
+
+[node name="Node2D" type="Node2D" parent="todo/Tilemap"]
+position = Vector2(518.036, 431.957)
+
+[node name="Grow-Laser2" parent="todo/Tilemap/Node2D" instance=ExtResource("5_jqdbx")]
 rotation = -1.5708
 target_scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
-[node name="Grow-Laser3" parent="Node2D" instance=ExtResource("5_jqdbx")]
+[node name="Grow-Laser3" parent="todo/Tilemap/Node2D" instance=ExtResource("5_jqdbx")]
 rotation = 3.14159
 target_scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
-[node name="Grow-Laser4" parent="Node2D" instance=ExtResource("5_jqdbx")]
+[node name="Grow-Laser4" parent="todo/Tilemap/Node2D" instance=ExtResource("5_jqdbx")]
 target_scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
-[node name="Grow-Laser" parent="Node2D" instance=ExtResource("5_jqdbx")]
+[node name="Grow-Laser" parent="todo/Tilemap/Node2D" instance=ExtResource("5_jqdbx")]
 rotation = 1.57079
 target_scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="todo/Tilemap/Node2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_lfiql")
 }
 autoplay = "rot"
 
-[node name="Shrink-Laser" parent="." instance=ExtResource("10_71dju")]
-position = Vector2(349, 41)
+[node name="Node2D2" type="Node2D" parent="todo/Tilemap"]
+position = Vector2(647.036, 430.946)
+
+[node name="Grow-Laser2" parent="todo/Tilemap/Node2D2" instance=ExtResource("5_jqdbx")]
+rotation = -1.5708
+target_scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="Grow-Laser3" parent="todo/Tilemap/Node2D2" instance=ExtResource("5_jqdbx")]
+rotation = 3.14159
+target_scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="Grow-Laser4" parent="todo/Tilemap/Node2D2" instance=ExtResource("5_jqdbx")]
+target_scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="Grow-Laser" parent="todo/Tilemap/Node2D2" instance=ExtResource("5_jqdbx")]
 rotation = 1.57079
-target_scale = Vector2(2, 2)
+target_scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
-[node name="Scale_button_green" parent="." instance=ExtResource("10_qhpjq")]
-position = Vector2(1056, 144)
-activation_weight = 2.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="todo/Tilemap/Node2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_lfiql")
+}
+autoplay = "rot"
 
-[node name="Door" parent="Scale_button_green" instance=ExtResource("4_lfnpk")]
-position = Vector2(83, 360)
-scale = Vector2(1.5, 1.5)
-
-[node name="Platform" parent="." instance=ExtResource("13_5u5iw")]
-position = Vector2(96, 128)
-
-[node name="Platform2" parent="." instance=ExtResource("13_5u5iw")]
-position = Vector2(96, 208)
-
-[node name="Platform3" parent="." instance=ExtResource("13_5u5iw")]
-position = Vector2(96, 285)
-
-[node name="Platform4" parent="." instance=ExtResource("13_5u5iw")]
-position = Vector2(96, 371)
-
-[node name="Platform5" parent="." instance=ExtResource("13_5u5iw")]
-position = Vector2(96, 458)
-
-[node name="Platform6" parent="." instance=ExtResource("13_5u5iw")]
-position = Vector2(96, 536)
+[node name="lvl up" type="AnimationPlayer" parent="todo"]
+libraries = {
+&"": SubResource("AnimationLibrary_s5lnu")
+}
+autoplay = "lvl up"
 
 [editable path="Transition"]
