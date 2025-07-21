@@ -1,11 +1,14 @@
-[gd_scene load_steps=21 format=4 uid="uid://c2muoibpbr6ib"]
+[gd_scene load_steps=26 format=4 uid="uid://c2muoibpbr6ib"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_c1gq8"]
-[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_xkwa8"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_xkwa8"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="3_c3cgw"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_x768w"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="4_d5lsd"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_ky1mr"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="5_f72w3"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="6_oetj7"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="6_tg4le"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="7_vss2d"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="8_3ecmc"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="9_brfw4"]
@@ -17,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="15_brfw4"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="16_jn62n"]
 [ext_resource type="PackedScene" uid="uid://dlek2abwdxvkc" path="res://scenes/objects/ratpass.tscn" id="17_ej6m8"]
+[ext_resource type="PackedScene" uid="uid://crhimgwgqho0y" path="res://scenes/levels/game_sequence/(barnacle)5-1 Rat Testing.tscn" id="17_nxhml"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -148,44 +152,84 @@ terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5lsd"]
+size = Vector2(298.667, 75.5003)
+
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_c1gq8")
-ZoneNumber = 1
+ZoneNumber = 5
 LevelNumber = 1
 
-[node name="Tilemap" type="TileMapLayer" parent="."]
-use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAAAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAAAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAAAAEAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAEAAEAAAAXAAYAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAABAAUAAAAEAAAAAAACAAUAAAAEAAAAAAADAAUAAAAEAAAAAAAEAAUAAAAEAAAAAAAFAAUAAAAEAAAAAAAGAAUAAAAEAAAAAAAHAAUAAAAEAAAAAAAAAAQAAAAFAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAAEAAAAAAAQAAgAAAAEAAAAAAARAAgAAAAEAAAAAAASAAgAAAAEAAAAAAATAAgAAAAEAAAAAAAUAAgAAAADAAIAAAAPAAMAAAADAAEAAAAQAAMAAAADAAIAAAAIAAUAAAADAAIAAAA=")
-tile_set = SubResource("TileSet_ymyk6")
-rendering_quadrant_size = 48
-
 [node name="MusicSubmanager" parent="." instance=ExtResource("3_x768w")]
+level = 5
 
-[node name="Transition" parent="." instance=ExtResource("4_ky1mr")]
-scale = Vector2(1.5, 1.5)
+[node name="Lights" type="Node" parent="."]
 
-[node name="dont touch" parent="." instance=ExtResource("5_f72w3")]
-visible = false
-showoverride = false
+[node name="Light" parent="Lights" instance=ExtResource("3_c3cgw")]
+position = Vector2(268, 55)
+
+[node name="Light2" parent="Lights" instance=ExtResource("3_c3cgw")]
+position = Vector2(940, 55)
+
+[node name="Light3" parent="Lights" instance=ExtResource("3_c3cgw")]
+position = Vector2(540, 55)
+
+[node name="Lamp" parent="Lights" instance=ExtResource("4_d5lsd")]
+position = Vector2(380, 292)
+rotation = -0.430249
+
+[node name="Lamp2" parent="Lights" instance=ExtResource("4_d5lsd")]
+position = Vector2(1100, 529)
+
+[node name="Lamp3" parent="Lights" instance=ExtResource("4_d5lsd")]
+position = Vector2(52, 525)
+scale = Vector2(1, 1)
+
+[node name="Exit-Sign" parent="Lights" instance=ExtResource("6_tg4le")]
+position = Vector2(580, 460)
 
 [node name="Slime" parent="." instance=ExtResource("6_oetj7")]
-position = Vector2(177, 100)
+position = Vector2(67, 226)
 
 [node name="Laser" type="Node" parent="."]
+
+[node name="Shrink-Laser" parent="Laser" instance=ExtResource("16_jn62n")]
+position = Vector2(478, 48)
+rotation = 1.57079
+target_scale = Vector2(1.5, 1.5)
+metadata/_edit_lock_ = true
 
 [node name="Grow-Laser" parent="Laser" instance=ExtResource("7_vss2d")]
 position = Vector2(1059, 49)
 rotation = 1.5708
-target_scale = Vector2(6, 6)
+target_scale = Vector2(5, 5)
+
+[node name="Terrain" type="Node" parent="."]
+
+[node name="Tilemap" type="TileMapLayer" parent="Terrain"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAAAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAAAAEAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAEAAEAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAADAAEAAAAKAA0AAAADAAIAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAEAAEAAAAXAAYAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAADAAAAAAAAAAIAAAAEAAAAAAABAAIAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAABAAUAAAAEAAAAAAACAAUAAAAEAAAAAAADAAUAAAAEAAAAAAAEAAUAAAAEAAAAAAAFAAUAAAAEAAAAAAAGAAUAAAAEAAAAAAAHAAUAAAAEAAAAAAAAAAQAAAAFAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAAEAAAAAAAQAAgAAAAEAAAAAAARAAgAAAAEAAAAAAASAAgAAAAEAAAAAAATAAgAAAAEAAAAAAAUAAgAAAADAAIAAAAPAAMAAAADAAEAAAAQAAMAAAADAAIAAAAIAAUAAAADAAIAAAAAAAsAAAAEAAEAAAAAAAwAAAAEAAEAAAAAAP//AAAAAAAAAAABAP//AAAEAAAAAAACAP//AAAEAAAAAAADAP//AAABAAAAAAAEAP//AAACAAAAAAA=")
+tile_set = SubResource("TileSet_ymyk6")
+rendering_quadrant_size = 48
+
+[node name="Ratpass" parent="Terrain" instance=ExtResource("17_ej6m8")]
+position = Vector2(408, 360)
+scale = Vector2(0.75, 0.75)
+
+[node name="Ratpass2" parent="Terrain" instance=ExtResource("17_ej6m8")]
+position = Vector2(408, 312)
+scale = Vector2(0.75, 0.75)
 
 [node name="Button_red" parent="." instance=ExtResource("8_3ecmc")]
 position = Vector2(96, 384)
 
 [node name="Door" parent="Button_red" instance=ExtResource("9_brfw4")]
+z_index = 1
 position = Vector2(960, 24)
 rotation = -1.5708
 
 [node name="Button_Red_Signal" parent="Button_red" instance=ExtResource("10_jn62n")]
+z_index = 1
 position = Vector2(1031, -23)
 
 [node name="Button_Red_Signal2" parent="Button_red" instance=ExtResource("10_jn62n")]
@@ -197,6 +241,16 @@ scale = Vector2(0.5, 0.5)
 z_index = 1
 position = Vector2(6, 15)
 scale = Vector2(0.5, 0.5)
+
+[node name="Button_Red_Signal4" parent="Button_red" instance=ExtResource("10_jn62n")]
+z_index = 2
+position = Vector2(594, 253)
+rotation = -1.57079
+
+[node name="Door2" parent="Button_red" instance=ExtResource("9_brfw4")]
+z_index = 1
+position = Vector2(479, 264)
+rotation = -1.57079
 
 [node name="WoodenBox" parent="." instance=ExtResource("11_ej6m8")]
 position = Vector2(264, 337)
@@ -254,6 +308,7 @@ Fleemarker = NodePath("Ratfleemarker")
 position = Vector2(397, -3)
 
 [node name="Button_red2" parent="." instance=ExtResource("8_3ecmc")]
+z_index = 1
 position = Vector2(768, 144)
 
 [node name="Button_Red_Signal" parent="Button_red2" instance=ExtResource("10_jn62n")]
@@ -281,27 +336,54 @@ z_index = 1
 position = Vector2(-426, 255)
 scale = Vector2(0.5, 0.5)
 
-[node name="Platform2" parent="." instance=ExtResource("15_brfw4")]
+[node name="platform" type="Node" parent="."]
+
+[node name="Platform2" parent="platform" instance=ExtResource("15_brfw4")]
 position = Vector2(672, 128)
 
-[node name="Platform3" parent="." instance=ExtResource("15_brfw4")]
+[node name="Platform3" parent="platform" instance=ExtResource("15_brfw4")]
 position = Vector2(673, 219)
 
-[node name="Platform5" parent="." instance=ExtResource("15_brfw4")]
+[node name="Platform5" parent="platform" instance=ExtResource("15_brfw4")]
 position = Vector2(672, 296)
 
-[node name="Shrink-Laser" parent="." instance=ExtResource("16_jn62n")]
-position = Vector2(478, 48)
-rotation = 1.57079
-target_scale = Vector2(1.5, 1.5)
+[node name="Platform6" parent="platform" instance=ExtResource("15_brfw4")]
+position = Vector2(96, 520)
 
-[node name="Ratpass" parent="." instance=ExtResource("17_ej6m8")]
-position = Vector2(408, 360)
-scale = Vector2(0.75, 0.75)
+[node name="Platform8" parent="platform" instance=ExtResource("15_brfw4")]
+position = Vector2(408, 520)
 
-[node name="Ratpass2" parent="." instance=ExtResource("17_ej6m8")]
-position = Vector2(408, 312)
-scale = Vector2(0.75, 0.75)
+[node name="Platform9" parent="platform" instance=ExtResource("15_brfw4")]
+position = Vector2(1056, 520)
+
+[node name="Platform7" parent="platform" instance=ExtResource("15_brfw4")]
+position = Vector2(754, 520)
+
+[node name="Transition" parent="." instance=ExtResource("4_ky1mr")]
+scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("17_nxhml")
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(392.667, 490.417)
+shape = SubResource("RectangleShape2D_d5lsd")
+
+[node name="Sprite2D" parent="Transition" index="1"]
+visible = false
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+visible = false
+
+[node name="AudioStreamPlayer2D" parent="Transition" index="4"]
+stream_paused = false
+
+[node name="dont touch" parent="." instance=ExtResource("5_f72w3")]
+visible = false
+
+[node name="Door" parent="." instance=ExtResource("9_brfw4")]
+z_index = 1
+position = Vector2(96, 23)
+rotation = 1.57762
+isOpen = false
 
 [connection signal="pressed" from="Button_red" to="Regular Conveyors/Conveyor" method="toggle"]
 [connection signal="pressed" from="Button_red" to="Regular Conveyors/Conveyor2" method="toggle"]
@@ -310,3 +392,5 @@ scale = Vector2(0.75, 0.75)
 [connection signal="pressed" from="Button_red2" to="Switchable Conveyors/Conveyor5" method="toggle_hold"]
 [connection signal="pressed" from="Button_red2" to="Switchable Conveyors/Conveyor6" method="toggle_hold"]
 [connection signal="pressed" from="Button_red2" to="Switchable Conveyors/Conveyor7" method="toggle_hold"]
+
+[editable path="Transition"]

@@ -35,7 +35,7 @@ func _on_trigger_body_entered(body: Node2D) -> void:
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Opening":
 		Opendone.emit()
-		print("Opendone")
+		#print("Opendone")
 	elif anim_name == "Closing":
 		Closedone.emit()
-		print("Closedone")
+		#print("Closedone")

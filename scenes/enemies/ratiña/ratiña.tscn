@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://gyluo2bsm1cg"]
 
 [ext_resource type="Script" uid="uid://bvktpxmlt3mg1" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
-[ext_resource type="Texture2D" uid="uid://6ll1mj8qvqpv" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
-[ext_resource type="Texture2D" uid="uid://ts5s48648ild" path="res://assets/Enemies/AlertRat.png" id="3_1qfcf"]
+[ext_resource type="Texture2D" uid="uid://ch3fgxdh4wi6v" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
+[ext_resource type="Texture2D" uid="uid://bkg45f7txxsbm" path="res://assets/Enemies/AlertRat.png" id="3_1qfcf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mn77"]
 atlas = ExtResource("1_ufh0f")
@@ -177,10 +177,12 @@ script = SubResource("GDScript_daj5k")
 [node name="LeftR" type="RayCast2D" parent="."]
 position = Vector2(-9, 8)
 target_position = Vector2(-22, 0)
+hit_from_inside = true
 
 [node name="RightR" type="RayCast2D" parent="."]
 position = Vector2(4, 8)
 target_position = Vector2(22, 0)
+hit_from_inside = true
 
 [node name="Detector" type="Area2D" parent="."]
 

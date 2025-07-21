@@ -48,11 +48,15 @@ func _physics_process(delta):
 			_flee_from_player(delta)
 		elif player.current == "Small":
 			_chase_player(delta)
+		else:
+			_idle_behavior(delta)
 	elif player_memory != "Away":
 		if player_memory == "Big":
 			_flee_from_player(delta)
 		elif player_memory == "Small":
 			_chase_player(delta)
+		else:
+			_idle_behavior(delta)
 	else:
 		_idle_behavior(delta)
 

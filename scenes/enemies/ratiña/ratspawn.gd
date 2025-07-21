@@ -17,7 +17,7 @@ func reset():
 
 func _on_timer_timeout():
 	for rat in Rat_number:
-		print("Tryspawnrat!!!")
+		#print("Tryspawnrat!!!")
 		await hole_anim.animation_looped
 		var RATA = load("res://scenes/enemies/ratiña/ratiña.tscn")
 		spawner.scene = RATA

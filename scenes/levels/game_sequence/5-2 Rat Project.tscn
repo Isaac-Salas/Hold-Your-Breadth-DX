@@ -1,23 +1,17 @@
-[gd_scene load_steps=16 format=4 uid="uid://x7a0gs3d3ftu"]
+[gd_scene load_steps=10 format=4 uid="uid://b1hy71ncbh0mf"]
 
-[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_2hwjl"]
-[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_t6bi0"]
-[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_fpleh"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_i62dc"]
-[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="5_v3qww"]
-[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="6_sdhaj"]
-[ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="7_sdhaj"]
-[ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="8_rjbat"]
-[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="9_yhkfg"]
-[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="10_lec0u"]
-[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="11_j8c7m"]
-[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="12_rjbat"]
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_0ydxd"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="2_nogw0"]
+[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_qljsj"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_4acjq"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="5_fijeh"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="6_14cug"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u1ug"]
-texture = ExtResource("2_t6bi0")
+texture = ExtResource("2_nogw0")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -143,46 +137,22 @@ terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
 sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
 [node name="TutorialLevel" type="Node2D"]
-script = ExtResource("1_2hwjl")
+script = ExtResource("1_0ydxd")
 ZoneNumber = 1
 LevelNumber = 1
 
 [node name="Tilemap" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAAAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAABAAIAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAFAAAAAAAXAAYAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAIAAoAAAADAAEAAAAJAAoAAAAEAAAAAAAKAAoAAAAEAAAAAAALAAoAAAAEAAAAAAAMAAoAAAAEAAAAAAANAAoAAAAEAAAAAAAOAAoAAAAEAAAAAAAPAAoAAAACAAAAAAAPAAsAAAAFAAAAAAAPAAwAAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAAAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAFAAAAAAAXAAYAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_ymyk6")
 rendering_quadrant_size = 48
 
-[node name="MusicSubmanager" parent="." instance=ExtResource("3_fpleh")]
+[node name="MusicSubmanager" parent="." instance=ExtResource("3_qljsj")]
 
-[node name="Transition" parent="." instance=ExtResource("4_i62dc")]
+[node name="Transition" parent="." instance=ExtResource("4_4acjq")]
 scale = Vector2(1.5, 1.5)
 
-[node name="dont touch" parent="." instance=ExtResource("5_v3qww")]
+[node name="dont touch" parent="." instance=ExtResource("5_fijeh")]
 
-[node name="Slime" parent="." instance=ExtResource("6_sdhaj")]
+[node name="Slime" parent="." instance=ExtResource("6_14cug")]
 position = Vector2(177, 100)
-
-[node name="Ratspawn" parent="." node_paths=PackedStringArray("Fleemarker") instance=ExtResource("7_sdhaj")]
-position = Vector2(206, 590)
-Rat_number = 1
-Fleemarker = NodePath("../Ratfleemarker")
-
-[node name="Ratfleemarker" parent="." instance=ExtResource("8_rjbat")]
-position = Vector2(639, 591)
-
-[node name="Button_red" parent="." instance=ExtResource("9_yhkfg")]
-position = Vector2(560, 624)
-
-[node name="Platform" parent="." instance=ExtResource("10_lec0u")]
-position = Vector2(424, 576)
-rotation = -4.71239
-
-[node name="Grow-Laser" parent="." instance=ExtResource("11_j8c7m")]
-position = Vector2(87, 257)
-rotation = 1.5708
-target_scale = Vector2(6, 6)
-
-[node name="WoodenBox" parent="." instance=ExtResource("12_rjbat")]
-position = Vector2(459, 610)
-starting_scale = 4.0
