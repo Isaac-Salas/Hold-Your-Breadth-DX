@@ -272,6 +272,7 @@ shape = SubResource("RectangleShape2D_ujihi")
 [node name="KnockbackComponent" type="Node2D" parent="BossMan" node_paths=PackedStringArray("target")]
 script = ExtResource("16_wcfl8")
 target = NodePath("../Brain")
+knockback_amount = 0.1
 metadata/_custom_type_script = "uid://du03pjfdoy62v"
 
 [node name="TentacleBomb" parent="." instance=ExtResource("13_u134c")]
