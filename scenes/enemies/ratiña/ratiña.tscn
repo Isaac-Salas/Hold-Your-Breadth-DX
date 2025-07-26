@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://gyluo2bsm1cg"]
 
 [ext_resource type="Script" uid="uid://bvktpxmlt3mg1" path="res://scenes/enemies/ratiña/ratiña.gd" id="1_e0kxx"]
-[ext_resource type="Texture2D" uid="uid://ch3fgxdh4wi6v" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
-[ext_resource type="Texture2D" uid="uid://bkg45f7txxsbm" path="res://assets/Enemies/AlertRat.png" id="3_1qfcf"]
+[ext_resource type="Texture2D" uid="uid://6ll1mj8qvqpv" path="res://assets/Enemies/Ratita-Sprite.png" id="1_ufh0f"]
+[ext_resource type="Texture2D" uid="uid://ts5s48648ild" path="res://assets/Enemies/AlertRat.png" id="3_1qfcf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mn77"]
 atlas = ExtResource("1_ufh0f")
@@ -189,8 +189,8 @@ hit_from_inside = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("CircleShape2D_14whu")
 
-[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]
 [connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_detect_body_exited"]
 [connection signal="timeout" from="BehaviorTimer" to="." method="_on_behavior_timer_timeout"]

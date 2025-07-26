@@ -19,9 +19,12 @@ var pos : PackedVector2Array
 var posPrev : PackedVector2Array
 var pointCount : int
 
+@export var line_widht : float = 3.0
+
 
 
 func _ready()->void:
+	line2D.width = line_widht
 	line2D.default_color = color_override
 	pointCount = get_pointCount(ropeLength)
 	resize_arrays()

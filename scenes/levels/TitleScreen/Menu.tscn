@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clisxl45wpi3y" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
 [ext_resource type="Texture2D" uid="uid://cd5n2ed6q7ody" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
-[ext_resource type="Script" uid="uid://b162hsmyckdvn" path="res://scenes/levels/Transition/transition.gd" id="3_au2hu"]
+[ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="3_au2hu"]
 [ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="4_3hmnn"]
 [ext_resource type="StyleBox" uid="uid://dsaejod1ejkbx" path="res://scenes/levels/TitleScreen/MenuFocusController.tres" id="5_t4htv"]
 [ext_resource type="Texture2D" uid="uid://dro5dut4rvh3q" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]

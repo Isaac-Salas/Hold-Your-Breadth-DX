@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://saxp0bi5k5yt"]
 
 [ext_resource type="Texture2D" uid="uid://u7qt14h20upf" path="res://assets/objects/Lamp_head.png" id="1_rmgst"]
-[ext_resource type="Script" uid="uid://tvaltujx5bmn" path="res://scenes/objects/lamp.gd" id="1_wbsqu"]
+[ext_resource type="Script" uid="uid://daj7sdjhnxw0q" path="res://scenes/objects/lamp.gd" id="1_wbsqu"]
 [ext_resource type="Texture2D" uid="uid://dvtkdbmu7pbrn" path="res://assets/objects/Lamp_base.png" id="2_abe07"]
 [ext_resource type="Texture2D" uid="uid://fprabyfukpnf" path="res://assets/lights/nRmVV (2).png" id="3_ihw8w"]
 [ext_resource type="Texture2D" uid="uid://dsmesrig8uh2m" path="res://assets/lights/CONE.png" id="3_s03d4"]
@@ -62,6 +62,8 @@ material = SubResource("CanvasItemMaterial_ypwrl")
 texture = ExtResource("3_ihw8w")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(93.9066, -5.68083)
+scale = Vector2(10.3907, 8.62478)
 
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

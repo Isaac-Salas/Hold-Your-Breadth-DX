@@ -1,11 +1,13 @@
-[gd_scene load_steps=18 format=4 uid="uid://calxq10nhtrm1"]
+[gd_scene load_steps=20 format=4 uid="uid://calxq10nhtrm1"]
 
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="3_m2h57"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="11_tnq4i"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="12_3tflp"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="12_jdgd2"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="13_jdgd2"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="13_u7gvy"]
 [ext_resource type="PackedScene" uid="uid://cmymj8rniorit" path="res://scenes/objects/Wall_Breakable/Wall_Breakable.tscn" id="14_kn7lm"]
+[ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="14_yvs5u"]
 [ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="15_05eiu"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="17_pph62"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="18_1h4t3"]
@@ -161,7 +163,8 @@ texture_region_size = Vector2i(48, 48)
 tile_size = Vector2i(48, 48)
 occlusion_layer_0/light_mask = 1
 occlusion_layer_0/sdf_collision = true
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "concrete"
 terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
@@ -991,6 +994,190 @@ metadata/_edit_lock_ = true
 
 [node name="Light" parent="Swing-light23" index="1"]
 position = Vector2(0, 308)
+
+[node name="Light" parent="." instance=ExtResource("12_3tflp")]
+position = Vector2(1315, 32)
+color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
+
+[node name="Light2" parent="." instance=ExtResource("12_3tflp")]
+position = Vector2(1156, 32)
+color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
+
+[node name="Light3" parent="." instance=ExtResource("12_3tflp")]
+position = Vector2(1465, 32)
+color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
+
+[node name="Light4" parent="." instance=ExtResource("12_3tflp")]
+position = Vector2(1633, 32)
+color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
+
+[node name="Light7" parent="." instance=ExtResource("12_3tflp")]
+position = Vector2(850, 32)
+color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
+
+[node name="Light8" parent="." instance=ExtResource("12_3tflp")]
+position = Vector2(1018, 32)
+color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
+
+[node name="Lamp" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(2058, 640)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp2" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(2618, 640)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp3" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(3539, 640)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp4" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(4180, 640)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp5" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(5594, 640)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp6" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(6100, 331)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp12" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(7904, 640)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp13" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(8304, 640)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp14" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(8800, 640)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp7" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(5028, 554)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp8" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(7193, 637)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp9" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(1566, 642)
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp10" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(2934, 243)
+rotation = 1.57079
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Lamp11" parent="." instance=ExtResource("13_jdgd2")]
+position = Vector2(4225, 249)
+rotation = 4.71238
+color = Color(0.632567, 1, 0.828173, 1)
+
+[node name="Scientist" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(2008, 588)
+disappear_screen = true
+
+[node name="Scientist2" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(2370, 588)
+disappear_screen = true
+
+[node name="Scientist3" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(3426, 588)
+disappear_screen = true
+
+[node name="Scientist4" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(2225, 334)
+freeze_hip = true
+freeze_head = true
+disappear_screen = true
+
+[node name="Scientist5" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(4329, 132)
+disappear_screen = true
+
+[node name="Scientist6" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(3904, 364)
+disappear_screen = true
+
+[node name="Scientist7" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(5029, 256)
+disappear_screen = true
+
+[node name="Scientist8" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(6166, 571)
+disappear_screen = true
+
+[node name="Scientist9" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(6614, 439)
+disappear_screen = true
+
+[node name="Scientist10" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(7799, 345)
+disappear_screen = true
+
+[node name="Scientist11" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(7626, 345)
+disappear_screen = true
+
+[node name="Scientist12" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(7720, 179)
+freeze_hip = true
+freeze_head = true
+disappear_screen = true
+
+[node name="Scientist13" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(8057, 257)
+disappear_screen = true
+
+[node name="Scientist14" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(8228, 339)
+disappear_screen = true
+
+[node name="Scientist15" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(8131, 382)
+freeze_hip = true
+freeze_head = true
+disappear_screen = true
+
+[node name="Scientist16" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(8745, 218)
+freeze_hip = true
+freeze_chest = false
+disappear_screen = true
+
+[node name="Scientist17" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(8523, 288)
+freeze_hip = true
+freeze_chest = false
+disappear_screen = true
+
+[node name="Scientist18" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(8607, 142)
+freeze_hip = true
+freeze_chest = false
+disappear_screen = true
+
+[node name="Scientist19" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(8607, 333)
+freeze_hip = true
+freeze_head = true
+disappear_screen = true
+
+[node name="Scientist20" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(9045, 516)
+freeze_hip = true
+freeze_head = true
+disappear_screen = true
+
+[node name="Scientist21" parent="." instance=ExtResource("14_yvs5u")]
+position = Vector2(9261, 559)
+freeze_hip = true
+freeze_head = true
+disappear_screen = true
 
 [connection signal="body_entered" from="MusicChamge" to="." method="_on_music_chamge_body_entered"]
 

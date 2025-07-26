@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://8vsq4yip7jnd"]
+[gd_scene load_steps=28 format=4 uid="uid://8vsq4yip7jnd"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_1uopv"]
 [ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_xkupa"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://dlktmfi71hbnn" path="res://assets/bosses/EyeBoss/Brain.png" id="15_u134c"]
 [ext_resource type="PackedScene" uid="uid://74d43vupckdt" path="res://scenes/bosses/Eyeboss/Eyesprite.tscn" id="16_agpwv"]
 [ext_resource type="Script" uid="uid://du03pjfdoy62v" path="res://components/knockback_component.gd" id="16_wcfl8"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="19_q56ly"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="20_qum67"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -151,6 +153,19 @@ sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eu5h7"]
 
+[sub_resource type="SkeletonModification2DPhysicalBones" id="SkeletonModification2DPhysicalBones_i3b6s"]
+resource_local_to_scene = true
+execution_mode = 1
+physical_bone_chain_length = 1
+fetch_bones = null
+joint_0_nodepath = NodePath("")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_wcfl8"]
+resource_local_to_scene = true
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification2DPhysicalBones_i3b6s")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfd1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujihi"]
@@ -177,7 +192,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(230, 597)
 
 [node name="WoodenBox" parent="." instance=ExtResource("8_y7ul2")]
-position = Vector2(181, 556)
+position = Vector2(98, 294)
 
 [node name="SwingingEye" parent="." instance=ExtResource("9_f57xs")]
 position = Vector2(428, 42)
@@ -198,7 +213,7 @@ position = Vector2(909, 42)
 position = Vector2(1027, 47)
 
 [node name="Light" parent="." instance=ExtResource("10_4aown")]
-position = Vector2(132, 56)
+position = Vector2(100, 56)
 
 [node name="Light2" parent="." instance=ExtResource("10_4aown")]
 position = Vector2(324, 56)
@@ -231,6 +246,9 @@ metadata/_edit_lock_ = true
 
 [node name="Scientist" parent="Node2D" instance=ExtResource("8_f57xs")]
 position = Vector2(0, 49)
+
+[node name="Skeleton2D" parent="Node2D/Scientist" index="1"]
+modification_stack = SubResource("SkeletonModificationStack2D_wcfl8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
 shape = SubResource("RectangleShape2D_kfd1i")
@@ -278,6 +296,30 @@ metadata/_custom_type_script = "uid://du03pjfdoy62v"
 [node name="TentacleBomb" parent="." instance=ExtResource("13_u134c")]
 position = Vector2(857, 382)
 tentacle_amount = 30
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(210, 248)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D"]
+position = Vector2(36, 88)
+node_a = NodePath("..")
+
+[node name="Platform" parent="." instance=ExtResource("19_q56ly")]
+position = Vector2(96, 547)
+
+[node name="Platform2" parent="." instance=ExtResource("19_q56ly")]
+position = Vector2(96, 464)
+
+[node name="Platform3" parent="." instance=ExtResource("19_q56ly")]
+position = Vector2(96, 378)
+
+[node name="Platform4" parent="." instance=ExtResource("19_q56ly")]
+position = Vector2(96, 290)
+
+[node name="Indicator-X" parent="." instance=ExtResource("20_qum67")]
+position = Vector2(98, 258)
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
 [connection signal="body_entered" from="BossMan/Hit" to="BossMan/Hit" method="_on_body_entered"]

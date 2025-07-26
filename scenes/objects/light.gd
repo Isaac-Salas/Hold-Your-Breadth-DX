@@ -1,9 +1,11 @@
 @tool
 extends Sprite2D
 @export_color_no_alpha var color
+@export var use_screen_detector : bool = true
 @onready var light: PointLight2D = $PointLight2D
 #@onready var light2: PointLight2D = $PointLight2D2
 @onready var fakelight = $Fakelight
+
 
 func _ready() -> void:
 	light.color = color
@@ -13,12 +15,14 @@ func _ready() -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	light.visible = true
-	light.enabled = true
-	fakelight.visible = true
+	if use_screen_detector == true:
+		light.visible = true
+		light.enabled = true
+		fakelight.visible = true
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	light.visible = false
-	light.enabled = false
-	fakelight.visible = false
+	if use_screen_detector == true:
+		light.visible = false
+		light.enabled = false
+		fakelight.visible = false
