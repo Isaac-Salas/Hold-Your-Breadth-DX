@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://ciok3inm634ug"]
+[gd_scene load_steps=87 format=3 uid="uid://ciok3inm634ug"]
 
 [ext_resource type="Script" uid="uid://cjuln4cqe0qrh" path="res://player/Player.gd" id="1_b0onk"]
 [ext_resource type="Texture2D" uid="uid://qytax14us5sc" path="res://player/Slime.png" id="2_k4fjp"]
@@ -473,6 +473,68 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_a1u5o"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Reset",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_4c6tc"]
+resource_name = "BlinkLoop"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cfwh0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6jiu3"]
+resource_name = "Stoping"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfwh0"]
+_data = {
+&"BlinkLoop": SubResource("Animation_4c6tc"),
+&"RESET": SubResource("Animation_cfwh0"),
+&"Stoping": SubResource("Animation_6jiu3")
+}
+
 [node name="Slime" type="CharacterBody2D" groups=["Player", "button_actionable"]]
 collision_layer = 9
 collision_mask = 9
@@ -593,6 +655,22 @@ script = ExtResource("36_ge24q")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Tooltips" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 30)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_a1u5o")
+animation = &"Reset"
+frame_progress = 0.666667
+
+[node name="Blink" type="AnimationPlayer" parent="Tooltips"]
+libraries = {
+&"": SubResource("AnimationLibrary_cfwh0")
+}
+
+[node name="MOUSE" type="Timer" parent="Tooltips"]
 
 [connection signal="Grab" from="." to="SFXHandler" method="_on_character_body_2d_grab"]
 [connection signal="Jump" from="." to="SFXHandler" method="_on_character_body_2d_jump"]

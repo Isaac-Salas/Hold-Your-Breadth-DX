@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://ccn1j6v25t2oc"]
+[gd_scene load_steps=61 format=4 uid="uid://ccn1j6v25t2oc"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_xvjhh"]
 [ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_mivww"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="6_pvsbl"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="7_i25we"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="8_4l1jt"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="9_1kbto"]
 [ext_resource type="Script" uid="uid://plp75xlwu3vv" path="res://scenes/objects/door/door.gd" id="9_mg8pq"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="9_qa8hf"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="10_bl312"]
@@ -17,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://bhwv8um6ye01b" path="res://assets/audioshit/PUERTA.mp3" id="11_anxuw"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="12_f256u"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="13_d1fh2"]
-[ext_resource type="Script" uid="uid://b162hsmyckdvn" path="res://scenes/levels/Transition/transition.gd" id="13_i5m85"]
+[ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="13_i5m85"]
 [ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="14_dfx6o"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="15_k7ods"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="18_w1q8o"]
@@ -488,10 +489,24 @@ position = Vector2(792, 0)
 
 [node name="Swing-light" parent="Lights" instance=ExtResource("5_e25ab")]
 position = Vector2(448, 48)
-metadata/_edit_lock_ = true
 
 [node name="Light" parent="Lights" instance=ExtResource("6_pvsbl")]
 position = Vector2(603, 57)
+
+[node name="Lamp" parent="Lights" instance=ExtResource("9_1kbto")]
+position = Vector2(809, 152)
+rotation = -1.57079
+color = Color(0.988235, 0.862745, 0.517647, 1)
+
+[node name="Lamp2" parent="Lights" instance=ExtResource("9_1kbto")]
+position = Vector2(809, 48)
+rotation = -1.57079
+color = Color(1, 0.471689, 0.520866, 1)
+
+[node name="Lamp3" parent="Lights" instance=ExtResource("9_1kbto")]
+position = Vector2(809, 247)
+rotation = -1.57079
+color = Color(0.717647, 1, 0.552941, 1)
 
 [node name="Doors" type="Node" parent="."]
 
@@ -850,9 +865,6 @@ scale = Vector2(1.5, 1.5)
 [node name="Light" parent="." instance=ExtResource("6_pvsbl")]
 position = Vector2(343, 57)
 
-[node name="Swing-light" parent="." instance=ExtResource("5_e25ab")]
-position = Vector2(791, -243)
-
 [node name="Swing-light2" parent="." instance=ExtResource("5_e25ab")]
 position = Vector2(1016, 21)
 
@@ -875,10 +887,11 @@ rotation = -1.5708
 [node name="Indicator-X7" parent="." instance=ExtResource("22_ka1hd")]
 position = Vector2(123, 102)
 
+[node name="Light3" parent="." instance=ExtResource("6_pvsbl")]
+position = Vector2(122, 56)
+
 [connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/Small_door" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Scale_button_green2" to="Doors/Small_door2" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Scale_button_green3" to="Doors/Small_door3" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Button_red" to="Doors/Door" method="toggle_door"]
 [connection signal="body_entered" from="Transition/Trigger" to="Transition" method="_on_trigger_body_entered"]
-
-[editable path="Swing-light"]

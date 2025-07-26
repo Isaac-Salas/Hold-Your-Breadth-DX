@@ -1,12 +1,12 @@
 [gd_scene load_steps=730 format=4 uid="uid://u8latgnj6og5"]
 
-[ext_resource type="Script" uid="uid://csoy8jnxj6ql3" path="res://scenes/levels/Level_Select/level_select.gd" id="1_4bwas"]
+[ext_resource type="Script" uid="uid://7vafcnd4hrid" path="res://scenes/levels/Level_Select/level_select.gd" id="1_4bwas"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="1_dduat"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="2_x00pf"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="3_gou6y"]
 [ext_resource type="PackedScene" uid="uid://bjoayr4dvluax" path="res://scenes/levels/Level_Select/level_button.tscn" id="3_nwpnl"]
 [ext_resource type="PackedScene" uid="uid://v4ylrqt2e871" path="res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn" id="4_h634r"]
-[ext_resource type="Script" uid="uid://c0m0j3wjp6mvy" path="res://scenes/levels/Level_Select/level_button.gd" id="5_3s37s"]
+[ext_resource type="Script" uid="uid://c7f2vgvlycaeb" path="res://scenes/levels/Level_Select/level_button.gd" id="5_3s37s"]
 [ext_resource type="Texture2D" uid="uid://gfof3kn3hfop" path="res://assets/levels button/lvl select/button_lvl_1-2.png" id="6_23rr5"]
 [ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="6_rpahc"]
 [ext_resource type="Texture2D" uid="uid://ck472g6pj5ye0" path="res://assets/levels button/lvl select/button_lvl_no.png" id="7_ggr2r"]
@@ -5729,7 +5729,8 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]
 This screen can be controlled ONLY WITH A MOUSE
-If you finished the demo, please reset your progress for the next person playing!!!![/center]"
+If you like our demo, please wishlist on Steam, and stay put for more updates!!!!
+[/center]"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]

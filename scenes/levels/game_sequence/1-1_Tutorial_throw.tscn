@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://v4ylrqt2e871"]
+[gd_scene load_steps=47 format=4 uid="uid://v4ylrqt2e871"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
@@ -30,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://ckg57n263xncs" path="res://scenes/levels/game_sequence/1-2 Doors and buttons.tscn" id="20_qmhxi"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="20_v0odu"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="22_1lsoo"]
-[ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="31_nhlu3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -835,9 +834,6 @@ position = Vector2(452, 312)
 scale = Vector2(1.5, 1.5)
 
 [node name="MusicSubmanager" parent="." instance=ExtResource("22_1lsoo")]
-
-[node name="Scientist" parent="." instance=ExtResource("31_nhlu3")]
-position = Vector2(474, 511)
 
 [connection signal="pressed" from="Button_red" to="Door" method="toggle_door"]
 [connection signal="pressed" from="Button_red" to="Button_Red_Signal" method="toggle_door"]
