@@ -1,10 +1,10 @@
 [gd_scene load_steps=72 format=4 uid="uid://b6onmrleg7nri"]
 
-[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
+[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
 [ext_resource type="Script" uid="uid://gee6l5yoqpiv" path="res://scenes/levels/game_sequence/2_1_chase.gd" id="1_njuv6"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="3_g52sb"]
-[ext_resource type="Texture2D" uid="uid://dnu6505li3ghk" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
-[ext_resource type="Script" uid="uid://c7r8qowkgxsc1" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_01tns"]
+[ext_resource type="Texture2D" uid="uid://btleh0m7ckkmy" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
+[ext_resource type="Script" uid="uid://caqwyu7ddhl4j" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_01tns"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="5_wihit"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="7_gyrh6"]
 [ext_resource type="PackedScene" uid="uid://c57hv8ph7ffis" path="res://scenes/enemies/Hamster/Hamster-Bug.tscn" id="7_r8l5k"]
@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="23_mcopt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="24_lnmw1"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="24_mvbe6"]
-[ext_resource type="Texture2D" uid="uid://7u5tpjdc0m1j" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
+[ext_resource type="Texture2D" uid="uid://bixow8wew3lrr" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
 [ext_resource type="PackedScene" uid="uid://couoi5kbky3ig" path="res://scenes/objects/rope_modular.tscn" id="29_04mdq"]
 [ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="30_njuv6"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="31_njuv6"]
@@ -1060,6 +1060,9 @@ tile_map_data = PackedByteArray("AACPACkAAAAAAAAAAACPACoAAAAAAAEAAACPACsAAAAAAAI
 tile_set = ExtResource("34_mcopt")
 occlusion_enabled = false
 collision_enabled = false
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
 
 [connection signal="Done" from="Hamster/Hamster/DialogBox" to="." method="_dialog_done"]
 [connection signal="body_entered" from="Hamster/Hamster/PlayerDetector" to="." method="_on_player_detector_body_entered"]

@@ -6,6 +6,6 @@ func _on_body_entered(body: Node2D) -> void:
 	#print(body.global_position, tp_pos.global_position) #dont
 	body.global_position
 	if body.is_in_group("throwable"):
-		print("ingroup")
+		#print("ingroup")
 		body.global_position = tp_pos.global_position
 		body.linear_velocity = Vector2(0,0)
