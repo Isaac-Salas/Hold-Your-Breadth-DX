@@ -1,10 +1,10 @@
-[gd_scene load_steps=74 format=4 uid="uid://b6onmrleg7nri"]
+[gd_scene load_steps=72 format=4 uid="uid://b6onmrleg7nri"]
 
-[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
+[ext_resource type="Texture2D" uid="uid://copu7gqndpt4y" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
 [ext_resource type="Script" uid="uid://gee6l5yoqpiv" path="res://scenes/levels/game_sequence/2_1_chase.gd" id="1_njuv6"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="3_g52sb"]
-[ext_resource type="Texture2D" uid="uid://btleh0m7ckkmy" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
-[ext_resource type="Script" uid="uid://caqwyu7ddhl4j" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_01tns"]
+[ext_resource type="Texture2D" uid="uid://dnu6505li3ghk" path="res://assets/fondos/Lab.png" id="4_e4ukb"]
+[ext_resource type="Script" uid="uid://c7r8qowkgxsc1" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_01tns"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="5_wihit"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="7_gyrh6"]
 [ext_resource type="PackedScene" uid="uid://c57hv8ph7ffis" path="res://scenes/enemies/Hamster/Hamster-Bug.tscn" id="7_r8l5k"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="15_dsijx"]
 [ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="16_sdar4"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="17_67d33"]
-[ext_resource type="Texture2D" uid="uid://j8d4q1keg0gs" path="res://assets/tilemap/Blood/BloodOverlay.png" id="17_ynjjb"]
 [ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="18_s17nv"]
 [ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="19_7s41i"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="20_lmnyd"]
@@ -29,11 +28,12 @@
 [ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="23_mcopt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="24_lnmw1"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="24_mvbe6"]
-[ext_resource type="Texture2D" uid="uid://bixow8wew3lrr" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
+[ext_resource type="Texture2D" uid="uid://7u5tpjdc0m1j" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
 [ext_resource type="PackedScene" uid="uid://couoi5kbky3ig" path="res://scenes/objects/rope_modular.tscn" id="29_04mdq"]
 [ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="30_njuv6"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="31_njuv6"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="32_01tns"]
+[ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="34_mcopt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpwcs"]
 atlas = ExtResource("27_njuv6")
@@ -481,76 +481,6 @@ func _on_body_entered(body:Node2D):
 size = Vector2(20, 472)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ynjjb"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynjjb"]
-texture = ExtResource("17_ynjjb")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-15:3/0 = 0
-16:3/0 = 0
-17:3/0 = 0
-9:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_mcopt"]
-sources/0 = SubResource("TileSetAtlasSource_ynjjb")
 
 [node name="Persecusion" type="Node2D"]
 script = ExtResource("1_njuv6")
@@ -1127,7 +1057,7 @@ shape = SubResource("RectangleShape2D_01tns")
 material = SubResource("CanvasItemMaterial_ynjjb")
 position = Vector2(26, -8)
 tile_map_data = PackedByteArray("AACPACkAAAAAAAAAAACPACoAAAAAAAEAAACPACsAAAAAAAIAAACQACkAAAABAAAAAACQACoAAAABAAEAAACQACsAAAABAAIAAACRACkAAAACAAAAAACRACoAAAACAAEAAACRACsAAAACAAIAAACSACkAAAADAAAAAACSACoAAAADAAEAAACSACsAAAADAAIAAACTACkAAAAEAAAAAACTACoAAAAEAAEAAACTACsAAAAEAAIAAACUACkAAAAAAAAAAACUACoAAAAAAAEAAACUACsAAAAAAAIAAACYACkAAAAEAAAAAACYACoAAAAEAAEAAACYACsAAAAEAAIAAACZACkAAAAFAAAAAACZACoAAAAFAAEAAACZACsAAAAFAAIAAACaACkAAAACAAAAAACaACoAAAACAAEAAACaACsAAAACAAIAAACbACkAAAADAAAAAACbACoAAAADAAEAAACbACsAAAADAAIAAACcACkAAAAEAAAAAACcACoAAAAEAAEAAACcACsAAAAEAAIAAACdACkAAAAFAAAAAACdACoAAAAFAAEAAACdACsAAAAFAAIAAACVACkAAAABAAAAAACVACoAAAABAAEAAACVACsAAAABAAIAAACWACkAAAACAAAAAACWACoAAAACAAEAAACWACsAAAACAAIAAACXACkAAAADAAAAAACXACoAAAADAAEAAACXACsAAAADAAIAAAAqASsAAAAKAAgAAADlACkAAAAJAAMAAADmACkAAAAKAAMAAADnACkAAAALAAMAAADgACkAAAALAAMAAADhACkAAAAQAAMAAADiACkAAAARAAMAAADdACkAAAAPAAMAAADeACkAAAAQAAMAAADfACkAAAAKAAMAAADaACkAAAAJAAYAAADbACkAAAAKAAYAAADbACoAAAAKAAcAAADbACsAAAAKAAgAAADcACkAAAALAAYAAADcACoAAAALAAcAAADcACsAAAALAAgAAADWACkAAAAAAAAAAADWACoAAAAAAAEAAADWACsAAAAAAAIAAADXACkAAAABAAAAAADXACoAAAABAAEAAADXACsAAAABAAIAAADYACkAAAACAAAAAADYACoAAAACAAEAAADYACsAAAACAAIAAACeACkAAAAPAAMAAACfACkAAAAQAAMAAACgACkAAAARAAMAAAChACkAAAAKAAMAAACiACkAAAAQAAMAAACjACkAAAARAAMAAACkACkAAAAKAAMAAAClACkAAAAJAAMAAACmACkAAAAKAAMAAACnACkAAAALAAMAAACqACkAAAAJAAMAAACrACkAAAAKAAMAAACsACkAAAALAAMAAACvACkAAAAKAAMAAACzACkAAAALAAMAAAC2ACkAAAAPAAMAAAC3ACkAAAAQAAMAAAC4ACkAAAARAAMAAAC6ACkAAAAQAAMAAADDACkAAAALAAAAAADBACkAAAAJAAAAAADCACkAAAAKAAAAAADBACoAAAAJAAEAAADBACsAAAAJAAIAAADCACoAAAAKAAEAAADCACsAAAAKAAIAAADDACoAAAALAAEAAADDACsAAAALAAIAAAA=")
-tile_set = SubResource("TileSet_mcopt")
+tile_set = ExtResource("34_mcopt")
 occlusion_enabled = false
 collision_enabled = false
 
