@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://ccfef3di5wjk4"]
+[gd_scene load_steps=50 format=4 uid="uid://ccfef3di5wjk4"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_1h2ii"]
 [ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_8he8t"]
@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="7_8he8t"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="8_ghln3"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="9_dmco3"]
-[ext_resource type="Script" uid="uid://4ak722pryrv0" path="res://scenes/objects/door/door.gd" id="10_a4n0s"]
-[ext_resource type="Texture2D" uid="uid://bmmgbghpil1" path="res://assets/objects/small_door.png" id="11_itmnt"]
-[ext_resource type="AudioStream" uid="uid://cxqq7o4g0h3jg" path="res://assets/audioshit/PUERTA.mp3" id="12_kxx6j"]
+[ext_resource type="Script" uid="uid://plp75xlwu3vv" path="res://scenes/objects/door/door.gd" id="10_a4n0s"]
+[ext_resource type="Texture2D" uid="uid://r8ffoo4a1acs" path="res://assets/objects/small_door.png" id="11_itmnt"]
+[ext_resource type="AudioStream" uid="uid://bhwv8um6ye01b" path="res://assets/audioshit/PUERTA.mp3" id="12_kxx6j"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="13_h4poa"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="14_r4o75"]
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="15_l61mo"]
@@ -20,13 +20,15 @@
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="18_43sv5"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="19_fppha"]
 [ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="20_1n5v1"]
-[ext_resource type="Texture2D" uid="uid://cg14044b6gb5k" path="res://assets/objects/Transition.png" id="21_0qhmr"]
+[ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="21_0qhmr"]
 [ext_resource type="PackedScene" uid="uid://bwaomego0a1rr" path="res://scenes/levels/game_sequence/3-3 One step at a time.tscn" id="21_86q3s"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="23_7fmg8"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="23_pfpt2"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="24_p1rr8"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="26_qccyy"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="27_8he8t"]
+[ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="29_itmnt"]
+[ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="30_kxx6j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyi1q"]
 atlas = ExtResource("11_itmnt")
@@ -310,11 +312,11 @@ position = Vector2(0, 1)
 
 [node name="Pickups" type="Node" parent="."]
 
-[node name="Vial_green" parent="Pickups" instance=ExtResource("5_p1rr8")]
-position = Vector2(135, 172)
+[node name="Vial-blue" parent="Pickups" instance=ExtResource("30_kxx6j")]
+position = Vector2(149, 143)
 
-[node name="Vial_green3" parent="Pickups" instance=ExtResource("5_p1rr8")]
-position = Vector2(146, 144)
+[node name="Vial-Red" parent="Pickups" instance=ExtResource("29_itmnt")]
+position = Vector2(135, 164)
 
 [node name="Vial_green4" parent="Pickups" instance=ExtResource("5_p1rr8")]
 position = Vector2(116, 144)
@@ -329,7 +331,7 @@ starting_scale = 12.0
 position = Vector2(252, -93)
 
 [node name="Light" parent="Lights" instance=ExtResource("8_ghln3")]
-position = Vector2(512, -7)
+position = Vector2(549, 0)
 
 [node name="Doors" type="Node" parent="."]
 
@@ -504,7 +506,7 @@ rotation = 1.5708
 flip_h = true
 
 [node name="Indicator-Arrow3" parent="." instance=ExtResource("24_p1rr8")]
-position = Vector2(512, 154)
+position = Vector2(549, 157)
 rotation = 1.5708
 
 [node name="Indicator-Arrow4" parent="." instance=ExtResource("24_p1rr8")]
@@ -513,6 +515,9 @@ flip_h = true
 
 [node name="Light" parent="." instance=ExtResource("8_ghln3")]
 position = Vector2(312, 248)
+
+[node name="Light2" parent="." instance=ExtResource("8_ghln3")]
+position = Vector2(122, -4)
 
 [node name="Platform2" parent="." instance=ExtResource("18_43sv5")]
 position = Vector2(448, 144)
