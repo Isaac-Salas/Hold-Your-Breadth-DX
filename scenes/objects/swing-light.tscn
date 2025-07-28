@@ -30,6 +30,7 @@ script/source = "extends Node2D
 
 @onready var clinck = $Light/Clinck
 @export var drop : bool
+@export var use_screenspace : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -59,12 +60,13 @@ func _process(delta):
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	light.visible = false
+	if use_screenspace == true:
+		light.visible = false
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	
-	light.visible = true
+	if use_screenspace == true:
+		light.visible = true
 	
 
 func droplight():

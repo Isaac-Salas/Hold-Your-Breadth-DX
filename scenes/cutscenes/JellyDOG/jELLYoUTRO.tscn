@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="4_wpbc4"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_4plus"]
 [ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="7_bvxbn"]
-[ext_resource type="Script" uid="uid://7vafcnd4hrid" path="res://scenes/levels/Level_Select/level_select.gd" id="7_e1p53"]
+[ext_resource type="Script" uid="uid://csoy8jnxj6ql3" path="res://scenes/levels/Level_Select/level_select.gd" id="7_e1p53"]
 [ext_resource type="PackedScene" uid="uid://v4ylrqt2e871" path="res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn" id="8_3ixfm"]
 [ext_resource type="PackedScene" uid="uid://bjoayr4dvluax" path="res://scenes/levels/Level_Select/level_button.tscn" id="9_avwfg"]
-[ext_resource type="Script" uid="uid://c7f2vgvlycaeb" path="res://scenes/levels/Level_Select/level_button.gd" id="11_k4jgl"]
+[ext_resource type="Script" uid="uid://c0m0j3wjp6mvy" path="res://scenes/levels/Level_Select/level_button.gd" id="11_k4jgl"]
 [ext_resource type="Texture2D" uid="uid://gfof3kn3hfop" path="res://assets/levels button/lvl select/button_lvl_1-2.png" id="12_rj2cm"]
 [ext_resource type="Texture2D" uid="uid://ck472g6pj5ye0" path="res://assets/levels button/lvl select/button_lvl_no.png" id="13_vno30"]
 [ext_resource type="Texture2D" uid="uid://diy5tlpsa3vs" path="res://assets/levels button/lvl select/button_lvl_yes.png" id="14_nxgjo"]
@@ -5329,6 +5329,7 @@ texture = ExtResource("3_f6gsf")
 position = Vector2(576, -680)
 scale = Vector2(4, 4)
 marker = NodePath("../Marker2D")
+use_screenspace = false
 
 [node name="Light" parent="Swing-light" index="1"]
 freeze = false
