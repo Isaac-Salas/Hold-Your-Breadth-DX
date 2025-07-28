@@ -1,4 +1,4 @@
-[gd_scene load_steps=870 format=4 uid="uid://u8latgnj6og5"]
+[gd_scene load_steps=880 format=4 uid="uid://u8latgnj6og5"]
 
 [ext_resource type="Script" uid="uid://csoy8jnxj6ql3" path="res://scenes/levels/Level_Select/level_select.gd" id="1_4bwas"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="1_dduat"]
@@ -14,18 +14,28 @@
 [ext_resource type="Texture2D" uid="uid://brcseebljhkhs" path="res://assets/levels button/lvl select/button_lvl_1-3.png" id="8_ku28f"]
 [ext_resource type="Texture2D" uid="uid://iiutyr3wedsq" path="res://assets/levels button/lvl select/button_lvl_1-1.png" id="9_ka7a3"]
 [ext_resource type="Texture2D" uid="uid://cc5tv1cwlmd61" path="res://assets/levels button/lvl select/button_lvl_3-1.png" id="9_rprpg"]
+[ext_resource type="Texture2D" uid="uid://gxs3u5j7jb4w" path="res://assets/screenshots/1-1.png" id="9_urfht"]
 [ext_resource type="Texture2D" uid="uid://y2of60sp6v8s" path="res://assets/levels button/lvl select/button_lvl_3-2.png" id="10_2mpeq"]
 [ext_resource type="Texture2D" uid="uid://46kp4co8jm4x" path="res://assets/levels button/lvl select/button_lvl_!!!.png" id="10_30jin"]
 [ext_resource type="Texture2D" uid="uid://bi2xk7x3n8idf" path="res://assets/levels button/lvl select/button_lvl_2-1.png" id="11_emtr4"]
 [ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="12_ka7a3"]
 [ext_resource type="Texture2D" uid="uid://cusk8fj5vy4km" path="res://assets/levels button/lvl select/button_lvl_2-2.png" id="12_qn8qt"]
 [ext_resource type="Texture2D" uid="uid://d4boco274p5nu" path="res://assets/levels button/lvl select/button_lvl_2-3.png" id="13_r3l7p"]
+[ext_resource type="Texture2D" uid="uid://c34om4ea64a2k" path="res://assets/screenshots/1-2.png" id="14_11oq0"]
 [ext_resource type="Texture2D" uid="uid://bl2vpv5ctp7bh" path="res://assets/levels button/lvl select/button_lvl_3-3.png" id="16_6ay2d"]
+[ext_resource type="Texture2D" uid="uid://drdqubfwrjtlc" path="res://assets/screenshots/1-3.png" id="16_r3yam"]
 [ext_resource type="Texture2D" uid="uid://c0um6du8w0skk" path="res://assets/levels button/lvl select/button_lvl_4-1.png" id="17_yx5v3"]
+[ext_resource type="Texture2D" uid="uid://vx27qeyb0kek" path="res://assets/screenshots/1-4.png" id="18_3lobk"]
 [ext_resource type="Texture2D" uid="uid://4g6vesw1nxsb" path="res://assets/levels button/lvl select/button_lvl_4-2.png" id="18_e0mjv"]
 [ext_resource type="Texture2D" uid="uid://dntvmn502i1py" path="res://assets/levels button/lvl select/button_lvl_4-3.png" id="19_27rux"]
+[ext_resource type="Texture2D" uid="uid://dihdrej83vwia" path="res://assets/screenshots/2-1.png" id="20_yn73v"]
+[ext_resource type="Texture2D" uid="uid://c02kojnyu6chg" path="res://assets/screenshots/2-2.png" id="22_roerv"]
 [ext_resource type="Texture2D" uid="uid://7kfujvtfablb" path="res://assets/levels button/lvl select/button_lvl_bossfight.png" id="23_xljjj"]
+[ext_resource type="Texture2D" uid="uid://d3h418dewl1dd" path="res://assets/screenshots/2-3.png" id="24_8r0q2"]
+[ext_resource type="Texture2D" uid="uid://cn6njvnudwil2" path="res://assets/screenshots/3-1.png" id="26_0q54v"]
 [ext_resource type="Script" uid="uid://vbwkjb3eursj" path="res://scenes/levels/Level_Select/rich_text_label_2.gd" id="26_hn00j"]
+[ext_resource type="Texture2D" uid="uid://cljyeu4ffa7q8" path="res://assets/screenshots/3-2.png" id="28_1qccv"]
+[ext_resource type="Texture2D" uid="uid://dcdyrwlr54ptq" path="res://assets/screenshots/4-1.png" id="31_5bgv3"]
 
 [sub_resource type="GDScript" id="GDScript_f8i8q"]
 script/source = "extends RigidBody2D
@@ -6273,6 +6283,7 @@ position = Vector2(842, -680)
 scale = Vector2(4, 4)
 
 [node name="Light" parent="Swing-light" index="1"]
+position = Vector2(29.25, 200)
 freeze = false
 
 [node name="Mouse" type="RigidBody2D" parent="."]
@@ -6301,7 +6312,7 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="1-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="1-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 58.0
@@ -6318,6 +6329,8 @@ script = ExtResource("5_3s37s")
 Zone = 1
 Level = 1
 transition = NodePath("../../Transition")
+preview = ExtResource("9_urfht")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/1-1"]
 position = Vector2(41, 46)
@@ -6337,7 +6350,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="1-2" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="1-2" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 202.0
 offset_top = 58.0
@@ -6355,6 +6368,8 @@ script = ExtResource("5_3s37s")
 Zone = 1
 Level = 2
 transition = NodePath("../../Transition")
+preview = ExtResource("14_11oq0")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/1-2"]
 position = Vector2(41, 46)
@@ -6376,7 +6391,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="1-3" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="1-3" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 342.0
 offset_top = 58.0
@@ -6394,6 +6409,8 @@ script = ExtResource("5_3s37s")
 Zone = 1
 Level = 3
 transition = NodePath("../../Transition")
+preview = ExtResource("16_r3yam")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/1-3"]
 position = Vector2(41, 46)
@@ -6413,7 +6430,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="2-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="2-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 481.0
 offset_top = 58.0
@@ -6430,6 +6447,8 @@ script = ExtResource("5_3s37s")
 Zone = 2
 Level = 1
 transition = NodePath("../../Transition")
+preview = ExtResource("18_3lobk")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/2-1"]
 position = Vector2(41, 46)
@@ -6449,7 +6468,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="3-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="3-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 190.0
@@ -6468,6 +6487,8 @@ script = ExtResource("5_3s37s")
 Zone = 3
 Level = 1
 transition = NodePath("../../Transition")
+preview = ExtResource("20_yn73v")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/3-1"]
 position = Vector2(41, 46)
@@ -6488,7 +6509,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="3-2" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="3-2" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 208.0
 offset_top = 191.0
@@ -6507,6 +6528,8 @@ script = ExtResource("5_3s37s")
 Zone = 3
 Level = 2
 transition = NodePath("../../Transition")
+preview = ExtResource("22_roerv")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/3-2"]
 position = Vector2(41, 46)
@@ -6527,7 +6550,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="3-3" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="3-3" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 337.0
 offset_top = 191.0
@@ -6546,6 +6569,8 @@ script = ExtResource("5_3s37s")
 Zone = 3
 Level = 3
 transition = NodePath("../../Transition")
+preview = ExtResource("24_8r0q2")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/3-3"]
 position = Vector2(41, 46)
@@ -6565,7 +6590,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="3-4" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="3-4" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 481.0
 offset_top = 191.0
@@ -6582,6 +6607,7 @@ script = ExtResource("5_3s37s")
 Zone = 3
 Level = 4
 transition = NodePath("../../Transition")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/3-4"]
 position = Vector2(41, 46)
@@ -6601,7 +6627,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="4-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="4-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 330.0
@@ -6620,6 +6646,8 @@ script = ExtResource("5_3s37s")
 Zone = 4
 Level = 1
 transition = NodePath("../../Transition")
+preview = ExtResource("26_0q54v")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/4-1"]
 position = Vector2(41, 46)
@@ -6639,7 +6667,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="4-2" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="4-2" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 208.0
 offset_top = 331.0
@@ -6658,6 +6686,8 @@ script = ExtResource("5_3s37s")
 Zone = 4
 Level = 2
 transition = NodePath("../../Transition")
+preview = ExtResource("28_1qccv")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/4-2"]
 position = Vector2(41, 46)
@@ -6678,7 +6708,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="4-3" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="4-3" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 337.0
 offset_top = 331.0
@@ -6697,6 +6727,7 @@ script = ExtResource("5_3s37s")
 Zone = 4
 Level = 3
 transition = NodePath("../../Transition")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/4-3"]
 position = Vector2(41, 46)
@@ -6716,7 +6747,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="4-4" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="4-4" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 479.0
 offset_top = 334.0
@@ -6733,6 +6764,7 @@ script = ExtResource("5_3s37s")
 Zone = 4
 Level = 4
 transition = NodePath("../../Transition")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/4-4"]
 position = Vector2(41, 46)
@@ -6752,7 +6784,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="5-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="5-1" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 467.0
@@ -6770,6 +6802,8 @@ script = ExtResource("5_3s37s")
 Zone = 5
 Level = 1
 transition = NodePath("../../Transition")
+preview = ExtResource("31_5bgv3")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/5-1"]
 position = Vector2(41, 46)
@@ -6789,7 +6823,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="5-2" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="5-2" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 210.0
 offset_top = 467.0
@@ -6807,6 +6841,7 @@ script = ExtResource("5_3s37s")
 Zone = 5
 Level = 2
 transition = NodePath("../../Transition")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/5-2"]
 position = Vector2(41, 46)
@@ -6826,7 +6861,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="5-3" type="Button" parent="Buttons" node_paths=PackedStringArray("transition")]
+[node name="5-3" type="Button" parent="Buttons" node_paths=PackedStringArray("transition", "preview_shower")]
 layout_mode = 0
 offset_left = 337.0
 offset_top = 468.0
@@ -6844,6 +6879,7 @@ script = ExtResource("5_3s37s")
 Zone = 5
 Level = 3
 transition = NodePath("../../Transition")
+preview_shower = NodePath("../../Previews")
 
 [node name="levelbtn" type="AnimatedSprite2D" parent="Buttons/5-3"]
 position = Vector2(41, 46)
@@ -6863,7 +6899,7 @@ color = Color(0.667556, 1, 0.617547, 1)
 energy = 0.5
 texture = ExtResource("12_ka7a3")
 
-[node name="BOSS" type="Button" parent="Buttons"]
+[node name="BOSS" type="Button" parent="Buttons" node_paths=PackedStringArray("preview_shower")]
 layout_mode = 0
 offset_left = 481.0
 offset_top = 468.0
@@ -6879,6 +6915,7 @@ flat = true
 script = ExtResource("5_3s37s")
 Zone = 6
 Level = 1
+preview_shower = NodePath("../../Previews")
 
 [node name="unlocked" type="AnimatedSprite2D" parent="Buttons/BOSS"]
 position = Vector2(43, 46)
@@ -6954,7 +6991,7 @@ If you like our demo, please [color=#6def4a]WISHLIST on Steam[/color], and stay 
 More levels and more bosses in the Full Version.
 [/center]"
 
-[node name="RichTextLabel2" type="TextureRect" parent="."]
+[node name="Previews" type="TextureRect" parent="."]
 z_index = -1
 offset_left = 642.0
 offset_top = 58.0

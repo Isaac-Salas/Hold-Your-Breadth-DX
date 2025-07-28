@@ -7,6 +7,8 @@ extends Button
 @export var transition : TransitionScene
 @onready var light: PointLight2D = $light
 @onready var og_color : Color
+@export var preview : Texture2D
+@export var preview_shower : PreviewShower
 
 
 var updated = false
@@ -47,6 +49,8 @@ func entered():
 		light.color = Color(1.0,0.0,0.0,1.0)
 		light.enabled = true
 		return
+	if preview != null:
+		preview_shower.texture = preview
 	light.enabled = true
 	if not sprite.is_playing():
 		sprite.play("start")
@@ -57,8 +61,9 @@ func exited():
 	if disabled == true:
 		#print("Disable exit")
 		light.enabled = false
-		
 		return
+	if preview != null:
+		preview_shower.texture = null
 	light.enabled = false
 	await sprite.animation_looped
 	sprite.play("finish")
