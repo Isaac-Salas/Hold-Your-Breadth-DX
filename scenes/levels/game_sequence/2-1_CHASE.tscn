@@ -592,9 +592,6 @@ position = Vector2(-385, -317)
 monitoring = false
 monitorable = false
 
-[node name="AudioStreamPlayer2D" parent="CharacterBody2D2/Transition" index="4"]
-stream_paused = false
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D2"]
 libraries = {
 &"": SubResource("AnimationLibrary_mcopt")
@@ -837,14 +834,14 @@ position = Vector2(4932, 623)
 [node name="Indicator-X" parent="Clutter/Boxes" instance=ExtResource("20_lmnyd")]
 position = Vector2(4933, 590)
 
-[node name="WoodenBox" parent="Clutter/Boxes" instance=ExtResource("21_kyd7a")]
+[node name="Vial_green" parent="Clutter/Boxes" instance=ExtResource("17_67d33")]
+position = Vector2(4942, 602)
+
+[node name="Vial-Red" parent="Clutter/Boxes" instance=ExtResource("18_s17nv")]
 position = Vector2(4920, 603)
 
-[node name="WoodenBox2" parent="Clutter/Boxes" instance=ExtResource("21_kyd7a")]
-position = Vector2(4932, 584)
-
-[node name="WoodenBox3" parent="Clutter/Boxes" instance=ExtResource("21_kyd7a")]
-position = Vector2(4944, 603)
+[node name="Vial-blue" parent="Clutter/Boxes" instance=ExtResource("19_7s41i")]
+position = Vector2(4932, 585)
 
 [node name="HamsterSetpiece" type="Node" parent="Clutter"]
 
@@ -906,18 +903,6 @@ position = Vector2(2378, 544)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clutter/HamsterSetpiece/Area2D"]
 shape = SubResource("CircleShape2D_04mdq")
 
-[node name="Light" parent="Clutter/HamsterSetpiece" instance=ExtResource("31_njuv6")]
-position = Vector2(2480, 31)
-color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
-
-[node name="Light2" parent="Clutter/HamsterSetpiece" instance=ExtResource("31_njuv6")]
-position = Vector2(2391, 31)
-color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
-
-[node name="Light3" parent="Clutter/HamsterSetpiece" instance=ExtResource("31_njuv6")]
-position = Vector2(2560, 31)
-color = Color(0.739789, 1.93726e-06, 9.62615e-07, 1)
-
 [node name="Scientist" parent="Clutter/HamsterSetpiece" instance=ExtResource("30_njuv6")]
 position = Vector2(3520, 591)
 freeze_chest = false
@@ -945,12 +930,19 @@ position = Vector2(4884, 614)
 
 [node name="Vial_green3" parent="Clutter/Scientist beginning" instance=ExtResource("17_67d33")]
 position = Vector2(4781, 630)
+rotation = -0.889068
 
 [node name="Vial_green4" parent="Clutter/Scientist beginning" instance=ExtResource("17_67d33")]
 position = Vector2(4801, 591)
+rotation = 1.77727
+
+[node name="Vial-blue2" parent="Clutter/Scientist beginning" instance=ExtResource("19_7s41i")]
+position = Vector2(4826, 548)
+rotation = 0.580128
 
 [node name="Vial-blue" parent="Clutter/Scientist beginning" instance=ExtResource("19_7s41i")]
 position = Vector2(4858, 632)
+rotation = -0.616894
 
 [node name="Lamp" parent="Clutter/Scientist beginning" instance=ExtResource("22_01tns")]
 position = Vector2(5127, 641)
@@ -1012,9 +1004,6 @@ rotation = 0.460872
 position = Vector2(-2408, 99)
 screen_activator = true
 tentacle_amount = 20
-
-[node name="Vial-blue" parent="Clutter" instance=ExtResource("19_7s41i")]
-position = Vector2(4826, 548)
 
 [node name="Desactivadora-Camara2" type="Area2D" parent="."]
 position = Vector2(10880, 516)

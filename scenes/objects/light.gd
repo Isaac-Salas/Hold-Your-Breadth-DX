@@ -5,9 +5,14 @@ extends Sprite2D
 @onready var light: PointLight2D = $PointLight2D
 #@onready var light2: PointLight2D = $PointLight2D2
 @onready var fakelight = $Fakelight
+@export var force_on : bool = false
+
 
 
 func _ready() -> void:
+	if force_on == true:
+		light.enabled = false
+		light.enabled = true
 	light.color = color
 	fakelight.modulate = color
 	fakelight.modulate.a8 = 25
@@ -19,6 +24,7 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 		light.visible = true
 		light.enabled = true
 		fakelight.visible = true
+	
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
@@ -26,3 +32,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 		light.visible = false
 		light.enabled = false
 		fakelight.visible = false
+	

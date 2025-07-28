@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://pko810djqbqo"]
+[gd_scene load_steps=12 format=3 uid="uid://pko810djqbqo"]
 
-[ext_resource type="Script" uid="uid://cdf8oll3gulyu" path="res://scenes/enemies/Meatbox/meat_box.gd" id="1_gtwie"]
-[ext_resource type="Texture2D" uid="uid://dhofe6hs8tpcg" path="res://assets/objects/meatbox-bio.png" id="1_iu5mw"]
-[ext_resource type="Texture2D" uid="uid://mv2y6g1xaet4" path="res://assets/lights/nRmVV (2).png" id="3_nystw"]
-[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="4_rtqqh"]
+[ext_resource type="Script" uid="uid://bjells4uen0yr" path="res://scenes/enemies/Meatbox/meat_box.gd" id="1_gtwie"]
+[ext_resource type="Texture2D" uid="uid://jnpcmf2x1x43" path="res://assets/objects/meatbox-bio.png" id="1_iu5mw"]
+[ext_resource type="Texture2D" uid="uid://fprabyfukpnf" path="res://assets/lights/nRmVV (2).png" id="3_nystw"]
+[ext_resource type="Script" uid="uid://c2yjabjh3cocd" path="res://components/spawner_component.gd" id="4_rtqqh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g2h70"]
+blend_mode = 1
+light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_px2q8"]
 blend_mode = 1
@@ -17,31 +21,30 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/PointLight2D:energy")
+tracks/0/path = NodePath("Sprite2D/PointLight2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 0, 0, 0.0235294)]
 }
 
 [sub_resource type="Animation" id="Animation_ixryu"]
 resource_name = "blink"
 length = 6.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/PointLight2D:energy")
+tracks/0/path = NodePath("Sprite2D/PointLight2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2, 2.5, 3, 3.5, 3.96667, 4.46667, 4.96667, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9),
+"times": PackedFloat32Array(0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.46667, 4.96667, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.777778, 0.0, 0.777778, 0.0, 0.777778, 0.0, 0.777778, 0.0, 0.777778, 0.0]
+"values": [Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0), Color(1, 0, 0, 0.27451), Color(1, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5l1mm"]
@@ -64,11 +67,11 @@ script = ExtResource("1_gtwie")
 texture = ExtResource("1_iu5mw")
 offset = Vector2(0, 2)
 
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
-color = Color(1, 0, 0, 1)
-energy = 0.0
+[node name="PointLight2D" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(1, 0, 0, 0.0235294)
+material = SubResource("CanvasItemMaterial_g2h70")
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_nystw")
-texture_scale = 0.5
 
 [node name="Indicator" type="Sprite2D" parent="Sprite2D"]
 visible = false

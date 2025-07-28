@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://c2muoibpbr6ib"]
+[gd_scene load_steps=25 format=4 uid="uid://c2muoibpbr6ib"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_c1gq8"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="3_c3cgw"]
@@ -20,7 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="15_brfw4"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="16_jn62n"]
 [ext_resource type="PackedScene" uid="uid://dlek2abwdxvkc" path="res://scenes/objects/ratpass.tscn" id="17_ej6m8"]
-[ext_resource type="PackedScene" uid="uid://crhimgwgqho0y" path="res://scenes/levels/game_sequence/(barnacle)5-1 Rat Testing.tscn" id="17_nxhml"]
+[ext_resource type="PackedScene" uid="uid://c6bs7y7fkg5ud" path="res://scenes/cutscenes/JellyDOG/jELLYoUTRO.tscn" id="20_spgqw"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="22_fhktp"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="23_ld2nq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5lsd"]
 size = Vector2(298.667, 75.5003)
@@ -31,7 +33,6 @@ ZoneNumber = 5
 LevelNumber = 1
 
 [node name="MusicSubmanager" parent="." instance=ExtResource("3_x768w")]
-level = 5
 
 [node name="Lights" type="Node" parent="."]
 
@@ -59,7 +60,7 @@ scale = Vector2(1, 1)
 position = Vector2(580, 460)
 
 [node name="Slime" parent="." instance=ExtResource("6_oetj7")]
-position = Vector2(67, 226)
+position = Vector2(108, 226)
 
 [node name="Laser" type="Node" parent="."]
 
@@ -231,20 +232,17 @@ position = Vector2(754, 520)
 
 [node name="Transition" parent="." instance=ExtResource("4_ky1mr")]
 scale = Vector2(1.5, 1.5)
-target_scene = ExtResource("17_nxhml")
+target_scene = ExtResource("20_spgqw")
 
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(392.667, 490.417)
 shape = SubResource("RectangleShape2D_d5lsd")
 
-[node name="Sprite2D" parent="Transition" index="1"]
-visible = false
+[node name="LightOccluder2D" parent="Transition/Sprite2D" index="0"]
+visible = true
 
-[node name="Sprite2D2" parent="Transition" index="2"]
-visible = false
-
-[node name="AudioStreamPlayer2D" parent="Transition" index="4"]
-stream_paused = false
+[node name="LightOccluder2D" parent="Transition/Sprite2D2" index="0"]
+visible = true
 
 [node name="dont touch" parent="." instance=ExtResource("5_f72w3")]
 visible = false
@@ -255,6 +253,30 @@ position = Vector2(96, 23)
 rotation = 1.57762
 isOpen = false
 
+[node name="Indicator-X" parent="." instance=ExtResource("22_fhktp")]
+position = Vector2(115, 332)
+
+[node name="Indicator-X2" parent="." instance=ExtResource("22_fhktp")]
+position = Vector2(769, 99)
+
+[node name="Indicator-X3" parent="." instance=ExtResource("22_fhktp")]
+position = Vector2(574, 544)
+
+[node name="Light" parent="." instance=ExtResource("3_c3cgw")]
+position = Vector2(411, 437)
+
+[node name="Light2" parent="." instance=ExtResource("3_c3cgw")]
+position = Vector2(754, 437)
+
+[node name="Swing-light" parent="." instance=ExtResource("23_ld2nq")]
+position = Vector2(772, 192)
+
+[node name="Light" parent="Swing-light" index="1"]
+position = Vector2(0, 99)
+
+[node name="Indicator-X4" parent="." instance=ExtResource("22_fhktp")]
+position = Vector2(110, 144)
+
 [connection signal="pressed" from="Button_red" to="Regular Conveyors/Conveyor" method="toggle"]
 [connection signal="pressed" from="Button_red" to="Regular Conveyors/Conveyor2" method="toggle"]
 [connection signal="pressed" from="Button_red2" to="Switchable Conveyors/Conveyor3" method="toggle_hold"]
@@ -264,3 +286,4 @@ isOpen = false
 [connection signal="pressed" from="Button_red2" to="Switchable Conveyors/Conveyor7" method="toggle_hold"]
 
 [editable path="Transition"]
+[editable path="Swing-light"]

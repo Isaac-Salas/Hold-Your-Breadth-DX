@@ -5729,7 +5729,7 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]
 This screen can be controlled ONLY WITH A MOUSE
-If you like our demo, please wishlist on Steam, and stay put for more updates!!!!
+whateverIf you like our demo, please [color=#6def4a]WISHLIST on Steam[/color], and stay put for more updates!!!!
 [/center]"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

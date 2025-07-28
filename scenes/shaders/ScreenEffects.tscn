@@ -66,4 +66,4 @@ Enviroment = NodePath("../WorldEnvironment")
 CRTShader = NodePath("../CRTShader")
 
 [node name="CRTShader" parent="." instance=ExtResource("2_4r0s1")]
-z_index = 25
+z_index = 30

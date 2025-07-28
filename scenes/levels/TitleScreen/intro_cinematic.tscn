@@ -901,7 +901,7 @@ texture_scale = 4.0
 scale = Vector2(1.5, 1.5)
 
 [node name="AudioStreamPlayer2D" parent="Transition" index="4"]
-stream_paused = false
+stream_paused = true
 
 [node name="Menu" parent="." node_paths=PackedStringArray("screenstuff", "fadeout") instance=ExtResource("193_qey2u")]
 visible = false

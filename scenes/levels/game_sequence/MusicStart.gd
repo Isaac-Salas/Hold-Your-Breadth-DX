@@ -26,7 +26,7 @@ func compare_stream(matched : int):
 	var lookup = 'N_'+ str(matched)
 	if MusicManager.stream == MusicManager.get(lookup):
 		if MusicManager.has_stream_playback():
-			pass
+			MusicManager.set_speed(playback_speed)
 		else:
 			#MusicManager.fade(-80.0)
 			#await MusicManager.fade_audio.finished

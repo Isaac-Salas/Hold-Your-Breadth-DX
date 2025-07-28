@@ -108,8 +108,7 @@ func _on_quit_pressed():
 
 
 func _on_jelly_dog_pressed():
-	jelly_stuff.visible = true
-	jelly_stuff.checkvisible()
+	OS.shell_open("https://jellydogstudio.itch.io/")
 
 
 func _on_atras_pressed():
