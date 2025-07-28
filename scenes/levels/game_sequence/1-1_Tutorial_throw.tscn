@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://v4ylrqt2e871"]
+[gd_scene load_steps=45 format=4 uid="uid://v4ylrqt2e871"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_3ilku"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="2_c0t5q"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="5_5v7i4"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="6_bgyky"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_8uf2v"]
-[ext_resource type="Script" uid="uid://doujxwuhtv1vy" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
+[ext_resource type="Script" uid="uid://80efc16j34uh" path="res://scenes/levels/game_sequence/tutorial_test.gd" id="7_ibu0m"]
+[ext_resource type="Texture2D" uid="uid://c66nbrbd2byyn" path="res://assets/Tutorial/Reset.png" id="7_nhlu3"]
 [ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="8_jnqun"]
 [ext_resource type="Texture2D" uid="uid://c6mlx5p23pljr" path="res://assets/Tutorial/Move.png" id="8_mq1rh"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="9_qole5"]
@@ -264,20 +265,11 @@ text = "[center]
 Please, restart the level to hide this messages
 "
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
+[node name="RichTextLabel" type="Sprite2D" parent="."]
 z_index = 5
-offset_left = 199.0
-offset_top = 279.0
-offset_right = 595.0
-offset_bottom = 616.0
-theme_override_fonts/normal_font = ExtResource("8_jnqun")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[center]You can also:
-- Pause the game using ESC or pressing the Start button.
-- Restart level by pressing the R key or the Select button
-"
+position = Vector2(444, 349)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_nhlu3")
 
 [node name="Player" parent="." instance=ExtResource("7_8uf2v")]
 position = Vector2(240, 585)

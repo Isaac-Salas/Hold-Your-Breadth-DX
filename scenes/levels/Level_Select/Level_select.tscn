@@ -1,4 +1,4 @@
-[gd_scene load_steps=880 format=4 uid="uid://u8latgnj6og5"]
+[gd_scene load_steps=881 format=4 uid="uid://u8latgnj6og5"]
 
 [ext_resource type="Script" uid="uid://csoy8jnxj6ql3" path="res://scenes/levels/Level_Select/level_select.gd" id="1_4bwas"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="1_dduat"]
@@ -36,6 +36,7 @@
 [ext_resource type="Script" uid="uid://vbwkjb3eursj" path="res://scenes/levels/Level_Select/rich_text_label_2.gd" id="26_hn00j"]
 [ext_resource type="Texture2D" uid="uid://cljyeu4ffa7q8" path="res://assets/screenshots/3-2.png" id="28_1qccv"]
 [ext_resource type="Texture2D" uid="uid://dcdyrwlr54ptq" path="res://assets/screenshots/4-1.png" id="31_5bgv3"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="37_yn73v"]
 
 [sub_resource type="GDScript" id="GDScript_f8i8q"]
 script/source = "extends RigidBody2D
@@ -6999,6 +7000,11 @@ offset_right = 1042.0
 offset_bottom = 331.0
 expand_mode = 1
 script = ExtResource("26_hn00j")
+
+[node name="Indicator-X" parent="." instance=ExtResource("37_yn73v")]
+z_index = -2
+position = Vector2(846, 201)
+scale = Vector2(5, 5)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

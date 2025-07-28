@@ -17,6 +17,7 @@ var status = 'look'
 var VelVec := Vector2.ZERO
 
 func _ready():
+	target_position = Vector2.ZERO
 	if debug_controller:
 		Input.joy_connection_changed.connect(_on_joy_connection_changed)
 
