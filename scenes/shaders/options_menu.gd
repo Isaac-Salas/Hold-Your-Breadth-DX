@@ -6,12 +6,14 @@ class_name  OptionsMenu
 @onready var saturation = $Saturation
 @onready var toggle : int = 0
 @onready var fullscreen = $Fullscreen
-@onready var crt = $CRT
+#@onready var crt = $CRT
 @onready var exclusive = $Exclusive
 @export var CRTShader : ColorRect
 @onready var back = $Back
 @onready var focusback : Button
+@export var using_controller : bool 
 
+#@onready var controller: CheckBox = $Controller
 
 
 
@@ -32,6 +34,9 @@ func _process(delta):
 	Enviroment.environment.adjustment_brightness = brightnes.value
 	Enviroment.environment.adjustment_contrast = contrast.value
 	Enviroment.environment.adjustment_saturation = saturation.value
+	
+
+
 
 func showtoggle():
 	if toggle < 1:
@@ -46,6 +51,8 @@ func showtoggle():
 		if focusback != null:
 			focusback.grab_focus()
 	print(toggle)
+
+
 
 func _on_reset_pressed():
 	brightnes.value = 1
@@ -66,14 +73,14 @@ func _on_fullscreen_toggled(toggled_on):
 		exclusive.visible = false
 		exclusive.button_pressed = false
 
-
-func _on_crt_toggled(toggled_on):
-	if crt.button_pressed == true:
-		#crt_local.visible = true
-		CRTShader.visible = true
-	else:
-		CRTShader.visible = false
-		#crt_local.visible = false
+#
+#func _on_crt_toggled(toggled_on):
+	#if crt.button_pressed == true:
+		##crt_local.visible = true
+		#CRTShader.visible = true
+	#else:
+		#CRTShader.visible = false
+		##crt_local.visible = false
 
 
 func _on_exclusive_toggled(toggled_on):

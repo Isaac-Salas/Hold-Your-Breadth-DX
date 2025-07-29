@@ -9,6 +9,9 @@ const HTB_SONG_2_1_SLOW = preload("res://assets/music/HtbSong2-1Slow.mp3")
 var fade_audio : Tween
 
 
+func set_speed(speed : float):
+	pitch_scale = speed
+
 func startplay(song, play_speed : int = 1, vol_override : float = songvolume):
 	pitch_scale = play_speed
 	stream = song

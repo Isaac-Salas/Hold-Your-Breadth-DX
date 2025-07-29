@@ -1,19 +1,29 @@
-[gd_scene load_steps=15 format=3 uid="uid://ds1au7rotbfwu"]
+[gd_scene load_steps=19 format=3 uid="uid://ds1au7rotbfwu"]
 
-[ext_resource type="Script" uid="uid://dbx85al0miyrf" path="res://scenes/bosses/Eyeboss/Eyeboss.gd" id="1_kr0n8"]
-[ext_resource type="Texture2D" uid="uid://dkwnbe5eo4eq1" path="res://assets/bosses/EyeBoss/Scientits.png" id="2_hmhsc"]
+[ext_resource type="Script" uid="uid://bari4086i5bh5" path="res://scenes/bosses/Eyeboss/Eyeboss.gd" id="1_kr0n8"]
 [ext_resource type="Script" uid="uid://cf6yidnkflpu5" path="res://scenes/bosses/Eyeboss/rigid_skeleton.gd" id="3_e67la"]
 
-[sub_resource type="SkeletonModification2DPhysicalBones" id="SkeletonModification2DPhysicalBones_e67la"]
-execution_mode = 1
-physical_bone_chain_length = 1
-fetch_bones = null
-joint_0_nodepath = NodePath("")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_latu1"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qb2ag"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bqejh"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tiqpg"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vhgwp"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4djap"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_f08ep"]
+resource_local_to_scene = true
 enabled = true
-modification_count = 1
-modifications/0 = SubResource("SkeletonModification2DPhysicalBones_e67la")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtckn"]
 size = Vector2(20, 18)
@@ -52,7 +62,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="Torso" type="Polygon2D" parent="Polygons"]
-texture = ExtResource("2_hmhsc")
+texture = SubResource("CompressedTexture2D_latu1")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(62, 26, 62, 67, 81, 67, 81, 26, 62, 36, 81, 36, 62, 52, 81, 52, 71, 26, 73, 26, 71, 36, 73, 36)
 uv = PackedVector2Array(62, 26, 62, 67, 81, 67, 81, 26, 62, 36, 81, 36, 62, 52, 81, 52, 71, 26, 73, 26, 71, 36, 73, 36)
@@ -61,7 +71,7 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1), "Hip/Che
 internal_vertex_count = 8
 
 [node name="LeftArm" type="Polygon2D" parent="Polygons"]
-texture = ExtResource("2_hmhsc")
+texture = SubResource("CompressedTexture2D_qb2ag")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40, 40, 25, 51, 25, 51, 40, 40, 40)
 uv = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40, 40, 25, 51, 25, 51, 40, 40, 40)
@@ -71,7 +81,7 @@ internal_vertex_count = 4
 
 [node name="RightArm" type="Polygon2D" parent="Polygons"]
 position = Vector2(51, 0)
-texture = ExtResource("2_hmhsc")
+texture = SubResource("CompressedTexture2D_bqejh")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40, 41, 25, 52, 25, 41, 40, 52, 40)
 uv = PackedVector2Array(114, 39, 114, 24, 80, 24, 80, 39, 92, 24, 103, 24, 92, 39, 103, 39)
@@ -80,7 +90,7 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest", PackedF
 internal_vertex_count = 4
 
 [node name="LeftLeg" type="Polygon2D" parent="Polygons"]
-texture = ExtResource("2_hmhsc")
+texture = SubResource("CompressedTexture2D_tiqpg")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67, 57, 78, 57, 87, 72, 87, 72, 78)
 uv = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67, 57, 78, 57, 87, 72, 87, 72, 78)
@@ -90,7 +100,7 @@ internal_vertex_count = 4
 
 [node name="RightLeg" type="Polygon2D" parent="Polygons"]
 position = Vector2(15, 0)
-texture = ExtResource("2_hmhsc")
+texture = SubResource("CompressedTexture2D_vhgwp")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67, 57, 78, 57, 87, 72, 87, 72, 78)
 uv = PackedVector2Array(76, 67, 87, 67, 87, 97, 72, 97, 72, 67, 72, 78, 72, 87, 87, 87, 87, 78)
@@ -99,7 +109,7 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest", Pack
 internal_vertex_count = 4
 
 [node name="Head" type="Polygon2D" parent="Polygons"]
-texture = ExtResource("2_hmhsc")
+texture = SubResource("CompressedTexture2D_4djap")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(63, 26, 78, 26, 78, 12, 63, 12)
 uv = PackedVector2Array(63, 26, 78, 26, 78, 12, 63, 12)
@@ -110,77 +120,107 @@ modification_stack = SubResource("SkeletonModificationStack2D_f08ep")
 
 [node name="Hip" type="Bone2D" parent="Skeleton2D" groups=["Bones"]]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -90.0
 
 [node name="Chest" type="Bone2D" parent="Skeleton2D/Hip" groups=["Bones"]]
 position = Vector2(0, -16)
 rest = Transform2D(1, 0, 0, 1, 0, -16)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 13.0
+bone_angle = -90.0
 
 [node name="Head" type="Bone2D" parent="Skeleton2D/Hip/Chest" groups=["Bones"]]
 position = Vector2(0, -13)
 rest = Transform2D(1, 0, 0, 1, 0, -13)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="ArmL" type="Bone2D" parent="Skeleton2D/Hip/Chest" groups=["Bones"]]
 position = Vector2(-10, -1)
 rest = Transform2D(1, 0, 0, 1, -10, -1)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 9.0
+bone_angle = 180.0
 
 [node name="ForeArmL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL" groups=["Bones"]]
 position = Vector2(-9, 0)
 rest = Transform2D(1, 0, 0, 1, -9, 0)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 180.0
 
 [node name="HandL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL/ForeArmL" groups=["Bones"]]
 position = Vector2(-16, 0)
 rest = Transform2D(1, 0, 0, 1, -16, 0)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="ArmR" type="Bone2D" parent="Skeleton2D/Hip/Chest" groups=["Bones"]]
 position = Vector2(10, -1)
 rest = Transform2D(1, 0, 0, 1, 10, -1)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 9.0
+bone_angle = 0.0
 
 [node name="ForeArmR" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmR" groups=["Bones"]]
 position = Vector2(9, 0)
 rest = Transform2D(1, 0, 0, 1, 9, 0)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="HandR" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmR/ForeArmR" groups=["Bones"]]
 position = Vector2(16, 0)
 rest = Transform2D(1, 0, 0, 1, 16, 0)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="ThighR" type="Bone2D" parent="Skeleton2D/Hip" groups=["Bones"]]
 position = Vector2(6, 11)
 rest = Transform2D(1, 0, 0, 1, 6, 11)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 14.0
+bone_angle = 90.0
 
 [node name="LegR" type="Bone2D" parent="Skeleton2D/Hip/ThighR" groups=["Bones"]]
 position = Vector2(0, 14)
 rest = Transform2D(1, 0, 0, 1, 0, 14)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 21.0
+bone_angle = 90.0
 
 [node name="FootR" type="Bone2D" parent="Skeleton2D/Hip/ThighR/LegR" groups=["Bones"]]
 position = Vector2(0, 21)
 rest = Transform2D(1, 0, 0, 1, 0, 21)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="ThighL" type="Bone2D" parent="Skeleton2D/Hip" groups=["Bones"]]
 position = Vector2(-6, 11)
 rest = Transform2D(1, 0, 0, 1, -6, 11)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 14.0
+bone_angle = 90.0
 
 [node name="LegL" type="Bone2D" parent="Skeleton2D/Hip/ThighL" groups=["Bones"]]
 position = Vector2(0, 14)
 rest = Transform2D(1, 0, 0, 1, 0, 14)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 21.0
+bone_angle = 90.0
 
 [node name="FootL" type="Bone2D" parent="Skeleton2D/Hip/ThighL/LegL" groups=["Bones"]]
 position = Vector2(0, 21)
 rest = Transform2D(1, 0, 0, 1, 0, 21)
-editor_settings/show_bone_gizmo = false
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="RigidSkeleton" type="Node2D" parent="Skeleton2D" node_paths=PackedStringArray("root")]
 script = ExtResource("3_e67la")

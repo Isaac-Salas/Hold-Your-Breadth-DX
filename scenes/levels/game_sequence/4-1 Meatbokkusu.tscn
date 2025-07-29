@@ -1,7 +1,7 @@
-[gd_scene load_steps=60 format=4 uid="uid://ccn1j6v25t2oc"]
+[gd_scene load_steps=53 format=4 uid="uid://ccn1j6v25t2oc"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_xvjhh"]
-[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="2_mivww"]
+[ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_1kbto"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_whpsm"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="4_dqu1c"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="5_e25ab"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="6_pvsbl"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="7_i25we"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="8_4l1jt"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="9_1kbto"]
 [ext_resource type="Script" uid="uid://plp75xlwu3vv" path="res://scenes/objects/door/door.gd" id="9_mg8pq"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="9_qa8hf"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="10_bl312"]
@@ -17,152 +18,18 @@
 [ext_resource type="AudioStream" uid="uid://bhwv8um6ye01b" path="res://assets/audioshit/PUERTA.mp3" id="11_anxuw"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="12_f256u"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="13_d1fh2"]
-[ext_resource type="Script" uid="uid://b162hsmyckdvn" path="res://scenes/levels/Transition/transition.gd" id="13_i5m85"]
+[ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="13_i5m85"]
 [ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="14_dfx6o"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="15_k7ods"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="18_w1q8o"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="19_25208"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="21_gkoxj"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="22_ka1hd"]
-[ext_resource type="Script" uid="uid://cnar7jdl6vu6k" path="res://scenes/cutscenes/JellyDOG/j_ell_yo_utro.gd" id="22_yq5ub"]
-[ext_resource type="Texture2D" uid="uid://csaw2r7p3ub2b" path="res://assets/DOG.png" id="23_yy55d"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="24_1kbto"]
-[ext_resource type="PackedScene" uid="uid://u8latgnj6og5" path="res://scenes/levels/Level_Select/Level_select.tscn" id="25_c6ha7"]
+[ext_resource type="PackedScene" uid="uid://cdw3i1mw8y7og" path="res://scenes/levels/game_sequence/Templatedante3.tscn" id="23_8l46n"]
 [ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="25_vp7sh"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="26_1adut"]
-[ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="26_uvuq8"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="28_buest"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="33_yy55d"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2mbb"]
-polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1blni"]
-texture = ExtResource("2_mivww")
-texture_region_size = Vector2i(48, 48)
-0:0/0 = 0
-0:0/0/terrain_set = 0
-0:0/0/terrain = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-0:0/0/terrains_peering_bit/right_side = 0
-0:0/0/terrains_peering_bit/bottom_side = 0
-1:0/0 = 0
-1:0/0/terrain_set = 0
-1:0/0/terrain = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-1:0/0/terrains_peering_bit/right_side = 0
-1:0/0/terrains_peering_bit/bottom_side = 0
-1:0/0/terrains_peering_bit/left_side = 0
-2:0/0 = 0
-2:0/0/terrain_set = 0
-2:0/0/terrain = 0
-2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-2:0/0/terrains_peering_bit/bottom_side = 0
-2:0/0/terrains_peering_bit/left_side = 0
-0:1/0 = 0
-0:1/0/terrain_set = 0
-0:1/0/terrain = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-0:1/0/terrains_peering_bit/right_side = 0
-0:1/0/terrains_peering_bit/bottom_side = 0
-0:1/0/terrains_peering_bit/top_side = 0
-1:1/0 = 0
-1:1/0/terrain_set = 0
-1:1/0/terrain = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-1:1/0/terrains_peering_bit/right_side = 0
-1:1/0/terrains_peering_bit/bottom_side = 0
-1:1/0/terrains_peering_bit/left_side = 0
-1:1/0/terrains_peering_bit/top_side = 0
-2:1/0 = 0
-2:1/0/terrain_set = 0
-2:1/0/terrain = 0
-2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-2:1/0/terrains_peering_bit/bottom_side = 0
-2:1/0/terrains_peering_bit/left_side = 0
-2:1/0/terrains_peering_bit/top_side = 0
-0:2/0 = 0
-0:2/0/terrain_set = 0
-0:2/0/terrain = 0
-0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-0:2/0/terrains_peering_bit/right_side = 0
-0:2/0/terrains_peering_bit/top_side = 0
-1:2/0 = 0
-1:2/0/terrain_set = 0
-1:2/0/terrain = 0
-1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-1:2/0/terrains_peering_bit/right_side = 0
-1:2/0/terrains_peering_bit/left_side = 0
-1:2/0/terrains_peering_bit/top_side = 0
-2:2/0 = 0
-2:2/0/terrain_set = 0
-2:2/0/terrain = 0
-2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-2:2/0/terrains_peering_bit/left_side = 0
-2:2/0/terrains_peering_bit/top_side = 0
-3:0/0 = 0
-3:0/0/terrain_set = 0
-3:0/0/terrain = 0
-3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-4:0/0 = 0
-4:0/0/terrain_set = 0
-4:0/0/terrain = 0
-4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-4:0/0/terrains_peering_bit/right_side = 0
-4:0/0/terrains_peering_bit/left_side = 0
-5:0/0 = 0
-5:0/0/terrain_set = 0
-5:0/0/terrain = 0
-5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-5:0/0/terrains_peering_bit/bottom_side = 0
-5:0/0/terrains_peering_bit/top_side = 0
-5:1/0 = 0
-5:1/0/terrain_set = 0
-5:1/0/terrain = 0
-5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-5:1/0/terrains_peering_bit/bottom_side = 0
-4:1/0 = 0
-4:1/0/terrain_set = 0
-4:1/0/terrain = 0
-4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-4:1/0/terrains_peering_bit/bottom_side = 0
-4:1/0/terrains_peering_bit/top_side = 0
-3:1/0 = 0
-3:1/0/terrain_set = 0
-3:1/0/terrain = 0
-3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-3:1/0/terrains_peering_bit/right_side = 0
-3:2/0 = 0
-3:2/0/terrain_set = 0
-3:2/0/terrain = 0
-3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_c2mbb")
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-3:2/0/terrains_peering_bit/left_side = 0
-
-[sub_resource type="TileSet" id="TileSet_ymyk6"]
-tile_size = Vector2i(48, 48)
-occlusion_layer_0/light_mask = 1
-occlusion_layer_0/sdf_collision = true
-physics_layer_0/collision_layer = 1
-terrain_set_0/mode = 2
-terrain_set_0/terrain_0/name = "concrete"
-terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
-sources/0 = SubResource("TileSetAtlasSource_1blni")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyi1q"]
 atlas = ExtResource("10_jjnt0")
@@ -321,30 +188,6 @@ size = Vector2(48, 96)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_honut"]
 size = Vector2(48, 96)
 
-[sub_resource type="PackedScene" id="PackedScene_1t6w5"]
-_bundled = {
-"conn_count": 1,
-"conns": PackedInt32Array(11, 0, 54, 53, 2, 0, 0),
-"editable_instances": [NodePath("dont touch"), NodePath("Swing-light")],
-"names": PackedStringArray("JellyIntro", "script", "Node2D", "dont touch", "Background", "CanvasModulate", "color", "WorldEnvironment", "OptionsMenu", "CRTShader", "Light", "position", "rotation", "scale", "Light2", "Light3", "Sprite2D", "texture", "Swing-light", "marker", "Puntocent", "CollisionShape2D", "freeze", "PointLight2D", "Fakelight", "VisibleOnScreenNotifier2D", "rect", "AudioStreamPlayer2D", "Clinck", "PinJoint2D", "String", "Line2D", "Marker2D", "Timer", "wait_time", "autostart", "Transition", "target_scene", "Control", "layout_mode", "anchors_preset", "offset_right", "offset_bottom", "Label", "offset_left", "offset_top", "theme_override_colors/font_outline_color", "theme_override_constants/outline_size", "theme_override_fonts/font", "theme_override_font_sizes/font_size", "text", "horizontal_alignment", "autowrap_mode", "_on_timer_timeout", "timeout"),
-"node_count": 15,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 2147483647, 3, 1, 0, 0, 1, -1, 2147483647, 524293, -1, 1, 6, 2, 0, 1, 0, 2147483647, 10, 3, 3, 11, 4, 12, 5, 13, 6, 0, 1, 0, 2147483647, 14, 3, 3, 11, 7, 12, 8, 13, 6, 0, 1, 0, 2147483647, 15, 3, 3, 11, 9, 12, 5, 13, 6, 0, 0, 0, 16, 16, -1, 3, 11, 10, 13, 11, 17, 12, 0, 0, 0, 2147483647, 18, 13, 3, 11, 14, 13, 15, 1073741843, 16, 0, 7, -1, 2147483647, 524298, -1, 1, 22, 17, 0, 8, -1, 2147483647, 1310745, -1, 1, 26, 18, 0, 0, 0, 32, 32, -1, 1, 11, 19, 0, 0, 0, 33, 33, -1, 2, 34, 20, 35, 21, 0, 0, 0, 2147483647, 36, 22, 2, 13, 23, 37, 24, 0, 0, 0, 38, 38, -1, 4, 39, 25, 40, 26, 41, 27, 42, 27, 0, 13, 0, 43, 43, -1, 12, 39, 26, 44, 28, 45, 29, 41, 30, 42, 31, 46, 32, 47, 33, 48, 34, 49, 35, 50, 36, 51, 37, 52, 25, 0),
-"variants": [ExtResource("22_yq5ub"), ExtResource("8_4l1jt"), Color(0.0189402, 0.0189402, 0.0189402, 1), ExtResource("6_pvsbl"), Vector2(-283, 40), -1.5708, Vector2(4.62572, 4.62572), Vector2(1712, 339), -4.71239, Vector2(-246, 650), Vector2(576, 352), Vector2(0.497674, 0.497674), ExtResource("23_yy55d"), ExtResource("5_e25ab"), Vector2(576, -680), Vector2(4, 4), NodePath("../Marker2D"), false, Rect2(-60, -60, 200, 200), Vector2(1625, -12), 5.0, true, ExtResource("24_1kbto"), Vector2(1.5, 1.5), ExtResource("25_c6ha7"), 3, 0, 40.0, 170.0, 89.0, 977.0, 670.0, Color(0, 0, 0, 1), 16, ExtResource("26_uvuq8"), 32, "CONGRATULATIONS ON REACHING THE END OF THE DEMO
-
-
-
-
-
-
-
-
-WE HOPE YOU LIKED IT
-JELLYDOG THANKS YOU FOR PLAYING
-", 1],
-"version": 3
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
 size = Vector2(44, 165.333)
 
@@ -463,11 +306,11 @@ LevelNumber = 1
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAgAAAAAAAEAAAAGAAgAAAABAAAAAAAKAAgAAAABAAAAAAALAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAAPAAgAAAABAAEAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAFAAAAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAABAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAABAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAACAAAAAAAPAAEAAAAEAAEAAAAPAAIAAAAEAAEAAAAPAAMAAAAFAAAAAAAPAAQAAAAFAAAAAAAPAAUAAAAFAAAAAAAPAAYAAAAEAAEAAAAPAAcAAAAEAAEAAAAJAAgAAAABAAAAAAAIAAgAAAABAAAAAAAHAAgAAAABAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAABAAAAAAAEAAMAAAAFAAEAAAAEAAQAAAAFAAAAAAAEAAUAAAAEAAEAAAAEAAEAAAACAAIAAAARAAAAAAAAAAAAAAARAAEAAAAAAAEAAAARAAIAAAAAAAEAAAARAAMAAAAAAAEAAAARAAQAAAAAAAEAAAARAAUAAAAAAAEAAAARAAYAAAAAAAIAAAASAAcAAAAFAAAAAAASAAgAAAABAAEAAAASAAYAAAACAAEAAAAOAAgAAAABAAAAAAAQAAgAAAABAAAAAAARAAgAAAABAAAAAAAJAAEAAAACAAIAAAAIAAYAAAADAAAAAAAAAAkAAAAEAAEAAAAAAAoAAAAFAAAAAAAAAAsAAAAFAAAAAAAAAAwAAAAEAAEAAAAAAA0AAAABAAIAAAABAA0AAAAEAAAAAAACAA0AAAAEAAAAAAADAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAARAA0AAAAEAAAAAAASAA0AAAAEAAAAAAATAA0AAAAEAAAAAAAUAA0AAAADAAIAAAAXAA0AAAACAAIAAAAXAAwAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAoAAAAEAAEAAAAXAAkAAAACAAEAAAAXAAgAAAACAAEAAAAXAAcAAAAEAAEAAAAXAAYAAAAFAAAAAAAXAAUAAAAEAAEAAAAXAAQAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAEAAAAEAAEAAAAXAAAAAAAFAAEAAAASAAUAAAACAAEAAAASAAQAAAACAAEAAAATAAgAAAABAAAAAAAUAAgAAAABAAAAAAAVAAgAAAABAAAAAAAWAAgAAAABAAAAAAASAAMAAAACAAEAAAASAAIAAAACAAEAAAASAAEAAAACAAEAAAASAAAAAAACAAAAAAADAAkAAAAAAAAAAAADAAoAAAACAAIAAAAEAAkAAAABAAIAAAAFAAkAAAABAAIAAAAGAAkAAAABAAIAAAAHAAkAAAABAAIAAAAIAAkAAAABAAIAAAAJAAkAAAABAAIAAAAKAAkAAAABAAIAAAALAAkAAAABAAIAAAAMAAkAAAABAAIAAAANAAkAAAABAAIAAAAOAAkAAAABAAIAAAAPAAkAAAABAAIAAAAQAAkAAAABAAIAAAARAAkAAAABAAIAAAASAAkAAAABAAIAAAATAAkAAAABAAIAAAAUAAkAAAABAAIAAAAVAAkAAAABAAIAAAAWAAkAAAABAAIAAAA=")
-tile_set = SubResource("TileSet_ymyk6")
+tile_set = ExtResource("2_1kbto")
 rendering_quadrant_size = 48
 
 [node name="Player" parent="." instance=ExtResource("3_whpsm")]
-position = Vector2(107, 244)
+position = Vector2(115, 369)
 
 [node name="Camera2D" parent="." instance=ExtResource("4_dqu1c")]
 position = Vector2(0, 1)
@@ -478,7 +321,7 @@ zoom = Vector2(1, 1)
 [node name="Pickups" type="Node" parent="."]
 
 [node name="MeatBox" parent="Pickups" instance=ExtResource("5_kcpth")]
-position = Vector2(154, 320)
+position = Vector2(151, 369)
 Lastingtime = 600000.0
 
 [node name="WoodenBox" parent="Pickups" instance=ExtResource("18_w1q8o")]
@@ -488,10 +331,24 @@ position = Vector2(792, 0)
 
 [node name="Swing-light" parent="Lights" instance=ExtResource("5_e25ab")]
 position = Vector2(448, 48)
-metadata/_edit_lock_ = true
 
 [node name="Light" parent="Lights" instance=ExtResource("6_pvsbl")]
 position = Vector2(603, 57)
+
+[node name="Lamp" parent="Lights" instance=ExtResource("9_1kbto")]
+position = Vector2(809, 152)
+rotation = -1.57079
+color = Color(0.988235, 0.862745, 0.517647, 1)
+
+[node name="Lamp2" parent="Lights" instance=ExtResource("9_1kbto")]
+position = Vector2(809, 48)
+rotation = -1.57079
+color = Color(1, 0.471689, 0.520866, 1)
+
+[node name="Lamp3" parent="Lights" instance=ExtResource("9_1kbto")]
+position = Vector2(809, 247)
+rotation = -1.57079
+color = Color(0.717647, 1, 0.552941, 1)
 
 [node name="Doors" type="Node" parent="."]
 
@@ -725,16 +582,14 @@ direction = "right"
 [node name="Lasers" type="Node" parent="."]
 
 [node name="Grow-Laser" parent="Lasers" instance=ExtResource("6_o2au3")]
-position = Vector2(72, 192)
+position = Vector2(167, 192)
 rotation = 1.57151
 target_scale = Vector2(6, 6)
-metadata/_edit_lock_ = true
 
 [node name="Shrink-Laser" parent="Lasers" instance=ExtResource("9_qa8hf")]
-position = Vector2(168, 192)
+position = Vector2(72, 192)
 rotation = 1.5708
-target_scale = Vector2(1, 1)
-metadata/_edit_lock_ = true
+target_scale = Vector2(2, 2)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -773,8 +628,7 @@ z_index = 20
 y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
 script = ExtResource("13_i5m85")
-target_scene = SubResource("PackedScene_1t6w5")
-metadata/_edit_lock_ = true
+target_scene = ExtResource("23_8l46n")
 
 [node name="Trigger" type="Area2D" parent="Transition"]
 
@@ -850,9 +704,6 @@ scale = Vector2(1.5, 1.5)
 [node name="Light" parent="." instance=ExtResource("6_pvsbl")]
 position = Vector2(343, 57)
 
-[node name="Swing-light" parent="." instance=ExtResource("5_e25ab")]
-position = Vector2(791, -243)
-
 [node name="Swing-light2" parent="." instance=ExtResource("5_e25ab")]
 position = Vector2(1016, 21)
 
@@ -875,10 +726,12 @@ rotation = -1.5708
 [node name="Indicator-X7" parent="." instance=ExtResource("22_ka1hd")]
 position = Vector2(123, 102)
 
+[node name="Light3" parent="." instance=ExtResource("6_pvsbl")]
+position = Vector2(122, 56)
+metadata/_edit_lock_ = true
+
 [connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/Small_door" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Scale_button_green2" to="Doors/Small_door2" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Scale_button_green3" to="Doors/Small_door3" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Button_red" to="Doors/Door" method="toggle_door"]
 [connection signal="body_entered" from="Transition/Trigger" to="Transition" method="_on_trigger_body_entered"]
-
-[editable path="Swing-light"]

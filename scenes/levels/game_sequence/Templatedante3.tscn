@@ -1,17 +1,54 @@
-[gd_scene load_steps=36 format=4 uid="uid://cdw3i1mw8y7og"]
+[gd_scene load_steps=45 format=4 uid="uid://cdw3i1mw8y7og"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_hsruv"]
-[ext_resource type="Texture2D" uid="uid://bca33b548wxnw" path="res://assets/tilemap/concrete.png" id="2_4w5xs"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="2_lvie0"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="3_0bucx"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_lvie0"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_he7u6"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="4_lfnpk"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="5_jqdbx"]
-[ext_resource type="PackedScene" uid="uid://ccn1j6v25t2oc" path="res://scenes/levels/game_sequence/4-1 Meatbokkusu.tscn" id="6_he7u6"]
+[ext_resource type="PackedScene" uid="uid://c2muoibpbr6ib" path="res://scenes/levels/game_sequence/5-1 Rat Testing.tscn" id="7_qb182"]
+[ext_resource type="Script" uid="uid://col5xwiv5jrvm" path="res://scenes/levels/game_sequence/manager.gd" id="8_s5lnu"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="10_lfnpk"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="10_qhpjq"]
+[ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="11_fu4id"]
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="13_5u5iw"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="13_71dju"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="14_5u5iw"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="15_efw6q"]
+[ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="16_s5lnu"]
+[ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="18_fu4id"]
+[ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="19_n1mfg"]
+[ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="20_qxal0"]
+[ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="21_qb182"]
+[ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="22_n1mfg"]
+[ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="23_qxal0"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="24_qb182"]
+
+[sub_resource type="Animation" id="Animation_iafkx"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4.83, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(899.992, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_ar2hq"]
 resource_name = "plat move 2"
@@ -40,7 +77,13 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 10)
 }
 
-[sub_resource type="Animation" id="Animation_iafkx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fu4id"]
+_data = {
+&"RESET": SubResource("Animation_iafkx"),
+&"plat move 2": SubResource("Animation_ar2hq")
+}
+
+[sub_resource type="Animation" id="Animation_xwq1u"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -50,7 +93,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-4.83, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(484.062, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -61,14 +104,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(899.992, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(720.725, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fu4id"]
-_data = {
-&"RESET": SubResource("Animation_iafkx"),
-&"plat move 2": SubResource("Animation_ar2hq")
 }
 
 [sub_resource type="Animation" id="Animation_s5lnu"]
@@ -98,7 +135,13 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 3, 4, 6)
 }
 
-[sub_resource type="Animation" id="Animation_xwq1u"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ar2hq"]
+_data = {
+&"RESET": SubResource("Animation_xwq1u"),
+&"plat move": SubResource("Animation_s5lnu")
+}
+
+[sub_resource type="Animation" id="Animation_n1mfg"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -108,7 +151,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(484.062, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(137.98, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -119,14 +162,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(720.725, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-256.011, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ar2hq"]
-_data = {
-&"RESET": SubResource("Animation_xwq1u"),
-&"plat move": SubResource("Animation_s5lnu")
 }
 
 [sub_resource type="Animation" id="Animation_fu4id"]
@@ -156,7 +193,13 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 5)
 }
 
-[sub_resource type="Animation" id="Animation_n1mfg"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxal0"]
+_data = {
+&"RESET": SubResource("Animation_n1mfg"),
+&"plat 3": SubResource("Animation_fu4id")
+}
+
+[sub_resource type="Animation" id="Animation_qb182"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -166,7 +209,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(137.98, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(312.005, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -177,14 +220,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-256.011, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(58.9755, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxal0"]
-_data = {
-&"RESET": SubResource("Animation_n1mfg"),
-&"plat 3": SubResource("Animation_fu4id")
 }
 
 [sub_resource type="Animation" id="Animation_qxal0"]
@@ -214,31 +251,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 5)
 }
 
-[sub_resource type="Animation" id="Animation_qb182"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(312.005, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(58.9755, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v3byn"]
 _data = {
 &"RESET": SubResource("Animation_qb182"),
@@ -253,135 +265,6 @@ length = 6.0
 _data = {
 &"move plat": SubResource("Animation_qhpjq")
 }
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
-polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u1ug"]
-texture = ExtResource("2_4w5xs")
-texture_region_size = Vector2i(48, 48)
-0:0/0 = 0
-0:0/0/terrain_set = 0
-0:0/0/terrain = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-0:0/0/terrains_peering_bit/right_side = 0
-0:0/0/terrains_peering_bit/bottom_side = 0
-1:0/0 = 0
-1:0/0/terrain_set = 0
-1:0/0/terrain = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-1:0/0/terrains_peering_bit/right_side = 0
-1:0/0/terrains_peering_bit/bottom_side = 0
-1:0/0/terrains_peering_bit/left_side = 0
-2:0/0 = 0
-2:0/0/terrain_set = 0
-2:0/0/terrain = 0
-2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-2:0/0/terrains_peering_bit/bottom_side = 0
-2:0/0/terrains_peering_bit/left_side = 0
-0:1/0 = 0
-0:1/0/terrain_set = 0
-0:1/0/terrain = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-0:1/0/terrains_peering_bit/right_side = 0
-0:1/0/terrains_peering_bit/bottom_side = 0
-0:1/0/terrains_peering_bit/top_side = 0
-1:1/0 = 0
-1:1/0/terrain_set = 0
-1:1/0/terrain = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-1:1/0/terrains_peering_bit/right_side = 0
-1:1/0/terrains_peering_bit/bottom_side = 0
-1:1/0/terrains_peering_bit/left_side = 0
-1:1/0/terrains_peering_bit/top_side = 0
-2:1/0 = 0
-2:1/0/terrain_set = 0
-2:1/0/terrain = 0
-2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-2:1/0/terrains_peering_bit/bottom_side = 0
-2:1/0/terrains_peering_bit/left_side = 0
-2:1/0/terrains_peering_bit/top_side = 0
-0:2/0 = 0
-0:2/0/terrain_set = 0
-0:2/0/terrain = 0
-0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-0:2/0/terrains_peering_bit/right_side = 0
-0:2/0/terrains_peering_bit/top_side = 0
-1:2/0 = 0
-1:2/0/terrain_set = 0
-1:2/0/terrain = 0
-1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-1:2/0/terrains_peering_bit/right_side = 0
-1:2/0/terrains_peering_bit/left_side = 0
-1:2/0/terrains_peering_bit/top_side = 0
-2:2/0 = 0
-2:2/0/terrain_set = 0
-2:2/0/terrain = 0
-2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-2:2/0/terrains_peering_bit/left_side = 0
-2:2/0/terrains_peering_bit/top_side = 0
-3:0/0 = 0
-3:0/0/terrain_set = 0
-3:0/0/terrain = 0
-3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-4:0/0 = 0
-4:0/0/terrain_set = 0
-4:0/0/terrain = 0
-4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-4:0/0/terrains_peering_bit/right_side = 0
-4:0/0/terrains_peering_bit/left_side = 0
-5:0/0 = 0
-5:0/0/terrain_set = 0
-5:0/0/terrain = 0
-5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-5:0/0/terrains_peering_bit/bottom_side = 0
-5:0/0/terrains_peering_bit/top_side = 0
-5:1/0 = 0
-5:1/0/terrain_set = 0
-5:1/0/terrain = 0
-5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-5:1/0/terrains_peering_bit/bottom_side = 0
-4:1/0 = 0
-4:1/0/terrain_set = 0
-4:1/0/terrain = 0
-4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-4:1/0/terrains_peering_bit/bottom_side = 0
-4:1/0/terrains_peering_bit/top_side = 0
-3:1/0 = 0
-3:1/0/terrain_set = 0
-3:1/0/terrain = 0
-3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-3:1/0/terrains_peering_bit/right_side = 0
-3:2/0 = 0
-3:2/0/terrain_set = 0
-3:2/0/terrain = 0
-3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xejg3")
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-3:2/0/terrains_peering_bit/left_side = 0
-
-[sub_resource type="TileSet" id="TileSet_ymyk6"]
-tile_size = Vector2i(48, 48)
-occlusion_layer_0/light_mask = 1
-physics_layer_0/collision_layer = 1
-terrain_set_0/mode = 2
-terrain_set_0/terrain_0/name = "concrete"
-terrain_set_0/terrain_0/color = Color(100, 100, 100, 1)
-sources/0 = SubResource("TileSetAtlasSource_8u1ug")
 
 [sub_resource type="Animation" id="Animation_5u5iw"]
 length = 0.001
@@ -421,6 +304,31 @@ _data = {
 &"rot": SubResource("Animation_71dju")
 }
 
+[sub_resource type="Animation" id="Animation_efw6q"]
+length = 35.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 35)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -744.04, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 35)
+}
+
 [sub_resource type="Animation" id="Animation_lfiql"]
 resource_name = "lvl up"
 length = 35.0
@@ -447,31 +355,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 35)
 }
 
-[sub_resource type="Animation" id="Animation_efw6q"]
-length = 35.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 35)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -744.04, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 35)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s5lnu"]
 _data = {
 &"RESET": SubResource("Animation_efw6q"),
@@ -481,10 +364,41 @@ _data = {
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_hsruv")
 ZoneNumber = 4
-LevelNumber = 1
+LevelNumber = 2
+
+[node name="Scientist" parent="." instance=ExtResource("22_n1mfg")]
+position = Vector2(400, 211)
+rotation = -0.672164
+freeze_hip = true
+freeze_head = true
+
+[node name="Scientist6" parent="." instance=ExtResource("22_n1mfg")]
+position = Vector2(974, 839)
+
+[node name="Scientist7" parent="." instance=ExtResource("22_n1mfg")]
+position = Vector2(1031, 856)
+
+[node name="Scientist8" parent="." instance=ExtResource("22_n1mfg")]
+position = Vector2(1019, 757)
+
+[node name="Scientist9" parent="." instance=ExtResource("22_n1mfg")]
+position = Vector2(315, 1199)
+rotation = -0.609805
+freeze_hip = true
+freeze_head = true
+
+[node name="Scientist2" parent="." instance=ExtResource("22_n1mfg")]
+position = Vector2(607, 246)
+rotation = 0.976507
+freeze_hip = true
+freeze_head = true
+
+[node name="Scientist3" parent="." instance=ExtResource("22_n1mfg")]
+position = Vector2(510, 230)
+rotation = -2.09431
 
 [node name="MeatBox" parent="." instance=ExtResource("3_0bucx")]
-position = Vector2(706, 270)
+position = Vector2(706, 232)
 mass = 2.0
 Lastingtime = 1e+09
 
@@ -492,23 +406,22 @@ Lastingtime = 1e+09
 position = Vector2(96, 25)
 
 [node name="MusicSubmanager" parent="." instance=ExtResource("3_lvie0")]
-level = 4
 
 [node name="Transition" parent="." instance=ExtResource("4_he7u6")]
 scale = Vector2(1.5, 1.5)
-target_scene = ExtResource("6_he7u6")
+target_scene = ExtResource("7_qb182")
 
 [node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
 position = Vector2(101.333, 905.333)
 rotation = 1.57079
 
-[node name="AudioStreamPlayer2D" parent="Transition" index="4"]
-stream_paused = false
-
 [node name="dont touch" parent="." instance=ExtResource("10_lfnpk")]
 
 [node name="todo" type="Node2D" parent="."]
 rotation = 8.29355e-05
+
+[node name="Manager" type="Node" parent="todo"]
+script = ExtResource("8_s5lnu")
 
 [node name="Platform2" parent="todo" instance=ExtResource("13_5u5iw")]
 position = Vector2(-4.83, 899.992)
@@ -545,19 +458,16 @@ autoplay = "plat move"
 [node name="Grow-Laser" parent="todo" instance=ExtResource("5_jqdbx")]
 position = Vector2(363.056, 674.97)
 rotation = 2.04853
-scale = Vector2(1, 1)
 target_scale = Vector2(6, 6)
 
 [node name="Grow-Laser5" parent="todo" instance=ExtResource("5_jqdbx")]
 position = Vector2(1103.11, 1278.91)
 rotation = 3.14159
-scale = Vector2(1, 1)
 target_scale = Vector2(6, 6)
 
 [node name="Grow-Laser6" parent="todo" instance=ExtResource("5_jqdbx")]
 position = Vector2(866.085, 1026.93)
 rotation = 3.14159
-scale = Vector2(1, 1)
 target_scale = Vector2(6, 6)
 
 [node name="Platform" parent="todo/Grow-Laser6" instance=ExtResource("13_5u5iw")]
@@ -597,7 +507,6 @@ rotation = 3.14159
 [node name="Grow-Laser2" parent="todo" instance=ExtResource("5_jqdbx")]
 position = Vector2(1101.07, 841.909)
 rotation = -2.99802
-scale = Vector2(1, 1)
 target_scale = Vector2(6, 6)
 
 [node name="Grow-Laser3" parent="todo" instance=ExtResource("5_jqdbx")]
@@ -620,7 +529,7 @@ libraries = {
 [node name="Tilemap" type="TileMapLayer" parent="todo"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAQAAwAAAABAAAAAAARAAwAAAABAAAAAAASAAwAAAABAAAAAAATAAwAAAABAAAAAAAUAAwAAAABAAAAAAAVAAwAAAABAAAAAAAWAAwAAAABAAAAAAAGAA0AAAAAAAIAAAAHAA0AAAABAAIAAAAIAA0AAAABAAIAAAAJAA0AAAABAAIAAAAKAA0AAAABAAIAAAALAA0AAAABAAIAAAAMAA0AAAABAAIAAAANAA0AAAABAAIAAAAOAA0AAAABAAIAAAAPAA0AAAABAAIAAAAQAA0AAAABAAIAAAARAA0AAAABAAIAAAASAA0AAAABAAIAAAATAA0AAAABAAIAAAAUAA0AAAABAAIAAAAVAA0AAAABAAIAAAAWAA0AAAABAAIAAAAPAAwAAAABAAAAAAAOAAwAAAABAAAAAAANAAwAAAABAAAAAAAMAAwAAAABAAAAAAALAAwAAAABAAAAAAAKAAwAAAABAAAAAAAJAAwAAAABAAAAAAAIAAwAAAABAAAAAAAHAAwAAAABAAAAAAAGAAwAAAABAAEAAAAFAAwAAAADAAEAAAAAAAwAAAAEAAEAAAADAAAAAAADAAEAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAAAAYAAAABAAEAAAAAAAcAAAACAAEAAAAAAAgAAAACAAEAAAAAAAkAAAACAAEAAAAAAAoAAAACAAEAAAAAAAsAAAACAAEAAAAXAAMAAAABAAEAAAAXAAIAAAAAAAEAAAAXAAEAAAAAAAEAAAAXAAAAAAABAAAAAAABAAYAAAAEAAAAAAACAAYAAAAEAAAAAAADAAYAAAAEAAAAAAAEAAYAAAAEAAAAAAAHAAYAAAAEAAAAAAAFAAYAAAAEAAAAAAAGAAYAAAAEAAAAAAAIAAYAAAAEAAAAAAAJAAYAAAAEAAAAAAAKAAYAAAAEAAAAAAALAAYAAAAEAAAAAAAMAAYAAAAEAAAAAAANAAYAAAAEAAAAAAAOAAYAAAAEAAAAAAAPAAYAAAAEAAAAAAAQAAYAAAAEAAAAAAARAAYAAAAEAAAAAAASAAYAAAAEAAAAAAATAAYAAAAEAAAAAAAUAAYAAAADAAIAAAAUAAMAAAADAAEAAAAVAAMAAAAEAAAAAAAWAAMAAAAEAAAAAAAGAAsAAAAFAAEAAAABABMAAAABAAAAAAACABMAAAABAAAAAAADABMAAAABAAAAAAAEABMAAAABAAAAAAAFABMAAAABAAAAAAAGABMAAAABAAAAAAAHABMAAAABAAAAAAAIABMAAAABAAAAAAAJABMAAAABAAAAAAAKABMAAAABAAAAAAALABMAAAABAAAAAAAMABMAAAABAAAAAAANABMAAAABAAAAAAAOABMAAAABAAAAAAAPABMAAAABAAAAAAAQABMAAAABAAAAAAARABMAAAABAAAAAAASABMAAAACAAAAAAABABQAAAABAAIAAAACABQAAAABAAIAAAADABQAAAABAAIAAAAEABQAAAABAAIAAAAFABQAAAABAAIAAAAGABQAAAABAAIAAAAHABQAAAABAAIAAAAIABQAAAABAAIAAAAJABQAAAABAAIAAAAKABQAAAABAAIAAAALABQAAAABAAIAAAAMABQAAAABAAIAAAANABQAAAABAAIAAAAOABQAAAABAAIAAAAPABQAAAABAAIAAAAQABQAAAABAAIAAAARABQAAAABAAIAAAASABQAAAACAAEAAAAXABMAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAEAAAACAAEAAAAAAAIAAAACAAEAAAAAAAMAAAACAAEAAAAAAAQAAAACAAEAAAAAAAUAAAACAAEAAAAAABIAAAACAAEAAAAAABEAAAACAAEAAAAAABAAAAACAAEAAAAAAA8AAAACAAEAAAAAAA4AAAACAAEAAAAAAA0AAAACAAEAAAAXABIAAAAAAAEAAAAXABEAAAAAAAEAAAAXABAAAAAAAAEAAAAXAA8AAAAAAAEAAAAXAA4AAAAAAAEAAAAXAA0AAAABAAEAAAAXAAwAAAABAAEAAAAXAAQAAAAAAAEAAAAXAAUAAAAAAAEAAAAXAAYAAAAAAAEAAAAXAAcAAAAAAAEAAAAXAAgAAAAAAAEAAAAXAAkAAAAAAAEAAAAXAAoAAAAAAAEAAAAXAAsAAAAAAAEAAAAAABMAAAABAAEAAAAXABQAAAAAAAEAAAAXABUAAAAAAAEAAAAAABUAAAACAAEAAAAAABYAAAACAAEAAAAAABcAAAACAAEAAAAAABgAAAACAAEAAAAAABkAAAACAAEAAAAAABoAAAACAAEAAAAXABoAAAAAAAEAAAAFABsAAAAAAAEAAAAGABsAAAABAAAAAAAHABsAAAABAAAAAAAIABsAAAABAAAAAAAJABsAAAABAAAAAAAKABsAAAABAAAAAAALABsAAAABAAAAAAAMABsAAAABAAAAAAANABsAAAABAAAAAAAOABsAAAABAAAAAAAPABsAAAABAAAAAAAQABsAAAABAAAAAAARABsAAAABAAAAAAASABsAAAABAAAAAAATABsAAAABAAAAAAAUABsAAAABAAAAAAAVABsAAAABAAAAAAAWABsAAAABAAAAAAAXABsAAAABAAEAAAAXABwAAAABAAEAAAAAABsAAAACAAEAAAAAABwAAAACAAEAAAAFABwAAAAAAAIAAAAGABwAAAABAAIAAAAHABwAAAABAAIAAAAIABwAAAABAAIAAAAJABwAAAABAAIAAAAKABwAAAABAAIAAAALABwAAAABAAIAAAAMABwAAAABAAIAAAANABwAAAABAAIAAAAOABwAAAABAAIAAAAPABwAAAABAAIAAAAQABwAAAABAAIAAAARABwAAAABAAIAAAASABwAAAABAAIAAAATABwAAAABAAIAAAAUABwAAAABAAIAAAAVABwAAAABAAIAAAAWABwAAAABAAIAAAAFABoAAAAFAAEAAAAXABYAAAAAAAEAAAAXABcAAAAAAAEAAAAXABkAAAAAAAEAAAAXABgAAAAAAAEAAAAAABQAAAABAAEAAAASABUAAAAEAAEAAAA=")
-tile_set = SubResource("TileSet_ymyk6")
+tile_set = ExtResource("11_fu4id")
 rendering_quadrant_size = 48
 
 [node name="Scale_button_green" parent="todo/Tilemap" instance=ExtResource("10_qhpjq")]
@@ -703,6 +612,140 @@ autoplay = "rot"
 libraries = {
 &"": SubResource("AnimationLibrary_s5lnu")
 }
-autoplay = "lvl up"
+
+[node name="Lamp" parent="todo" instance=ExtResource("13_71dju")]
+position = Vector2(968.011, 136.92)
+rotation = -8.29355e-05
+scale = Vector2(1, 1)
+
+[node name="Light" parent="todo" instance=ExtResource("14_5u5iw")]
+position = Vector2(715.005, 54.9407)
+
+[node name="Light3" parent="todo" instance=ExtResource("14_5u5iw")]
+position = Vector2(314.005, 54.974)
+
+[node name="Light4" parent="todo" instance=ExtResource("14_5u5iw")]
+position = Vector2(516.005, 54.9572)
+
+[node name="Light2" parent="todo" instance=ExtResource("14_5u5iw")]
+position = Vector2(147.028, 341.988)
+
+[node name="Light5" parent="todo" instance=ExtResource("14_5u5iw")]
+position = Vector2(868.028, 342.928)
+
+[node name="Platform3" parent="todo" instance=ExtResource("13_5u5iw")]
+position = Vector2(976.008, 95.9191)
+rotation = -4.71238
+
+[node name="Indicator-X" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(1057.01, 99.9123)
+
+[node name="Indicator-X2" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(708.019, 223.941)
+
+[node name="Indicator-Arrow" parent="todo" instance=ExtResource("16_s5lnu")]
+position = Vector2(832.011, 132.931)
+rotation = -0.261799
+
+[node name="SteelTable" parent="todo" instance=ExtResource("18_fu4id")]
+position = Vector2(305.022, 264.975)
+
+[node name="SteelTable2" parent="todo" instance=ExtResource("18_fu4id")]
+position = Vector2(705.022, 264.942)
+
+[node name="Vial_green" parent="todo" instance=ExtResource("19_n1mfg")]
+position = Vector2(320.019, 232.973)
+
+[node name="Vial-Red" parent="todo" instance=ExtResource("20_qxal0")]
+position = Vector2(307.017, 199.975)
+
+[node name="Vial-blue" parent="todo" instance=ExtResource("21_qb182")]
+position = Vector2(293.019, 226.976)
+
+[node name="Vial_green2" parent="todo" instance=ExtResource("19_n1mfg")]
+position = Vector2(368.012, 144.969)
+rotation = -0.769649
+
+[node name="Vial-Red2" parent="todo" instance=ExtResource("20_qxal0")]
+position = Vector2(355.009, 111.971)
+rotation = -0.769649
+
+[node name="Vial-blue2" parent="todo" instance=ExtResource("21_qb182")]
+position = Vector2(341.012, 138.972)
+rotation = -0.769649
+
+[node name="Vial_green3" parent="todo" instance=ExtResource("19_n1mfg")]
+position = Vector2(260.014, 166.978)
+rotation = -1.39437
+
+[node name="Vial-Red3" parent="todo" instance=ExtResource("20_qxal0")]
+position = Vector2(247.011, 133.98)
+rotation = -1.39437
+
+[node name="Vial-blue3" parent="todo" instance=ExtResource("21_qb182")]
+position = Vector2(233.013, 160.981)
+rotation = -1.39437
+
+[node name="TentacleBomb" parent="todo" instance=ExtResource("23_qxal0")]
+z_index = -5
+position = Vector2(517.012, 140.957)
+
+[node name="Indicator-X3" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(428.036, 431.964)
+
+[node name="Indicator-X5" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(517.045, 538.957)
+
+[node name="Indicator-X6" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(647.045, 538.946)
+
+[node name="Indicator-X7" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(736.036, 431.939)
+
+[node name="Indicator-X8" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(646.029, 348.946)
+
+[node name="Indicator-X9" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(517.029, 349.957)
+
+[node name="Indicator-X4" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(76.0454, 547.994)
+
+[node name="Indicator-Arrow2" parent="todo" instance=ExtResource("16_s5lnu")]
+position = Vector2(869.039, 475.928)
+rotation = 3.14159
+
+[node name="Indicator-X10" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(252.073, 881.979)
+
+[node name="Indicator-X11" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(584.058, 698.952)
+
+[node name="Indicator-X12" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(832.074, 886.931)
+
+[node name="Indicator-X15" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(314.085, 1027.97)
+
+[node name="Indicator-X16" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(584.106, 1277.95)
+
+[node name="Indicator-X13" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(144.059, 706.988)
+
+[node name="Indicator-X14" parent="todo" instance=ExtResource("15_efw6q")]
+position = Vector2(892.067, 810.926)
+
+[node name="Indicator-Arrow3" parent="todo" instance=ExtResource("16_s5lnu")]
+position = Vector2(147.068, 819.988)
+
+[node name="Exit-Sign" parent="todo" instance=ExtResource("24_qb182")]
+position = Vector2(205.112, 1345.98)
+rotation = 1.57079
+
+[node name="Light6" parent="todo" instance=ExtResource("14_5u5iw")]
+position = Vector2(1033.06, 678.914)
+
+[connection signal="pressed" from="todo/Tilemap/Scale_button_green" to="todo/Manager" method="_on_scale_button_green_pressed"]
 
 [editable path="Transition"]

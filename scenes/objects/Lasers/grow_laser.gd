@@ -5,6 +5,7 @@ extends StaticBody2D
 var hit = Vector2(0,200)
 @onready var line: Line2D = $Line2D
 @onready var hitsprite: AnimatedSprite2D = $hitsprite
+@onready var light: PointLight2D = $PointLight2D2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,3 +34,11 @@ func _process(delta: float) -> void:
 
 			if collider.is_in_group("button_actionable") and not collider.is_in_group("Meatbox"):
 				collider.set_size(target_scale)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	light.enabled = false
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	light.enabled = true

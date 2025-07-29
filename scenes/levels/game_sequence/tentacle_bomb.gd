@@ -1,6 +1,7 @@
 extends Node2D
 
 class_name TentacleBomb
+@export var screen_activator : bool = false
 @export var tentacle_amount : int = 10
 @export var rotation_amount : int = 10 
 
@@ -12,6 +13,7 @@ class_name TentacleBomb
 @onready var positions_array : Array[Vector2]
 
 @export var base_color : Color = Color(.48,.19,.20,0.8)
+@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
 const ROPE_MODULAR = preload("res://scenes/objects/rope_modular.tscn")
 var tentacle_tween : Tween
@@ -29,7 +31,7 @@ func _process(delta: float) -> void:
 		ray_cast_2d.rotation_degrees += rotation_amount
 		positions_array.append(ray_cast_2d.get_collision_point())
 		#print(ray_cast_2d.get_collision_point())
-	elif ray_cast_2d != null :
+	elif ray_cast_2d != null and screen_activator == false :
 		generate_tentacle(tentacle_amount,positions_array)
 		ray_cast_2d.queue_free()
 		
@@ -83,3 +85,11 @@ func reset_anim():
 	if tentacle_tween:
 		tentacle_tween.kill()
 	tentacle_tween = create_tween()
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	if screen_activator == true:
+		generate_tentacle(tentacle_amount,positions_array)
+		ray_cast_2d.queue_free()
+		visible_on_screen_notifier_2d.queue_free()
+		

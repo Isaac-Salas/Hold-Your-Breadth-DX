@@ -3,6 +3,7 @@ extends Node2D
 @onready var rigid_body_2d : RigidBody2D = $RigidBody2D
 @export var color : Color
 @onready var light = $RigidBody2D/Sprite2D/PointLight2D
+@onready var point_light_2d: PointLight2D = $RigidBody2D/Sprite2D/PointLight2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,8 +23,8 @@ func _on_rigid_body_2d_body_entered(body):
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	visible = true
+	point_light_2d.enabled = true
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	visible = false
+	point_light_2d.enabled = false

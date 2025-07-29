@@ -174,10 +174,6 @@ Jump={
 ]
 }
 
-[physics]
-
-common/physics_jitter_fix=2.0
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

@@ -10,14 +10,24 @@ var collision_point = Vector2.ZERO
 var previous_collider = null
 var status = 'look'
 @onready var pickup: Marker2D = $"../Pickup"
-
+@export var gamepad_override : bool
+@onready var using_controller : bool
 
 
 var VelVec := Vector2.ZERO
 
 func _ready():
+	target_position = Vector2.ZERO
 	if debug_controller:
 		Input.joy_connection_changed.connect(_on_joy_connection_changed)
+
+
+func _input(event: InputEvent) -> void:
+	if (event is InputEventJoypadButton) or (event is InputEventJoypadMotion):
+		using_controller = true
+	else:
+		using_controller = false
+	
 
 
 func _process(delta):
@@ -25,14 +35,16 @@ func _process(delta):
 		return
 	var mouse_pos = get_global_mouse_position()
 	var aimcontroller = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
-	var using_controller = Input.get_connected_joypads().size() > 0
+	
 
 	var direction := Vector2.ZERO
 	
 	
 	if using_controller and aimcontroller != Vector2.ZERO:
 		player.controller = true
-		direction = aimcontroller.normalized() 
+		direction = aimcontroller.normalized()
+	elif using_controller and aimcontroller == Vector2.ZERO:
+		direction = aimcontroller.normalized()
 	else:
 		player.controller = false
 		direction = (mouse_pos - global_position).normalized()

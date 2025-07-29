@@ -1,0 +1,560 @@
+[gd_scene load_steps=26 format=3 uid="uid://dymk4hm5e74t7"]
+
+[ext_resource type="Script" uid="uid://bmx1q3wujeh47" path="res://scenes/bosses/Eyeboss/scientist_alt.gd" id="1_wsy17"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_latu1"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qb2ag"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bqejh"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tiqpg"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vhgwp"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4djap"]
+load_path = "res://.godot/imported/Scientits.png-43bf25dfbee4175d04978890eff776f7.ctex"
+
+[sub_resource type="SkeletonModification2DPhysicalBones" id="SkeletonModification2DPhysicalBones_wsy17"]
+resource_local_to_scene = true
+physical_bone_chain_length = 15
+fetch_bones = null
+joint_0_nodepath = NodePath("Hip2")
+joint_1_nodepath = NodePath("Hip2/Chest")
+joint_2_nodepath = NodePath("Hip2/ThighR")
+joint_3_nodepath = NodePath("Hip2/ThighL")
+joint_4_nodepath = NodePath("Hip2/Chest/Head")
+joint_5_nodepath = NodePath("Hip2/Chest/ArmL")
+joint_6_nodepath = NodePath("Hip2/Chest/ArmR")
+joint_7_nodepath = NodePath("Hip2/ThighR/LegR")
+joint_8_nodepath = NodePath("Hip2/ThighL/LegL")
+joint_9_nodepath = NodePath("Hip2/Chest/ArmL/ForeArmL")
+joint_10_nodepath = NodePath("Hip2/Chest/ArmR/ForeArmR")
+joint_11_nodepath = NodePath("Hip2/ThighR/LegR/FootR")
+joint_12_nodepath = NodePath("Hip2/ThighL/LegL/FootL")
+joint_13_nodepath = NodePath("Hip2/Chest/ArmL/ForeArmL/HandL")
+joint_14_nodepath = NodePath("Hip2/Chest/ArmR/ForeArmR/HandR")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_f08ep"]
+resource_local_to_scene = true
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification2DPhysicalBones_wsy17")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wsy17"]
+bounce = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsy17"]
+size = Vector2(20, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8qim"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fxnj"]
+size = Vector2(13, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0al2a"]
+size = Vector2(8, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dak81"]
+size = Vector2(8, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n54fl"]
+size = Vector2(12, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gor80"]
+size = Vector2(8, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m55qq"]
+size = Vector2(9, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq21o"]
+size = Vector2(11, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcssp"]
+size = Vector2(9, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgbhm"]
+size = Vector2(10, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itu38"]
+size = Vector2(13, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3frql"]
+size = Vector2(10, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e83ag"]
+size = Vector2(10, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yyl1"]
+size = Vector2(13, 8)
+
+[node name="Scientist" type="Node2D"]
+script = ExtResource("1_wsy17")
+freeze_hip = false
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(-71, -49)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Torso" type="Polygon2D" parent="Polygons"]
+texture = SubResource("CompressedTexture2D_latu1")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(62, 26, 62, 67, 81, 67, 81, 26, 62, 36, 81, 36, 62, 52, 81, 52, 71, 26, 73, 26, 71, 36, 73, 36)
+uv = PackedVector2Array(62, 26, 62, 67, 81, 67, 81, 26, 62, 36, 81, 36, 62, 52, 81, 52, 71, 26, 73, 26, 71, 36, 73, 36)
+polygons = [PackedInt32Array(0, 8, 10), PackedInt32Array(0, 4, 10), PackedInt32Array(9, 3, 5), PackedInt32Array(9, 11, 5), PackedInt32Array(8, 9, 11, 10), PackedInt32Array(10, 6, 4), PackedInt32Array(11, 5, 7), PackedInt32Array(6, 7, 11, 10), PackedInt32Array(6, 1, 2, 7)]
+bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1), "Hip/Chest", PackedFloat32Array(1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1), "Hip/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR", PackedFloat32Array(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR/LegR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR/LegR/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighL", PackedFloat32Array(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighL/KneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighL/KneeL/LegL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighL/KneeL/LegL/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 8
+
+[node name="LeftArm" type="Polygon2D" parent="Polygons"]
+texture = SubResource("CompressedTexture2D_qb2ag")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40, 40, 25, 51, 25, 51, 40, 40, 40)
+uv = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40, 40, 25, 51, 25, 51, 40, 40, 40)
+polygons = [PackedInt32Array(3, 2, 4), PackedInt32Array(4, 7, 3), PackedInt32Array(4, 5, 7), PackedInt32Array(5, 6, 7), PackedInt32Array(6, 1, 5), PackedInt32Array(6, 0, 1)]
+bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(1, 1, 0, 0, 0, 0, 0, 0), "Hip/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 0), "Hip/Chest/ArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 1, 0, 0, 1), "Hip/Chest/ArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0), "Hip/Chest/ArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR/LegR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR/LegR/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR2/KneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR2/KneeR/LegR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR2/KneeR/LegR/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 4
+
+[node name="RightArm" type="Polygon2D" parent="Polygons"]
+position = Vector2(51, 0)
+texture = SubResource("CompressedTexture2D_bqejh")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(63, 40, 63, 25, 29, 25, 29, 40, 41, 25, 52, 25, 41, 40, 52, 40)
+uv = PackedVector2Array(114, 39, 114, 24, 80, 24, 80, 39, 92, 24, 103, 24, 92, 39, 103, 39)
+polygons = [PackedInt32Array(2, 3, 4), PackedInt32Array(3, 6, 4), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 7, 5), PackedInt32Array(7, 0, 1), PackedInt32Array(7, 5, 1)]
+bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0), "Hip/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR", PackedFloat32Array(0, 0, 0, 0, 1, 0, 1, 0), "Hip/Chest/ArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 1, 0, 1), "Hip/Chest/ArmR/ForeArmR/HandR", PackedFloat32Array(1, 1, 0, 0, 0, 0, 0, 0), "Hip/ThighR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR/LegR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/KneeR/LegR/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR2/KneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR2/KneeR/LegR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR2/KneeR/LegR/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 4
+
+[node name="LeftLeg" type="Polygon2D" parent="Polygons"]
+texture = SubResource("CompressedTexture2D_tiqpg")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67, 57, 78, 57, 87, 72, 87, 72, 78)
+uv = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67, 57, 78, 57, 87, 72, 87, 72, 78)
+polygons = [PackedInt32Array(6, 7, 2), PackedInt32Array(6, 3, 2), PackedInt32Array(5, 6, 7), PackedInt32Array(5, 8, 7), PackedInt32Array(4, 5, 8), PackedInt32Array(4, 1, 8)]
+bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/LegR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR/LegR/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighL", PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 0, 0), "Hip/ThighL/LegL", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 1, 1), "Hip/ThighL/LegL/FootL", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0)]
+internal_vertex_count = 4
+
+[node name="RightLeg" type="Polygon2D" parent="Polygons"]
+position = Vector2(15, 0)
+texture = SubResource("CompressedTexture2D_vhgwp")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(61, 67, 72, 67, 72, 97, 57, 97, 57, 67, 57, 78, 57, 87, 72, 87, 72, 78)
+uv = PackedVector2Array(76, 67, 87, 67, 87, 97, 72, 97, 72, 67, 72, 78, 72, 87, 87, 87, 87, 78)
+polygons = [PackedInt32Array(4, 8, 5), PackedInt32Array(4, 1, 8), PackedInt32Array(5, 6, 7), PackedInt32Array(5, 8, 7), PackedInt32Array(7, 2, 6), PackedInt32Array(6, 3, 2)]
+bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighR", PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 0, 0), "Hip/ThighR/LegR", PackedFloat32Array(0, 0, 0, 0, 0, 1, 1, 1, 1), "Hip/ThighR/LegR/FootR", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0), "Hip/ThighL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighL/LegL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/ThighL/LegL/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 4
+
+[node name="Head" type="Polygon2D" parent="Polygons"]
+z_index = 1
+color = Color(0.470588, 0.780392, 1, 1)
+texture = SubResource("CompressedTexture2D_4djap")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(63, 26, 78, 26, 78, 12, 63, 12)
+uv = PackedVector2Array(63, 26, 78, 26, 78, 12, 63, 12)
+bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(1, 1, 0, 0), "Hip/Chest/Head", PackedFloat32Array(0, 0, 1, 1), "Hip/Chest/ArmL", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest/ArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest/ArmR", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0), "Hip/Chest/ArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0), "Hip/ThighR", PackedFloat32Array(0, 0, 0, 0), "Hip/ThighR/KneeR", PackedFloat32Array(0, 0, 0, 0), "Hip/ThighR/KneeR/LegR", PackedFloat32Array(0, 0, 0, 0), "Hip/ThighR/KneeR/LegR/FootR", PackedFloat32Array(0, 0, 0, 0), "Hip/ThighR2", PackedFloat32Array(0, 0, 0, 0), "Hip/ThighR2/KneeR", PackedFloat32Array(0, 0, 0, 0), "Hip/ThighR2/KneeR/LegR", PackedFloat32Array(0, 0, 0, 0), "Hip/ThighR2/KneeR/LegR/FootR", PackedFloat32Array(0, 0, 0, 0)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+modification_stack = SubResource("SkeletonModificationStack2D_f08ep")
+
+[node name="Hip" type="Bone2D" parent="Skeleton2D" groups=["Bones"]]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Chest" type="Bone2D" parent="Skeleton2D/Hip" groups=["Bones"]]
+position = Vector2(0, -16)
+rest = Transform2D(1, 0, 0, 1, 0, -16)
+auto_calculate_length_and_angle = false
+length = 13.0
+bone_angle = -90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Head" type="Bone2D" parent="Skeleton2D/Hip/Chest" groups=["Bones"]]
+position = Vector2(0, -13)
+rest = Transform2D(1, 0, 0, 1, 0, -13)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ArmL" type="Bone2D" parent="Skeleton2D/Hip/Chest" groups=["Bones"]]
+position = Vector2(-10, -1)
+rest = Transform2D(1, 0, 0, 1, -10, -1)
+auto_calculate_length_and_angle = false
+length = 9.0
+bone_angle = 180.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ForeArmL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL" groups=["Bones"]]
+position = Vector2(-9, 0)
+rest = Transform2D(1, 0, 0, 1, -9, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 180.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="HandL" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmL/ForeArmL" groups=["Bones"]]
+position = Vector2(-16, 0)
+rest = Transform2D(1, 0, 0, 1, -16, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ArmR" type="Bone2D" parent="Skeleton2D/Hip/Chest" groups=["Bones"]]
+position = Vector2(10, -1)
+rest = Transform2D(1, 0, 0, 1, 10, -1)
+auto_calculate_length_and_angle = false
+length = 9.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ForeArmR" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmR" groups=["Bones"]]
+position = Vector2(9, 0)
+rest = Transform2D(1, 0, 0, 1, 9, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="HandR" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmR/ForeArmR" groups=["Bones"]]
+position = Vector2(16, 0)
+rest = Transform2D(1, 0, 0, 1, 16, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ThighR" type="Bone2D" parent="Skeleton2D/Hip" groups=["Bones"]]
+position = Vector2(6, 11)
+rest = Transform2D(1, 0, 0, 1, 6, 11)
+auto_calculate_length_and_angle = false
+length = 14.0
+bone_angle = 90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LegR" type="Bone2D" parent="Skeleton2D/Hip/ThighR" groups=["Bones"]]
+position = Vector2(0, 14)
+rest = Transform2D(1, 0, 0, 1, 0, 14)
+auto_calculate_length_and_angle = false
+length = 21.0
+bone_angle = 90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="FootR" type="Bone2D" parent="Skeleton2D/Hip/ThighR/LegR" groups=["Bones"]]
+position = Vector2(0, 21)
+rest = Transform2D(1, 0, 0, 1, 0, 21)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ThighL" type="Bone2D" parent="Skeleton2D/Hip" groups=["Bones"]]
+position = Vector2(-6, 11)
+rest = Transform2D(1, 0, 0, 1, -6, 11)
+auto_calculate_length_and_angle = false
+length = 14.0
+bone_angle = 90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LegL" type="Bone2D" parent="Skeleton2D/Hip/ThighL" groups=["Bones"]]
+position = Vector2(0, 14)
+rest = Transform2D(1, 0, 0, 1, 0, 14)
+auto_calculate_length_and_angle = false
+length = 21.0
+bone_angle = 90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="FootL" type="Bone2D" parent="Skeleton2D/Hip/ThighL/LegL" groups=["Bones"]]
+position = Vector2(0, 21)
+rest = Transform2D(1, 0, 0, 1, 0, 21)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Hip2" type="PhysicalBone2D" parent="Skeleton2D" groups=["Bones"]]
+collision_layer = 0
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_wsy17")
+bone2d_nodepath = NodePath("../Hip")
+bone2d_index = 0
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wsy17")
+
+[node name="Chest" type="PhysicalBone2D" parent="Skeleton2D/Hip2" groups=["Bones"]]
+position = Vector2(0, -16)
+collision_layer = 0
+collision_mask = 2
+lock_rotation = true
+bone2d_nodepath = NodePath("../../Hip/Chest")
+bone2d_index = 1
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/Chest"]
+shape = SubResource("RectangleShape2D_y8qim")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/Chest"]
+position = Vector2(0, 7)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="Head" type="PhysicalBone2D" parent="Skeleton2D/Hip2/Chest" groups=["Bones"]]
+position = Vector2(0, -13)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../Hip/Chest/Head")
+bone2d_index = 2
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/Chest/Head"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_4fxnj")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/Chest/Head"]
+position = Vector2(0, 6)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="ArmL" type="PhysicalBone2D" parent="Skeleton2D/Hip2/Chest" groups=["Bones"]]
+position = Vector2(-10, -1)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../Hip/Chest/ArmL")
+bone2d_index = 3
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/Chest/ArmL"]
+position = Vector2(-5, 0.5)
+shape = SubResource("RectangleShape2D_0al2a")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/Chest/ArmL"]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="ForeArmL" type="PhysicalBone2D" parent="Skeleton2D/Hip2/Chest/ArmL" groups=["Bones"]]
+position = Vector2(-9, 0)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../../Hip/Chest/ArmL/ForeArmL")
+bone2d_index = 4
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/Chest/ArmL/ForeArmL"]
+position = Vector2(-5, 0.5)
+shape = SubResource("RectangleShape2D_dak81")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/Chest/ArmL/ForeArmL"]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="HandL" type="PhysicalBone2D" parent="Skeleton2D/Hip2/Chest/ArmL/ForeArmL" groups=["Bones"]]
+position = Vector2(-16, 0)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../../../Hip/Chest/ArmL/ForeArmL/HandL")
+bone2d_index = 5
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/Chest/ArmL/ForeArmL/HandL"]
+shape = SubResource("RectangleShape2D_n54fl")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/Chest/ArmL/ForeArmL/HandL"]
+position = Vector2(6, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="ArmR" type="PhysicalBone2D" parent="Skeleton2D/Hip2/Chest" groups=["Bones"]]
+position = Vector2(10, -1)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../Hip/Chest/ArmR")
+bone2d_index = 6
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/Chest/ArmR"]
+position = Vector2(5, 0.5)
+shape = SubResource("RectangleShape2D_gor80")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/Chest/ArmR"]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="ForeArmR" type="PhysicalBone2D" parent="Skeleton2D/Hip2/Chest/ArmR" groups=["Bones"]]
+position = Vector2(9, 0)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../../Hip/Chest/ArmR/ForeArmR")
+bone2d_index = 7
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/Chest/ArmR/ForeArmR"]
+position = Vector2(5.5, 0.5)
+shape = SubResource("RectangleShape2D_m55qq")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/Chest/ArmR/ForeArmR"]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="HandR" type="PhysicalBone2D" parent="Skeleton2D/Hip2/Chest/ArmR/ForeArmR" groups=["Bones"]]
+position = Vector2(16, 0)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../../../Hip/Chest/ArmR/ForeArmR/HandR")
+bone2d_index = 8
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/Chest/ArmR/ForeArmR/HandR"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pq21o")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/Chest/ArmR/ForeArmR/HandR"]
+position = Vector2(-5, 0)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="ThighR" type="PhysicalBone2D" parent="Skeleton2D/Hip2" groups=["Bones"]]
+position = Vector2(6, 11)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../Hip/ThighR")
+bone2d_index = 9
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/ThighR"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_tcssp")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/ThighR"]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="LegR" type="PhysicalBone2D" parent="Skeleton2D/Hip2/ThighR" groups=["Bones"]]
+position = Vector2(0, 14)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../Hip/ThighR/LegR")
+bone2d_index = 10
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/ThighR/LegR"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_qgbhm")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/ThighR/LegR"]
+position = Vector2(0, -8)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="FootR" type="PhysicalBone2D" parent="Skeleton2D/Hip2/ThighR/LegR" groups=["Bones"]]
+position = Vector2(0, 21)
+collision_layer = 0
+collision_mask = 2
+lock_rotation = true
+bone2d_nodepath = NodePath("../../../../Hip/ThighR/LegR/FootR")
+bone2d_index = 11
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/ThighR/LegR/FootR"]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_itu38")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/ThighR/LegR/FootR"]
+position = Vector2(0, -6)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="ThighL" type="PhysicalBone2D" parent="Skeleton2D/Hip2" groups=["Bones"]]
+position = Vector2(-6, 11)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../Hip/ThighL")
+bone2d_index = 12
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/ThighL"]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_3frql")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/ThighL"]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="LegL" type="PhysicalBone2D" parent="Skeleton2D/Hip2/ThighL" groups=["Bones"]]
+position = Vector2(0, 14)
+collision_layer = 0
+collision_mask = 2
+bone2d_nodepath = NodePath("../../../Hip/ThighL/LegL")
+bone2d_index = 13
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/ThighL/LegL"]
+position = Vector2(1, 3.5)
+shape = SubResource("RectangleShape2D_e83ag")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/ThighL/LegL"]
+position = Vector2(0, -8)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="FootL" type="PhysicalBone2D" parent="Skeleton2D/Hip2/ThighL/LegL" groups=["Bones"]]
+position = Vector2(0, 21)
+collision_layer = 0
+collision_mask = 2
+lock_rotation = true
+bone2d_nodepath = NodePath("../../../../Hip/ThighL/LegL/FootL")
+bone2d_index = 14
+auto_configure_joint = false
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Hip2/ThighL/LegL/FootL"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_7yyl1")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/Hip2/ThighL/LegL/FootL"]
+position = Vector2(0, -6)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Skeleton2D/Hip2"]
+
+[connection signal="screen_exited" from="Skeleton2D/Hip2/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

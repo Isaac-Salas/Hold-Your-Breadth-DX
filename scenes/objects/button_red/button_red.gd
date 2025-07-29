@@ -27,7 +27,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("button_actionable"):
 		n_inside -= 1
-		print(n_inside)
+		#print(n_inside)
 		if n_inside == 0:
 			anim.play("depresssed")
 			anim_flag.play("OFF")

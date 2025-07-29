@@ -45,6 +45,8 @@ var coyote = false  # Track whether we're in coyote time or not
 var last_floor = false  # Last frame's on-floor state
 var jumping = false
 
+@export var reset_tooltip_active : bool
+@onready var reset_tooltip: ResetTooltip = $ResetTooltip
 
 signal Movement(value)
 signal Jump(value)

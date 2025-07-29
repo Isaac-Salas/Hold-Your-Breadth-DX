@@ -177,18 +177,20 @@ script = SubResource("GDScript_daj5k")
 [node name="LeftR" type="RayCast2D" parent="."]
 position = Vector2(-9, 8)
 target_position = Vector2(-22, 0)
+hit_from_inside = true
 
 [node name="RightR" type="RayCast2D" parent="."]
 position = Vector2(4, 8)
 target_position = Vector2(22, 0)
+hit_from_inside = true
 
 [node name="Detector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("CircleShape2D_14whu")
 
-[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]
 [connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_detect_body_exited"]
 [connection signal="timeout" from="BehaviorTimer" to="." method="_on_behavior_timer_timeout"]

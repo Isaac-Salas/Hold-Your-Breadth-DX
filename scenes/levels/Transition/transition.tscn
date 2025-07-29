@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://b0pi4ocu1rpdi"]
 
 [ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="1_aifxu"]
-[ext_resource type="Texture2D" uid="uid://cg14044b6gb5k" path="res://assets/objects/Transition.png" id="2_1pr46"]
+[ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="2_1pr46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
 size = Vector2(24, 95)
@@ -115,8 +115,7 @@ stereo = true
 
 [node name="Transition" type="Node2D" groups=["Transition"]]
 modulate = Color(0.408333, 0.375, 0.5, 1)
-z_index = 20
-y_sort_enabled = true
+z_index = 50
 script = ExtResource("1_aifxu")
 
 [node name="Trigger" type="Area2D" parent="."]
@@ -161,7 +160,6 @@ autoplay = "Opening"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, -1)
 stream = SubResource("AudioStreamWAV_wbb27")
-stream_paused = true
 bus = &"SFX"
 
 [connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

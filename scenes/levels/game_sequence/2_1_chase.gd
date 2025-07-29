@@ -19,6 +19,7 @@ extends Node2D
 var _2_1_CHASE_CHANGE = load("res://scenes/levels/game_sequence/2-1_CHASEChange.tscn")
 @onready var camera : Camera2D = $CharacterBody2D2/Camera2D
 @onready var animationp : AnimationPlayer = $CharacterBody2D2/AnimationPlayer
+@onready var scientist_beginning: Node = $"Clutter/Scientist beginning"
 
 
 @onready var hamster_setpiece = $Clutter/HamsterSetpiece
@@ -34,6 +35,7 @@ func _ready():
 	Manager.load_game()
 	Checkpoint = Manager.Level2_1C
 	if Checkpoint == true:
+		hamster_setpiece.queue_free()
 		character.global_position = checkpoint_pos.global_position
 	var LevelSave : String = "Level" + str(ZoneNumber) + "_" + str(LevelNumber)
 	Manager.setter(LevelSave,true)
@@ -56,10 +58,10 @@ func _on_button_red_pressed(state, body):
 	self.add_child(obstacles)
 	tilemap.queue_free()
 	door.queue_free()
-	for stuff in hamster_setpiece.get_children():
-		stuff.queue_free()
-	for stuff in boxes.get_children():
-		stuff.queue_free()
+	if hamster_setpiece != null:
+		deleter(hamster_setpiece)
+	deleter(boxes)
+	deleter(scientist_beginning)
 	#for stuff in bio_box.get_children():
 		#stuff.queue_free()
 #	for stuff in rats.get_children():
@@ -73,6 +75,10 @@ func _on_button_red_pressed(state, body):
 	
 	
 
+func deleter(node : Node):
+	for stuff in node.get_children():
+		stuff.queue_free()
+	
 
 func _on_player_detector_body_entered(body):
 	if body is SlimePlayer:

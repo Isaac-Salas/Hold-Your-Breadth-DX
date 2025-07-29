@@ -16,7 +16,8 @@ extends Node2D
 @onready var boss = $Buttons/BOSS
 @onready var transition = $Transition
 
-@onready var back = $Buttons/Back
+@onready var back: Button = $Back
+
 
 
 # Called when the node enters the scene tree for the first time.
