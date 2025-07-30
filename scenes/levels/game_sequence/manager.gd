@@ -18,6 +18,7 @@ func _on_scale_button_green_pressed(state: Variant, body: Variant) -> void:
 		true:
 			music_submanager.playback_speed = 3.0
 			music_submanager.check_manager()
+			MusicManager.play(0.0)
 			lvl_up.play("lvl up")
 		false:
 			music_submanager.playback_speed = 1.0

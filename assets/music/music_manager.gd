@@ -12,7 +12,8 @@ var fade_audio : Tween
 func set_speed(speed : float):
 	pitch_scale = speed
 
-func startplay(song, play_speed : int = 1, vol_override : float = songvolume):
+func startplay(song, position : float = 0.0, play_speed : int = 1, vol_override : float = songvolume):
+	seek(position)
 	pitch_scale = play_speed
 	stream = song
 	volume_db = vol_override

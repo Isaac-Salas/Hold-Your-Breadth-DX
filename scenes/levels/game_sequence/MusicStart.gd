@@ -14,6 +14,8 @@ func looper():
 	if loop == true:
 		MusicManager.play()
 		#print("TryLoop on:", MusicManager.get_stream_playback())
+		
+
 
 func check_manager():
 	match level:

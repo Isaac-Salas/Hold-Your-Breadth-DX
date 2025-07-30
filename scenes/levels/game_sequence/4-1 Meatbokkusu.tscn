@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="19_25208"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="21_gkoxj"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="22_ka1hd"]
-[ext_resource type="PackedScene" uid="uid://cdw3i1mw8y7og" path="res://scenes/levels/game_sequence/Templatedante3.tscn" id="23_8l46n"]
+[ext_resource type="PackedScene" uid="uid://cdw3i1mw8y7og" path="res://scenes/levels/game_sequence/4-2 Templatedante3.tscn" id="23_8l46n"]
 [ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="25_vp7sh"]
 [ext_resource type="PackedScene" uid="uid://giq52w54a0pw" path="res://scenes/enemies/ratiña/Ratfleemarker.tscn" id="26_1adut"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="28_buest"]

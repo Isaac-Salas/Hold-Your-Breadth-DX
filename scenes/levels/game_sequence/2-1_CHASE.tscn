@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://b6onmrleg7nri"]
+[gd_scene load_steps=73 format=4 uid="uid://b6onmrleg7nri"]
 
 [ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
 [ext_resource type="Script" uid="uid://gee6l5yoqpiv" path="res://scenes/levels/game_sequence/2_1_chase.gd" id="1_njuv6"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="24_mvbe6"]
 [ext_resource type="Texture2D" uid="uid://bixow8wew3lrr" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
 [ext_resource type="PackedScene" uid="uid://couoi5kbky3ig" path="res://scenes/objects/rope_modular.tscn" id="29_04mdq"]
+[ext_resource type="PackedScene" uid="uid://8bjg551r16pg" path="res://scenes/objects/Flashlight/flashlight.tscn" id="29_chteq"]
 [ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="30_njuv6"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="31_njuv6"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="32_01tns"]
@@ -916,6 +917,10 @@ freeze_head = true
 position = Vector2(3646, 592)
 freeze_hip = true
 freeze_chest = false
+
+[node name="RigidBody2D" parent="Clutter/HamsterSetpiece" instance=ExtResource("29_chteq")]
+position = Vector2(2641, 603)
+rotation = -3.06504
 
 [node name="Scientist beginning" type="Node" parent="Clutter"]
 

@@ -437,8 +437,7 @@ position = Vector2(-178, -194)
 
 [node name="Transition" type="Node2D" parent="."]
 modulate = Color(0.408333, 0.375, 0.5, 1)
-z_index = 20
-y_sort_enabled = true
+z_index = 50
 position = Vector2(1, 0)
 script = ExtResource("20_1n5v1")
 target_scene = ExtResource("21_86q3s")
