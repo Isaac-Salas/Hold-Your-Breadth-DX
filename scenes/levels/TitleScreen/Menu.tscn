@@ -1651,6 +1651,7 @@ HYB-DX - DEMO V1.8
 [/center]"
 
 [node name="Label2" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 840.0
 offset_top = 561.0
 offset_right = 1156.0
