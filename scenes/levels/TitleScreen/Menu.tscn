@@ -1,16 +1,16 @@
 [gd_scene load_steps=211 format=4 uid="uid://o1wthtbpquqd"]
 
 [ext_resource type="Script" uid="uid://dkudo7ovwfxpx" path="res://scenes/levels/TitleScreen/menu.gd" id="1_5s0bf"]
-[ext_resource type="Texture2D" uid="uid://cd5n2ed6q7ody" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
+[ext_resource type="Texture2D" uid="uid://cjdsqtj2q2vmr" path="res://assets/levels button/Play/button_play.png" id="2_o2so8"]
 [ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="3_au2hu"]
-[ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="4_3hmnn"]
+[ext_resource type="Texture2D" uid="uid://ceg8voxjtc3tf" path="res://assets/objects/Transition.png" id="4_3hmnn"]
 [ext_resource type="StyleBox" uid="uid://dsaejod1ejkbx" path="res://scenes/levels/TitleScreen/MenuFocusController.tres" id="5_t4htv"]
-[ext_resource type="Texture2D" uid="uid://dro5dut4rvh3q" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
-[ext_resource type="Texture2D" uid="uid://c4icoj2bql1yl" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
-[ext_resource type="Texture2D" uid="uid://c5glq3dgq15qm" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
-[ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="9_o6peb"]
-[ext_resource type="Script" uid="uid://n06gdt38mwsh" path="res://scenes/levels/TitleScreen/JELLY.gd" id="10_8lome"]
-[ext_resource type="Texture2D" uid="uid://cga7685y5ixh1" path="res://assets/JellyDog-QR-Smol.png" id="10_n5ye1"]
+[ext_resource type="Texture2D" uid="uid://vnqewj2dct6t" path="res://assets/levels button/Levels/button_lvls.png" id="6_rx7jg"]
+[ext_resource type="Texture2D" uid="uid://dt15w7n36ulim" path="res://assets/levels button/Options/button_Opts.png" id="7_bprok"]
+[ext_resource type="Texture2D" uid="uid://xoq67yupicv1" path="res://assets/levels button/Quit/button_quit.png" id="7_nbaks"]
+[ext_resource type="FontFile" uid="uid://br0r3mudaq0w4" path="res://assets/Fonts/DePixelHalbfett.otf" id="9_o6peb"]
+[ext_resource type="Script" uid="uid://c27t83qbjky7g" path="res://scenes/levels/TitleScreen/JELLY.gd" id="10_8lome"]
+[ext_resource type="Texture2D" uid="uid://3capx6p20v0n" path="res://assets/JellyDog-QR-Smol.png" id="10_n5ye1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gw78c"]
 light_mode = 1
@@ -1659,8 +1659,7 @@ theme_override_fonts/normal_font = ExtResource("9_o6peb")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]
-For more JellyDog, 
-click here!!!!
+Wishlist on Steam!!!
 [/center]"
 
 [node name="JellyDOG" type="Button" parent="Label2"]

@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=10 format=3 uid="uid://dgyn0xs2w2l78"]
 
-[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="1_53ca3"]
-[ext_resource type="Texture2D" uid="uid://cgrd2evwdi853" path="res://assets/tilemap/concretou.png" id="2_h186x"]
-[ext_resource type="Texture2D" uid="uid://dky52vd7574jf" path="res://assets/tilemap/concretoupiedra.png" id="3_es6tb"]
+[ext_resource type="Texture2D" uid="uid://dlgvap6m07fak" path="res://assets/tilemap/concrete.png" id="1_53ca3"]
+[ext_resource type="Texture2D" uid="uid://djqlufl5vjb4b" path="res://assets/tilemap/concretou.png" id="2_h186x"]
+[ext_resource type="Texture2D" uid="uid://bna2qnjh7fup2" path="res://assets/tilemap/concretoupiedra.png" id="3_es6tb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xejg3"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)

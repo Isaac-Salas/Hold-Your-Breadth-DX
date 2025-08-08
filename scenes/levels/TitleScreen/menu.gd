@@ -108,7 +108,7 @@ func _on_quit_pressed():
 
 
 func _on_jelly_dog_pressed():
-	OS.shell_open("https://jellydogstudio.itch.io/")
+	OS.shell_open("https://store.steampowered.com/app/3901700/Hold_Your_Breadth_DX/")
 
 
 func _on_atras_pressed():
