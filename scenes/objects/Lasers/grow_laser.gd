@@ -34,11 +34,3 @@ func _process(delta: float) -> void:
 
 			if collider.is_in_group("button_actionable") and not collider.is_in_group("Meatbox"):
 				collider.set_size(target_scale)
-
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	light.enabled = false
-
-
-func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
-	light.enabled = true
