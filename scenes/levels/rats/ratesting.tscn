@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=4 uid="uid://bw37nr6xqw6yc"]
 
-[ext_resource type="Script" uid="uid://cq1og7e5smb0k" path="res://scenes/levels/Testing/testing.gd" id="1_iike3"]
+[ext_resource type="Script" uid="uid://dklcxbf2uw6p3" path="res://scenes/levels/Testing/testing.gd" id="1_iike3"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_goeaq"]
 [ext_resource type="Texture2D" uid="uid://dnidh2djxgp41" path="res://assets/placeholder/Fondotest.png" id="6_jq3s4"]
 [ext_resource type="PackedScene" uid="uid://dqwxircknluj6" path="res://scenes/enemies/ratiña/Ratspawn.tscn" id="6_todws"]
@@ -281,9 +281,6 @@ scale = Vector2(1.5, 1.5)
 visible = false
 position = Vector2(720, 265.333)
 disabled = true
-
-[node name="AudioStreamPlayer2D" parent="Transition" index="4"]
-stream_paused = false
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true

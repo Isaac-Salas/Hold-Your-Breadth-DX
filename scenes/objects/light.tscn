@@ -7,6 +7,7 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qdrbt"]
 blend_mode = 1
+light_mode = 1
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dypoi"]
 particle_flag_disable_z = true

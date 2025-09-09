@@ -5,12 +5,15 @@ class_name ScreenStuff
 @export var player : SlimePlayer
 #@onready var background: Sprite2D = $Background
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
-@onready var crt_shader: CRTShader = $CRTShader
+@onready var background_tiled: TileMapLayer = $BackgroundTiled
+@onready var border_tiled: TileMapLayer = $BorderTiled
+@onready var crt_shader: TileMapLayer = $CRTShader
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	match showoverride:
 		true:
 			show()

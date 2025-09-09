@@ -26,8 +26,8 @@ turbulence_noise_strength = 7.71
 collision_mode = 2
 
 [node name="Exit-Sign" type="Sprite2D"]
+z_index = 1
 material = SubResource("CanvasItemMaterial_vmlh3")
-position = Vector2(911, 529.24)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_hjgyq")
 

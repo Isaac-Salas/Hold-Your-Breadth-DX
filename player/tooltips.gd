@@ -36,7 +36,7 @@ func _on_slime_throw(value: Variant) -> void:
 
 
 func reset_timer(value : bool):
-	print(timer.time_left)
+	#print(timer.time_left)
 	match value:
 		true:
 			if active == true:

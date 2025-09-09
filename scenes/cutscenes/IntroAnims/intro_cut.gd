@@ -9,8 +9,7 @@ extends Node2D
 @onready var currentanim : String
 @onready var point_light_2d = $"Swing-light/Light/PointLight2D"
 @onready var transition = $Transition
-const _0_TUTORIAL_THROW = preload("res://scenes/levels/game_sequence/1-1_Tutorial_throw.tscn")
-
+const PITCH_DECK = preload("res://scenes/levels/game_sequence/PitchDeck.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialog_box.timer.start()
@@ -57,7 +56,7 @@ func _input(event):
 					#dialog_box.InputSTOP = true
 					#
 				6:
-					transition.transition_to(_0_TUTORIAL_THROW )
+					transition.transition_to(PITCH_DECK )
 					set_process_input(false)
 					
 

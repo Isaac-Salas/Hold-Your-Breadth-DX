@@ -50,7 +50,7 @@ func showtoggle():
 		toggle = 0
 		if focusback != null:
 			focusback.grab_focus()
-	print(toggle)
+	#print(toggle)
 
 
 

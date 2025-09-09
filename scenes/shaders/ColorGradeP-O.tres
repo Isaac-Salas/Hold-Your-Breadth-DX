@@ -1,6 +1,8 @@
 [gd_resource type="GradientTexture2D" load_steps=2 format=3 uid="uid://cty26p5f5km38"]
 
 [sub_resource type="Gradient" id="Gradient_xaycy"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.992)
 colors = PackedColorArray(0.0283333, 0, 0.1, 1, 1, 0.94, 0.9, 1)
 metadata/_snap_count = 14
 
