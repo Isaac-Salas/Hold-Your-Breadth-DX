@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Hold your breadth DX"
-run/main_scene="res://scenes/cutscenes/JellyDOG/JellyIntro.tscn"
+run/main_scene="uid://4opn2rdjt4wb"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="HYB-DX"
 config/features=PackedStringArray("4.4", "GL Compatibility")
@@ -29,7 +29,10 @@ Preloader="*res://scenes/objects/Wall_Breakable/Preloader.gd"
 
 [display]
 
+window/size/mode=4
+window/size/resizable=false
 window/stretch/mode="viewport"
+window/main_scene="res://scenes/cutscenes/JellyDOG/JellyIntro.tscn"
 
 [global_group]
 
@@ -177,8 +180,6 @@ Jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 limits/opengl/max_renderable_lights=100
 limits/opengl/max_lights_per_object=100

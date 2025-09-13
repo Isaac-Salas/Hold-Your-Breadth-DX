@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://b11575bui2p7p"]
+
+[ext_resource type="Script" uid="uid://duqjcmce1wpy7" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_4l7dp"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="2_ehi33"]
+[ext_resource type="Texture2D" uid="uid://eai2k8lifs17" path="res://assets/Pitch/HYBplan.png" id="3_4l7dp"]
+[ext_resource type="Texture2D" uid="uid://wgb1g3xauxuo" path="res://assets/Pitch/Whiteboard.png" id="3_ehi33"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_xerwn"]
+[ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="6_4l7dp"]
+[ext_resource type="PackedScene" uid="uid://2mjycjtvw024" path="res://scenes/levels/game_sequence/PitchDeckLast.tscn" id="6_x203w"]
+[ext_resource type="Script" uid="uid://c51ig7ko5ax0y" path="res://assets/Pitch/Niveles/input.gd" id="8_x203w"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x203w"]
+light_mode = 1
+
+[node name="JellyIntro" type="Node2D"]
+script = ExtResource("1_4l7dp")
+
+[node name="dont touch" parent="." instance=ExtResource("2_ehi33")]
+
+[node name="CanvasModulate" parent="dont touch" index="2"]
+color = Color(0.0189402, 0.0189402, 0.0189402, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 20
+texture_filter = 2
+position = Vector2(576, 320)
+scale = Vector2(1.51, 1.51)
+texture = ExtResource("3_ehi33")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 30
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_x203w")
+position = Vector2(576, 320)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_4l7dp")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1625, -12)
+
+[node name="Transition" parent="." instance=ExtResource("5_xerwn")]
+scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("6_x203w")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(576, 320)
+current = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(582, 325)
+color = Color(1, 0.819608, 0.647059, 1)
+energy = 0.6
+texture = ExtResource("6_4l7dp")
+texture_scale = 9.1
+metadata/_edit_lock_ = true
+
+[node name="Input" type="Node" parent="."]
+script = ExtResource("8_x203w")
+
+[editable path="dont touch"]
+[editable path="Transition"]

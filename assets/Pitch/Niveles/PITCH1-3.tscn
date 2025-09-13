@@ -1,0 +1,282 @@
+[gd_scene load_steps=27 format=4 uid="uid://cifn5eam36cgc"]
+
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_f28b5"]
+[ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_pwjy1"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="3_c8sl5"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="4_63n76"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="5_iebke"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="6_wpdmk"]
+[ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="7_3w38d"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="8_wcw3m"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="9_vqt24"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="10_4e11j"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="11_wuxlw"]
+[ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="12_q4hid"]
+[ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="13_uega7"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="14_yommj"]
+[ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="15_wmnki"]
+[ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="16_no1ih"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="17_30dml"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="18_d3afo"]
+[ext_resource type="PackedScene" uid="uid://6ma0x2ah0d57" path="res://assets/Pitch/Niveles/NEWPITCHBOSS.tscn" id="19_3y33j"]
+[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="20_gqjpm"]
+[ext_resource type="PackedScene" uid="uid://couoi5kbky3ig" path="res://scenes/objects/rope_modular.tscn" id="21_qk6v7"]
+[ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="22_ckyef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l258"]
+size = Vector2(142, 20.1667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sb75"]
+size = Vector2(20, 11)
+
+[sub_resource type="SkeletonModification2DPhysicalBones" id="SkeletonModification2DPhysicalBones_035ry"]
+resource_local_to_scene = true
+physical_bone_chain_length = 15
+fetch_bones = null
+joint_0_nodepath = NodePath("Hip2")
+joint_1_nodepath = NodePath("Hip2/Chest")
+joint_2_nodepath = NodePath("Hip2/ThighR")
+joint_3_nodepath = NodePath("Hip2/ThighL")
+joint_4_nodepath = NodePath("Hip2/Chest/Head")
+joint_5_nodepath = NodePath("Hip2/Chest/ArmL")
+joint_6_nodepath = NodePath("Hip2/Chest/ArmR")
+joint_7_nodepath = NodePath("Hip2/ThighR/LegR")
+joint_8_nodepath = NodePath("Hip2/ThighL/LegL")
+joint_9_nodepath = NodePath("Hip2/Chest/ArmL/ForeArmL")
+joint_10_nodepath = NodePath("Hip2/Chest/ArmR/ForeArmR")
+joint_11_nodepath = NodePath("Hip2/ThighR/LegR/FootR")
+joint_12_nodepath = NodePath("Hip2/ThighL/LegL/FootL")
+joint_13_nodepath = NodePath("Hip2/Chest/ArmL/ForeArmL/HandL")
+joint_14_nodepath = NodePath("Hip2/Chest/ArmR/ForeArmR/HandR")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_8p8x8"]
+resource_local_to_scene = true
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification2DPhysicalBones_035ry")
+
+[node name="Template LOCO" type="Node2D"]
+script = ExtResource("1_f28b5")
+ZoneNumber = 1
+LevelNumber = 3
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+modulate = Color(0.7, 0.7, 0.7, 1)
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAcAAAAFAAAAAAAAAAYAAAAAAAEAAAAAAAUAAAAEAAEAAAAAAAQAAAAEAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAACAAAAAAADAAIAAAAFAAAAAAADAAEAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAAAAgAAAAFAAAAAAAAAAkAAAAAAAEAAAAAAAoAAAAEAAEAAAAAAAsAAAAEAAEAAAAAAAwAAAAFAAAAAAAAAA0AAAAAAAIAAAABAA0AAAAEAAAAAAACAA0AAAAEAAAAAAADAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAARAA0AAAAEAAAAAAASAA0AAAAEAAAAAAATAA0AAAAEAAAAAAAXAA0AAAADAAAAAAAXAAgAAAAEAAEAAAAXAAcAAAAEAAEAAAAXAAYAAAACAAEAAAAXAAUAAAAFAAAAAAAXAAQAAAAEAAEAAAAXAAMAAAACAAEAAAAXAAIAAAAFAAAAAAAXAAEAAAAFAAAAAAAXAAAAAAACAAAAAAAWAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAATAAAAAAAEAAAAAAASAAAAAAAEAAAAAAARAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAXAAkAAAACAAEAAAAXAAoAAAAFAAAAAAAXAAsAAAAEAAEAAAAXAAwAAAAEAAEAAAABAAMAAAAEAAAAAAACAAMAAAAEAAAAAAADAAMAAAAEAAAAAAAEAAMAAAAEAAAAAAAFAAMAAAAEAAAAAAABAAYAAAAEAAAAAAACAAYAAAAEAAAAAAADAAYAAAAEAAAAAAAEAAYAAAAEAAAAAAAFAAYAAAAEAAAAAAABAAkAAAAEAAAAAAACAAkAAAAEAAAAAAADAAkAAAAEAAAAAAAEAAkAAAAEAAAAAAAFAAkAAAAEAAAAAAAWAAMAAAAEAAAAAAAVAAMAAAAEAAAAAAAUAAMAAAAEAAAAAAATAAMAAAAEAAAAAAASAAMAAAAEAAAAAAASAAYAAAAEAAAAAAATAAYAAAAEAAAAAAAUAAYAAAAEAAAAAAAVAAYAAAAEAAAAAAAWAAYAAAAEAAAAAAASAAkAAAAEAAAAAAATAAkAAAAEAAAAAAAUAAkAAAAEAAAAAAAVAAkAAAAEAAAAAAAWAAkAAAAEAAAAAAAGAAkAAAADAAIAAAAGAAYAAAADAAIAAAAGAAMAAAADAAIAAAARAAYAAAADAAEAAAARAAMAAAADAAEAAAARAAkAAAADAAEAAAAUAA0AAAADAAIAAAAFAP//AgAEAAEAAAACAP//AgAEAAEAAAAFAP7/AgAFAAEAAAACAP7/AgAFAAEAAAA=")
+tile_set = ExtResource("2_pwjy1")
+rendering_quadrant_size = 48
+
+[node name="Player" parent="." instance=ExtResource("3_c8sl5")]
+position = Vector2(194, -30)
+
+[node name="lamps" type="Node" parent="."]
+
+[node name="Lamp" parent="lamps" instance=ExtResource("4_63n76")]
+position = Vector2(254, 425)
+rotation = -3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Lamp6" parent="lamps" instance=ExtResource("4_63n76")]
+position = Vector2(230, 281)
+rotation = -3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Lamp3" parent="lamps" instance=ExtResource("4_63n76")]
+position = Vector2(251, 619)
+rotation = -3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Lamp2" parent="lamps" instance=ExtResource("4_63n76")]
+position = Vector2(862, 425)
+scale = Vector2(1, 1)
+
+[node name="Lamp4" parent="lamps" instance=ExtResource("4_63n76")]
+position = Vector2(907, 281)
+scale = Vector2(1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Lamp5" parent="lamps" instance=ExtResource("4_63n76")]
+position = Vector2(928, 137)
+scale = Vector2(1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Light" parent="lamps" instance=ExtResource("5_iebke")]
+position = Vector2(401, 56)
+metadata/_edit_lock_ = true
+
+[node name="Light2" parent="lamps" instance=ExtResource("5_iebke")]
+position = Vector2(193, 9)
+metadata/_edit_lock_ = true
+
+[node name="Light4" parent="lamps" instance=ExtResource("5_iebke")]
+position = Vector2(750, 56)
+metadata/_edit_lock_ = true
+
+[node name="Swing-light" parent="lamps" instance=ExtResource("6_wpdmk")]
+position = Vector2(579, 53)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("7_3w38d")]
+position = Vector2(496, 560)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("7_3w38d")]
+position = Vector2(656, 496)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("7_3w38d")]
+position = Vector2(496, 432)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("7_3w38d")]
+position = Vector2(656, 368)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("7_3w38d")]
+position = Vector2(496, 304)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("7_3w38d")]
+position = Vector2(656, 240)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("7_3w38d")]
+position = Vector2(496, 176)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("7_3w38d")]
+position = Vector2(656, 112)
+
+[node name="Boxes" type="Node" parent="."]
+
+[node name="WoodenBox2" parent="Boxes" instance=ExtResource("8_wcw3m")]
+position = Vector2(1040, 129)
+
+[node name="WoodenBox3" parent="Boxes" instance=ExtResource("8_wcw3m")]
+position = Vector2(1040, 272)
+
+[node name="WoodenBox" parent="Boxes" instance=ExtResource("8_wcw3m")]
+position = Vector2(72, 272)
+
+[node name="Button_red" parent="." instance=ExtResource("9_vqt24")]
+position = Vector2(97, 432)
+
+[node name="Door" parent="Button_red" instance=ExtResource("10_4e11j")]
+position = Vector2(742, -192)
+
+[node name="Button_Red_Signal" parent="Button_red" instance=ExtResource("11_wuxlw")]
+position = Vector2(742, -264)
+
+[node name="Button_red2" parent="." instance=ExtResource("9_vqt24")]
+position = Vector2(1057, 432)
+
+[node name="Door" parent="Button_red2" instance=ExtResource("10_4e11j")]
+position = Vector2(-744, -192)
+
+[node name="Button_Red_Signal" parent="Button_red2" instance=ExtResource("11_wuxlw")]
+position = Vector2(-744, -264)
+
+[node name="Scale_button_green" parent="." instance=ExtResource("12_q4hid")]
+position = Vector2(96, 625)
+activation_weight = 6.0
+
+[node name="Door2" parent="Scale_button_green" instance=ExtResource("10_4e11j")]
+position = Vector2(960, 23)
+rotation = 1.5708
+
+[node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("13_uega7")]
+position = Vector2(1033, -23)
+
+[node name="Indicator-X" parent="." instance=ExtResource("14_yommj")]
+position = Vector2(1043, 81)
+
+[node name="Indicator-X2" parent="." instance=ExtResource("14_yommj")]
+position = Vector2(93, 228)
+
+[node name="Indicator-X3" parent="." instance=ExtResource("14_yommj")]
+position = Vector2(1038, 229)
+
+[node name="Indicator-Arrow" parent="." instance=ExtResource("15_wmnki")]
+position = Vector2(194.317, 522)
+rotation = 3.14159
+
+[node name="Indicator-Arrow2" parent="." instance=ExtResource("15_wmnki")]
+position = Vector2(194, 553.329)
+rotation = 3.14159
+
+[node name="Indicator-Arrow3" parent="." instance=ExtResource("15_wmnki")]
+position = Vector2(193, 591.329)
+rotation = 3.14159
+
+[node name="Exit-Sign" parent="." instance=ExtResource("16_no1ih")]
+position = Vector2(1038, 517)
+
+[node name="dont touch" parent="." instance=ExtResource("17_30dml")]
+visible = false
+
+[node name="Transition" parent="." instance=ExtResource("18_d3afo")]
+scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("19_3y33j")
+metadata/_edit_lock_ = true
+
+[node name="Trigger" parent="Transition" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="TRIGGERSCENE" parent="Transition/Trigger" index="0"]
+position = Vector2(700.667, 427.333)
+shape = SubResource("RectangleShape2D_6l258")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Transition" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="MusicSubmanager" parent="." instance=ExtResource("20_gqjpm")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(899, 477)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_2sb75")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Node2D/StaticBody2D"]
+node_a = NodePath("..")
+node_b = NodePath("../../Scientist/Skeleton2D/Hip2/Chest")
+
+[node name="String" parent="Node2D" node_paths=PackedStringArray("light", "puntocent") instance=ExtResource("21_qk6v7")]
+light = NodePath("../Scientist/Skeleton2D/Hip2/Chest/Head")
+puntocent = NodePath(".")
+ropeLength = 10.0
+
+[node name="Scientist" parent="Node2D" instance=ExtResource("22_ckyef")]
+position = Vector2(-7, 85)
+freeze_chest = false
+freeze_head = true
+
+[node name="Skeleton2D" parent="Node2D/Scientist" index="1"]
+modification_stack = SubResource("SkeletonModificationStack2D_8p8x8")
+
+[node name="PinJoint2D" parent="Node2D/Scientist/Skeleton2D/Hip2/Chest" index="1"]
+position = Vector2(0, 0)
+
+[node name="PinJoint2D" parent="Node2D/Scientist/Skeleton2D/Hip2/Chest/Head" index="1"]
+position = Vector2(0, 0)
+
+[node name="PinJoint2D" parent="Node2D/Scientist/Skeleton2D/Hip2/Chest/ArmL/ForeArmL/HandL" index="1"]
+position = Vector2(0, 0)
+
+[node name="PinJoint2D" parent="Node2D/Scientist/Skeleton2D/Hip2/Chest/ArmR/ForeArmR/HandR" index="1"]
+position = Vector2(0, 0)
+
+[node name="PinJoint2D" parent="Node2D/Scientist/Skeleton2D/Hip2/ThighR/LegR/FootR" index="1"]
+position = Vector2(0, 0)
+
+[node name="PinJoint2D" parent="Node2D/Scientist/Skeleton2D/Hip2/ThighL/LegL/FootL" index="1"]
+position = Vector2(0, 0)
+
+[editable path="lamps/Lamp2"]
+[editable path="Transition"]
+[editable path="Node2D/Scientist"]

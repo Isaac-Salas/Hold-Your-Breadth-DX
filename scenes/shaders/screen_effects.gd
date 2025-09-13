@@ -7,20 +7,21 @@ class_name ScreenStuff
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 @onready var background_tiled: TileMapLayer = $BackgroundTiled
 @onready var border_tiled: TileMapLayer = $BorderTiled
-@onready var crt_shader: TileMapLayer = $CRTShader
+@onready var crt_shader = $CRTShader
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	match showoverride:
-		true:
-			show()
-		false:
-			show()
-			canvas_modulate.hide()
-			crt_shader.hide()
+	if crt_shader != null:
+		
+		match showoverride:
+			true:
+				show()
+			false:
+				show()
+				canvas_modulate.hide()
+				crt_shader.hide()
 
 func _process(delta):
 	pass

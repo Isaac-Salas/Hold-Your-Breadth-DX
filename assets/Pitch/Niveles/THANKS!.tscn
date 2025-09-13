@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://mrh5awgsvrq0"]
+
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="1_8dbtj"]
+[ext_resource type="Texture2D" uid="uid://wgb1g3xauxuo" path="res://assets/Pitch/Whiteboard.png" id="2_h3cre"]
+[ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="4_m3u40"]
+[ext_resource type="Texture2D" uid="uid://v8p2dhkep0r1" path="res://assets/Pitch/Art-NoBack-Title.png" id="5_lynlg"]
+[ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="5_m3u40"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="6_lynlg"]
+
+[node name="Thanks!" type="Node2D"]
+
+[node name="dont touch" parent="." instance=ExtResource("1_8dbtj")]
+
+[node name="SlideSprite" type="Sprite2D" parent="."]
+modulate = Color(0.27451, 0.27451, 0.27451, 1)
+position = Vector2(576, 319)
+scale = Vector2(1.45, 1.45)
+texture = ExtResource("2_h3cre")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(576, 325)
+color = Color(1, 0.819608, 0.647059, 1)
+energy = 0.8
+texture = ExtResource("4_m3u40")
+texture_scale = 12.0
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 41.0
+offset_top = 20.0
+offset_right = 1096.0
+offset_bottom = 324.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("5_m3u40")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]MUCHAS GRACIAS POR SU [color=933f45]ATENCION!!!!
+
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="."]
+offset_left = 41.0
+offset_top = 437.0
+offset_right = 1096.0
+offset_bottom = 741.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("5_m3u40")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]@jellydogstudios[/color]
+[color=508d76]-> Hold Your Breadth DX en STEAM <-
+
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.787759, 0.787759, 0.787759, 1)
+position = Vector2(610, 369)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_lynlg")
+
+[node name="Transition" parent="." instance=ExtResource("6_lynlg")]
+scale = Vector2(1.5, 1.5)

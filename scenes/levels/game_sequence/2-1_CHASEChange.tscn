@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://calxq10nhtrm1"]
+[gd_scene load_steps=16 format=4 uid="uid://calxq10nhtrm1"]
 
 [ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_yvs5u"]
-[ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="3_m2h57"]
 [ext_resource type="PackedScene" uid="uid://bhudjbm6jueuq" path="res://scenes/objects/exit_sign.tscn" id="11_tnq4i"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="12_3tflp"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="12_jdgd2"]
@@ -46,9 +45,6 @@ size = Vector2(50, 196)
 script = SubResource("GDScript_g0deb")
 
 [node name="Node" type="Node" parent="."]
-
-[node name="Hand" parent="Node" instance=ExtResource("3_m2h57")]
-position = Vector2(512, 424)
 
 [node name="Tilemap" type="TileMapLayer" parent="."]
 use_parent_material = true

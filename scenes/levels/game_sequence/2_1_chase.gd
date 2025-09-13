@@ -92,7 +92,7 @@ func _on_player_detector_body_entered(body):
 
 func _on_area_2d_body_entered(body):
 	if body is SlimePlayer:
-		transition.transition_to(Preloader._3_1)
+		transition.transition_to(transition.target_scene)
 		
 		
 func _dialog_done():

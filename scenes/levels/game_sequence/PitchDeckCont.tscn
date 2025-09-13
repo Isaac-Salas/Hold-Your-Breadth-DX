@@ -1,0 +1,854 @@
+[gd_scene load_steps=48 format=4 uid="uid://c2mvcxe0u7um0"]
+
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_th4gm"]
+[ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_ri87c"]
+[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_iq2un"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_48qhj"]
+[ext_resource type="PackedScene" uid="uid://b11575bui2p7p" path="res://assets/Pitch/Niveles/PITCHPLAN.tscn" id="5_e1qc8"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="6_ni4pc"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_j3mta"]
+[ext_resource type="Script" uid="uid://lhma1ndtknje" path="res://scenes/levels/game_sequence/slide_changer.gd" id="8_3vscg"]
+[ext_resource type="PackedScene" uid="uid://cceynupboum3" path="res://scenes/pitch/slide_temp.tscn" id="9_2ohcq"]
+[ext_resource type="Texture2D" uid="uid://6ffuln8tx2gu" path="res://assets/Pitch/Portal_logo.png" id="11_8rftm"]
+[ext_resource type="Texture2D" uid="uid://dprs5rg1s0cv7" path="res://assets/Pitch/Half-Life_lambda_logo.svg.png" id="12_1kw8u"]
+[ext_resource type="Texture2D" uid="uid://ckiec02wxlfou" path="res://assets/Pitch/81MtMHLeZDL.jpg" id="13_8rftm"]
+[ext_resource type="Texture2D" uid="uid://drtp27elb4i0d" path="res://assets/Pitch/The-Legend-of-Zelda-Logo.png" id="13_c3krn"]
+[ext_resource type="Texture2D" uid="uid://bcemvbua2r02v" path="res://assets/Pitch/oddworld_zj7b.jpg" id="14_1kw8u"]
+[ext_resource type="Texture2D" uid="uid://wb21bv2mgn6u" path="res://assets/Pitch/34+Xz4.png" id="15_8rftm"]
+[ext_resource type="Texture2D" uid="uid://b8fttgdgumojs" path="res://assets/Pitch/UqtvaW.png" id="16_i8yoq"]
+[ext_resource type="Texture2D" uid="uid://csgoqooku5xc3" path="res://assets/Pitch/1zSUkr.png" id="17_40m4t"]
+[ext_resource type="Texture2D" uid="uid://bqccehruekbc8" path="res://assets/Pitch/YouLookLonely.png" id="18_6ga81"]
+[ext_resource type="Texture2D" uid="uid://bpdfbv2sqneqc" path="res://assets/Pitch/JellyLogoStylized-100.png" id="19_40m4t"]
+[ext_resource type="Texture2D" uid="uid://csaw2r7p3ub2b" path="res://assets/DOG.png" id="20_6ga81"]
+[ext_resource type="Texture2D" uid="uid://d0samwmco6061" path="res://assets/Pitch/Isaac.png" id="21_cnpw8"]
+[ext_resource type="Texture2D" uid="uid://4m3gjwrvyhso" path="res://assets/Pitch/Pou.png" id="22_ewafi"]
+[ext_resource type="Texture2D" uid="uid://dl5ooeyciteix" path="res://assets/Pitch/Chema.png" id="23_fvdwq"]
+[ext_resource type="Texture2D" uid="uid://o3ulcoh2hp2j" path="res://assets/Pitch/Alex.png" id="24_hwvhn"]
+[ext_resource type="Texture2D" uid="uid://bog28nj38ydh3" path="res://assets/Pitch/Tofgu.png" id="25_iotmq"]
+[ext_resource type="Texture2D" uid="uid://cmjh4vw2cnb6g" path="res://assets/Pitch/Isaac/SRpGno.png" id="26_hwvhn"]
+[ext_resource type="Texture2D" uid="uid://bgw5ms7ur6fow" path="res://assets/Pitch/Isaac/Kp0n85.png" id="27_iotmq"]
+[ext_resource type="Texture2D" uid="uid://qsrg3akveun5" path="res://assets/Pitch/Isaac/0K40HC.png" id="28_onrjb"]
+[ext_resource type="Texture2D" uid="uid://b472e5rfksmix" path="res://assets/Pitch/Isaac/RUYInL.png" id="32_84xbl"]
+[ext_resource type="Texture2D" uid="uid://bi1ji3umr3a2w" path="res://assets/Pitch/Isaac/WfyCvk.png" id="32_aycuu"]
+[ext_resource type="Texture2D" uid="uid://ct4qufdpktg73" path="res://assets/Pitch/HYBDX-Boxart.png" id="33_aycuu"]
+[ext_resource type="Texture2D" uid="uid://dcyg0vykk217u" path="res://assets/Pitch/Isaac/X61pMh.png" id="33_e1qc8"]
+[ext_resource type="Texture2D" uid="uid://bqjujealqnbif" path="res://assets/Pitch/Isaac/1aA21u.png" id="34_e1qc8"]
+[ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="121_kxw0y"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="124_wyppi"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="125_x74h4"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="126_bt2fv"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="127_0dwv7"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="128_oy8mb"]
+[ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="129_ob60b"]
+[ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="130_vug4e"]
+[ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="131_ui7t5"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="132_vq3bk"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="133_fhx7p"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="134_yk7qu"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_84xbl"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(4, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 80.0
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 5.0
+color = Color(0.854902, 0.796078, 0.501961, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aycuu"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(4, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 80.0
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 5.0
+color = Color(0.462745, 0.764706, 0.47451, 1)
+
+[node name="TutorialLevel" type="Node2D"]
+script = ExtResource("1_th4gm")
+ZoneNumber = 1
+LevelNumber = 1
+
+[node name="Tilemap" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAAAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAFAAAAAAAXAAYAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAABAAAAAAASAAEAAAACAAIAAAA=")
+tile_set = ExtResource("2_ri87c")
+rendering_quadrant_size = 1
+
+[node name="MusicSubmanager" parent="." instance=ExtResource("3_iq2un")]
+
+[node name="Transition" parent="." instance=ExtResource("4_48qhj")]
+scale = Vector2(1.5, 1.5)
+target_scene = ExtResource("5_e1qc8")
+
+[node name="dont touch" parent="." instance=ExtResource("6_ni4pc")]
+
+[node name="Slime" parent="." instance=ExtResource("7_j3mta")]
+position = Vector2(574, 596)
+
+[node name="SlideChanger" type="Node2D" parent="." node_paths=PackedStringArray("slides")]
+script = ExtResource("8_3vscg")
+slides = [NodePath("SlideTemp"), NodePath("SlideTemp2"), NodePath("SlideTemp3"), NodePath("SlideTemp4"), NodePath("SlideTemp5"), NodePath("SlideTemp6"), NodePath("SlideTemp7"), NodePath("SlideTemp8"), NodePath("SlideTemp9"), NodePath("SlideTemp10"), NodePath("SlideTemp11"), NodePath("SlideTemp12"), NodePath("SlideTemp13"), NodePath("SlideTemp14"), NodePath("SlideTemp15")]
+
+[node name="SlideTemp" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
+offset_left = -387.0
+offset_top = -164.0
+offset_right = 401.0
+offset_bottom = 18.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]INSPIRACIONES:
+[/wave]
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp"]
+position = Vector2(-143, -6)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("11_8rftm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp"]
+position = Vector2(-134, 117)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("12_1kw8u")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp"]
+position = Vector2(165, 63)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("13_c3krn")
+
+[node name="SlideTemp2" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp2"]
+offset_left = -387.0
+offset_top = -235.0
+offset_right = 401.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]ESTILO VISUAL"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp2"]
+position = Vector2(-220, 45)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("13_8rftm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp2"]
+position = Vector2(126, 45)
+scale = Vector2(0.405, 0.405)
+texture = ExtResource("14_1kw8u")
+
+[node name="SlideTemp3" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp3"]
+offset_left = -387.0
+offset_top = -235.0
+offset_right = 401.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]ARTE CONCEPTUAL"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp3"]
+position = Vector2(-214, 45)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15_8rftm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp3"]
+position = Vector2(150, 45)
+scale = Vector2(0.315, 0.315)
+texture = ExtResource("16_i8yoq")
+region_enabled = true
+region_rect = Rect2(642, 0, 1280, 636)
+
+[node name="SlideTemp4" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp4"]
+offset_left = -387.0
+offset_top = -235.0
+offset_right = 401.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]MAS REFINADO"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp4"]
+position = Vector2(-177, 45)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("17_40m4t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp4"]
+position = Vector2(171, 45)
+scale = Vector2(0.315, 0.315)
+texture = ExtResource("18_6ga81")
+region_rect = Rect2(642, 0, 1280, 636)
+
+[node name="SlideTemp5" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp5"]
+offset_left = -387.0
+offset_top = -164.0
+offset_right = 401.0
+offset_bottom = 18.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 55
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]PUBLICO OBJETIVO
+[/wave]
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp5"]
+offset_left = -309.0
+offset_top = -59.0
+offset_right = 299.0
+offset_bottom = 169.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]- [color=7b99c8] Edades[/color] [color=535c89]13+[/color]
+-  Plataformas: [color=76c379]Steam[/color] [color=508d76](PC, Mac, Linux)[/color]
+- [color=be7979]FUTURO:[/color]  [color=933f45]CONSOLAS[/color]
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideTemp6" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp6"]
+offset_left = -387.0
+offset_top = -223.0
+offset_right = 401.0
+offset_bottom = -41.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 55
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]DETRAS DE [color=76c379]HYB[/color][color=cc925e]-DX![/color]
+[/wave]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp6"]
+position = Vector2(-108, 51)
+texture = ExtResource("19_40m4t")
+region_rect = Rect2(642, 0, 1280, 636)
+
+[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp6"]
+position = Vector2(210, 51)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("20_6ga81")
+region_rect = Rect2(642, 0, 1280, 636)
+
+[node name="SlideTemp7" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp7"]
+offset_left = -387.0
+offset_top = -223.0
+offset_right = 401.0
+offset_bottom = -41.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 55
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]INTEGRANTES:
+[/wave]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp7"]
+position = Vector2(-303.5, 9.5)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("21_cnpw8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp7"]
+modulate = Color(0.666569, 0.666569, 0.666569, 1)
+position = Vector2(-157.5, 9.5)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("22_ewafi")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp7"]
+position = Vector2(-7.5, 9.5)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("23_fvdwq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp7"]
+position = Vector2(141.5, 9.5)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("24_hwvhn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp7"]
+position = Vector2(295.5, 9.5)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("25_iotmq")
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp7"]
+offset_left = -360.0
+offset_top = 79.0
+offset_right = -250.0
+offset_bottom = 127.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1] [color=76c379]Isaac"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp7"]
+offset_left = -214.0
+offset_top = 79.0
+offset_right = -104.0
+offset_bottom = 127.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1][color=535c89]Pau"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="RichTextLabel" parent="SlideChanger/SlideTemp7"]
+offset_left = -76.0
+offset_top = 79.0
+offset_right = 57.0
+offset_bottom = 127.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1][color=508d76]Chema"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="RichTextLabel" parent="SlideChanger/SlideTemp7"]
+offset_left = 79.0
+offset_top = 79.0
+offset_right = 212.0
+offset_bottom = 127.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1][color=b25e46]Alex"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="RichTextLabel" parent="SlideChanger/SlideTemp7"]
+offset_left = 224.0
+offset_top = 79.0
+offset_right = 357.0
+offset_bottom = 127.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1][color=933f45]Tofgu"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideTemp8" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp8"]
+offset_left = -387.0
+offset_top = -235.0
+offset_right = 401.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]Isaac:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp8"]
+offset_left = -95.0
+offset_top = -85.0
+offset_right = 378.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Creador de JellyDog
++ Director / Programador
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp8"]
+position = Vector2(-220, 42)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("21_cnpw8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp8"]
+modulate = Color(0.666569, 0.666569, 0.666569, 1)
+position = Vector2(134, 92)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("26_hwvhn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp8"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(-3, 92)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_iotmq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp8"]
+position = Vector2(273, 92)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("28_onrjb")
+
+[node name="SlideTemp9" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp9"]
+offset_left = -387.0
+offset_top = -235.0
+offset_right = 401.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=535c89]Pau:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp9"]
+offset_left = -95.0
+offset_top = -85.0
+offset_right = 378.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Artista digital
++ Social Media Manager
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp9"]
+position = Vector2(-220, 42)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("22_ewafi")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp9"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(36, 93)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("27_iotmq")
+
+[node name="Sprite2D7" type="Sprite2D" parent="SlideChanger/SlideTemp9"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(243, 93)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("28_onrjb")
+
+[node name="SlideTemp10" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp10"]
+offset_left = -387.0
+offset_top = -235.0
+offset_right = 401.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=508d76]Chema:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp10"]
+offset_left = -95.0
+offset_top = -85.0
+offset_right = 378.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Director de arte digital
++ Diseñador
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp10"]
+position = Vector2(-220, 42)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("23_fvdwq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp10"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(-3, 92)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("32_aycuu")
+
+[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp10"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(144, 92)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("28_onrjb")
+
+[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp10"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(291, 91)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("33_e1qc8")
+
+[node name="SlideTemp11" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp11"]
+offset_left = -387.0
+offset_top = -235.0
+offset_right = 401.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=b25e46]Alex:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp11"]
+offset_left = -95.0
+offset_top = -85.0
+offset_right = 378.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Programador principal
++ Game designer
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp11"]
+position = Vector2(-220, 42)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("24_hwvhn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp11"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(-5, 91)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("28_onrjb")
+
+[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp11"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(142, 90)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("33_e1qc8")
+
+[node name="Sprite2D6" type="Sprite2D" parent="SlideChanger/SlideTemp11"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(291, 91)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("34_e1qc8")
+
+[node name="SlideTemp12" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp12"]
+offset_left = -387.0
+offset_top = -235.0
+offset_right = 401.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=933f45]Tofgu:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp12"]
+offset_left = -95.0
+offset_top = -85.0
+offset_right = 378.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Animador
++ Level Designer
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp12"]
+position = Vector2(-220, 42)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("25_iotmq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp12"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(28.5, 94)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("28_onrjb")
+
+[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp12"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(236.5, 93)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("32_84xbl")
+
+[node name="SlideTemp13" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
+offset_left = -391.0
+offset_top = -191.0
+offset_right = 397.0
+offset_bottom = -9.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Hablemos de:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
+offset_left = -391.0
+offset_top = -61.0
+offset_right = 397.0
+offset_bottom = 121.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=cc925e]DINERO!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="SlideChanger/SlideTemp13/Label2"]
+position = Vector2(423, 82)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_84xbl")
+
+[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
+offset_left = -237.0
+offset_top = 72.0
+offset_right = 236.0
+offset_bottom = 197.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]Estamos intentando conseguir....
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideTemp14" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp14"]
+offset_left = -391.0
+offset_top = -164.0
+offset_right = 397.0
+offset_bottom = 18.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=20.0 connected=1][color=cc925e]30K DOLARES"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="SlideChanger/SlideTemp14/Label2"]
+position = Vector2(423, 82)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_84xbl")
+
+[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp14"]
+offset_left = -321.0
+offset_right = 309.0
+offset_bottom = 132.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]Para, de ser financiados, terminar el proyecto en [color=76c379]13 meses!
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideTemp15" parent="SlideChanger" instance=ExtResource("9_2ohcq")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp15"]
+offset_left = -391.0
+offset_top = -191.0
+offset_right = 397.0
+offset_bottom = -9.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=20.0 connected=1][color=76c379]Pero, realmente..."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="SlideChanger/SlideTemp15/Label2"]
+position = Vector2(423, 82)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_aycuu")
+
+[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp15"]
+offset_left = -345.0
+offset_right = 128.0
+offset_bottom = 160.0
+theme_override_fonts/normal_font = ExtResource("121_kxw0y")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]Se aceptan ofertas! Solamente queremos terminar nuestro proyecto con todo el amor que merece ;)
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp15"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(206, 85)
+scale = Vector2(0.5, 0.438)
+texture = ExtResource("33_aycuu")
+
+[node name="Lamp" parent="." instance=ExtResource("124_wyppi")]
+position = Vector2(1096, 617)
+
+[node name="Lamp2" parent="." instance=ExtResource("124_wyppi")]
+position = Vector2(57, 617)
+scale = Vector2(1, 1)
+
+[node name="WoodenBox" parent="." instance=ExtResource("125_x74h4")]
+position = Vector2(291, 614)
+
+[node name="WoodenBox2" parent="." instance=ExtResource("125_x74h4")]
+position = Vector2(315, 614)
+
+[node name="WoodenBox3" parent="." instance=ExtResource("125_x74h4")]
+position = Vector2(302, 596)
+
+[node name="WoodenBox4" parent="." instance=ExtResource("125_x74h4")]
+position = Vector2(1009, 37)
+
+[node name="Button_red" parent="." instance=ExtResource("126_bt2fv")]
+position = Vector2(162, 624)
+
+[node name="Door" parent="Button_red" instance=ExtResource("127_0dwv7")]
+position = Vector2(846, -552)
+rotation = -1.57079
+
+[node name="Swing-light2" parent="." node_paths=PackedStringArray("marker") instance=ExtResource("128_oy8mb")]
+position = Vector2(1003, 10)
+marker = NodePath("../Marker2D")
+wait = 2.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1009, 13)
+
+[node name="Scale_button_green" parent="." instance=ExtResource("129_ob60b")]
+position = Vector2(961, 624)
+activation_weight = 8.0
+
+[node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("130_vug4e")]
+position = Vector2(168, -109)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(582, 325)
+color = Color(1, 0.819608, 0.647059, 1)
+energy = 0.7
+texture = ExtResource("131_ui7t5")
+texture_scale = 6.2
+metadata/_edit_lock_ = true
+
+[node name="Shrink-Laser" parent="." instance=ExtResource("132_vq3bk")]
+position = Vector2(95, 61)
+rotation = 1.57079
+target_scale = Vector2(2, 2)
+
+[node name="Grow-Laser" parent="." instance=ExtResource("133_fhx7p")]
+position = Vector2(1064, 110)
+rotation = 1.57079
+target_scale = Vector2(6, 6)
+
+[node name="Conveyor" parent="." instance=ExtResource("134_yk7qu")]
+position = Vector2(1080, 650)
+
+[node name="Conveyor2" parent="." instance=ExtResource("134_yk7qu")]
+position = Vector2(1033, 650)
+
+[editable path="dont touch"]
+[editable path="Swing-light2"]

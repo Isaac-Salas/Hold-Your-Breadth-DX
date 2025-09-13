@@ -2,7 +2,7 @@
 .godot/
 .DS_Store
 *.import
-Builds/
+.Builds/
 docs/
 exe/Hold_your_Breadth_DX (Windows portable).zip
 exe/Hold_your_Breadth_DX.exe

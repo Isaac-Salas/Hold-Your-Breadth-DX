@@ -1,0 +1,154 @@
+[gd_scene load_steps=22 format=4 uid="uid://2mjycjtvw024"]
+
+[ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_bosr8"]
+[ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_leoh0"]
+[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="3_y5m77"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="4_6onja"]
+[ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="6_b8wjx"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_toaq4"]
+[ext_resource type="Script" uid="uid://lhma1ndtknje" path="res://scenes/levels/game_sequence/slide_changer.gd" id="8_vfr3g"]
+[ext_resource type="PackedScene" uid="uid://cceynupboum3" path="res://scenes/pitch/slide_temp.tscn" id="9_rsylm"]
+[ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="10_34dsw"]
+[ext_resource type="Texture2D" uid="uid://v8p2dhkep0r1" path="res://assets/Pitch/Art-NoBack-Title.png" id="11_ec875"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="35_s4sbv"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="36_00kmt"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="37_1iqi1"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="38_uqmtn"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="39_ss1uv"]
+[ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="40_sg1u3"]
+[ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="41_kryy0"]
+[ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="42_bv68m"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="43_7084s"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="44_wmo34"]
+[ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="45_ib8mg"]
+
+[node name="TutorialLevel" type="Node2D"]
+script = ExtResource("1_bosr8")
+ZoneNumber = 1
+LevelNumber = 1
+
+[node name="Tilemap" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAAAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAFAAAAAAAXAAYAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAABAAAAAAASAAEAAAACAAIAAAA=")
+tile_set = ExtResource("2_leoh0")
+rendering_quadrant_size = 1
+
+[node name="MusicSubmanager" parent="." instance=ExtResource("3_y5m77")]
+
+[node name="Transition" parent="." instance=ExtResource("4_6onja")]
+scale = Vector2(1.5, 1.5)
+
+[node name="dont touch" parent="." instance=ExtResource("6_b8wjx")]
+
+[node name="Slime" parent="." instance=ExtResource("7_toaq4")]
+position = Vector2(574, 596)
+
+[node name="SlideChanger" type="Node2D" parent="." node_paths=PackedStringArray("slides")]
+script = ExtResource("8_vfr3g")
+slides = [NodePath("SlideTemp"), null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+[node name="SlideTemp" parent="SlideChanger" instance=ExtResource("9_rsylm")]
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
+offset_left = -391.0
+offset_top = -273.0
+offset_right = 402.0
+offset_bottom = 31.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("10_34dsw")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]MUCHAS GRACIAS POR SU [color=933f45]ATENCION!!!!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
+offset_left = -321.0
+offset_top = 75.0
+offset_right = 364.0
+offset_bottom = 244.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("10_34dsw")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]@jellydogstudios[/color]
+[color=508d76]-> Hold Your Breadth DX en STEAM <-"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp"]
+modulate = Color(0.787759, 0.787759, 0.787759, 1)
+position = Vector2(24, 32)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_ec875")
+
+[node name="Lamp" parent="." instance=ExtResource("35_s4sbv")]
+position = Vector2(1096, 617)
+
+[node name="Lamp2" parent="." instance=ExtResource("35_s4sbv")]
+position = Vector2(57, 617)
+scale = Vector2(1, 1)
+
+[node name="WoodenBox" parent="." instance=ExtResource("36_00kmt")]
+position = Vector2(291, 614)
+
+[node name="WoodenBox2" parent="." instance=ExtResource("36_00kmt")]
+position = Vector2(315, 614)
+
+[node name="WoodenBox3" parent="." instance=ExtResource("36_00kmt")]
+position = Vector2(302, 596)
+
+[node name="WoodenBox4" parent="." instance=ExtResource("36_00kmt")]
+position = Vector2(1009, 37)
+
+[node name="Button_red" parent="." instance=ExtResource("37_1iqi1")]
+position = Vector2(162, 624)
+
+[node name="Door" parent="Button_red" instance=ExtResource("38_uqmtn")]
+position = Vector2(846, -552)
+rotation = -1.57079
+
+[node name="Swing-light2" parent="." node_paths=PackedStringArray("marker") instance=ExtResource("39_ss1uv")]
+position = Vector2(1003, 10)
+marker = NodePath("../Marker2D")
+wait = 2.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1009, 13)
+
+[node name="Scale_button_green" parent="." instance=ExtResource("40_sg1u3")]
+position = Vector2(961, 624)
+activation_weight = 8.0
+
+[node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("41_kryy0")]
+position = Vector2(168, -109)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(582, 325)
+color = Color(1, 0.819608, 0.647059, 1)
+energy = 0.7
+texture = ExtResource("42_bv68m")
+texture_scale = 6.2
+metadata/_edit_lock_ = true
+
+[node name="Shrink-Laser" parent="." instance=ExtResource("43_7084s")]
+position = Vector2(95, 61)
+rotation = 1.57079
+target_scale = Vector2(2, 2)
+
+[node name="Grow-Laser" parent="." instance=ExtResource("44_wmo34")]
+position = Vector2(1064, 110)
+rotation = 1.57079
+target_scale = Vector2(6, 6)
+
+[node name="Conveyor" parent="." instance=ExtResource("45_ib8mg")]
+position = Vector2(1080, 650)
+
+[node name="Conveyor2" parent="." instance=ExtResource("45_ib8mg")]
+position = Vector2(1033, 650)
+
+[editable path="dont touch"]
+[editable path="Swing-light2"]

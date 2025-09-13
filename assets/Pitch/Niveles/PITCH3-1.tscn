@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://kqk0xh237fw1"]
+[gd_scene load_steps=33 format=4 uid="uid://bhe6366hku86k"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_g4vrm"]
 [ext_resource type="PackedScene" uid="uid://cx7c7twwnm3tq" path="res://scenes/levels/template/camera_2d.tscn" id="2_03rxa"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="13_47ecm"]
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="14_2wq0h"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="14_ircil"]
-[ext_resource type="PackedScene" uid="uid://ccfef3di5wjk4" path="res://scenes/levels/game_sequence/3-2 Around and around.tscn" id="18_mcmxx"]
+[ext_resource type="PackedScene" uid="uid://c2mvcxe0u7um0" path="res://scenes/levels/game_sequence/PitchDeckCont.tscn" id="18_3y2lp"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="19_1pgjy"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="20_56ndd"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="20_i3ljc"]
@@ -262,7 +262,7 @@ position = Vector2(484, 364)
 starting_scale = 6.0
 
 [node name="Transition" parent="." instance=ExtResource("14_ircil")]
-target_scene = ExtResource("18_mcmxx")
+target_scene = ExtResource("18_3y2lp")
 
 [node name="dont touch" parent="." instance=ExtResource("19_1pgjy")]
 visible = false
