@@ -1,43 +1,42 @@
-[gd_scene load_steps=75 format=4 uid="uid://6ma0x2ah0d57"]
+[gd_scene load_steps=74 format=4 uid="uid://b6onmrleg7nri"]
 
-[ext_resource type="Script" uid="uid://gee6l5yoqpiv" path="res://scenes/levels/game_sequence/2_1_chase.gd" id="1_8mkh5"]
-[ext_resource type="Texture2D" uid="uid://ccucdxjicqv4u" path="res://assets/fondos/N1/FONDO-N1.png" id="2_ptbbq"]
-[ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="3_uwe48"]
-[ext_resource type="Texture2D" uid="uid://bixow8wew3lrr" path="res://assets/Enemies/hamsersprite.png" id="4_purso"]
-[ext_resource type="Script" uid="uid://caqwyu7ddhl4j" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_h3kat"]
-[ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="6_flmld"]
-[ext_resource type="PackedScene" uid="uid://c57hv8ph7ffis" path="res://scenes/enemies/Hamster/Hamster-Bug.tscn" id="7_fla2w"]
-[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="8_30b7b"]
-[ext_resource type="Script" uid="uid://coo82t4bo7v8c" path="res://scenes/shaders/screen_effects.gd" id="9_cem5q"]
-[ext_resource type="PackedScene" uid="uid://fnvs7y1btss0" path="res://scenes/shaders/Options_Menu.tscn" id="10_udtih"]
-[ext_resource type="Material" uid="uid://bn14cjwna1p5l" path="res://scenes/shaders/crt_shader.tres" id="11_nmjg5"]
-[ext_resource type="Texture2D" uid="uid://pc5e3ju5itig" path="res://assets/fondos/CrtBlankCanvas.png" id="12_m2uij"]
-[ext_resource type="Texture2D" uid="uid://cty26p5f5km38" path="res://scenes/shaders/ColorGradeP-O.tres" id="13_uu66o"]
-[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="14_g2mlg"]
-[ext_resource type="PackedScene" uid="uid://bhe6366hku86k" path="res://assets/Pitch/Niveles/PITCH3-1.tscn" id="15_0gkdf"]
-[ext_resource type="PackedScene" uid="uid://cmymj8rniorit" path="res://scenes/objects/Wall_Breakable/Wall_Breakable.tscn" id="16_b8lpr"]
-[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="17_ko52l"]
-[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="18_27gc4"]
-[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="19_apmll"]
-[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="20_15lkb"]
-[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="21_deavm"]
-[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="22_1h0bt"]
-[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="23_k85c8"]
-[ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="24_m57wj"]
-[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="25_isiek"]
-[ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="26_b1xdk"]
-[ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="27_yvta4"]
-[ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="28_edy5f"]
-[ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="29_bi8mr"]
-[ext_resource type="PackedScene" uid="uid://8bjg551r16pg" path="res://scenes/objects/Flashlight/flashlight.tscn" id="30_a5b1i"]
-[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="31_teira"]
-[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="32_favmw"]
-[ext_resource type="PackedScene" uid="uid://couoi5kbky3ig" path="res://scenes/objects/rope_modular.tscn" id="33_d16qf"]
-[ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="34_fxvtm"]
-[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="35_cahl8"]
+[ext_resource type="Texture2D" uid="uid://duetmw6kb0875" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
+[ext_resource type="Script" uid="uid://gee6l5yoqpiv" path="res://scenes/levels/game_sequence/2_1_chase.gd" id="1_njuv6"]
+[ext_resource type="Texture2D" uid="uid://ctqt5y6umpue2" path="res://assets/fondos/N1/FONDO-N1.png" id="2_mcopt"]
+[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="3_g52sb"]
+[ext_resource type="Script" uid="uid://c7r8qowkgxsc1" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_01tns"]
+[ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="5_wihit"]
+[ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="7_gyrh6"]
+[ext_resource type="PackedScene" uid="uid://c57hv8ph7ffis" path="res://scenes/enemies/Hamster/Hamster-Bug.tscn" id="7_r8l5k"]
+[ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="8_tr66l"]
+[ext_resource type="Script" uid="uid://coo82t4bo7v8c" path="res://scenes/shaders/screen_effects.gd" id="9_0b8fo"]
+[ext_resource type="PackedScene" uid="uid://fnvs7y1btss0" path="res://scenes/shaders/Options_Menu.tscn" id="11_lnmw1"]
+[ext_resource type="Texture2D" uid="uid://cty26p5f5km38" path="res://scenes/shaders/ColorGradeP-O.tres" id="11_r8l5k"]
+[ext_resource type="Material" uid="uid://bn14cjwna1p5l" path="res://scenes/shaders/crt_shader.tres" id="12_chteq"]
+[ext_resource type="Texture2D" uid="uid://cjmvco73evil7" path="res://assets/fondos/CrtBlankCanvas.png" id="13_2uo7q"]
+[ext_resource type="PackedScene" uid="uid://cmymj8rniorit" path="res://scenes/objects/Wall_Breakable/Wall_Breakable.tscn" id="13_h55m2"]
+[ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="14_g7k4y"]
+[ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="15_dsijx"]
+[ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="16_sdar4"]
+[ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="17_67d33"]
+[ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="18_s17nv"]
+[ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="19_7s41i"]
+[ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="20_lmnyd"]
+[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="21_kyd7a"]
+[ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="22_01tns"]
+[ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="23_d7m35"]
+[ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="23_mcopt"]
+[ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="24_lnmw1"]
+[ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="24_mvbe6"]
+[ext_resource type="Texture2D" uid="uid://bt1e2ysn2oetu" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
+[ext_resource type="PackedScene" uid="uid://couoi5kbky3ig" path="res://scenes/objects/rope_modular.tscn" id="29_04mdq"]
+[ext_resource type="PackedScene" uid="uid://8bjg551r16pg" path="res://scenes/objects/Flashlight/flashlight.tscn" id="29_chteq"]
+[ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="30_njuv6"]
+[ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="31_njuv6"]
+[ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="32_01tns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chteq"]
-texture = ExtResource("2_ptbbq")
+texture = ExtResource("2_mcopt")
 texture_region_size = Vector2i(16, 18)
 0:0/0 = 0
 0:0/0/z_index = -6
@@ -189,43 +188,43 @@ tile_size = Vector2i(16, 18)
 sources/0 = SubResource("TileSetAtlasSource_chteq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpwcs"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(48, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tx73"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdlfs"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn70x"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4l1d"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ilqcj"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w781g"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_01p5r"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(96, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_62uv0"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(144, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wb5ci"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hifbx"]
@@ -311,7 +310,7 @@ func _on_body_entered(body:Node2D):
 radius = 154.392
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bdbgm"]
-texture = ExtResource("12_m2uij")
+texture = ExtResource("13_2uo7q")
 texture_region_size = Vector2i(8, 9)
 0:0/0 = 0
 1:0/0 = 0
@@ -610,7 +609,7 @@ sources/0 = SubResource("TileSetAtlasSource_bdbgm")
 background_mode = 3
 fog_light_energy = 4.55
 adjustment_enabled = true
-adjustment_color_correction = ExtResource("13_uu66o")
+adjustment_color_correction = ExtResource("11_r8l5k")
 
 [sub_resource type="Animation" id="Animation_01tns"]
 resource_name = "CameraPan"
@@ -653,7 +652,7 @@ _data = {
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdtvp"]
-texture = ExtResource("17_ko52l")
+texture = ExtResource("1_2k4r5")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -818,19 +817,19 @@ func _on_area_2d_body_entered(body):
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynjjb"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mcopt"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chteq"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(96, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2uo7q"]
-atlas = ExtResource("4_purso")
+atlas = ExtResource("27_njuv6")
 region = Rect2(144, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bdbgm"]
@@ -913,7 +912,7 @@ func _on_body_entered(body:Node2D):
 size = Vector2(20, 472)
 
 [node name="Persecusion2" type="Node2D"]
-script = ExtResource("1_8mkh5")
+script = ExtResource("1_njuv6")
 ZoneNumber = 2
 LevelNumber = 1
 metadata/_edit_lock_ = true
@@ -929,7 +928,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAI
 tile_set = SubResource("TileSet_2uo7q")
 rendering_quadrant_size = 1
 
-[node name="Hand" parent="." node_paths=PackedStringArray("dialog") instance=ExtResource("3_uwe48")]
+[node name="Hand" parent="." node_paths=PackedStringArray("dialog") instance=ExtResource("5_wihit")]
 position = Vector2(521, 332)
 speed = 65.0
 dialog = NodePath("../Hamster/Hamster/DialogBox")
@@ -943,9 +942,9 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_hifbx")
 animation = &"Idle"
 autoplay = "Turned"
-script = ExtResource("5_h3kat")
+script = ExtResource("5_01tns")
 
-[node name="DialogBox" parent="Hamster/Hamster" instance=ExtResource("6_flmld")]
+[node name="DialogBox" parent="Hamster/Hamster" instance=ExtResource("7_gyrh6")]
 process_mode = 3
 offset_left = -136.0
 offset_top = -116.0
@@ -963,7 +962,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(0, -68.5)
 shape = SubResource("RectangleShape2D_mvbe6")
 
-[node name="Hamster-bug" parent="Hamster" instance=ExtResource("7_fla2w")]
+[node name="Hamster-bug" parent="Hamster" instance=ExtResource("7_r8l5k")]
 visible = false
 position = Vector2(1056, 618)
 ForceVector = Vector2(-200, -200)
@@ -976,7 +975,7 @@ script = SubResource("GDScript_dhrqb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Activadora-Camara"]
 shape = SubResource("CircleShape2D_a3bgo")
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("8_30b7b")]
+[node name="CharacterBody2D2" parent="." instance=ExtResource("8_tr66l")]
 position = Vector2(5124, -303)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
@@ -986,11 +985,11 @@ position_smoothing_speed = 100.0
 
 [node name="dont touch" type="Node2D" parent="CharacterBody2D2/Camera2D"]
 position = Vector2(-576, -424)
-script = ExtResource("9_cem5q")
+script = ExtResource("9_0b8fo")
 showoverride = true
 metadata/_edit_lock_ = true
 
-[node name="OptionsMenu" parent="CharacterBody2D2/Camera2D/dont touch" node_paths=PackedStringArray("Enviroment") instance=ExtResource("10_udtih")]
+[node name="OptionsMenu" parent="CharacterBody2D2/Camera2D/dont touch" node_paths=PackedStringArray("Enviroment") instance=ExtResource("11_lnmw1")]
 visible = false
 Enviroment = NodePath("../WorldEnvironment")
 
@@ -1001,7 +1000,7 @@ metadata/_edit_lock_ = true
 
 [node name="CRTShader" type="TileMapLayer" parent="CharacterBody2D2/Camera2D/dont touch"]
 z_index = 30
-material = ExtResource("11_nmjg5")
+material = ExtResource("12_chteq")
 position = Vector2(-601, -308)
 scale = Vector2(12, 12)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAUAAAAAAAYAAAAAAAYAAAAAAAcAAAAAAAcAAAAAAAgAAAAAAAgAAAAAAAkAAAAAAAkAAAAAAAoAAAAAAAoAAAAAAAsAAAAAAAsAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAABAAQAAAABAAQAAAABAAUAAAABAAUAAAABAAYAAAABAAYAAAABAAcAAAABAAcAAAABAAgAAAABAAgAAAABAAkAAAABAAkAAAABAAoAAAABAAoAAAABAAsAAAABAAsAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAACAAQAAAACAAQAAAACAAUAAAACAAUAAAACAAYAAAACAAYAAAACAAcAAAACAAcAAAACAAgAAAACAAgAAAACAAkAAAACAAkAAAACAAoAAAACAAoAAAACAAsAAAACAAsAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAADAAQAAAADAAQAAAADAAUAAAADAAUAAAADAAYAAAADAAYAAAADAAcAAAADAAcAAAADAAgAAAADAAgAAAADAAkAAAADAAkAAAADAAoAAAADAAoAAAADAAsAAAADAAsAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAAEAAMAAAAEAAQAAAAEAAQAAAAEAAUAAAAEAAUAAAAEAAYAAAAEAAYAAAAEAAcAAAAEAAcAAAAEAAgAAAAEAAgAAAAEAAkAAAAEAAkAAAAEAAoAAAAEAAoAAAAEAAsAAAAEAAsAAAAFAAAAAAAFAAAAAAAFAAEAAAAFAAEAAAAFAAIAAAAFAAIAAAAFAAMAAAAFAAMAAAAFAAQAAAAFAAQAAAAFAAUAAAAFAAUAAAAFAAYAAAAFAAYAAAAFAAcAAAAFAAcAAAAFAAgAAAAFAAgAAAAFAAkAAAAFAAkAAAAFAAoAAAAFAAoAAAAFAAsAAAAFAAsAAAAGAAAAAAAGAAAAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAMAAAAGAAMAAAAGAAQAAAAGAAQAAAAGAAUAAAAGAAUAAAAGAAYAAAAGAAYAAAAGAAcAAAAGAAcAAAAGAAgAAAAGAAgAAAAGAAkAAAAGAAkAAAAGAAoAAAAGAAoAAAAGAAsAAAAGAAsAAAAHAAAAAAAHAAAAAAAHAAEAAAAHAAEAAAAHAAIAAAAHAAIAAAAHAAMAAAAHAAMAAAAHAAQAAAAHAAQAAAAHAAUAAAAHAAUAAAAHAAYAAAAHAAYAAAAHAAcAAAAHAAcAAAAHAAgAAAAHAAgAAAAHAAkAAAAHAAkAAAAHAAoAAAAHAAoAAAAHAAsAAAAHAAsAAAAIAAAAAAAIAAAAAAAIAAEAAAAIAAEAAAAIAAIAAAAIAAIAAAAIAAMAAAAIAAMAAAAIAAQAAAAIAAQAAAAIAAUAAAAIAAUAAAAIAAYAAAAIAAYAAAAIAAcAAAAIAAcAAAAIAAgAAAAIAAgAAAAIAAkAAAAIAAkAAAAIAAoAAAAIAAoAAAAIAAsAAAAIAAsAAAAJAAAAAAAJAAAAAAAJAAEAAAAJAAEAAAAJAAIAAAAJAAIAAAAJAAMAAAAJAAMAAAAJAAQAAAAJAAQAAAAJAAUAAAAJAAUAAAAJAAYAAAAJAAYAAAAJAAcAAAAJAAcAAAAJAAgAAAAJAAgAAAAJAAkAAAAJAAkAAAAJAAoAAAAJAAoAAAAJAAsAAAAJAAsAAAAKAAAAAAAKAAAAAAAKAAEAAAAKAAEAAAAKAAIAAAAKAAIAAAAKAAMAAAAKAAMAAAAKAAQAAAAKAAQAAAAKAAUAAAAKAAUAAAAKAAYAAAAKAAYAAAAKAAcAAAAKAAcAAAAKAAgAAAAKAAgAAAAKAAkAAAAKAAkAAAAKAAoAAAAKAAoAAAAKAAsAAAAKAAsAAAALAAAAAAALAAAAAAALAAEAAAALAAEAAAALAAIAAAALAAIAAAALAAMAAAALAAMAAAALAAQAAAALAAQAAAALAAUAAAALAAUAAAALAAYAAAALAAYAAAALAAcAAAALAAcAAAALAAgAAAALAAgAAAALAAkAAAALAAkAAAALAAoAAAALAAoAAAALAAsAAAALAAsAAAAMAAAAAAAMAAAAAAAMAAEAAAAMAAEAAAAMAAIAAAAMAAIAAAAMAAMAAAAMAAMAAAAMAAQAAAAMAAQAAAAMAAUAAAAMAAUAAAAMAAYAAAAMAAYAAAAMAAcAAAAMAAcAAAAMAAgAAAAMAAgAAAAMAAkAAAAMAAkAAAAMAAoAAAAMAAoAAAAMAAsAAAAMAAsAAAANAAAAAAANAAAAAAANAAEAAAANAAEAAAANAAIAAAANAAIAAAANAAMAAAANAAMAAAANAAQAAAANAAQAAAANAAUAAAANAAUAAAANAAYAAAANAAYAAAANAAcAAAANAAcAAAANAAgAAAANAAgAAAANAAkAAAANAAkAAAANAAoAAAANAAoAAAANAAsAAAANAAsAAAAOAAAAAAAOAAAAAAAOAAEAAAAOAAEAAAAOAAIAAAAOAAIAAAAOAAMAAAAOAAMAAAAOAAQAAAAOAAQAAAAOAAUAAAAOAAUAAAAOAAYAAAAOAAYAAAAOAAcAAAAOAAcAAAAOAAgAAAAOAAgAAAAOAAkAAAAOAAkAAAAOAAoAAAAOAAoAAAAOAAsAAAAOAAsAAAAPAAAAAAAPAAAAAAAPAAEAAAAPAAEAAAAPAAIAAAAPAAIAAAAPAAMAAAAPAAMAAAAPAAQAAAAPAAQAAAAPAAUAAAAPAAUAAAAPAAYAAAAPAAYAAAAPAAcAAAAPAAcAAAAPAAgAAAAPAAgAAAAPAAkAAAAPAAkAAAAPAAoAAAAPAAoAAAAPAAsAAAAPAAsAAAAQAAAAAAAQAAAAAAAQAAEAAAAQAAEAAAAQAAIAAAAQAAIAAAAQAAMAAAAQAAMAAAAQAAQAAAAQAAQAAAAQAAUAAAAQAAUAAAAQAAYAAAAQAAYAAAAQAAcAAAAQAAcAAAAQAAgAAAAQAAgAAAAQAAkAAAAQAAkAAAAQAAoAAAAQAAoAAAAQAAsAAAAQAAsAAAARAAAAAAARAAAAAAARAAEAAAARAAEAAAARAAIAAAARAAIAAAARAAMAAAARAAMAAAARAAQAAAARAAQAAAARAAUAAAARAAUAAAARAAYAAAARAAYAAAARAAcAAAARAAcAAAARAAgAAAARAAgAAAARAAkAAAARAAkAAAARAAoAAAARAAoAAAARAAsAAAARAAsAAAASAAAAAAASAAAAAAASAAEAAAASAAEAAAASAAIAAAASAAIAAAASAAMAAAASAAMAAAASAAQAAAASAAQAAAASAAUAAAASAAUAAAASAAYAAAASAAYAAAASAAcAAAASAAcAAAASAAgAAAASAAgAAAASAAkAAAASAAkAAAASAAoAAAASAAoAAAASAAsAAAASAAsAAAATAAAAAAATAAAAAAATAAEAAAATAAEAAAATAAIAAAATAAIAAAATAAMAAAATAAMAAAATAAQAAAATAAQAAAATAAUAAAATAAUAAAATAAYAAAATAAYAAAATAAcAAAATAAcAAAATAAgAAAATAAgAAAATAAkAAAATAAkAAAATAAoAAAATAAoAAAATAAsAAAATAAsAAAAUAAAAAAAUAAAAAAAUAAEAAAAUAAEAAAAUAAIAAAAUAAIAAAAUAAMAAAAUAAMAAAAUAAQAAAAUAAQAAAAUAAUAAAAUAAUAAAAUAAYAAAAUAAYAAAAUAAcAAAAUAAcAAAAUAAgAAAAUAAgAAAAUAAkAAAAUAAkAAAAUAAoAAAAUAAoAAAAUAAsAAAAUAAsAAAAVAAAAAAAVAAAAAAAVAAEAAAAVAAEAAAAVAAIAAAAVAAIAAAAVAAMAAAAVAAMAAAAVAAQAAAAVAAQAAAAVAAUAAAAVAAUAAAAVAAYAAAAVAAYAAAAVAAcAAAAVAAcAAAAVAAgAAAAVAAgAAAAVAAkAAAAVAAkAAAAVAAoAAAAVAAoAAAAVAAsAAAAVAAsAAAAWAAAAAAAWAAAAAAAWAAEAAAAWAAEAAAAWAAIAAAAWAAIAAAAWAAMAAAAWAAMAAAAWAAQAAAAWAAQAAAAWAAUAAAAWAAUAAAAWAAYAAAAWAAYAAAAWAAcAAAAWAAcAAAAWAAgAAAAWAAgAAAAWAAkAAAAWAAkAAAAWAAoAAAAWAAoAAAAWAAsAAAAWAAsAAAAXAAAAAAAXAAAAAAAXAAEAAAAXAAEAAAAXAAIAAAAXAAIAAAAXAAMAAAAXAAMAAAAXAAQAAAAXAAQAAAAXAAUAAAAXAAUAAAAXAAYAAAAXAAYAAAAXAAcAAAAXAAcAAAAXAAgAAAAXAAgAAAAXAAkAAAAXAAkAAAAXAAoAAAAXAAoAAAAXAAsAAAAXAAsAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAAAAAAYAAMAAAAAAAAAAAAYAAQAAAAAAAAAAAAYAAUAAAAAAAAAAAAYAAYAAAAAAAAAAAAYAAcAAAAAAAAAAAAYAAgAAAAAAAAAAAAYAAkAAAAAAAAAAAAYAAoAAAAAAAAAAAAYAAsAAAAAAAAAAAAYAAwAAAAAAAAAAAAXAAwAAAAAAAAAAAAWAAwAAAAAAAAAAAAVAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAATAAwAAAAAAAAAAAASAAwAAAAAAAAAAAARAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAADAAwAAAAAAAAAAAACAAwAAAAAAAAAAAABAAwAAAAAAAAAAAAAAAwAAAAAAAAAAAD//wwAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAA=")
@@ -1011,9 +1010,9 @@ rendering_quadrant_size = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="CharacterBody2D2/Camera2D/dont touch"]
 environment = SubResource("Environment_chteq")
 
-[node name="Transition" parent="CharacterBody2D2" instance=ExtResource("14_g2mlg")]
+[node name="Transition" parent="CharacterBody2D2" instance=ExtResource("23_d7m35")]
 position = Vector2(-385, -317)
-target_scene = ExtResource("15_0gkdf")
+target_scene = "uid://kqk0xh237fw1"
 
 [node name="Trigger" parent="CharacterBody2D2/Transition" index="0"]
 monitoring = false
@@ -1024,16 +1023,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_mcopt")
 }
 
-[node name="Pared-Rompible7" parent="." instance=ExtResource("16_b8lpr")]
+[node name="Pared-Rompible7" parent="." instance=ExtResource("13_h55m2")]
 position = Vector2(792, 576)
 
-[node name="Pared-Rompible8" parent="." instance=ExtResource("16_b8lpr")]
+[node name="Pared-Rompible8" parent="." instance=ExtResource("13_h55m2")]
 position = Vector2(792, 432)
 
-[node name="Pared-Rompible9" parent="." instance=ExtResource("16_b8lpr")]
+[node name="Pared-Rompible9" parent="." instance=ExtResource("13_h55m2")]
 position = Vector2(792, 288)
 
-[node name="Pared-Rompible10" parent="." instance=ExtResource("16_b8lpr")]
+[node name="Pared-Rompible10" parent="." instance=ExtResource("13_h55m2")]
 position = Vector2(792, 144)
 
 [node name="Tilemap" type="TileMapLayer" parent="."]
@@ -1048,196 +1047,196 @@ position = Vector2(1536, 576)
 
 [node name="Lights" type="Node" parent="."]
 
-[node name="Swing-light" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(1110, 87)
 
-[node name="Swing-light17" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light17" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(989, 87)
 
 [node name="Light" parent="Lights/Swing-light17" index="1"]
 position = Vector2(0, 508)
 
-[node name="Swing-light2" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light2" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(664, 67)
 
 [node name="PointLight2D" parent="Lights/Swing-light2/Light" index="2"]
 color = Color(1, 0, 0, 1)
 
-[node name="Swing-light3" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light3" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(848, 84)
 
 [node name="PointLight2D" parent="Lights/Swing-light3/Light" index="2"]
 color = Color(1, 0, 0, 1)
 
-[node name="Swing-light5" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light5" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(4726, 362)
 
-[node name="Swing-light6" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light6" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(4488, 362)
 
-[node name="Swing-light7" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light7" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(4233, 362)
 
-[node name="Swing-light8" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light8" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(3997, 310)
 
-[node name="Swing-light9" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light9" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(3784, 262)
 
-[node name="Swing-light10" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light10" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(3576, 216)
 
-[node name="Swing-light11" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light11" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(3380, 168)
 
-[node name="Swing-light12" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light12" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(3161, 112)
 
-[node name="Swing-light13" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light13" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(2954, 16)
 
-[node name="Swing-light14" parent="Lights" instance=ExtResource("18_27gc4")]
+[node name="Swing-light14" parent="Lights" instance=ExtResource("3_g52sb")]
 position = Vector2(2703, 16)
 
 [node name="CielingBoxes" type="Node" parent="."]
 
-[node name="WoodenBox4" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox4" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(920, -272)
 
-[node name="WoodenBox5" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox5" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(936, -272)
 
-[node name="WoodenBox6" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox6" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(952, -272)
 
-[node name="WoodenBox7" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox7" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(968, -272)
 
-[node name="WoodenBox8" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox8" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(984, -272)
 
-[node name="WoodenBox9" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox9" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -272)
 
-[node name="WoodenBox10" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox10" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -272)
 
-[node name="WoodenBox11" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox11" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(920, -288)
 
-[node name="WoodenBox12" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox12" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(936, -288)
 
-[node name="WoodenBox13" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox13" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(952, -288)
 
-[node name="WoodenBox14" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox14" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(968, -288)
 
-[node name="WoodenBox15" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox15" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(984, -288)
 
-[node name="WoodenBox16" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox16" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -288)
 
-[node name="WoodenBox17" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox17" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -288)
 
-[node name="WoodenBox18" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox18" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(920, -304)
 
-[node name="WoodenBox19" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox19" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(936, -304)
 
-[node name="WoodenBox20" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox20" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(952, -304)
 
-[node name="WoodenBox21" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox21" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(968, -304)
 
-[node name="WoodenBox22" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox22" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(984, -304)
 
-[node name="WoodenBox23" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox23" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -304)
 
-[node name="WoodenBox24" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox24" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -304)
 
-[node name="WoodenBox25" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox25" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1112, -272)
 
-[node name="WoodenBox26" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox26" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1128, -272)
 
-[node name="WoodenBox27" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox27" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1144, -272)
 
-[node name="WoodenBox28" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox28" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1160, -272)
 
-[node name="WoodenBox29" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox29" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1176, -272)
 
-[node name="WoodenBox30" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox30" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -272)
 
-[node name="WoodenBox31" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox31" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -272)
 
-[node name="WoodenBox32" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox32" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1112, -288)
 
-[node name="WoodenBox33" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox33" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1128, -288)
 
-[node name="WoodenBox34" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox34" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1144, -288)
 
-[node name="WoodenBox35" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox35" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1160, -288)
 
-[node name="WoodenBox36" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox36" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1176, -288)
 
-[node name="WoodenBox37" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox37" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -288)
 
-[node name="WoodenBox38" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox38" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -288)
 
-[node name="WoodenBox39" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox39" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1112, -304)
 
-[node name="WoodenBox40" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox40" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1128, -304)
 
-[node name="WoodenBox41" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox41" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1144, -304)
 
-[node name="WoodenBox42" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox42" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1160, -304)
 
-[node name="WoodenBox43" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox43" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1176, -304)
 
-[node name="WoodenBox44" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox44" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -304)
 
-[node name="WoodenBox45" parent="CielingBoxes" instance=ExtResource("19_apmll")]
+[node name="WoodenBox45" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -304)
 
-[node name="Button_red" parent="." instance=ExtResource("20_15lkb")]
+[node name="Button_red" parent="." instance=ExtResource("24_lnmw1")]
 position = Vector2(936, 744)
 
-[node name="Door" parent="Button_red" instance=ExtResource("21_deavm")]
+[node name="Door" parent="Button_red" instance=ExtResource("24_mvbe6")]
 position = Vector2(4224, -192)
 
-[node name="Door2" parent="Button_red" instance=ExtResource("21_deavm")]
+[node name="Door2" parent="Button_red" instance=ExtResource("24_mvbe6")]
 position = Vector2(24, -744)
 rotation = 1.5708
 
-[node name="Door3" parent="Button_red" instance=ExtResource("21_deavm")]
+[node name="Door3" parent="Button_red" instance=ExtResource("24_mvbe6")]
 position = Vector2(216, -744)
 rotation = 1.5708
 
@@ -1245,58 +1244,58 @@ rotation = 1.5708
 
 [node name="Lasers" type="Node" parent="Clutter"]
 
-[node name="Grow-Laser" parent="Clutter/Lasers" instance=ExtResource("22_1h0bt")]
+[node name="Grow-Laser" parent="Clutter/Lasers" instance=ExtResource("14_g7k4y")]
 position = Vector2(5253, 236)
 rotation = 1.57081
 
-[node name="Shrink-Laser" parent="Clutter/Lasers" instance=ExtResource("23_k85c8")]
+[node name="Shrink-Laser" parent="Clutter/Lasers" instance=ExtResource("15_dsijx")]
 position = Vector2(5379, 226)
 rotation = 1.57079
 
 [node name="Boxes" type="Node" parent="Clutter"]
 
-[node name="SteelTable2" parent="Clutter/Boxes" instance=ExtResource("24_m57wj")]
+[node name="SteelTable2" parent="Clutter/Boxes" instance=ExtResource("16_sdar4")]
 position = Vector2(4932, 623)
 
-[node name="Indicator-X" parent="Clutter/Boxes" instance=ExtResource("25_isiek")]
+[node name="Indicator-X" parent="Clutter/Boxes" instance=ExtResource("20_lmnyd")]
 position = Vector2(4933, 590)
 
-[node name="Vial_green" parent="Clutter/Boxes" instance=ExtResource("26_b1xdk")]
+[node name="Vial_green" parent="Clutter/Boxes" instance=ExtResource("17_67d33")]
 position = Vector2(4942, 602)
 
-[node name="Vial-Red" parent="Clutter/Boxes" instance=ExtResource("27_yvta4")]
+[node name="Vial-Red" parent="Clutter/Boxes" instance=ExtResource("18_s17nv")]
 position = Vector2(4920, 603)
 
-[node name="Vial-blue" parent="Clutter/Boxes" instance=ExtResource("28_edy5f")]
+[node name="Vial-blue" parent="Clutter/Boxes" instance=ExtResource("19_7s41i")]
 position = Vector2(4932, 585)
 
 [node name="HamsterSetpiece" type="Node" parent="Clutter"]
 
-[node name="Vial_green" parent="Clutter/HamsterSetpiece" instance=ExtResource("26_b1xdk")]
+[node name="Vial_green" parent="Clutter/HamsterSetpiece" instance=ExtResource("17_67d33")]
 position = Vector2(2370, 629)
 
-[node name="Vial-Red" parent="Clutter/HamsterSetpiece" instance=ExtResource("27_yvta4")]
+[node name="Vial-Red" parent="Clutter/HamsterSetpiece" instance=ExtResource("18_s17nv")]
 position = Vector2(2388, 632)
 
-[node name="Vial-blue" parent="Clutter/HamsterSetpiece" instance=ExtResource("28_edy5f")]
+[node name="Vial-blue" parent="Clutter/HamsterSetpiece" instance=ExtResource("19_7s41i")]
 position = Vector2(2380, 608)
 
-[node name="Vial_green2" parent="Clutter/HamsterSetpiece" instance=ExtResource("26_b1xdk")]
+[node name="Vial_green2" parent="Clutter/HamsterSetpiece" instance=ExtResource("17_67d33")]
 position = Vector2(2330, 629)
 
-[node name="Vial-Red2" parent="Clutter/HamsterSetpiece" instance=ExtResource("27_yvta4")]
+[node name="Vial-Red2" parent="Clutter/HamsterSetpiece" instance=ExtResource("18_s17nv")]
 position = Vector2(2348, 632)
 
-[node name="Vial-blue2" parent="Clutter/HamsterSetpiece" instance=ExtResource("28_edy5f")]
+[node name="Vial-blue2" parent="Clutter/HamsterSetpiece" instance=ExtResource("19_7s41i")]
 position = Vector2(2340, 608)
 
-[node name="Vial_green3" parent="Clutter/HamsterSetpiece" instance=ExtResource("26_b1xdk")]
+[node name="Vial_green3" parent="Clutter/HamsterSetpiece" instance=ExtResource("17_67d33")]
 position = Vector2(2410, 629)
 
-[node name="Vial-Red3" parent="Clutter/HamsterSetpiece" instance=ExtResource("27_yvta4")]
+[node name="Vial-Red3" parent="Clutter/HamsterSetpiece" instance=ExtResource("18_s17nv")]
 position = Vector2(2428, 632)
 
-[node name="Vial-blue3" parent="Clutter/HamsterSetpiece" instance=ExtResource("28_edy5f")]
+[node name="Vial-blue3" parent="Clutter/HamsterSetpiece" instance=ExtResource("19_7s41i")]
 position = Vector2(2420, 608)
 
 [node name="Path2D" type="Path2D" parent="Clutter/HamsterSetpiece"]
@@ -1306,7 +1305,7 @@ script = SubResource("GDScript_01tns")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Clutter/HamsterSetpiece/Path2D"]
 position = Vector2(6872, 632)
-rotation = -3.13169
+rotation = -3.131692
 scale = Vector2(2, 2)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Clutter/HamsterSetpiece/Path2D/PathFollow2D"]
@@ -1330,52 +1329,52 @@ position = Vector2(2378, 544)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clutter/HamsterSetpiece/Area2D"]
 shape = SubResource("CircleShape2D_04mdq")
 
-[node name="Scientist" parent="Clutter/HamsterSetpiece" instance=ExtResource("29_bi8mr")]
+[node name="Scientist" parent="Clutter/HamsterSetpiece" instance=ExtResource("30_njuv6")]
 position = Vector2(3520, 591)
 freeze_chest = false
 
-[node name="Scientist2" parent="Clutter/HamsterSetpiece" instance=ExtResource("29_bi8mr")]
+[node name="Scientist2" parent="Clutter/HamsterSetpiece" instance=ExtResource("30_njuv6")]
 position = Vector2(3585, 544)
 freeze_hip = true
 freeze_head = true
 
-[node name="Scientist3" parent="Clutter/HamsterSetpiece" instance=ExtResource("29_bi8mr")]
+[node name="Scientist3" parent="Clutter/HamsterSetpiece" instance=ExtResource("30_njuv6")]
 position = Vector2(3646, 592)
 freeze_hip = true
 freeze_chest = false
 
-[node name="RigidBody2D" parent="Clutter/HamsterSetpiece" instance=ExtResource("30_a5b1i")]
+[node name="RigidBody2D" parent="Clutter/HamsterSetpiece" instance=ExtResource("29_chteq")]
 position = Vector2(2641, 603)
 rotation = -3.06504
 
 [node name="Scientist beginning" type="Node" parent="Clutter"]
 
-[node name="Light" parent="Clutter/Scientist beginning" instance=ExtResource("31_teira")]
+[node name="Light" parent="Clutter/Scientist beginning" instance=ExtResource("31_njuv6")]
 position = Vector2(4879, 370)
 
-[node name="Vial-Red" parent="Clutter/Scientist beginning" instance=ExtResource("27_yvta4")]
+[node name="Vial-Red" parent="Clutter/Scientist beginning" instance=ExtResource("18_s17nv")]
 position = Vector2(4839, 607)
 
-[node name="Vial_green2" parent="Clutter/Scientist beginning" instance=ExtResource("26_b1xdk")]
+[node name="Vial_green2" parent="Clutter/Scientist beginning" instance=ExtResource("17_67d33")]
 position = Vector2(4884, 614)
 
-[node name="Vial_green3" parent="Clutter/Scientist beginning" instance=ExtResource("26_b1xdk")]
+[node name="Vial_green3" parent="Clutter/Scientist beginning" instance=ExtResource("17_67d33")]
 position = Vector2(4781, 630)
 rotation = -0.889068
 
-[node name="Vial_green4" parent="Clutter/Scientist beginning" instance=ExtResource("26_b1xdk")]
+[node name="Vial_green4" parent="Clutter/Scientist beginning" instance=ExtResource("17_67d33")]
 position = Vector2(4801, 591)
 rotation = 1.77727
 
-[node name="Vial-blue2" parent="Clutter/Scientist beginning" instance=ExtResource("28_edy5f")]
+[node name="Vial-blue2" parent="Clutter/Scientist beginning" instance=ExtResource("19_7s41i")]
 position = Vector2(4826, 548)
 rotation = 0.580128
 
-[node name="Vial-blue" parent="Clutter/Scientist beginning" instance=ExtResource("28_edy5f")]
+[node name="Vial-blue" parent="Clutter/Scientist beginning" instance=ExtResource("19_7s41i")]
 position = Vector2(4858, 632)
 rotation = -0.616894
 
-[node name="Lamp" parent="Clutter/Scientist beginning" instance=ExtResource("32_favmw")]
+[node name="Lamp" parent="Clutter/Scientist beginning" instance=ExtResource("22_01tns")]
 position = Vector2(5127, 641)
 rotation = 3.14159
 scale = Vector2(1, -1)
@@ -1393,12 +1392,12 @@ shape = SubResource("RectangleShape2D_ynjjb")
 node_a = NodePath("..")
 node_b = NodePath("../../Scientist/Skeleton2D/Hip2/Chest")
 
-[node name="String" parent="Clutter/Scientist beginning/Hung" node_paths=PackedStringArray("light", "puntocent") instance=ExtResource("33_d16qf")]
+[node name="String" parent="Clutter/Scientist beginning/Hung" node_paths=PackedStringArray("light", "puntocent") instance=ExtResource("29_04mdq")]
 light = NodePath("../Scientist/Skeleton2D/Hip2/Chest")
 puntocent = NodePath(".")
 ropeLength = 20.0
 
-[node name="Scientist" parent="Clutter/Scientist beginning/Hung" instance=ExtResource("29_bi8mr")]
+[node name="Scientist" parent="Clutter/Scientist beginning/Hung" instance=ExtResource("30_njuv6")]
 position = Vector2(27, 178)
 freeze_chest = false
 freeze_head = true
@@ -1424,14 +1423,14 @@ position = Vector2(0, 0)
 [node name="PinJoint2D" parent="Clutter/Scientist beginning/Hung/Scientist/Skeleton2D/Hip2/ThighL/LegL/FootL" index="1"]
 position = Vector2(0, 0)
 
-[node name="Indicator-X" parent="Clutter/Scientist beginning/Hung" instance=ExtResource("25_isiek")]
+[node name="Indicator-X" parent="Clutter/Scientist beginning/Hung" instance=ExtResource("20_lmnyd")]
 position = Vector2(-1273, 113)
 
-[node name="Indicator-X2" parent="Clutter/Scientist beginning/Hung" instance=ExtResource("25_isiek")]
+[node name="Indicator-X2" parent="Clutter/Scientist beginning/Hung" instance=ExtResource("20_lmnyd")]
 position = Vector2(-2371, 229)
 rotation = 0.460872
 
-[node name="TentacleBomb" parent="Clutter/Scientist beginning/Hung" instance=ExtResource("34_fxvtm")]
+[node name="TentacleBomb" parent="Clutter/Scientist beginning/Hung" instance=ExtResource("23_mcopt")]
 position = Vector2(-2408, 99)
 screen_activator = true
 tentacle_amount = 20
@@ -1443,26 +1442,26 @@ script = SubResource("GDScript_njuv6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desactivadora-Camara2"]
 shape = SubResource("CircleShape2D_a3bgo")
 
-[node name="MusicSubmanager" parent="." instance=ExtResource("35_cahl8")]
+[node name="MusicSubmanager" parent="." instance=ExtResource("32_01tns")]
 level = 2
 
-[node name="Indicator-X" parent="." instance=ExtResource("25_isiek")]
+[node name="Indicator-X" parent="." instance=ExtResource("20_lmnyd")]
 position = Vector2(896, 548)
 rotation = -0.565468
 
-[node name="Indicator-X2" parent="." instance=ExtResource("25_isiek")]
+[node name="Indicator-X2" parent="." instance=ExtResource("20_lmnyd")]
 position = Vector2(992, 490)
 rotation = 0.585855
 
-[node name="Indicator-X3" parent="." instance=ExtResource("25_isiek")]
+[node name="Indicator-X3" parent="." instance=ExtResource("20_lmnyd")]
 position = Vector2(909, 433)
 rotation = -0.283645
 
-[node name="Indicator-X4" parent="." instance=ExtResource("25_isiek")]
+[node name="Indicator-X4" parent="." instance=ExtResource("20_lmnyd")]
 position = Vector2(1082, 557)
 rotation = -0.283645
 
-[node name="Indicator-X5" parent="." instance=ExtResource("25_isiek")]
+[node name="Indicator-X5" parent="." instance=ExtResource("20_lmnyd")]
 position = Vector2(1070, 409)
 rotation = 2.35924
 

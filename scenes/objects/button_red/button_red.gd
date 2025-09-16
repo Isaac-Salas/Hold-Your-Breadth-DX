@@ -1,4 +1,5 @@
 extends Area2D
+class_name RedButton
 @onready var anim_flag: AnimatedSprite2D = $anim_flag
 @onready var light = $PointLight2D
 @onready var anim: AnimatedSprite2D = $anim

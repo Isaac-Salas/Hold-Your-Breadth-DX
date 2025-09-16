@@ -1,10 +1,10 @@
-[gd_scene load_steps=75 format=4 uid="uid://b6onmrleg7nri"]
+[gd_scene load_steps=74 format=4 uid="uid://b6onmrleg7nri"]
 
-[ext_resource type="Texture2D" uid="uid://dkkll601omjsn" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
+[ext_resource type="Texture2D" uid="uid://duetmw6kb0875" path="res://assets/tilemap/concrete.png" id="1_2k4r5"]
 [ext_resource type="Script" uid="uid://gee6l5yoqpiv" path="res://scenes/levels/game_sequence/2_1_chase.gd" id="1_njuv6"]
-[ext_resource type="Texture2D" uid="uid://ccucdxjicqv4u" path="res://assets/fondos/N1/FONDO-N1.png" id="2_mcopt"]
+[ext_resource type="Texture2D" uid="uid://ctqt5y6umpue2" path="res://assets/fondos/N1/FONDO-N1.png" id="2_mcopt"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="3_g52sb"]
-[ext_resource type="Script" uid="uid://caqwyu7ddhl4j" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_01tns"]
+[ext_resource type="Script" uid="uid://c7r8qowkgxsc1" path="res://scenes/levels/game_sequence/hamsterfix.gd" id="5_01tns"]
 [ext_resource type="PackedScene" uid="uid://w67wwrsfwoay" path="res://scenes/enemies/Hand/Hand.tscn" id="5_wihit"]
 [ext_resource type="PackedScene" uid="uid://127niqtxnogh" path="res://components/dialog_box.tscn" id="7_gyrh6"]
 [ext_resource type="PackedScene" uid="uid://c57hv8ph7ffis" path="res://scenes/enemies/Hamster/Hamster-Bug.tscn" id="7_r8l5k"]
@@ -13,10 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://fnvs7y1btss0" path="res://scenes/shaders/Options_Menu.tscn" id="11_lnmw1"]
 [ext_resource type="Texture2D" uid="uid://cty26p5f5km38" path="res://scenes/shaders/ColorGradeP-O.tres" id="11_r8l5k"]
 [ext_resource type="Material" uid="uid://bn14cjwna1p5l" path="res://scenes/shaders/crt_shader.tres" id="12_chteq"]
-[ext_resource type="Texture2D" uid="uid://pc5e3ju5itig" path="res://assets/fondos/CrtBlankCanvas.png" id="13_2uo7q"]
+[ext_resource type="Texture2D" uid="uid://cjmvco73evil7" path="res://assets/fondos/CrtBlankCanvas.png" id="13_2uo7q"]
 [ext_resource type="PackedScene" uid="uid://cmymj8rniorit" path="res://scenes/objects/Wall_Breakable/Wall_Breakable.tscn" id="13_h55m2"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="14_g7k4y"]
-[ext_resource type="PackedScene" uid="uid://kqk0xh237fw1" path="res://scenes/levels/game_sequence/3-1 Scale level.tscn" id="15_chteq"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="15_dsijx"]
 [ext_resource type="PackedScene" uid="uid://dbicnw6vctni8" path="res://scenes/objects/Steeltable.tscn" id="16_sdar4"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="17_67d33"]
@@ -29,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dvisnwjafsfcr" path="res://scenes/bosses/Eyeboss/tentacle_bomb.tscn" id="23_mcopt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="24_lnmw1"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="24_mvbe6"]
-[ext_resource type="Texture2D" uid="uid://bixow8wew3lrr" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
+[ext_resource type="Texture2D" uid="uid://bt1e2ysn2oetu" path="res://assets/Enemies/hamsersprite.png" id="27_njuv6"]
 [ext_resource type="PackedScene" uid="uid://couoi5kbky3ig" path="res://scenes/objects/rope_modular.tscn" id="29_04mdq"]
 [ext_resource type="PackedScene" uid="uid://8bjg551r16pg" path="res://scenes/objects/Flashlight/flashlight.tscn" id="29_chteq"]
 [ext_resource type="PackedScene" uid="uid://dymk4hm5e74t7" path="res://scenes/bosses/Eyeboss/Scientist_alt.tscn" id="30_njuv6"]
@@ -1013,7 +1012,7 @@ environment = SubResource("Environment_chteq")
 
 [node name="Transition" parent="CharacterBody2D2" instance=ExtResource("23_d7m35")]
 position = Vector2(-385, -317)
-target_scene = ExtResource("15_chteq")
+target_scene = "uid://kqk0xh237fw1"
 
 [node name="Trigger" parent="CharacterBody2D2/Transition" index="0"]
 monitoring = false
@@ -1306,7 +1305,7 @@ script = SubResource("GDScript_01tns")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Clutter/HamsterSetpiece/Path2D"]
 position = Vector2(6872, 632)
-rotation = -3.13169
+rotation = -3.131692
 scale = Vector2(2, 2)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Clutter/HamsterSetpiece/Path2D/PathFollow2D"]

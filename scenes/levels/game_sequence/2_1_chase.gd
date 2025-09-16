@@ -14,9 +14,13 @@ extends Node2D
 @onready var lights = $Lights
 @onready var tilemap = $Tilemap
 @onready var door = $Button_red/Door
+@onready var button_red: Area2D = $Button_red
+@onready var door_2: StaticBody2D = $Button_red/Door2
+@onready var door_3: StaticBody2D = $Button_red/Door3
+
 
 @onready var player = $CharacterBody2D2
-var _2_1_CHASE_CHANGE = load("res://scenes/levels/game_sequence/2-1_CHASEChange.tscn")
+@onready var _2_1_CHASE_CHANGE = preload("res://scenes/levels/game_sequence/2-1_CHASEChange.tscn")
 @onready var camera : Camera2D = $CharacterBody2D2/Camera2D
 @onready var animationp : AnimationPlayer = $CharacterBody2D2/AnimationPlayer
 @onready var scientist_beginning: Node = $"Clutter/Scientist beginning"
@@ -48,28 +52,33 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Reset"):
 		get_tree().reload_current_scene()
 func _on_button_red_pressed(state, body):
-	Manager.setter("Level2_1C", true)
-	
-	Manager.save_game()
-	var allLights = lights.get_children()
-	for light in allLights:
-		light.dropdown()
-	var obstacles = _2_1_CHASE_CHANGE.instantiate()
-	self.add_child(obstacles)
-	tilemap.queue_free()
-	door.queue_free()
-	if hamster_setpiece != null:
-		deleter(hamster_setpiece)
-	deleter(boxes)
-	deleter(scientist_beginning)
-	#for stuff in bio_box.get_children():
-		#stuff.queue_free()
-#	for stuff in rats.get_children():
-		#stuff.queue_free()
-	var rattest = get_tree().get_first_node_in_group("edible")
-	if rattest != null:
-		rattest.queue_free()
-	#Aqui el mero
+	if state == true:
+		Manager.setter("Level2_1C", true)
+		Manager.save_game()
+		var allLights = lights.get_children()
+		for light in allLights:
+			light.dropdown()
+		var obstacles = _2_1_CHASE_CHANGE.instantiate()
+		self.add_child(obstacles)
+		if tilemap != null:
+			tilemap.queue_free()
+		if door != null:
+			door.queue_free()
+		if hamster_setpiece != null:
+			deleter(hamster_setpiece)
+		deleter(boxes)
+		deleter(scientist_beginning)
+		#for stuff in bio_box.get_children():
+			#stuff.queue_free()
+	#	for stuff in rats.get_children():
+			#stuff.queue_free()
+		var rattest = get_tree().get_first_node_in_group("edible")
+		if rattest != null:
+			rattest.queue_free()
+		#Aqui el mero
+		button_red.monitoring = false
+		door_2.queue_free()
+		door_3.queue_free()
 	
 	
 	

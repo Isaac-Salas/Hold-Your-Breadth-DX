@@ -8,8 +8,7 @@ extends Node2D
 @onready var dialog_box = $ColorRect/GridContainer/DialogBox
 @onready var currentanim : String
 @onready var point_light_2d = $"Swing-light/Light/PointLight2D"
-@onready var transition = $Transition
-const PITCH_DECK = preload("res://scenes/levels/game_sequence/PitchDeck.tscn")
+@onready var transition : TransitionScene = $Transition
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialog_box.timer.start()
@@ -56,7 +55,7 @@ func _input(event):
 					#dialog_box.InputSTOP = true
 					#
 				6:
-					transition.transition_to(PITCH_DECK )
+					transition.transition_to(transition.target_scene)
 					set_process_input(false)
 					
 

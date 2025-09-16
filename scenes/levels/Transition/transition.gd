@@ -3,7 +3,7 @@ extends Node2D
 class_name TransitionScene
 @onready var ap: AnimationPlayer = $AnimationPlayer
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
-@export var target_scene: PackedScene
+@export_file("*.tscn") var target_scene: String
 signal Opendone
 signal Closedone
 
@@ -14,17 +14,11 @@ func _ready() -> void:
 	show()
 	ap.play("Opening")
 
-func transition_to(_next_scene : PackedScene) -> void:
-	
-	ap.play("Closing")
-	await(ap.animation_finished)
-	#var nivel : Node2D = get_tree().get_first_node_in_group("Nivel")
-	#nivel.visible = false
-	get_tree().change_scene_to_packed(_next_scene)
 
-func transition_path(path : String) -> void:
+
+func transition_to(path : String) -> void:
 	ap.play("Closing")
-	await(ap.animation_finished)
+	await ap.animation_finished
 	get_tree().change_scene_to_file(path)
 
 func _on_trigger_body_entered(body: Node2D) -> void:

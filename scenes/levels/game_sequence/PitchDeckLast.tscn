@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="7_toaq4"]
 [ext_resource type="Script" uid="uid://lhma1ndtknje" path="res://scenes/levels/game_sequence/slide_changer.gd" id="8_vfr3g"]
 [ext_resource type="PackedScene" uid="uid://cceynupboum3" path="res://scenes/pitch/slide_temp.tscn" id="9_rsylm"]
-[ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="10_34dsw"]
-[ext_resource type="Texture2D" uid="uid://v8p2dhkep0r1" path="res://assets/Pitch/Art-NoBack-Title.png" id="11_ec875"]
+[ext_resource type="FontFile" uid="uid://d05prtq81usf1" path="res://assets/Fonts/DePixelHalbfett.otf" id="10_34dsw"]
+[ext_resource type="Texture2D" uid="uid://qn8e4r4xj521" path="res://assets/Pitch/Art-NoBack-Title.png" id="11_ec875"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="35_s4sbv"]
 [ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="36_00kmt"]
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="37_1iqi1"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="39_ss1uv"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="40_sg1u3"]
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="41_kryy0"]
-[ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="42_bv68m"]
+[ext_resource type="Texture2D" uid="uid://dk3gxjoerqmah" path="res://assets/lights/Lamparacolgosa.png" id="42_bv68m"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="43_7084s"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="44_wmo34"]
 [ext_resource type="PackedScene" uid="uid://dgyws68xvfvpu" path="res://scenes/objects/Conveyor/conveyor.tscn" id="45_ib8mg"]
@@ -37,6 +37,7 @@ rendering_quadrant_size = 1
 
 [node name="Transition" parent="." instance=ExtResource("4_6onja")]
 scale = Vector2(1.5, 1.5)
+target_scene = ""
 
 [node name="dont touch" parent="." instance=ExtResource("6_b8wjx")]
 

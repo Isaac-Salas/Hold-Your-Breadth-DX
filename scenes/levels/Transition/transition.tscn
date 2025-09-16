@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://b0pi4ocu1rpdi"]
 
 [ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="1_aifxu"]
-[ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="2_1pr46"]
+[ext_resource type="Texture2D" uid="uid://c850slii52df2" path="res://assets/objects/Transition.png" id="2_1pr46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lorgc"]
 size = Vector2(24, 95)
@@ -20,7 +20,7 @@ polygon = PackedVector2Array(-384, 107, -384, -107, 384, -107, 384, 107)
 
 [sub_resource type="Animation" id="Animation_1yl6c"]
 resource_name = "Closing"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -48,7 +48,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_r5kup"]
 resource_name = "Opening"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -129,7 +129,7 @@ debug_color = Color(0.453215, 0.595313, 0, 0.42)
 z_index = 5
 y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_gw78c")
-position = Vector2(384, -108)
+position = Vector2(384, 109)
 texture = ExtResource("2_1pr46")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
@@ -141,7 +141,7 @@ occluder = SubResource("OccluderPolygon2D_jd3jg")
 z_index = 5
 y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_5ty5i")
-position = Vector2(384, 540)
+position = Vector2(384, 323)
 scale = Vector2(1, -1)
 texture = ExtResource("2_1pr46")
 

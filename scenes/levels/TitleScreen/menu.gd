@@ -67,7 +67,7 @@ func _on_levels_mouse_exited():
 
 func _on_levels_pressed():
 
-	transition.transition_path("res://scenes/levels/Level_Select/Level_select.tscn")
+	transition.transition_to(Preloader.LEVEL_SELECT)
 
 
 func _on_options_mouse_entered():
