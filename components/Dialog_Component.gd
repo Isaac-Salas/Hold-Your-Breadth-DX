@@ -14,6 +14,7 @@ class_name DialogComponent
 @onready var timer = $Timer
 @onready var count : int = 0 
 signal Done()
+signal Continued()
 @onready var dumbdone : bool
 @onready var audio_stream_player = $AudioStreamPlayer
 @onready var bell = $Bell
@@ -27,11 +28,12 @@ func _ready():
 	
 
 
-func _input(event):
+func _input(_event):
 	if InputSTOP == false:
 		if InputEnable == true:
 			if Input.is_action_pressed("OK"):
 				if linecount < (Dialog.size() - 1):
+					Continued.emit()
 					clearcenter()
 					
 	if Input.is_action_just_pressed("OK"):

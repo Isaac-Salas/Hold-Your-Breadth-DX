@@ -1,10 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://4opn2rdjt4wb"]
+[gd_scene load_steps=9 format=3 uid="uid://4opn2rdjt4wb"]
 
 [ext_resource type="Script" uid="uid://duqjcmce1wpy7" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_6he3a"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="2_kppue"]
 [ext_resource type="Texture2D" uid="uid://6lv5g2j556co" path="res://assets/DOG.png" id="3_yvcin"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="4_742wx"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_84src"]
+
+[sub_resource type="Animation" id="Animation_h3nsi"]
+resource_name = "Fade"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gghjx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h47so"]
+_data = {
+&"Fade": SubResource("Animation_h3nsi"),
+&"RESET": SubResource("Animation_gghjx")
+}
 
 [node name="JellyIntro" type="Node2D"]
 script = ExtResource("1_6he3a")
@@ -44,9 +81,29 @@ autostart = true
 scale = Vector2(1.5, 1.5)
 target_scene = "uid://bxqj10ba1btxb"
 
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 540)
+
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(576, 320)
 current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h47so")
+}
+autoplay = "Fade"
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 

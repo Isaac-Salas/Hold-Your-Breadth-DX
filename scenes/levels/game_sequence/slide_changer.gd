@@ -1,19 +1,30 @@
 extends Node2D
 class_name SlideChanger
-@export var slides : Array[Slide]
+@export var lock_input : bool = false
+@onready var slides : Array[Slide]
 @export var current_slide : int = 0
-@onready var transition: TransitionScene = $"../Transition"
+@export var transition: TransitionScene
 
 func _ready() -> void:
-	Manager.reset_progress()
+	for slide : Slide in get_children():
+		slides.append(slide)
 
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_released("OK"):
-		slides[current_slide].drop()
-		if current_slide < slides.size() - 1:
-			current_slide += 1
-			slides[current_slide].visible = true
-		else:
-			if transition.target_scene != null:
-				transition.transition_to(transition.target_scene)
+func _input(_event: InputEvent) -> void:
+	if lock_input == false:
+		if Input.is_action_just_released("OK"):
+			drop_current_slide()
 			
+
+func drop_current_slide():
+	slides[current_slide].drop()
+	if current_slide < slides.size() - 1:
+		current_slide += 1
+		slides[current_slide].visible = true
+		print("Size of pres = ", slides.size())
+		print("Still Drops on: ", current_slide)
+	else:
+		if transition.target_scene != "":
+			print("Trying trans")
+			transition.transition_to(transition.target_scene)
+		else:
+			OS.shell_open("https://store.steampowered.com/app/3901700/Hold_Your_Breadth_DX/")

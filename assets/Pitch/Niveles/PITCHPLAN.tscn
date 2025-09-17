@@ -2,14 +2,16 @@
 
 [ext_resource type="Script" uid="uid://duqjcmce1wpy7" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_4l7dp"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="2_ehi33"]
-[ext_resource type="Texture2D" uid="uid://eai2k8lifs17" path="res://assets/Pitch/HYBplan.png" id="3_4l7dp"]
-[ext_resource type="Texture2D" uid="uid://wgb1g3xauxuo" path="res://assets/Pitch/Whiteboard.png" id="3_ehi33"]
+[ext_resource type="Texture2D" uid="uid://d384xheh2u5xk" path="res://assets/Pitch/HYBplan.png" id="3_4l7dp"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_xerwn"]
-[ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="6_4l7dp"]
-[ext_resource type="PackedScene" uid="uid://2mjycjtvw024" path="res://scenes/levels/game_sequence/PitchDeckLast.tscn" id="6_x203w"]
+[ext_resource type="Texture2D" uid="uid://dk3gxjoerqmah" path="res://assets/lights/Lamparacolgosa.png" id="6_4l7dp"]
+[ext_resource type="FontFile" uid="uid://d05prtq81usf1" path="res://assets/Fonts/DePixelHalbfett.otf" id="8_n2clb"]
 [ext_resource type="Script" uid="uid://c51ig7ko5ax0y" path="res://assets/Pitch/Niveles/input.gd" id="8_x203w"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x203w"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xerwn"]
 light_mode = 1
 
 [node name="JellyIntro" type="Node2D"]
@@ -20,18 +22,11 @@ script = ExtResource("1_4l7dp")
 [node name="CanvasModulate" parent="dont touch" index="2"]
 color = Color(0.0189402, 0.0189402, 0.0189402, 1)
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-z_index = 20
-texture_filter = 2
-position = Vector2(576, 320)
-scale = Vector2(1.51, 1.51)
-texture = ExtResource("3_ehi33")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 30
 texture_filter = 2
 material = SubResource("CanvasItemMaterial_x203w")
-position = Vector2(576, 320)
+position = Vector2(576, 369)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_4l7dp")
 
@@ -40,22 +35,43 @@ position = Vector2(1625, -12)
 
 [node name="Transition" parent="." instance=ExtResource("5_xerwn")]
 scale = Vector2(1.5, 1.5)
-target_scene = ExtResource("6_x203w")
+target_scene = "uid://2mjycjtvw024"
+
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 540)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(576, 320)
 current = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(582, 325)
+position = Vector2(556, 72)
 color = Color(1, 0.819608, 0.647059, 1)
-energy = 0.6
+energy = 1.2
 texture = ExtResource("6_4l7dp")
 texture_scale = 9.1
-metadata/_edit_lock_ = true
 
 [node name="Input" type="Node" parent="."]
 script = ExtResource("8_x203w")
+
+[node name="Label" type="RichTextLabel" parent="."]
+z_index = 20
+material = SubResource("CanvasItemMaterial_xerwn")
+offset_left = 159.0
+offset_top = -23.0
+offset_right = 947.0
+offset_bottom = 159.0
+theme_override_fonts/normal_font = ExtResource("8_n2clb")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=500 connected=1]OUR WORK PLAN:
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="dont touch"]
 [editable path="Transition"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=162 format=4 uid="uid://c5tghkyak8lf6"]
+[gd_scene load_steps=171 format=4 uid="uid://c5tghkyak8lf6"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_3g1h6"]
 [ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_1aujc"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="5_rfepe"]
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="6_4jaj4"]
 [ext_resource type="Script" uid="uid://lhma1ndtknje" path="res://scenes/levels/game_sequence/slide_changer.gd" id="7_22lp2"]
-[ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="8_22lp2"]
 [ext_resource type="PackedScene" uid="uid://cceynupboum3" path="res://scenes/pitch/slide_temp.tscn" id="8_lwi7m"]
 [ext_resource type="Texture2D" uid="uid://cas4661cg6jqi" path="res://assets/nume/nume_00000.png" id="9_6lq5t"]
 [ext_resource type="Texture2D" uid="uid://dk3gxjoerqmah" path="res://assets/lights/Lamparacolgosa.png" id="9_71lks"]
@@ -126,8 +125,10 @@
 [ext_resource type="Texture2D" uid="uid://cr0s8ij6osnpt" path="res://assets/nume/nume_00108.png" id="117_ob0lc"]
 [ext_resource type="Texture2D" uid="uid://3c6xgyhev7ok" path="res://assets/nume/nume_00109.png" id="118_7yo13"]
 [ext_resource type="Texture2D" uid="uid://k2fingmdigf8" path="res://assets/nume/nume_00110.png" id="119_hkeo7"]
+[ext_resource type="Script" uid="uid://dulydqu6mnvb5" path="res://scenes/levels/game_sequence/animated_sprite_2d.gd" id="120_ghq58"]
 [ext_resource type="FontFile" uid="uid://d05prtq81usf1" path="res://assets/Fonts/DePixelHalbfett.otf" id="120_yw3i3"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="121_ipt8a"]
+[ext_resource type="Script" uid="uid://w80jaqwrxp0" path="res://scenes/pitch/activator.gd" id="122_ojcux"]
 [ext_resource type="Script" uid="uid://oc7gr5y64pfn" path="res://scenes/pitch/indicator_arrow_look.gd" id="122_r6crb"]
 [ext_resource type="Texture2D" uid="uid://cjerqqogort1u" path="res://assets/Pitch/Portal_logo.png" id="123_qkk3n"]
 [ext_resource type="Texture2D" uid="uid://0t7hyud7u5s7" path="res://assets/Pitch/Half-Life_lambda_logo.svg.png" id="124_ghq58"]
@@ -138,6 +139,7 @@
 [ext_resource type="Texture2D" uid="uid://cek5rjywu4guh" path="res://assets/Pitch/34+Xz4.png" id="128_tt765"]
 [ext_resource type="Texture2D" uid="uid://n4cyeldn8v" path="res://assets/Pitch/UqtvaW.png" id="129_41uw8"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="130_0o14r"]
+[ext_resource type="Texture2D" uid="uid://boodm0q88oo64" path="res://assets/Tutorial/Reset.png" id="130_h4vs0"]
 [ext_resource type="Texture2D" uid="uid://r36q3hwvcee7" path="res://assets/Pitch/1zSUkr.png" id="130_wwgfo"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="131_fw0ny"]
 [ext_resource type="Texture2D" uid="uid://ctte6b0k6joa5" path="res://assets/Pitch/YouLookLonely.png" id="131_gbbta"]
@@ -157,6 +159,12 @@
 [ext_resource type="Texture2D" uid="uid://d254o0h37gwva" path="res://assets/Pitch/Isaac/1aA21u.png" id="144_4t44t"]
 [ext_resource type="Texture2D" uid="uid://cxln16osvq661" path="res://assets/Pitch/Isaac/RUYInL.png" id="145_ls5nn"]
 [ext_resource type="Texture2D" uid="uid://jekgxwx5d2hu" path="res://assets/Pitch/HYBDX-Boxart.png" id="146_1jnhg"]
+[ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="155_qkk3n"]
+[ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="156_ghq58"]
+[ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="157_up760"]
+[ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="158_ghq58"]
+[ext_resource type="Script" uid="uid://bb475pwwchmkp" path="res://assets/Pitch/reseter.gd" id="159_up760"]
+[ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="165_gbbta"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_86i5w"]
 light_mode = 1
@@ -502,6 +510,9 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1mxr2"]
+light_mode = 1
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_khd6a"]
 particle_flag_disable_z = true
 emission_shape_scale = Vector3(4, 1, 1)
@@ -529,7 +540,7 @@ LevelNumber = 1
 
 [node name="Tilemap" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAAAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAFAAAAAAAXAAYAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAABAAAAAAASAAEAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAIAAAAAAAwAAAAEAAEAAAAAAAsAAAAFAAAAAAAAAAoAAAAFAAAAAAAAAAkAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAFAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAMAAAAEAAEAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAXAA0AAAACAAIAAAAWAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAATAA0AAAAEAAAAAAASAA0AAAAEAAAAAAARAA0AAAAEAAAAAAAQAA0AAAAEAAAAAAAPAA0AAAAEAAAAAAAOAA0AAAAEAAAAAAANAA0AAAAEAAAAAAAMAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAADAA0AAAAEAAAAAAACAA0AAAAEAAAAAAABAA0AAAAEAAAAAAAXAAAAAAACAAAAAAAXAAEAAAAFAAAAAAAXAAIAAAAEAAEAAAAXAAMAAAAFAAAAAAAXAAQAAAAFAAAAAAAXAAUAAAAFAAAAAAAXAAYAAAAFAAAAAAAXAAcAAAAEAAEAAAAXAAgAAAAFAAAAAAAXAAkAAAAFAAAAAAAXAAoAAAAFAAAAAAAXAAsAAAAFAAAAAAAXAAwAAAAEAAEAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAACAAIAAAAIAAAAAAAAAAIAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAACAAIAAAAUAAAAAAAAAAIAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAPAP//AAAEAAEAAAAUAP//AAAEAAEAAAADAP//AAAEAAEAAAAIAP//AAAEAAEAAAADAP7/AAAEAAEAAAADAP3/AAAEAAEAAAAIAP3/AAAFAAAAAAAIAP7/AAAEAAEAAAADAPz/AAAAAAAAAAAEAPz/AAAEAAAAAAAFAPz/AAAEAAAAAAAGAPz/AAAEAAAAAAAHAPz/AAAEAAAAAAAIAPz/AAACAAAAAAAPAP7/AAAEAAEAAAAPAP3/AAAFAAAAAAAPAPz/AAAAAAAAAAAQAPz/AAAEAAAAAAARAPz/AAAEAAAAAAASAPz/AAAEAAAAAAATAPz/AAAEAAAAAAAUAPz/AAACAAAAAAAUAP3/AAAEAAEAAAAUAP7/AAAEAAEAAAA=")
 tile_set = ExtResource("2_1aujc")
 rendering_quadrant_size = 1
 
@@ -537,41 +548,159 @@ rendering_quadrant_size = 1
 
 [node name="Transition" parent="." instance=ExtResource("4_djx5v")]
 scale = Vector2(1.5, 1.5)
-target_scene = ""
+target_scene = "uid://b11575bui2p7p"
 
 [node name="dont touch" parent="." instance=ExtResource("5_rfepe")]
 
 [node name="Slime" parent="." instance=ExtResource("6_4jaj4")]
 position = Vector2(574, 596)
 
-[node name="SlideChanger" type="Node2D" parent="." node_paths=PackedStringArray("slides")]
+[node name="SlideChanger" type="Node2D" parent="." node_paths=PackedStringArray("transition")]
 script = ExtResource("7_22lp2")
-slides = [NodePath("SlideTemp"), NodePath("SlideTemp2"), NodePath("SlideTemp3"), NodePath("SlideTemp4"), NodePath("SlideTemp5"), NodePath("SlideTemp6"), NodePath("SlideTemp7"), NodePath("SlideTemp8"), NodePath("SlideTemp9"), NodePath("SlideTemp10"), NodePath("SlideTemp11"), NodePath("SlideTemp12"), NodePath("SlideTemp13"), NodePath("SlideTemp14"), NodePath("SlideTemp15"), NodePath("SlideTemp16"), NodePath("SlideTemp17"), NodePath("SlideTemp18"), NodePath("SlideTemp19"), NodePath("SlideTemp20"), NodePath("SlideTemp21")]
+transition = NodePath("../Transition")
 
-[node name="SlideTemp" parent="SlideChanger" instance=ExtResource("8_lwi7m")]
+[node name="SlideTemp22" parent="SlideChanger" instance=ExtResource("8_lwi7m")]
 position = Vector2(576, 324)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SlideChanger/SlideTemp"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SlideChanger/SlideTemp22"]
 material = SubResource("CanvasItemMaterial_86i5w")
 position = Vector2(-17, 1)
 scale = Vector2(1.59, 1.59)
 sprite_frames = SubResource("SpriteFrames_yw3i3")
-autoplay = "default"
+script = ExtResource("120_ghq58")
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp22"]
+modulate = Color(0.5882353, 0.5882353, 0.5882353, 0)
+offset_left = -260.0
+offset_top = 40.0
+offset_right = 274.0
+offset_bottom = 268.0
+theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
+theme_override_fonts/normal_font = ExtResource("120_yw3i3")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]
+USE [img=48]res://assets/controls/E.png[/img] OR [img=48]res://assets/controls/Confirm.png[/img] TO CHANGE SLIDES DURING THE PRESENTATION"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Activator" type="Node" parent="SlideChanger/SlideTemp22" node_paths=PackedStringArray("label", "target_sprite")]
+script = ExtResource("122_ojcux")
+label = NodePath("../Label2")
+target_sprite = NodePath("../AnimatedSprite2D")
+
+[node name="SlideTemp" parent="SlideChanger" instance=ExtResource("8_lwi7m")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
+offset_left = -393.0
+offset_top = -235.0
+offset_right = 395.0
+offset_bottom = -53.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("120_yw3i3")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=500 connected=1][color=933f45]CONTROLS:
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
+visible = false
+offset_left = -348.0
+offset_top = -229.0
+offset_right = 351.0
+offset_bottom = -1.0
+theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
+theme_override_fonts/normal_font = ExtResource("120_yw3i3")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]
+Try to hit the big red button above!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
+modulate = Color(0.5882353, 0.5882353, 0.5882353, 1)
+offset_left = -266.0
+offset_top = -105.0
+offset_right = 268.0
+offset_bottom = 209.0
+theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
+theme_override_constants/paragraph_separation = 6
+theme_override_fonts/normal_font = ExtResource("120_yw3i3")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1][color=76c379]MOVE:[/color]  [img=48]res://assets/controls/W.png[/img][img=48]res://assets/controls/A.png[/img][img=48]res://assets/controls/S.png[/img][img=48]res://assets/controls/D.png[/img] OR [img=48]res://assets/controls/Move.png[/img]
+[color=7b99c8]JUMP:[/color] [img=48]res://assets/controls/Space1.png[/img][img=48]res://assets/controls/Space2.png[/img][img=48]res://assets/controls/Space3.png[/img] OR [img=48]res://assets/controls/LT.png[/img]
+[color=#dacb80]AIM:[/color] [img=48]res://assets/controls/Mouse.png[/img] OR [img=48]res://assets/controls/Rstick.png[/img]
+[color=be7979]PICK-UP:[/color] [img=48]res://assets/controls/Lclick.png[/img] OR [img=48]res://assets/controls/LB.png[/img]
+[color=99d4e6]THROW:[/color] HOLD [img=48]res://assets/controls/Rclick.png[/img] OR [img=48]res://assets/controls/RB.png[/img] , [color=#dacb80]AIM[/color], AND THEN RELEASE 
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideTemp23" parent="SlideChanger" instance=ExtResource("8_lwi7m")]
+visible = false
+position = Vector2(576, 324)
+
+[node name="RichTextLabel" type="Sprite2D" parent="SlideChanger/SlideTemp23"]
+modulate = Color(0.5890956, 0.5890956, 0.5890956, 1)
+material = SubResource("CanvasItemMaterial_1mxr2")
+position = Vector2(-17, 6)
+scale = Vector2(2, 2)
+texture = ExtResource("130_h4vs0")
+
+[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp23"]
+offset_left = -393.0
+offset_top = -225.0
+offset_right = 395.0
+offset_bottom = -43.0
+theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
+theme_override_fonts/normal_font = ExtResource("120_yw3i3")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=500 connected=1][color=933f45]CONTROLS:
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp23"]
+offset_left = -283.0
+offset_top = 6.0
+offset_right = 268.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
+theme_override_fonts/normal_font = ExtResource("120_yw3i3")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]
+Or, just press continue!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SlideTemp2" parent="SlideChanger" instance=ExtResource("8_lwi7m")]
 visible = false
 position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp2"]
-offset_left = -387.0
-offset_top = -152.0
-offset_right = 401.0
-offset_bottom = 30.0
+offset_left = -388.0
+offset_top = -188.0
+offset_right = 400.0
+offset_bottom = -6.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]¿QUE ES [color=76c379]HYB[/color][color=cc925e]-DX[/color]?
+text = "[wave amp=50.0 freq=5.0 connected=1]WHAT IS [color=76c379]HYB[/color][color=cc925e]-DX[/color]?
 [/wave]
 "
 fit_content = true
@@ -579,17 +708,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp2"]
-offset_left = -267.0
-offset_top = -72.0
-offset_right = 267.0
-offset_bottom = 156.0
+offset_left = -322.0
+offset_top = -80.0
+offset_right = 311.0
+offset_bottom = 208.0
+theme_override_constants/paragraph_separation = 15
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]
-- [color=7b99c8]Puzzle[/color]/[color=535c89]Adventure[/color]
--  [color=508d76]Jugador[/color] = [color=76c379]Slime[/color] con amnesia
-- [color=933f45]ESCAPA  Y DESCUBRE LA VERDAD!!![/color]
+text = "[wave amp=10.0 freq=3.0 connected=1]- Its a [color=be7979]HORROR[/color] [color=7b99c8]Puzzle[/color]/[color=535c89]Adventure[/color] game
+-  [color=508d76]Player[/color] = [color=76c379]Slime[/color] with amnesia.
+- [color=933f45]Try to ESCAPE and unravel the TRUTH!!!![/color]
 "
 fit_content = true
 horizontal_alignment = 1
@@ -601,34 +730,50 @@ position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp3"]
 offset_left = -309.0
-offset_top = -164.0
+offset_top = -188.0
 offset_right = 291.0
-offset_bottom = -12.0
+offset_bottom = -36.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]¿GAMEPLAY?
-[/wave]
+text = "[wave amp=50.0 freq=5.0 connected=1][color=be7979]GAMEPLAY:
+
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp3"]
+offset_left = -324.0
+offset_top = -201.0
+offset_right = 309.0
+offset_bottom = 87.0
+theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
+theme_override_constants/paragraph_separation = 15
+theme_override_fonts/normal_font = ExtResource("120_yw3i3")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]The core loop of the game is structured like this:
 "
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp3"]
-offset_left = -267.0
-offset_top = -73.0
-offset_right = 267.0
-offset_bottom = 193.0
+offset_left = -276.0
+offset_top = -53.0
+offset_right = 258.0
+offset_bottom = 213.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[wave amp=10.0 freq=3.0 connected=1]
-[color=76c379]ACERTIJOS[/color]
+[color=76c379]PUZZLES[/color]
 
 
 
-[color=cc925e]FISICA[/color]				[color=dacb80]ESCALA[/color]
+[color=cc925e]PHYSICS[/color]				[color=dacb80]SCALE[/color]
 
 "
 fit_content = true
@@ -637,13 +782,13 @@ vertical_alignment = 1
 
 [node name="Indicator-Arrow" parent="SlideChanger/SlideTemp3" instance=ExtResource("121_ipt8a")]
 z_index = 0
-position = Vector2(-120, 54)
+position = Vector2(-125, 72)
 rotation = 2.0944
 scale = Vector2(1.8, 1.8)
 
 [node name="Indicator-Arrow2" parent="SlideChanger/SlideTemp3" instance=ExtResource("121_ipt8a")]
 z_index = 0
-position = Vector2(113, 50)
+position = Vector2(113.00003, 72)
 rotation = 1.0472
 scale = Vector2(1.8, 1.8)
 
@@ -653,15 +798,14 @@ position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp4"]
 offset_left = -309.0
-offset_top = -164.0
+offset_top = -201.0
 offset_right = 291.0
-offset_bottom = -12.0
+offset_bottom = -49.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]¿A QUE ME REFIERO?
-[/wave]
+text = "[wave amp=50.0 freq=5.0 connected=1][color=508d76]THIS MEANS:
 "
 fit_content = true
 horizontal_alignment = 1
@@ -669,10 +813,27 @@ vertical_alignment = 1
 
 [node name="Indicator-Arrow" parent="SlideChanger/SlideTemp4" node_paths=PackedStringArray("player") instance=ExtResource("121_ipt8a")]
 z_index = 0
-position = Vector2(-2, 85)
-scale = Vector2(4, 4)
+position = Vector2(-3, 132)
+scale = Vector2(2.5, 2.5)
 script = ExtResource("122_r6crb")
 player = NodePath("../../../Slime")
+
+[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp4"]
+offset_left = -313.0
+offset_top = -133.0
+offset_right = 298.0
+offset_bottom = 155.0
+theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
+theme_override_constants/paragraph_separation = 15
+theme_override_fonts/normal_font = ExtResource("120_yw3i3")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=3.0 connected=1]For each level you need to use the [color=cc925e]PHYSICS SYSTEM[/color] and [color=dacb80]SCALE SYSTEM[/color] of the game to solve puzzles. 
+You can play around to get a better understanding of each system.
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SlideTemp5" parent="SlideChanger" instance=ExtResource("8_lwi7m")]
 visible = false
@@ -680,15 +841,15 @@ position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp5"]
 offset_left = -366.0
-offset_top = -152.0
+offset_top = -164.0
 offset_right = 370.0
-offset_bottom = 50.0
+offset_bottom = 38.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]ESTRUCTURA
-[/wave]
+text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]STRUCTURE:
+
 "
 fit_content = true
 horizontal_alignment = 1
@@ -699,14 +860,15 @@ offset_left = -391.0
 offset_top = -94.0
 offset_right = 395.0
 offset_bottom = 172.0
+theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "[wave amp=10.0 freq=3.0 connected=1]
-[color=76c379]Por Zonas:[/color]
+The game is broken up into different [color=535c89]ZONES[/color], and each zone contains:
 
-[color=cc925e] + Mecanica nueva[/color]
-[color=dacb80] + 3 NIVELES[/color]
+[color=cc925e] + NEW MECHANIC[/color]
+[color=dacb80] + 3 PUZZLE LEVELS[/color]
 [wave amp=50.0 freq=25.0 connected=1][color=933f45]+ BOSS FIGHT[/color]
 "
 fit_content = true
@@ -719,32 +881,32 @@ position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp6"]
 offset_left = -366.0
-offset_top = -164.0
+offset_top = -189.0
 offset_right = 370.0
-offset_bottom = 38.0
+offset_bottom = 13.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 75
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]DE MOMENTO:
-[/wave]
+text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]RIGHT NOW:
+
 "
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp6"]
-offset_left = -391.0
-offset_top = -94.0
-offset_right = 395.0
-offset_bottom = 172.0
+offset_left = -361.0
+offset_top = -78.0
+offset_right = 360.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]
-[color=535c89] 4 ZONAS[/color]
-
-[wave amp=50.0 freq=25.0 connected=1][color=933f45]+ JEFE FINAL[/color]
+text = "[wave amp=10.0 freq=3.0 connected=1]There are
+[color=535c89] 4 ZONES[/color][wave amp=50.0 freq=25.0 connected=1][color=933f45]+ FINAL BOSS[/color][/wave]
+allready planned out, with the possibilty of adding more if development time allows.
 "
 fit_content = true
 horizontal_alignment = 1
@@ -763,7 +925,7 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]INSPIRACIONES:
+text = "[wave amp=50.0 freq=5.0 connected=1]INSPIRATIONS:
 [/wave]
 "
 fit_content = true
@@ -798,7 +960,7 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]ESTILO VISUAL"
+text = "[wave amp=50.0 freq=5.0 connected=1]VISUAL STYLE:"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -826,7 +988,7 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]ARTE CONCEPTUAL"
+text = "[wave amp=50.0 freq=5.0 connected=1]CONCEPT ART:"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -856,7 +1018,7 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]MAS REFINADO"
+text = "[wave amp=50.0 freq=5.0 connected=1]REFINED STYLE:"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -885,7 +1047,7 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 55
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]PUBLICO OBJETIVO
+text = "[wave amp=50.0 freq=5.0 connected=1]TARGET AUDIENCE:
 [/wave]
 "
 fit_content = true
@@ -900,9 +1062,9 @@ offset_bottom = 169.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]- [color=7b99c8] Edades[/color] [color=535c89]13+[/color]
--  Plataformas: [color=76c379]Steam[/color] [color=508d76](PC, Mac, Linux)[/color]
-- [color=be7979]FUTURO:[/color]  [color=933f45]CONSOLAS[/color]
+text = "[wave amp=10.0 freq=3.0 connected=1]- [color=7b99c8] AGES[/color] [color=535c89]13+[/color]
+-  PLATFORMS: [color=76c379]Steam[/color] [color=508d76](PC, Mac, Linux)[/color]
+- [color=be7979]FUTURE:[/color]  [color=933f45]CONSOLES[/color]
 "
 fit_content = true
 horizontal_alignment = 1
@@ -919,21 +1081,23 @@ offset_right = 401.0
 offset_bottom = -41.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
-theme_override_font_sizes/normal_font_size = 55
+theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]DETRAS DE [color=76c379]HYB[/color][color=cc925e]-DX![/color]
+text = "[wave amp=50.0 freq=5.0 connected=1]WHO IS BEHIND [color=76c379]HYB[/color][color=cc925e]-DX![/color]
 [/wave]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp12"]
-position = Vector2(-108, 51)
+modulate = Color(0.70796657, 0.7079665, 0.7079665, 1)
+position = Vector2(-114, 40)
 texture = ExtResource("132_ojcux")
 region_rect = Rect2(642, 0, 1280, 636)
 
 [node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp12"]
-position = Vector2(210, 51)
+modulate = Color(0.70796657, 0.7079665, 0.7079665, 1)
+position = Vector2(204, 40)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("133_vpook")
 region_rect = Rect2(642, 0, 1280, 636)
@@ -951,7 +1115,7 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 55
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]INTEGRANTES:
+text = "[wave amp=50.0 freq=5.0 connected=1]THE TEAM:
 [/wave]"
 fit_content = true
 horizontal_alignment = 1
@@ -1074,8 +1238,8 @@ offset_bottom = 40.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Creador de JellyDog
-+ Director / Programador
+text = "[wave amp=10.0 freq=3.0 connected=1]+ JellyDog Creator
++ Director / Programmer
 "
 fit_content = true
 horizontal_alignment = 1
@@ -1129,7 +1293,7 @@ offset_bottom = 40.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Artista digital
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Digital Artist
 + Social Media Manager
 "
 fit_content = true
@@ -1179,8 +1343,8 @@ offset_bottom = 40.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Director de arte digital
-+ Diseñador
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Digital Art Director
++ Designer
 "
 fit_content = true
 horizontal_alignment = 1
@@ -1235,7 +1399,7 @@ offset_bottom = 40.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Programador principal
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Lead Programmer
 + Game designer
 "
 fit_content = true
@@ -1291,7 +1455,7 @@ offset_bottom = 40.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Animador
+text = "[wave amp=10.0 freq=3.0 connected=1]+ Animator
 + Level Designer
 "
 fit_content = true
@@ -1328,21 +1492,21 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]Hablemos de:"
+text = "[wave amp=50.0 freq=5.0 connected=1]Now, let's talk"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp19"]
 offset_left = -391.0
-offset_top = -61.0
+offset_top = -76.0
 offset_right = 397.0
-offset_bottom = 121.0
+offset_bottom = 106.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=cc925e]DINERO!"
+text = "[wave amp=50.0 freq=5.0 connected=1][color=cc925e]MONEY!!!"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1360,7 +1524,7 @@ offset_bottom = 197.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]Estamos intentando conseguir....
+text = "[wave amp=10.0 freq=3.0 connected=1]We are hoping to get...
 "
 fit_content = true
 horizontal_alignment = 1
@@ -1371,15 +1535,15 @@ visible = false
 position = Vector2(576, 324)
 
 [node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp20"]
-offset_left = -391.0
+offset_left = -388.0
 offset_top = -164.0
-offset_right = 397.0
+offset_right = 400.0
 offset_bottom = 18.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=20.0 connected=1][color=cc925e]30K DOLARES"
+text = "[wave amp=50.0 freq=20.0 connected=1][color=cc925e]30K DOLLARS!"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1390,13 +1554,14 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_khd6a")
 
 [node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp20"]
-offset_left = -321.0
-offset_right = 309.0
+offset_left = -318.0
+offset_right = 312.0
 offset_bottom = 132.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]Para, de ser financiados, terminar el proyecto en [color=76c379]13 meses!
+text = "[wave amp=10.0 freq=3.0 connected=1]To finish our game in a short span of
+ [color=76c379]13 months.
 "
 fit_content = true
 horizontal_alignment = 1
@@ -1415,7 +1580,7 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
-text = "[wave amp=20.0 freq=20.0 connected=1][color=76c379]Pero, realmente..."
+text = "[wave amp=20.0 freq=20.0 connected=1][color=76c379]But honestly"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1426,13 +1591,15 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_3yh2k")
 
 [node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp21"]
-offset_left = -345.0
-offset_right = 128.0
-offset_bottom = 160.0
+offset_left = -332.0
+offset_top = -59.0
+offset_right = 89.0
+offset_bottom = 188.0
 theme_override_fonts/normal_font = ExtResource("120_yw3i3")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]Se aceptan ofertas! Solamente queremos terminar nuestro proyecto con todo el amor que merece ;)
+text = "[wave amp=10.0 freq=3.0 connected=1]We are open to negociations.
+We just want to finish the game with all the love and care we believe it deserves ;)
 "
 fit_content = true
 horizontal_alignment = 1
@@ -1440,7 +1607,7 @@ vertical_alignment = 1
 
 [node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp21"]
 modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(206, 85)
+position = Vector2(205, 65)
 scale = Vector2(0.5, 0.438)
 texture = ExtResource("146_1jnhg")
 
@@ -1451,39 +1618,8 @@ position = Vector2(1096, 617)
 position = Vector2(57, 617)
 scale = Vector2(1, 1)
 
-[node name="WoodenBox" parent="." instance=ExtResource("11_4jaj4")]
-position = Vector2(291, 614)
-
-[node name="WoodenBox2" parent="." instance=ExtResource("11_4jaj4")]
-position = Vector2(315, 614)
-
-[node name="WoodenBox3" parent="." instance=ExtResource("11_4jaj4")]
-position = Vector2(302, 596)
-
-[node name="WoodenBox4" parent="." instance=ExtResource("11_4jaj4")]
-position = Vector2(1009, 37)
-
-[node name="Button_red" parent="." instance=ExtResource("12_onjx4")]
-position = Vector2(162, 624)
-
-[node name="Door" parent="Button_red" instance=ExtResource("13_nwxs7")]
-position = Vector2(846, -552)
-rotation = -1.57079
-
-[node name="Swing-light2" parent="." node_paths=PackedStringArray("marker") instance=ExtResource("8_22lp2")]
-position = Vector2(1003, 10)
-marker = NodePath("../Marker2D")
-wait = 2.0
-
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1009, 13)
-
-[node name="Scale_button_green" parent="." instance=ExtResource("14_rxkxd")]
-position = Vector2(961, 624)
-activation_weight = 8.0
-
-[node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("127_86i5w")]
-position = Vector2(168, -109)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(576, 325)
@@ -1491,16 +1627,43 @@ color = Color(1, 0.819608, 0.647059, 1)
 energy = 0.7
 texture = ExtResource("9_71lks")
 texture_scale = 6.2
+metadata/_edit_lock_ = true
+
+[node name="Reseter" type="Node" parent="."]
+script = ExtResource("159_up760")
+
+[node name="WoodenBox" parent="." instance=ExtResource("11_4jaj4")]
+position = Vector2(638, 614)
+
+[node name="WoodenBox2" parent="." instance=ExtResource("11_4jaj4")]
+position = Vector2(660, 614)
+
+[node name="WoodenBox3" parent="." instance=ExtResource("11_4jaj4")]
+position = Vector2(649, 596)
 
 [node name="Shrink-Laser" parent="." instance=ExtResource("130_0o14r")]
-position = Vector2(95, 61)
+position = Vector2(95, 48)
 rotation = 1.57079
 target_scale = Vector2(2, 2)
 
 [node name="Grow-Laser" parent="." instance=ExtResource("131_fw0ny")]
-position = Vector2(1064, 110)
+position = Vector2(1064, 48)
 rotation = 1.57079
 target_scale = Vector2(6, 6)
+
+[node name="Scale_button_green" parent="." instance=ExtResource("14_rxkxd")]
+position = Vector2(961, 624)
+activation_weight = 8.0
+
+[node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("127_86i5w")]
+position = Vector2(168, -80)
+
+[node name="Scale_green_reciever2" parent="Scale_button_green" instance=ExtResource("127_86i5w")]
+position = Vector2(-219, -600)
+
+[node name="Door2" parent="Scale_button_green" instance=ExtResource("13_nwxs7")]
+position = Vector2(-97, -600)
+rotation = -1.57079
 
 [node name="Conveyor" parent="." instance=ExtResource("132_nfoht")]
 position = Vector2(1080, 650)
@@ -1508,5 +1671,84 @@ position = Vector2(1080, 650)
 [node name="Conveyor2" parent="." instance=ExtResource("132_nfoht")]
 position = Vector2(1033, 650)
 
+[node name="Conveyor3" parent="." instance=ExtResource("132_nfoht")]
+position = Vector2(119, 648)
+direction = "right"
+
+[node name="Conveyor4" parent="." instance=ExtResource("132_nfoht")]
+position = Vector2(72, 648)
+direction = "right"
+
+[node name="Button_red" parent="." instance=ExtResource("12_onjx4")]
+position = Vector2(191, 624)
+
+[node name="Button_Red_Signal" parent="Button_red" instance=ExtResource("165_gbbta")]
+position = Vector2(-165, -85)
+
+[node name="Button_Red_Signal2" parent="Button_red" instance=ExtResource("165_gbbta")]
+position = Vector2(215, -600)
+
+[node name="Door" parent="Button_red" instance=ExtResource("13_nwxs7")]
+position = Vector2(97, -600)
+rotation = -1.57079
+
+[node name="MeatBox" parent="." instance=ExtResource("158_ghq58")]
+position = Vector2(862, -26)
+
+[node name="Vial_green" parent="." instance=ExtResource("155_qkk3n")]
+position = Vector2(305, -27)
+
+[node name="Vial-Red" parent="." instance=ExtResource("156_ghq58")]
+position = Vector2(285, -15)
+
+[node name="Vial-blue" parent="." instance=ExtResource("157_up760")]
+position = Vector2(260, -25)
+
+[node name="Vial_green2" parent="." instance=ExtResource("155_qkk3n")]
+position = Vector2(305, -65)
+
+[node name="Vial-Red2" parent="." instance=ExtResource("156_ghq58")]
+position = Vector2(285, -53)
+
+[node name="Vial-blue2" parent="." instance=ExtResource("157_up760")]
+position = Vector2(260, -63)
+
+[node name="Vial_green3" parent="." instance=ExtResource("155_qkk3n")]
+position = Vector2(305, -108)
+
+[node name="Vial-Red3" parent="." instance=ExtResource("156_ghq58")]
+position = Vector2(285, -96)
+
+[node name="Vial-blue3" parent="." instance=ExtResource("157_up760")]
+position = Vector2(260, -106)
+
+[node name="Vial_green4" parent="." instance=ExtResource("155_qkk3n")]
+position = Vector2(369, -108)
+
+[node name="Vial-Red4" parent="." instance=ExtResource("156_ghq58")]
+position = Vector2(349, -96)
+
+[node name="Vial-blue4" parent="." instance=ExtResource("157_up760")]
+position = Vector2(324, -106)
+
+[node name="Vial_green5" parent="." instance=ExtResource("155_qkk3n")]
+position = Vector2(259, -80)
+
+[node name="Vial-Red5" parent="." instance=ExtResource("156_ghq58")]
+position = Vector2(239, -68)
+
+[node name="Vial-blue5" parent="." instance=ExtResource("157_up760")]
+position = Vector2(214, -78)
+
+[node name="Vial_green6" parent="." instance=ExtResource("155_qkk3n")]
+position = Vector2(361, -48)
+
+[node name="Vial-Red6" parent="." instance=ExtResource("156_ghq58")]
+position = Vector2(341, -36)
+
+[node name="Vial-blue6" parent="." instance=ExtResource("157_up760")]
+position = Vector2(316, -46)
+
+[connection signal="visibility_changed" from="SlideChanger/SlideTemp22" to="SlideChanger/SlideTemp22/AnimatedSprite2D" method="_on_slide_temp_visibility_changed"]
+
 [editable path="dont touch"]
-[editable path="Swing-light2"]

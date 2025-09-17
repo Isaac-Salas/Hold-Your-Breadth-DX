@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://fnvs7y1btss0"]
 
 [ext_resource type="Script" uid="uid://dv1tyb5i3nsus" path="res://scenes/shaders/options_menu.gd" id="1_5qxbs"]
-[ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="2_l06u5"]
+[ext_resource type="FontFile" uid="uid://d05prtq81usf1" path="res://assets/Fonts/DePixelHalbfett.otf" id="2_l06u5"]
 [ext_resource type="Theme" uid="uid://c2lrva05p48" path="res://assets/settings/slider/Slider.tres" id="2_y87k4"]
-[ext_resource type="Texture2D" uid="uid://cg85n4jcgfksb" path="res://assets/settings/slider/brightness_foco.png" id="3_pw6sq"]
-[ext_resource type="Texture2D" uid="uid://cofyya0ve02o7" path="res://assets/settings/slider/Contrast_foco.png" id="5_nr27i"]
-[ext_resource type="Texture2D" uid="uid://n14hf12s4vse" path="res://assets/settings/slider/Satu_foco.png" id="6_s4muq"]
+[ext_resource type="Texture2D" uid="uid://bsxk15rh8kgab" path="res://assets/settings/slider/brightness_foco.png" id="3_pw6sq"]
+[ext_resource type="Texture2D" uid="uid://ccr4wia3fpxpm" path="res://assets/settings/slider/Contrast_foco.png" id="5_nr27i"]
+[ext_resource type="Texture2D" uid="uid://d2mdan1wv7huy" path="res://assets/settings/slider/Satu_foco.png" id="6_s4muq"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 process_mode = 3
@@ -183,6 +183,7 @@ theme_override_font_sizes/font_size = 25
 text = "Back"
 
 [node name="QUIT" type="Button" parent="."]
+visible = false
 offset_left = 753.0
 offset_top = 544.0
 offset_right = 890.0
