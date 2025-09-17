@@ -25,6 +25,6 @@ func drop_current_slide():
 	else:
 		if transition.target_scene != "":
 			print("Trying trans")
-			transition.transition_to(transition.target_scene)
+			await transition.transition_to(transition.target_scene)
 		else:
 			OS.shell_open("https://store.steampowered.com/app/3901700/Hold_Your_Breadth_DX/")

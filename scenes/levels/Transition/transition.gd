@@ -19,7 +19,8 @@ func _ready() -> void:
 func transition_to(path : String) -> void:
 	ap.play("Closing")
 	await ap.animation_finished
-	get_tree().change_scene_to_file(path)
+	if get_tree() != null:
+		get_tree().change_scene_to_file(path)
 
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
