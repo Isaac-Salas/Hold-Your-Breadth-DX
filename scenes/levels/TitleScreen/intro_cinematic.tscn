@@ -841,13 +841,8 @@ texture = ExtResource("182_hhv34")
 texture_scale = 4.0
 
 [node name="Transition" parent="." instance=ExtResource("183_lslwy")]
+visible = false
 scale = Vector2(1.5, 1.5)
-
-[node name="Sprite2D" parent="Transition" index="1"]
-position = Vector2(384, -108)
-
-[node name="Sprite2D2" parent="Transition" index="2"]
-position = Vector2(384, 540)
 
 [node name="Menu" parent="." node_paths=PackedStringArray("screenstuff", "fadeout") instance=ExtResource("193_qey2u")]
 visible = false

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://mrh5awgsvrq0"]
 
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="1_8dbtj"]
-[ext_resource type="Texture2D" uid="uid://wgb1g3xauxuo" path="res://assets/Pitch/Whiteboard.png" id="2_h3cre"]
-[ext_resource type="Texture2D" uid="uid://duvjw7ieg1f6i" path="res://assets/lights/Lamparacolgosa.png" id="4_m3u40"]
-[ext_resource type="Texture2D" uid="uid://v8p2dhkep0r1" path="res://assets/Pitch/Art-NoBack-Title.png" id="5_lynlg"]
-[ext_resource type="FontFile" uid="uid://dvvv8jd70uogc" path="res://assets/Fonts/DePixelHalbfett.otf" id="5_m3u40"]
+[ext_resource type="Texture2D" uid="uid://dqrm0s43nbtln" path="res://assets/Pitch/Whiteboard.png" id="2_h3cre"]
+[ext_resource type="Texture2D" uid="uid://dk3gxjoerqmah" path="res://assets/lights/Lamparacolgosa.png" id="4_m3u40"]
+[ext_resource type="Texture2D" uid="uid://qn8e4r4xj521" path="res://assets/Pitch/Art-NoBack-Title.png" id="5_lynlg"]
+[ext_resource type="FontFile" uid="uid://d05prtq81usf1" path="res://assets/Fonts/DePixelHalbfett.otf" id="5_m3u40"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="6_lynlg"]
 
 [node name="Thanks!" type="Node2D"]

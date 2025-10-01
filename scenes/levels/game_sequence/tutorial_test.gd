@@ -16,6 +16,7 @@ extends Node2D
 @onready var animp = $AnimationPlayer
 @onready var message1 = $"../../RichTextLabel"
 @onready var message2 = $"../../RichTextLabel2"
+@onready var set_once : bool = false
 
 
 
@@ -184,8 +185,10 @@ func _process(delta):
 					
 					
 			15:
-				Manager.setter("Level1_1t", false)
-				Manager.save_game()
+				if set_once == false:
+					Manager.setter("Level1_1t", false)
+					Manager.save_game()
+					set_once = true
 				dialog.position.y = -80
 				dialog.size = Vector2(312, 50)
 				dialog.animated_sprite_2d.scale = Vector2(0.6,0.6)

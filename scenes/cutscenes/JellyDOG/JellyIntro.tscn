@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq67ywql5p50l"]
+[gd_scene load_steps=6 format=3 uid="uid://cm8kxs3bx3hnx"]
 
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="1_gem5w"]
 [ext_resource type="Script" uid="uid://duqjcmce1wpy7" path="res://scenes/cutscenes/JellyDOG/jelly_intro.gd" id="1_p6wik"]
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="2_6wsk4"]
-[ext_resource type="Texture2D" uid="uid://doxwr2xh53k6t" path="res://assets/DOG.png" id="2_ihy1v"]
+[ext_resource type="Texture2D" uid="uid://6lv5g2j556co" path="res://assets/DOG.png" id="2_ihy1v"]
 [ext_resource type="PackedScene" uid="uid://b0pi4ocu1rpdi" path="res://scenes/levels/Transition/transition.tscn" id="5_7241v"]
-[ext_resource type="PackedScene" uid="uid://7supi3qqww4n" path="res://scenes/levels/TitleScreen/intro_cinematic.tscn" id="6_pmtte"]
 
 [node name="JellyIntro" type="Node2D"]
 script = ExtResource("1_p6wik")
@@ -43,7 +42,12 @@ autostart = true
 
 [node name="Transition" parent="." instance=ExtResource("5_7241v")]
 scale = Vector2(1.5, 1.5)
-target_scene = ExtResource("6_pmtte")
+
+[node name="Sprite2D" parent="Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="Transition" index="2"]
+position = Vector2(384, 540)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(576, 320)

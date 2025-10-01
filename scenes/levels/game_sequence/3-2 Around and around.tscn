@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://ccfef3di5wjk4"]
+[gd_scene load_steps=49 format=4 uid="uid://ccfef3di5wjk4"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_1h2ii"]
 [ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_8he8t"]
@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bjeobrkgw5ahv" path="res://scenes/objects/swing-light.tscn" id="7_8he8t"]
 [ext_resource type="PackedScene" uid="uid://delaq1iewwwqy" path="res://scenes/objects/light.tscn" id="8_ghln3"]
 [ext_resource type="PackedScene" uid="uid://byn0alcsqts11" path="res://scenes/objects/door/Door.tscn" id="9_dmco3"]
-[ext_resource type="Script" uid="uid://plp75xlwu3vv" path="res://scenes/objects/door/door.gd" id="10_a4n0s"]
-[ext_resource type="Texture2D" uid="uid://r8ffoo4a1acs" path="res://assets/objects/small_door.png" id="11_itmnt"]
-[ext_resource type="AudioStream" uid="uid://bhwv8um6ye01b" path="res://assets/audioshit/PUERTA.mp3" id="12_kxx6j"]
+[ext_resource type="Script" uid="uid://4ak722pryrv0" path="res://scenes/objects/door/door.gd" id="10_a4n0s"]
+[ext_resource type="Texture2D" uid="uid://bjbi48p47o5xa" path="res://assets/objects/small_door.png" id="11_itmnt"]
+[ext_resource type="AudioStream" uid="uid://xss4q0epm3th" path="res://assets/audioshit/PUERTA.mp3" id="12_kxx6j"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="13_h4poa"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="14_r4o75"]
 [ext_resource type="PackedScene" uid="uid://b8i4knynri4u" path="res://scenes/objects/scale_green/scale_green_signal_reciever.tscn" id="15_l61mo"]
@@ -20,8 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://n5bmgpgmxt8u" path="res://scenes/objects/platform.tscn" id="18_43sv5"]
 [ext_resource type="PackedScene" uid="uid://xcup5opmlyy7" path="res://scenes/shaders/ScreenEffects.tscn" id="19_fppha"]
 [ext_resource type="Script" uid="uid://dprgkh5qmapau" path="res://scenes/levels/Transition/transition.gd" id="20_1n5v1"]
-[ext_resource type="Texture2D" uid="uid://mwcsfh74sv65" path="res://assets/objects/Transition.png" id="21_0qhmr"]
-[ext_resource type="PackedScene" uid="uid://bwaomego0a1rr" path="res://scenes/levels/game_sequence/3-3 One step at a time.tscn" id="21_86q3s"]
+[ext_resource type="Texture2D" uid="uid://c850slii52df2" path="res://assets/objects/Transition.png" id="21_0qhmr"]
 [ext_resource type="PackedScene" uid="uid://d3umetes5s8vo" path="res://scenes/objects/indicator_x.tscn" id="23_7fmg8"]
 [ext_resource type="PackedScene" uid="uid://b7xm20cid1lis" path="res://assets/music/music_submanager.tscn" id="23_pfpt2"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="24_p1rr8"]
@@ -298,9 +297,9 @@ LevelNumber = 2
 
 [node name="Tilemap" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAgAAAADAAEAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAACAAIAAAAAAAUAAAAFAAAAAAAAAAQAAAAEAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAAAAAAEAAEAAAADAAAAAAAAAAIAAAAGAAAAAAABAAEAAAAHAAAAAAABAAEAAAAPAAAAAAAFAAAAAAAPAAMAAAAFAAAAAAAPAAIAAAAFAAAAAAAPAAEAAAAEAAEAAAADAAQAAAADAAEAAAAEAAQAAAAEAAAAAAAFAAQAAAAEAAAAAAAGAAQAAAAEAAAAAAAGAAEAAAAAAAIAAAAHAAQAAAAEAAAAAAAIAAQAAAADAAIAAAADAP//AAAEAAEAAAADAP7/AAAFAAAAAAADAP3/AAAFAAAAAAADAPz/AAAFAAAAAAAGAP//AAAAAAEAAAAGAP7/AAAAAAEAAAAGAP3/AAAAAAEAAAAGAPz/AAAAAAEAAAADAPv/AAAEAAEAAAAGAPv/AAAAAAEAAAAGAPr/AAAAAAAAAAABAAgAAAAEAAAAAAAPAAQAAAAFAAAAAAAPAAcAAAAFAAEAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAAAP//AAAFAAAAAAAAAP7/AAAEAAEAAAAAAP3/AAAEAAEAAAAAAPz/AAAEAAEAAAAAAPv/AAAFAAEAAAAPAP//AAAFAAAAAAAPAP7/AAAEAAEAAAAPAP3/AAAFAAAAAAAPAPz/AAAEAAEAAAAHAP//AAACAAEAAAAHAP7/AAACAAEAAAAHAP3/AAACAAEAAAAHAPz/AAACAAEAAAAHAPv/AAACAAEAAAADAPr/AAAFAAEAAAAHAPr/AAACAAAAAAAPAPv/AAAFAAEAAAAJAAEAAAACAAIAAAAJAAAAAAACAAAAAAAIAAAAAAABAAAAAAAHAAEAAAABAAIAAAAIAAEAAAABAAIAAAAPAAUAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAAADAAEAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAAHAAgAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAACAAIAAAAAAAUAAAAFAAAAAAAAAAQAAAAEAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAAAAAAEAAEAAAADAAAAAAAAAAIAAAAGAAAAAAABAAEAAAAHAAAAAAABAAEAAAAPAAAAAAAFAAAAAAAPAAMAAAAFAAAAAAAPAAIAAAAFAAAAAAAPAAEAAAAEAAEAAAADAAQAAAADAAEAAAAEAAQAAAAEAAAAAAAFAAQAAAAEAAAAAAAGAAQAAAADAAIAAAAGAAEAAAAAAAIAAAADAP//AAAEAAEAAAADAP7/AAAFAAAAAAADAP3/AAAFAAAAAAADAPz/AAAFAAAAAAAGAP//AAAAAAEAAAAGAP7/AAAAAAEAAAAGAP3/AAAAAAEAAAAGAPz/AAAAAAEAAAADAPv/AAAEAAEAAAAGAPv/AAAAAAEAAAAGAPr/AAAAAAAAAAABAAgAAAAEAAAAAAAPAAQAAAAFAAAAAAAPAAcAAAAFAAEAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAAAP//AAAFAAAAAAAAAP7/AAAEAAEAAAAAAP3/AAAEAAEAAAAAAPz/AAAEAAEAAAAAAPv/AAAFAAEAAAAPAP//AAAFAAAAAAAPAP7/AAAEAAEAAAAPAP3/AAAFAAAAAAAPAPz/AAAEAAEAAAAHAP//AAACAAEAAAAHAP7/AAACAAEAAAAHAP3/AAACAAEAAAAHAPz/AAACAAEAAAAHAPv/AAACAAEAAAADAPr/AAAFAAEAAAAHAPr/AAACAAAAAAAPAPv/AAAFAAEAAAAJAAEAAAACAAIAAAAJAAAAAAACAAAAAAAIAAAAAAABAAAAAAAHAAEAAAABAAIAAAAIAAEAAAABAAIAAAAPAAUAAAACAAIAAAA=")
 tile_set = ExtResource("2_8he8t")
-rendering_quadrant_size = 48
+rendering_quadrant_size = 1
 
 [node name="Player" parent="." instance=ExtResource("3_pfpt2")]
 position = Vector2(66, 11)
@@ -314,12 +313,15 @@ position = Vector2(0, 1)
 
 [node name="Vial-blue" parent="Pickups" instance=ExtResource("30_kxx6j")]
 position = Vector2(149, 143)
+use_screen_queue = false
 
 [node name="Vial-Red" parent="Pickups" instance=ExtResource("29_itmnt")]
 position = Vector2(135, 164)
+use_screen_queue = false
 
 [node name="Vial_green4" parent="Pickups" instance=ExtResource("5_p1rr8")]
 position = Vector2(116, 144)
+use_screen_queue = false
 
 [node name="WoodenBox2" parent="Pickups" instance=ExtResource("6_qccyy")]
 position = Vector2(665, 50)
@@ -440,7 +442,7 @@ modulate = Color(0.408333, 0.375, 0.5, 1)
 z_index = 50
 position = Vector2(1, 0)
 script = ExtResource("20_1n5v1")
-target_scene = ExtResource("21_86q3s")
+target_scene = "uid://bwaomego0a1rr"
 metadata/_edit_lock_ = true
 
 [node name="Trigger" type="Area2D" parent="Transition"]
@@ -559,6 +561,9 @@ visible = false
 position = Vector2(405, 216)
 direction = "right"
 type = "RIGHT"
+
+[node name="Platform" parent="." instance=ExtResource("18_43sv5")]
+position = Vector2(384, 176)
 
 [connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/Start" method="toggle_door"]
 [connection signal="pressed" from="Buttons/Scale_button_green" to="Doors/Exit" method="toggle_door"]

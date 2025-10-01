@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bx27mjdwpsn4g"]
 
-[ext_resource type="Script" uid="uid://btgmw3kg7lvjh" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
-[ext_resource type="Texture2D" uid="uid://ckpx6fehdg0t2" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
-[ext_resource type="Script" uid="uid://c2yjabjh3cocd" path="res://components/spawner_component.gd" id="3_245jv"]
+[ext_resource type="Script" uid="uid://c10avmbki61qv" path="res://scenes/objects/pickup-component.gd" id="1_ux5yh"]
+[ext_resource type="Texture2D" uid="uid://dmlgdmvkv27cc" path="res://assets/objects/cajita-madera.png" id="2_2fc7s"]
+[ext_resource type="Script" uid="uid://dou5h5mjmu8sy" path="res://components/spawner_component.gd" id="3_245jv"]
 [ext_resource type="PackedScene" uid="uid://fsxjau4kfu71" path="res://scenes/objects/brokenwoodenboxes.tscn" id="4_bikkg"]
-[ext_resource type="AudioStream" uid="uid://dam8y4kc0dt0u" path="res://assets/SFX/Boxcrash.mp3" id="5_d223p"]
+[ext_resource type="AudioStream" uid="uid://b0drk7drfkv7k" path="res://assets/SFX/Boxcrash.mp3" id="5_d223p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfjh"]
 size = Vector2(18, 18)
@@ -64,6 +64,10 @@ attenuation = 4.0
 panning_strength = 3.0
 bus = &"SFX"
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

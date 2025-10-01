@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://2mjycjtvw024"]
+[gd_scene load_steps=26 format=4 uid="uid://2mjycjtvw024"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_bosr8"]
 [ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_leoh0"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cceynupboum3" path="res://scenes/pitch/slide_temp.tscn" id="9_rsylm"]
 [ext_resource type="FontFile" uid="uid://d05prtq81usf1" path="res://assets/Fonts/DePixelHalbfett.otf" id="10_34dsw"]
 [ext_resource type="Texture2D" uid="uid://qn8e4r4xj521" path="res://assets/Pitch/Art-NoBack-Title.png" id="11_ec875"]
-[ext_resource type="Script" uid="uid://bb475pwwchmkp" path="res://assets/Pitch/reseter.gd" id="13_1wfu1"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="22_qsunf"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="23_b3hya"]
 [ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="24_0xpi4"]
@@ -42,6 +41,7 @@ rendering_quadrant_size = 1
 
 [node name="Transition" parent="." instance=ExtResource("4_6onja")]
 scale = Vector2(1.5, 1.5)
+target_scene = "uid://u8latgnj6og5"
 
 [node name="dont touch" parent="." instance=ExtResource("6_b8wjx")]
 
@@ -64,22 +64,21 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("10_34dsw")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]THANKS A LOT FOR YOUR [color=933f45]ATTENTION!!!!"
+text = "[wave amp=50.0 freq=5.0 connected=1]THANK YOU A LOT FOR [color=933f45]PLAYING!!!!"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
 offset_left = -321.0
-offset_top = 75.0
+offset_top = 85.0
 offset_right = 364.0
-offset_bottom = 244.0
+offset_bottom = 254.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("10_34dsw")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]Press continue to check out:[/color]
-[color=508d76]-> Hold Your Breadth DX on STEAM <-"
+text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]Press continue to go back to level select.[/color]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -107,9 +106,6 @@ energy = 0.7
 texture = ExtResource("42_bv68m")
 texture_scale = 6.2
 metadata/_edit_lock_ = true
-
-[node name="Reseter" type="Node" parent="."]
-script = ExtResource("13_1wfu1")
 
 [node name="WoodenBox" parent="." instance=ExtResource("36_00kmt")]
 position = Vector2(638, 614)
@@ -176,56 +172,74 @@ position = Vector2(862, -26)
 
 [node name="Vial_green" parent="." instance=ExtResource("24_0xpi4")]
 position = Vector2(305, -27)
+use_screen_queue = false
 
 [node name="Vial-Red" parent="." instance=ExtResource("25_v1dn2")]
 position = Vector2(285, -15)
+use_screen_queue = false
 
 [node name="Vial-blue" parent="." instance=ExtResource("26_841uf")]
 position = Vector2(260, -25)
+use_screen_queue = false
 
 [node name="Vial_green2" parent="." instance=ExtResource("24_0xpi4")]
 position = Vector2(305, -65)
+use_screen_queue = false
 
 [node name="Vial-Red2" parent="." instance=ExtResource("25_v1dn2")]
 position = Vector2(285, -53)
+use_screen_queue = false
 
 [node name="Vial-blue2" parent="." instance=ExtResource("26_841uf")]
 position = Vector2(260, -63)
+use_screen_queue = false
 
 [node name="Vial_green3" parent="." instance=ExtResource("24_0xpi4")]
 position = Vector2(305, -108)
+use_screen_queue = false
 
 [node name="Vial-Red3" parent="." instance=ExtResource("25_v1dn2")]
 position = Vector2(285, -96)
+use_screen_queue = false
 
 [node name="Vial-blue3" parent="." instance=ExtResource("26_841uf")]
 position = Vector2(260, -106)
+use_screen_queue = false
 
 [node name="Vial_green4" parent="." instance=ExtResource("24_0xpi4")]
 position = Vector2(369, -108)
+use_screen_queue = false
 
 [node name="Vial-Red4" parent="." instance=ExtResource("25_v1dn2")]
 position = Vector2(349, -96)
+use_screen_queue = false
 
 [node name="Vial-blue4" parent="." instance=ExtResource("26_841uf")]
 position = Vector2(324, -106)
+use_screen_queue = false
 
 [node name="Vial_green5" parent="." instance=ExtResource("24_0xpi4")]
 position = Vector2(259, -80)
+use_screen_queue = false
 
 [node name="Vial-Red5" parent="." instance=ExtResource("25_v1dn2")]
 position = Vector2(239, -68)
+use_screen_queue = false
 
 [node name="Vial-blue5" parent="." instance=ExtResource("26_841uf")]
 position = Vector2(214, -78)
+use_screen_queue = false
 
 [node name="Vial_green6" parent="." instance=ExtResource("24_0xpi4")]
 position = Vector2(361, -48)
+use_screen_queue = false
 
 [node name="Vial-Red6" parent="." instance=ExtResource("25_v1dn2")]
 position = Vector2(341, -36)
+use_screen_queue = false
 
 [node name="Vial-blue6" parent="." instance=ExtResource("26_841uf")]
 position = Vector2(316, -46)
+use_screen_queue = false
 
 [editable path="dont touch"]

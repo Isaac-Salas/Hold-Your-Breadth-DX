@@ -7,6 +7,7 @@ extends StaticBody2D
 var first = true
 
 func _ready() -> void:
+	ap.play("RESET")
 	toggle_door(isOpen, 0)
 	if get_parent().has_signal("pressed"):
 		get_parent().connect("pressed", toggle_door)

@@ -13,6 +13,7 @@ class_name ObjectClass
 @onready var detector : Area2D = $Detector
 @export var starting_scale = 2.0
 @onready var picked : bool = false
+@export var use_screen_queue : bool = false
 const OUTLINE = preload("res://scenes/objects/Shaders/outline.gdshader")
 var first = true
 
@@ -60,7 +61,7 @@ func set_size(target_size):
 	detector.scale = target_size/2
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	if first:
 		first = false
 		return
@@ -69,3 +70,9 @@ func _on_body_entered(body):
 		audio_stream_player_2d.play()
 	if break_after_throw == true:
 		destroy()
+
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	if use_screen_queue == true:
+		self.queue_free()

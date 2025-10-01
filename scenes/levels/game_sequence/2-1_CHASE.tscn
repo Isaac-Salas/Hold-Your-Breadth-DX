@@ -1018,6 +1018,12 @@ target_scene = "uid://kqk0xh237fw1"
 monitoring = false
 monitorable = false
 
+[node name="Sprite2D" parent="CharacterBody2D2/Transition" index="1"]
+position = Vector2(384, -108)
+
+[node name="Sprite2D2" parent="CharacterBody2D2/Transition" index="2"]
+position = Vector2(384, 540)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D2"]
 libraries = {
 &"": SubResource("AnimationLibrary_mcopt")
@@ -1102,129 +1108,171 @@ position = Vector2(2703, 16)
 
 [node name="WoodenBox4" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(920, -272)
+use_screen_queue = true
 
 [node name="WoodenBox5" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(936, -272)
+use_screen_queue = true
 
 [node name="WoodenBox6" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(952, -272)
+use_screen_queue = true
 
 [node name="WoodenBox7" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(968, -272)
+use_screen_queue = true
 
 [node name="WoodenBox8" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(984, -272)
+use_screen_queue = true
 
 [node name="WoodenBox9" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -272)
+use_screen_queue = true
 
 [node name="WoodenBox10" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -272)
+use_screen_queue = true
 
 [node name="WoodenBox11" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(920, -288)
+use_screen_queue = true
 
 [node name="WoodenBox12" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(936, -288)
+use_screen_queue = true
 
 [node name="WoodenBox13" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(952, -288)
+use_screen_queue = true
 
 [node name="WoodenBox14" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(968, -288)
+use_screen_queue = true
 
 [node name="WoodenBox15" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(984, -288)
+use_screen_queue = true
 
 [node name="WoodenBox16" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -288)
+use_screen_queue = true
 
 [node name="WoodenBox17" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -288)
+use_screen_queue = true
 
 [node name="WoodenBox18" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(920, -304)
+use_screen_queue = true
 
 [node name="WoodenBox19" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(936, -304)
+use_screen_queue = true
 
 [node name="WoodenBox20" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(952, -304)
+use_screen_queue = true
 
 [node name="WoodenBox21" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(968, -304)
+use_screen_queue = true
 
 [node name="WoodenBox22" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(984, -304)
+use_screen_queue = true
 
 [node name="WoodenBox23" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -304)
+use_screen_queue = true
 
 [node name="WoodenBox24" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1000, -304)
+use_screen_queue = true
 
 [node name="WoodenBox25" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1112, -272)
+use_screen_queue = true
 
 [node name="WoodenBox26" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1128, -272)
+use_screen_queue = true
 
 [node name="WoodenBox27" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1144, -272)
+use_screen_queue = true
 
 [node name="WoodenBox28" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1160, -272)
+use_screen_queue = true
 
 [node name="WoodenBox29" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1176, -272)
+use_screen_queue = true
 
 [node name="WoodenBox30" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -272)
+use_screen_queue = true
 
 [node name="WoodenBox31" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -272)
+use_screen_queue = true
 
 [node name="WoodenBox32" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1112, -288)
+use_screen_queue = true
 
 [node name="WoodenBox33" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1128, -288)
+use_screen_queue = true
 
 [node name="WoodenBox34" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1144, -288)
+use_screen_queue = true
 
 [node name="WoodenBox35" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1160, -288)
+use_screen_queue = true
 
 [node name="WoodenBox36" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1176, -288)
+use_screen_queue = true
 
 [node name="WoodenBox37" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -288)
+use_screen_queue = true
 
 [node name="WoodenBox38" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -288)
+use_screen_queue = true
 
 [node name="WoodenBox39" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1112, -304)
+use_screen_queue = true
 
 [node name="WoodenBox40" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1128, -304)
+use_screen_queue = true
 
 [node name="WoodenBox41" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1144, -304)
+use_screen_queue = true
 
 [node name="WoodenBox42" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1160, -304)
+use_screen_queue = true
 
 [node name="WoodenBox43" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1176, -304)
+use_screen_queue = true
 
 [node name="WoodenBox44" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -304)
+use_screen_queue = true
 
 [node name="WoodenBox45" parent="CielingBoxes" instance=ExtResource("21_kyd7a")]
 position = Vector2(1192, -304)
+use_screen_queue = true
 
 [node name="Button_red" parent="." instance=ExtResource("24_lnmw1")]
 position = Vector2(936, 744)
@@ -1256,47 +1304,60 @@ rotation = 1.57079
 
 [node name="SteelTable2" parent="Clutter/Boxes" instance=ExtResource("16_sdar4")]
 position = Vector2(4932, 623)
+use_screen_queue = false
 
 [node name="Indicator-X" parent="Clutter/Boxes" instance=ExtResource("20_lmnyd")]
 position = Vector2(4933, 590)
 
 [node name="Vial_green" parent="Clutter/Boxes" instance=ExtResource("17_67d33")]
 position = Vector2(4942, 602)
+use_screen_queue = false
 
 [node name="Vial-Red" parent="Clutter/Boxes" instance=ExtResource("18_s17nv")]
 position = Vector2(4920, 603)
+use_screen_queue = false
 
 [node name="Vial-blue" parent="Clutter/Boxes" instance=ExtResource("19_7s41i")]
 position = Vector2(4932, 585)
+use_screen_queue = false
 
 [node name="HamsterSetpiece" type="Node" parent="Clutter"]
 
 [node name="Vial_green" parent="Clutter/HamsterSetpiece" instance=ExtResource("17_67d33")]
 position = Vector2(2370, 629)
+use_screen_queue = false
 
 [node name="Vial-Red" parent="Clutter/HamsterSetpiece" instance=ExtResource("18_s17nv")]
 position = Vector2(2388, 632)
+use_screen_queue = false
 
 [node name="Vial-blue" parent="Clutter/HamsterSetpiece" instance=ExtResource("19_7s41i")]
 position = Vector2(2380, 608)
+use_screen_queue = false
 
 [node name="Vial_green2" parent="Clutter/HamsterSetpiece" instance=ExtResource("17_67d33")]
 position = Vector2(2330, 629)
+use_screen_queue = false
 
 [node name="Vial-Red2" parent="Clutter/HamsterSetpiece" instance=ExtResource("18_s17nv")]
 position = Vector2(2348, 632)
+use_screen_queue = false
 
 [node name="Vial-blue2" parent="Clutter/HamsterSetpiece" instance=ExtResource("19_7s41i")]
 position = Vector2(2340, 608)
+use_screen_queue = false
 
 [node name="Vial_green3" parent="Clutter/HamsterSetpiece" instance=ExtResource("17_67d33")]
 position = Vector2(2410, 629)
+use_screen_queue = false
 
 [node name="Vial-Red3" parent="Clutter/HamsterSetpiece" instance=ExtResource("18_s17nv")]
 position = Vector2(2428, 632)
+use_screen_queue = false
 
 [node name="Vial-blue3" parent="Clutter/HamsterSetpiece" instance=ExtResource("19_7s41i")]
 position = Vector2(2420, 608)
+use_screen_queue = false
 
 [node name="Path2D" type="Path2D" parent="Clutter/HamsterSetpiece"]
 position = Vector2(-4326, 0)
@@ -1354,25 +1415,31 @@ position = Vector2(4879, 370)
 
 [node name="Vial-Red" parent="Clutter/Scientist beginning" instance=ExtResource("18_s17nv")]
 position = Vector2(4839, 607)
+use_screen_queue = false
 
 [node name="Vial_green2" parent="Clutter/Scientist beginning" instance=ExtResource("17_67d33")]
 position = Vector2(4884, 614)
+use_screen_queue = false
 
 [node name="Vial_green3" parent="Clutter/Scientist beginning" instance=ExtResource("17_67d33")]
 position = Vector2(4781, 630)
 rotation = -0.889068
+use_screen_queue = false
 
 [node name="Vial_green4" parent="Clutter/Scientist beginning" instance=ExtResource("17_67d33")]
 position = Vector2(4801, 591)
 rotation = 1.77727
+use_screen_queue = false
 
 [node name="Vial-blue2" parent="Clutter/Scientist beginning" instance=ExtResource("19_7s41i")]
 position = Vector2(4826, 548)
 rotation = 0.580128
+use_screen_queue = false
 
 [node name="Vial-blue" parent="Clutter/Scientist beginning" instance=ExtResource("19_7s41i")]
 position = Vector2(4858, 632)
 rotation = -0.616894
+use_screen_queue = false
 
 [node name="Lamp" parent="Clutter/Scientist beginning" instance=ExtResource("22_01tns")]
 position = Vector2(5127, 641)

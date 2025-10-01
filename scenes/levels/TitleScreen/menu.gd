@@ -69,7 +69,6 @@ func _on_levels_pressed():
 
 	transition.transition_to(Preloader.LEVEL_SELECT)
 
-
 func _on_options_mouse_entered():
 	options_sprite.play("hover")
 	await options_sprite.animation_finished
