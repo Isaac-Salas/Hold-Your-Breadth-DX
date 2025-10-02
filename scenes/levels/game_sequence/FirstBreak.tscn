@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://drv0bs02lmbjm"]
+[gd_scene load_steps=27 format=4 uid="uid://drv0bs02lmbjm"]
 
 [ext_resource type="Script" uid="uid://bp1pakakv5oit" path="res://scenes/levels/template/template.gd" id="1_v36a2"]
 [ext_resource type="TileSet" uid="uid://dgyn0xs2w2l78" path="res://scenes/tileset/tileset.tres" id="2_xsdmn"]
@@ -8,37 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://ciok3inm634ug" path="res://player/player.tscn" id="6_c3ju5"]
 [ext_resource type="Script" uid="uid://lhma1ndtknje" path="res://scenes/levels/game_sequence/slide_changer.gd" id="7_dcmsv"]
 [ext_resource type="PackedScene" uid="uid://cceynupboum3" path="res://scenes/pitch/slide_temp.tscn" id="8_jjsu5"]
+[ext_resource type="Texture2D" uid="uid://dobvgrufgiqf7" path="res://assets/objects/meatbox-bio.png" id="10_ffog2"]
 [ext_resource type="FontFile" uid="uid://d05prtq81usf1" path="res://assets/Fonts/DePixelHalbfett.otf" id="121_svgff"]
 [ext_resource type="PackedScene" uid="uid://73jmphxe2m6i" path="res://scenes/objects/indicator_arrow.tscn" id="124_ochgm"]
 [ext_resource type="Script" uid="uid://oc7gr5y64pfn" path="res://scenes/pitch/indicator_arrow_look.gd" id="125_sj8a2"]
-[ext_resource type="Texture2D" uid="uid://cjerqqogort1u" path="res://assets/Pitch/Portal_logo.png" id="126_4hsmq"]
-[ext_resource type="Texture2D" uid="uid://0t7hyud7u5s7" path="res://assets/Pitch/Half-Life_lambda_logo.svg.png" id="127_5ch8b"]
-[ext_resource type="Texture2D" uid="uid://kh4n3chmo1qf" path="res://assets/Pitch/The-Legend-of-Zelda-Logo.png" id="128_duq0u"]
-[ext_resource type="Texture2D" uid="uid://b23b30s4lusab" path="res://assets/Pitch/81MtMHLeZDL.jpg" id="129_8m6mu"]
-[ext_resource type="Texture2D" uid="uid://cwnpp5peglqp7" path="res://assets/Pitch/oddworld_zj7b.jpg" id="130_xmwys"]
-[ext_resource type="Texture2D" uid="uid://cek5rjywu4guh" path="res://assets/Pitch/34+Xz4.png" id="131_tkah3"]
-[ext_resource type="Texture2D" uid="uid://n4cyeldn8v" path="res://assets/Pitch/UqtvaW.png" id="132_rebed"]
-[ext_resource type="Texture2D" uid="uid://r36q3hwvcee7" path="res://assets/Pitch/1zSUkr.png" id="133_nrnjd"]
-[ext_resource type="Texture2D" uid="uid://ctte6b0k6joa5" path="res://assets/Pitch/YouLookLonely.png" id="134_5osbp"]
-[ext_resource type="Texture2D" uid="uid://c11da2i642g8e" path="res://assets/Pitch/JellyLogoStylized-100.png" id="135_7mct1"]
-[ext_resource type="Texture2D" uid="uid://6lv5g2j556co" path="res://assets/DOG.png" id="136_6mvp4"]
-[ext_resource type="Texture2D" uid="uid://ca8iamd172ojq" path="res://assets/Pitch/Isaac.png" id="137_6uocq"]
-[ext_resource type="Texture2D" uid="uid://gktjlpgts8ue" path="res://assets/Pitch/Pou.png" id="138_noed1"]
-[ext_resource type="Texture2D" uid="uid://bq67b0aljajhy" path="res://assets/Pitch/Chema.png" id="139_vbwxl"]
-[ext_resource type="Texture2D" uid="uid://da3pw5e4u0ym0" path="res://assets/Pitch/Alex.png" id="140_mer44"]
-[ext_resource type="Texture2D" uid="uid://d3f2j67ock4xw" path="res://assets/Pitch/Tofgu.png" id="141_xxin0"]
-[ext_resource type="Texture2D" uid="uid://mhyn3y306wcv" path="res://assets/Pitch/Isaac/SRpGno.png" id="142_kv80x"]
-[ext_resource type="Texture2D" uid="uid://roxibtc03p0f" path="res://assets/Pitch/Isaac/Kp0n85.png" id="143_eycfe"]
-[ext_resource type="Texture2D" uid="uid://b26cm1v4vcrwd" path="res://assets/Pitch/Isaac/0K40HC.png" id="144_d1nxf"]
-[ext_resource type="Texture2D" uid="uid://stcfa4mbrmt0" path="res://assets/Pitch/Isaac/WfyCvk.png" id="145_muaif"]
-[ext_resource type="Texture2D" uid="uid://c53hg0c8aqwr2" path="res://assets/Pitch/Isaac/X61pMh.png" id="146_ncw1v"]
-[ext_resource type="Texture2D" uid="uid://d254o0h37gwva" path="res://assets/Pitch/Isaac/1aA21u.png" id="147_ugr6h"]
-[ext_resource type="Texture2D" uid="uid://cxln16osvq661" path="res://assets/Pitch/Isaac/RUYInL.png" id="148_loihh"]
-[ext_resource type="Texture2D" uid="uid://jekgxwx5d2hu" path="res://assets/Pitch/HYBDX-Boxart.png" id="149_bu5kd"]
 [ext_resource type="PackedScene" uid="uid://saxp0bi5k5yt" path="res://scenes/objects/lamp.tscn" id="150_kx2s7"]
 [ext_resource type="Texture2D" uid="uid://dk3gxjoerqmah" path="res://assets/lights/Lamparacolgosa.png" id="151_05ghs"]
 [ext_resource type="Script" uid="uid://bb475pwwchmkp" path="res://assets/Pitch/reseter.gd" id="152_xvy84"]
-[ext_resource type="PackedScene" uid="uid://bx27mjdwpsn4g" path="res://scenes/objects/WoodenBox.tscn" id="153_muljm"]
 [ext_resource type="PackedScene" uid="uid://bpjuob5vv1cqt" path="res://scenes/objects/Lasers/shrink_laser.tscn" id="154_rghdw"]
 [ext_resource type="PackedScene" uid="uid://cwiks7ucnpxst" path="res://scenes/objects/Lasers/grow_laser.tscn" id="155_0a2gi"]
 [ext_resource type="PackedScene" uid="uid://dsmy2h1upfevb" path="res://scenes/objects/scale_green/scale_button_green.tscn" id="156_bilqk"]
@@ -48,29 +24,48 @@
 [ext_resource type="PackedScene" uid="uid://bhenjdi5p5ejl" path="res://scenes/objects/button_red/button_red.tscn" id="160_7ms6c"]
 [ext_resource type="PackedScene" uid="uid://dsxgd88iwhesb" path="res://scenes/objects/button_red/button_red_signal_reciever.tscn" id="161_3fkk0"]
 [ext_resource type="PackedScene" uid="uid://pko810djqbqo" path="res://scenes/objects/meat_box.tscn" id="162_fuj24"]
-[ext_resource type="PackedScene" uid="uid://bfvfq8x40yq6c" path="res://scenes/objects/Matraz1.tscn" id="163_7s0lv"]
-[ext_resource type="PackedScene" uid="uid://c1btdber4g5l3" path="res://scenes/objects/Matraz2.tscn" id="164_toqm8"]
-[ext_resource type="PackedScene" uid="uid://cbcnrsv1okpj" path="res://scenes/objects/Matraz3.tscn" id="165_hyk56"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_khd6a"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(4, 1, 1)
-emission_shape = 1
-emission_sphere_radius = 80.0
-gravity = Vector3(0, 98, 0)
-scale_min = 2.0
-scale_max = 5.0
-color = Color(0.854902, 0.796078, 0.501961, 1)
+[sub_resource type="GDScript" id="GDScript_ffog2"]
+script/source = "extends Node
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3yh2k"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(4, 1, 1)
-emission_shape = 1
-emission_sphere_radius = 80.0
-gravity = Vector3(0, 98, 0)
-scale_min = 2.0
-scale_max = 5.0
-color = Color(0.462745, 0.764706, 0.47451, 1)
+@onready var slide_temp_3: Slide = $\"..\"
+
+@onready var slide_changer: SlideChanger = $\"../..\"
+@onready var button_red: RedButton = $\"../../../Button_red\"
+@onready var scale_button_green: Area2D = $\"../../../Scale_button_green\"
+
+
+func _on_button_red_pressed(state: Variant, body: Variant) -> void:
+	if slide_changer.lock_input == true:
+		slide_changer.lock_input = false
+		slide_changer.drop_current_slide()
+		scale_button_green.monitoring = true
+
+
+func _on_slide_temp_3_visibility_changed() -> void:
+	if slide_temp_3.visible == true:
+		button_red.monitoring = true
+		slide_changer.lock_input = true
+"
+
+[sub_resource type="GDScript" id="GDScript_qvjxb"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_scale_button_green_pressed(state: Variant, body: Variant) -> void:
+	if state == true:
+		print(\"Good\")
+"
 
 [node name="TutorialLevel" type="Node2D"]
 script = ExtResource("1_v36a2")
@@ -86,6 +81,7 @@ rendering_quadrant_size = 1
 [node name="MusicSubmanager" parent="." instance=ExtResource("3_skh7a")]
 
 [node name="Transition" parent="." instance=ExtResource("4_lgx2m")]
+visible = false
 scale = Vector2(1.5, 1.5)
 target_scene = "uid://b11575bui2p7p"
 
@@ -99,7 +95,6 @@ script = ExtResource("7_dcmsv")
 transition = NodePath("../Transition")
 
 [node name="SlideTemp" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
 position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
@@ -111,11 +106,12 @@ theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("121_svgff")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=10 connected=1][color=933f45]HELLO!
+text = "[wave amp=50.0 freq=10 connected=1][color=933f45]THANKS A LOT!
 "
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
 offset_left = -237.0
@@ -127,10 +123,11 @@ theme_override_fonts/normal_font = ExtResource("121_svgff")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "[wave amp=10.0 freq=3.0 connected=1]
-First of all, thanks for playing up to this point, it means a lot to us at [color=76c379]JellyDog!"
+[color=508d76]For playing up to this point, it means a lot to us at [color=76c379]JELLYDOG!"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp"]
 modulate = Color(0.70796657, 0.7079665, 0.7079665, 1)
@@ -147,6 +144,7 @@ Also, you can go to the next slide by pressing [img=48]res://assets/controls/Con
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="SlideTemp23" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
 visible = false
@@ -184,37 +182,37 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SlideTemp2" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
+visible = false
 position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp2"]
-offset_left = -388.0
-offset_top = -188.0
-offset_right = 400.0
-offset_bottom = -6.0
+offset_left = -385.0
+offset_top = -160.0
+offset_right = 403.0
+offset_bottom = 22.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("121_svgff")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]WHAT IS [color=76c379]HYB[/color][color=cc925e]-DX[/color]?
-[/wave]
+text = "[wave amp=50.0 freq=30.0 connected=1][color=b25e46]AND THAT'S WHY
+
 "
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp2"]
-offset_left = -322.0
-offset_top = -80.0
-offset_right = 311.0
-offset_bottom = 208.0
+offset_left = -319.0
+offset_top = -105.0
+offset_right = 314.0
+offset_bottom = 183.0
 theme_override_constants/paragraph_separation = 15
 theme_override_fonts/normal_font = ExtResource("121_svgff")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]- Its a [color=be7979]HORROR[/color] [color=7b99c8]Puzzle[/color]/[color=535c89]Adventure[/color] game
--  [color=508d76]Player[/color] = [color=76c379]Slime[/color] with amnesia.
-- [color=933f45]Try to ESCAPE and unravel the TRUTH!!!![/color]
-"
+text = "[wave amp=10.0 freq=3.0 connected=1]We made [color=cc925e]this room.[/color]
+
+Now, lets teach you a [color=535c89]fresh[/color] [color=76c379]new[/color] mechanic."
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -224,83 +222,58 @@ visible = false
 position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp3"]
-offset_left = -309.0
-offset_top = -188.0
-offset_right = 291.0
-offset_bottom = -36.0
+offset_left = -283.0
+offset_top = -191.0
+offset_right = 215.0
+offset_bottom = -39.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("121_svgff")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=be7979]GAMEPLAY:
+text = "[wave amp=50.0 freq=5.0 connected=1][color=be7979]MEATBOX:
 
 "
 fit_content = true
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp3"]
-offset_left = -324.0
-offset_top = -201.0
-offset_right = 309.0
-offset_bottom = 87.0
+offset_left = -327.0
+offset_top = -109.0
+offset_right = 306.0
+offset_bottom = 179.0
 theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
 theme_override_constants/paragraph_separation = 15
 theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]The core loop of the game is structured like this:
-"
+text = "[wave amp=10.0 freq=3.0 connected=1]This [wave amp=30.0 freq=30.0 connected=1][color=653d48]horrible[/color][/wave] experiment was created from a bunch of wierd dead meat.
+It seems to [color=cc925e]copy your scale[/color] if you [color=cc925e]pick it up and throw it[/color] somewhere.
+You can get one by [color=933f45]pressing the red button on the left."
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp3"]
-offset_left = -276.0
-offset_top = -53.0
-offset_right = 258.0
-offset_bottom = 213.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 30
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]
-[color=76c379]PUZZLES[/color]
+[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp3"]
+position = Vector2(178, -148)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ffog2")
 
-
-
-[color=cc925e]PHYSICS[/color]				[color=dacb80]SCALE[/color]
-
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Indicator-Arrow" parent="SlideChanger/SlideTemp3" instance=ExtResource("124_ochgm")]
-z_index = 0
-position = Vector2(-125, 72)
-rotation = 2.0944
-scale = Vector2(1.8, 1.8)
-
-[node name="Indicator-Arrow2" parent="SlideChanger/SlideTemp3" instance=ExtResource("124_ochgm")]
-z_index = 0
-position = Vector2(113.00003, 72)
-rotation = 1.0472
-scale = Vector2(1.8, 1.8)
+[node name="WaitforButton" type="Node" parent="SlideChanger/SlideTemp3"]
+script = SubResource("GDScript_ffog2")
 
 [node name="SlideTemp4" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
 position = Vector2(576, 324)
 
 [node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp4"]
 offset_left = -309.0
-offset_top = -201.0
+offset_top = -223.0
 offset_right = 291.0
-offset_bottom = -49.0
+offset_bottom = -71.0
 theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
 theme_override_fonts/normal_font = ExtResource("121_svgff")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=508d76]THIS MEANS:
+text = "[wave amp=50.0 freq=5.0 connected=1][color=508d76]YOU GOT IT!
 "
 fit_content = true
 horizontal_alignment = 1
@@ -308,803 +281,33 @@ vertical_alignment = 1
 
 [node name="Indicator-Arrow" parent="SlideChanger/SlideTemp4" node_paths=PackedStringArray("player") instance=ExtResource("124_ochgm")]
 z_index = 0
-position = Vector2(-3, 132)
+position = Vector2(-3, 22.000015)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("125_sj8a2")
 player = NodePath("../../../Slime")
 
 [node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp4"]
 offset_left = -313.0
-offset_top = -133.0
+offset_top = -94.0
 offset_right = 298.0
-offset_bottom = 155.0
+offset_bottom = 204.0
 theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
 theme_override_constants/paragraph_separation = 15
 theme_override_fonts/normal_font = ExtResource("121_svgff")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]For each level you need to use the [color=cc925e]PHYSICS SYSTEM[/color] and [color=dacb80]SCALE SYSTEM[/color] of the game to solve puzzles. 
-You can play around to get a better understanding of each system.
-"
+text = "[wave amp=10.0 freq=3.0 connected=1]Now that you have some meatboxes, try experimenting a bit with them.
+
+
+
+To try the actual level, just activate the green scale on the right.
+You will need 2 enlarged Meatboxes."
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SlideTemp5" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp5"]
-offset_left = -366.0
-offset_top = -164.0
-offset_right = 370.0
-offset_bottom = 38.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 80
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]STRUCTURE:
-
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp5"]
-offset_left = -391.0
-offset_top = -94.0
-offset_right = 395.0
-offset_bottom = 172.0
-theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]
-The game is broken up into different [color=535c89]ZONES[/color], and each zone contains:
-
-[color=cc925e] + NEW MECHANIC[/color]
-[color=dacb80] + 3 PUZZLE LEVELS[/color]
-[wave amp=50.0 freq=25.0 connected=1][color=933f45]+ BOSS FIGHT[/color]
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlideTemp6" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp6"]
-offset_left = -366.0
-offset_top = -189.0
-offset_right = 370.0
-offset_bottom = 13.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 75
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]RIGHT NOW:
-
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp6"]
-offset_left = -361.0
-offset_top = -78.0
-offset_right = 360.0
-offset_bottom = 188.0
-theme_override_colors/default_color = Color(0.84705883, 0.69411767, 0.6313726, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 35
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]There are
-[color=535c89] 4 ZONES[/color][wave amp=50.0 freq=25.0 connected=1][color=933f45]+ FINAL BOSS[/color][/wave]
-allready planned out, with the possibilty of adding more if development time allows.
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlideTemp7" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp7"]
-offset_left = -387.0
-offset_top = -164.0
-offset_right = 401.0
-offset_bottom = 18.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 60
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]INSPIRATIONS:
-[/wave]
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp7"]
-position = Vector2(-143, -6)
-scale = Vector2(0.51, 0.51)
-texture = ExtResource("126_4hsmq")
-
-[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp7"]
-position = Vector2(-134, 117)
-scale = Vector2(0.11, 0.11)
-texture = ExtResource("127_5ch8b")
-
-[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp7"]
-position = Vector2(165, 63)
-scale = Vector2(0.085, 0.085)
-texture = ExtResource("128_duq0u")
-
-[node name="SlideTemp8" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp8"]
-offset_left = -387.0
-offset_top = -235.0
-offset_right = 401.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 60
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]VISUAL STYLE:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp8"]
-position = Vector2(-220, 45)
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("129_8m6mu")
-
-[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp8"]
-position = Vector2(126, 45)
-scale = Vector2(0.405, 0.405)
-texture = ExtResource("130_xmwys")
-
-[node name="SlideTemp9" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp9"]
-offset_left = -387.0
-offset_top = -235.0
-offset_right = 401.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 60
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]CONCEPT ART:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp9"]
-position = Vector2(-214, 45)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("131_tkah3")
-
-[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp9"]
-position = Vector2(150, 45)
-scale = Vector2(0.315, 0.315)
-texture = ExtResource("132_rebed")
-region_enabled = true
-region_rect = Rect2(642, 0, 1280, 636)
-
-[node name="SlideTemp10" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp10"]
-offset_left = -387.0
-offset_top = -235.0
-offset_right = 401.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 60
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]REFINED STYLE:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp10"]
-position = Vector2(-177, 45)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("133_nrnjd")
-
-[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp10"]
-position = Vector2(171, 45)
-scale = Vector2(0.315, 0.315)
-texture = ExtResource("134_5osbp")
-region_rect = Rect2(642, 0, 1280, 636)
-
-[node name="SlideTemp11" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp11"]
-offset_left = -387.0
-offset_top = -164.0
-offset_right = 401.0
-offset_bottom = 18.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 55
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]TARGET AUDIENCE:
-[/wave]
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp11"]
-offset_left = -309.0
-offset_top = -59.0
-offset_right = 299.0
-offset_bottom = 169.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 35
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]- [color=7b99c8] AGES[/color] [color=535c89]13+[/color]
--  PLATFORMS: [color=76c379]Steam[/color] [color=508d76](PC, Mac, Linux)[/color]
-- [color=be7979]FUTURE:[/color]  [color=933f45]CONSOLES[/color]
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlideTemp12" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp12"]
-offset_left = -387.0
-offset_top = -223.0
-offset_right = 401.0
-offset_bottom = -41.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 40
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]WHO IS BEHIND [color=76c379]HYB[/color][color=cc925e]-DX![/color]
-[/wave]"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp12"]
-modulate = Color(0.70796657, 0.7079665, 0.7079665, 1)
-position = Vector2(-114, 40)
-texture = ExtResource("135_7mct1")
-region_rect = Rect2(642, 0, 1280, 636)
-
-[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp12"]
-modulate = Color(0.70796657, 0.7079665, 0.7079665, 1)
-position = Vector2(204, 40)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("136_6mvp4")
-region_rect = Rect2(642, 0, 1280, 636)
-
-[node name="SlideTemp13" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
-offset_left = -387.0
-offset_top = -223.0
-offset_right = 401.0
-offset_bottom = -41.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 55
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]THE TEAM:
-[/wave]"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp13"]
-position = Vector2(-303.5, 9.5)
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("137_6uocq")
-
-[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp13"]
-modulate = Color(0.666569, 0.666569, 0.666569, 1)
-position = Vector2(-157.5, 9.5)
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("138_noed1")
-
-[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp13"]
-position = Vector2(-7.5, 9.5)
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("139_vbwxl")
-
-[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp13"]
-position = Vector2(141.5, 9.5)
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("140_mer44")
-
-[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp13"]
-position = Vector2(295.5, 9.5)
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("141_xxin0")
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
-offset_left = -360.0
-offset_top = 79.0
-offset_right = -250.0
-offset_bottom = 127.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1] [color=76c379]Isaac"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
-offset_left = -214.0
-offset_top = 79.0
-offset_right = -104.0
-offset_bottom = 127.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1][color=535c89]Pau"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
-offset_left = -76.0
-offset_top = 79.0
-offset_right = 57.0
-offset_bottom = 127.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1][color=508d76]Chema"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label5" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
-offset_left = 79.0
-offset_top = 79.0
-offset_right = 212.0
-offset_bottom = 127.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1][color=b25e46]Alex"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="RichTextLabel" parent="SlideChanger/SlideTemp13"]
-offset_left = 224.0
-offset_top = 79.0
-offset_right = 357.0
-offset_bottom = 127.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1][color=933f45]Tofgu"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlideTemp14" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp14"]
-offset_left = -387.0
-offset_top = -235.0
-offset_right = 401.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 75
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=76c379]Isaac:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp14"]
-offset_left = -95.0
-offset_top = -85.0
-offset_right = 378.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ JellyDog Creator
-+ Director / Programmer
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp14"]
-position = Vector2(-220, 42)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("137_6uocq")
-
-[node name="Sprite2D2" type="Sprite2D" parent="SlideChanger/SlideTemp14"]
-modulate = Color(0.666569, 0.666569, 0.666569, 1)
-position = Vector2(134, 92)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("142_kv80x")
-
-[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp14"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(-3, 92)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("143_eycfe")
-
-[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp14"]
-position = Vector2(273, 92)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("144_d1nxf")
-
-[node name="SlideTemp15" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp15"]
-offset_left = -387.0
-offset_top = -235.0
-offset_right = 401.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 75
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=535c89]Pau:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp15"]
-offset_left = -95.0
-offset_top = -85.0
-offset_right = 378.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Digital Artist
-+ Social Media Manager
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp15"]
-position = Vector2(-220, 42)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("138_noed1")
-
-[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp15"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(36, 93)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("143_eycfe")
-
-[node name="Sprite2D7" type="Sprite2D" parent="SlideChanger/SlideTemp15"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(243, 93)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("144_d1nxf")
-
-[node name="SlideTemp16" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp16"]
-offset_left = -387.0
-offset_top = -235.0
-offset_right = 401.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 75
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=508d76]Chema:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp16"]
-offset_left = -95.0
-offset_top = -85.0
-offset_right = 378.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Digital Art Director
-+ Designer
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp16"]
-position = Vector2(-220, 42)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("139_vbwxl")
-
-[node name="Sprite2D3" type="Sprite2D" parent="SlideChanger/SlideTemp16"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(-3, 92)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("145_muaif")
-
-[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp16"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(144, 92)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("144_d1nxf")
-
-[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp16"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(291, 91)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("146_ncw1v")
-
-[node name="SlideTemp17" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp17"]
-offset_left = -387.0
-offset_top = -235.0
-offset_right = 401.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 75
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=b25e46]Alex:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp17"]
-offset_left = -95.0
-offset_top = -85.0
-offset_right = 378.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Lead Programmer
-+ Game designer
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp17"]
-position = Vector2(-220, 42)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("140_mer44")
-
-[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp17"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(-5, 91)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("144_d1nxf")
-
-[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp17"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(142, 90)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("146_ncw1v")
-
-[node name="Sprite2D6" type="Sprite2D" parent="SlideChanger/SlideTemp17"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(291, 91)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("147_ugr6h")
-
-[node name="SlideTemp18" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp18"]
-offset_left = -387.0
-offset_top = -235.0
-offset_right = 401.0
-offset_bottom = -53.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 75
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=933f45]Tofgu:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp18"]
-offset_left = -95.0
-offset_top = -85.0
-offset_right = 378.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]+ Animator
-+ Level Designer
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="SlideChanger/SlideTemp18"]
-position = Vector2(-220, 42)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("141_xxin0")
-
-[node name="Sprite2D4" type="Sprite2D" parent="SlideChanger/SlideTemp18"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(28.5, 94)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("144_d1nxf")
-
-[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp18"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(236.5, 93)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("148_loihh")
-
-[node name="SlideTemp19" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label" type="RichTextLabel" parent="SlideChanger/SlideTemp19"]
-offset_left = -391.0
-offset_top = -191.0
-offset_right = 397.0
-offset_bottom = -9.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 70
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]Now, let's talk"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp19"]
-offset_left = -391.0
-offset_top = -76.0
-offset_right = 397.0
-offset_bottom = 106.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 70
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][color=cc925e]MONEY!!!"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="SlideChanger/SlideTemp19/Label2"]
-position = Vector2(423, 82)
-amount = 50
-process_material = SubResource("ParticleProcessMaterial_khd6a")
-
-[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp19"]
-offset_left = -237.0
-offset_top = 72.0
-offset_right = 236.0
-offset_bottom = 197.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]We are hoping to get...
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlideTemp20" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp20"]
-offset_left = -388.0
-offset_top = -164.0
-offset_right = 400.0
-offset_bottom = 18.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 70
-bbcode_enabled = true
-text = "[wave amp=50.0 freq=20.0 connected=1][color=cc925e]30K DOLLARS!"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="SlideChanger/SlideTemp20/Label2"]
-position = Vector2(423, 82)
-amount = 50
-process_material = SubResource("ParticleProcessMaterial_khd6a")
-
-[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp20"]
-offset_left = -318.0
-offset_right = 312.0
-offset_bottom = 132.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 35
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]To finish our game in a short span of
- [color=76c379]13 months.
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlideTemp21" parent="SlideChanger" instance=ExtResource("8_jjsu5")]
-visible = false
-position = Vector2(576, 324)
-
-[node name="Label2" type="RichTextLabel" parent="SlideChanger/SlideTemp21"]
-offset_left = -391.0
-offset_top = -191.0
-offset_right = 397.0
-offset_bottom = -9.0
-theme_override_colors/default_color = Color(0.847059, 0.694118, 0.631373, 1)
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 70
-bbcode_enabled = true
-text = "[wave amp=20.0 freq=20.0 connected=1][color=76c379]But honestly"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="SlideChanger/SlideTemp21/Label2"]
-position = Vector2(423, 82)
-amount = 50
-process_material = SubResource("ParticleProcessMaterial_3yh2k")
-
-[node name="Label3" type="RichTextLabel" parent="SlideChanger/SlideTemp21"]
-offset_left = -332.0
-offset_top = -59.0
-offset_right = 89.0
-offset_bottom = 188.0
-theme_override_fonts/normal_font = ExtResource("121_svgff")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=10.0 freq=3.0 connected=1]We are open to negociations.
-We just want to finish the game with all the love and care we believe it deserves ;)
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D5" type="Sprite2D" parent="SlideChanger/SlideTemp21"]
-modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(205, 65)
-scale = Vector2(0.5, 0.438)
-texture = ExtResource("149_bu5kd")
+[node name="WaitforScale" type="Node" parent="SlideChanger/SlideTemp4"]
+script = SubResource("GDScript_qvjxb")
 
 [node name="Lamp" parent="." instance=ExtResource("150_kx2s7")]
 position = Vector2(1096, 617)
@@ -1127,28 +330,20 @@ metadata/_edit_lock_ = true
 [node name="Reseter" type="Node" parent="."]
 script = ExtResource("152_xvy84")
 
-[node name="WoodenBox" parent="." instance=ExtResource("153_muljm")]
-position = Vector2(638, 614)
-
-[node name="WoodenBox2" parent="." instance=ExtResource("153_muljm")]
-position = Vector2(660, 614)
-
-[node name="WoodenBox3" parent="." instance=ExtResource("153_muljm")]
-position = Vector2(649, 596)
-
 [node name="Shrink-Laser" parent="." instance=ExtResource("154_rghdw")]
-position = Vector2(95, 48)
+position = Vector2(1055, 69)
 rotation = 1.57079
 target_scale = Vector2(2, 2)
 
 [node name="Grow-Laser" parent="." instance=ExtResource("155_0a2gi")]
-position = Vector2(1064, 48)
+position = Vector2(95, 48)
 rotation = 1.57079
 target_scale = Vector2(6, 6)
 
 [node name="Scale_button_green" parent="." instance=ExtResource("156_bilqk")]
 position = Vector2(961, 624)
-activation_weight = 8.0
+monitoring = false
+activation_weight = 12.0
 
 [node name="Scale_green_reciever" parent="Scale_button_green" instance=ExtResource("157_wdy5d")]
 position = Vector2(168, -80)
@@ -1176,6 +371,7 @@ direction = "right"
 
 [node name="Button_red" parent="." instance=ExtResource("160_7ms6c")]
 position = Vector2(191, 624)
+monitoring = false
 
 [node name="Button_Red_Signal" parent="Button_red" instance=ExtResource("161_3fkk0")]
 position = Vector2(-165, -85)
@@ -1188,78 +384,19 @@ position = Vector2(97, -600)
 rotation = -1.57079
 
 [node name="MeatBox" parent="." instance=ExtResource("162_fuj24")]
-position = Vector2(862, -26)
+position = Vector2(258, -26)
 
-[node name="Vial_green" parent="." instance=ExtResource("163_7s0lv")]
-position = Vector2(305, -27)
-use_screen_queue = false
+[node name="MeatBox2" parent="." instance=ExtResource("162_fuj24")]
+position = Vector2(263, -52)
 
-[node name="Vial-Red" parent="." instance=ExtResource("164_toqm8")]
-position = Vector2(285, -15)
-use_screen_queue = false
+[node name="MeatBox4" parent="." instance=ExtResource("162_fuj24")]
+position = Vector2(307, -52)
 
-[node name="Vial-blue" parent="." instance=ExtResource("165_hyk56")]
-position = Vector2(260, -25)
-use_screen_queue = false
+[node name="MeatBox3" parent="." instance=ExtResource("162_fuj24")]
+position = Vector2(319, -26)
 
-[node name="Vial_green2" parent="." instance=ExtResource("163_7s0lv")]
-position = Vector2(305, -65)
-use_screen_queue = false
-
-[node name="Vial-Red2" parent="." instance=ExtResource("164_toqm8")]
-position = Vector2(285, -53)
-use_screen_queue = false
-
-[node name="Vial-blue2" parent="." instance=ExtResource("165_hyk56")]
-position = Vector2(260, -63)
-use_screen_queue = false
-
-[node name="Vial_green3" parent="." instance=ExtResource("163_7s0lv")]
-position = Vector2(305, -108)
-use_screen_queue = false
-
-[node name="Vial-Red3" parent="." instance=ExtResource("164_toqm8")]
-position = Vector2(285, -96)
-use_screen_queue = false
-
-[node name="Vial-blue3" parent="." instance=ExtResource("165_hyk56")]
-position = Vector2(260, -106)
-use_screen_queue = false
-
-[node name="Vial_green4" parent="." instance=ExtResource("163_7s0lv")]
-position = Vector2(369, -108)
-use_screen_queue = false
-
-[node name="Vial-Red4" parent="." instance=ExtResource("164_toqm8")]
-position = Vector2(349, -96)
-use_screen_queue = false
-
-[node name="Vial-blue4" parent="." instance=ExtResource("165_hyk56")]
-position = Vector2(324, -106)
-use_screen_queue = false
-
-[node name="Vial_green5" parent="." instance=ExtResource("163_7s0lv")]
-position = Vector2(259, -80)
-use_screen_queue = false
-
-[node name="Vial-Red5" parent="." instance=ExtResource("164_toqm8")]
-position = Vector2(239, -68)
-use_screen_queue = false
-
-[node name="Vial-blue5" parent="." instance=ExtResource("165_hyk56")]
-position = Vector2(214, -78)
-use_screen_queue = false
-
-[node name="Vial_green6" parent="." instance=ExtResource("163_7s0lv")]
-position = Vector2(361, -48)
-use_screen_queue = false
-
-[node name="Vial-Red6" parent="." instance=ExtResource("164_toqm8")]
-position = Vector2(341, -36)
-use_screen_queue = false
-
-[node name="Vial-blue6" parent="." instance=ExtResource("165_hyk56")]
-position = Vector2(316, -46)
-use_screen_queue = false
+[connection signal="visibility_changed" from="SlideChanger/SlideTemp3" to="SlideChanger/SlideTemp3/WaitforButton" method="_on_slide_temp_3_visibility_changed"]
+[connection signal="pressed" from="Scale_button_green" to="SlideChanger/SlideTemp4/WaitforScale" method="_on_scale_button_green_pressed"]
+[connection signal="pressed" from="Button_red" to="SlideChanger/SlideTemp3/WaitforButton" method="_on_button_red_pressed"]
 
 [editable path="dont touch"]
